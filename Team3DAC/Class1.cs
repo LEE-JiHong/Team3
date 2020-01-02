@@ -8,5 +8,6 @@ namespace Team3DAC
 {
     public class Class1
     {
+        public int No { get; set; }
     }
 }
