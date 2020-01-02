@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Team3.BaseForm;
 
 namespace Team3
 {
-    public partial class Form3 : VerticalGridBtnBaseForm
+    public partial class Form5 : Team3.BaseForm.VerticalGridBtnBaseForm
     {
-        public Form3()
+        public Form5()
         {
             InitializeComponent();
         }

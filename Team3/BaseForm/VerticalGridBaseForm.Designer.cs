@@ -40,10 +40,11 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(782, 60);
+            this.TopMenu.Size = new System.Drawing.Size(914, 60);
             // 
             // layoutButton
             // 
@@ -57,7 +58,7 @@
             // 
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.panel1);
-            this.basepanel.Size = new System.Drawing.Size(782, 494);
+            this.basepanel.Size = new System.Drawing.Size(914, 642);
             // 
             // panel2
             // 
@@ -67,7 +68,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(12, 158);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(758, 327);
+            this.panel2.Size = new System.Drawing.Size(890, 475);
             this.panel2.TabIndex = 9;
             // 
             // panel1
@@ -77,14 +78,14 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(13, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(758, 116);
+            this.panel1.Size = new System.Drawing.Size(890, 116);
             this.panel1.TabIndex = 8;
             // 
             // VerticalGridBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 576);
+            this.ClientSize = new System.Drawing.Size(914, 724);
             this.Name = "VerticalGridBaseForm";
             this.Text = "VerticalGridBaseForm";
             this.Load += new System.EventHandler(this.VerticalGridBaseForm_Load);

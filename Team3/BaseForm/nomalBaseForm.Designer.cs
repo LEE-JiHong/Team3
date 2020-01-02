@@ -45,7 +45,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 851);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 823);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(900, 22);
             this.statusStrip1.TabIndex = 3;
@@ -116,7 +116,7 @@
             this.basepanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.basepanel.Location = new System.Drawing.Point(0, 60);
             this.basepanel.Name = "basepanel";
-            this.basepanel.Size = new System.Drawing.Size(900, 791);
+            this.basepanel.Size = new System.Drawing.Size(900, 763);
             this.basepanel.TabIndex = 14;
             // 
             // nomalBaseForm
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(900, 873);
+            this.ClientSize = new System.Drawing.Size(900, 845);
             this.Controls.Add(this.basepanel);
             this.Controls.Add(this.TopMenu);
             this.Controls.Add(this.statusStrip1);

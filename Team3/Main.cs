@@ -230,7 +230,8 @@ namespace Team3
 
         private void button13_Click(object sender, EventArgs e)
         {
-
+            Form5 frm = new Form5();
+            MadeTabMenu(frm);
         }
 
         private void button14_Click(object sender, EventArgs e)

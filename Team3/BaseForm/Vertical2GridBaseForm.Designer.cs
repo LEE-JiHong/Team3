@@ -44,7 +44,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(822, 60);
+            this.TopMenu.Size = new System.Drawing.Size(894, 60);
             // 
             // layoutButton
             // 
@@ -59,16 +59,16 @@
             this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.panel1);
-            this.basepanel.Size = new System.Drawing.Size(822, 426);
+            this.basepanel.Size = new System.Drawing.Size(894, 382);
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(12, 268);
+            this.panel3.Location = new System.Drawing.Point(12, 224);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(798, 144);
+            this.panel3.Size = new System.Drawing.Size(870, 144);
             this.panel3.TabIndex = 9;
             // 
             // panel2
@@ -79,7 +79,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(12, 122);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(798, 109);
+            this.panel2.Size = new System.Drawing.Size(870, 65);
             this.panel2.TabIndex = 8;
             // 
             // panel1
@@ -89,13 +89,13 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(13, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 73);
+            this.panel1.Size = new System.Drawing.Size(870, 73);
             this.panel1.TabIndex = 7;
             // 
             // Vertical2GridBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(822, 508);
+            this.ClientSize = new System.Drawing.Size(894, 464);
             this.Name = "Vertical2GridBaseForm";
             this.Load += new System.EventHandler(this.Vertical2GridBaseForm_Load);
             this.TopMenu.ResumeLayout(false);
