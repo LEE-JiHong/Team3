@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm.ResourceMgt
 {
-    public partial class Form3 : VerticalGridBaseForm
+    public partial class BORPop : Team3.DialogForm
     {
-        public Form3()
+        public BORPop()
         {
             InitializeComponent();
         }

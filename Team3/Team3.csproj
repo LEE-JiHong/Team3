@@ -148,11 +148,29 @@
     <Compile Include="DevForm\ResourceMgt\BOR.Designer.cs">
       <DependentUpon>BOR.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\ResourceMgt\BORPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\BORPop.Designer.cs">
+      <DependentUpon>BORPop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\ResourceMgt\businessMgt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DevForm\ResourceMgt\businessMgt.Designer.cs">
       <DependentUpon>businessMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\businessPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\businessPop.Designer.cs">
+      <DependentUpon>businessPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\facilitieInfoPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\facilitieInfoPop.Designer.cs">
+      <DependentUpon>facilitieInfoPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\ResourceMgt\facilitiesPop.cs">
       <SubType>Form</SubType>
@@ -251,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\businessMgt.resx">
       <DependentUpon>businessMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\facilitieInfoPop.resx">
+      <DependentUpon>facilitieInfoPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\facilitiesPop.resx">
       <DependentUpon>facilitiesPop.cs</DependentUpon>

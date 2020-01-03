@@ -294,6 +294,15 @@ namespace Team3
                 MadeTabMenu(frm);
             }
         }
+
+        private void treeView3_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "영업마스터업로드(PO)")
+            {
+                SalesMasterUpload frm = new SalesMasterUpload();
+                MadeTabMenu(frm);
+            }
+        }
     }
 }
 

@@ -479,6 +479,7 @@
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
             this.treeView3.Visible = false;
+            this.treeView3.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView3_NodeMouseDoubleClick);
             // 
             // panel3
             // 

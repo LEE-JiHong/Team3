@@ -56,7 +56,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1078, 331);
+            this.panel2.Size = new System.Drawing.Size(1077, 259);
             // 
             // panel1
             // 
