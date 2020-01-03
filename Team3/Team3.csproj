@@ -212,10 +212,7 @@
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DevForm\김우근\" />
-    <Folder Include="DevForm\김준영\" />
-    <Folder Include="DevForm\심우균\" />
-    <Folder Include="DevForm\이지홍\" />
+    <Folder Include="DevForm\process_control\" />
     <Folder Include="Service\" />
     <Folder Include="Utility\" />
   </ItemGroup>
