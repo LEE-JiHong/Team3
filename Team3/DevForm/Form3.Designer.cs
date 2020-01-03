@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.button1 = new System.Windows.Forms.Button();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(434, 0);
+            this.panel2.Size = new System.Drawing.Size(320, 0);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(434, 116);
+            this.panel1.Size = new System.Drawing.Size(320, 116);
             // 
             // imageList1
             // 
@@ -63,23 +62,8 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.button1);
             this.basepanel.Size = new System.Drawing.Size(800, 368);
             this.basepanel.Tag = "dd";
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button1, 0);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(159, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form3
             // 
@@ -97,7 +81,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
     }
 }

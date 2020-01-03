@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesMasterUpload));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddExcel = new System.Windows.Forms.Button();
+            this.btnCreatePO = new System.Windows.Forms.Button();
+            this.btnDownload = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.TopMenu.SuspendLayout();
@@ -41,6 +41,7 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Size = new System.Drawing.Size(133, 19);
             this.label1.Text = "영업마스터업로드(PO)";
             // 
@@ -65,53 +66,57 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.button3);
-            this.basepanel.Controls.Add(this.button2);
-            this.basepanel.Controls.Add(this.button1);
+            this.basepanel.Controls.Add(this.btnDownload);
+            this.basepanel.Controls.Add(this.btnCreatePO);
+            this.basepanel.Controls.Add(this.btnAddExcel);
             this.basepanel.Controls.SetChildIndex(this.panel2, 0);
             this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button2, 0);
-            this.basepanel.Controls.SetChildIndex(this.button3, 0);
+            this.basepanel.Controls.SetChildIndex(this.btnAddExcel, 0);
+            this.basepanel.Controls.SetChildIndex(this.btnCreatePO, 0);
+            this.basepanel.Controls.SetChildIndex(this.btnDownload, 0);
             // 
-            // button1
+            // btnAddExcel
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(813, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Excel등록";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddExcel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAddExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnAddExcel.Location = new System.Drawing.Point(813, 10);
+            this.btnAddExcel.Name = "btnAddExcel";
+            this.btnAddExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnAddExcel.TabIndex = 15;
+            this.btnAddExcel.Text = "Excel등록";
+            this.btnAddExcel.UseVisualStyleBackColor = false;
+            this.btnAddExcel.Click += new System.EventHandler(this.btnAddExcel_Click);
             // 
-            // button2
+            // btnCreatePO
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(604, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "영업마스터생성";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCreatePO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreatePO.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCreatePO.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCreatePO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreatePO.ForeColor = System.Drawing.Color.Black;
+            this.btnCreatePO.Location = new System.Drawing.Point(604, 10);
+            this.btnCreatePO.Name = "btnCreatePO";
+            this.btnCreatePO.Size = new System.Drawing.Size(106, 23);
+            this.btnCreatePO.TabIndex = 18;
+            this.btnCreatePO.Text = "영업마스터생성";
+            this.btnCreatePO.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnDownload
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(714, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "양식 다운로드";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownload.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDownload.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownload.ForeColor = System.Drawing.Color.Black;
+            this.btnDownload.Location = new System.Drawing.Point(714, 10);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(95, 23);
+            this.btnDownload.TabIndex = 19;
+            this.btnDownload.Text = "양식 다운로드";
+            this.btnDownload.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -142,9 +147,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddExcel;
+        private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.Button btnCreatePO;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

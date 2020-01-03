@@ -248,12 +248,12 @@
             this.ClientSize = new System.Drawing.Size(914, 724);
             this.Name = "BomMgt";
             this.Tag = "BOM";
+            this.Load += new System.EventHandler(this.BomMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
-            this.basepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

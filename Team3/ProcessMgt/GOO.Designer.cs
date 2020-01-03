@@ -1,4 +1,4 @@
-﻿namespace Team3.ProcessMgt
+﻿namespace Team3
 {
     partial class GOO
     {

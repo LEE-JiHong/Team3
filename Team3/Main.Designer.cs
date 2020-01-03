@@ -313,6 +313,7 @@
             this.treeView6.TabIndex = 0;
             this.treeView6.Tag = "6";
             this.treeView6.Visible = false;
+            this.treeView6.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView6_NodeMouseDoubleClick);
             // 
             // panel7
             // 
@@ -478,6 +479,7 @@
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
             this.treeView3.Visible = false;
+            this.treeView3.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView3_NodeMouseDoubleClick);
             // 
             // panel3
             // 
@@ -525,6 +527,7 @@
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
             this.treeView2.Visible = false;
+            this.treeView2.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView2_NodeMouseDoubleClick);
             // 
             // panel1
             // 
@@ -579,6 +582,7 @@
             this.treeView1.Tag = "1";
             this.treeView1.Visible = false;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
             // panel4
             // 

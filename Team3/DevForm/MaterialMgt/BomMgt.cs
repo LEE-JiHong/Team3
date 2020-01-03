@@ -14,5 +14,10 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void BomMgt_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

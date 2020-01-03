@@ -14,5 +14,14 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnAddExcel_Click(object sender, EventArgs e)
+        {
+            SalesMasterDialog frm = new SalesMasterDialog();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
     }
 }

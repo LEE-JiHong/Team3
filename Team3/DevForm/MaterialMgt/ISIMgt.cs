@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.MaterialMgt
+namespace Team3
 {
     //Inspection of Standard's Information 검사 기준 정보
 

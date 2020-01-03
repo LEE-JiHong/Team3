@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.MaterialMgt
+﻿namespace Team3
 {
     partial class ISIMgt
     {
