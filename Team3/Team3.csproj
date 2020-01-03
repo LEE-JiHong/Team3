@@ -136,11 +136,17 @@
     <Compile Include="DevForm\ResourceMgt\businessMgt.Designer.cs">
       <DependentUpon>businessMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\process control.cs">
+    <Compile Include="DevForm\ResourceMgt\facilityMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\process control.Designer.cs">
-      <DependentUpon>process control.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\facilityMgt.Designer.cs">
+      <DependentUpon>facilityMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\FactoryMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\FactoryMgt.Designer.cs">
+      <DependentUpon>FactoryMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -195,8 +201,11 @@
     <EmbeddedResource Include="DevForm\ResourceMgt\businessMgt.resx">
       <DependentUpon>businessMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\process control.resx">
-      <DependentUpon>process control.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\facilityMgt.resx">
+      <DependentUpon>facilityMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\FactoryMgt.resx">
+      <DependentUpon>FactoryMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
