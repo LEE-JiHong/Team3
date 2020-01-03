@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Team3.DevForm.ResourceMgt
+{
+    public partial class process_control : Team3.VerticalGridBtnBaseForm
+    {
+        public process_control()
+        {
+            InitializeComponent();
+        }
+    }
+}
