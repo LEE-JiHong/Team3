@@ -36,16 +36,14 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
-
             this.panel1.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
             // 
-
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1027, 475);
+            this.panel2.Size = new System.Drawing.Size(1163, 475);
             // 
             // panel1
             // 
@@ -145,7 +143,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1050, 724);
             this.Name = "BOR";
-
+            this.Tag = "BOR";
+            this.Text = "BOR";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TopMenu.ResumeLayout(false);

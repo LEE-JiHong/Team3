@@ -57,6 +57,10 @@
             this.panel1.Controls.Add(this.button7);
             this.panel1.Size = new System.Drawing.Size(989, 82);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 107);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -82,7 +86,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(797, 30);
+            this.button7.Location = new System.Drawing.Point(886, 29);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 0;
@@ -141,6 +145,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1013, 724);
             this.Name = "process_control";
+            this.Tag = "공장관리";
+            this.Text = "공장관리";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
