@@ -45,20 +45,27 @@ namespace Team3
         {
             this.Close();
         }
-        private Point mousePoint;
+        private Point mousePoint; // 현재 마우스 포인터의 좌표저장 변수 선언
 
-        private void FormMain_MouseDown(object sender, MouseEventArgs e)
+        // 마우스 누를때 현재 마우스 좌표를 저장한다 
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePoint = new Point(e.X, e.Y);
+            mousePoint = new Point(e.X, e.Y); //현재 마우스 좌표 저장
         }
 
-        private void FormMain_MouseMove(object sender, MouseEventArgs e)
+        // 마우스 왼쪽 버튼을 누르고 움직이면 폼을 이동시킨다
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left) //마우스 왼쪽 클릭 시에만 실행
             {
-                Location = new Point(this.Left - (mousePoint.X - e.X),
-                    this.Top - (mousePoint.Y - e.Y));
+                //폼의 위치를 드래그중인 마우스의 좌표로 이동 
+                Location = new Point(Left - (mousePoint.X - e.X), Top - (mousePoint.Y - e.Y));
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         //public IEnumerable<Control> GetAll(Control control, Type type)
