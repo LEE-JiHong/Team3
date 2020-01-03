@@ -323,6 +323,7 @@
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DevForm\MaterialMgt\Dialog\" />
     <Folder Include="Service\" />
     <Folder Include="Utility\" />
   </ItemGroup>
