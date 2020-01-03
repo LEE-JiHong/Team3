@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Team3.DevForm.ResourceMgt;
 
 namespace Team3
 {
@@ -254,6 +255,44 @@ namespace Team3
         private void LayoutShowWindow(string text)
         {
 
+        }
+
+        private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            
+        }
+
+        private void treeView2_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if(e.Node.Text == "품목관리")
+            {
+                Materials frm = new Materials();
+                MadeTabMenu(frm);
+            }
+            else if(e.Node.Text == "BOM")
+            {
+                BomMgt frm = new BomMgt();
+                MadeTabMenu(frm);
+            }
+            else
+            {
+                ISIMgt frm = new ISIMgt();
+                MadeTabMenu(frm);
+            }
+        }
+
+        private void treeView6_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "작업지시생성")
+            {
+                GOO frm = new GOO();
+                MadeTabMenu(frm);
+            }
+            else
+            {
+                SOO frm = new SOO();
+                MadeTabMenu(frm);
+            }
         }
     }
 }
