@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.MaterialMgt
+﻿namespace Team3
 {
     partial class Materials
     {
@@ -49,53 +49,12 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(488, 0);
-            this.button6.Text = "등록";
-            // 
-            // button5
-            // 
-            this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(546, 0);
-            this.button5.Text = "복사";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(604, 0);
-            this.button4.Text = "엑셀";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(662, 0);
-            this.button3.Size = new System.Drawing.Size(110, 20);
-            this.button3.Text = "양식 다운로드";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(772, 0);
-            this.button2.Size = new System.Drawing.Size(90, 20);
-            this.button2.Text = "Excel 등록";
-            // 
-            // label1
-            // 
-            this.label1.Size = new System.Drawing.Size(76, 20);
-            this.label1.Text = "품목정보";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(862, 0);
-            this.button1.Size = new System.Drawing.Size(28, 20);
-            this.button1.Text = "";
-            this.button1.Visible = false;
             // 
             // panel2
             // 
@@ -129,6 +88,7 @@
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
+            this.imageList1.Images.SetKeyName(3, "copy-document.png");
             // 
             // layoutButton
             // 
@@ -325,7 +285,6 @@
             this.ClientSize = new System.Drawing.Size(914, 724);
             this.Name = "Materials";
             this.Tag = "품목정보";
-            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

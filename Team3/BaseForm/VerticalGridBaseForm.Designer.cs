@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerticalGridBaseForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.label1);
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.panel1);
             this.basepanel.Size = new System.Drawing.Size(914, 642);
@@ -81,6 +83,16 @@
             this.panel1.Size = new System.Drawing.Size(890, 116);
             this.panel1.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(15, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 12);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "label1";
+            // 
             // VerticalGridBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -91,6 +103,7 @@
             this.Load += new System.EventHandler(this.VerticalGridBaseForm_Load);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
+            this.basepanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +113,6 @@
 
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

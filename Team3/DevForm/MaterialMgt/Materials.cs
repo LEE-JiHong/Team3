@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.MaterialMgt
+namespace Team3
 {
-    public partial class Materials : Team3.VerticalGridBtnBaseForm
+    public partial class Materials : VerticalGridBaseForm
     {
         public Materials()
         {

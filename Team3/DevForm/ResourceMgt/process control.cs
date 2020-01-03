@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Team3.DevForm.ResourceMgt
 {
-    public partial class process_control : Team3.VerticalGridBtnBaseForm
+    public partial class process_control : Team3.VerticalGridBaseForm
     {
         public process_control()
         {

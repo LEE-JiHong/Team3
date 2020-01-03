@@ -146,6 +146,8 @@
             this.imageList1.Images.SetKeyName(2, "layout.png");
             this.imageList1.Images.SetKeyName(3, "closeBlue.png");
             this.imageList1.Images.SetKeyName(4, "menulist1Blue.png");
+            this.imageList1.Images.SetKeyName(5, "cloud-storage-download.png");
+            this.imageList1.Images.SetKeyName(6, "menu-symbol-of-three-parallel-lines.png");
             // 
             // LeftMenuTab
             // 
