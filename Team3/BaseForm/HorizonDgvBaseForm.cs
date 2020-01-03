@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class HorizonGridBaseForm : nomalBaseForm
+    /// <summary>
+    /// 검색조건 패널 없는 HorizondgvForm
+    /// </summary>
+    public partial class HorizonDgvBaseForm : nomalBaseForm
     {
-        public HorizonGridBaseForm()
+        public HorizonDgvBaseForm()
         {
             InitializeComponent();
         }
