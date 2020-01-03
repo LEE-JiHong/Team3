@@ -136,6 +136,12 @@
     <Compile Include="DevForm\OrderMgt\Dialog\SalesMasterDialog.Designer.cs">
       <DependentUpon>SalesMasterDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\OrderMgt\SalesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\SalesMaster.Designer.cs">
+      <DependentUpon>SalesMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\OrderMgt\SalesMasterUpload.cs">
       <SubType>Form</SubType>
     </Compile>
