@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm
+﻿namespace Team3
 {
     partial class process_control
     {
