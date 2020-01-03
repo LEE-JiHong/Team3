@@ -30,16 +30,43 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(nomalBaseForm));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.basepanel = new System.Windows.Forms.Panel();
+            this.TopMenu = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.TopMenu = new System.Windows.Forms.Panel();
             this.layoutButton = new System.Windows.Forms.Button();
             this.닫기 = new System.Windows.Forms.Button();
-            this.basepanel = new System.Windows.Forms.Panel();
-            this.statusStrip1.SuspendLayout();
             this.TopMenu.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
+            // 
+            // basepanel
+            // 
+            this.basepanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.basepanel.Location = new System.Drawing.Point(0, 60);
+            this.basepanel.Name = "basepanel";
+            this.basepanel.Size = new System.Drawing.Size(900, 763);
+            this.basepanel.TabIndex = 14;
+            // 
+            // TopMenu
+            // 
+            this.TopMenu.BackColor = System.Drawing.Color.LightBlue;
+            this.TopMenu.Controls.Add(this.layoutButton);
+            this.TopMenu.Controls.Add(this.닫기);
+            this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopMenu.Location = new System.Drawing.Point(0, 0);
+            this.TopMenu.Name = "TopMenu";
+            this.TopMenu.Size = new System.Drawing.Size(900, 60);
+            this.TopMenu.TabIndex = 13;
             // 
             // statusStrip1
             // 
@@ -58,25 +85,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(121, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
-            // 
-            // TopMenu
-            // 
-            this.TopMenu.BackColor = System.Drawing.Color.LightBlue;
-            this.TopMenu.Controls.Add(this.layoutButton);
-            this.TopMenu.Controls.Add(this.닫기);
-            this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopMenu.Location = new System.Drawing.Point(0, 0);
-            this.TopMenu.Name = "TopMenu";
-            this.TopMenu.Size = new System.Drawing.Size(900, 60);
-            this.TopMenu.TabIndex = 13;
             // 
             // layoutButton
             // 
@@ -97,7 +105,7 @@
             // 
             // 닫기
             // 
-            this.닫기.BackColor = System.Drawing.Color.LightBlue;
+            this.닫기.BackColor = System.Drawing.Color.Transparent;
             this.닫기.FlatAppearance.BorderSize = 0;
             this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -113,14 +121,6 @@
             this.닫기.UseVisualStyleBackColor = false;
             this.닫기.Click += new System.EventHandler(this.닫기_Click);
             // 
-            // basepanel
-            // 
-            this.basepanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.basepanel.Location = new System.Drawing.Point(0, 60);
-            this.basepanel.Name = "basepanel";
-            this.basepanel.Size = new System.Drawing.Size(900, 763);
-            this.basepanel.TabIndex = 14;
-            // 
             // nomalBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -132,9 +132,9 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "nomalBaseForm";
             this.Text = "nomalBaseForm";
+            this.TopMenu.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.TopMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -39,18 +39,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Location = new System.Drawing.Point(387, 128);
-            this.panel3.Size = new System.Drawing.Size(562, 339);
+            this.panel3.Size = new System.Drawing.Size(629, 440);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Location = new System.Drawing.Point(12, 128);
-            this.panel2.Size = new System.Drawing.Size(346, 339);
+            this.panel2.Size = new System.Drawing.Size(346, 440);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(936, 73);
+            this.panel1.Size = new System.Drawing.Size(1003, 73);
             // 
             // imageList1
             // 
