@@ -7,10 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Team3
-{
-    public partial class VerticalGridBtnBaseForm : VerticalGridBaseForm
+{ 
+    public partial class Vertical2GridBtnBaseForm : Vertical2GridBaseForm
     {
-        public VerticalGridBtnBaseForm()
+        public Vertical2GridBtnBaseForm()
         {
             InitializeComponent();
         }

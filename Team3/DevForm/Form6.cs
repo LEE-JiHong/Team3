@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class VerticalGridBtnBaseForm : VerticalGridBaseForm
+    public partial class Form6 : Vertical2GridBtnBaseForm
     {
-        public VerticalGridBtnBaseForm()
+        public Form6()
         {
             InitializeComponent();
         }

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class Form5 : Team3.BaseForm.VerticalGridBtnBaseForm
+    public partial class Form5 : VerticalGridBtnBaseForm
     {
         public Form5()
         {

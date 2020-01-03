@@ -7,11 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Team3.BaseForm;
 
 namespace Team3
 {
-    public partial class Form3 : VerticalGridBtnBaseForm
+    public partial class Form3 : VerticalGridBaseForm
     {
         public Form3()
         {

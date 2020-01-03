@@ -65,6 +65,7 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
             // 
             // TopMenu
             // 
@@ -96,6 +97,7 @@
             // 
             // 닫기
             // 
+            this.닫기.BackColor = System.Drawing.Color.LightBlue;
             this.닫기.FlatAppearance.BorderSize = 0;
             this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -108,7 +110,7 @@
             this.닫기.TabIndex = 4;
             this.닫기.Text = "닫기";
             this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.닫기.UseVisualStyleBackColor = true;
+            this.닫기.UseVisualStyleBackColor = false;
             this.닫기.Click += new System.EventHandler(this.닫기_Click);
             // 
             // basepanel

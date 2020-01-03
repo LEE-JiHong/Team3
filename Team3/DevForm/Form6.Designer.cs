@@ -1,6 +1,6 @@
 ﻿namespace Team3
 {
-    partial class Form5
+    partial class Form6
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +40,6 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // layoutButton
             // 
@@ -49,14 +49,15 @@
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
             // 
-            // Form5
+            // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(914, 724);
-            this.Name = "Form5";
-            this.Tag = "Form5";
-            this.Text = "Form5";
+            this.ClientSize = new System.Drawing.Size(894, 464);
+            this.Name = "Form6";
+            this.Tag = "Form6";
+            this.Text = "Form6";
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);
