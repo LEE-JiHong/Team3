@@ -32,10 +32,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnFindFile = new System.Windows.Forms.Button();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,6 +53,7 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Text = "Upload";
             // 
             // label1
             // 
@@ -66,10 +67,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txt);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.txtFilePath);
+            this.panel2.Controls.Add(this.btnFindFile);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -116,22 +117,28 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "계획기준버전";
             // 
-            // button1
+            // btnFindFile
             // 
-            this.button1.Location = new System.Drawing.Point(108, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "파일선택";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFindFile.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFindFile.FlatAppearance.BorderSize = 0;
+            this.btnFindFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindFile.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFindFile.Location = new System.Drawing.Point(108, 19);
+            this.btnFindFile.Name = "btnFindFile";
+            this.btnFindFile.Size = new System.Drawing.Size(97, 23);
+            this.btnFindFile.TabIndex = 8;
+            this.btnFindFile.Text = "파일선택";
+            this.btnFindFile.UseVisualStyleBackColor = false;
+            this.btnFindFile.Click += new System.EventHandler(this.btnFindFile_Click);
             // 
-            // textBox1
+            // txtFilePath
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(208, 21);
-            this.textBox1.TabIndex = 9;
+            this.txtFilePath.Location = new System.Drawing.Point(108, 66);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.ReadOnly = true;
+            this.txtFilePath.Size = new System.Drawing.Size(208, 21);
+            this.txtFilePath.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
@@ -141,13 +148,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(208, 21);
             this.dateTimePicker1.TabIndex = 10;
             // 
-            // textBox2
+            // txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(208, 21);
-            this.textBox2.TabIndex = 11;
+            this.txt.Location = new System.Drawing.Point(108, 162);
+            this.txt.Name = "txt";
+            this.txt.ReadOnly = true;
+            this.txt.Size = new System.Drawing.Size(208, 21);
+            this.txt.TabIndex = 11;
             // 
             // SalesMasterDialog
             // 
@@ -169,9 +176,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.Button btnFindFile;
     }
 }
