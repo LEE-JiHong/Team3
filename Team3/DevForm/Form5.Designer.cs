@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel4.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
@@ -49,6 +51,12 @@
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
             // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "square.png");
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -65,5 +73,6 @@
         }
 
         #endregion
+        private System.Windows.Forms.ImageList imageList2;
     }
 }
