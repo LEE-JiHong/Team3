@@ -72,7 +72,7 @@
             treeNode25});
             System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("품목관리");
             System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("BOM");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("공정관리");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("공장관리");
             System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("설비관리");
             System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("업체관리");
             System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("BOR");
@@ -565,8 +565,8 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode29.Name = "공정관리";
-            treeNode29.Text = "공정관리";
+            treeNode29.Name = "공장관리";
+            treeNode29.Text = "공장관리";
             treeNode30.Name = "설비관리";
             treeNode30.Text = "설비관리";
             treeNode31.Name = "업체관리";
