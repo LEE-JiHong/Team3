@@ -159,6 +159,7 @@
             // SalesMasterDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(389, 344);
             this.Name = "SalesMasterDialog";
             this.Text = "영업마스터업로드";
