@@ -523,7 +523,6 @@
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
             this.treeView2.Visible = false;
-            this.treeView2.DoubleClick += new System.EventHandler(this.treeView2_DoubleClick);
             // 
             // panel1
             // 
