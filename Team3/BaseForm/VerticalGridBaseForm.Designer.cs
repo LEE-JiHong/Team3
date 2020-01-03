@@ -85,7 +85,6 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(15, 138);
             this.label1.Name = "label1";
@@ -103,7 +102,6 @@
             this.Load += new System.EventHandler(this.VerticalGridBaseForm_Load);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
-            this.basepanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

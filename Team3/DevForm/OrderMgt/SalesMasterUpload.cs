@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.ResourceMgt
+namespace Team3
 {
-    public partial class process_control : Team3.VerticalGridBaseForm
+    public partial class SalesMasterUpload : DgvBaseForm
     {
-        public process_control()
+        public SalesMasterUpload()
         {
             InitializeComponent();
         }

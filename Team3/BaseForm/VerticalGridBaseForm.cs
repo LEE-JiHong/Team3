@@ -12,7 +12,7 @@ namespace Team3
 {
     public partial class VerticalGridBaseForm : nomalBaseForm
     {
-        private WinState windowstate = WinState.sub;
+      //  private WinState windowstate = WinState.sub;
         public VerticalGridBaseForm()
         {
             InitializeComponent();

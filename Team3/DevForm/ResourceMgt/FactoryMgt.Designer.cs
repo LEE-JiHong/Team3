@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.ResourceMgt
+﻿namespace Team3.DevForm
 {
     partial class process_control
     {
@@ -46,7 +46,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 128);
-            this.panel2.Size = new System.Drawing.Size(989, 505);
+            this.panel2.Size = new System.Drawing.Size(1095, 449);
             // 
             // panel1
             // 
@@ -55,7 +55,11 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Size = new System.Drawing.Size(989, 82);
+            this.panel1.Size = new System.Drawing.Size(1095, 82);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 107);
             // 
             // imageList1
             // 
@@ -66,7 +70,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(1013, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1119, 60);
             // 
             // layoutButton
             // 
@@ -78,11 +82,11 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1013, 642);
+            this.basepanel.Size = new System.Drawing.Size(1119, 586);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(797, 30);
+            this.button7.Location = new System.Drawing.Point(991, 30);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 0;
@@ -133,14 +137,16 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(989, 505);
+            this.dataGridView1.Size = new System.Drawing.Size(1095, 449);
             this.dataGridView1.TabIndex = 0;
             // 
             // process_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1013, 724);
+            this.ClientSize = new System.Drawing.Size(1119, 668);
             this.Name = "process_control";
+            this.Tag = "공장관리";
+            this.Text = "공장관리";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

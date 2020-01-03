@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm
 {
-    public partial class HorizonGridBaseForm : nomalBaseForm
+    public partial class process_control : Team3.VerticalGridBaseForm
     {
-        public HorizonGridBaseForm()
+        public process_control()
         {
             InitializeComponent();
         }

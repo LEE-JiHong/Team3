@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForm\DgvBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\DgvBaseForm.Designer.cs">
+      <DependentUpon>DgvBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\entryBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForm\entryBaseForm.Designer.cs">
       <DependentUpon>entryBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\HorizonDgvBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\HorizonDgvBaseForm.Designer.cs">
+      <DependentUpon>HorizonDgvBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm\HorizonGridBaseForm.cs">
       <SubType>Form</SubType>
@@ -112,11 +130,35 @@
     <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\process control.cs">
+    <Compile Include="DevForm\OrderMgt\SalesMasterUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\process control.Designer.cs">
-      <DependentUpon>process control.cs</DependentUpon>
+    <Compile Include="DevForm\OrderMgt\SalesMasterUpload.Designer.cs">
+      <DependentUpon>SalesMasterUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\BOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\BOR.Designer.cs">
+      <DependentUpon>BOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\businessMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\businessMgt.Designer.cs">
+      <DependentUpon>businessMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\facilityMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\facilityMgt.Designer.cs">
+      <DependentUpon>facilityMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\FactoryMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ResourceMgt\FactoryMgt.Designer.cs">
+      <DependentUpon>FactoryMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -138,8 +180,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaseForm\DgvBaseForm.resx">
+      <DependentUpon>DgvBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\entryBaseForm.resx">
       <DependentUpon>entryBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\HorizonDgvBaseForm.resx">
+      <DependentUpon>HorizonDgvBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\HorizonGridBaseForm.resx">
       <DependentUpon>HorizonGridBaseForm.cs</DependentUpon>
@@ -156,6 +207,9 @@
     <EmbeddedResource Include="DevForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +222,20 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\process control.resx">
-      <DependentUpon>process control.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\OrderMgt\SalesMasterUpload.resx">
+      <DependentUpon>SalesMasterUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
+      <DependentUpon>BOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\businessMgt.resx">
+      <DependentUpon>businessMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\facilityMgt.resx">
+      <DependentUpon>facilityMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\FactoryMgt.resx">
+      <DependentUpon>FactoryMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -230,6 +296,7 @@
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DevForm\OrderMgt\Dialog\" />
     <Folder Include="Service\" />
     <Folder Include="Utility\" />
   </ItemGroup>
