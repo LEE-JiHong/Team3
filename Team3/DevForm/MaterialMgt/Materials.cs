@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Team3.DevForm.MaterialMgt
 {
-    public partial class Materials : Team3.VerticalGridBaseForm
+    public partial class Materials : Team3.VerticalGridBtnBaseForm
     {
         public Materials()
         {
