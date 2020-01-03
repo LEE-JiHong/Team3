@@ -111,6 +111,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
             this.layoutButton = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -121,7 +122,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.MainTab = new System.Windows.Forms.TabControl();
-            this.button15 = new System.Windows.Forms.Button();
             this.LeftMenuTab.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -146,6 +146,8 @@
             this.imageList1.Images.SetKeyName(2, "layout.png");
             this.imageList1.Images.SetKeyName(3, "closeBlue.png");
             this.imageList1.Images.SetKeyName(4, "menulist1Blue.png");
+            this.imageList1.Images.SetKeyName(5, "cloud-storage-download.png");
+            this.imageList1.Images.SetKeyName(6, "menu-symbol-of-three-parallel-lines.png");
             // 
             // LeftMenuTab
             // 
@@ -623,6 +625,21 @@
             this.panel2.Size = new System.Drawing.Size(1684, 60);
             this.panel2.TabIndex = 12;
             // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button15.ImageIndex = 2;
+            this.button15.ImageList = this.imageList1;
+            this.button15.Location = new System.Drawing.Point(388, 10);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(125, 38);
+            this.button15.TabIndex = 13;
+            this.button15.Text = "화면분할";
+            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -740,21 +757,6 @@
             this.MainTab.SelectedIndex = 0;
             this.MainTab.Size = new System.Drawing.Size(1684, 901);
             this.MainTab.TabIndex = 13;
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button15.ImageIndex = 2;
-            this.button15.ImageList = this.imageList1;
-            this.button15.Location = new System.Drawing.Point(388, 10);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(125, 38);
-            this.button15.TabIndex = 13;
-            this.button15.Text = "화면분할";
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = true;
             // 
             // Main
             // 

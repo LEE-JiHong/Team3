@@ -230,14 +230,10 @@ namespace Team3
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Form5 frm = new Form5();
-            MadeTabMenu(frm);
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Form6 frm = new Form6();
-            MadeTabMenu(frm);
         }
 
         private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
