@@ -70,11 +70,23 @@
     <Compile Include="BaseForm\Vertical2GridBaseForm.Designer.cs">
       <DependentUpon>Vertical2GridBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm\Vertical2GridBtnBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\Vertical2GridBtnBaseForm.Designer.cs">
+      <DependentUpon>Vertical2GridBtnBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\VerticalGridBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForm\VerticalGridBaseForm.Designer.cs">
       <DependentUpon>VerticalGridBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\VerticalGridBtnBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\VerticalGridBtnBaseForm.Designer.cs">
+      <DependentUpon>VerticalGridBtnBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\Form1.cs">
       <SubType>Form</SubType>
@@ -93,6 +105,18 @@
     </Compile>
     <Compile Include="DevForm\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -114,17 +138,26 @@
     <EmbeddedResource Include="BaseForm\Vertical2GridBaseForm.resx">
       <DependentUpon>Vertical2GridBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\Vertical2GridBtnBaseForm.resx">
+      <DependentUpon>Vertical2GridBtnBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\VerticalGridBaseForm.resx">
       <DependentUpon>VerticalGridBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\VerticalGridBtnBaseForm.resx">
+      <DependentUpon>VerticalGridBtnBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -163,15 +196,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icon\Button\edit.png" />
+    <Content Include="Icon\Button\pencil.png" />
+    <Content Include="Icon\Button\printer.png" />
+    <Content Include="Icon\Button\save-file-option.png" />
+    <Content Include="Icon\Button\write.png" />
     <Content Include="Icon\Home\close.png" />
     <Content Include="Icon\Home\close1.png" />
+    <Content Include="Icon\Home\closeBlue.png" />
     <Content Include="Icon\Home\Home_32x32.png" />
+    <Content Include="Icon\Home\menulist1Blue.png" />
     <None Include="Icon\Home\logo.png" />
     <Content Include="Icon\Home\layout.png" />
     <Content Include="Icon\Home\menulist.png" />
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DevForm\김우근\" />
+    <Folder Include="DevForm\김준영\" />
+    <Folder Include="DevForm\심우균\" />
+    <Folder Include="DevForm\이지홍\" />
     <Folder Include="Service\" />
     <Folder Include="Utility\" />
   </ItemGroup>

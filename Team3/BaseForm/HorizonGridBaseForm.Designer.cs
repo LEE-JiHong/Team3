@@ -35,22 +35,22 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Location = new System.Drawing.Point(387, 128);
-            this.panel3.Size = new System.Drawing.Size(539, 281);
+            this.panel3.Size = new System.Drawing.Size(629, 440);
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Location = new System.Drawing.Point(12, 128);
-            this.panel2.Size = new System.Drawing.Size(346, 281);
+            this.panel2.Size = new System.Drawing.Size(346, 440);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(913, 73);
+            this.panel1.Size = new System.Drawing.Size(1003, 73);
             // 
             // imageList1
             // 
@@ -60,7 +60,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(938, 60);
+            this.TopMenu.Size = new System.Drawing.Size(961, 60);
             // 
             // layoutButton
             // 
@@ -72,13 +72,13 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(938, 425);
+            this.basepanel.Size = new System.Drawing.Size(961, 483);
             // 
             // HorizonGridBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 507);
+            this.ClientSize = new System.Drawing.Size(961, 565);
             this.Name = "HorizonGridBaseForm";
             this.Text = "HorizonGridBaseForm";
             this.TopMenu.ResumeLayout(false);
