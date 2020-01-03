@@ -257,13 +257,6 @@ namespace Team3
         {
 
         }
-
-        private void treeView2_DoubleClick(object sender, EventArgs e)
-        {
-            MessageBox.Show(e.ToString());
-        }
-
-       
     }
 }
 
