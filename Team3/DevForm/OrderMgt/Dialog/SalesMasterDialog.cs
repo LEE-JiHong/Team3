@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm.OrderMgt.Dialog
 {
-    public partial class process_control : Team3.VerticalGridBaseForm
+    public partial class SalesMasterDialog : Team3.DialogForm
     {
-        public process_control()
+        public SalesMasterDialog()
         {
             InitializeComponent();
         }

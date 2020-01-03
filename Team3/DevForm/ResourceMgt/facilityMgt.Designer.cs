@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.ResourceMgt
+﻿namespace Team3
 {
     partial class facilityMgt
     {
@@ -50,8 +50,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(265, 56);
-            this.panel3.Size = new System.Drawing.Size(901, 443);
+            this.panel3.Location = new System.Drawing.Point(275, 56);
+            this.panel3.Size = new System.Drawing.Size(891, 443);
             // 
             // label1
             // 
@@ -64,7 +64,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(10, 56);
-            this.panel2.Size = new System.Drawing.Size(249, 443);
+            this.panel2.Size = new System.Drawing.Size(259, 443);
             // 
             // imageList1
             // 
@@ -191,7 +191,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(249, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(259, 443);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
@@ -201,7 +201,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(901, 443);
+            this.dataGridView2.Size = new System.Drawing.Size(891, 443);
             this.dataGridView2.TabIndex = 0;
             // 
             // facilityMgt

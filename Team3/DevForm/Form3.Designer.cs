@@ -36,11 +36,11 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(662, 0);
+            this.panel2.Size = new System.Drawing.Size(434, 0);
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(662, 116);
+            this.panel1.Size = new System.Drawing.Size(434, 116);
             // 
             // imageList1
             // 
@@ -73,10 +73,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 129);
+            this.button1.Location = new System.Drawing.Point(159, 208);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
+            this.button1.TabIndex = 16;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

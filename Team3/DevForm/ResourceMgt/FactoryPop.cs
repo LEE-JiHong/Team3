@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class process_control : Team3.VerticalGridBaseForm
+    public partial class FactoryPop : DialogForm
     {
-        public process_control()
+        public FactoryPop()
         {
             InitializeComponent();
         }

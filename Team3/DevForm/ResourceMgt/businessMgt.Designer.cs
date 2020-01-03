@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm
+﻿namespace Team3
 {
     partial class businessMgt
     {
@@ -56,7 +56,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1077, 403);
+            this.panel2.Size = new System.Drawing.Size(1078, 331);
             // 
             // panel1
             // 
