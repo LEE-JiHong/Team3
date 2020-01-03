@@ -112,6 +112,18 @@
     <Compile Include="DevForm\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\MaterialMgt\BomMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\BomMgt.Designer.cs">
+      <DependentUpon>BomMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\ISIMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\ISIMgt.Designer.cs">
+      <DependentUpon>ISIMgt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\MaterialMgt\Materials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,18 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcessMgt\GOO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessMgt\GOO.Designer.cs">
+      <DependentUpon>GOO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessMgt\SOO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessMgt\SOO.Designer.cs">
+      <DependentUpon>SOO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaseForm\DgvBaseForm.resx">
@@ -195,6 +219,12 @@
     <EmbeddedResource Include="DevForm\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\BomMgt.resx">
+      <DependentUpon>BomMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\ISIMgt.resx">
+      <DependentUpon>ISIMgt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +248,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessMgt\GOO.resx">
+      <DependentUpon>GOO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessMgt\SOO.resx">
+      <DependentUpon>SOO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
