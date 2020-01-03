@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.OrderMgt.Dialog
+﻿namespace Team3
 {
     partial class SalesMasterDialog
     {
@@ -43,7 +43,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(92, 297);
+            this.panel3.Location = new System.Drawing.Point(92, 292);
             // 
             // btnCancel
             // 
@@ -57,8 +57,8 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.Text = "영업마스터업로드";
             // 
             // panel1
@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(341, 208);
+            this.panel2.Size = new System.Drawing.Size(342, 203);
             // 
             // label2
             // 
@@ -159,7 +159,7 @@
             // SalesMasterDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(388, 349);
+            this.ClientSize = new System.Drawing.Size(389, 344);
             this.Name = "SalesMasterDialog";
             this.Text = "영업마스터업로드";
             this.panel3.ResumeLayout(false);

@@ -7,9 +7,9 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.OrderMgt.Dialog
+namespace Team3
 {
-    public partial class SalesMasterDialog : Team3.DialogForm
+    public partial class SalesMasterDialog : DialogForm
     {
         public SalesMasterDialog()
         {
