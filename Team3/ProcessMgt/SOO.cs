@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.ProcessMgt
+namespace Team3
 {
     //State of Order's Operation
     public partial class SOO : Team3.VerticalGridBaseForm
