@@ -359,7 +359,7 @@
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList2;
         protected System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.DataGridView dataGridView2;
+        protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -249,6 +249,6 @@
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button button1;
         private System.Windows.Forms.ImageList imageList2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }
