@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Team3.DevForm.ResourceMgt
 {
-    public partial class facilityMgt :  HorizonGridBaseForm
+    public partial class facilityMgt :  HorizonDgvBaseForm
     {
         public facilityMgt()
         {

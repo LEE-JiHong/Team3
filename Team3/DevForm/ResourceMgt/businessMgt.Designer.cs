@@ -54,6 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1077, 403);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
@@ -65,6 +69,8 @@
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox4);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Size = new System.Drawing.Size(1077, 116);
             // 
             // imageList1
             // 
@@ -73,6 +79,10 @@
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(1101, 60);
+            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -80,6 +90,10 @@
             // 닫기
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
+            // 
+            // basepanel
+            // 
+            this.basepanel.Size = new System.Drawing.Size(1101, 570);
             // 
             // label2
             // 
@@ -175,6 +189,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(31, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
@@ -191,6 +206,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(31, 63);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 12);
@@ -207,6 +223,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(275, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 12);
@@ -216,6 +233,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(508, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
@@ -232,9 +250,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(799, 39);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(980, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 22);
             this.button1.TabIndex = 3;
             this.button1.Text = "조회";
             this.button1.UseVisualStyleBackColor = true;
@@ -242,7 +261,7 @@
             // businessMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(914, 724);
+            this.ClientSize = new System.Drawing.Size(1101, 652);
             this.Name = "businessMgt";
             this.Tag = "업체관리";
             this.Text = "업체관리";
