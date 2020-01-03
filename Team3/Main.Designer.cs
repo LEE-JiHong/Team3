@@ -121,6 +121,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.MainTab = new System.Windows.Forms.TabControl();
+            this.button15 = new System.Windows.Forms.Button();
             this.LeftMenuTab.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -607,6 +608,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.panel2.Controls.Add(this.button15);
             this.panel2.Controls.Add(this.layoutButton);
             this.panel2.Controls.Add(this.button14);
             this.panel2.Controls.Add(this.button13);
@@ -640,7 +642,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(838, 20);
+            this.button14.Location = new System.Drawing.Point(1161, 20);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(75, 23);
             this.button14.TabIndex = 11;
@@ -650,7 +652,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(757, 21);
+            this.button13.Location = new System.Drawing.Point(1080, 21);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 23);
             this.button13.TabIndex = 10;
@@ -660,7 +662,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(676, 21);
+            this.button12.Location = new System.Drawing.Point(999, 21);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 23);
             this.button12.TabIndex = 9;
@@ -686,7 +688,7 @@
             // 
             // LeftMenuButton
             // 
-            this.LeftMenuButton.BackColor = System.Drawing.Color.LightBlue;
+            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
             this.LeftMenuButton.FlatAppearance.BorderSize = 0;
             this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -703,7 +705,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(433, 21);
+            this.button1.Location = new System.Drawing.Point(756, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -713,7 +715,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(514, 21);
+            this.button2.Location = new System.Drawing.Point(837, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -723,7 +725,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(595, 21);
+            this.button6.Location = new System.Drawing.Point(918, 21);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
@@ -739,6 +741,21 @@
             this.MainTab.SelectedIndex = 0;
             this.MainTab.Size = new System.Drawing.Size(1684, 901);
             this.MainTab.TabIndex = 13;
+            // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button15.ImageIndex = 2;
+            this.button15.ImageList = this.imageList1;
+            this.button15.Location = new System.Drawing.Point(388, 10);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(125, 38);
+            this.button15.TabIndex = 13;
+            this.button15.Text = "화면분할";
+            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -817,6 +834,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button layoutButton;
+        private System.Windows.Forms.Button button15;
     }
 }
 
