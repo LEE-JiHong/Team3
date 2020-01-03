@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForm\DgvBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\DgvBaseForm.Designer.cs">
+      <DependentUpon>DgvBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\entryBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForm\entryBaseForm.Designer.cs">
       <DependentUpon>entryBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\HorizonDgvBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\HorizonDgvBaseForm.Designer.cs">
+      <DependentUpon>HorizonDgvBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm\HorizonGridBaseForm.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,12 @@
     <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\OrderMgt\SalesMasterUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\SalesMasterUpload.Designer.cs">
+      <DependentUpon>SalesMasterUpload.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\ResourceMgt\BOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,8 +150,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaseForm\DgvBaseForm.resx">
+      <DependentUpon>DgvBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\entryBaseForm.resx">
       <DependentUpon>entryBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\HorizonDgvBaseForm.resx">
+      <DependentUpon>HorizonDgvBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\HorizonGridBaseForm.resx">
       <DependentUpon>HorizonGridBaseForm.cs</DependentUpon>
@@ -149,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\SalesMasterUpload.resx">
+      <DependentUpon>SalesMasterUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
@@ -212,6 +248,7 @@
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DevForm\OrderMgt\Dialog\" />
     <Folder Include="Service\" />
     <Folder Include="Utility\" />
   </ItemGroup>

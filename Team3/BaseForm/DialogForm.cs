@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.BaseForm
 {
-    public partial class HorizonGridBaseForm : nomalBaseForm
+    public partial class DialogForm : Form
     {
-        public HorizonGridBaseForm()
+        public DialogForm()
         {
             InitializeComponent();
         }
