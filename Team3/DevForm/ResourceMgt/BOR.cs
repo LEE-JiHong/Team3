@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.ResourceMgt
+namespace Team3.DevForm
 {
-    public partial class BOR : Team3.VerticalGridBtnBaseForm
+    public partial class BOR : Team3.VerticalGridBaseForm
     {
         public BOR()
         {

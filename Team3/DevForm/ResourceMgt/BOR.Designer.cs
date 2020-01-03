@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.ResourceMgt
+﻿namespace Team3.DevForm
 {
     partial class BOR
     {
@@ -36,40 +36,13 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.panel4.SuspendLayout();
+
             this.panel1.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel4
-            // 
-            this.panel4.Size = new System.Drawing.Size(1026, 20);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(678, 0);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(736, 0);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(794, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(852, 0);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(910, 0);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(968, 0);
-            // 
+
             // panel2
             // 
             this.panel2.Size = new System.Drawing.Size(1027, 475);
@@ -172,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1050, 724);
             this.Name = "BOR";
-            this.panel4.ResumeLayout(false);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TopMenu.ResumeLayout(false);

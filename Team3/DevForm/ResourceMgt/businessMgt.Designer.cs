@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.ResourceMgt
+﻿namespace Team3.DevForm
 {
     partial class businessMgt
     {
@@ -39,82 +39,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.TopMenu.SuspendLayout();
-            this.basepanel.SuspendLayout();
+             
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // panel4
-            // 
-            this.panel4.Size = new System.Drawing.Size(974, 20);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(626, 0);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(684, 0);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(742, 0);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(800, 0);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(858, 0);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(916, 0);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Size = new System.Drawing.Size(974, 475);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Size = new System.Drawing.Size(974, 116);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "menulist1.png");
-            // 
-            // TopMenu
-            // 
-            this.TopMenu.Size = new System.Drawing.Size(998, 60);
-            // 
-            // layoutButton
-            // 
-            this.layoutButton.FlatAppearance.BorderSize = 0;
-            // 
-            // 닫기
-            // 
-            this.닫기.FlatAppearance.BorderSize = 0;
-            // 
-            // basepanel
-            // 
-            this.basepanel.Size = new System.Drawing.Size(998, 642);
+          
+        
             // 
             // label2
             // 
@@ -200,20 +128,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(974, 475);
             this.dataGridView1.TabIndex = 0;
             // 
-            // businessMgt
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(998, 724);
-            this.Name = "businessMgt";
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.TopMenu.ResumeLayout(false);
-            this.basepanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+          
 
         }
 

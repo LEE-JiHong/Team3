@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.ResourceMgt
+namespace Team3.DevForm
 {
     public partial class process_control : Team3.VerticalGridBaseForm
     {
