@@ -61,22 +61,24 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(296, 474);
+            this.panel3.Location = new System.Drawing.Point(309, 476);
             // 
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.TabIndex = 14;
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.TabIndex = 13;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 8);
-            this.label1.Size = new System.Drawing.Size(57, 22);
-            this.label1.Text = "설비";
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 7);
+            this.label1.Size = new System.Drawing.Size(74, 22);
+            this.label1.Text = "설비정보";
             // 
             // panel1
             // 
@@ -111,6 +113,12 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(749, 385);
+            this.panel2.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Location = new System.Drawing.Point(716, 6);
             // 
             // label2
             // 
@@ -129,7 +137,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(129, 21);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             // 
             // label3
             // 
@@ -169,7 +177,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(129, 21);
-            this.textBox4.TabIndex = 1;
+            this.textBox4.TabIndex = 9;
             // 
             // label6
             // 
@@ -215,7 +223,7 @@
             this.textBox7.Location = new System.Drawing.Point(356, 97);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(129, 21);
-            this.textBox7.TabIndex = 1;
+            this.textBox7.TabIndex = 7;
             // 
             // label9
             // 
@@ -251,7 +259,7 @@
             this.textBox9.Location = new System.Drawing.Point(587, 25);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(129, 21);
-            this.textBox9.TabIndex = 1;
+            this.textBox9.TabIndex = 2;
             // 
             // label11
             // 
@@ -279,7 +287,7 @@
             this.comboBox1.Location = new System.Drawing.Point(356, 59);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 23);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 4;
             // 
             // comboBox2
             // 
@@ -287,7 +295,7 @@
             this.comboBox2.Location = new System.Drawing.Point(119, 59);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(129, 23);
-            this.comboBox2.TabIndex = 2;
+            this.comboBox2.TabIndex = 3;
             // 
             // comboBox3
             // 
@@ -295,7 +303,7 @@
             this.comboBox3.Location = new System.Drawing.Point(119, 96);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(129, 23);
-            this.comboBox3.TabIndex = 2;
+            this.comboBox3.TabIndex = 6;
             // 
             // comboBox4
             // 
@@ -303,7 +311,7 @@
             this.comboBox4.Location = new System.Drawing.Point(587, 59);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(129, 23);
-            this.comboBox4.TabIndex = 2;
+            this.comboBox4.TabIndex = 5;
             // 
             // comboBox5
             // 
@@ -311,7 +319,7 @@
             this.comboBox5.Location = new System.Drawing.Point(587, 96);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(129, 23);
-            this.comboBox5.TabIndex = 2;
+            this.comboBox5.TabIndex = 8;
             // 
             // textBox2
             // 
@@ -319,7 +327,7 @@
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(597, 94);
-            this.textBox2.TabIndex = 1;
+            this.textBox2.TabIndex = 11;
             // 
             // label13
             // 
@@ -347,7 +355,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(597, 94);
-            this.textBox3.TabIndex = 1;
+            this.textBox3.TabIndex = 12;
             // 
             // facilitieInfoPop
             // 
