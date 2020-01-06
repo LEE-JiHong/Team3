@@ -354,6 +354,12 @@
     <Compile Include="WorkOrder\Business_showings.Designer.cs">
       <DependentUpon>Business_showings.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkOrder\Business_showingsPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkOrder\Business_showingsPop.Designer.cs">
+      <DependentUpon>Business_showingsPop.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkOrder\Process_Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     </Compile>
     <EmbeddedResource Include="WorkOrder\Business_showings.resx">
       <DependentUpon>Business_showings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkOrder\Business_showingsPop.resx">
+      <DependentUpon>Business_showingsPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkOrder\Process_Inventory.resx">
       <DependentUpon>Process_Inventory.cs</DependentUpon>
