@@ -350,6 +350,9 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\BomPop.resx">
+      <DependentUpon>BomPop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>

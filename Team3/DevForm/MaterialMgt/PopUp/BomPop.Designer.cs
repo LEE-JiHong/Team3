@@ -28,7 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(212, 609);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(581, 520);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            // 
+            // BomPop
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.ClientSize = new System.Drawing.Size(628, 661);
+            this.Name = "BomPop";
+            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
