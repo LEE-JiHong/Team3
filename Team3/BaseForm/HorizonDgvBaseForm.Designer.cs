@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HorizonDgvBaseForm));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +47,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(1004, 60);
+            this.TopMenu.Size = new System.Drawing.Size(894, 60);
             // 
             // layoutButton
             // 
@@ -57,10 +59,12 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.flowLayoutPanel2);
+            this.basepanel.Controls.Add(this.flowLayoutPanel1);
+            this.basepanel.Controls.Add(this.label1);
             this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.panel2);
-            this.basepanel.Controls.Add(this.label1);
-            this.basepanel.Size = new System.Drawing.Size(1004, 502);
+            this.basepanel.Size = new System.Drawing.Size(894, 454);
             // 
             // panel3
             // 
@@ -70,17 +74,8 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.Location = new System.Drawing.Point(370, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(622, 447);
+            this.panel3.Size = new System.Drawing.Size(512, 399);
             this.panel3.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "label1";
             // 
             // panel2
             // 
@@ -89,15 +84,43 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(13, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 447);
+            this.panel2.Size = new System.Drawing.Size(333, 399);
             this.panel2.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "label1";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(98, 6);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 29);
+            this.flowLayoutPanel1.TabIndex = 24;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(540, 6);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(342, 29);
+            this.flowLayoutPanel2.TabIndex = 25;
             // 
             // HorizonDgvBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1004, 584);
-            this.MinimumSize = new System.Drawing.Size(1020, 623);
+            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.MinimumSize = new System.Drawing.Size(910, 575);
             this.Name = "HorizonDgvBaseForm";
+            this.Text = "HorizonDgvBaseForm";
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -108,7 +131,9 @@
         #endregion
 
         protected System.Windows.Forms.Panel panel3;
-        protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        protected System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
