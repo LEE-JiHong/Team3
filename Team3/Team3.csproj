@@ -447,6 +447,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DevForm\MaterialMgt\Dialog\" />
+    <Folder Include="DevForm\MaterialMgt\PopUp\" />
     <Folder Include="Service\" />
     <Folder Include="Utility\" />
   </ItemGroup>
