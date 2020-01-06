@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.PurchaseMgt.Purchasing.Dialog
+﻿namespace Team3
 {
     partial class OrderDialog
     {

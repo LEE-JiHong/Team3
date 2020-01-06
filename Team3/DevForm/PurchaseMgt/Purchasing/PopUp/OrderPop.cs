@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.PurchaseMgt.Purchasing.Dialog
+namespace Team3
 {
-    public partial class OrderDialog : Team3.BaseForm.DialogDgvBaseForm
+    public partial class OrderDialog : DialogDgvBaseForm
     {
         public OrderDialog()
         {

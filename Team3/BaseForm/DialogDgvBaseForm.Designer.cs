@@ -1,4 +1,4 @@
-﻿namespace Team3.BaseForm
+﻿namespace Team3
 {
     partial class DialogDgvBaseForm
     {

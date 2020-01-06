@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.PurchaseMgt.Stock
+namespace Team3
 {
     public partial class InOutList : Team3.VerticalGridBaseForm
     {

@@ -190,11 +190,11 @@
     <Compile Include="DevForm\OrderMgt\DemandPlan.Designer.cs">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\OrderMgt\Dialog\SalesMasterDialog.cs">
+    <Compile Include="DevForm\OrderMgt\PopUp\SalesMasterPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\OrderMgt\Dialog\SalesMasterDialog.Designer.cs">
-      <DependentUpon>SalesMasterDialog.cs</DependentUpon>
+    <Compile Include="DevForm\OrderMgt\PopUp\SalesMasterPop.Designer.cs">
+      <DependentUpon>SalesMasterPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\OrderMgt\SalesMaster.cs">
       <SubType>Form</SubType>
@@ -208,11 +208,11 @@
     <Compile Include="DevForm\OrderMgt\SalesMasterUpload.Designer.cs">
       <DependentUpon>SalesMasterUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\OrderMgt\Dialog\SODialog.cs">
+    <Compile Include="DevForm\OrderMgt\PopUp\SOPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\OrderMgt\Dialog\SODialog.Designer.cs">
-      <DependentUpon>SODialog.cs</DependentUpon>
+    <Compile Include="DevForm\OrderMgt\PopUp\SOPop.Designer.cs">
+      <DependentUpon>SOPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceiving.cs">
       <SubType>Form</SubType>
@@ -226,11 +226,9 @@
     <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceivingList.Designer.cs">
       <DependentUpon>MaterialReceivingList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.Designer.cs">
-      <DependentUpon>OrderDialog.cs</DependentUpon>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\PopUp\OrderPop.cs" />
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\PopUp\OrderPop.Designer.cs">
+      <DependentUpon>OrderPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\PurchaseMgt\Purchasing\OrderList.cs">
       <SubType>Form</SubType>
@@ -410,11 +408,11 @@
     <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\OrderMgt\Dialog\SalesMasterDialog.resx">
-      <DependentUpon>SalesMasterDialog.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\OrderMgt\PopUp\SalesMasterPop.resx">
+      <DependentUpon>SalesMasterPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\OrderMgt\Dialog\SODialog.resx">
-      <DependentUpon>SODialog.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\OrderMgt\PopUp\SOPop.resx">
+      <DependentUpon>SOPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\SalesMaster.resx">
       <DependentUpon>SalesMaster.cs</DependentUpon>
@@ -422,14 +420,29 @@
     <EmbeddedResource Include="DevForm\OrderMgt\SalesMasterUpload.resx">
       <DependentUpon>SalesMasterUpload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.resx">
-      <DependentUpon>OrderDialog.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceiving.resx">
+      <DependentUpon>MaterialReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceivingList.resx">
+      <DependentUpon>MaterialReceivingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\PopUp\OrderPop.resx">
+      <DependentUpon>OrderPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.resx">
       <DependentUpon>RegularOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\InOutList.resx">
+      <DependentUpon>InOutList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\MaterialStockList.resx">
+      <DependentUpon>MaterialStockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.resx">
+      <DependentUpon>WatingReceiving.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>

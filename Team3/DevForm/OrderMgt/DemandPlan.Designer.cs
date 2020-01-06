@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.OrderMgt
+﻿namespace Team3
 {
     partial class DemandPlan
     {
