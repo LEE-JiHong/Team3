@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.flowLayoutPanel1);
+            this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.label1);
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.panel1);
@@ -95,14 +95,13 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "label1";
             // 
-            // flowLayoutPanel1
+            // panel3
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 136);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(625, 29);
-            this.flowLayoutPanel1.TabIndex = 16;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Location = new System.Drawing.Point(297, 138);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(586, 29);
+            this.panel3.TabIndex = 0;
             // 
             // VerticalGridBaseForm
             // 
@@ -125,6 +124,6 @@
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        protected System.Windows.Forms.Panel panel3;
     }
 }
