@@ -94,6 +94,18 @@
     <Compile Include="BaseForm\VerticalGridBaseForm.Designer.cs">
       <DependentUpon>VerticalGridBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\DemandMgt\ProcurementPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\DemandMgt\ProcurementPlan.Designer.cs">
+      <DependentUpon>ProcurementPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\DemandMgt\ProductPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\DemandMgt\ProductPlan.Designer.cs">
+      <DependentUpon>ProductPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,12 @@
     <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\OrderMgt\DemandPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\DemandPlan.Designer.cs">
+      <DependentUpon>DemandPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\OrderMgt\Dialog\SalesMasterDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,60 @@
     </Compile>
     <Compile Include="DevForm\OrderMgt\SalesMasterUpload.Designer.cs">
       <DependentUpon>SalesMasterUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\Dialog\SODialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\Dialog\SODialog.Designer.cs">
+      <DependentUpon>SODialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceiving.Designer.cs">
+      <DependentUpon>MaterialReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceivingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceivingList.Designer.cs">
+      <DependentUpon>MaterialReceivingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\OrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\OrderList.Designer.cs">
+      <DependentUpon>OrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.Designer.cs">
+      <DependentUpon>RegularOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Stock\InOutList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Stock\InOutList.Designer.cs">
+      <DependentUpon>InOutList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Stock\MaterialStockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Stock\MaterialStockList.Designer.cs">
+      <DependentUpon>MaterialStockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.Designer.cs">
+      <DependentUpon>WatingReceiving.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\ResourceMgt\BOR.cs">
       <SubType>Form</SubType>
@@ -246,6 +318,12 @@
     <EmbeddedResource Include="BaseForm\VerticalGridBaseForm.resx">
       <DependentUpon>VerticalGridBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\DemandMgt\ProcurementPlan.resx">
+      <DependentUpon>ProcurementPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\DemandMgt\ProductPlan.resx">
+      <DependentUpon>ProductPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,11 +342,23 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
+      <DependentUpon>DemandPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\Dialog\SalesMasterDialog.resx">
       <DependentUpon>SalesMasterDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\Dialog\SODialog.resx">
+      <DependentUpon>SODialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\SalesMaster.resx">
+      <DependentUpon>SalesMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\SalesMasterUpload.resx">
       <DependentUpon>SalesMasterUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.resx">
+      <DependentUpon>RegularOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
