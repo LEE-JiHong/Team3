@@ -88,7 +88,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 248);
+            this.label2.Location = new System.Drawing.Point(10, 265);
             this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.Text = "자재불출";
             // 
