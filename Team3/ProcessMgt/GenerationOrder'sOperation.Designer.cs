@@ -62,7 +62,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 134);
-            this.panel2.Size = new System.Drawing.Size(1078, 496);
+            this.panel2.Size = new System.Drawing.Size(870, 496);
             // 
             // panel1
             // 
@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Size = new System.Drawing.Size(1077, 82);
+            this.panel1.Size = new System.Drawing.Size(869, 82);
             // 
             // label1
             // 
@@ -90,7 +90,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(668, 102);
+            this.panel3.Location = new System.Drawing.Point(460, 102);
             this.panel3.Size = new System.Drawing.Size(422, 29);
             // 
             // imageList1
@@ -99,10 +99,6 @@
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
-            // 
-            // TopMenu
-            // 
-            this.TopMenu.Size = new System.Drawing.Size(1102, 60);
             // 
             // layoutButton
             // 
@@ -114,7 +110,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1102, 642);
+            this.basepanel.Size = new System.Drawing.Size(894, 642);
             // 
             // comboBox1
             // 
@@ -154,7 +150,7 @@
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(429, 11);
+            this.comboBox2.Location = new System.Drawing.Point(325, 11);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(73, 20);
             this.comboBox2.TabIndex = 4;
@@ -171,7 +167,7 @@
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(508, 50);
+            this.comboBox4.Location = new System.Drawing.Point(404, 50);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(163, 20);
             this.comboBox4.TabIndex = 6;
@@ -180,7 +176,7 @@
             // 
             this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(775, 10);
+            this.comboBox5.Location = new System.Drawing.Point(567, 10);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(178, 20);
             this.comboBox5.TabIndex = 7;
@@ -188,7 +184,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(508, 11);
+            this.textBox1.Location = new System.Drawing.Point(404, 11);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(163, 21);
             this.textBox1.TabIndex = 8;
@@ -199,7 +195,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(721, 13);
+            this.label3.Location = new System.Drawing.Point(513, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 9;
@@ -222,7 +218,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(427, 53);
+            this.label5.Location = new System.Drawing.Point(323, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 15);
             this.label5.TabIndex = 11;
@@ -232,7 +228,7 @@
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(957, 53);
+            this.button7.Location = new System.Drawing.Point(749, 53);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 23);
             this.button7.TabIndex = 19;
@@ -246,7 +242,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1078, 496);
+            this.dataGridView1.Size = new System.Drawing.Size(870, 496);
             this.dataGridView1.TabIndex = 0;
             // 
             // button5
@@ -316,7 +312,7 @@
             // GOO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1102, 724);
+            this.ClientSize = new System.Drawing.Size(894, 724);
             this.Name = "GOO";
             this.Tag = "작업지시생성";
             this.panel2.ResumeLayout(false);
