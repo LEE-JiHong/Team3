@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.PurchaseMgt.Purchasing
+﻿namespace Team3
 {
     partial class RegularOrder
     {

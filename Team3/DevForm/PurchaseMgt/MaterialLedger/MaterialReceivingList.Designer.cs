@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.PurchaseMgt.MaterialLedger
+﻿namespace Team3
 {
     partial class MaterialReceivingList
     {

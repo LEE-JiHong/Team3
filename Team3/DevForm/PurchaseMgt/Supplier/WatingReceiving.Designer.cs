@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.PurchaseMgt.Supplier
+﻿namespace Team3
 {
     partial class WatingReceiving
     {

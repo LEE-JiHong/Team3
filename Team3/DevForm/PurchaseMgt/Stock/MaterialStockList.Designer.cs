@@ -1,4 +1,4 @@
-﻿namespace Team3.DevForm.PurchaseMgt.Stock
+﻿namespace Team3
 {
     partial class MaterialStockList
     {
