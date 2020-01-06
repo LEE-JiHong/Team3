@@ -50,8 +50,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(294, 56);
-            this.panel3.Size = new System.Drawing.Size(872, 443);
+            this.panel3.Location = new System.Drawing.Point(307, 56);
+            this.panel3.Size = new System.Drawing.Size(859, 443);
             // 
             // label1
             // 
@@ -201,7 +201,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(872, 443);
+            this.dataGridView2.Size = new System.Drawing.Size(859, 443);
             this.dataGridView2.TabIndex = 0;
             // 
             // facilityMgt
