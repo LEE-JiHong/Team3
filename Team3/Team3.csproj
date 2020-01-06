@@ -425,6 +425,9 @@
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.resx">
       <DependentUpon>OrderDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\OrderList.resx">
+      <DependentUpon>OrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.resx">
       <DependentUpon>RegularOrder.cs</DependentUpon>
     </EmbeddedResource>

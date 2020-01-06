@@ -49,22 +49,25 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnADD = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Location = new System.Drawing.Point(12, 162);
-            this.panel2.Size = new System.Drawing.Size(970, 383);
+            this.panel2.Size = new System.Drawing.Size(871, 289);
             // 
             // panel1
             // 
@@ -78,13 +81,19 @@
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Size = new System.Drawing.Size(969, 113);
+            this.panel1.Size = new System.Drawing.Size(870, 113);
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(12, 142);
             this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.Text = "업체목록";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(569, 130);
+            this.panel3.Size = new System.Drawing.Size(314, 29);
             // 
             // imageList1
             // 
@@ -93,10 +102,6 @@
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
-            // TopMenu
-            // 
-            this.TopMenu.Size = new System.Drawing.Size(993, 60);
-            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -104,19 +109,6 @@
             // 닫기
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
-            // 
-            // basepanel
-            // 
-            this.basepanel.Controls.Add(this.button4);
-            this.basepanel.Controls.Add(this.button3);
-            this.basepanel.Controls.Add(this.button2);
-            this.basepanel.Size = new System.Drawing.Size(993, 566);
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button2, 0);
-            this.basepanel.Controls.SetChildIndex(this.button3, 0);
-            this.basepanel.Controls.SetChildIndex(this.button4, 0);
             // 
             // label2
             // 
@@ -275,9 +267,9 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(863, 42);
+            this.button1.Location = new System.Drawing.Point(768, 39);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 33);
+            this.button1.Size = new System.Drawing.Size(90, 36);
             this.button1.TabIndex = 4;
             this.button1.Text = "조회";
             this.button1.UseVisualStyleBackColor = true;
@@ -289,53 +281,69 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(970, 383);
+            this.dataGridView2.Size = new System.Drawing.Size(871, 289);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnADD);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(314, 29);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(754, 133);
+            this.button2.Location = new System.Drawing.Point(236, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "등록";
+            this.button2.TabIndex = 4;
+            this.button2.Text = "삭제";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(829, 133);
+            this.button3.Location = new System.Drawing.Point(155, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
+            this.button3.TabIndex = 5;
             this.button3.Text = "수정";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnADD
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(904, 133);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "삭제";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnADD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnADD.Location = new System.Drawing.Point(74, 3);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(75, 23);
+            this.btnADD.TabIndex = 6;
+            this.btnADD.Text = "등록";
+            this.btnADD.UseVisualStyleBackColor = true;
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
             // 
             // businessMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(993, 648);
+            this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "businessMgt";
             this.Tag = "업체관리";
             this.Text = "업체관리";
+            this.Load += new System.EventHandler(this.businessMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,8 +371,9 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnADD;
     }
 }

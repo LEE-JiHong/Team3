@@ -14,5 +14,15 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void businessMgt_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

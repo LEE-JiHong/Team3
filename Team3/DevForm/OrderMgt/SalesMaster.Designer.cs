@@ -72,7 +72,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Size = new System.Drawing.Size(908, 272);
+            this.panel2.Size = new System.Drawing.Size(902, 272);
             // 
             // panel1
             // 
@@ -100,7 +100,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Size = new System.Drawing.Size(908, 116);
+            this.panel1.Size = new System.Drawing.Size(902, 116);
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(315, 138);
+            this.panel3.Location = new System.Drawing.Point(309, 138);
             this.panel3.Size = new System.Drawing.Size(606, 29);
             // 
             // imageList1
@@ -122,7 +122,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(932, 60);
+            this.TopMenu.Size = new System.Drawing.Size(926, 60);
             // 
             // layoutButton
             // 
@@ -134,7 +134,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(932, 454);
+            this.basepanel.Size = new System.Drawing.Size(926, 454);
             // 
             // label2
             // 
@@ -335,7 +335,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(908, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(902, 272);
             this.dataGridView1.TabIndex = 37;
             // 
             // button1
@@ -409,7 +409,7 @@
             // SalesMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(932, 536);
+            this.ClientSize = new System.Drawing.Size(926, 536);
             this.Name = "SalesMaster";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

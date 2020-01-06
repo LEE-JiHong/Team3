@@ -38,11 +38,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,9 +66,15 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(10, 113);
-            this.label1.Size = new System.Drawing.Size(122, 12);
-            this.label1.Text = "Bill of Resource";
+            this.label1.Location = new System.Drawing.Point(12, 111);
+            this.label1.Size = new System.Drawing.Size(189, 18);
+            this.label1.Text = "공장정의";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(844, 100);
+            this.panel3.Size = new System.Drawing.Size(263, 29);
             // 
             // imageList1
             // 
@@ -88,24 +97,15 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.button4);
-            this.basepanel.Controls.Add(this.button5);
-            this.basepanel.Controls.Add(this.button6);
             this.basepanel.Size = new System.Drawing.Size(1119, 586);
             this.basepanel.TabIndex = 1;
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button6, 0);
-            this.basepanel.Controls.SetChildIndex(this.button5, 0);
-            this.basepanel.Controls.SetChildIndex(this.button4, 0);
             // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(991, 30);
+            this.button7.Location = new System.Drawing.Point(976, 22);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(90, 36);
             this.button7.TabIndex = 2;
             this.button7.Text = "조회";
             this.button7.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(1032, 103);
+            this.button4.Location = new System.Drawing.Point(185, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -170,7 +170,7 @@
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(957, 103);
+            this.button5.Location = new System.Drawing.Point(104, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 4;
@@ -180,12 +180,24 @@
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(882, 103);
+            this.button6.Location = new System.Drawing.Point(23, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 3;
             this.button6.Text = "등록";
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 29);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // FactoryMgt
             // 
@@ -197,9 +209,11 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +230,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
