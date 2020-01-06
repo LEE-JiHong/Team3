@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm.MaterialMgt.PopUp
 {
-    public partial class BORPop : Team3.DialogForm
+    public partial class SUPMPop : Team3.DialogForm
     {
-        public BORPop()
+        public SUPMPop()
         {
             InitializeComponent();
         }

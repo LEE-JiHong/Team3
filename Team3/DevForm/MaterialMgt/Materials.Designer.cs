@@ -54,17 +54,20 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Size = new System.Drawing.Size(1264, 475);
+            this.panel2.Size = new System.Drawing.Size(870, 287);
             // 
             // panel1
             // 
@@ -87,12 +90,18 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Size = new System.Drawing.Size(1264, 116);
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Location = new System.Drawing.Point(12, 155);
+            this.label1.Size = new System.Drawing.Size(53, 15);
             this.label1.Text = "품목정보";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(458, 138);
+            this.panel3.Size = new System.Drawing.Size(424, 29);
             // 
             // imageList1
             // 
@@ -102,10 +111,6 @@
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
             this.imageList1.Images.SetKeyName(3, "copy-document.png");
             // 
-            // TopMenu
-            // 
-            this.TopMenu.Size = new System.Drawing.Size(1288, 60);
-            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -113,23 +118,6 @@
             // 닫기
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
-            // 
-            // basepanel
-            // 
-            this.basepanel.Controls.Add(this.button5);
-            this.basepanel.Controls.Add(this.button1);
-            this.basepanel.Controls.Add(this.button2);
-            this.basepanel.Controls.Add(this.button3);
-            this.basepanel.Controls.Add(this.button4);
-            this.basepanel.Size = new System.Drawing.Size(1288, 642);
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button4, 0);
-            this.basepanel.Controls.SetChildIndex(this.button3, 0);
-            this.basepanel.Controls.SetChildIndex(this.button2, 0);
-            this.basepanel.Controls.SetChildIndex(this.button1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button5, 0);
             // 
             // label2
             // 
@@ -166,7 +154,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(402, 90);
+            this.label5.Location = new System.Drawing.Point(205, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 5;
@@ -177,7 +165,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(402, 52);
+            this.label6.Location = new System.Drawing.Point(205, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 4;
@@ -188,7 +176,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(426, 13);
+            this.label7.Location = new System.Drawing.Point(229, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 3;
@@ -199,7 +187,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(817, 92);
+            this.label8.Location = new System.Drawing.Point(423, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 8;
@@ -210,7 +198,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(817, 52);
+            this.label9.Location = new System.Drawing.Point(423, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 7;
@@ -221,7 +209,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(841, 14);
+            this.label10.Location = new System.Drawing.Point(447, 14);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 6;
@@ -237,7 +225,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(508, 10);
+            this.textBox2.Location = new System.Drawing.Point(311, 10);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(230, 21);
             this.textBox2.TabIndex = 10;
@@ -254,7 +242,7 @@
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(508, 49);
+            this.comboBox2.Location = new System.Drawing.Point(311, 49);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(230, 20);
             this.comboBox2.TabIndex = 12;
@@ -271,7 +259,7 @@
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(508, 87);
+            this.comboBox4.Location = new System.Drawing.Point(311, 87);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(230, 20);
             this.comboBox4.TabIndex = 14;
@@ -280,7 +268,7 @@
             // 
             this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(914, 11);
+            this.comboBox5.Location = new System.Drawing.Point(520, 11);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(209, 20);
             this.comboBox5.TabIndex = 15;
@@ -289,7 +277,7 @@
             // 
             this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(914, 49);
+            this.comboBox6.Location = new System.Drawing.Point(520, 49);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(209, 20);
             this.comboBox6.TabIndex = 16;
@@ -298,7 +286,7 @@
             // 
             this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(914, 87);
+            this.comboBox7.Location = new System.Drawing.Point(520, 87);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(209, 20);
             this.comboBox7.TabIndex = 17;
@@ -307,7 +295,7 @@
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(1144, 87);
+            this.button7.Location = new System.Drawing.Point(750, 87);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 23);
             this.button7.TabIndex = 18;
@@ -321,14 +309,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1264, 475);
+            this.dataGridView1.Size = new System.Drawing.Size(870, 287);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(882, 133);
+            this.button1.Location = new System.Drawing.Point(5, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
@@ -339,7 +327,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(958, 133);
+            this.button2.Location = new System.Drawing.Point(86, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 21;
@@ -350,7 +338,7 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(1033, 133);
+            this.button3.Location = new System.Drawing.Point(167, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 22;
@@ -361,7 +349,7 @@
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(1108, 133);
+            this.button4.Location = new System.Drawing.Point(248, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(92, 23);
             this.button4.TabIndex = 23;
@@ -372,25 +360,41 @@
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(1202, 133);
+            this.button5.Location = new System.Drawing.Point(346, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 24;
             this.button5.Text = "Excel 등록";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(424, 29);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // Materials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1288, 724);
+            this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "Materials";
             this.Tag = "품목정보";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +427,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

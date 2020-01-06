@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm.MaterialMgt
 {
-    public partial class BORPop : Team3.DialogForm
+    //Material of unit's price management 자재 단가 관리
+    public partial class MUPMMgt : Team3.VerticalGridBaseForm
     {
-        public BORPop()
+        public MUPMMgt()
         {
             InitializeComponent();
         }
