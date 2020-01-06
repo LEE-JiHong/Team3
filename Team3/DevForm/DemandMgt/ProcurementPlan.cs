@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.DemandMgt
+namespace Team3
 {
     public partial class ProcurementPlan : Team3.VerticalGridBaseForm
     {

@@ -78,8 +78,8 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(109, 17);
-            this.panel4.Size = new System.Drawing.Size(176, 24);
+            this.panel4.Location = new System.Drawing.Point(109, 15);
+            this.panel4.Size = new System.Drawing.Size(176, 29);
             // 
             // panel1
             // 
@@ -193,7 +193,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(176, 24);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(176, 29);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button1
