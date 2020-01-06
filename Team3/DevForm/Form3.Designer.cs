@@ -41,16 +41,16 @@
             // 
             this.panel1.Size = new System.Drawing.Size(320, 116);
             // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(391, 138);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
-            // 
-            // TopMenu
-            // 
-            this.TopMenu.Size = new System.Drawing.Size(800, 60);
             // 
             // layoutButton
             // 
@@ -62,14 +62,13 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(800, 368);
             this.basepanel.Tag = "dd";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "Form3";
             this.Tag = "form3";
             this.Text = "Form3";

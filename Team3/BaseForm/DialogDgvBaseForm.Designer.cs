@@ -82,6 +82,7 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Location = new System.Drawing.Point(12, 22);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(699, 87);
@@ -91,6 +92,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.lblMasterName);
@@ -106,13 +108,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Location = new System.Drawing.Point(9, 46);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 194);
+            this.panel9.Size = new System.Drawing.Size(245, 192);
             this.panel9.TabIndex = 18;
             // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Location = new System.Drawing.Point(108, 3);
+            this.panel7.Location = new System.Drawing.Point(106, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(149, 28);
             this.panel7.TabIndex = 17;
@@ -132,6 +134,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.lblDetailName);
@@ -147,13 +150,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.Location = new System.Drawing.Point(11, 46);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(379, 194);
+            this.panel10.Size = new System.Drawing.Size(377, 192);
             this.panel10.TabIndex = 19;
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.Location = new System.Drawing.Point(239, 3);
+            this.panel8.Location = new System.Drawing.Point(237, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(151, 28);
             this.panel8.TabIndex = 19;

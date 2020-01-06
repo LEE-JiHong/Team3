@@ -28,17 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            this.TopMenu.SuspendLayout();
+            this.basepanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(869, 73);
+            // 
+            // panel3
+            // 
+            this.panel3.Size = new System.Drawing.Size(478, 316);
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(576, 90);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(894, 60);
+            // 
+            // layoutButton
+            // 
+            this.layoutButton.FlatAppearance.BorderSize = 0;
+            // 
+            // 닫기
+            // 
+            this.닫기.FlatAppearance.BorderSize = 0;
+            // 
+            // basepanel
+            // 
+            this.basepanel.Size = new System.Drawing.Size(894, 454);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "Form4";
             this.Tag = "Form4";
             this.Text = "Form4";
+            this.TopMenu.ResumeLayout(false);
+            this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

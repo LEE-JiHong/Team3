@@ -52,6 +52,12 @@
     <Compile Include="BaseForm\DgvBaseForm.Designer.cs">
       <DependentUpon>DgvBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm\Dialog2DgvBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\Dialog2DgvBaseForm.Designer.cs">
+      <DependentUpon>Dialog2DgvBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\DialogDgvBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\MREMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\MREMgt.Designer.cs">
+      <DependentUpon>MREMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\MUPMMgt.cs">
       <SubType>Form</SubType>
@@ -351,6 +363,9 @@
     <EmbeddedResource Include="BaseForm\DgvBaseForm.resx">
       <DependentUpon>DgvBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\Dialog2DgvBaseForm.resx">
+      <DependentUpon>Dialog2DgvBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\DialogBaseForm.resx">
       <DependentUpon>DialogBaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\MREMgt.resx">
+      <DependentUpon>MREMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\MUPMMgt.resx">
       <DependentUpon>MUPMMgt.cs</DependentUpon>

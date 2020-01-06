@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class SUPMPop : Team3.DialogForm
+    public partial class Dialog2DgvBaseForm : Team3.DialogForm
     {
-        public SUPMPop()
+        public Dialog2DgvBaseForm()
         {
             InitializeComponent();
         }
