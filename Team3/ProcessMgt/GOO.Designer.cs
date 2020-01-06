@@ -59,7 +59,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 131);
-            this.panel2.Size = new System.Drawing.Size(890, 502);
+            this.panel2.Size = new System.Drawing.Size(910, 690);
             // 
             // panel1
             // 
@@ -76,13 +76,17 @@
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Size = new System.Drawing.Size(890, 82);
+            this.panel1.Size = new System.Drawing.Size(910, 82);
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(14, 107);
-            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.Location = new System.Drawing.Point(12, 111);
+            this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.Text = "작업지시생성";
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(317, 138);
             // 
             // imageList1
             // 
@@ -90,6 +94,10 @@
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
+            // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(914, 60);
             // 
             // layoutButton
             // 
@@ -106,6 +114,8 @@
             this.basepanel.Controls.Add(this.button2);
             this.basepanel.Controls.Add(this.button3);
             this.basepanel.Controls.Add(this.button4);
+            this.basepanel.Size = new System.Drawing.Size(914, 642);
+            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
             this.basepanel.Controls.SetChildIndex(this.panel1, 0);
             this.basepanel.Controls.SetChildIndex(this.panel2, 0);
             this.basepanel.Controls.SetChildIndex(this.label1, 0);
@@ -235,7 +245,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(890, 502);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 690);
             this.dataGridView1.TabIndex = 0;
             // 
             // button5
@@ -294,7 +304,6 @@
             this.panel1.PerformLayout();
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
-            this.basepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
