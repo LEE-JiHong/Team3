@@ -267,8 +267,14 @@
     <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\BORPop.resx">
+      <DependentUpon>BORPop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\businessMgt.resx">
       <DependentUpon>businessMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ResourceMgt\businessPop.resx">
+      <DependentUpon>businessPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\facilitieInfoPop.resx">
       <DependentUpon>facilitieInfoPop.cs</DependentUpon>
