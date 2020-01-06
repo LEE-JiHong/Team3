@@ -437,6 +437,12 @@
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.resx">
       <DependentUpon>RegularOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\InOutList.resx">
+      <DependentUpon>InOutList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\MaterialStockList.resx">
+      <DependentUpon>MaterialStockList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.resx">
       <DependentUpon>WatingReceiving.cs</DependentUpon>
     </EmbeddedResource>
