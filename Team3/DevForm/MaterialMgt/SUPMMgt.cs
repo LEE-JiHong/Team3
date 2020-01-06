@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace Team3.DevForm.MaterialMgt
 {
-    //Material of unit's price management 자재 단가 관리
-    public partial class MUPMMgt : Team3.VerticalGridBaseForm
+    //Sales of unit's price management 영업 단가 관리
+    public partial class SUPMMgt : Team3.VerticalGridBaseForm
     {
-        public MUPMMgt()
+        public SUPMMgt()
         {
             InitializeComponent();
         }
