@@ -6,16 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm.MaterialMgt
 {
-    //Inspection of Standard's Information 검사 기준 정보
-    public partial class ISIMgt : Team3.VerticalGridBaseForm
+    //Material of unit's price management 자재 단가 관리
+    public partial class MUPMMgt : Team3.VerticalGridBaseForm
     {
-        public ISIMgt()
+        public MUPMMgt()
         {
             InitializeComponent();
         }
-
-       
     }
 }

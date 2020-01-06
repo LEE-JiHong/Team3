@@ -6,16 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3
+namespace Team3.DevForm.MaterialMgt.PopUp
 {
-    //Inspection of Standard's Information 검사 기준 정보
-    public partial class ISIMgt : Team3.VerticalGridBaseForm
+    public partial class ProductPop : Team3.DialogForm
     {
-        public ISIMgt()
+        public ProductPop()
         {
             InitializeComponent();
         }
-
-       
     }
 }
