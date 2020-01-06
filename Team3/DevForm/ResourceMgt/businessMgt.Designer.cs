@@ -48,15 +48,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1077, 259);
+            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Size = new System.Drawing.Size(1078, 391);
             // 
             // panel1
             // 
@@ -258,6 +262,16 @@
             this.button1.Text = "조회";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(1078, 391);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // businessMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -265,11 +279,13 @@
             this.Name = "businessMgt";
             this.Tag = "업체관리";
             this.Text = "업체관리";
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +312,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
