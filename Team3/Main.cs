@@ -259,7 +259,26 @@ namespace Team3
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            
+            if (e.Node.Text == "공장관리")
+            {
+                FactoryMgt frm = new FactoryMgt();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "설비관리")
+            {
+                facilityMgt frm = new facilityMgt();
+                MadeTabMenu(frm);
+            }
+            if (e.Node.Text == "업체관리")
+            {
+                businessMgt frm = new businessMgt();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "BOR")
+            {
+                BOR frm = new BOR();
+                MadeTabMenu(frm);
+            }
         }
 
         private void treeView2_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
