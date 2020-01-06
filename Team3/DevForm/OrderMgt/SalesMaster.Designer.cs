@@ -59,28 +59,26 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Size = new System.Drawing.Size(890, 460);
+            this.panel2.Size = new System.Drawing.Size(908, 272);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.comboBox6);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.comboBox5);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.comboBox4);
             this.panel1.Controls.Add(this.dateTimePicker3);
@@ -102,12 +100,18 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Size = new System.Drawing.Size(890, 116);
+            this.panel1.Size = new System.Drawing.Size(908, 116);
             // 
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.Text = "영업마스터";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(315, 138);
+            this.panel3.Size = new System.Drawing.Size(606, 29);
             // 
             // imageList1
             // 
@@ -118,7 +122,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(914, 60);
+            this.TopMenu.Size = new System.Drawing.Size(932, 60);
             // 
             // layoutButton
             // 
@@ -130,7 +134,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(914, 642);
+            this.basepanel.Size = new System.Drawing.Size(932, 454);
             // 
             // label2
             // 
@@ -331,7 +335,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(890, 460);
+            this.dataGridView1.Size = new System.Drawing.Size(908, 272);
             this.dataGridView1.TabIndex = 37;
             // 
             // button1
@@ -345,7 +349,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(445, 90);
+            this.button2.Location = new System.Drawing.Point(447, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 39;
@@ -354,7 +358,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(357, 93);
+            this.button3.Location = new System.Drawing.Point(354, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 23);
             this.button3.TabIndex = 40;
@@ -363,7 +367,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(244, 93);
+            this.button5.Location = new System.Drawing.Point(235, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(113, 23);
             this.button5.TabIndex = 41;
@@ -372,7 +376,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(169, 93);
+            this.button4.Location = new System.Drawing.Point(154, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 42;
@@ -381,24 +385,40 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(526, 93);
+            this.button6.Location = new System.Drawing.Point(528, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 43;
             this.button6.Text = "엑셀";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(606, 29);
+            this.flowLayoutPanel1.TabIndex = 15;
+            // 
             // SalesMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(914, 724);
+            this.ClientSize = new System.Drawing.Size(932, 536);
             this.Name = "SalesMaster";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +456,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
