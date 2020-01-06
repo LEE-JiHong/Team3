@@ -77,6 +77,10 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(342, 203);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
