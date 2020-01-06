@@ -268,41 +268,41 @@
     <Compile Include="DevForm\ResourceMgt\BOR.Designer.cs">
       <DependentUpon>BOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\BORPop.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\BORPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\BORPop.Designer.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\BORPop.Designer.cs">
       <DependentUpon>BORPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\businessMgt.cs">
+    <Compile Include="DevForm\ResourceMgt\BusinessMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\businessMgt.Designer.cs">
-      <DependentUpon>businessMgt.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\BusinessMgt.Designer.cs">
+      <DependentUpon>BusinessMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\businessPop.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\BusinessPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\businessPop.Designer.cs">
-      <DependentUpon>businessPop.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\Pop\BusinessPop.Designer.cs">
+      <DependentUpon>BusinessPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\facilitieInfoPop.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\FacilitieInfoPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\facilitieInfoPop.Designer.cs">
-      <DependentUpon>facilitieInfoPop.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\Pop\FacilitieInfoPop.Designer.cs">
+      <DependentUpon>FacilitieInfoPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\facilitiesPop.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\FacilitiesPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\facilitiesPop.Designer.cs">
-      <DependentUpon>facilitiesPop.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\Pop\FacilitiesPop.Designer.cs">
+      <DependentUpon>FacilitiesPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\facilityMgt.cs">
+    <Compile Include="DevForm\ResourceMgt\FacilityMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\facilityMgt.Designer.cs">
-      <DependentUpon>facilityMgt.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\FacilityMgt.Designer.cs">
+      <DependentUpon>FacilityMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\ResourceMgt\FactoryMgt.cs">
       <SubType>Form</SubType>
@@ -310,10 +310,10 @@
     <Compile Include="DevForm\ResourceMgt\FactoryMgt.Designer.cs">
       <DependentUpon>FactoryMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\FactoryPop.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\FactoryPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\FactoryPop.Designer.cs">
+    <Compile Include="DevForm\ResourceMgt\Pop\FactoryPop.Designer.cs">
       <DependentUpon>FactoryPop.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -434,28 +434,28 @@
     <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\BORPop.resx">
+    <EmbeddedResource Include="DevForm\ResourceMgt\Pop\BORPop.resx">
       <DependentUpon>BORPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\businessMgt.resx">
-      <DependentUpon>businessMgt.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\BusinessMgt.resx">
+      <DependentUpon>BusinessMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\businessPop.resx">
-      <DependentUpon>businessPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\Pop\BusinessPop.resx">
+      <DependentUpon>BusinessPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\facilitieInfoPop.resx">
-      <DependentUpon>facilitieInfoPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\Pop\FacilitieInfoPop.resx">
+      <DependentUpon>FacilitieInfoPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\facilitiesPop.resx">
-      <DependentUpon>facilitiesPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\Pop\FacilitiesPop.resx">
+      <DependentUpon>FacilitiesPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\facilityMgt.resx">
-      <DependentUpon>facilityMgt.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\FacilityMgt.resx">
+      <DependentUpon>FacilityMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\FactoryMgt.resx">
       <DependentUpon>FactoryMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\FactoryPop.resx">
+    <EmbeddedResource Include="DevForm\ResourceMgt\Pop\FactoryPop.resx">
       <DependentUpon>FactoryPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
