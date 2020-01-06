@@ -36,26 +36,34 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(12, 210);
+            this.panel3.Location = new System.Drawing.Point(12, 201);
             this.panel3.Size = new System.Drawing.Size(776, 144);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(776, 51);
+            this.panel2.Size = new System.Drawing.Size(776, 42);
             // 
             // panel1
             // 
             this.panel1.Size = new System.Drawing.Size(776, 73);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(12, 379);
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(391, 365);
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(391, 93);
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
-            // 
-            // TopMenu
-            // 
-            this.TopMenu.Size = new System.Drawing.Size(800, 60);
             // 
             // layoutButton
             // 
@@ -68,7 +76,11 @@
             // basepanel
             // 
             this.basepanel.Controls.Add(this.button1);
-            this.basepanel.Size = new System.Drawing.Size(800, 368);
+            this.basepanel.Size = new System.Drawing.Size(894, 454);
+            this.basepanel.Controls.SetChildIndex(this.label1, 0);
+            this.basepanel.Controls.SetChildIndex(this.label2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel4, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel5, 0);
             this.basepanel.Controls.SetChildIndex(this.panel1, 0);
             this.basepanel.Controls.SetChildIndex(this.panel2, 0);
             this.basepanel.Controls.SetChildIndex(this.panel3, 0);
@@ -88,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "Form1";
             this.Tag = "태그1";
             this.Text = "Form1";

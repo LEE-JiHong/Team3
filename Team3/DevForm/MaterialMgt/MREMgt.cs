@@ -8,9 +8,10 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class SUPMPop : Team3.DialogForm
+    //management of rate's exchange 환율 관리
+    public partial class MREMgt : Team3.VerticalGridBaseForm
     {
-        public SUPMPop()
+        public MREMgt()
         {
             InitializeComponent();
         }

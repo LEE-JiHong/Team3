@@ -148,6 +148,12 @@
     <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\MaterialMgt\MREMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\MREMgt.Designer.cs">
+      <DependentUpon>MREMgt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\MaterialMgt\MUPMMgt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\MREMgt.resx">
+      <DependentUpon>MREMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\MUPMMgt.resx">
       <DependentUpon>MUPMMgt.cs</DependentUpon>

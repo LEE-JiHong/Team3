@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.MaterialMgt
+namespace Team3
 {
     //Sales of unit's price management 영업 단가 관리
     public partial class SUPMMgt : Team3.VerticalGridBaseForm
