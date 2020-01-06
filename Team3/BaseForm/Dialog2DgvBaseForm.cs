@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.BaseForm
+namespace Team3
 {
     public partial class Dialog2DgvBaseForm : Team3.DialogForm
     {
