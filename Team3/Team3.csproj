@@ -142,11 +142,35 @@
     <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\MaterialMgt\MUPMMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\MUPMMgt.Designer.cs">
+      <DependentUpon>MUPMMgt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\MaterialMgt\PopUp\BomPop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\PopUp\BomPop.Designer.cs">
       <DependentUpon>BomPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\PopUp\MUPMPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\PopUp\MUPMPop.Designer.cs">
+      <DependentUpon>MUPMPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.Designer.cs">
+      <DependentUpon>ProductPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\PopUp\SUPMPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\MaterialMgt\PopUp\SUPMPop.Designer.cs">
+      <DependentUpon>SUPMPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\OrderMgt\DemandPlan.cs">
       <SubType>Form</SubType>
@@ -353,6 +377,15 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\BomPop.resx">
       <DependentUpon>BomPop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MUPMPop.resx">
+      <DependentUpon>MUPMPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\ProductPop.resx">
+      <DependentUpon>ProductPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\SUPMPop.resx">
+      <DependentUpon>SUPMPop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,7 +490,6 @@
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DevForm\MaterialMgt\Dialog\" />
     <Folder Include="Service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
