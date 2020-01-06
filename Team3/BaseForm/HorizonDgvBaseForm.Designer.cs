@@ -32,8 +32,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
@@ -59,8 +59,8 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.flowLayoutPanel2);
-            this.basepanel.Controls.Add(this.flowLayoutPanel1);
+            this.basepanel.Controls.Add(this.panel1);
+            this.basepanel.Controls.Add(this.panel4);
             this.basepanel.Controls.Add(this.label1);
             this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.panel2);
@@ -97,22 +97,20 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "label1";
             // 
-            // flowLayoutPanel1
+            // panel4
             // 
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(98, 6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 29);
-            this.flowLayoutPanel1.TabIndex = 24;
+            this.panel4.Location = new System.Drawing.Point(146, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 29);
+            this.panel4.TabIndex = 2;
             // 
-            // flowLayoutPanel2
+            // panel1
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(540, 6);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(342, 29);
-            this.flowLayoutPanel2.TabIndex = 25;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(682, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 29);
+            this.panel1.TabIndex = 3;
             // 
             // HorizonDgvBaseForm
             // 
@@ -133,7 +131,7 @@
         protected System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        protected System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Panel panel1;
     }
 }
