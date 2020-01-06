@@ -368,6 +368,12 @@
     <EmbeddedResource Include="DevForm\OrderMgt\SalesMasterUpload.resx">
       <DependentUpon>SalesMasterUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceiving.resx">
+      <DependentUpon>MaterialReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceivingList.resx">
+      <DependentUpon>MaterialReceivingList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.resx">
       <DependentUpon>OrderDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.resx">
       <DependentUpon>RegularOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.resx">
+      <DependentUpon>WatingReceiving.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
