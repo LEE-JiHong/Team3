@@ -45,7 +45,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(988, 60);
+            this.TopMenu.Size = new System.Drawing.Size(994, 60);
             // 
             // layoutButton
             // 
@@ -61,7 +61,7 @@
             this.basepanel.Controls.Add(this.label1);
             this.basepanel.Controls.Add(this.panel1);
             this.basepanel.Controls.Add(this.panel2);
-            this.basepanel.Size = new System.Drawing.Size(988, 451);
+            this.basepanel.Size = new System.Drawing.Size(994, 444);
             // 
             // label1
             // 
@@ -74,13 +74,12 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(12, 122);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 313);
+            this.panel2.Size = new System.Drawing.Size(360, 306);
             this.panel2.TabIndex = 18;
             // 
             // panel1
@@ -90,24 +89,25 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(13, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(963, 73);
+            this.panel1.Size = new System.Drawing.Size(969, 73);
             this.panel1.TabIndex = 17;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.Location = new System.Drawing.Point(404, 122);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(572, 313);
+            this.panel3.Size = new System.Drawing.Size(578, 306);
             this.panel3.TabIndex = 19;
             // 
             // HorizonGridBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 533);
+            this.ClientSize = new System.Drawing.Size(994, 526);
             this.Name = "HorizonGridBaseForm";
             this.Text = "HorizonGridBaseForm";
             this.TopMenu.ResumeLayout(false);

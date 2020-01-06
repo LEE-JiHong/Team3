@@ -43,6 +43,10 @@
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "closeBlue.png");
             // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(938, 60);
+            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -56,15 +60,17 @@
             this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.label1);
+            this.basepanel.Size = new System.Drawing.Size(938, 442);
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(377, 40);
+            this.panel3.Location = new System.Drawing.Point(370, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(511, 708);
+            this.panel3.Size = new System.Drawing.Size(556, 387);
             this.panel3.TabIndex = 22;
             // 
             // label1
@@ -78,19 +84,18 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(13, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 708);
+            this.panel2.Size = new System.Drawing.Size(333, 387);
             this.panel2.TabIndex = 20;
             // 
             // HorizonDgvBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(900, 845);
+            this.ClientSize = new System.Drawing.Size(938, 524);
             this.Name = "HorizonDgvBaseForm";
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
