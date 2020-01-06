@@ -57,7 +57,7 @@
             this.label1.ImageList = this.imageList2;
             this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
+            this.label1.Size = new System.Drawing.Size(67, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "title";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -96,7 +96,6 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "ㄴ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);

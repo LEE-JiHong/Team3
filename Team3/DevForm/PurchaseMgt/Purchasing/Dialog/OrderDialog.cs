@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Team3.DevForm.PurchaseMgt.Purchasing
+namespace Team3.DevForm.PurchaseMgt.Purchasing.Dialog
 {
-    public partial class Order : Team3.HorizonGridBaseForm
+    public partial class OrderDialog : Team3.BaseForm.DialogDgvBaseForm
     {
-        public Order()
+        public OrderDialog()
         {
             InitializeComponent();
         }

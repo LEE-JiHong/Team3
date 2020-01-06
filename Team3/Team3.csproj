@@ -52,11 +52,17 @@
     <Compile Include="BaseForm\DgvBaseForm.Designer.cs">
       <DependentUpon>DgvBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForm\DialogForm.cs">
+    <Compile Include="BaseForm\DialogDgvBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForm\DialogForm.Designer.cs">
-      <DependentUpon>DialogForm.cs</DependentUpon>
+    <Compile Include="BaseForm\DialogDgvBaseForm.Designer.cs">
+      <DependentUpon>DialogDgvBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\DialogBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\DialogBaseForm.Designer.cs">
+      <DependentUpon>DialogBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm\entryBaseForm.cs">
       <SubType>Form</SubType>
@@ -214,11 +220,11 @@
     <Compile Include="DevForm\PurchaseMgt\MaterialLedger\MaterialReceivingList.Designer.cs">
       <DependentUpon>MaterialReceivingList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\Order.cs">
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.Designer.cs">
+      <DependentUpon>OrderDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\PurchaseMgt\Purchasing\OrderList.cs">
       <SubType>Form</SubType>
@@ -329,8 +335,11 @@
     <EmbeddedResource Include="BaseForm\DgvBaseForm.resx">
       <DependentUpon>DgvBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForm\DialogForm.resx">
-      <DependentUpon>DialogForm.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForm\DialogBaseForm.resx">
+      <DependentUpon>DialogBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\DialogDgvBaseForm.resx">
+      <DependentUpon>DialogDgvBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\entryBaseForm.resx">
       <DependentUpon>entryBaseForm.cs</DependentUpon>
@@ -400,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\SalesMasterUpload.resx">
       <DependentUpon>SalesMasterUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\Dialog\OrderDialog.resx">
+      <DependentUpon>OrderDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder.resx">
       <DependentUpon>RegularOrder.cs</DependentUpon>
