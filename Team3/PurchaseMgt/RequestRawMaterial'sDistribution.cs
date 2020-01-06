@@ -8,12 +8,14 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    //State of Order's Operation
-    public partial class SOO : Team3.VerticalGridBaseForm
+    //Request of Raw Material's Distribution 원재료 불출 요청
+    public partial class RequestRawMaterial_sDistribution : Team3.VerticalGridBaseForm
     {
-        public SOO()
+        public RequestRawMaterial_sDistribution()
         {
             InitializeComponent();
         }
+
+        
     }
 }

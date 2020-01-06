@@ -48,18 +48,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(12, 131);
-            this.panel2.Size = new System.Drawing.Size(910, 690);
+            this.panel2.Location = new System.Drawing.Point(12, 134);
+            this.panel2.Size = new System.Drawing.Size(1078, 496);
             // 
             // panel1
             // 
@@ -76,7 +79,7 @@
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Size = new System.Drawing.Size(910, 82);
+            this.panel1.Size = new System.Drawing.Size(1077, 82);
             // 
             // label1
             // 
@@ -86,7 +89,9 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(317, 138);
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(668, 102);
+            this.panel3.Size = new System.Drawing.Size(422, 29);
             // 
             // imageList1
             // 
@@ -97,7 +102,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(914, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1102, 60);
             // 
             // layoutButton
             // 
@@ -109,21 +114,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.button5);
-            this.basepanel.Controls.Add(this.button1);
-            this.basepanel.Controls.Add(this.button2);
-            this.basepanel.Controls.Add(this.button3);
-            this.basepanel.Controls.Add(this.button4);
-            this.basepanel.Size = new System.Drawing.Size(914, 642);
-            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button4, 0);
-            this.basepanel.Controls.SetChildIndex(this.button3, 0);
-            this.basepanel.Controls.SetChildIndex(this.button2, 0);
-            this.basepanel.Controls.SetChildIndex(this.button1, 0);
-            this.basepanel.Controls.SetChildIndex(this.button5, 0);
+            this.basepanel.Size = new System.Drawing.Size(1102, 642);
             // 
             // comboBox1
             // 
@@ -161,8 +152,9 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(349, 12);
+            this.comboBox2.Location = new System.Drawing.Point(429, 11);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(73, 20);
             this.comboBox2.TabIndex = 4;
@@ -177,61 +169,70 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(428, 50);
+            this.comboBox4.Location = new System.Drawing.Point(508, 50);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(147, 20);
+            this.comboBox4.Size = new System.Drawing.Size(163, 20);
             this.comboBox4.TabIndex = 6;
             // 
             // comboBox5
             // 
+            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(665, 13);
+            this.comboBox5.Location = new System.Drawing.Point(775, 10);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(138, 20);
+            this.comboBox5.Size = new System.Drawing.Size(178, 20);
             this.comboBox5.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(428, 12);
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Location = new System.Drawing.Point(508, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 21);
+            this.textBox1.Size = new System.Drawing.Size(163, 21);
             this.textBox1.TabIndex = 8;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(611, 16);
+            this.label3.Location = new System.Drawing.Point(721, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "설비";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(12, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "상태";
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(352, 53);
+            this.label5.Location = new System.Drawing.Point(427, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.Size = new System.Drawing.Size(73, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "OrderType";
             // 
             // button7
             // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(758, 48);
+            this.button7.Location = new System.Drawing.Point(957, 53);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 23);
             this.button7.TabIndex = 19;
@@ -245,12 +246,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(910, 690);
+            this.dataGridView1.Size = new System.Drawing.Size(1078, 496);
             this.dataGridView1.TabIndex = 0;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(862, 102);
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Location = new System.Drawing.Point(7, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(40, 23);
             this.button5.TabIndex = 29;
@@ -259,7 +261,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(490, 102);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(53, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 23);
             this.button1.TabIndex = 25;
@@ -268,7 +271,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(592, 102);
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(155, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 23);
             this.button2.TabIndex = 26;
@@ -277,7 +281,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(716, 102);
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(279, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 27;
@@ -286,25 +291,42 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(806, 102);
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Location = new System.Drawing.Point(369, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 23);
             this.button4.TabIndex = 28;
             this.button4.Text = "복사";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(422, 29);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // GOO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(914, 724);
+            this.ClientSize = new System.Drawing.Size(1102, 724);
             this.Name = "GOO";
             this.Tag = "작업지시생성";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +353,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
