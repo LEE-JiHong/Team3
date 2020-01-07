@@ -285,6 +285,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "OrderList";
+            this.Tag = "발주현황";
+            this.Text = "발주현황";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

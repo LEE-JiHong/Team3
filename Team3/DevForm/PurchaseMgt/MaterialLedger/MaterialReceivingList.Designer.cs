@@ -304,6 +304,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "MaterialReceivingList";
+            this.Tag = "자재입고현황";
+            this.Text = "자재입고현황";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

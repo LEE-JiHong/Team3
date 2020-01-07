@@ -221,6 +221,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(914, 724);
             this.Name = "ProductPlan";
+            this.Tag = "생산계획";
+            this.Text = "생산계획";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
