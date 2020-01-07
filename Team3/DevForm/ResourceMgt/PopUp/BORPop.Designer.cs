@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboItem = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cboProcess = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cboIsUsed = new System.Windows.Forms.ComboBox();
+            this.txtWaitDay = new System.Windows.Forms.TextBox();
+            this.txtTactTime = new System.Windows.Forms.TextBox();
+            this.txtYield = new System.Windows.Forms.TextBox();
+            this.txtPriority = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
@@ -71,11 +71,11 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.comboBox8);
+            this.panel2.Controls.Add(this.txtYield);
+            this.panel2.Controls.Add(this.txtPriority);
+            this.panel2.Controls.Add(this.txtTactTime);
+            this.panel2.Controls.Add(this.txtWaitDay);
+            this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label5);
@@ -84,9 +84,9 @@
             this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.comboBox5);
+            this.panel2.Controls.Add(this.cboProcess);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboItem);
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.Color.Orange;
             // 
@@ -105,13 +105,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "품목";
             // 
-            // comboBox1
+            // cboItem
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(132, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
+            this.cboItem.FormattingEnabled = true;
+            this.cboItem.Location = new System.Drawing.Point(132, 25);
+            this.cboItem.Name = "cboItem";
+            this.cboItem.Size = new System.Drawing.Size(121, 23);
+            this.cboItem.TabIndex = 0;
             // 
             // label3
             // 
@@ -165,13 +165,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "공정";
             // 
-            // comboBox5
+            // cboProcess
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(415, 25);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 23);
-            this.comboBox5.TabIndex = 1;
+            this.cboProcess.FormattingEnabled = true;
+            this.cboProcess.Location = new System.Drawing.Point(415, 25);
+            this.cboProcess.Name = "cboProcess";
+            this.cboProcess.Size = new System.Drawing.Size(121, 23);
+            this.cboProcess.TabIndex = 1;
             // 
             // label7
             // 
@@ -206,41 +206,41 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "사용유무";
             // 
-            // comboBox8
+            // cboIsUsed
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(415, 158);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 23);
-            this.comboBox8.TabIndex = 7;
+            this.cboIsUsed.FormattingEnabled = true;
+            this.cboIsUsed.Location = new System.Drawing.Point(415, 158);
+            this.cboIsUsed.Name = "cboIsUsed";
+            this.cboIsUsed.Size = new System.Drawing.Size(121, 23);
+            this.cboIsUsed.TabIndex = 7;
             // 
-            // textBox1
+            // txtWaitDay
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 21);
-            this.textBox1.TabIndex = 4;
+            this.txtWaitDay.Location = new System.Drawing.Point(132, 112);
+            this.txtWaitDay.Name = "txtWaitDay";
+            this.txtWaitDay.Size = new System.Drawing.Size(121, 21);
+            this.txtWaitDay.TabIndex = 4;
             // 
-            // textBox2
+            // txtTactTime
             // 
-            this.textBox2.Location = new System.Drawing.Point(415, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 21);
-            this.textBox2.TabIndex = 3;
+            this.txtTactTime.Location = new System.Drawing.Point(415, 71);
+            this.txtTactTime.Name = "txtTactTime";
+            this.txtTactTime.Size = new System.Drawing.Size(121, 21);
+            this.txtTactTime.TabIndex = 3;
             // 
-            // textBox3
+            // txtYield
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 158);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 21);
-            this.textBox3.TabIndex = 6;
+            this.txtYield.Location = new System.Drawing.Point(132, 158);
+            this.txtYield.Name = "txtYield";
+            this.txtYield.Size = new System.Drawing.Size(121, 21);
+            this.txtYield.TabIndex = 6;
             // 
-            // textBox4
+            // txtPriority
             // 
-            this.textBox4.Location = new System.Drawing.Point(415, 113);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 21);
-            this.textBox4.TabIndex = 5;
+            this.txtPriority.Location = new System.Drawing.Point(415, 113);
+            this.txtPriority.Name = "txtPriority";
+            this.txtPriority.Size = new System.Drawing.Size(121, 21);
+            this.txtPriority.TabIndex = 5;
             // 
             // label10
             // 
@@ -278,11 +278,11 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.TextBox txtYield;
+        private System.Windows.Forms.TextBox txtPriority;
+        private System.Windows.Forms.TextBox txtTactTime;
+        private System.Windows.Forms.TextBox txtWaitDay;
+        private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
@@ -291,8 +291,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cboProcess;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboItem;
     }
 }

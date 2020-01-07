@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodeBusiness = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtReprName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBusiness = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtNameBusiness = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtLicenseNum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtNameDirector = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtBusinessType = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtUpdateTime = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -101,41 +101,41 @@
             this.panel2.Controls.Add(this.comboBox4);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtUpdateTime);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.textBox14);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox20);
+            this.panel2.Controls.Add(this.txtModifier);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox12);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtFax);
+            this.panel2.Controls.Add(this.txtPhone);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox17);
-            this.panel2.Controls.Add(this.textBox10);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtEmail);
+            this.panel2.Controls.Add(this.txtNameDirector);
+            this.panel2.Controls.Add(this.txtBusiness);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox16);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtBusinessType);
+            this.panel2.Controls.Add(this.txtLicenseNum);
+            this.panel2.Controls.Add(this.txtReprName);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.txtNameBusiness);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCodeBusiness);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(761, 392);
             // 
@@ -155,12 +155,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "업체코드";
             // 
-            // textBox1
+            // txtCodeBusiness
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 21);
-            this.textBox1.TabIndex = 0;
+            this.txtCodeBusiness.Location = new System.Drawing.Point(103, 22);
+            this.txtCodeBusiness.Name = "txtCodeBusiness";
+            this.txtCodeBusiness.Size = new System.Drawing.Size(114, 21);
+            this.txtCodeBusiness.TabIndex = 0;
             // 
             // label3
             // 
@@ -172,12 +172,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "대표자명";
             // 
-            // textBox2
+            // txtReprName
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 21);
-            this.textBox2.TabIndex = 3;
+            this.txtReprName.Location = new System.Drawing.Point(103, 54);
+            this.txtReprName.Name = "txtReprName";
+            this.txtReprName.Size = new System.Drawing.Size(114, 21);
+            this.txtReprName.TabIndex = 3;
             // 
             // label4
             // 
@@ -189,12 +189,12 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "업태";
             // 
-            // textBox3
+            // txtBusiness
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 21);
-            this.textBox3.TabIndex = 6;
+            this.txtBusiness.Location = new System.Drawing.Point(103, 85);
+            this.txtBusiness.Name = "txtBusiness";
+            this.txtBusiness.Size = new System.Drawing.Size(114, 21);
+            this.txtBusiness.TabIndex = 6;
             // 
             // label5
             // 
@@ -216,12 +216,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "전화번호";
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.Location = new System.Drawing.Point(103, 149);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 21);
-            this.textBox5.TabIndex = 12;
+            this.txtPhone.Location = new System.Drawing.Point(103, 149);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(114, 21);
+            this.txtPhone.TabIndex = 12;
             // 
             // label7
             // 
@@ -255,12 +255,12 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "업체명";
             // 
-            // textBox8
+            // txtNameBusiness
             // 
-            this.textBox8.Location = new System.Drawing.Point(362, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(114, 21);
-            this.textBox8.TabIndex = 1;
+            this.txtNameBusiness.Location = new System.Drawing.Point(362, 22);
+            this.txtNameBusiness.Name = "txtNameBusiness";
+            this.txtNameBusiness.Size = new System.Drawing.Size(114, 21);
+            this.txtNameBusiness.TabIndex = 1;
             // 
             // label10
             // 
@@ -272,12 +272,12 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "사업자등록번호";
             // 
-            // textBox9
+            // txtLicenseNum
             // 
-            this.textBox9.Location = new System.Drawing.Point(362, 54);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(114, 21);
-            this.textBox9.TabIndex = 4;
+            this.txtLicenseNum.Location = new System.Drawing.Point(362, 54);
+            this.txtLicenseNum.Name = "txtLicenseNum";
+            this.txtLicenseNum.Size = new System.Drawing.Size(114, 21);
+            this.txtLicenseNum.TabIndex = 4;
             // 
             // label11
             // 
@@ -289,12 +289,12 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "담당자명";
             // 
-            // textBox10
+            // txtNameDirector
             // 
-            this.textBox10.Location = new System.Drawing.Point(362, 85);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(114, 21);
-            this.textBox10.TabIndex = 7;
+            this.txtNameDirector.Location = new System.Drawing.Point(362, 85);
+            this.txtNameDirector.Name = "txtNameDirector";
+            this.txtNameDirector.Size = new System.Drawing.Size(114, 21);
+            this.txtNameDirector.TabIndex = 7;
             // 
             // label12
             // 
@@ -316,12 +316,12 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "팩스";
             // 
-            // textBox12
+            // txtFax
             // 
-            this.textBox12.Location = new System.Drawing.Point(362, 149);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(114, 21);
-            this.textBox12.TabIndex = 13;
+            this.txtFax.Location = new System.Drawing.Point(362, 149);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(114, 21);
+            this.txtFax.TabIndex = 13;
             // 
             // label14
             // 
@@ -355,12 +355,12 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "업종";
             // 
-            // textBox16
+            // txtBusinessType
             // 
-            this.textBox16.Location = new System.Drawing.Point(615, 54);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(114, 21);
-            this.textBox16.TabIndex = 5;
+            this.txtBusinessType.Location = new System.Drawing.Point(615, 54);
+            this.txtBusinessType.Name = "txtBusinessType";
+            this.txtBusinessType.Size = new System.Drawing.Size(114, 21);
+            this.txtBusinessType.TabIndex = 5;
             // 
             // label18
             // 
@@ -372,12 +372,12 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "이메일";
             // 
-            // textBox17
+            // txtEmail
             // 
-            this.textBox17.Location = new System.Drawing.Point(615, 86);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(114, 21);
-            this.textBox17.TabIndex = 8;
+            this.txtEmail.Location = new System.Drawing.Point(615, 86);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(114, 21);
+            this.txtEmail.TabIndex = 8;
             // 
             // label19
             // 
@@ -410,12 +410,12 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "수정자";
             // 
-            // textBox20
+            // txtModifier
             // 
-            this.textBox20.Location = new System.Drawing.Point(615, 182);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(114, 21);
-            this.textBox20.TabIndex = 17;
+            this.txtModifier.Location = new System.Drawing.Point(615, 182);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.Size = new System.Drawing.Size(114, 21);
+            this.txtModifier.TabIndex = 17;
             // 
             // label15
             // 
@@ -459,13 +459,13 @@
             this.comboBox3.Size = new System.Drawing.Size(114, 23);
             this.comboBox3.TabIndex = 14;
             // 
-            // textBox4
+            // txtUpdateTime
             // 
-            this.textBox4.Location = new System.Drawing.Point(103, 213);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(114, 21);
-            this.textBox4.TabIndex = 23;
+            this.txtUpdateTime.Location = new System.Drawing.Point(103, 213);
+            this.txtUpdateTime.Name = "txtUpdateTime";
+            this.txtUpdateTime.ReadOnly = true;
+            this.txtUpdateTime.Size = new System.Drawing.Size(114, 21);
+            this.txtUpdateTime.TabIndex = 23;
             // 
             // dateTimePicker1
             // 
@@ -515,42 +515,42 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodeBusiness;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBusiness;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtReprName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtModifier;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtNameDirector;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtBusinessType;
+        private System.Windows.Forms.TextBox txtLicenseNum;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtNameBusiness;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtUpdateTime;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
