@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblGrid1Name = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblGrid2Name = new System.Windows.Forms.Label();
@@ -87,6 +87,34 @@
             this.panel4.Size = new System.Drawing.Size(974, 140);
             this.panel4.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Location = new System.Drawing.Point(6, 45);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(962, 81);
+            this.panel6.TabIndex = 20;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.Location = new System.Drawing.Point(653, 8);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(316, 28);
+            this.panel7.TabIndex = 19;
+            // 
+            // lblGrid1Name
+            // 
+            this.lblGrid1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrid1Name.ForeColor = System.Drawing.Color.Black;
+            this.lblGrid1Name.Location = new System.Drawing.Point(3, 8);
+            this.lblGrid1Name.Name = "lblGrid1Name";
+            this.lblGrid1Name.Size = new System.Drawing.Size(61, 19);
+            this.lblGrid1Name.TabIndex = 18;
+            this.lblGrid1Name.Text = "label2";
+            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -100,34 +128,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(974, 230);
             this.panel5.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Location = new System.Drawing.Point(653, 8);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(316, 28);
-            this.panel7.TabIndex = 19;
-            // 
-            // lblGrid1Name
-            // 
-            this.lblGrid1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrid1Name.ForeColor = System.Drawing.Color.Black;
-            this.lblGrid1Name.Location = new System.Drawing.Point(3, 8);
-            this.lblGrid1Name.Name = "lblGrid1Name";
-            this.lblGrid1Name.Size = new System.Drawing.Size(61, 19);
-            this.lblGrid1Name.TabIndex = 18;
-            this.lblGrid1Name.Text = "label2";
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Location = new System.Drawing.Point(6, 45);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(962, 81);
-            this.panel6.TabIndex = 20;
             // 
             // panel8
             // 
@@ -149,7 +149,7 @@
             // 
             // lblGrid2Name
             // 
-            this.lblGrid2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrid2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrid2Name.ForeColor = System.Drawing.Color.Black;
             this.lblGrid2Name.Location = new System.Drawing.Point(3, 10);
             this.lblGrid2Name.Name = "lblGrid2Name";
