@@ -31,7 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboItem = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboFacility = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.txtYield = new System.Windows.Forms.TextBox();
             this.txtPriority = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,7 +70,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtNote);
             this.panel2.Controls.Add(this.txtYield);
             this.panel2.Controls.Add(this.txtPriority);
             this.panel2.Controls.Add(this.txtTactTime);
@@ -81,7 +81,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cboFacility);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cboProcess);
@@ -124,13 +124,13 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "설비";
             // 
-            // comboBox2
+            // cboFacility
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(132, 69);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 2;
+            this.cboFacility.FormattingEnabled = true;
+            this.cboFacility.Location = new System.Drawing.Point(132, 69);
+            this.cboFacility.Name = "cboFacility";
+            this.cboFacility.Size = new System.Drawing.Size(121, 23);
+            this.cboFacility.TabIndex = 2;
             // 
             // label4
             // 
@@ -253,13 +253,13 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "비고";
             // 
-            // textBox5
+            // txtNote
             // 
-            this.textBox5.Location = new System.Drawing.Point(132, 193);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(404, 155);
-            this.textBox5.TabIndex = 8;
+            this.txtNote.Location = new System.Drawing.Point(132, 193);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(404, 155);
+            this.txtNote.TabIndex = 8;
             // 
             // BORPop
             // 
@@ -277,7 +277,7 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtYield;
         private System.Windows.Forms.TextBox txtPriority;
         private System.Windows.Forms.TextBox txtTactTime;
@@ -288,7 +288,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboFacility;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboProcess;

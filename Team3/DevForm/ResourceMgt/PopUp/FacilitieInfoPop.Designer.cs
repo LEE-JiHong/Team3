@@ -50,10 +50,10 @@
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.cboIsOS = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSingularity = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,8 +100,8 @@
             this.panel2.Controls.Add(this.txtMES);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtNote);
+            this.panel2.Controls.Add(this.txtSingularity);
             this.panel2.Controls.Add(this.txtCodeFacility);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label14);
@@ -321,13 +321,13 @@
             this.cboIsOS.Size = new System.Drawing.Size(129, 23);
             this.cboIsOS.TabIndex = 8;
             // 
-            // textBox2
+            // txtSingularity
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 170);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(597, 94);
-            this.textBox2.TabIndex = 11;
+            this.txtSingularity.Location = new System.Drawing.Point(119, 170);
+            this.txtSingularity.Multiline = true;
+            this.txtSingularity.Name = "txtSingularity";
+            this.txtSingularity.Size = new System.Drawing.Size(597, 94);
+            this.txtSingularity.TabIndex = 11;
             // 
             // label13
             // 
@@ -349,13 +349,13 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "비고";
             // 
-            // textBox3
+            // txtNote
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 270);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(597, 94);
-            this.textBox3.TabIndex = 12;
+            this.txtNote.Location = new System.Drawing.Point(119, 270);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(597, 94);
+            this.txtNote.TabIndex = 12;
             // 
             // facilitieInfoPop
             // 
@@ -394,8 +394,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.TextBox txtSingularity;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
     }

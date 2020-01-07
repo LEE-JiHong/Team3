@@ -286,17 +286,17 @@
     <Compile Include="DevForm\ResourceMgt\PopUp\BORPop.Designer.cs">
       <DependentUpon>BORPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\BusinessMgt.cs">
+    <Compile Include="DevForm\ResourceMgt\CompanyMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\BusinessMgt.Designer.cs">
-      <DependentUpon>BusinessMgt.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\CompanyMgt.Designer.cs">
+      <DependentUpon>CompanyMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\PopUp\BusinessPop.cs">
+    <Compile Include="DevForm\ResourceMgt\PopUp\CompanyPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\ResourceMgt\PopUp\BusinessPop.Designer.cs">
-      <DependentUpon>BusinessPop.cs</DependentUpon>
+    <Compile Include="DevForm\ResourceMgt\PopUp\CompanyPop.Designer.cs">
+      <DependentUpon>CompanyPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\ResourceMgt\PopUp\FacilitieInfoPop.cs">
       <SubType>Form</SubType>
@@ -500,11 +500,11 @@
     <EmbeddedResource Include="DevForm\ResourceMgt\PopUp\BORPop.resx">
       <DependentUpon>BORPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\BusinessMgt.resx">
-      <DependentUpon>BusinessMgt.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\CompanyMgt.resx">
+      <DependentUpon>CompanyMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ResourceMgt\PopUp\BusinessPop.resx">
-      <DependentUpon>BusinessPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ResourceMgt\PopUp\CompanyPop.resx">
+      <DependentUpon>CompanyPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\PopUp\FacilitieInfoPop.resx">
       <DependentUpon>FacilitieInfoPop.cs</DependentUpon>

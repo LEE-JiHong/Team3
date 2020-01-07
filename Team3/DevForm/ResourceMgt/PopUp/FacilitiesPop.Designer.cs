@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodeFacilityGroup = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNameFacilityGroup = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtModifyTime = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtInfoFacility = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,17 +72,17 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.cboIsUsed);
+            this.panel2.Controls.Add(this.txtInfoFacility);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtModifyTime);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtModifier);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtNameFacilityGroup);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCodeFacilityGroup);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(394, 352);
             // 
@@ -101,12 +101,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "설비군 코드";
             // 
-            // textBox1
+            // txtCodeFacilityGroup
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 21);
-            this.textBox1.TabIndex = 1;
+            this.txtCodeFacilityGroup.Location = new System.Drawing.Point(161, 41);
+            this.txtCodeFacilityGroup.Name = "txtCodeFacilityGroup";
+            this.txtCodeFacilityGroup.Size = new System.Drawing.Size(172, 21);
+            this.txtCodeFacilityGroup.TabIndex = 1;
             // 
             // label3
             // 
@@ -119,12 +119,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "설비군 명";
             // 
-            // textBox2
+            // txtNameFacilityGroup
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 21);
-            this.textBox2.TabIndex = 1;
+            this.txtNameFacilityGroup.Location = new System.Drawing.Point(161, 80);
+            this.txtNameFacilityGroup.Name = "txtNameFacilityGroup";
+            this.txtNameFacilityGroup.Size = new System.Drawing.Size(172, 21);
+            this.txtNameFacilityGroup.TabIndex = 1;
             // 
             // label4
             // 
@@ -137,13 +137,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "사용유무";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(161, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 21);
-            this.textBox3.TabIndex = 1;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -155,12 +148,12 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "수정자";
             // 
-            // textBox4
+            // txtModifier
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 158);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 21);
-            this.textBox4.TabIndex = 1;
+            this.txtModifier.Location = new System.Drawing.Point(161, 158);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.Size = new System.Drawing.Size(172, 21);
+            this.txtModifier.TabIndex = 1;
             // 
             // label6
             // 
@@ -173,30 +166,31 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "수정시간";
             // 
-            // textBox5
+            // txtModifyTime
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 197);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 21);
-            this.textBox5.TabIndex = 1;
+            this.txtModifyTime.Location = new System.Drawing.Point(161, 197);
+            this.txtModifyTime.Name = "txtModifyTime";
+            this.txtModifyTime.Size = new System.Drawing.Size(172, 21);
+            this.txtModifyTime.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label7.Location = new System.Drawing.Point(66, 239);
+            this.label7.Location = new System.Drawing.Point(66, 236);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 18);
             this.label7.TabIndex = 0;
             this.label7.Text = "시설설명";
             // 
-            // textBox6
+            // txtInfoFacility
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 236);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(172, 21);
-            this.textBox6.TabIndex = 1;
+            this.txtInfoFacility.Location = new System.Drawing.Point(69, 257);
+            this.txtInfoFacility.Multiline = true;
+            this.txtInfoFacility.Name = "txtInfoFacility";
+            this.txtInfoFacility.Size = new System.Drawing.Size(264, 71);
+            this.txtInfoFacility.TabIndex = 1;
             // 
             // label8
             // 
@@ -206,9 +200,17 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(24, 10);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 18);
+            this.label8.Size = new System.Drawing.Size(73, 18);
             this.label8.TabIndex = 0;
-            this.label8.Text = "설비군";
+            this.label8.Text = "설비군정보";
+            // 
+            // cboIsUsed
+            // 
+            this.cboIsUsed.FormattingEnabled = true;
+            this.cboIsUsed.Location = new System.Drawing.Point(161, 121);
+            this.cboIsUsed.Name = "cboIsUsed";
+            this.cboIsUsed.Size = new System.Drawing.Size(172, 23);
+            this.cboIsUsed.TabIndex = 2;
             // 
             // facilitiesPop
             // 
@@ -227,17 +229,17 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtModifyTime;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtModifier;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNameFacilityGroup;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodeFacilityGroup;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtInfoFacility;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboIsUsed;
     }
 }

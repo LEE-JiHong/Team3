@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodeBusiness = new System.Windows.Forms.TextBox();
+            this.txtCodeCompany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtReprName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtNameBusiness = new System.Windows.Forms.TextBox();
+            this.txtNameCompany = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtLicenseNum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtBusinessType = new System.Windows.Forms.TextBox();
+            this.txtTypeBusiness = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -59,15 +59,15 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtModifier = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtInfoCompany = new System.Windows.Forms.TextBox();
+            this.cboIsTrade = new System.Windows.Forms.ComboBox();
+            this.cboIsUsed = new System.Windows.Forms.ComboBox();
+            this.cboIsAutoInput = new System.Windows.Forms.ComboBox();
             this.txtUpdateTime = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.cboIsStart = new System.Windows.Forms.ComboBox();
+            this.cboTypeCompany = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,15 +97,15 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox5);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.cboTypeCompany);
+            this.panel2.Controls.Add(this.cboIsStart);
+            this.panel2.Controls.Add(this.dtpEndDate);
+            this.panel2.Controls.Add(this.dtpStartDate);
             this.panel2.Controls.Add(this.txtUpdateTime);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox14);
+            this.panel2.Controls.Add(this.cboIsAutoInput);
+            this.panel2.Controls.Add(this.cboIsUsed);
+            this.panel2.Controls.Add(this.cboIsTrade);
+            this.panel2.Controls.Add(this.txtInfoCompany);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txtModifier);
@@ -126,16 +126,16 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtBusinessType);
+            this.panel2.Controls.Add(this.txtTypeBusiness);
             this.panel2.Controls.Add(this.txtLicenseNum);
             this.panel2.Controls.Add(this.txtReprName);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.txtNameBusiness);
+            this.panel2.Controls.Add(this.txtNameCompany);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.txtCodeBusiness);
+            this.panel2.Controls.Add(this.txtCodeCompany);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(761, 392);
             // 
@@ -155,12 +155,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "업체코드";
             // 
-            // txtCodeBusiness
+            // txtCodeCompany
             // 
-            this.txtCodeBusiness.Location = new System.Drawing.Point(103, 22);
-            this.txtCodeBusiness.Name = "txtCodeBusiness";
-            this.txtCodeBusiness.Size = new System.Drawing.Size(114, 21);
-            this.txtCodeBusiness.TabIndex = 0;
+            this.txtCodeCompany.Location = new System.Drawing.Point(103, 22);
+            this.txtCodeCompany.Name = "txtCodeCompany";
+            this.txtCodeCompany.Size = new System.Drawing.Size(114, 21);
+            this.txtCodeCompany.TabIndex = 0;
             // 
             // label3
             // 
@@ -255,12 +255,12 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "업체명";
             // 
-            // txtNameBusiness
+            // txtNameCompany
             // 
-            this.txtNameBusiness.Location = new System.Drawing.Point(362, 22);
-            this.txtNameBusiness.Name = "txtNameBusiness";
-            this.txtNameBusiness.Size = new System.Drawing.Size(114, 21);
-            this.txtNameBusiness.TabIndex = 1;
+            this.txtNameCompany.Location = new System.Drawing.Point(362, 22);
+            this.txtNameCompany.Name = "txtNameCompany";
+            this.txtNameCompany.Size = new System.Drawing.Size(114, 21);
+            this.txtNameCompany.TabIndex = 1;
             // 
             // label10
             // 
@@ -355,12 +355,12 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "업종";
             // 
-            // txtBusinessType
+            // txtTypeBusiness
             // 
-            this.txtBusinessType.Location = new System.Drawing.Point(615, 54);
-            this.txtBusinessType.Name = "txtBusinessType";
-            this.txtBusinessType.Size = new System.Drawing.Size(114, 21);
-            this.txtBusinessType.TabIndex = 5;
+            this.txtTypeBusiness.Location = new System.Drawing.Point(615, 54);
+            this.txtTypeBusiness.Name = "txtTypeBusiness";
+            this.txtTypeBusiness.Size = new System.Drawing.Size(114, 21);
+            this.txtTypeBusiness.TabIndex = 5;
             // 
             // label18
             // 
@@ -427,37 +427,37 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "업체정보";
             // 
-            // textBox14
+            // txtInfoCompany
             // 
-            this.textBox14.Location = new System.Drawing.Point(103, 257);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(612, 87);
-            this.textBox14.TabIndex = 19;
+            this.txtInfoCompany.Location = new System.Drawing.Point(103, 257);
+            this.txtInfoCompany.Multiline = true;
+            this.txtInfoCompany.Name = "txtInfoCompany";
+            this.txtInfoCompany.Size = new System.Drawing.Size(612, 87);
+            this.txtInfoCompany.TabIndex = 19;
             // 
-            // comboBox1
+            // cboIsTrade
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 23);
-            this.comboBox1.TabIndex = 9;
+            this.cboIsTrade.FormattingEnabled = true;
+            this.cboIsTrade.Location = new System.Drawing.Point(103, 117);
+            this.cboIsTrade.Name = "cboIsTrade";
+            this.cboIsTrade.Size = new System.Drawing.Size(114, 23);
+            this.cboIsTrade.TabIndex = 9;
             // 
-            // comboBox2
+            // cboIsUsed
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(362, 181);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(114, 23);
-            this.comboBox2.TabIndex = 16;
+            this.cboIsUsed.FormattingEnabled = true;
+            this.cboIsUsed.Location = new System.Drawing.Point(362, 181);
+            this.cboIsUsed.Name = "cboIsUsed";
+            this.cboIsUsed.Size = new System.Drawing.Size(114, 23);
+            this.cboIsUsed.TabIndex = 16;
             // 
-            // comboBox3
+            // cboIsAutoInput
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(615, 149);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(114, 23);
-            this.comboBox3.TabIndex = 14;
+            this.cboIsAutoInput.FormattingEnabled = true;
+            this.cboIsAutoInput.Location = new System.Drawing.Point(615, 149);
+            this.cboIsAutoInput.Name = "cboIsAutoInput";
+            this.cboIsAutoInput.Size = new System.Drawing.Size(114, 23);
+            this.cboIsAutoInput.TabIndex = 14;
             // 
             // txtUpdateTime
             // 
@@ -467,37 +467,37 @@
             this.txtUpdateTime.Size = new System.Drawing.Size(114, 21);
             this.txtUpdateTime.TabIndex = 23;
             // 
-            // dateTimePicker1
+            // dtpStartDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(362, 116);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(114, 21);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(362, 116);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(114, 21);
+            this.dtpStartDate.TabIndex = 10;
             // 
-            // dateTimePicker2
+            // dtpEndDate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(615, 115);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(114, 21);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(615, 115);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(114, 21);
+            this.dtpEndDate.TabIndex = 11;
             // 
-            // comboBox4
+            // cboIsStart
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(103, 181);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(114, 23);
-            this.comboBox4.TabIndex = 15;
+            this.cboIsStart.FormattingEnabled = true;
+            this.cboIsStart.Location = new System.Drawing.Point(103, 181);
+            this.cboIsStart.Name = "cboIsStart";
+            this.cboIsStart.Size = new System.Drawing.Size(114, 23);
+            this.cboIsStart.TabIndex = 15;
             // 
-            // comboBox5
+            // cboTypeCompany
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(615, 22);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(114, 23);
-            this.comboBox5.TabIndex = 2;
+            this.cboTypeCompany.FormattingEnabled = true;
+            this.cboTypeCompany.Location = new System.Drawing.Point(615, 22);
+            this.cboTypeCompany.Name = "cboTypeCompany";
+            this.cboTypeCompany.Size = new System.Drawing.Size(114, 23);
+            this.cboTypeCompany.TabIndex = 2;
             // 
             // businessPop
             // 
@@ -515,7 +515,7 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodeBusiness;
+        private System.Windows.Forms.TextBox txtCodeCompany;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPhone;
@@ -525,7 +525,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtReprName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtInfoCompany;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtModifier;
         private System.Windows.Forms.Label label21;
@@ -539,20 +539,20 @@
         private System.Windows.Forms.TextBox txtNameDirector;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtBusinessType;
+        private System.Windows.Forms.TextBox txtTypeBusiness;
         private System.Windows.Forms.TextBox txtLicenseNum;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtNameBusiness;
+        private System.Windows.Forms.TextBox txtNameCompany;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cboTypeCompany;
+        private System.Windows.Forms.ComboBox cboIsStart;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.TextBox txtUpdateTime;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboIsAutoInput;
+        private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.ComboBox cboIsTrade;
     }
 }

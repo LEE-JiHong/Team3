@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FactoryMgt));
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.cboName = new System.Windows.Forms.ComboBox();
+            this.txtSearchFacility = new System.Windows.Forms.TextBox();
+            this.txtSearchFacilityGroup = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,8 +56,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cboName);
-            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.txtSearchFacilityGroup);
+            this.panel1.Controls.Add(this.txtSearchFacility);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button7);
@@ -120,22 +120,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "시설코드/명";
             // 
-            // txtName
+            // txtSearchFacility
             // 
-            this.txtName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtName.Location = new System.Drawing.Point(105, 31);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 21);
-            this.txtName.TabIndex = 0;
+            this.txtSearchFacility.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSearchFacility.Location = new System.Drawing.Point(105, 31);
+            this.txtSearchFacility.Name = "txtSearchFacility";
+            this.txtSearchFacility.Size = new System.Drawing.Size(100, 21);
+            this.txtSearchFacility.TabIndex = 0;
             // 
-            // cboName
+            // txtSearchFacilityGroup
             // 
-            this.cboName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(288, 31);
-            this.cboName.Name = "cboName";
-            this.cboName.Size = new System.Drawing.Size(121, 20);
-            this.cboName.TabIndex = 1;
+            this.txtSearchFacilityGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSearchFacilityGroup.FormattingEnabled = true;
+            this.txtSearchFacilityGroup.Location = new System.Drawing.Point(288, 31);
+            this.txtSearchFacilityGroup.Name = "txtSearchFacilityGroup";
+            this.txtSearchFacilityGroup.Size = new System.Drawing.Size(121, 20);
+            this.txtSearchFacilityGroup.TabIndex = 1;
             // 
             // label3
             // 
@@ -222,8 +222,8 @@
         #endregion
 
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox cboName;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ComboBox txtSearchFacilityGroup;
+        private System.Windows.Forms.TextBox txtSearchFacility;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
