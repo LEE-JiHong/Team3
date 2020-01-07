@@ -221,6 +221,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(914, 724);
             this.Name = "ProcurementPlan";
+            this.Tag = "외주계획";
+            this.Text = "외주계획";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
