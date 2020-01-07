@@ -121,7 +121,7 @@
             // 
             // lblMasterName
             // 
-            this.lblMasterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMasterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMasterName.ForeColor = System.Drawing.Color.Black;
             this.lblMasterName.Location = new System.Drawing.Point(6, 3);
             this.lblMasterName.Name = "lblMasterName";
@@ -163,7 +163,7 @@
             // 
             // lblDetailName
             // 
-            this.lblDetailName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetailName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetailName.ForeColor = System.Drawing.Color.Black;
             this.lblDetailName.Location = new System.Drawing.Point(8, 3);
             this.lblDetailName.Name = "lblDetailName";
