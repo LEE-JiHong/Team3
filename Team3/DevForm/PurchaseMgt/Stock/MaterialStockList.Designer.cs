@@ -83,6 +83,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(658, 138);
+            this.panel3.Size = new System.Drawing.Size(225, 29);
             // 
             // imageList1
             // 
@@ -201,12 +203,12 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(225, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(508, 3);
+            this.button2.Location = new System.Drawing.Point(147, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 50;
@@ -215,7 +217,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(427, 3);
+            this.button3.Location = new System.Drawing.Point(66, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 51;
@@ -253,6 +255,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(894, 536);
             this.Name = "MaterialStockList";
+            this.Tag = "자재입고현황";
+            this.Text = "자재입고현황";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

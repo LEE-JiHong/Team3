@@ -39,14 +39,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCodeCompany = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtLicenseNum = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNameCompany = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTypeCompany = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -72,14 +72,14 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cboTypeCompany);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtNameCompany);
+            this.panel1.Controls.Add(this.txtLicenseNum);
+            this.panel1.Controls.Add(this.txtCodeCompany);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Size = new System.Drawing.Size(870, 113);
             // 
@@ -194,12 +194,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(974, 475);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox4
+            // txtCodeCompany
             // 
-            this.textBox4.Location = new System.Drawing.Point(129, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 0;
+            this.txtCodeCompany.Location = new System.Drawing.Point(129, 21);
+            this.txtCodeCompany.Name = "txtCodeCompany";
+            this.txtCodeCompany.Size = new System.Drawing.Size(100, 21);
+            this.txtCodeCompany.TabIndex = 0;
             // 
             // label6
             // 
@@ -211,12 +211,12 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "업체코드";
             // 
-            // textBox5
+            // txtLicenseNum
             // 
-            this.textBox5.Location = new System.Drawing.Point(129, 60);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 3;
+            this.txtLicenseNum.Location = new System.Drawing.Point(129, 60);
+            this.txtLicenseNum.Name = "txtLicenseNum";
+            this.txtLicenseNum.Size = new System.Drawing.Size(100, 21);
+            this.txtLicenseNum.TabIndex = 3;
             // 
             // label7
             // 
@@ -228,12 +228,12 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "사업자등록번호";
             // 
-            // textBox6
+            // txtNameCompany
             // 
-            this.textBox6.Location = new System.Drawing.Point(322, 21);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 1;
+            this.txtNameCompany.Location = new System.Drawing.Point(322, 21);
+            this.txtNameCompany.Name = "txtNameCompany";
+            this.txtNameCompany.Size = new System.Drawing.Size(136, 21);
+            this.txtNameCompany.TabIndex = 1;
             // 
             // label8
             // 
@@ -255,13 +255,13 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "업체타입";
             // 
-            // comboBox2
+            // cboTypeCompany
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(568, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 2;
+            this.cboTypeCompany.FormattingEnabled = true;
+            this.cboTypeCompany.Location = new System.Drawing.Point(568, 21);
+            this.cboTypeCompany.Name = "cboTypeCompany";
+            this.cboTypeCompany.Size = new System.Drawing.Size(121, 20);
+            this.cboTypeCompany.TabIndex = 2;
             // 
             // button1
             // 
@@ -362,14 +362,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboTypeCompany;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNameCompany;
+        private System.Windows.Forms.TextBox txtLicenseNum;
+        private System.Windows.Forms.TextBox txtCodeCompany;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button2;

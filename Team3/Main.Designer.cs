@@ -111,7 +111,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
             this.layoutButton = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -613,7 +612,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
-            this.panel2.Controls.Add(this.button15);
             this.panel2.Controls.Add(this.layoutButton);
             this.panel2.Controls.Add(this.button14);
             this.panel2.Controls.Add(this.button13);
@@ -628,21 +626,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1684, 60);
             this.panel2.TabIndex = 12;
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button15.ImageIndex = 2;
-            this.button15.ImageList = this.imageList1;
-            this.button15.Location = new System.Drawing.Point(388, 10);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(125, 38);
-            this.button15.TabIndex = 13;
-            this.button15.Text = "화면분할";
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = true;
             // 
             // layoutButton
             // 
@@ -839,7 +822,6 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button layoutButton;
-        private System.Windows.Forms.Button button15;
     }
 }
 

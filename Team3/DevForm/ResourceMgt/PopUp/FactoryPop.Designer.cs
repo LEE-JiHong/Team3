@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbofacilitiesGroup = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboDivFacility = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cboIsSuyo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cboIsJajae = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCodeFacility = new System.Windows.Forms.TextBox();
+            this.txtOrder = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTopFacility = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboIsFree = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboIsProcess = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNameFacility = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
@@ -91,34 +91,34 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.comboBox9);
+            this.panel2.Controls.Add(this.cboCompany);
             this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtOrder);
+            this.panel2.Controls.Add(this.txtNameFacility);
+            this.panel2.Controls.Add(this.txtCodeFacility);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.comboBox8);
-            this.panel2.Controls.Add(this.comboBox6);
+            this.panel2.Controls.Add(this.cboIsJajae);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.comboBox7);
-            this.panel2.Controls.Add(this.comboBox5);
+            this.panel2.Controls.Add(this.cboIsProcess);
+            this.panel2.Controls.Add(this.cboIsSuyo);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.cboIsFree);
+            this.panel2.Controls.Add(this.cboDivFacility);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cboTopFacility);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbofacilitiesGroup);
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.panel2.Size = new System.Drawing.Size(540, 407);
@@ -138,13 +138,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "시설군";
             // 
-            // comboBox1
+            // cbofacilitiesGroup
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(90, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
+            this.cbofacilitiesGroup.FormattingEnabled = true;
+            this.cbofacilitiesGroup.Location = new System.Drawing.Point(90, 24);
+            this.cbofacilitiesGroup.Name = "cbofacilitiesGroup";
+            this.cbofacilitiesGroup.Size = new System.Drawing.Size(121, 23);
+            this.cbofacilitiesGroup.TabIndex = 0;
             // 
             // label3
             // 
@@ -168,13 +168,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "시설구분";
             // 
-            // comboBox3
+            // cboDivFacility
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(90, 92);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 23);
-            this.comboBox3.TabIndex = 4;
+            this.cboDivFacility.FormattingEnabled = true;
+            this.cboDivFacility.Location = new System.Drawing.Point(90, 92);
+            this.cboDivFacility.Name = "cboDivFacility";
+            this.cboDivFacility.Size = new System.Drawing.Size(121, 23);
+            this.cboDivFacility.TabIndex = 4;
             // 
             // label5
             // 
@@ -196,13 +196,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "수요차감";
             // 
-            // comboBox5
+            // cboIsSuyo
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(90, 160);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 23);
-            this.comboBox5.TabIndex = 8;
+            this.cboIsSuyo.FormattingEnabled = true;
+            this.cboIsSuyo.Location = new System.Drawing.Point(90, 160);
+            this.cboIsSuyo.Name = "cboIsSuyo";
+            this.cboIsSuyo.Size = new System.Drawing.Size(121, 23);
+            this.cboIsSuyo.TabIndex = 8;
             // 
             // label7
             // 
@@ -214,13 +214,13 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "자재차감";
             // 
-            // comboBox6
+            // cboIsJajae
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(90, 193);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 23);
-            this.comboBox6.TabIndex = 10;
+            this.cboIsJajae.FormattingEnabled = true;
+            this.cboIsJajae.Location = new System.Drawing.Point(90, 193);
+            this.cboIsJajae.Name = "cboIsJajae";
+            this.cboIsJajae.Size = new System.Drawing.Size(121, 23);
+            this.cboIsJajae.TabIndex = 10;
             // 
             // label8
             // 
@@ -232,19 +232,19 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "수정시간";
             // 
-            // textBox1
+            // txtCodeFacility
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 21);
-            this.textBox1.TabIndex = 2;
+            this.txtCodeFacility.Location = new System.Drawing.Point(90, 58);
+            this.txtCodeFacility.Name = "txtCodeFacility";
+            this.txtCodeFacility.Size = new System.Drawing.Size(121, 21);
+            this.txtCodeFacility.TabIndex = 2;
             // 
-            // textBox2
+            // txtOrder
             // 
-            this.textBox2.Location = new System.Drawing.Point(90, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 21);
-            this.textBox2.TabIndex = 6;
+            this.txtOrder.Location = new System.Drawing.Point(90, 127);
+            this.txtOrder.Name = "txtOrder";
+            this.txtOrder.Size = new System.Drawing.Size(121, 21);
+            this.txtOrder.TabIndex = 6;
             // 
             // textBox3
             // 
@@ -264,13 +264,13 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "상위시설";
             // 
-            // comboBox2
+            // cboTopFacility
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(380, 24);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 1;
+            this.cboTopFacility.FormattingEnabled = true;
+            this.cboTopFacility.Location = new System.Drawing.Point(380, 24);
+            this.cboTopFacility.Name = "cboTopFacility";
+            this.cboTopFacility.Size = new System.Drawing.Size(121, 23);
+            this.cboTopFacility.TabIndex = 1;
             // 
             // label10
             // 
@@ -293,13 +293,13 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "유무상구분";
             // 
-            // comboBox4
+            // cboIsFree
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(380, 92);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 23);
-            this.comboBox4.TabIndex = 5;
+            this.cboIsFree.FormattingEnabled = true;
+            this.cboIsFree.Location = new System.Drawing.Point(380, 92);
+            this.cboIsFree.Name = "cboIsFree";
+            this.cboIsFree.Size = new System.Drawing.Size(121, 23);
+            this.cboIsFree.TabIndex = 5;
             // 
             // label12
             // 
@@ -321,13 +321,13 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "공정차감";
             // 
-            // comboBox7
+            // cboIsProcess
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(380, 160);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 23);
-            this.comboBox7.TabIndex = 9;
+            this.cboIsProcess.FormattingEnabled = true;
+            this.cboIsProcess.Location = new System.Drawing.Point(380, 160);
+            this.cboIsProcess.Name = "cboIsProcess";
+            this.cboIsProcess.Size = new System.Drawing.Size(121, 23);
+            this.cboIsProcess.TabIndex = 9;
             // 
             // label14
             // 
@@ -358,12 +358,12 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "사용유무";
             // 
-            // textBox4
+            // txtNameFacility
             // 
-            this.textBox4.Location = new System.Drawing.Point(380, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 21);
-            this.textBox4.TabIndex = 3;
+            this.txtNameFacility.Location = new System.Drawing.Point(380, 58);
+            this.txtNameFacility.Name = "txtNameFacility";
+            this.txtNameFacility.Size = new System.Drawing.Size(121, 21);
+            this.txtNameFacility.TabIndex = 3;
             // 
             // textBox6
             // 
@@ -372,13 +372,13 @@
             this.textBox6.Size = new System.Drawing.Size(121, 21);
             this.textBox6.TabIndex = 11;
             // 
-            // comboBox9
+            // cboCompany
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(380, 126);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 23);
-            this.comboBox9.TabIndex = 7;
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(380, 126);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(121, 23);
+            this.cboCompany.TabIndex = 7;
             // 
             // label16
             // 
@@ -415,34 +415,34 @@
         #endregion
 
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOrder;
+        private System.Windows.Forms.TextBox txtNameFacility;
+        private System.Windows.Forms.TextBox txtCodeFacility;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cboIsJajae;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cboIsProcess;
+        private System.Windows.Forms.ComboBox cboIsSuyo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboIsFree;
+        private System.Windows.Forms.ComboBox cboDivFacility;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboTopFacility;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbofacilitiesGroup;
         private System.Windows.Forms.Label label2;
     }
 }
