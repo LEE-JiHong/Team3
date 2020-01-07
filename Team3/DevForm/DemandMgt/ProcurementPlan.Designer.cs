@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcurementPlan));
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,6 +70,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Size = new System.Drawing.Size(890, 116);
             // 
             // label1
@@ -78,7 +81,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(317, 138);
+            this.panel3.Location = new System.Drawing.Point(798, 138);
+            this.panel3.Size = new System.Drawing.Size(105, 29);
             // 
             // imageList1
             // 
@@ -105,19 +109,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(803, 77);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(785, 69);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(93, 31);
             this.button1.TabIndex = 70;
             this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(90, 54);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(218, 20);
+            this.comboBox2.Size = new System.Drawing.Size(218, 23);
             this.comboBox2.TabIndex = 69;
             // 
             // comboBox1
@@ -125,7 +133,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(90, 17);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 20);
+            this.comboBox1.Size = new System.Drawing.Size(218, 23);
             this.comboBox1.TabIndex = 68;
             // 
             // textBox3
@@ -156,7 +164,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(604, 29);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 12);
+            this.label12.Size = new System.Drawing.Size(31, 15);
             this.label12.TabIndex = 64;
             this.label12.Text = "품목";
             // 
@@ -165,7 +173,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(335, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 12);
+            this.label8.Size = new System.Drawing.Size(33, 15);
             this.label8.TabIndex = 63;
             this.label8.Text = "Date";
             // 
@@ -174,7 +182,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(44, 15);
             this.label2.TabIndex = 62;
             this.label2.Text = "PlanID";
             // 
@@ -183,7 +191,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 61;
             this.label3.Text = "설비";
             // 
@@ -204,17 +212,23 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(508, 3);
+            this.button2.Location = new System.Drawing.Point(27, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 63;
             this.button2.Text = "엑셀";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // ProcurementPlan
             // 
@@ -251,5 +265,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }
