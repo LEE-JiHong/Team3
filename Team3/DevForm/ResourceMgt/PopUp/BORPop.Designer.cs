@@ -40,10 +40,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtWaitDay = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtYield = new System.Windows.Forms.TextBox();
+            this.txtPriority = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
@@ -71,10 +71,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtYield);
+            this.panel2.Controls.Add(this.txtPriority);
             this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtWaitDay);
             this.panel2.Controls.Add(this.comboBox8);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
@@ -214,12 +214,12 @@
             this.comboBox8.Size = new System.Drawing.Size(121, 23);
             this.comboBox8.TabIndex = 7;
             // 
-            // textBox1
+            // txtWaitDay
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 21);
-            this.textBox1.TabIndex = 4;
+            this.txtWaitDay.Location = new System.Drawing.Point(132, 112);
+            this.txtWaitDay.Name = "txtWaitDay";
+            this.txtWaitDay.Size = new System.Drawing.Size(121, 21);
+            this.txtWaitDay.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -228,19 +228,19 @@
             this.textBox2.Size = new System.Drawing.Size(121, 21);
             this.textBox2.TabIndex = 3;
             // 
-            // textBox3
+            // txtYield
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 158);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 21);
-            this.textBox3.TabIndex = 6;
+            this.txtYield.Location = new System.Drawing.Point(132, 158);
+            this.txtYield.Name = "txtYield";
+            this.txtYield.Size = new System.Drawing.Size(121, 21);
+            this.txtYield.TabIndex = 6;
             // 
-            // textBox4
+            // txtPriority
             // 
-            this.textBox4.Location = new System.Drawing.Point(415, 113);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 21);
-            this.textBox4.TabIndex = 5;
+            this.txtPriority.Location = new System.Drawing.Point(415, 113);
+            this.txtPriority.Name = "txtPriority";
+            this.txtPriority.Size = new System.Drawing.Size(121, 21);
+            this.txtPriority.TabIndex = 5;
             // 
             // label10
             // 
@@ -278,10 +278,10 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtYield;
+        private System.Windows.Forms.TextBox txtPriority;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtWaitDay;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
