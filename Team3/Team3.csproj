@@ -579,7 +579,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\cross-out.png" />
+    <None Include="Resources\close1.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Icon\Button\cross-out.png" />
     <Content Include="Icon\Button\edit.png" />
+    <None Include="Icon\Home\Merge_32x32.png" />
+    <None Include="Icon\Button\ExportToXLSX_16x16.png" />
     <Content Include="Icon\Button\pencil.png" />
     <Content Include="Icon\Button\printer.png" />
     <Content Include="Icon\Button\save-file-option.png" />
@@ -587,6 +594,7 @@
     <Content Include="Icon\Home\close.png" />
     <Content Include="Icon\Home\close1.png" />
     <Content Include="Icon\Home\closeBlue.png" />
+    <None Include="Icon\Home\Delete_32x32.png" />
     <Content Include="Icon\Home\Home_32x32.png" />
     <None Include="Icon\Home\list-menu.png" />
     <Content Include="Icon\Home\menulist1Blue.png" />
