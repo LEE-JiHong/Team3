@@ -78,17 +78,13 @@
             this.panel1.Controls.Add(this.cboProductType);
             this.panel1.Controls.Add(this.cboPerson);
             this.panel1.Controls.Add(this.cboPutWH);
-            this.panel1.Controls.Add(this.txtDeliveryCompany);
-            this.panel1.Controls.Add(this.txtStandard);
             this.panel1.Controls.Add(this.txtProduct);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.lblWH);
             this.panel1.Controls.Add(this.lblCompany);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblWHing);
-            this.panel1.Controls.Add(this.lblStandard);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lblDeliveryCompany);
             this.panel1.Controls.Add(this.lblProduct);
             this.panel1.Size = new System.Drawing.Size(1185, 116);
             // 
@@ -114,7 +110,17 @@
             // 
             // TopMenu
             // 
+            this.TopMenu.Controls.Add(this.txtStandard);
+            this.TopMenu.Controls.Add(this.lblStandard);
+            this.TopMenu.Controls.Add(this.txtDeliveryCompany);
+            this.TopMenu.Controls.Add(this.lblDeliveryCompany);
             this.TopMenu.Size = new System.Drawing.Size(1209, 60);
+            this.TopMenu.Controls.SetChildIndex(this.lblDeliveryCompany, 0);
+            this.TopMenu.Controls.SetChildIndex(this.txtDeliveryCompany, 0);
+            this.TopMenu.Controls.SetChildIndex(this.lblStandard, 0);
+            this.TopMenu.Controls.SetChildIndex(this.txtStandard, 0);
+            this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
+            this.TopMenu.Controls.SetChildIndex(this.layoutButton, 0);
             // 
             // layoutButton
             // 
@@ -144,7 +150,7 @@
             this.lblDeliveryCompany.AutoSize = true;
             this.lblDeliveryCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeliveryCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDeliveryCompany.Location = new System.Drawing.Point(13, 52);
+            this.lblDeliveryCompany.Location = new System.Drawing.Point(678, 15);
             this.lblDeliveryCompany.Name = "lblDeliveryCompany";
             this.lblDeliveryCompany.Size = new System.Drawing.Size(55, 15);
             this.lblDeliveryCompany.TabIndex = 1;
@@ -165,10 +171,11 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(362, 90);
+            this.label5.Location = new System.Drawing.Point(379, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(55, 15);
             this.label5.TabIndex = 5;
             this.label5.Text = "품목유형";
             // 
@@ -176,10 +183,11 @@
             // 
             this.lblWHing.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblWHing.AutoSize = true;
+            this.lblWHing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWHing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWHing.Location = new System.Drawing.Point(362, 52);
+            this.lblWHing.Location = new System.Drawing.Point(13, 52);
             this.lblWHing.Name = "lblWHing";
-            this.lblWHing.Size = new System.Drawing.Size(53, 12);
+            this.lblWHing.Size = new System.Drawing.Size(55, 15);
             this.lblWHing.TabIndex = 4;
             this.lblWHing.Text = "입고창고";
             // 
@@ -187,10 +195,11 @@
             // 
             this.lblStandard.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblStandard.AutoSize = true;
+            this.lblStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStandard.Location = new System.Drawing.Point(386, 13);
+            this.lblStandard.Location = new System.Drawing.Point(349, 15);
             this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(29, 12);
+            this.lblStandard.Size = new System.Drawing.Size(31, 15);
             this.lblStandard.TabIndex = 3;
             this.lblStandard.Text = "규격";
             // 
@@ -198,10 +207,11 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(738, 92);
+            this.label8.Location = new System.Drawing.Point(379, 92);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.Size = new System.Drawing.Size(55, 15);
             this.label8.TabIndex = 8;
             this.label8.Text = "사용유무";
             // 
@@ -209,10 +219,11 @@
             // 
             this.lblWH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWH.AutoSize = true;
+            this.lblWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWH.Location = new System.Drawing.Point(738, 52);
+            this.lblWH.Location = new System.Drawing.Point(379, 13);
             this.lblWH.Name = "lblWH";
-            this.lblWH.Size = new System.Drawing.Size(53, 12);
+            this.lblWH.Size = new System.Drawing.Size(55, 15);
             this.lblWH.TabIndex = 7;
             this.lblWH.Text = "출고창고";
             // 
@@ -220,10 +231,11 @@
             // 
             this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompany.AutoSize = true;
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblCompany.Location = new System.Drawing.Point(762, 14);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(29, 12);
+            this.lblCompany.Size = new System.Drawing.Size(31, 15);
             this.lblCompany.TabIndex = 6;
             this.lblCompany.Text = "업체";
             // 
@@ -237,7 +249,7 @@
             // txtStandard
             // 
             this.txtStandard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtStandard.Location = new System.Drawing.Point(468, 10);
+            this.txtStandard.Location = new System.Drawing.Point(431, 12);
             this.txtStandard.Name = "txtStandard";
             this.txtStandard.Size = new System.Drawing.Size(230, 21);
             this.txtStandard.TabIndex = 10;
@@ -245,7 +257,7 @@
             // txtDeliveryCompany
             // 
             this.txtDeliveryCompany.FormattingEnabled = true;
-            this.txtDeliveryCompany.Location = new System.Drawing.Point(113, 49);
+            this.txtDeliveryCompany.Location = new System.Drawing.Point(778, 12);
             this.txtDeliveryCompany.Name = "txtDeliveryCompany";
             this.txtDeliveryCompany.Size = new System.Drawing.Size(225, 20);
             this.txtDeliveryCompany.TabIndex = 11;
@@ -254,9 +266,9 @@
             // 
             this.cboPutWH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboPutWH.FormattingEnabled = true;
-            this.cboPutWH.Location = new System.Drawing.Point(468, 49);
+            this.cboPutWH.Location = new System.Drawing.Point(113, 49);
             this.cboPutWH.Name = "cboPutWH";
-            this.cboPutWH.Size = new System.Drawing.Size(230, 20);
+            this.cboPutWH.Size = new System.Drawing.Size(225, 20);
             this.cboPutWH.TabIndex = 12;
             // 
             // cboPerson
@@ -271,7 +283,7 @@
             // 
             this.cboProductType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboProductType.FormattingEnabled = true;
-            this.cboProductType.Location = new System.Drawing.Point(468, 87);
+            this.cboProductType.Location = new System.Drawing.Point(476, 49);
             this.cboProductType.Name = "cboProductType";
             this.cboProductType.Size = new System.Drawing.Size(230, 20);
             this.cboProductType.TabIndex = 14;
@@ -289,18 +301,18 @@
             // 
             this.cboPullWH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboPullWH.FormattingEnabled = true;
-            this.cboPullWH.Location = new System.Drawing.Point(835, 49);
+            this.cboPullWH.Location = new System.Drawing.Point(476, 10);
             this.cboPullWH.Name = "cboPullWH";
-            this.cboPullWH.Size = new System.Drawing.Size(209, 20);
+            this.cboPullWH.Size = new System.Drawing.Size(230, 20);
             this.cboPullWH.TabIndex = 16;
             // 
             // comboBox7
             // 
             this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(835, 87);
+            this.comboBox7.Location = new System.Drawing.Point(476, 87);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(209, 20);
+            this.comboBox7.Size = new System.Drawing.Size(230, 20);
             this.comboBox7.TabIndex = 17;
             // 
             // btnSelect
@@ -404,6 +416,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
+            this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);

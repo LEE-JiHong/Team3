@@ -144,10 +144,11 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label10.Location = new System.Drawing.Point(731, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.Size = new System.Drawing.Size(55, 15);
             this.label10.TabIndex = 25;
             this.label10.Text = "전개방식";
             // 
@@ -155,10 +156,11 @@
             // 
             this.lblProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblProduct.Location = new System.Drawing.Point(383, 12);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(29, 12);
+            this.lblProduct.Size = new System.Drawing.Size(31, 15);
             this.lblProduct.TabIndex = 22;
             this.lblProduct.Text = "품목";
             // 
