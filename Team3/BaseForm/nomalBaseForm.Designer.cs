@@ -30,24 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(nomalBaseForm));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.basepanel = new System.Windows.Forms.Panel();
             this.TopMenu = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.layoutButton = new System.Windows.Forms.Button();
             this.닫기 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.TopMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
             // 
             // basepanel
             // 
@@ -59,7 +51,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.BackColor = System.Drawing.Color.LightBlue;
+            this.TopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.TopMenu.Controls.Add(this.layoutButton);
             this.TopMenu.Controls.Add(this.닫기);
             this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -67,6 +59,39 @@
             this.TopMenu.Name = "TopMenu";
             this.TopMenu.Size = new System.Drawing.Size(900, 60);
             this.TopMenu.TabIndex = 13;
+            // 
+            // layoutButton
+            // 
+            this.layoutButton.FlatAppearance.BorderSize = 0;
+            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.layoutButton.Image = global::Team3.Properties.Resources.Merge_32x32;
+            this.layoutButton.Location = new System.Drawing.Point(118, 12);
+            this.layoutButton.Name = "layoutButton";
+            this.layoutButton.Size = new System.Drawing.Size(125, 38);
+            this.layoutButton.TabIndex = 12;
+            this.layoutButton.Text = "화면병합";
+            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.layoutButton.UseVisualStyleBackColor = true;
+            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
+            // 
+            // 닫기
+            // 
+            this.닫기.BackColor = System.Drawing.Color.Transparent;
+            this.닫기.FlatAppearance.BorderSize = 0;
+            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.닫기.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.닫기.Image = global::Team3.Properties.Resources.Delete_32x32;
+            this.닫기.Location = new System.Drawing.Point(12, 12);
+            this.닫기.Name = "닫기";
+            this.닫기.Size = new System.Drawing.Size(100, 38);
+            this.닫기.TabIndex = 4;
+            this.닫기.Text = "닫기";
+            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.닫기.UseVisualStyleBackColor = false;
+            this.닫기.Click += new System.EventHandler(this.닫기_Click);
             // 
             // statusStrip1
             // 
@@ -86,40 +111,13 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(121, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // layoutButton
+            // imageList1
             // 
-            this.layoutButton.FlatAppearance.BorderSize = 0;
-            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.layoutButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.layoutButton.ImageIndex = 1;
-            this.layoutButton.ImageList = this.imageList1;
-            this.layoutButton.Location = new System.Drawing.Point(118, 12);
-            this.layoutButton.Name = "layoutButton";
-            this.layoutButton.Size = new System.Drawing.Size(125, 38);
-            this.layoutButton.TabIndex = 12;
-            this.layoutButton.Text = "화면병합";
-            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.layoutButton.UseVisualStyleBackColor = true;
-            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
-            // 
-            // 닫기
-            // 
-            this.닫기.BackColor = System.Drawing.Color.Transparent;
-            this.닫기.FlatAppearance.BorderSize = 0;
-            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.닫기.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.닫기.ImageIndex = 0;
-            this.닫기.ImageList = this.imageList1;
-            this.닫기.Location = new System.Drawing.Point(12, 12);
-            this.닫기.Name = "닫기";
-            this.닫기.Size = new System.Drawing.Size(100, 38);
-            this.닫기.TabIndex = 4;
-            this.닫기.Text = "닫기";
-            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.닫기.UseVisualStyleBackColor = false;
-            this.닫기.Click += new System.EventHandler(this.닫기_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
             // 
             // nomalBaseForm
             // 
@@ -144,10 +142,10 @@
 
         protected System.Windows.Forms.StatusStrip statusStrip1;
         protected System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        protected System.Windows.Forms.ImageList imageList1;
         protected System.Windows.Forms.Panel TopMenu;
         protected System.Windows.Forms.Button layoutButton;
         protected System.Windows.Forms.Button 닫기;
         protected System.Windows.Forms.Panel basepanel;
+        protected System.Windows.Forms.ImageList imageList1;
     }
 }
