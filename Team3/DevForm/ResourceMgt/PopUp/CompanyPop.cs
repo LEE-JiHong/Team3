@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class businessPop : Team3.DialogForm
+    public partial class CompanyPop : Team3.DialogForm
     {
-        public businessPop()
+        public CompanyPop()
         {
             InitializeComponent();
         }

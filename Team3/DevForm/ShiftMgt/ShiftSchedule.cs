@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class FacilitieInfoPop : DialogForm
+    public partial class ShiftSchedule : Team3.VerticalGridBaseForm
     {
-        public FacilitieInfoPop()
+        public ShiftSchedule()
         {
             InitializeComponent();
         }
