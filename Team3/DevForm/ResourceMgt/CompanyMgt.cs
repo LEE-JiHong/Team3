@@ -20,9 +20,15 @@ namespace Team3
 
         }
 
-        private void btnADD_Click(object sender, EventArgs e)
+        
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            CompanyPop frm = new CompanyPop();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

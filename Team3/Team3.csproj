@@ -328,6 +328,24 @@
     <Compile Include="DevForm\ResourceMgt\PopUp\FactoryPop.Designer.cs">
       <DependentUpon>FactoryPop.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\ShiftMgt\ShiftMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ShiftMgt\ShiftMain.Designer.cs">
+      <DependentUpon>ShiftMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ShiftMgt\ShiftSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ShiftMgt\ShiftSchedule.Designer.cs">
+      <DependentUpon>ShiftSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ShiftMgt\ShiftPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\ShiftMgt\ShiftPop.Designer.cs">
+      <DependentUpon>ShiftPop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +538,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ResourceMgt\PopUp\FactoryPop.resx">
       <DependentUpon>FactoryPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ShiftMgt\ShiftMain.resx">
+      <DependentUpon>ShiftMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ShiftMgt\ShiftSchedule.resx">
+      <DependentUpon>ShiftSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\ShiftMgt\ShiftPop.resx">
+      <DependentUpon>ShiftPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

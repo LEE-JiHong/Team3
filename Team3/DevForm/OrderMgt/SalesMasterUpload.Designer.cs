@@ -151,6 +151,7 @@
             this.btnAddExcel.Text = "Excel등록";
             this.btnAddExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddExcel.UseVisualStyleBackColor = false;
+            this.btnAddExcel.Click += new System.EventHandler(this.btnAddExcel_Click);
             // 
             // imageList2
             // 
@@ -165,6 +166,7 @@
             this.Name = "SalesMasterUpload";
             this.Tag = "영업마스터업로드(PO)";
             this.Text = "영업마스터업로드(PO)";
+            this.Load += new System.EventHandler(this.SalesMasterUpload_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);

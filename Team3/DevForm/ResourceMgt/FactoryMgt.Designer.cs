@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FactoryMgt));
-            this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearchFacility = new System.Windows.Forms.TextBox();
             this.txtSearchFacilityGroup = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,32 +56,28 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtSearchFacilityGroup);
             this.panel1.Controls.Add(this.txtSearchFacility);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button7);
             this.panel1.Size = new System.Drawing.Size(1095, 83);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Image = global::Team3.Properties.Resources.list_menu;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(12, 111);
-            this.label1.Size = new System.Drawing.Size(189, 18);
+            this.label1.Size = new System.Drawing.Size(78, 18);
             this.label1.Text = "공장정의";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Location = new System.Drawing.Point(844, 100);
             this.panel3.Size = new System.Drawing.Size(263, 29);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // TopMenu
             // 
@@ -100,15 +96,12 @@
             this.basepanel.Size = new System.Drawing.Size(1119, 586);
             this.basepanel.TabIndex = 1;
             // 
-            // button7
+            // imageList1
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(976, 22);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 36);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "조회";
-            this.button7.UseVisualStyleBackColor = true;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // label2
             // 
@@ -116,7 +109,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(28, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 12);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "시설코드/명";
             // 
@@ -125,25 +118,25 @@
             this.txtSearchFacility.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSearchFacility.Location = new System.Drawing.Point(105, 31);
             this.txtSearchFacility.Name = "txtSearchFacility";
-            this.txtSearchFacility.Size = new System.Drawing.Size(100, 21);
+            this.txtSearchFacility.Size = new System.Drawing.Size(201, 22);
             this.txtSearchFacility.TabIndex = 0;
             // 
             // txtSearchFacilityGroup
             // 
             this.txtSearchFacilityGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSearchFacilityGroup.FormattingEnabled = true;
-            this.txtSearchFacilityGroup.Location = new System.Drawing.Point(288, 31);
+            this.txtSearchFacilityGroup.Location = new System.Drawing.Point(373, 31);
             this.txtSearchFacilityGroup.Name = "txtSearchFacilityGroup";
-            this.txtSearchFacilityGroup.Size = new System.Drawing.Size(121, 20);
+            this.txtSearchFacilityGroup.Size = new System.Drawing.Size(201, 24);
             this.txtSearchFacilityGroup.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(241, 35);
+            this.label3.Location = new System.Drawing.Point(326, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(41, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "시설군";
             // 
@@ -157,47 +150,81 @@
             this.dataGridView1.Size = new System.Drawing.Size(1095, 445);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(185, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "삭제";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(104, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "수정";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(23, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "등록";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 29);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(203, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(57, 23);
+            this.button6.TabIndex = 49;
+            this.button6.Text = "엑셀";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::Team3.Properties.Resources.Trash_16x16;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(140, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(57, 23);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "삭제";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(82, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(52, 23);
+            this.btnAdd.TabIndex = 48;
+            this.btnAdd.Text = "등록";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(1024, 48);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 30);
+            this.button1.TabIndex = 78;
+            this.button1.Text = "조회";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FactoryMgt
             // 
@@ -220,16 +247,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox txtSearchFacilityGroup;
         private System.Windows.Forms.TextBox txtSearchFacility;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button button1;
     }
 }
