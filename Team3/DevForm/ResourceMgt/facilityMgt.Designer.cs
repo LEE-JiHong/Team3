@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(facilityMgt));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearchFacility = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
@@ -109,7 +109,7 @@
             // 
             this.basepanel.Controls.Add(this.button8);
             this.basepanel.Controls.Add(this.button5);
-            this.basepanel.Controls.Add(this.textBox1);
+            this.basepanel.Controls.Add(this.txtSearchFacility);
             this.basepanel.Controls.Add(this.label3);
             this.basepanel.Controls.Add(this.label2);
             this.basepanel.Size = new System.Drawing.Size(1037, 464);
@@ -120,7 +120,7 @@
             this.basepanel.Controls.SetChildIndex(this.label1, 0);
             this.basepanel.Controls.SetChildIndex(this.label2, 0);
             this.basepanel.Controls.SetChildIndex(this.label3, 0);
-            this.basepanel.Controls.SetChildIndex(this.textBox1, 0);
+            this.basepanel.Controls.SetChildIndex(this.txtSearchFacility, 0);
             this.basepanel.Controls.SetChildIndex(this.button5, 0);
             this.basepanel.Controls.SetChildIndex(this.button8, 0);
             // 
@@ -146,13 +146,13 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "설비 검색";
             // 
-            // textBox1
+            // txtSearchFacility
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(491, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 21);
-            this.textBox1.TabIndex = 27;
+            this.txtSearchFacility.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchFacility.Location = new System.Drawing.Point(491, 16);
+            this.txtSearchFacility.Name = "txtSearchFacility";
+            this.txtSearchFacility.Size = new System.Drawing.Size(155, 21);
+            this.txtSearchFacility.TabIndex = 27;
             // 
             // dataGridView1
             // 
@@ -305,7 +305,7 @@
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearchFacility;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button5;
