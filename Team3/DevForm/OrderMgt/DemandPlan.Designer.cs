@@ -40,10 +40,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,10 +61,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -77,9 +77,12 @@
             // 
             // label1
             // 
+            this.label1.Image = global::Team3.Properties.Resources.list_menu;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(15, 129);
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(79, 15);
             this.label1.Text = "수요계획";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
@@ -108,6 +111,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
@@ -131,24 +135,35 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(122, 3);
+            this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(132, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
+            this.button2.Size = new System.Drawing.Size(97, 23);
             this.button2.TabIndex = 53;
             this.button2.Text = "생산계획생성";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = global::Team3.Properties.Resources.ModelEditor_GenerateContent;
-            this.button3.Location = new System.Drawing.Point(41, 3);
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(65, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(61, 23);
             this.button3.TabIndex = 54;
             this.button3.Text = "엑셀";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -172,7 +187,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(460, 23);
+            this.label4.Location = new System.Drawing.Point(459, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 16);
             this.label4.TabIndex = 62;
@@ -182,7 +197,7 @@
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(481, 19);
+            this.dateTimePicker2.Location = new System.Drawing.Point(480, 19);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(89, 22);
             this.dateTimePicker2.TabIndex = 59;
@@ -191,7 +206,7 @@
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(369, 19);
+            this.dateTimePicker1.Location = new System.Drawing.Point(368, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(86, 22);
             this.dateTimePicker1.TabIndex = 58;
@@ -210,20 +225,11 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(324, 23);
+            this.label8.Location = new System.Drawing.Point(324, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 16);
             this.label8.TabIndex = 56;
             this.label8.Text = "Date";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(77, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(218, 24);
-            this.comboBox3.TabIndex = 65;
             // 
             // comboBox1
             // 
@@ -260,6 +266,15 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(77, 18);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(218, 24);
+            this.comboBox3.TabIndex = 79;
+            // 
             // DemandPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -293,8 +308,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

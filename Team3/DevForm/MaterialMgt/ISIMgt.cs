@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Team3
 {
+    //NOT
     //Inspection of Standard's Information 검사 기준 정보
     public partial class ISIMgt : Team3.VerticalGridBaseForm
     {
@@ -16,6 +17,9 @@ namespace Team3
             InitializeComponent();
         }
 
-       
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -178,11 +178,11 @@
     <Compile Include="DevForm\MaterialMgt\PopUp\MUPMPop.Designer.cs">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.cs">
+    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.Designer.cs">
-      <DependentUpon>ProductPop.cs</DependentUpon>
+    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.Designer.cs">
+      <DependentUpon>MaterialPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\PopUp\SUPMPop.cs">
       <SubType>Form</SubType>
@@ -464,8 +464,8 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MUPMPop.resx">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\ProductPop.resx">
-      <DependentUpon>ProductPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MaterialPop.resx">
+      <DependentUpon>MaterialPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\SUPMPop.resx">
       <DependentUpon>SUPMPop.cs</DependentUpon>
@@ -612,18 +612,23 @@
     <None Include="Resources\close.png" />
     <None Include="Icon\Button\cross-out.png" />
     <None Include="Icon\Button\BOFolder_16x16.png" />
+    <None Include="Icon\Button\Copy_16x16.png" />
     <Content Include="Icon\Button\edit.png" />
     <None Include="Icon\Home\Merge_32x32.png" />
     <None Include="Icon\Button\ExportToXLSX_16x16.png" />
     <None Include="Icon\Button\Edit_16x16.png" />
     <None Include="Icon\Button\Editor_Edit.png" />
     <None Include="Icon\Button\ModelEditor_GenerateContent.png" />
+    <None Include="Icon\Button\Open2_16x16.png" />
+    <None Include="Icon\Button\LoadFrom_16x16.png" />
     <Content Include="Icon\Button\pencil.png" />
     <Content Include="Icon\Button\printer.png" />
     <None Include="Icon\Button\Print_16x16.png" />
+    <None Include="Icon\Button\Recurrence_16x16.png" />
     <Content Include="Icon\Button\save-file-option.png" />
     <None Include="Icon\Button\Trash_16x16.png" />
     <None Include="Icon\Button\Save_16x16.png" />
+    <None Include="Icon\Button\Select_16x16.png" />
     <Content Include="Icon\Button\write.png" />
     <Content Include="Icon\Home\close.png" />
     <Content Include="Icon\Home\close1.png" />

@@ -39,20 +39,22 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboTopProd = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cboTopProdduct = new System.Windows.Forms.ComboBox();
+            this.cboAutoDeduction = new System.Windows.Forms.ComboBox();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.cboIsUsed = new System.Windows.Forms.ComboBox();
+            this.cboRequiredPlan = new System.Windows.Forms.ComboBox();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.txtAmountRequired = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
+            this.txtModifyDate = new System.Windows.Forms.TextBox();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -78,24 +80,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox5);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.cboTopProd);
+            this.panel2.Controls.Add(this.dtpStartDate);
+            this.panel2.Controls.Add(this.txtModifyDate);
+            this.panel2.Controls.Add(this.txtNote);
+            this.panel2.Controls.Add(this.txtModifier);
+            this.panel2.Controls.Add(this.txtAmountRequired);
+            this.panel2.Controls.Add(this.dtpEndDate);
+            this.panel2.Controls.Add(this.cboRequiredPlan);
+            this.panel2.Controls.Add(this.cboIsUsed);
+            this.panel2.Controls.Add(this.cboProduct);
+            this.panel2.Controls.Add(this.cboTopProdduct);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lbl);
@@ -123,7 +123,7 @@
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.ForeColor = System.Drawing.Color.Orange;
-            this.lbl.Location = new System.Drawing.Point(16, 45);
+            this.lbl.Location = new System.Drawing.Point(16, 75);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(47, 18);
             this.lbl.TabIndex = 1;
@@ -134,7 +134,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(16, 75);
+            this.label4.Location = new System.Drawing.Point(285, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 18);
             this.label4.TabIndex = 2;
@@ -155,7 +155,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Orange;
-            this.label6.Location = new System.Drawing.Point(16, 135);
+            this.label6.Location = new System.Drawing.Point(4, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 18);
             this.label6.TabIndex = 4;
@@ -165,11 +165,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 165);
+            this.label7.Location = new System.Drawing.Point(16, 162);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 18);
             this.label7.TabIndex = 5;
             this.label7.Text = "비고";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -187,7 +188,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Orange;
-            this.label10.Location = new System.Drawing.Point(286, 75);
+            this.label10.Location = new System.Drawing.Point(17, 134);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 18);
             this.label10.TabIndex = 9;
@@ -208,7 +209,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Orange;
-            this.label12.Location = new System.Drawing.Point(286, 135);
+            this.label12.Location = new System.Drawing.Point(286, 75);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(60, 18);
             this.label12.TabIndex = 7;
@@ -219,106 +220,125 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Orange;
-            this.label9.Location = new System.Drawing.Point(286, 45);
+            this.label9.Location = new System.Drawing.Point(17, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 18);
             this.label9.TabIndex = 10;
             this.label9.Text = "시작일";
             // 
-            // cboTopProd
+            // cboTopProdduct
             // 
-            this.cboTopProd.FormattingEnabled = true;
-            this.cboTopProd.Location = new System.Drawing.Point(92, 12);
-            this.cboTopProd.Name = "cboTopProd";
-            this.cboTopProd.Size = new System.Drawing.Size(168, 23);
-            this.cboTopProd.TabIndex = 12;
+            this.cboTopProdduct.FormattingEnabled = true;
+            this.cboTopProdduct.Location = new System.Drawing.Point(92, 12);
+            this.cboTopProdduct.Name = "cboTopProdduct";
+            this.cboTopProdduct.Size = new System.Drawing.Size(168, 23);
+            this.cboTopProdduct.TabIndex = 12;
             // 
-            // comboBox2
+            // cboAutoDeduction
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(92, 132);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(168, 23);
-            this.comboBox2.TabIndex = 13;
+            this.cboAutoDeduction.FormattingEnabled = true;
+            this.cboAutoDeduction.Location = new System.Drawing.Point(80, 20);
+            this.cboAutoDeduction.Name = "cboAutoDeduction";
+            this.cboAutoDeduction.Size = new System.Drawing.Size(168, 20);
+            this.cboAutoDeduction.TabIndex = 13;
             // 
-            // comboBox3
+            // cboProduct
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(361, 12);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(168, 23);
-            this.comboBox3.TabIndex = 14;
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(361, 12);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(168, 23);
+            this.cboProduct.TabIndex = 14;
             // 
-            // comboBox4
+            // cboIsUsed
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(361, 72);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(168, 23);
-            this.comboBox4.TabIndex = 15;
+            this.cboIsUsed.FormattingEnabled = true;
+            this.cboIsUsed.Location = new System.Drawing.Point(92, 131);
+            this.cboIsUsed.Name = "cboIsUsed";
+            this.cboIsUsed.Size = new System.Drawing.Size(168, 23);
+            this.cboIsUsed.TabIndex = 15;
             // 
-            // comboBox5
+            // cboRequiredPlan
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(361, 132);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(168, 23);
-            this.comboBox5.TabIndex = 16;
+            this.cboRequiredPlan.FormattingEnabled = true;
+            this.cboRequiredPlan.Location = new System.Drawing.Point(361, 72);
+            this.cboRequiredPlan.Name = "cboRequiredPlan";
+            this.cboRequiredPlan.Size = new System.Drawing.Size(168, 23);
+            this.cboRequiredPlan.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // dtpEndDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(92, 70);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 21);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(361, 41);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(168, 21);
+            this.dtpEndDate.TabIndex = 17;
             // 
-            // textBox1
+            // txtAmountRequired
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 21);
-            this.textBox1.TabIndex = 19;
+            this.txtAmountRequired.Location = new System.Drawing.Point(92, 72);
+            this.txtAmountRequired.Name = "txtAmountRequired";
+            this.txtAmountRequired.Size = new System.Drawing.Size(168, 21);
+            this.txtAmountRequired.TabIndex = 19;
             // 
-            // textBox3
+            // txtNote
             // 
-            this.textBox3.Location = new System.Drawing.Point(92, 165);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(437, 113);
-            this.textBox3.TabIndex = 21;
+            this.txtNote.Location = new System.Drawing.Point(92, 162);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(437, 113);
+            this.txtNote.TabIndex = 21;
+            this.txtNote.TextChanged += new System.EventHandler(this.txtNote_TextChanged);
             // 
-            // textBox2
+            // txtModifier
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 21);
-            this.textBox2.TabIndex = 20;
+            this.txtModifier.Location = new System.Drawing.Point(92, 102);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.Size = new System.Drawing.Size(168, 21);
+            this.txtModifier.TabIndex = 20;
             // 
-            // textBox4
+            // txtModifyDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(361, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(168, 21);
-            this.textBox4.TabIndex = 23;
+            this.txtModifyDate.Location = new System.Drawing.Point(361, 102);
+            this.txtModifyDate.Name = "txtModifyDate";
+            this.txtModifyDate.Size = new System.Drawing.Size(168, 21);
+            this.txtModifyDate.TabIndex = 23;
             // 
-            // dateTimePicker2
+            // dtpStartDate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(361, 42);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(168, 21);
-            this.dateTimePicker2.TabIndex = 24;
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(92, 41);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(168, 21);
+            this.dtpStartDate.TabIndex = 24;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboAutoDeduction);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(762, 251);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(256, 50);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // BomPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(598, 439);
+            this.Controls.Add(this.groupBox1);
             this.Name = "BomPop";
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -326,17 +346,17 @@
         #endregion
 
         private System.Windows.Forms.Label lblTopProd;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox cboTopProd;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.TextBox txtModifyDate;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.TextBox txtAmountRequired;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.ComboBox cboRequiredPlan;
+        private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.ComboBox cboProduct;
+        private System.Windows.Forms.ComboBox cboAutoDeduction;
+        private System.Windows.Forms.ComboBox cboTopProdduct;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -347,5 +367,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

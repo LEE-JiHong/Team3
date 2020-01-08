@@ -51,19 +51,16 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(557, 6);
+            this.panel3.Size = new System.Drawing.Size(332, 29);
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Size = new System.Drawing.Size(133, 19);
+            this.label1.Image = global::Team3.Properties.Resources.list_menu;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Size = new System.Drawing.Size(168, 19);
             this.label1.Text = "영업마스터업로드(PO)";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // layoutButton
             // 
@@ -73,9 +70,16 @@
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
+            // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -94,47 +98,53 @@
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(332, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnDownload
             // 
             this.btnDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDownload.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDownload.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDownload.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.ForeColor = System.Drawing.Color.Black;
-            this.btnDownload.Location = new System.Drawing.Point(488, 3);
+            this.btnDownload.Image = global::Team3.Properties.Resources.LoadFrom_16x16;
+            this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDownload.Location = new System.Drawing.Point(223, 3);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(95, 23);
+            this.btnDownload.Size = new System.Drawing.Size(106, 23);
             this.btnDownload.TabIndex = 22;
             this.btnDownload.Text = "양식 다운로드";
+            this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDownload.UseVisualStyleBackColor = false;
             // 
             // btnCreatePO
             // 
             this.btnCreatePO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreatePO.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCreatePO.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCreatePO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnCreatePO.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCreatePO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePO.ForeColor = System.Drawing.Color.Black;
-            this.btnCreatePO.Location = new System.Drawing.Point(376, 3);
+            this.btnCreatePO.Image = global::Team3.Properties.Resources.Open2_16x16;
+            this.btnCreatePO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreatePO.Location = new System.Drawing.Point(104, 3);
             this.btnCreatePO.Name = "btnCreatePO";
-            this.btnCreatePO.Size = new System.Drawing.Size(106, 23);
+            this.btnCreatePO.Size = new System.Drawing.Size(113, 23);
             this.btnCreatePO.TabIndex = 21;
             this.btnCreatePO.Text = "영업마스터생성";
+            this.btnCreatePO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreatePO.UseVisualStyleBackColor = false;
             // 
             // btnAddExcel
             // 
             this.btnAddExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddExcel.BackColor = System.Drawing.Color.Silver;
-            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
+            this.btnAddExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnAddExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnAddExcel.Image")));
+            this.btnAddExcel.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExcel.Location = new System.Drawing.Point(282, 3);
+            this.btnAddExcel.Location = new System.Drawing.Point(10, 3);
             this.btnAddExcel.Name = "btnAddExcel";
             this.btnAddExcel.Size = new System.Drawing.Size(88, 23);
             this.btnAddExcel.TabIndex = 20;
