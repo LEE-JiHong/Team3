@@ -588,7 +588,9 @@
     <Content Include="Icon\Home\close1.png" />
     <Content Include="Icon\Home\closeBlue.png" />
     <Content Include="Icon\Home\Home_32x32.png" />
+    <None Include="Icon\Home\list-menu.png" />
     <Content Include="Icon\Home\menulist1Blue.png" />
+    <None Include="Icon\Home\Zoom_16x16.png" />
     <None Include="Icon\Home\logo.png" />
     <Content Include="Icon\Home\layout.png" />
     <Content Include="Icon\Home\menulist.png" />

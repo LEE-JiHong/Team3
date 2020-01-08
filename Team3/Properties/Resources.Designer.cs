@@ -93,6 +93,16 @@ namespace Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap list_menu {
+            get {
+                object obj = ResourceManager.GetObject("list-menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -126,6 +136,16 @@ namespace Team3.Properties {
         internal static System.Drawing.Bitmap menulist1 {
             get {
                 object obj = ResourceManager.GetObject("menulist1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zoom_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Zoom_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

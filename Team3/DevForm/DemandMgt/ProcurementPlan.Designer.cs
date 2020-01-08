@@ -79,8 +79,11 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.Image = global::Team3.Properties.Resources.list_menu;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.Text = "외주계획";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
@@ -119,11 +122,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(785, 69);
+            this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(812, 73);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 30);
+            this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 70;
             this.button1.Text = "조회";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // comboBox2

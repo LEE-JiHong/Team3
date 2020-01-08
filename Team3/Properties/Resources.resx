@@ -121,11 +121,17 @@
   <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Home\close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Home\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Home_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Home\Home_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Home\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Home\Zoom_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menulist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Home\menulist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,7 +142,7 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Home\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Home\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Home\list-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
