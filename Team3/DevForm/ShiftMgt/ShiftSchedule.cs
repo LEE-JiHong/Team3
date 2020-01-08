@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class ShiftMain : Team3.VerticalGridBaseForm
+    public partial class ShiftSchedule : Team3.VerticalGridBaseForm
     {
-        public ShiftMain()
+        public ShiftSchedule()
         {
             InitializeComponent();
         }

@@ -14,5 +14,14 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            BORPop frm = new BORPop();
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
