@@ -36,8 +36,8 @@ namespace Team3
             //Color endColor = Color.FromArgb(96, 121, 152);
 
             Color startColor = Color.FromArgb(255,255,255);
-            Color middleColor = Color.FromArgb(149, 165, 186);
-            Color endColor = Color.FromArgb(96, 121, 152);
+            Color middleColor = Color.FromArgb(96, 121, 152);
+            Color endColor = Color.FromArgb(36, 56, 91);
 
             LinearGradientBrush br = new LinearGradientBrush(this.panel2.ClientRectangle, System.Drawing.Color.Black, System.Drawing.Color.Black, 0, false);
 
