@@ -213,6 +213,16 @@ namespace Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap LoadFrom_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("LoadFrom_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -273,6 +283,16 @@ namespace Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Open2_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Open2_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Print_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Print_16x16", resourceCulture);
@@ -283,9 +303,29 @@ namespace Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Recurrence_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Recurrence_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Save_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Select_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Select_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
