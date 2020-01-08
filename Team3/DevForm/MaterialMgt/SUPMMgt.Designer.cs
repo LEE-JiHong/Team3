@@ -30,43 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SUPMMgt));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAddExcel = new System.Windows.Forms.Button();
+            this.btnFormDownload = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.dtpStandardDate = new System.Windows.Forms.DateTimePicker();
+            this.lblCompany = new System.Windows.Forms.Label();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.lblStandardDate = new System.Windows.Forms.Label();
+            this.dgvSUPM = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSUPM)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvSUPM);
             this.panel2.Location = new System.Drawing.Point(12, 102);
             this.panel2.Size = new System.Drawing.Size(870, 343);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cboCompany);
+            this.panel1.Controls.Add(this.txtProduct);
+            this.panel1.Controls.Add(this.btnSelect);
+            this.panel1.Controls.Add(this.dtpStandardDate);
+            this.panel1.Controls.Add(this.lblCompany);
+            this.panel1.Controls.Add(this.lblProduct);
+            this.panel1.Controls.Add(this.lblStandardDate);
             this.panel1.Size = new System.Drawing.Size(870, 50);
             // 
             // label1
@@ -98,11 +98,11 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnAddExcel);
+            this.flowLayoutPanel1.Controls.Add(this.btnFormDownload);
+            this.flowLayoutPanel1.Controls.Add(this.btnExcel);
+            this.flowLayoutPanel1.Controls.Add(this.btnCopy);
+            this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -110,145 +110,145 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(423, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button5
+            // btnAddExcel
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(345, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 34;
-            this.button5.Text = "Excel 등록";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAddExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddExcel.Location = new System.Drawing.Point(345, 3);
+            this.btnAddExcel.Name = "btnAddExcel";
+            this.btnAddExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnAddExcel.TabIndex = 34;
+            this.btnAddExcel.Text = "Excel 등록";
+            this.btnAddExcel.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnFormDownload
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(247, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 23);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "양식 다운로드";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFormDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFormDownload.Location = new System.Drawing.Point(247, 3);
+            this.btnFormDownload.Name = "btnFormDownload";
+            this.btnFormDownload.Size = new System.Drawing.Size(92, 23);
+            this.btnFormDownload.TabIndex = 33;
+            this.btnFormDownload.Text = "양식 다운로드";
+            this.btnFormDownload.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnExcel
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(166, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "엑셀";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExcel.Location = new System.Drawing.Point(166, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExcel.TabIndex = 32;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCopy
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(85, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "복사";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCopy.Location = new System.Drawing.Point(85, 3);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(75, 23);
+            this.btnCopy.TabIndex = 31;
+            this.btnCopy.Text = "복사";
+            this.btnCopy.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Location = new System.Drawing.Point(4, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 30;
+            this.btnAdd.Text = "등록";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cboCompany
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(519, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 28;
+            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCompany.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(519, 16);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(169, 21);
+            this.cboCompany.TabIndex = 28;
             // 
-            // textBox1
+            // txtProduct
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(284, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 22);
-            this.textBox1.TabIndex = 27;
+            this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProduct.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtProduct.Location = new System.Drawing.Point(284, 15);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(152, 22);
+            this.txtProduct.TabIndex = 27;
             // 
-            // button7
+            // btnSelect
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(750, 16);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(117, 23);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "조회";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelect.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSelect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSelect.Location = new System.Drawing.Point(750, 16);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(117, 23);
+            this.btnSelect.TabIndex = 26;
+            this.btnSelect.Text = "조회";
+            this.btnSelect.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtpStandardDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(88, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(115, 22);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dtpStandardDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpStandardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStandardDate.Location = new System.Drawing.Point(88, 15);
+            this.dtpStandardDate.Name = "dtpStandardDate";
+            this.dtpStandardDate.Size = new System.Drawing.Size(115, 22);
+            this.dtpStandardDate.TabIndex = 25;
             // 
-            // label4
+            // lblCompany
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(484, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "업체";
+            this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCompany.AutoSize = true;
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompany.ForeColor = System.Drawing.Color.Black;
+            this.lblCompany.Location = new System.Drawing.Point(484, 20);
+            this.lblCompany.Name = "lblCompany";
+            this.lblCompany.Size = new System.Drawing.Size(31, 15);
+            this.lblCompany.TabIndex = 24;
+            this.lblCompany.Text = "업체";
             // 
-            // label3
+            // lblProduct
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(249, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "품목";
+            this.lblProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.ForeColor = System.Drawing.Color.Black;
+            this.lblProduct.Location = new System.Drawing.Point(249, 19);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(31, 15);
+            this.lblProduct.TabIndex = 23;
+            this.lblProduct.Text = "품목";
             // 
-            // label2
+            // lblStandardDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(23, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "기준일자";
+            this.lblStandardDate.AutoSize = true;
+            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandardDate.ForeColor = System.Drawing.Color.Black;
+            this.lblStandardDate.Location = new System.Drawing.Point(23, 19);
+            this.lblStandardDate.Name = "lblStandardDate";
+            this.lblStandardDate.Size = new System.Drawing.Size(55, 15);
+            this.lblStandardDate.TabIndex = 22;
+            this.lblStandardDate.Text = "기준일자";
             // 
-            // dataGridView1
+            // dgvSUPM
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(870, 343);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvSUPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSUPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSUPM.Location = new System.Drawing.Point(0, 0);
+            this.dgvSUPM.Name = "dgvSUPM";
+            this.dgvSUPM.RowTemplate.Height = 23;
+            this.dgvSUPM.Size = new System.Drawing.Size(870, 343);
+            this.dgvSUPM.TabIndex = 0;
             // 
             // SUPMMgt
             // 
@@ -263,7 +263,7 @@
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSUPM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,18 +272,18 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAddExcel;
+        private System.Windows.Forms.Button btnFormDownload;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ComboBox cboCompany;
+        private System.Windows.Forms.TextBox txtProduct;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.DateTimePicker dtpStandardDate;
+        private System.Windows.Forms.Label lblCompany;
+        private System.Windows.Forms.Label lblProduct;
+        private System.Windows.Forms.Label lblStandardDate;
+        private System.Windows.Forms.DataGridView dgvSUPM;
     }
 }

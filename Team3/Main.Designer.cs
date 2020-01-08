@@ -30,58 +30,76 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("작업실적등록");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("공정재고현황");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("WorkOrder", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("자재불출요청");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Material", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("원자재불출");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Material Ledger", new System.Windows.Forms.TreeNode[] {
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("작업지시생성");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("작업지시현황");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("발주");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("발주현황");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Purchasing", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("입고대기");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Supplier", new System.Windows.Forms.TreeNode[] {
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("자재입고");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("자재입고현황");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Material Ledger", new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode16});
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("자재재고현황");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("입출고현황");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Stock", new System.Windows.Forms.TreeNode[] {
-            treeNode18,
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("생산계획");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("외주계획");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("영업마스터");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("수요계획");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode24,
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("품목관리");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("BOM");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("공장관리");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("설비관리");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("업체관리");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("BOR");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
-            treeNode29,
-            treeNode30,
-            treeNode31,
-            treeNode32});
+            System.Windows.Forms.TreeNode treeNode300 = new System.Windows.Forms.TreeNode("작업실적등록");
+            System.Windows.Forms.TreeNode treeNode301 = new System.Windows.Forms.TreeNode("공정재고현황");
+            System.Windows.Forms.TreeNode treeNode302 = new System.Windows.Forms.TreeNode("WorkOrder", new System.Windows.Forms.TreeNode[] {
+            treeNode300,
+            treeNode301});
+            System.Windows.Forms.TreeNode treeNode303 = new System.Windows.Forms.TreeNode("자재불출요청");
+            System.Windows.Forms.TreeNode treeNode304 = new System.Windows.Forms.TreeNode("Material", new System.Windows.Forms.TreeNode[] {
+            treeNode303});
+            System.Windows.Forms.TreeNode treeNode305 = new System.Windows.Forms.TreeNode("원자재불출");
+            System.Windows.Forms.TreeNode treeNode306 = new System.Windows.Forms.TreeNode("Material Ledger", new System.Windows.Forms.TreeNode[] {
+            treeNode305});
+            System.Windows.Forms.TreeNode treeNode307 = new System.Windows.Forms.TreeNode("작업지시생성");
+            System.Windows.Forms.TreeNode treeNode308 = new System.Windows.Forms.TreeNode("작업지시현황");
+            System.Windows.Forms.TreeNode treeNode309 = new System.Windows.Forms.TreeNode("발주");
+            System.Windows.Forms.TreeNode treeNode310 = new System.Windows.Forms.TreeNode("발주현황");
+            System.Windows.Forms.TreeNode treeNode311 = new System.Windows.Forms.TreeNode("Purchasing", new System.Windows.Forms.TreeNode[] {
+            treeNode309,
+            treeNode310});
+            System.Windows.Forms.TreeNode treeNode312 = new System.Windows.Forms.TreeNode("입고대기");
+            System.Windows.Forms.TreeNode treeNode313 = new System.Windows.Forms.TreeNode("Supplier", new System.Windows.Forms.TreeNode[] {
+            treeNode312});
+            System.Windows.Forms.TreeNode treeNode314 = new System.Windows.Forms.TreeNode("자재입고");
+            System.Windows.Forms.TreeNode treeNode315 = new System.Windows.Forms.TreeNode("자재입고현황");
+            System.Windows.Forms.TreeNode treeNode316 = new System.Windows.Forms.TreeNode("Material Ledger", new System.Windows.Forms.TreeNode[] {
+            treeNode314,
+            treeNode315});
+            System.Windows.Forms.TreeNode treeNode317 = new System.Windows.Forms.TreeNode("자재재고현황");
+            System.Windows.Forms.TreeNode treeNode318 = new System.Windows.Forms.TreeNode("입출고현황");
+            System.Windows.Forms.TreeNode treeNode319 = new System.Windows.Forms.TreeNode("Stock", new System.Windows.Forms.TreeNode[] {
+            treeNode317,
+            treeNode318});
+            System.Windows.Forms.TreeNode treeNode298 = new System.Windows.Forms.TreeNode("생산계획");
+            System.Windows.Forms.TreeNode treeNode299 = new System.Windows.Forms.TreeNode("외주계획");
+            System.Windows.Forms.TreeNode treeNode320 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
+            System.Windows.Forms.TreeNode treeNode321 = new System.Windows.Forms.TreeNode("영업마스터");
+            System.Windows.Forms.TreeNode treeNode322 = new System.Windows.Forms.TreeNode("수요계획");
+            System.Windows.Forms.TreeNode treeNode323 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
+            treeNode320,
+            treeNode321,
+            treeNode322});
+            System.Windows.Forms.TreeNode treeNode324 = new System.Windows.Forms.TreeNode("품목관리");
+            System.Windows.Forms.TreeNode treeNode325 = new System.Windows.Forms.TreeNode("BOM");
+            System.Windows.Forms.TreeNode treeNode326 = new System.Windows.Forms.TreeNode("공장관리");
+            System.Windows.Forms.TreeNode treeNode327 = new System.Windows.Forms.TreeNode("설비관리");
+            System.Windows.Forms.TreeNode treeNode328 = new System.Windows.Forms.TreeNode("업체관리");
+            System.Windows.Forms.TreeNode treeNode329 = new System.Windows.Forms.TreeNode("BOR");
+            System.Windows.Forms.TreeNode treeNode330 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
+            treeNode326,
+            treeNode327,
+            treeNode328,
+            treeNode329});
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.LeftMenuButton = new System.Windows.Forms.Button();
+            this.닫기 = new System.Windows.Forms.Button();
+            this.layoutButton = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LeftMenuTab = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
@@ -107,20 +125,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.layoutButton = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.닫기 = new System.Windows.Forms.Button();
-            this.LeftMenuButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.MainTab = new System.Windows.Forms.TabControl();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LeftMenuTab.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -130,10 +142,6 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -148,10 +156,227 @@
             this.imageList1.Images.SetKeyName(5, "cloud-storage-download.png");
             this.imageList1.Images.SetKeyName(6, "menu-symbol-of-three-parallel-lines.png");
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel12);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1540, 52);
+            this.panel2.TabIndex = 12;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.panel11);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(200, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1340, 52);
+            this.panel12.TabIndex = 16;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
+            this.panel11.Controls.Add(this.flowLayoutPanel1);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1340, 49);
+            this.panel11.TabIndex = 16;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.LeftMenuButton);
+            this.flowLayoutPanel1.Controls.Add(this.닫기);
+            this.flowLayoutPanel1.Controls.Add(this.layoutButton);
+            this.flowLayoutPanel1.Controls.Add(this.button15);
+            this.flowLayoutPanel1.Controls.Add(this.button16);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.button12);
+            this.flowLayoutPanel1.Controls.Add(this.button13);
+            this.flowLayoutPanel1.Controls.Add(this.button14);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1340, 49);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // LeftMenuButton
+            // 
+            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
+            this.LeftMenuButton.FlatAppearance.BorderSize = 0;
+            this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeftMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.LeftMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("LeftMenuButton.Image")));
+            this.LeftMenuButton.Location = new System.Drawing.Point(3, 3);
+            this.LeftMenuButton.Name = "LeftMenuButton";
+            this.LeftMenuButton.Size = new System.Drawing.Size(83, 43);
+            this.LeftMenuButton.TabIndex = 5;
+            this.LeftMenuButton.Text = "메뉴";
+            this.LeftMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.LeftMenuButton.UseVisualStyleBackColor = false;
+            this.LeftMenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // 닫기
+            // 
+            this.닫기.FlatAppearance.BorderSize = 0;
+            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.닫기.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.닫기.Image = ((System.Drawing.Image)(resources.GetObject("닫기.Image")));
+            this.닫기.Location = new System.Drawing.Point(92, 3);
+            this.닫기.Name = "닫기";
+            this.닫기.Size = new System.Drawing.Size(88, 43);
+            this.닫기.TabIndex = 4;
+            this.닫기.Text = "닫기";
+            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.닫기.UseVisualStyleBackColor = true;
+            this.닫기.Click += new System.EventHandler(this.CloseTab);
+            // 
+            // layoutButton
+            // 
+            this.layoutButton.FlatAppearance.BorderSize = 0;
+            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.layoutButton.Image = ((System.Drawing.Image)(resources.GetObject("layoutButton.Image")));
+            this.layoutButton.Location = new System.Drawing.Point(186, 3);
+            this.layoutButton.Name = "layoutButton";
+            this.layoutButton.Size = new System.Drawing.Size(111, 43);
+            this.layoutButton.TabIndex = 12;
+            this.layoutButton.Text = "화면분할";
+            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.layoutButton.UseVisualStyleBackColor = true;
+            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
+            // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
+            this.button15.Location = new System.Drawing.Point(303, 3);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(86, 43);
+            this.button15.TabIndex = 13;
+            this.button15.Text = "설정";
+            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
+            this.button16.Location = new System.Drawing.Point(395, 3);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(86, 43);
+            this.button16.TabIndex = 14;
+            this.button16.Text = "정보";
+            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(487, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(568, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(649, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Visible = false;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(730, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 9;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Visible = false;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(811, 3);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 10;
+            this.button13.Text = "button13";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Visible = false;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(892, 3);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "button14";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 52);
+            this.panel4.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Team3.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // LeftMenuTab
             // 
             this.LeftMenuTab.AutoScroll = true;
-            this.LeftMenuTab.BackColor = System.Drawing.Color.AliceBlue;
+            this.LeftMenuTab.BackColor = System.Drawing.Color.White;
             this.LeftMenuTab.Controls.Add(this.panel10);
             this.LeftMenuTab.Controls.Add(this.panel9);
             this.LeftMenuTab.Controls.Add(this.panel8);
@@ -160,12 +385,11 @@
             this.LeftMenuTab.Controls.Add(this.panel5);
             this.LeftMenuTab.Controls.Add(this.panel3);
             this.LeftMenuTab.Controls.Add(this.panel1);
-            this.LeftMenuTab.Controls.Add(this.panel4);
             this.LeftMenuTab.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftMenuTab.Location = new System.Drawing.Point(0, 0);
+            this.LeftMenuTab.Location = new System.Drawing.Point(0, 52);
             this.LeftMenuTab.Name = "LeftMenuTab";
-            this.LeftMenuTab.Size = new System.Drawing.Size(200, 961);
-            this.LeftMenuTab.TabIndex = 9;
+            this.LeftMenuTab.Size = new System.Drawing.Size(200, 793);
+            this.LeftMenuTab.TabIndex = 13;
             // 
             // panel10
             // 
@@ -173,16 +397,16 @@
             this.panel10.Controls.Add(this.button11);
             this.panel10.Controls.Add(this.treeView8);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 1046);
+            this.panel10.Location = new System.Drawing.Point(0, 985);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(183, 114);
             this.panel10.TabIndex = 10;
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button11.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -202,14 +426,14 @@
             this.treeView8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView8.Location = new System.Drawing.Point(0, 33);
             this.treeView8.Name = "treeView8";
-            treeNode1.Name = "노드3";
-            treeNode1.Text = "작업실적등록";
-            treeNode2.Name = "노드5";
-            treeNode2.Text = "공정재고현황";
-            treeNode3.Name = "노드0";
-            treeNode3.Text = "WorkOrder";
+            treeNode300.Name = "노드3";
+            treeNode300.Text = "작업실적등록";
+            treeNode301.Name = "노드5";
+            treeNode301.Text = "공정재고현황";
+            treeNode302.Name = "노드0";
+            treeNode302.Text = "WorkOrder";
             this.treeView8.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode302});
             this.treeView8.Size = new System.Drawing.Size(200, 78);
             this.treeView8.TabIndex = 0;
             this.treeView8.Tag = "8";
@@ -221,16 +445,16 @@
             this.panel9.Controls.Add(this.button10);
             this.panel9.Controls.Add(this.treeView7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 915);
+            this.panel9.Location = new System.Drawing.Point(0, 854);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(183, 131);
             this.panel9.TabIndex = 9;
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button10.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -250,17 +474,17 @@
             this.treeView7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView7.Location = new System.Drawing.Point(0, 32);
             this.treeView7.Name = "treeView7";
-            treeNode4.Name = "노드0";
-            treeNode4.Text = "자재불출요청";
-            treeNode5.Name = "노드0";
-            treeNode5.Text = "Material";
-            treeNode6.Name = "노드3";
-            treeNode6.Text = "원자재불출";
-            treeNode7.Name = "노드2";
-            treeNode7.Text = "Material Ledger";
+            treeNode303.Name = "노드0";
+            treeNode303.Text = "자재불출요청";
+            treeNode304.Name = "노드0";
+            treeNode304.Text = "Material";
+            treeNode305.Name = "노드3";
+            treeNode305.Text = "원자재불출";
+            treeNode306.Name = "노드2";
+            treeNode306.Text = "Material Ledger";
             this.treeView7.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode7});
+            treeNode304,
+            treeNode306});
             this.treeView7.Size = new System.Drawing.Size(200, 96);
             this.treeView7.TabIndex = 0;
             this.treeView7.Tag = "7";
@@ -272,16 +496,16 @@
             this.panel8.Controls.Add(this.button9);
             this.panel8.Controls.Add(this.treeView6);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 828);
+            this.panel8.Location = new System.Drawing.Point(0, 767);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(183, 87);
             this.panel8.TabIndex = 8;
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -301,18 +525,17 @@
             this.treeView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView6.Location = new System.Drawing.Point(0, 34);
             this.treeView6.Name = "treeView6";
-            treeNode8.Name = "노드0";
-            treeNode8.Text = "작업지시생성";
-            treeNode9.Name = "노드1";
-            treeNode9.Text = "작업지시현황";
+            treeNode307.Name = "노드0";
+            treeNode307.Text = "작업지시생성";
+            treeNode308.Name = "노드1";
+            treeNode308.Text = "작업지시현황";
             this.treeView6.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
+            treeNode307,
+            treeNode308});
             this.treeView6.Size = new System.Drawing.Size(200, 50);
             this.treeView6.TabIndex = 0;
             this.treeView6.Tag = "6";
             this.treeView6.Visible = false;
-            this.treeView6.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView6_NodeMouseDoubleClick);
             // 
             // panel7
             // 
@@ -320,16 +543,16 @@
             this.panel7.Controls.Add(this.button8);
             this.panel7.Controls.Add(this.treeView5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 526);
+            this.panel7.Location = new System.Drawing.Point(0, 465);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(183, 302);
             this.panel7.TabIndex = 7;
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button8.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -349,38 +572,37 @@
             this.treeView5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView5.Location = new System.Drawing.Point(0, 33);
             this.treeView5.Name = "treeView5";
-            treeNode10.Name = "노드1";
-            treeNode10.Text = "발주";
-            treeNode11.Name = "노드2";
-            treeNode11.Text = "발주현황";
-            treeNode12.Name = "노드0";
-            treeNode12.Text = "Purchasing";
-            treeNode13.Name = "노드5";
-            treeNode13.Text = "입고대기";
-            treeNode14.Name = "노드4";
-            treeNode14.Text = "Supplier";
-            treeNode15.Name = "노드7";
-            treeNode15.Text = "자재입고";
-            treeNode16.Name = "노드8";
-            treeNode16.Text = "자재입고현황";
-            treeNode17.Name = "노드6";
-            treeNode17.Text = "Material Ledger";
-            treeNode18.Name = "노드10";
-            treeNode18.Text = "자재재고현황";
-            treeNode19.Name = "노드13";
-            treeNode19.Text = "입출고현황";
-            treeNode20.Name = "노드9";
-            treeNode20.Text = "Stock";
+            treeNode309.Name = "노드1";
+            treeNode309.Text = "발주";
+            treeNode310.Name = "노드2";
+            treeNode310.Text = "발주현황";
+            treeNode311.Name = "노드0";
+            treeNode311.Text = "Purchasing";
+            treeNode312.Name = "노드5";
+            treeNode312.Text = "입고대기";
+            treeNode313.Name = "노드4";
+            treeNode313.Text = "Supplier";
+            treeNode314.Name = "노드7";
+            treeNode314.Text = "자재입고";
+            treeNode315.Name = "노드8";
+            treeNode315.Text = "자재입고현황";
+            treeNode316.Name = "노드6";
+            treeNode316.Text = "Material Ledger";
+            treeNode317.Name = "노드10";
+            treeNode317.Text = "자재재고현황";
+            treeNode318.Name = "노드13";
+            treeNode318.Text = "입출고현황";
+            treeNode319.Name = "노드9";
+            treeNode319.Text = "Stock";
             this.treeView5.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode14,
-            treeNode17,
-            treeNode20});
+            treeNode311,
+            treeNode313,
+            treeNode316,
+            treeNode319});
             this.treeView5.Size = new System.Drawing.Size(200, 266);
             this.treeView5.TabIndex = 0;
             this.treeView5.Tag = "5";
             this.treeView5.Visible = false;
-            this.treeView5.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView5_NodeMouseDoubleClick);
             // 
             // panel6
             // 
@@ -388,16 +610,16 @@
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.treeView4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 440);
+            this.panel6.Location = new System.Drawing.Point(0, 379);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(183, 86);
             this.panel6.TabIndex = 6;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -417,13 +639,13 @@
             this.treeView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView4.Location = new System.Drawing.Point(0, 34);
             this.treeView4.Name = "treeView4";
-            treeNode21.Name = "노드0";
-            treeNode21.Text = "생산계획";
-            treeNode22.Name = "노드1";
-            treeNode22.Text = "외주계획";
+            treeNode298.Name = "노드0";
+            treeNode298.Text = "생산계획";
+            treeNode299.Name = "노드1";
+            treeNode299.Text = "외주계획";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
+            treeNode298,
+            treeNode299});
             this.treeView4.Size = new System.Drawing.Size(200, 49);
             this.treeView4.TabIndex = 0;
             this.treeView4.Tag = "4";
@@ -435,16 +657,16 @@
             this.panel5.Controls.Add(this.button5);
             this.panel5.Controls.Add(this.treeView3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 308);
+            this.panel5.Location = new System.Drawing.Point(0, 247);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(183, 132);
             this.panel5.TabIndex = 5;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -464,21 +686,20 @@
             this.treeView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView3.Location = new System.Drawing.Point(0, 33);
             this.treeView3.Name = "treeView3";
-            treeNode23.Name = "노드1";
-            treeNode23.Text = "영업마스터업로드(PO)";
-            treeNode24.Name = "노드2";
-            treeNode24.Text = "영업마스터";
-            treeNode25.Name = "노드4";
-            treeNode25.Text = "수요계획";
-            treeNode26.Name = "노드0";
-            treeNode26.Text = "오더관리";
+            treeNode320.Name = "노드1";
+            treeNode320.Text = "영업마스터업로드(PO)";
+            treeNode321.Name = "노드2";
+            treeNode321.Text = "영업마스터";
+            treeNode322.Name = "노드4";
+            treeNode322.Text = "수요계획";
+            treeNode323.Name = "노드0";
+            treeNode323.Text = "오더관리";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode26});
+            treeNode323});
             this.treeView3.Size = new System.Drawing.Size(200, 96);
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
             this.treeView3.Visible = false;
-            this.treeView3.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView3_NodeMouseDoubleClick);
             // 
             // panel3
             // 
@@ -486,16 +707,16 @@
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.treeView2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 218);
+            this.panel3.Location = new System.Drawing.Point(0, 157);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 90);
             this.panel3.TabIndex = 4;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -515,13 +736,13 @@
             this.treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView2.Location = new System.Drawing.Point(0, 33);
             this.treeView2.Name = "treeView2";
-            treeNode27.Name = "품목관리";
-            treeNode27.Text = "품목관리";
-            treeNode28.Name = "BOM";
-            treeNode28.Text = "BOM";
+            treeNode324.Name = "품목관리";
+            treeNode324.Text = "품목관리";
+            treeNode325.Name = "BOM";
+            treeNode325.Text = "BOM";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28});
+            treeNode324,
+            treeNode325});
             this.treeView2.Size = new System.Drawing.Size(200, 54);
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
@@ -534,16 +755,16 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.treeView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 61);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 157);
             this.panel1.TabIndex = 3;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -564,197 +785,45 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode29.Name = "공장관리";
-            treeNode29.Text = "공장관리";
-            treeNode30.Name = "설비관리";
-            treeNode30.Text = "설비관리";
-            treeNode31.Name = "업체관리";
-            treeNode31.Text = "업체관리";
-            treeNode32.Name = "BOR";
-            treeNode32.Text = "BOR";
-            treeNode33.Name = "자원관리";
-            treeNode33.Text = "자원관리";
+            treeNode326.Name = "공장관리";
+            treeNode326.Text = "공장관리";
+            treeNode327.Name = "설비관리";
+            treeNode327.Text = "설비관리";
+            treeNode328.Name = "업체관리";
+            treeNode328.Text = "업체관리";
+            treeNode329.Name = "BOR";
+            treeNode329.Text = "BOR";
+            treeNode330.Name = "자원관리";
+            treeNode330.Text = "자원관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode33});
+            treeNode330});
             this.treeView1.Size = new System.Drawing.Size(200, 120);
             this.treeView1.TabIndex = 0;
             this.treeView1.Tag = "1";
             this.treeView1.Visible = false;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Azure;
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(183, 61);
-            this.panel4.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Team3.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightBlue;
-            this.panel2.Controls.Add(this.layoutButton);
-            this.panel2.Controls.Add(this.button14);
-            this.panel2.Controls.Add(this.button13);
-            this.panel2.Controls.Add(this.button12);
-            this.panel2.Controls.Add(this.닫기);
-            this.panel2.Controls.Add(this.LeftMenuButton);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1684, 60);
-            this.panel2.TabIndex = 12;
-            // 
-            // layoutButton
-            // 
-            this.layoutButton.FlatAppearance.BorderSize = 0;
-            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.layoutButton.ImageIndex = 2;
-            this.layoutButton.ImageList = this.imageList1;
-            this.layoutButton.Location = new System.Drawing.Point(270, 11);
-            this.layoutButton.Name = "layoutButton";
-            this.layoutButton.Size = new System.Drawing.Size(125, 38);
-            this.layoutButton.TabIndex = 12;
-            this.layoutButton.Text = "화면분할";
-            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.layoutButton.UseVisualStyleBackColor = true;
-            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(1161, 20);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(1080, 21);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 10;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(999, 21);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // 닫기
-            // 
-            this.닫기.FlatAppearance.BorderSize = 0;
-            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.닫기.ImageIndex = 1;
-            this.닫기.ImageList = this.imageList1;
-            this.닫기.Location = new System.Drawing.Point(164, 11);
-            this.닫기.Name = "닫기";
-            this.닫기.Size = new System.Drawing.Size(100, 38);
-            this.닫기.TabIndex = 4;
-            this.닫기.Text = "닫기";
-            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.닫기.UseVisualStyleBackColor = true;
-            this.닫기.Click += new System.EventHandler(this.CloseTab);
-            // 
-            // LeftMenuButton
-            // 
-            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
-            this.LeftMenuButton.FlatAppearance.BorderSize = 0;
-            this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.LeftMenuButton.ImageIndex = 0;
-            this.LeftMenuButton.ImageList = this.imageList1;
-            this.LeftMenuButton.Location = new System.Drawing.Point(20, 10);
-            this.LeftMenuButton.Name = "LeftMenuButton";
-            this.LeftMenuButton.Size = new System.Drawing.Size(138, 41);
-            this.LeftMenuButton.TabIndex = 5;
-            this.LeftMenuButton.Text = "Menu";
-            this.LeftMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeftMenuButton.UseVisualStyleBackColor = false;
-            this.LeftMenuButton.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(756, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(837, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(918, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // MainTab
             // 
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTab.Location = new System.Drawing.Point(200, 60);
+            this.MainTab.Location = new System.Drawing.Point(200, 52);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
-            this.MainTab.Size = new System.Drawing.Size(1684, 901);
-            this.MainTab.TabIndex = 13;
+            this.MainTab.Size = new System.Drawing.Size(1340, 793);
+            this.MainTab.TabIndex = 14;
+            this.MainTab.SelectedIndexChanged += new System.EventHandler(this.MainTab_SelectedIndexChanged);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1884, 961);
+            this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.MainTab);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.LeftMenuTab);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "Main";
@@ -763,6 +832,13 @@
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LeftMenuTab.ResumeLayout(false);
             this.LeftMenuTab.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -773,27 +849,22 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Panel LeftMenuTab;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TreeView treeView2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Panel panel4;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl MainTab;
+        private System.Windows.Forms.Panel LeftMenuTab;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TreeView treeView8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TreeView treeView7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TreeView treeView6;
@@ -806,22 +877,28 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TreeView treeView3;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TreeView treeView8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TreeView treeView7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button 닫기;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button LeftMenuButton;
+        private System.Windows.Forms.Button 닫기;
+        private System.Windows.Forms.Button layoutButton;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button layoutButton;
     }
 }
 

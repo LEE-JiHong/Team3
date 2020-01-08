@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesMasterUpload));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnCreatePO = new System.Windows.Forms.Button();
             this.btnAddExcel = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
@@ -126,16 +128,25 @@
             // btnAddExcel
             // 
             this.btnAddExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddExcel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAddExcel.BackColor = System.Drawing.Color.Silver;
+            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
             this.btnAddExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnAddExcel.Location = new System.Drawing.Point(295, 3);
+            this.btnAddExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnAddExcel.Image")));
+            this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddExcel.Location = new System.Drawing.Point(282, 3);
             this.btnAddExcel.Name = "btnAddExcel";
-            this.btnAddExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnAddExcel.Size = new System.Drawing.Size(88, 23);
             this.btnAddExcel.TabIndex = 20;
             this.btnAddExcel.Text = "Excel등록";
+            this.btnAddExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddExcel.UseVisualStyleBackColor = false;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "search.png");
             // 
             // SalesMasterUpload
             // 
@@ -161,5 +172,6 @@
         private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.Button btnCreatePO;
         private System.Windows.Forms.Button btnAddExcel;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }
