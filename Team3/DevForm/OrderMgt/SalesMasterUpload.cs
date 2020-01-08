@@ -15,6 +15,12 @@ namespace Team3
             InitializeComponent();
         }
 
+        private void SalesMasterUpload_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //엑셀 등록 버튼
         private void btnAddExcel_Click(object sender, EventArgs e)
         {
             SalesMasterDialog frm = new SalesMasterDialog();
@@ -23,5 +29,7 @@ namespace Team3
             {
             }
         }
+
+        
     }
 }

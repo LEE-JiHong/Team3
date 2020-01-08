@@ -20,6 +20,14 @@ namespace Team3
 
             //this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Gradient);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
+            //this.button3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button4.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button5.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button7.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button8.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button9.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button10.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
+            //this.button11.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
         }
 
         //private void Form_Gradient(object sender, PaintEventArgs e)
@@ -35,9 +43,9 @@ namespace Team3
             //Color middleColor = Color.FromArgb(149, 165, 186);
             //Color endColor = Color.FromArgb(96, 121, 152);
 
-            Color startColor = Color.FromArgb(255,255,255);
-            Color middleColor = Color.FromArgb(149, 165, 186);
-            Color endColor = Color.FromArgb(96, 121, 152);
+            Color startColor = Color.FromArgb(255, 255, 255);
+            Color middleColor = Color.FromArgb(96, 121, 152);
+            Color endColor = Color.FromArgb(36, 56, 91);
 
             LinearGradientBrush br = new LinearGradientBrush(this.panel2.ClientRectangle, System.Drawing.Color.Black, System.Drawing.Color.Black, 0, false);
 
@@ -45,9 +53,34 @@ namespace Team3
             cb.Positions = new[] { 0, 1 / 2f, 1 };
             cb.Colors = new[] { startColor, middleColor, endColor };
             br.InterpolationColors = cb;
+
             br.RotateTransform(0);
             e.Graphics.FillRectangle(br, this.ClientRectangle);
         }
+
+        //private void Panel_Gradient2(object sender, PaintEventArgs e)
+        //{
+        //    //Color startColor = Color.FromArgb(202, 210, 220);
+        //    //Color middleColor = Color.FromArgb(149, 165, 186);
+        //    //Color endColor = Color.FromArgb(96, 121, 152);
+
+        //    Color startColor = Color.FromArgb(96, 121, 152);
+        //    Color middleColor = Color.FromArgb(36, 56, 91);
+        //    Color endColor = Color.FromArgb(24, 37, 60);
+
+        //    LinearGradientBrush br = new LinearGradientBrush(this.button3.ClientRectangle, System.Drawing.Color.Black, System.Drawing.Color.Black, 0, false);
+
+           
+
+        //    ColorBlend cb = new ColorBlend();
+        //    cb.Positions = new[] { 0, 1 / 2f, 1 };
+        //    cb.Colors = new[] { startColor, middleColor, endColor };
+        //    br.InterpolationColors = cb;
+            
+        //    br.RotateTransform(0);
+        //    e.Graphics.FillRectangle(br, this.ClientRectangle);
+        //    button3.Text = "관리";
+        //}
 
         private void Main_Load(object sender, EventArgs e)
         {

@@ -36,6 +36,7 @@
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,7 +64,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Size = new System.Drawing.Size(342, 36);
+            this.panel1.Controls.SetChildIndex(this.label1, 0);
+            this.panel1.Controls.SetChildIndex(this.button1, 0);
+            this.panel1.Controls.SetChildIndex(this.btnClose, 0);
             // 
             // panel2
             // 
@@ -128,11 +133,14 @@
             this.btnFindFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindFile.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFindFile.Image = global::Team3.Properties.Resources.BOFolder_16x161;
+            this.btnFindFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFindFile.Location = new System.Drawing.Point(108, 19);
             this.btnFindFile.Name = "btnFindFile";
-            this.btnFindFile.Size = new System.Drawing.Size(97, 23);
+            this.btnFindFile.Size = new System.Drawing.Size(88, 23);
             this.btnFindFile.TabIndex = 8;
             this.btnFindFile.Text = "파일선택";
+            this.btnFindFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFindFile.UseVisualStyleBackColor = false;
             this.btnFindFile.Click += new System.EventHandler(this.btnFindFile_Click);
             // 
@@ -160,6 +168,20 @@
             this.txt.Size = new System.Drawing.Size(208, 21);
             this.txt.TabIndex = 11;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Team3.Properties.Resources.cross_out1;
+            this.btnClose.Location = new System.Drawing.Point(307, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 23);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // SalesMasterDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -185,5 +207,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnFindFile;
+        protected System.Windows.Forms.Button btnClose;
     }
 }
