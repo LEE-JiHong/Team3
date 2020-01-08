@@ -485,6 +485,7 @@
             this.txtLeastOrder.Name = "txtLeastOrder";
             this.txtLeastOrder.Size = new System.Drawing.Size(100, 21);
             this.txtLeastOrder.TabIndex = 31;
+            this.txtLeastOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtConversionAomount
             // 
@@ -569,6 +570,7 @@
             this.txtUnitAmount.Name = "txtUnitAmount";
             this.txtUnitAmount.Size = new System.Drawing.Size(100, 21);
             this.txtUnitAmount.TabIndex = 41;
+            this.txtUnitAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtStandardRelaseAount
             // 
@@ -693,6 +695,7 @@
             this.txtSafetyAmount.Name = "txtSafetyAmount";
             this.txtSafetyAmount.Size = new System.Drawing.Size(100, 21);
             this.txtSafetyAmount.TabIndex = 57;
+            this.txtSafetyAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtModifier
             // 

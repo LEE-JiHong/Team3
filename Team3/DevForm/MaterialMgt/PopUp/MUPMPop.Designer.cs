@@ -115,6 +115,7 @@
             this.txtBeforePrice.Name = "txtBeforePrice";
             this.txtBeforePrice.Size = new System.Drawing.Size(177, 21);
             this.txtBeforePrice.TabIndex = 45;
+            this.txtBeforePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNote
             // 
@@ -130,6 +131,7 @@
             this.txtCurrentPrice.Name = "txtCurrentPrice";
             this.txtCurrentPrice.Size = new System.Drawing.Size(177, 21);
             this.txtCurrentPrice.TabIndex = 43;
+            this.txtCurrentPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpStartDate
             // 

@@ -280,6 +280,7 @@
             this.txtAmountRequired.Name = "txtAmountRequired";
             this.txtAmountRequired.Size = new System.Drawing.Size(168, 21);
             this.txtAmountRequired.TabIndex = 19;
+            this.txtAmountRequired.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNote
             // 

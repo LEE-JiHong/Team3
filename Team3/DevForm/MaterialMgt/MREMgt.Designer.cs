@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MREMgt));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddExcel = new System.Windows.Forms.Button();
-            this.btnFormDownload = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnCopy = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.txtUnitPrice = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblStandardDate = new System.Windows.Forms.Label();
             this.dtpStandardDate = new System.Windows.Forms.DateTimePicker();
             this.dgvExchange = new System.Windows.Forms.DataGridView();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.btnAddExcel = new System.Windows.Forms.Button();
+            this.btnFormDownload = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,8 +74,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(690, 77);
-            this.panel3.Size = new System.Drawing.Size(441, 29);
+            this.panel3.Location = new System.Drawing.Point(734, 77);
+            this.panel3.Size = new System.Drawing.Size(397, 29);
             // 
             // TopMenu
             // 
@@ -111,83 +111,8 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(441, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(397, 29);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // btnAddExcel
-            // 
-            this.btnAddExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddExcel.Location = new System.Drawing.Point(354, 3);
-            this.btnAddExcel.Name = "btnAddExcel";
-            this.btnAddExcel.Size = new System.Drawing.Size(84, 23);
-            this.btnAddExcel.TabIndex = 29;
-            this.btnAddExcel.Text = "Excel 등록";
-            this.btnAddExcel.UseVisualStyleBackColor = false;
-            // 
-            // btnFormDownload
-            // 
-            this.btnFormDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFormDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnFormDownload.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFormDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFormDownload.Location = new System.Drawing.Point(256, 3);
-            this.btnFormDownload.Name = "btnFormDownload";
-            this.btnFormDownload.Size = new System.Drawing.Size(92, 23);
-            this.btnFormDownload.TabIndex = 28;
-            this.btnFormDownload.Text = "양식 다운로드";
-            this.btnFormDownload.UseVisualStyleBackColor = false;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExcel.Location = new System.Drawing.Point(175, 3);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnExcel.TabIndex = 27;
-            this.btnExcel.Text = "엑셀";
-            this.btnExcel.UseVisualStyleBackColor = false;
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnCopy.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCopy.Location = new System.Drawing.Point(94, 3);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(75, 23);
-            this.btnCopy.TabIndex = 26;
-            this.btnCopy.Text = "복사";
-            this.btnCopy.UseVisualStyleBackColor = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdd.Location = new System.Drawing.Point(13, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "등록";
-            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // txtUnitPrice
             // 
@@ -202,22 +127,22 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(603, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 15);
+            this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "화폐단위";
             // 
             // lblStandardDate
             // 
             this.lblStandardDate.AutoSize = true;
-            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandardDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblStandardDate.Location = new System.Drawing.Point(31, 20);
             this.lblStandardDate.Name = "lblStandardDate";
-            this.lblStandardDate.Size = new System.Drawing.Size(55, 15);
+            this.lblStandardDate.Size = new System.Drawing.Size(52, 16);
             this.lblStandardDate.TabIndex = 4;
             this.lblStandardDate.Text = "기준일자";
             // 
@@ -257,6 +182,91 @@
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
+            // btnAddExcel
+            // 
+            this.btnAddExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddExcel.Image = global::Team3.Properties.Resources.LoadFrom_16x16;
+            this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddExcel.Location = new System.Drawing.Point(299, 3);
+            this.btnAddExcel.Name = "btnAddExcel";
+            this.btnAddExcel.Size = new System.Drawing.Size(95, 23);
+            this.btnAddExcel.TabIndex = 34;
+            this.btnAddExcel.Text = "Excel 등록";
+            this.btnAddExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddExcel.UseVisualStyleBackColor = false;
+            // 
+            // btnFormDownload
+            // 
+            this.btnFormDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnFormDownload.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFormDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFormDownload.Image = global::Team3.Properties.Resources.Open2_16x16;
+            this.btnFormDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormDownload.Location = new System.Drawing.Point(187, 3);
+            this.btnFormDownload.Name = "btnFormDownload";
+            this.btnFormDownload.Size = new System.Drawing.Size(106, 23);
+            this.btnFormDownload.TabIndex = 33;
+            this.btnFormDownload.Text = "양식 다운로드";
+            this.btnFormDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFormDownload.UseVisualStyleBackColor = false;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(125, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(56, 23);
+            this.btnExcel.TabIndex = 32;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = false;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnCopy.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCopy.Image = global::Team3.Properties.Resources.Copy_16x16;
+            this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCopy.Location = new System.Drawing.Point(63, 3);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(56, 23);
+            this.btnCopy.TabIndex = 31;
+            this.btnCopy.Text = "복사";
+            this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopy.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(5, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(52, 23);
+            this.btnAdd.TabIndex = 30;
+            this.btnAdd.Text = "등록";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
             // MREMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -279,16 +289,16 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnAddExcel;
-        private System.Windows.Forms.Button btnFormDownload;
-        private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button btnCopy;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DateTimePicker dtpStandardDate;
         private System.Windows.Forms.ComboBox txtUnitPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblStandardDate;
         private System.Windows.Forms.DataGridView dgvExchange;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnAddExcel;
+        private System.Windows.Forms.Button btnFormDownload;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
