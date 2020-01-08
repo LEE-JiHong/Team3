@@ -585,6 +585,7 @@
     <None Include="Resources\close.png" />
     <None Include="Icon\Button\cross-out.png" />
     <None Include="Icon\Button\BOFolder_16x16.png" />
+    <None Include="Icon\Button\Copy_16x16.png" />
     <Content Include="Icon\Button\edit.png" />
     <None Include="Icon\Home\Merge_32x32.png" />
     <None Include="Icon\Button\ExportToXLSX_16x16.png" />
