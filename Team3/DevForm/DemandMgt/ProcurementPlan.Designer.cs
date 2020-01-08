@@ -121,7 +121,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(785, 69);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 31);
+            this.button1.Size = new System.Drawing.Size(93, 30);
             this.button1.TabIndex = 70;
             this.button1.Text = "조회";
             this.button1.UseVisualStyleBackColor = false;
