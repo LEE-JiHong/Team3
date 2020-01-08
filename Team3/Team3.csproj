@@ -178,11 +178,11 @@
     <Compile Include="DevForm\MaterialMgt\PopUp\MUPMPop.Designer.cs">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.cs">
+    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.Designer.cs">
-      <DependentUpon>ProductPop.cs</DependentUpon>
+    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.Designer.cs">
+      <DependentUpon>MaterialPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\PopUp\SUPMPop.cs">
       <SubType>Form</SubType>
@@ -446,8 +446,8 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MUPMPop.resx">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\ProductPop.resx">
-      <DependentUpon>ProductPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MaterialPop.resx">
+      <DependentUpon>MaterialPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\SUPMPop.resx">
       <DependentUpon>SUPMPop.cs</DependentUpon>

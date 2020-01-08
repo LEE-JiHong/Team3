@@ -54,7 +54,7 @@
             // 
             this.panel2.Controls.Add(this.dgvExchange);
             this.panel2.Location = new System.Drawing.Point(12, 112);
-            this.panel2.Size = new System.Drawing.Size(876, 333);
+            this.panel2.Size = new System.Drawing.Size(1119, 333);
             // 
             // panel1
             // 
@@ -63,25 +63,23 @@
             this.panel1.Controls.Add(this.txtUnitPrice);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblStandardDate);
-            this.panel1.Size = new System.Drawing.Size(875, 57);
+            this.panel1.Size = new System.Drawing.Size(1118, 57);
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(12, 87);
+            this.label1.Size = new System.Drawing.Size(68, 19);
             this.label1.Text = "환율관리";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(466, 77);
+            this.panel3.Location = new System.Drawing.Point(709, 77);
             this.panel3.Size = new System.Drawing.Size(422, 29);
             // 
-            // imageList1
+            // TopMenu
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "menulist1.png");
+            this.TopMenu.Size = new System.Drawing.Size(1137, 60);
             // 
             // layoutButton
             // 
@@ -90,6 +88,17 @@
             // 닫기
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
+            // 
+            // basepanel
+            // 
+            this.basepanel.Size = new System.Drawing.Size(1137, 454);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // flowLayoutPanel1
             // 
@@ -164,9 +173,9 @@
             // 
             this.txtUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUnitPrice.FormattingEnabled = true;
-            this.txtUnitPrice.Location = new System.Drawing.Point(434, 18);
+            this.txtUnitPrice.Location = new System.Drawing.Point(677, 18);
             this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(173, 20);
+            this.txtUnitPrice.Size = new System.Drawing.Size(178, 24);
             this.txtUnitPrice.TabIndex = 7;
             // 
             // label3
@@ -175,7 +184,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(360, 20);
+            this.label3.Location = new System.Drawing.Point(603, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 5;
@@ -197,14 +206,14 @@
             this.dtpStandardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStandardDate.Location = new System.Drawing.Point(112, 17);
             this.dtpStandardDate.Name = "dtpStandardDate";
-            this.dtpStandardDate.Size = new System.Drawing.Size(118, 21);
+            this.dtpStandardDate.Size = new System.Drawing.Size(154, 22);
             this.dtpStandardDate.TabIndex = 8;
             // 
             // btnSelect
             // 
             this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSelect.Location = new System.Drawing.Point(752, 16);
+            this.btnSelect.Location = new System.Drawing.Point(995, 16);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(117, 23);
             this.btnSelect.TabIndex = 19;
@@ -218,13 +227,13 @@
             this.dgvExchange.Location = new System.Drawing.Point(0, 0);
             this.dgvExchange.Name = "dgvExchange";
             this.dgvExchange.RowTemplate.Height = 23;
-            this.dgvExchange.Size = new System.Drawing.Size(876, 333);
+            this.dgvExchange.Size = new System.Drawing.Size(1119, 333);
             this.dgvExchange.TabIndex = 0;
             // 
             // MREMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.ClientSize = new System.Drawing.Size(1137, 536);
             this.Name = "MREMgt";
             this.Tag = "환율관리";
             this.panel2.ResumeLayout(false);

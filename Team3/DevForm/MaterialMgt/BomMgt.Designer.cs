@@ -58,7 +58,7 @@
             // 
             this.panel2.Controls.Add(this.dgvBom);
             this.panel2.Location = new System.Drawing.Point(12, 121);
-            this.panel2.Size = new System.Drawing.Size(1169, 324);
+            this.panel2.Size = new System.Drawing.Size(1173, 324);
             // 
             // panel1
             // 
@@ -71,7 +71,7 @@
             this.panel1.Controls.Add(this.lblProduct);
             this.panel1.Controls.Add(this.lblUse);
             this.panel1.Controls.Add(this.lblStandardDate);
-            this.panel1.Size = new System.Drawing.Size(1169, 77);
+            this.panel1.Size = new System.Drawing.Size(1173, 77);
             // 
             // label1
             // 
@@ -82,19 +82,12 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(760, 91);
+            this.panel3.Location = new System.Drawing.Point(764, 91);
             this.panel3.Size = new System.Drawing.Size(422, 29);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(1193, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1197, 60);
             // 
             // layoutButton
             // 
@@ -106,15 +99,22 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1193, 454);
+            this.basepanel.Size = new System.Drawing.Size(1197, 454);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // cboDeployment
             // 
             this.cboDeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDeployment.FormattingEnabled = true;
-            this.cboDeployment.Location = new System.Drawing.Point(809, 8);
+            this.cboDeployment.Location = new System.Drawing.Point(813, 8);
             this.cboDeployment.Name = "cboDeployment";
-            this.cboDeployment.Size = new System.Drawing.Size(178, 20);
+            this.cboDeployment.Size = new System.Drawing.Size(178, 24);
             this.cboDeployment.TabIndex = 34;
             // 
             // cboUse
@@ -122,22 +122,22 @@
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(133, 47);
             this.cboUse.Name = "cboUse";
-            this.cboUse.Size = new System.Drawing.Size(216, 20);
+            this.cboUse.Size = new System.Drawing.Size(216, 24);
             this.cboUse.TabIndex = 30;
             // 
             // txtProduct
             // 
             this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtProduct.Location = new System.Drawing.Point(434, 8);
+            this.txtProduct.Location = new System.Drawing.Point(436, 8);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(221, 21);
+            this.txtProduct.Size = new System.Drawing.Size(221, 22);
             this.txtProduct.TabIndex = 29;
             // 
             // txtStandardDate
             // 
             this.txtStandardDate.Location = new System.Drawing.Point(133, 8);
             this.txtStandardDate.Name = "txtStandardDate";
-            this.txtStandardDate.Size = new System.Drawing.Size(216, 21);
+            this.txtStandardDate.Size = new System.Drawing.Size(216, 22);
             this.txtStandardDate.TabIndex = 28;
             // 
             // label10
@@ -146,7 +146,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(731, 12);
+            this.label10.Location = new System.Drawing.Point(735, 12);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 15);
             this.label10.TabIndex = 25;
@@ -158,7 +158,7 @@
             this.lblProduct.AutoSize = true;
             this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblProduct.Location = new System.Drawing.Point(383, 12);
+            this.lblProduct.Location = new System.Drawing.Point(385, 12);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(31, 15);
             this.lblProduct.TabIndex = 22;
@@ -190,7 +190,7 @@
             // 
             this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSelect.Location = new System.Drawing.Point(1046, 48);
+            this.btnSelect.Location = new System.Drawing.Point(1050, 48);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(117, 23);
             this.btnSelect.TabIndex = 35;
@@ -216,6 +216,7 @@
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "등록";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCopy
             // 
@@ -254,7 +255,7 @@
             this.dgvBom.Location = new System.Drawing.Point(0, 0);
             this.dgvBom.Name = "dgvBom";
             this.dgvBom.RowTemplate.Height = 23;
-            this.dgvBom.Size = new System.Drawing.Size(1169, 324);
+            this.dgvBom.Size = new System.Drawing.Size(1173, 324);
             this.dgvBom.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -274,7 +275,7 @@
             // BomMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1193, 536);
+            this.ClientSize = new System.Drawing.Size(1197, 536);
             this.Name = "BomMgt";
             this.Tag = "BOM";
             this.panel2.ResumeLayout(false);

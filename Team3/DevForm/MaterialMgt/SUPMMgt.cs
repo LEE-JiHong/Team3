@@ -15,5 +15,14 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SUPMPop frm = new SUPMPop();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

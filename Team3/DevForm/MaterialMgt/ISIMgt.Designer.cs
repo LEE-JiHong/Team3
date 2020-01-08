@@ -77,13 +77,6 @@
             this.panel3.Location = new System.Drawing.Point(453, 72);
             this.panel3.Size = new System.Drawing.Size(432, 29);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "menulist1.png");
-            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -91,6 +84,13 @@
             // 닫기
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
             // lblProduct
             // 
@@ -119,7 +119,7 @@
             // 
             this.txtProduct.Location = new System.Drawing.Point(87, 18);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(164, 21);
+            this.txtProduct.Size = new System.Drawing.Size(164, 22);
             this.txtProduct.TabIndex = 2;
             // 
             // cboInspectionType
@@ -128,7 +128,7 @@
             this.cboInspectionType.FormattingEnabled = true;
             this.cboInspectionType.Location = new System.Drawing.Point(412, 19);
             this.cboInspectionType.Name = "cboInspectionType";
-            this.cboInspectionType.Size = new System.Drawing.Size(173, 20);
+            this.cboInspectionType.Size = new System.Drawing.Size(173, 24);
             this.cboInspectionType.TabIndex = 3;
             // 
             // btnSelect
@@ -171,6 +171,7 @@
             this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "등록";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCopy
             // 

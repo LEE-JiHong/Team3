@@ -59,7 +59,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLeastOrder = new System.Windows.Forms.TextBox();
             this.txtConversionAomount = new System.Windows.Forms.TextBox();
             this.txtModifyDate = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -136,7 +136,7 @@
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.txtNote);
             this.panel2.Controls.Add(this.txtModifyDate);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtLeastOrder);
             this.panel2.Controls.Add(this.txtProduct);
             this.panel2.Controls.Add(this.label31);
             this.panel2.Controls.Add(this.label29);
@@ -220,7 +220,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 135);
+            this.label7.Location = new System.Drawing.Point(16, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 18);
             this.label7.TabIndex = 5;
@@ -332,7 +332,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(223, 140);
+            this.label18.Location = new System.Drawing.Point(425, 138);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(47, 18);
             this.label18.TabIndex = 16;
@@ -425,7 +425,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(425, 138);
+            this.label27.Location = new System.Drawing.Point(223, 140);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(86, 18);
             this.label27.TabIndex = 25;
@@ -479,12 +479,12 @@
             this.txtProduct.Size = new System.Drawing.Size(100, 21);
             this.txtProduct.TabIndex = 30;
             // 
-            // textBox2
+            // txtLeastOrder
             // 
-            this.textBox2.Location = new System.Drawing.Point(102, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 31;
+            this.txtLeastOrder.Location = new System.Drawing.Point(102, 138);
+            this.txtLeastOrder.Name = "txtLeastOrder";
+            this.txtLeastOrder.Size = new System.Drawing.Size(100, 21);
+            this.txtLeastOrder.TabIndex = 31;
             // 
             // txtConversionAomount
             // 
@@ -604,7 +604,7 @@
             // cboNameDirector
             // 
             this.cboNameDirector.FormattingEnabled = true;
-            this.cboNameDirector.Location = new System.Drawing.Point(309, 137);
+            this.cboNameDirector.Location = new System.Drawing.Point(511, 137);
             this.cboNameDirector.Name = "cboNameDirector";
             this.cboNameDirector.Size = new System.Drawing.Size(100, 23);
             this.cboNameDirector.TabIndex = 46;
@@ -689,7 +689,7 @@
             // 
             // txtSafetyAmount
             // 
-            this.txtSafetyAmount.Location = new System.Drawing.Point(511, 135);
+            this.txtSafetyAmount.Location = new System.Drawing.Point(309, 137);
             this.txtSafetyAmount.Name = "txtSafetyAmount";
             this.txtSafetyAmount.Size = new System.Drawing.Size(100, 21);
             this.txtSafetyAmount.TabIndex = 57;
@@ -779,7 +779,7 @@
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtModifyDate;
         private System.Windows.Forms.TextBox txtConversionAomount;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLeastOrder;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;

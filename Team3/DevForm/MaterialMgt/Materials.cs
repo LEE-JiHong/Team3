@@ -14,5 +14,14 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ProductPop frm = new ProductPop();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

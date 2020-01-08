@@ -15,5 +15,14 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MUPMPop frm = new MUPMPop();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
