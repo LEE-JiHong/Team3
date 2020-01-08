@@ -67,7 +67,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Location = new System.Drawing.Point(12, 162);
-            this.panel2.Size = new System.Drawing.Size(871, 289);
+            this.panel2.Size = new System.Drawing.Size(967, 307);
             // 
             // panel1
             // 
@@ -81,7 +81,7 @@
             this.panel1.Controls.Add(this.txtLicenseNum);
             this.panel1.Controls.Add(this.txtCodeCompany);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Size = new System.Drawing.Size(870, 113);
+            this.panel1.Size = new System.Drawing.Size(966, 113);
             // 
             // label1
             // 
@@ -92,7 +92,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(569, 130);
+            this.panel3.Location = new System.Drawing.Point(665, 130);
             this.panel3.Size = new System.Drawing.Size(314, 29);
             // 
             // imageList1
@@ -102,6 +102,10 @@
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(990, 60);
+            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -109,6 +113,10 @@
             // 닫기
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
+            // 
+            // basepanel
+            // 
+            this.basepanel.Size = new System.Drawing.Size(990, 472);
             // 
             // label2
             // 
@@ -196,83 +204,98 @@
             // 
             // txtCodeCompany
             // 
-            this.txtCodeCompany.Location = new System.Drawing.Point(129, 21);
+            this.txtCodeCompany.Location = new System.Drawing.Point(138, 24);
             this.txtCodeCompany.Name = "txtCodeCompany";
-            this.txtCodeCompany.Size = new System.Drawing.Size(100, 21);
+            this.txtCodeCompany.Size = new System.Drawing.Size(201, 21);
             this.txtCodeCompany.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(31, 25);
+            this.label6.Location = new System.Drawing.Point(31, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "업체코드";
             // 
             // txtLicenseNum
             // 
-            this.txtLicenseNum.Location = new System.Drawing.Point(129, 60);
+            this.txtLicenseNum.Location = new System.Drawing.Point(138, 59);
             this.txtLicenseNum.Name = "txtLicenseNum";
-            this.txtLicenseNum.Size = new System.Drawing.Size(100, 21);
+            this.txtLicenseNum.Size = new System.Drawing.Size(201, 21);
             this.txtLicenseNum.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(31, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 12);
+            this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "사업자등록번호";
             // 
             // txtNameCompany
             // 
-            this.txtNameCompany.Location = new System.Drawing.Point(322, 21);
+            this.txtNameCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNameCompany.Location = new System.Drawing.Point(447, 24);
             this.txtNameCompany.Name = "txtNameCompany";
-            this.txtNameCompany.Size = new System.Drawing.Size(136, 21);
+            this.txtNameCompany.Size = new System.Drawing.Size(201, 21);
             this.txtNameCompany.TabIndex = 1;
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(275, 25);
+            this.label8.Location = new System.Drawing.Point(400, 28);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "업체명";
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(508, 25);
+            this.label9.Location = new System.Drawing.Point(692, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.Size = new System.Drawing.Size(59, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "업체타입";
             // 
             // cboTypeCompany
             // 
+            this.cboTypeCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTypeCompany.FormattingEnabled = true;
-            this.cboTypeCompany.Location = new System.Drawing.Point(568, 21);
+            this.cboTypeCompany.Location = new System.Drawing.Point(752, 24);
             this.cboTypeCompany.Name = "cboTypeCompany";
-            this.cboTypeCompany.Size = new System.Drawing.Size(121, 20);
+            this.cboTypeCompany.Size = new System.Drawing.Size(201, 20);
             this.cboTypeCompany.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(768, 39);
+            this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(888, 63);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 36);
+            this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 4;
             this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
             // 
@@ -281,7 +304,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(871, 289);
+            this.dataGridView2.Size = new System.Drawing.Size(967, 307);
             this.dataGridView2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -330,7 +353,7 @@
             // businessMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.ClientSize = new System.Drawing.Size(990, 554);
             this.Name = "businessMgt";
             this.Tag = "업체관리";
             this.Text = "업체관리";

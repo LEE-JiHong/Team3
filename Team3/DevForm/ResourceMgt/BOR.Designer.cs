@@ -54,7 +54,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(13, 132);
-            this.panel2.Size = new System.Drawing.Size(871, 319);
+            this.panel2.Size = new System.Drawing.Size(910, 341);
             // 
             // panel1
             // 
@@ -65,11 +65,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cboItem);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Size = new System.Drawing.Size(870, 83);
+            this.panel1.Size = new System.Drawing.Size(909, 83);
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 111);
             this.label1.Size = new System.Drawing.Size(48, 18);
             this.label1.Text = "BOR";
@@ -77,7 +76,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(289, 100);
+            this.panel3.Location = new System.Drawing.Point(328, 100);
             this.panel3.Size = new System.Drawing.Size(593, 26);
             // 
             // imageList1
@@ -87,6 +86,10 @@
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(933, 60);
+            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -95,72 +98,76 @@
             // 
             this.닫기.FlatAppearance.BorderSize = 0;
             // 
+            // basepanel
+            // 
+            this.basepanel.Size = new System.Drawing.Size(933, 476);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(29, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.Size = new System.Drawing.Size(30, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "품목";
             // 
             // cboItem
             // 
             this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboItem.Location = new System.Drawing.Point(64, 28);
+            this.cboItem.Location = new System.Drawing.Point(64, 29);
             this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(100, 21);
+            this.cboItem.Size = new System.Drawing.Size(201, 21);
             this.cboItem.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(201, 31);
+            this.label3.Location = new System.Drawing.Point(278, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
+            this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "공정";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(400, 31);
+            this.label4.Location = new System.Drawing.Point(548, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
+            this.label4.Size = new System.Drawing.Size(30, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "설비";
             // 
             // cboFacility
             // 
             this.cboFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFacility.Location = new System.Drawing.Point(435, 27);
+            this.cboFacility.Location = new System.Drawing.Point(583, 29);
             this.cboFacility.Name = "cboFacility";
-            this.cboFacility.Size = new System.Drawing.Size(100, 21);
+            this.cboFacility.Size = new System.Drawing.Size(201, 21);
             this.cboFacility.TabIndex = 2;
             // 
             // cboProcess
             // 
             this.cboProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(236, 27);
+            this.cboProcess.Location = new System.Drawing.Point(315, 28);
             this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(121, 23);
+            this.cboProcess.Size = new System.Drawing.Size(201, 23);
             this.cboProcess.TabIndex = 1;
             // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(776, 19);
+            this.button7.Location = new System.Drawing.Point(827, 51);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 36);
+            this.button7.Size = new System.Drawing.Size(78, 29);
             this.button7.TabIndex = 3;
             this.button7.Text = "조회";
             this.button7.UseVisualStyleBackColor = true;
@@ -172,7 +179,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(871, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 341);
             this.dataGridView1.TabIndex = 0;
             // 
             // button4
@@ -220,7 +227,7 @@
             // BOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.ClientSize = new System.Drawing.Size(933, 558);
             this.Name = "BOR";
             this.Tag = "BOR";
             this.Text = "BOR";

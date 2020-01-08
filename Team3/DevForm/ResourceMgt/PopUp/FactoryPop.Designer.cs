@@ -41,7 +41,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodeFacility = new System.Windows.Forms.TextBox();
             this.txtOrder = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtModifyTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboTopFacility = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,13 +51,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cboIsProcess = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtNameFacility = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtInfoFacility = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,15 +92,15 @@
             // 
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.cboCompany);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtModifier);
+            this.panel2.Controls.Add(this.txtInfoFacility);
+            this.panel2.Controls.Add(this.txtModifyTime);
             this.panel2.Controls.Add(this.txtOrder);
             this.panel2.Controls.Add(this.txtNameFacility);
             this.panel2.Controls.Add(this.txtCodeFacility);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.comboBox8);
+            this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.cboIsJajae);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label7);
@@ -246,12 +246,12 @@
             this.txtOrder.Size = new System.Drawing.Size(121, 21);
             this.txtOrder.TabIndex = 6;
             // 
-            // textBox3
+            // txtModifyTime
             // 
-            this.textBox3.Location = new System.Drawing.Point(90, 228);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 21);
-            this.textBox3.TabIndex = 12;
+            this.txtModifyTime.Location = new System.Drawing.Point(90, 228);
+            this.txtModifyTime.Name = "txtModifyTime";
+            this.txtModifyTime.Size = new System.Drawing.Size(121, 21);
+            this.txtModifyTime.TabIndex = 12;
             // 
             // label9
             // 
@@ -339,13 +339,13 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "수정자";
             // 
-            // comboBox8
+            // cboIsUsed
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(380, 227);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 23);
-            this.comboBox8.TabIndex = 13;
+            this.cboIsUsed.FormattingEnabled = true;
+            this.cboIsUsed.Location = new System.Drawing.Point(380, 227);
+            this.cboIsUsed.Name = "cboIsUsed";
+            this.cboIsUsed.Size = new System.Drawing.Size(121, 23);
+            this.cboIsUsed.TabIndex = 13;
             // 
             // label15
             // 
@@ -365,12 +365,12 @@
             this.txtNameFacility.Size = new System.Drawing.Size(121, 21);
             this.txtNameFacility.TabIndex = 3;
             // 
-            // textBox6
+            // txtModifier
             // 
-            this.textBox6.Location = new System.Drawing.Point(380, 194);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 21);
-            this.textBox6.TabIndex = 11;
+            this.txtModifier.Location = new System.Drawing.Point(380, 194);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.Size = new System.Drawing.Size(121, 21);
+            this.txtModifier.TabIndex = 11;
             // 
             // cboCompany
             // 
@@ -390,13 +390,13 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "시설설명";
             // 
-            // textBox5
+            // txtInfoFacility
             // 
-            this.textBox5.Location = new System.Drawing.Point(88, 266);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(413, 119);
-            this.textBox5.TabIndex = 14;
+            this.txtInfoFacility.Location = new System.Drawing.Point(88, 266);
+            this.txtInfoFacility.Multiline = true;
+            this.txtInfoFacility.Name = "txtInfoFacility";
+            this.txtInfoFacility.Size = new System.Drawing.Size(413, 119);
+            this.txtInfoFacility.TabIndex = 14;
             // 
             // FactoryPop
             // 
@@ -416,15 +416,15 @@
 
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.TextBox txtInfoFacility;
+        private System.Windows.Forms.TextBox txtModifyTime;
         private System.Windows.Forms.TextBox txtOrder;
         private System.Windows.Forms.TextBox txtNameFacility;
         private System.Windows.Forms.TextBox txtCodeFacility;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.ComboBox cboIsJajae;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
