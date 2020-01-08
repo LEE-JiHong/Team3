@@ -68,14 +68,14 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(12, 392);
+            this.panel3.Location = new System.Drawing.Point(12, 357);
             this.panel3.Size = new System.Drawing.Size(886, 133);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 155);
-            this.panel2.Size = new System.Drawing.Size(886, 196);
+            this.panel2.Size = new System.Drawing.Size(886, 161);
             // 
             // panel1
             // 
@@ -101,7 +101,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(12, 367);
+            this.label2.Location = new System.Drawing.Point(10, 410);
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.Text = "자재입고";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,7 +118,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(687, 357);
+            this.panel5.Location = new System.Drawing.Point(687, 322);
             this.panel5.Size = new System.Drawing.Size(212, 29);
             // 
             // panel4
@@ -141,7 +141,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(910, 541);
+            this.basepanel.Size = new System.Drawing.Size(910, 506);
             // 
             // imageList1
             // 
@@ -309,7 +309,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(886, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(886, 161);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
@@ -403,7 +403,7 @@
             // MaterialReceiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(910, 623);
+            this.ClientSize = new System.Drawing.Size(910, 588);
             this.Name = "MaterialReceiving";
             this.Tag = "자재입고";
             this.Text = "자재입고";
