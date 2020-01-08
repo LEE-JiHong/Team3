@@ -14,5 +14,23 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            FacilitiesPop group = new FacilitiesPop();
+            if(group.ShowDialog()==DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FacilitieInfoPop frm = new FacilitieInfoPop();
+            if(frm.ShowDialog()==DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

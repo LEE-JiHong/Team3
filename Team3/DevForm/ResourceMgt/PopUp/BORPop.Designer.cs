@@ -53,7 +53,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(198, 486);
+            this.panel3.Location = new System.Drawing.Point(198, 415);
             // 
             // btnCancel
             // 
@@ -97,7 +97,7 @@
             this.panel2.Controls.Add(this.cboItem);
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.Color.Orange;
-            this.panel2.Size = new System.Drawing.Size(554, 397);
+            this.panel2.Size = new System.Drawing.Size(554, 326);
             // 
             // button1
             // 
@@ -250,7 +250,7 @@
             this.txtNote.Location = new System.Drawing.Point(98, 193);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(438, 155);
+            this.txtNote.Size = new System.Drawing.Size(438, 111);
             this.txtNote.TabIndex = 8;
             // 
             // label5
@@ -278,7 +278,7 @@
             // BORPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(605, 538);
+            this.ClientSize = new System.Drawing.Size(605, 467);
             this.Name = "BORPop";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
