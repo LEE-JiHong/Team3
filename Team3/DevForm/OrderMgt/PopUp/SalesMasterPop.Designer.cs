@@ -123,7 +123,7 @@
             // 
             // btnFindFile
             // 
-            this.btnFindFile.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFindFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.btnFindFile.FlatAppearance.BorderSize = 0;
             this.btnFindFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

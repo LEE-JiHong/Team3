@@ -591,12 +591,16 @@
     <None Include="Icon\Button\Edit_16x16.png" />
     <None Include="Icon\Button\Editor_Edit.png" />
     <None Include="Icon\Button\ModelEditor_GenerateContent.png" />
+    <None Include="Icon\Button\Open2_16x16.png" />
+    <None Include="Icon\Button\LoadFrom_16x16.png" />
     <Content Include="Icon\Button\pencil.png" />
     <Content Include="Icon\Button\printer.png" />
     <None Include="Icon\Button\Print_16x16.png" />
+    <None Include="Icon\Button\Recurrence_16x16.png" />
     <Content Include="Icon\Button\save-file-option.png" />
     <None Include="Icon\Button\Trash_16x16.png" />
     <None Include="Icon\Button\Save_16x16.png" />
+    <None Include="Icon\Button\Select_16x16.png" />
     <Content Include="Icon\Button\write.png" />
     <Content Include="Icon\Home\close.png" />
     <Content Include="Icon\Home\close1.png" />
