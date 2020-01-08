@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 
 namespace Team3
@@ -16,9 +17,37 @@ namespace Team3
         public Main()
         {
             InitializeComponent();
+
+            //this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Gradient);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
         }
 
+        //private void Form_Gradient(object sender, PaintEventArgs e)
+        //{
+        //    LinearGradientBrush br = new LinearGradientBrush(this.ClientRectangle, Color.FromArgb(255, 255, 255),
+        //        Color.FromArgb(0, 0, 0), 0, false);
+        //    e.Graphics.FillRectangle(br, this.ClientRectangle);
+        //}
 
+        private void Panel_Gradient(object sender, PaintEventArgs e)
+        {
+            //Color startColor = Color.FromArgb(202, 210, 220);
+            //Color middleColor = Color.FromArgb(149, 165, 186);
+            //Color endColor = Color.FromArgb(96, 121, 152);
+
+            Color startColor = Color.FromArgb(255,255,255);
+            Color middleColor = Color.FromArgb(149, 165, 186);
+            Color endColor = Color.FromArgb(96, 121, 152);
+
+            LinearGradientBrush br = new LinearGradientBrush(this.panel2.ClientRectangle, System.Drawing.Color.Black, System.Drawing.Color.Black, 0, false);
+
+            ColorBlend cb = new ColorBlend();
+            cb.Positions = new[] { 0, 1 / 2f, 1 };
+            cb.Colors = new[] { startColor, middleColor, endColor };
+            br.InterpolationColors = cb;
+            br.RotateTransform(0);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
+        }
 
         private void Main_Load(object sender, EventArgs e)
         {
