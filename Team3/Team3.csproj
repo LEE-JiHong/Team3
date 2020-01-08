@@ -587,6 +587,8 @@
     <Content Include="Icon\Button\edit.png" />
     <None Include="Icon\Home\Merge_32x32.png" />
     <None Include="Icon\Button\ExportToXLSX_16x16.png" />
+    <None Include="Icon\Button\Edit_16x16.png" />
+    <None Include="Icon\Button\Editor_Edit.png" />
     <Content Include="Icon\Button\pencil.png" />
     <Content Include="Icon\Button\printer.png" />
     <Content Include="Icon\Button\save-file-option.png" />
