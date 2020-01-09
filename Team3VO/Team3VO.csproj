@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BomVO.cs" />
+    <Compile Include="BorVO.cs" />
+    <Compile Include="FactoryVO.cs" />
+    <Compile Include="CommonVO.cs" />
     <Compile Include="CompanyVO.cs" />
+    <Compile Include="MachineGradeVO.cs" />
     <Compile Include="MachineVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

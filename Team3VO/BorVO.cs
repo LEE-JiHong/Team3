@@ -14,14 +14,14 @@ namespace Team3VO
 
     class BorVO
     {
-        private int bor_id { get; set; }
-        private int bom_id { get; set; }
-        private string bor_route { get; set; }
-        private int m_id { get; set; }
-        private int bor_tacktime { get; set; }
-        private int bor_readytime { get; set; }
-        private string bor_yn { get; set; }
-        private string bor_comment { get; set; }
+        private int BOR_ID { get; set; }
+        private int BOM_ID { get; set; }
+        private string BOR_ROUTE { get; set; }
+        private int M_ID { get; set; }
+        private int BOR_TACKTIME { get; set; }
+        private int BOR_READYTIME { get; set; }
+        private string BOR_YN { get; set; }
+        private string BOR_COMMENT { get; set; }
 
         public BorVO()
         {

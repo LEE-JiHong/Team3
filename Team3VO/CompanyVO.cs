@@ -26,7 +26,10 @@ namespace Team3VO
         public string COMPANY_COMMENT { get; set; }
 
 
+        public CompanyVO()
+        {
 
+        }
 
 
 
