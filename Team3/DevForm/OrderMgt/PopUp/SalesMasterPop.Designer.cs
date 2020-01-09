@@ -188,6 +188,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(389, 344);
             this.Name = "SalesMasterDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "영업마스터업로드";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

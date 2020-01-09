@@ -27,9 +27,14 @@ namespace Team3
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
+
             }
         }
 
-        
+        //양식 다운로드 버튼
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
