@@ -13,8 +13,8 @@ using Team3VO;
 
 namespace Team3DAC
 {
-    class DemandDac :ConnectionAccess
-    
+    class DemandDac : ConnectionAccess
+    {
         //public List<CommonVO> GetCommonCode()
         //{
         //    using (SqlCommand cmd = new SqlCommand())
