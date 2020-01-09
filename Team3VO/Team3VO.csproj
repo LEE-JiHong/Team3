@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BomVO.cs" />
-    <Compile Include="BorVO.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="CommonVO.cs" />
+    <Compile Include="CompanyVO.cs" />
+    <Compile Include="MachineVO.cs" />
+    <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Team3DAC
+namespace Team3VO
 {
-    public class Class1
+    class MachineVO
     {
     }
 }
