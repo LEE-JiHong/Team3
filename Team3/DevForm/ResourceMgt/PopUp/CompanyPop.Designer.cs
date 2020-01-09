@@ -141,7 +141,6 @@
             this.txtCodeCompany.Name = "txtCodeCompany";
             this.txtCodeCompany.Size = new System.Drawing.Size(130, 21);
             this.txtCodeCompany.TabIndex = 0;
-            this.txtCodeCompany.Text = "수정시 변경불가";
             // 
             // label3
             // 

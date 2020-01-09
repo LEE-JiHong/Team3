@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HanSopDACLibrary
+namespace Team3DAC
 {
     public static class Helper
     {

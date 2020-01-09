@@ -42,12 +42,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CompanyDac.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAC.xml" />
+    <Content Include="DAC.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Team3VO\Team3VO.csproj">
+      <Project>{c2e07828-3ae1-4f5b-9f76-d407461983a7}</Project>
+      <Name>Team3VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)DAC.xml" "$(SolutionDir)Team3\bin\Debug"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

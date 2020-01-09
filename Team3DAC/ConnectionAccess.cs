@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 
 
-namespace HanSopDACLibrary
+namespace Team3DAC
 {
     public abstract class ConnectionAccess
     {
