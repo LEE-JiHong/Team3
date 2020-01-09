@@ -23,5 +23,13 @@ namespace Team3
                 
             }
         }
+
+        private void BomMgt_Load(object sender, EventArgs e)
+        {
+            cboDeployment.SelectedIndex = 0;
+            cboIsUsed.SelectedIndex = 0;
+            
+           
+        }
     }
 }

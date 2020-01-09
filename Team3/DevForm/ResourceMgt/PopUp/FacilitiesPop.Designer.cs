@@ -48,7 +48,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(104, 427);
+            this.panel3.Location = new System.Drawing.Point(103, 427);
             // 
             // btnCancel
             // 
@@ -61,11 +61,12 @@
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Text = "";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Size = new System.Drawing.Size(367, 36);
+            this.panel1.Size = new System.Drawing.Size(365, 36);
             this.panel1.Controls.SetChildIndex(this.button1, 0);
             this.panel1.Controls.SetChildIndex(this.label8, 0);
             this.panel1.Controls.SetChildIndex(this.label1, 0);
@@ -84,12 +85,12 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtCodeFacilityGroup);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(366, 338);
+            this.panel2.Size = new System.Drawing.Size(364, 338);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(515, 7);
+            this.button1.Location = new System.Drawing.Point(513, 7);
             // 
             // label2
             // 
@@ -213,11 +214,11 @@
             this.cboIsUsed.Size = new System.Drawing.Size(172, 23);
             this.cboIsUsed.TabIndex = 2;
             // 
-            // facilitiesPop
+            // FacilitiesPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(413, 479);
-            this.Name = "facilitiesPop";
+            this.ClientSize = new System.Drawing.Size(411, 479);
+            this.Name = "FacilitiesPop";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

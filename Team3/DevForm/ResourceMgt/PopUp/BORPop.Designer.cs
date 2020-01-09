@@ -122,6 +122,7 @@
             this.cboItem.Name = "cboItem";
             this.cboItem.Size = new System.Drawing.Size(165, 23);
             this.cboItem.TabIndex = 0;
+            this.cboItem.Text = "수정시 변경불가";
             // 
             // label3
             // 
@@ -141,6 +142,7 @@
             this.cboFacility.Name = "cboFacility";
             this.cboFacility.Size = new System.Drawing.Size(165, 23);
             this.cboFacility.TabIndex = 2;
+            this.cboFacility.Text = "수정시 변경불가";
             // 
             // label4
             // 
@@ -171,6 +173,7 @@
             this.cboProcess.Name = "cboProcess";
             this.cboProcess.Size = new System.Drawing.Size(165, 23);
             this.cboProcess.TabIndex = 1;
+            this.cboProcess.Text = "수정시 변경불가";
             // 
             // label7
             // 

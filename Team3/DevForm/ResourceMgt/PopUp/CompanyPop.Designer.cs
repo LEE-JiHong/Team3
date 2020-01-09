@@ -387,11 +387,11 @@
             this.cboTypeCompany.Size = new System.Drawing.Size(130, 23);
             this.cboTypeCompany.TabIndex = 2;
             // 
-            // businessPop
+            // CompanyPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(808, 451);
-            this.Name = "businessPop";
+            this.Name = "CompanyPop";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
