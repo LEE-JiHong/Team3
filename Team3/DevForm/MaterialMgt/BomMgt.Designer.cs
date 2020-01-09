@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BomMgt));
             this.cboDeployment = new System.Windows.Forms.ComboBox();
-            this.cboUse = new System.Windows.Forms.ComboBox();
+            this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.txtStandardDate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             // 
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Controls.Add(this.cboDeployment);
-            this.panel1.Controls.Add(this.cboUse);
+            this.panel1.Controls.Add(this.cboIsUsed);
             this.panel1.Controls.Add(this.txtProduct);
             this.panel1.Controls.Add(this.txtStandardDate);
             this.panel1.Controls.Add(this.label10);
@@ -112,18 +112,26 @@
             // 
             this.cboDeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDeployment.FormattingEnabled = true;
+            this.cboDeployment.Items.AddRange(new object[] {
+            "전체",
+            "정전개",
+            "역전개"});
             this.cboDeployment.Location = new System.Drawing.Point(822, 8);
             this.cboDeployment.Name = "cboDeployment";
             this.cboDeployment.Size = new System.Drawing.Size(178, 24);
             this.cboDeployment.TabIndex = 34;
             // 
-            // cboUse
+            // cboIsUsed
             // 
-            this.cboUse.FormattingEnabled = true;
-            this.cboUse.Location = new System.Drawing.Point(133, 47);
-            this.cboUse.Name = "cboUse";
-            this.cboUse.Size = new System.Drawing.Size(216, 24);
-            this.cboUse.TabIndex = 30;
+            this.cboIsUsed.FormattingEnabled = true;
+            this.cboIsUsed.Items.AddRange(new object[] {
+            "선택",
+            "사용",
+            "미사용"});
+            this.cboIsUsed.Location = new System.Drawing.Point(133, 47);
+            this.cboIsUsed.Name = "cboIsUsed";
+            this.cboIsUsed.Size = new System.Drawing.Size(216, 24);
+            this.cboIsUsed.TabIndex = 30;
             // 
             // txtProduct
             // 
@@ -321,6 +329,7 @@
             this.Name = "BomMgt";
             this.Tag = "BOM";
             this.Text = "BOM";
+            this.Load += new System.EventHandler(this.BomMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -336,7 +345,7 @@
 
         #endregion
         private System.Windows.Forms.ComboBox cboDeployment;
-        private System.Windows.Forms.ComboBox cboUse;
+        private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.TextBox txtStandardDate;
         private System.Windows.Forms.Label label10;
