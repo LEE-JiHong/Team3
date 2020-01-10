@@ -15,19 +15,19 @@ namespace Team3DAC
 {
     class ResourceDac :ConnectionAccess
     {
-        //public List<CommonVO> GetCommonCode()
-        //{
-        //    using (SqlCommand cmd = new SqlCommand())
-        //    {
-        //        cmd.Connection = new SqlConnection(this.ConnectionString);
-        //        cmd.CommandText = "GetCommonCode";
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Connection.Open();
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        List<CommonVO> list = Helper.DataReaderMapToList<CommonVO>(reader);
-        //        cmd.Connection.Close();
-        //        return list;
-        //    }
-        //}
+        public List<CompanyVO> GetCompanyAll()
+        {
+            //using (SqlCommand cmd = new SqlCommand())
+            //{
+            //    cmd.Connection = new SqlConnection(this.ConnectionString);
+
+            //    //cmd.CommandType = CommandType.StoredProcedure;
+            //    //cmd.Connection.Open();
+            //    //SqlDataReader reader = cmd.ExecuteReader();
+            //    //List<CommonVO> list = Helper.DataReaderMapToList<CommonVO>(reader);
+            //    //cmd.Connection.Close();
+            //    return list;
+            //}
+        }
     }
 }
