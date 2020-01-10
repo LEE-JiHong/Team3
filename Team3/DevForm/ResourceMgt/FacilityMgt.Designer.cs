@@ -58,14 +58,14 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(305, 43);
-            this.panel3.Size = new System.Drawing.Size(726, 421);
+            this.panel3.Location = new System.Drawing.Point(338, 43);
+            this.panel3.Size = new System.Drawing.Size(693, 421);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(8, 43);
-            this.panel2.Size = new System.Drawing.Size(277, 421);
+            this.panel2.Size = new System.Drawing.Size(310, 421);
             // 
             // label1
             // 
@@ -132,7 +132,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(302, 23);
+            this.label2.Location = new System.Drawing.Point(335, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 23;
@@ -165,7 +165,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(277, 421);
+            this.dataGridView1.Size = new System.Drawing.Size(310, 421);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
@@ -175,7 +175,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(726, 421);
+            this.dataGridView2.Size = new System.Drawing.Size(693, 421);
             this.dataGridView2.TabIndex = 0;
             // 
             // button5
@@ -314,6 +314,7 @@
             this.Name = "facilityMgt";
             this.Tag = "설비관리";
             this.Text = "설비관리";
+            this.Load += new System.EventHandler(this.facilityMgt_Load);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

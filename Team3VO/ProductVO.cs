@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-    class ProductVO
+  public  class ProductVO
     {
         public string PRODUCT_ID { get; set; }
         public string PRODUCT_NAME { get; set; }

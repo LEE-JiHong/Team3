@@ -10,19 +10,19 @@ namespace Team3VO
     //담당 : 김우근
     //기본생성자 1개, full 생성자 1개.
 
-    class BomVO
+  public  class BomVO
     {
-        private int BOM_ID { get; set; }
-        private int BOM_PARENT_ID { get; set; }
-        private int PRODUCT_ID { get; set; }
-        private int BOM_USE_COUNT { get; set; }
-        private string BOM_SDATE { get; set; }
-        private string BOM_EDATE { get; set; }
-        private string BOM_YN { get; set; }
-        private int PLAN_ID { get; set; }
-        private string BOM_COMMENT { get; set; }
-        private string BOM_UADMIN { get; set; }
-        private string BOM_UDATE { get; set; }
+        public int BOM_ID { get; set; }
+        public int BOM_PARENT_ID { get; set; }
+        public int PRODUCT_ID { get; set; }
+        public int BOM_USE_COUNT { get; set; }
+        public string BOM_SDATE { get; set; }
+        public string BOM_EDATE { get; set; }
+        public string BOM_YN { get; set; }
+        public int PLAN_ID { get; set; }
+        public string BOM_COMMENT { get; set; }
+        public string BOM_UADMIN { get; set; }
+        public string BOM_UDATE { get; set; }
 
         public BomVO() { }
     }

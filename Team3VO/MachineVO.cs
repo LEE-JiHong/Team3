@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-    class MachineVO
+    public class MachineVO
     {
-        private int M_ID { get; set; }
-        private int MGRADE_ID { get; set; }
-        private string M_CODE { get; set; }
-        private string M_NAME { get; set; }
-        private string M_USE_SECTOR { get; set; }
-        private string M_OK_SECTOR { get; set; }
-        private string M_NG_SECTOR { get; set; }
-        private string M_OS_YN { get; set; }
-        private string M_CHECK { get; set; }
-        private string M_COMMENT { get; set; }
-        private string M_YN { get; set; }
-        private string M_UADMIN { get; set; }
-        private string M_UDATE { get; set; }
+        public int M_ID { get; set; }
+        public int MGRADE_ID { get; set; }
+        public string M_CODE { get; set; }
+        public string M_NAME { get; set; }
+        public string M_USE_SECTOR { get; set; }
+        public string M_OK_SECTOR { get; set; }
+        public string M_NG_SECTOR { get; set; }
+        public string M_OS_YN { get; set; }
+        public string M_CHECK { get; set; }
+        public string M_COMMENT { get; set; }
+        public string M_YN { get; set; }
+        public string M_UADMIN { get; set; }
+        public string M_UDATE { get; set; }
     }
    
 }

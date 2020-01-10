@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-    class MachineGradeVO
+  public  class MachineGradeVO
     {
-        private int MGRADE_ID { get; set; }
-        private string MGRADE_CODE { get; set; }
-        private string MGRADE_NAME { get; set; }
-        private string MGRADE_YN { get; set; }
-        private string MGRADE_UADMIN { get; set; }
-        private string MGRADE_UDATE { get; set; }
-        private string MGRADE_COMMENT { get; set; }
+        public int MGRADE_ID { get; set; }
+        public string MGRADE_CODE { get; set; }
+        public string MGRADE_NAME { get; set; }
+        public string MGRADE_YN { get; set; }
+        public string MGRADE_UADMIN { get; set; }
+        public string MGRADE_UDATE { get; set; }
+        public string MGRADE_COMMENT { get; set; }
         public MachineGradeVO()
         {
 

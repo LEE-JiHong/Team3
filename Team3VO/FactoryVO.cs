@@ -8,17 +8,17 @@ namespace Team3VO
 {
     public class FactoryVO
     {
-        private int FACTORY_ID { get; set; }
-        private int COMPANY_ID { get; set; }
-        private int FACTORY_UADMIN { get; set; }
-        private string FACTORY_GRADE { get; set; }
-        private string FACTORY_PARENT { get; set; }
-        private string FACTORY_NAME { get; set; }
-        private string FACTORY_CODE { get; set; }
-        private string FACTORY_TYPE { get; set; }
-        private string FACTORY_YN { get; set; }
-        private string FACTORY_UDATE { get; set; }
-        private string FACTORY_COMMENT { get; set; }
+        public int FACTORY_ID { get; set; }
+        public int COMPANY_ID { get; set; }
+        public int FACTORY_UADMIN { get; set; }
+        public string FACTORY_GRADE { get; set; }
+        public string FACTORY_PARENT { get; set; }
+        public string FACTORY_NAME { get; set; }
+        public string FACTORY_CODE { get; set; }
+        public string FACTORY_TYPE { get; set; }
+        public string FACTORY_YN { get; set; }
+        public string FACTORY_UDATE { get; set; }
+        public string FACTORY_COMMENT { get; set; }
         public FactoryVO()
         {
 

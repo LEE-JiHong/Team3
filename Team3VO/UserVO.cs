@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-    class UserVO
+  public  class UserVO
     {
         public string USER_ID { get; set; }
         public string USER_PWD { get; set; }
