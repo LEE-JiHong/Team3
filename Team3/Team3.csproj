@@ -379,6 +379,7 @@
       <DependentUpon>RequestRawMaterial%27sDistribution.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\CommonCodeService.cs" />
+    <Compile Include="Service\MaterialService.cs" />
     <Compile Include="Service\ResourceService.cs" />
     <Compile Include="Utility\ComboUtil.cs" />
     <Compile Include="Utility\GridViewUtil.cs" />
