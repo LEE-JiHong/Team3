@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-
+using System.Diagnostics;
 
 namespace Team3
 {
@@ -383,6 +383,11 @@ namespace Team3
                 SalesMasterUpload frm = new SalesMasterUpload();
                 MadeTabMenu(frm);
             }
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            Process.Start("Chrome.exe", "https://localhost:44387/");
         }
     }
 }
