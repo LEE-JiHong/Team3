@@ -71,7 +71,7 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.Size = new System.Drawing.Size(68, 19);
             this.label1.Text = "BOM";
             // 
             // panel1
