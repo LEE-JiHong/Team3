@@ -378,6 +378,7 @@
     <Compile Include="PurchaseMgt2\RequestRawMaterial%27sDistribution.designer.cs">
       <DependentUpon>RequestRawMaterial%27sDistribution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\BomService.cs" />
     <Compile Include="Service\CommonCodeService.cs" />
     <Compile Include="Service\MaterialService.cs" />
     <Compile Include="Service\ResourceService.cs" />
