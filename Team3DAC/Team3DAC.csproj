@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DemandDac.cs" />
-    <Compile Include="MaterialDac.cs" />
+    <Compile Include="ProductDac.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="OrderDac.cs" />

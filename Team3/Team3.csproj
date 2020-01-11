@@ -380,7 +380,7 @@
     </Compile>
     <Compile Include="Service\BomService.cs" />
     <Compile Include="Service\CommonCodeService.cs" />
-    <Compile Include="Service\MaterialService.cs" />
+    <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\ResourceService.cs" />
     <Compile Include="Utility\ComboUtil.cs" />
     <Compile Include="Utility\GridViewUtil.cs" />
