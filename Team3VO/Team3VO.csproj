@@ -51,6 +51,7 @@
     <Compile Include="ProductPriceVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SOMasterVO.cs" />
     <Compile Include="UserVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
