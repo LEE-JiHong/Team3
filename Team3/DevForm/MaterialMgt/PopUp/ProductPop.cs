@@ -28,7 +28,7 @@ namespace Team3
         private void ProductPop_Load(object sender, EventArgs e)
         {
             ComboBoxBinding();
-           
+
         }
 
         private void ComboBoxBinding()
@@ -39,16 +39,25 @@ namespace Team3
             List<CommonVO> cboUnit = (from item in codelist
                                       where item.COMMON_TYPE == "item_unit"
                                       select item).ToList();
-
             ComboUtil.ComboBinding(cboProductUnit, cboUnit, "COMMON_VALUE", "COMMON_NAME", "선택");
-            
-            
-            
-            List<CommonVO> cboItemType = (from item in codelist
-                                      where item.COMMON_TYPE == "item_type"
-                                      select item).ToList();
 
-            ComboUtil.ComboBinding(cboProductType, cboItemType, "COMMON_VALUE", "COMMON_NAME", "선택");
+            codelist = null;    //초기화
+
+            codelist = common_service.GetCommonCodeAll();
+            List<CommonVO> cboUseFlag = (from item in codelist
+                                      where item.COMMON_TYPE == "user_flag"
+                                      select item).ToList();
+            ComboUtil.ComboBinding(cboIsUsed, cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+
+
+
+
+
+
+            //TODO : User목록 콤보바인딩
+
+
+
         }
     }
 }
