@@ -20,10 +20,10 @@ namespace Team3.Service
             return dac.GetProductsAll();
         }
 
-        public bool AddProduct(ProductVO productvo)
+        public bool AddProduct(ProductVO vo)
         {
             ProductDac dac = new ProductDac();
-            return dac.AddProduct(productvo);
+            return dac.AddProduct(vo);
         }
     }
 }

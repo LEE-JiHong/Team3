@@ -78,10 +78,10 @@
             this.cboNameDirector = new System.Windows.Forms.ComboBox();
             this.cboIsPhantom = new System.Windows.Forms.ComboBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
-            this.cboOrderWay = new System.Windows.Forms.ComboBox();
+            this.cboOrderType = new System.Windows.Forms.ComboBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.cboSIS = new System.Windows.Forms.ComboBox();
-            this.cboOrderCompany = new System.Windows.Forms.ComboBox();
+            this.cboDemandCompany = new System.Windows.Forms.ComboBox();
             this.cobConversionUnit = new System.Windows.Forms.ComboBox();
             this.cboIsDiscontinuance = new System.Windows.Forms.ComboBox();
             this.txtStandard = new System.Windows.Forms.TextBox();
@@ -93,7 +93,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.txtProdcutCode = new System.Windows.Forms.TextBox();
+            this.txtProductCode = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.txtProductLsl = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -137,7 +137,7 @@
             this.panel2.Controls.Add(this.label36);
             this.panel2.Controls.Add(this.txtProductLsl);
             this.panel2.Controls.Add(this.label35);
-            this.panel2.Controls.Add(this.txtProdcutCode);
+            this.panel2.Controls.Add(this.txtProductCode);
             this.panel2.Controls.Add(this.label34);
             this.panel2.Controls.Add(this.txtBarcode);
             this.panel2.Controls.Add(this.label33);
@@ -148,8 +148,8 @@
             this.panel2.Controls.Add(this.txtSafetyAmount);
             this.panel2.Controls.Add(this.txtLeadTime);
             this.panel2.Controls.Add(this.cboProductType);
-            this.panel2.Controls.Add(this.cboOrderWay);
-            this.panel2.Controls.Add(this.cboOrderCompany);
+            this.panel2.Controls.Add(this.cboOrderType);
+            this.panel2.Controls.Add(this.cboDemandCompany);
             this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.cboNameDirector);
             this.panel2.Controls.Add(this.cboOutWH);
@@ -499,7 +499,7 @@
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(102, 12);
+            this.txtProduct.Location = new System.Drawing.Point(102, 14);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(100, 21);
             this.txtProduct.TabIndex = 30;
@@ -652,13 +652,13 @@
             this.cboIsUsed.Size = new System.Drawing.Size(100, 23);
             this.cboIsUsed.TabIndex = 48;
             // 
-            // cboOrderWay
+            // cboOrderType
             // 
-            this.cboOrderWay.FormattingEnabled = true;
-            this.cboOrderWay.Location = new System.Drawing.Point(511, 12);
-            this.cboOrderWay.Name = "cboOrderWay";
-            this.cboOrderWay.Size = new System.Drawing.Size(100, 23);
-            this.cboOrderWay.TabIndex = 49;
+            this.cboOrderType.FormattingEnabled = true;
+            this.cboOrderType.Location = new System.Drawing.Point(511, 12);
+            this.cboOrderType.Name = "cboOrderType";
+            this.cboOrderType.Size = new System.Drawing.Size(100, 23);
+            this.cboOrderType.TabIndex = 49;
             // 
             // cboProductType
             // 
@@ -676,13 +676,13 @@
             this.cboSIS.Size = new System.Drawing.Size(100, 23);
             this.cboSIS.TabIndex = 51;
             // 
-            // cboOrderCompany
+            // cboDemandCompany
             // 
-            this.cboOrderCompany.FormattingEnabled = true;
-            this.cboOrderCompany.Location = new System.Drawing.Point(309, 44);
-            this.cboOrderCompany.Name = "cboOrderCompany";
-            this.cboOrderCompany.Size = new System.Drawing.Size(100, 23);
-            this.cboOrderCompany.TabIndex = 52;
+            this.cboDemandCompany.FormattingEnabled = true;
+            this.cboDemandCompany.Location = new System.Drawing.Point(309, 44);
+            this.cboDemandCompany.Name = "cboDemandCompany";
+            this.cboDemandCompany.Size = new System.Drawing.Size(100, 23);
+            this.cboDemandCompany.TabIndex = 52;
             // 
             // cobConversionUnit
             // 
@@ -768,6 +768,7 @@
             this.txtProductCount.Name = "txtProductCount";
             this.txtProductCount.Size = new System.Drawing.Size(100, 21);
             this.txtProductCount.TabIndex = 61;
+            this.txtProductCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label32
             // 
@@ -796,12 +797,12 @@
             this.label33.TabIndex = 62;
             this.label33.Text = "바코드";
             // 
-            // txtProdcutCode
+            // txtProductCode
             // 
-            this.txtProdcutCode.Location = new System.Drawing.Point(309, 192);
-            this.txtProdcutCode.Name = "txtProdcutCode";
-            this.txtProdcutCode.Size = new System.Drawing.Size(100, 21);
-            this.txtProdcutCode.TabIndex = 65;
+            this.txtProductCode.Location = new System.Drawing.Point(309, 192);
+            this.txtProductCode.Name = "txtProductCode";
+            this.txtProductCode.Size = new System.Drawing.Size(100, 21);
+            this.txtProductCode.TabIndex = 65;
             // 
             // label34
             // 
@@ -888,10 +889,10 @@
         private System.Windows.Forms.TextBox txtStandard;
         private System.Windows.Forms.ComboBox cboIsDiscontinuance;
         private System.Windows.Forms.ComboBox cobConversionUnit;
-        private System.Windows.Forms.ComboBox cboOrderCompany;
+        private System.Windows.Forms.ComboBox cboDemandCompany;
         private System.Windows.Forms.ComboBox cboSIS;
         private System.Windows.Forms.ComboBox cboProductType;
-        private System.Windows.Forms.ComboBox cboOrderWay;
+        private System.Windows.Forms.ComboBox cboOrderType;
         private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.ComboBox cboIsPhantom;
         private System.Windows.Forms.ComboBox cboNameDirector;
@@ -951,7 +952,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox txtProductLsl;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox txtProdcutCode;
+        private System.Windows.Forms.TextBox txtProductCode;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.Label label33;

@@ -20,6 +20,15 @@ namespace Team3.Service
             return dac.GetBomAll();
         }
 
+        /// <summary>
+        /// Bom 신규 추가
+        /// </summary>
+        /// <returns></returns>
+        public bool AddBom(BomVO vo)
+        {
+            BomDac dac = new BomDac();
+            return dac.AddBom(vo);
+        }
         
         
         
