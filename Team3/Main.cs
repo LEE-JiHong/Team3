@@ -466,27 +466,6 @@ namespace Team3
 
             MainTab.SelectedTab = p1;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form1 frm = new Form1();       
-            MadeTabMenu(frm);
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form3 frm = new Form3();          
-            MadeTabMenu(frm);
-
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            Form4 frm = new Form4();
-            MadeTabMenu(frm);
-        }
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
         }
@@ -580,13 +559,6 @@ namespace Team3
             //Form obejectForm = frm;
             //MadeTabMenu(frm);
         }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            Form3 frm = new Form3();
-            MadeTabMenu(frm);
-        }
-
         private void button14_Click(object sender, EventArgs e)
         {
         }
