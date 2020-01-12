@@ -68,6 +68,7 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -170,7 +171,6 @@
             this.label7.Size = new System.Drawing.Size(34, 18);
             this.label7.TabIndex = 5;
             this.label7.Text = "비고";
-
             // 
             // label8
             // 
@@ -233,7 +233,6 @@
             this.cboTopProdduct.Name = "cboTopProdduct";
             this.cboTopProdduct.Size = new System.Drawing.Size(168, 23);
             this.cboTopProdduct.TabIndex = 12;
-          
             // 
             // cboAutoDeduction
             // 
@@ -290,7 +289,6 @@
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(437, 113);
             this.txtNote.TabIndex = 21;
-     
             // 
             // txtModifier
             // 

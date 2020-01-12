@@ -89,6 +89,18 @@
             this.txtSafetyAmount = new System.Windows.Forms.TextBox();
             this.txtModifier = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProductCount = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtProdcutCode = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtProductLsl = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtProductUsl = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtMeasType = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,7 +109,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(236, 420);
+            this.panel3.Location = new System.Drawing.Point(236, 491);
             // 
             // btnCancel
             // 
@@ -119,6 +131,18 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtMeasType);
+            this.panel2.Controls.Add(this.label37);
+            this.panel2.Controls.Add(this.txtProductUsl);
+            this.panel2.Controls.Add(this.label36);
+            this.panel2.Controls.Add(this.txtProductLsl);
+            this.panel2.Controls.Add(this.label35);
+            this.panel2.Controls.Add(this.txtProdcutCode);
+            this.panel2.Controls.Add(this.label34);
+            this.panel2.Controls.Add(this.txtBarcode);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Controls.Add(this.txtProductCount);
+            this.panel2.Controls.Add(this.label32);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.txtModifier);
             this.panel2.Controls.Add(this.txtSafetyAmount);
@@ -156,7 +180,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(630, 331);
+            this.panel2.Size = new System.Drawing.Size(630, 402);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
@@ -467,7 +491,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(16, 202);
+            this.label31.Location = new System.Drawing.Point(16, 251);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(34, 18);
             this.label31.TabIndex = 29;
@@ -504,7 +528,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(102, 199);
+            this.txtNote.Location = new System.Drawing.Point(102, 251);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(509, 111);
@@ -738,10 +762,112 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // txtProductCount
+            // 
+            this.txtProductCount.Location = new System.Drawing.Point(511, 166);
+            this.txtProductCount.Name = "txtProductCount";
+            this.txtProductCount.Size = new System.Drawing.Size(100, 21);
+            this.txtProductCount.TabIndex = 61;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(425, 166);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(60, 18);
+            this.label32.TabIndex = 60;
+            this.label32.Text = "물품수량";
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(102, 192);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(100, 21);
+            this.txtBarcode.TabIndex = 63;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(16, 192);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(47, 18);
+            this.label33.TabIndex = 62;
+            this.label33.Text = "바코드";
+            // 
+            // txtProdcutCode
+            // 
+            this.txtProdcutCode.Location = new System.Drawing.Point(309, 192);
+            this.txtProdcutCode.Name = "txtProdcutCode";
+            this.txtProdcutCode.Size = new System.Drawing.Size(100, 21);
+            this.txtProdcutCode.TabIndex = 65;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(223, 192);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(60, 18);
+            this.label34.TabIndex = 64;
+            this.label34.Text = "제품코드";
+            // 
+            // txtProductLsl
+            // 
+            this.txtProductLsl.Location = new System.Drawing.Point(102, 219);
+            this.txtProductLsl.Name = "txtProductLsl";
+            this.txtProductLsl.Size = new System.Drawing.Size(100, 21);
+            this.txtProductLsl.TabIndex = 67;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(16, 219);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(78, 18);
+            this.label35.TabIndex = 66;
+            this.label35.Text = "품목 최솟값";
+            // 
+            // txtProductUsl
+            // 
+            this.txtProductUsl.Location = new System.Drawing.Point(309, 219);
+            this.txtProductUsl.Name = "txtProductUsl";
+            this.txtProductUsl.Size = new System.Drawing.Size(100, 21);
+            this.txtProductUsl.TabIndex = 69;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(223, 219);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(78, 18);
+            this.label36.TabIndex = 68;
+            this.label36.Text = "품목 최댓값";
+            // 
+            // txtMeasType
+            // 
+            this.txtMeasType.Location = new System.Drawing.Point(511, 193);
+            this.txtMeasType.Name = "txtMeasType";
+            this.txtMeasType.Size = new System.Drawing.Size(100, 21);
+            this.txtMeasType.TabIndex = 71;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(425, 193);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(60, 18);
+            this.label37.TabIndex = 70;
+            this.label37.Text = "측정방식";
+            // 
             // ProductPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(677, 472);
+            this.ClientSize = new System.Drawing.Size(677, 543);
             this.Name = "ProductPop";
             this.Load += new System.EventHandler(this.ProductPop_Load);
             this.panel3.ResumeLayout(false);
@@ -817,5 +943,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtProductCount;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtMeasType;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtProductUsl;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtProductLsl;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtProdcutCode;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.Label label33;
     }
 }

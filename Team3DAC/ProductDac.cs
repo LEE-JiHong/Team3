@@ -42,15 +42,41 @@ namespace Team3DAC
             {
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "AddMeterial";
+                cmd.CommandText = "AddProduct";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@M_NAME", VO.PRODUCT_NAME);
-               
-            }
-            return true;
-                
+                cmd.Parameters.AddWithValue("@product_id", VO.product_name);
+                cmd.Parameters.AddWithValue("@product_name", VO.product_name);
+                cmd.Parameters.AddWithValue("@product_unit", VO.product_unit);
+                cmd.Parameters.AddWithValue("@product_unit_count", VO.product_count);
+                cmd.Parameters.AddWithValue("@product_type", VO.product_type);
+                cmd.Parameters.AddWithValue("@product_in_sector", VO.product_in_sector);
+                cmd.Parameters.AddWithValue("@product_out", VO.product_out);
+                cmd.Parameters.AddWithValue("@product_leadtime", VO.product_leadtime);
+                cmd.Parameters.AddWithValue("@product_lorder_count", VO.product_lorder_count);
+                cmd.Parameters.AddWithValue("@product_safety_count", VO.product_safety_count);
+                cmd.Parameters.AddWithValue("@product_admin", VO.product_admin);
+                cmd.Parameters.AddWithValue("@product_ordertype", VO.product_ordertype);
+                cmd.Parameters.AddWithValue("@product_yn", VO.product_yn);
+                cmd.Parameters.AddWithValue("@product_supply_com", VO.product_supply_com);
+                cmd.Parameters.AddWithValue("@product_demand_com", VO.product_demand_com);
+                cmd.Parameters.AddWithValue("@product_uadmin", VO.product_uadmin);
+                cmd.Parameters.AddWithValue("@product_udate", VO.product_udate);
+                cmd.Parameters.AddWithValue("@product_comment", VO.product_comment);
+                cmd.Parameters.AddWithValue("@product_count", VO.product_count);
+                cmd.Parameters.AddWithValue("@product_itemcode", VO.product_itemcode);
+                cmd.Parameters.AddWithValue("@product_code", VO.product_code);
+                cmd.Parameters.AddWithValue("@product_lsl", VO.product_lsl);
+                cmd.Parameters.AddWithValue("@product_usl", VO.product_usl);
+                cmd.Parameters.AddWithValue("@product_meastype", VO.product_meastype);
 
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+            
         }
     }
 }

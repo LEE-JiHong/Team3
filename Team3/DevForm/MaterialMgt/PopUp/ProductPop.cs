@@ -15,6 +15,7 @@ namespace Team3
     {
         List<CommonVO> codelist;
         CommonCodeService common_service;
+        ProductService product_service;
         public ProductPop()
         {
             InitializeComponent();
@@ -59,6 +60,47 @@ namespace Team3
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            if(MessageBox.Show("등록하시겠습니까?","신규등록",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ProductVO vo = new ProductVO();
+         //       vo.product_name
+         //       vo.product_name
+         //       vo.product_unit
+         //       vo.product_count
+         //     vo.product_type
+         //    vo.product_in_sector
+         //        vo.product_out
+         //vo.product_leadtime
+         //   vo.product_lorder_count
+         //   vo.product_safety_count
+         // vo.product_admin
+         //      vo.product_ordertype
+         //       vo.product_yn
+         //    vo.product_supply_com
+         //  vo.product_demand_com
+         //   vo.product_uadmin
+         //   vo.product_udate
+         //      vo.product_comment
+         //    vo.product_count
+         //       vo.product_itemcode
+         //     vo.product_code
+         //       vo.product_lsl
+         //       vo.product_usl
+         //    vo.product_meastype
+                bool bResult = product_service.AddProduct(vo);
+                if (bResult)
+                {
+                    MessageBox.Show("등록성공");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("등록실패 , 다시시도 하세요");
+                    return;
+                }
+            }
+
+            
         }
     }
 }
