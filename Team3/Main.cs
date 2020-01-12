@@ -189,10 +189,70 @@ namespace Team3
                     MadeTabMenu(ProductPlan);
                     break;
 
-                //구매관리-
+                //구매관리-Purchase
                 case "정규발주":
                     RegularOrder RegularOrder = new RegularOrder();
                     MadeTabMenu(RegularOrder);
+                    break;
+                case "발주현황":
+                    OrderList OrderList = new OrderList();
+                    MadeTabMenu(OrderList);
+                    break;
+
+                //구매관리-Supplier
+                case "입고대기":
+                    WatingReceiving WatingReceiving = new WatingReceiving();
+                    MadeTabMenu(WatingReceiving);
+                    break;
+
+                //구매관리-Material Ledger
+                case "자재입고":
+                    MaterialReceiving MaterialReceiving = new MaterialReceiving();
+                    MadeTabMenu(MaterialReceiving);
+                    break;
+                case "자재입고현황":
+                    MaterialReceivingList MaterialReceivingList = new MaterialReceivingList();
+                    MadeTabMenu(MaterialReceivingList);
+                    break;
+
+                //구매관리-Stock
+                case "자재재고현황":
+                    MaterialStockList MaterialStockList = new MaterialStockList();
+                    MadeTabMenu(MaterialStockList);
+                    break;
+                case "입출고현황":
+                    InOutList InOutList = new InOutList();
+                    MadeTabMenu(InOutList);
+                    break;
+
+                //공정관리
+                case "작업지시생성":
+                    GOO GOO = new GOO();
+                    MadeTabMenu(GOO);
+                    break;
+                case "작업지시현황":
+                    SOO SOO = new SOO();
+                    MadeTabMenu(SOO);
+                    break;
+
+                //구매관리
+                case "자재불출요청":
+                    DMRMgt DMRMgt = new DMRMgt();
+                    MadeTabMenu(DMRMgt);
+                    break;
+                case "원자재불출":
+                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
+                    MadeTabMenu(RequestRawMaterial_sDistribution);
+                    break;
+
+                //공정등록
+                case "작업실적등록":
+                    Business_showings Business_showings = new Business_showings();
+                    MadeTabMenu(Business_showings);
+                    break;
+                case "공정재고현황":
+                    Process_Inventory Process_Inventory = new Process_Inventory();
+                    MadeTabMenu(Process_Inventory);
                     break;
             }
         }
@@ -259,6 +319,84 @@ namespace Team3
                     ProductPlan.SubWindowState = WinState.independ;
                     break;
 
+                //구매관리-Purchase
+                case "정규발주":
+                    RegularOrder RegularOrder = new RegularOrder();
+                    RegularOrder = (RegularOrder)InitForm(RegularOrder);
+                    RegularOrder.SubWindowState = WinState.independ;
+                    break;
+                case "발주현황":
+                    OrderList OrderList = new OrderList();
+                    OrderList = (OrderList)InitForm(OrderList);
+                    OrderList.SubWindowState = WinState.independ;
+                    break;
+
+                //구매관리-Supplier
+                case "입고대기":
+                    WatingReceiving WatingReceiving = new WatingReceiving();
+                    WatingReceiving = (WatingReceiving)InitForm(WatingReceiving);
+                    WatingReceiving.SubWindowState = WinState.independ;
+                    break;
+
+                //구매관리-Material Ledger
+                case "자재입고":
+                    MaterialReceiving MaterialReceiving = new MaterialReceiving();
+                    MaterialReceiving = (MaterialReceiving)InitForm(MaterialReceiving);
+                    MaterialReceiving.SubWindowState = WinState.independ;
+                    break;
+                case "자재입고현황":
+                    MaterialReceivingList MaterialReceivingList = new MaterialReceivingList();
+                    MaterialReceivingList = (MaterialReceivingList)InitForm(MaterialReceivingList);
+                    MaterialReceivingList.SubWindowState = WinState.independ;
+                    break;
+
+                //구매관리-Stock
+                case "자재재고현황":
+                    MaterialStockList MaterialStockList = new MaterialStockList();
+                    MaterialStockList = (MaterialStockList)InitForm(MaterialStockList);
+                    MaterialStockList.SubWindowState = WinState.independ;
+                    break;
+                case "입출고현황":
+                    InOutList InOutList = new InOutList();
+                    InOutList = (InOutList)InitForm(InOutList);
+                    InOutList.SubWindowState = WinState.independ;
+                    break;
+
+                //공정관리
+                case "작업지시생성":
+                    GOO GOO = new GOO();
+                    GOO = (GOO)InitForm(GOO);
+                    GOO.SubWindowState = WinState.independ;
+                    break;
+                case "작업지시현황":
+                    SOO SOO = new SOO();
+                    SOO = (SOO)InitForm(SOO);
+                    SOO.SubWindowState = WinState.independ;
+                    break;
+
+                //구매관리
+                case "자재불출요청":
+                    DMRMgt DMRMgt = new DMRMgt();
+                    DMRMgt = (DMRMgt)InitForm(DMRMgt);
+                    DMRMgt.SubWindowState = WinState.independ;
+                    break;
+                case "원자재불출":
+                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
+                    RequestRawMaterial_sDistribution = (RequestRawMaterial_sDistribution)InitForm(RequestRawMaterial_sDistribution);
+                    RequestRawMaterial_sDistribution.SubWindowState = WinState.independ;
+                    break;
+
+                //공정등록
+                case "작업실적등록":
+                    Business_showings Business_showings = new Business_showings();
+                    Business_showings = (Business_showings)InitForm(Business_showings);
+                    Business_showings.SubWindowState = WinState.independ;
+                    break;
+                case "공정재고현황":
+                    Process_Inventory Process_Inventory = new Process_Inventory();
+                    Process_Inventory = (Process_Inventory)InitForm(Process_Inventory);
+                    Process_Inventory.SubWindowState = WinState.independ;
+                    break;
             }
 
         }
@@ -398,7 +536,42 @@ namespace Team3
 
         private void treeView5_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            MessageBox.Show(e.Node.Text, e.Node.Index.ToString());
+            //MessageBox.Show(e.Node.Text, e.Node.Index.ToString());
+            if (e.Node.Text == "정규발주")
+            {
+                RegularOrder frm = new RegularOrder();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "발주현황")
+            {
+                OrderList frm = new OrderList();
+                MadeTabMenu(frm);
+            }
+            if (e.Node.Text == "입고대기")
+            {
+                WatingReceiving frm = new WatingReceiving();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "자재입고")
+            {
+                MaterialReceiving frm = new MaterialReceiving();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "자재입고현황")
+            {
+                MaterialReceivingList frm = new MaterialReceivingList();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "자재재고현황")
+            {
+                MaterialStockList frm = new MaterialStockList();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "입출고현황")
+            {
+                InOutList frm = new InOutList();
+                MadeTabMenu(frm);
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -500,11 +673,58 @@ namespace Team3
                 SalesMasterUpload frm = new SalesMasterUpload();
                 MadeTabMenu(frm);
             }
+            else if (e.Node.Text == "영업마스터")
+            {
+                SalesMaster frm = new SalesMaster();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "수요계획")
+            {
+                DemandPlan frm = new DemandPlan();
+                MadeTabMenu(frm);
+            }
         }
 
         private void Button17_Click(object sender, EventArgs e)
         {
             Process.Start("Chrome.exe", "https://localhost:44387/");
+        }
+
+        private void TreeView4_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "생산계획")
+            {
+                ProductPlan frm = new ProductPlan();
+                MadeTabMenu(frm);
+            }
+        }
+
+        private void TreeView7_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "자재불출요청")
+            {
+                DMRMgt frm = new DMRMgt();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "원자재불출")
+            {
+                RequestRawMaterial_sDistribution frm = new RequestRawMaterial_sDistribution();
+                MadeTabMenu(frm);
+            }
+        }
+
+        private void TreeView8_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "작업실적등록")
+            {
+                Business_showings frm = new Business_showings();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "공정재고현황")
+            {
+                Process_Inventory frm = new Process_Inventory();
+                MadeTabMenu(frm);
+            }
         }
     }
 }
