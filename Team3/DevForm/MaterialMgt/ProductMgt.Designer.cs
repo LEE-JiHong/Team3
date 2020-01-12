@@ -1,6 +1,6 @@
 ﻿namespace Team3
 {
-    partial class Materials
+    partial class ProductMgt
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materials));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductMgt));
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblDeliveryCompany = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(12, 155);
-            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.Text = "품목정보";
             // 
             // panel3
@@ -443,12 +443,12 @@
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
-            // Materials
+            // ProductMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1155, 536);
-            this.Name = "Materials";
-            this.Tag = "품목정보";
+            this.Name = "ProductMgt";
+            this.Tag = "품목관리";
             this.Load += new System.EventHandler(this.Materials_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
