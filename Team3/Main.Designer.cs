@@ -414,7 +414,7 @@
             this.panel10.Controls.Add(this.button11);
             this.panel10.Controls.Add(this.treeView8);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 985);
+            this.panel10.Location = new System.Drawing.Point(0, 966);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(179, 114);
             this.panel10.TabIndex = 10;
@@ -455,6 +455,7 @@
             this.treeView8.TabIndex = 0;
             this.treeView8.Tag = "8";
             this.treeView8.Visible = false;
+            this.treeView8.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView8_NodeMouseDoubleClick);
             // 
             // panel9
             // 
@@ -462,7 +463,7 @@
             this.panel9.Controls.Add(this.button10);
             this.panel9.Controls.Add(this.treeView7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 854);
+            this.panel9.Location = new System.Drawing.Point(0, 835);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(179, 131);
             this.panel9.TabIndex = 9;
@@ -506,6 +507,7 @@
             this.treeView7.TabIndex = 0;
             this.treeView7.Tag = "7";
             this.treeView7.Visible = false;
+            this.treeView7.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView7_NodeMouseDoubleClick);
             // 
             // panel8
             // 
@@ -513,7 +515,7 @@
             this.panel8.Controls.Add(this.button9);
             this.panel8.Controls.Add(this.treeView6);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 767);
+            this.panel8.Location = new System.Drawing.Point(0, 748);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(179, 87);
             this.panel8.TabIndex = 8;
@@ -553,6 +555,7 @@
             this.treeView6.TabIndex = 0;
             this.treeView6.Tag = "6";
             this.treeView6.Visible = false;
+            this.treeView6.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView6_NodeMouseDoubleClick);
             // 
             // panel7
             // 
@@ -560,7 +563,7 @@
             this.panel7.Controls.Add(this.button8);
             this.panel7.Controls.Add(this.treeView5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 465);
+            this.panel7.Location = new System.Drawing.Point(0, 446);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(179, 302);
             this.panel7.TabIndex = 7;
@@ -620,6 +623,7 @@
             this.treeView5.TabIndex = 0;
             this.treeView5.Tag = "5";
             this.treeView5.Visible = false;
+            this.treeView5.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView5_NodeMouseDoubleClick);
             // 
             // panel6
             // 
@@ -629,7 +633,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 379);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(179, 86);
+            this.panel6.Size = new System.Drawing.Size(179, 67);
             this.panel6.TabIndex = 6;
             // 
             // button7
@@ -660,10 +664,11 @@
             treeNode21.Text = "생산계획";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode21});
-            this.treeView4.Size = new System.Drawing.Size(200, 49);
+            this.treeView4.Size = new System.Drawing.Size(200, 30);
             this.treeView4.TabIndex = 0;
             this.treeView4.Tag = "4";
             this.treeView4.Visible = false;
+            this.treeView4.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView4_NodeMouseDoubleClick);
             // 
             // panel5
             // 
