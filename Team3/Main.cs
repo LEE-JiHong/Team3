@@ -88,7 +88,44 @@ namespace Team3
             //frm.MdiParent = this;
 
             //frm.Show();
+            SetTrvImage(treeView1);
+            SetTrvImage2(treeView2);
+            SetTrvImage(treeView3);
+            SetTrvImage2(treeView4);
+            SetTrvImage(treeView5);
+            SetTrvImage2(treeView6);
+            SetTrvImage(treeView7);
+            SetTrvImage(treeView8);
+
         }
+
+        //트리뷰 이미지 설정
+        //트리뷰는 폴더img, 노드는 파일img
+        private void SetTrvImage(TreeView trv)
+        {
+            ImageList imgList = new ImageList();
+            imgList.Images.Add(new Bitmap(Properties.Resources.BOFolder_16x16));//Application.StartupPath + @"\image\doc_icon.png"
+            imgList.Images.Add(new Bitmap(Properties.Resources.file));//Application.StartupPath + @"\image\doc_icon.png"
+            trv.ImageList = imgList;
+            foreach (TreeNode node in trv.Nodes)
+            {
+                foreach (TreeNode node2 in node.Nodes)
+                {
+                    node2.ImageIndex = 1;
+                    node2.SelectedImageIndex = 1;
+                }
+            }
+        }
+
+        //트리뷰 이미지 설정
+        //폴더가 없을 경우 -> 파일img
+        private void SetTrvImage2(TreeView trv)
+        {
+            ImageList imgList = new ImageList();
+            imgList.Images.Add(new Bitmap(Properties.Resources.file));//Application.StartupPath + @"\image\doc_icon.png"
+            trv.ImageList = imgList;
+        }
+
         private void MenuButton_Click(object sender, EventArgs e)
         {
             this.LeftMenuTab.Visible = !this.LeftMenuTab.Visible;
@@ -104,17 +141,58 @@ namespace Team3
         {
             switch (name)
             {
-                case "Form1":
-                    Form1 form1 = new Form1();
-                    MadeTabMenu(form1);
+                //자원관리
+                case "공장관리":
+                    FactoryMgt FactoryMgt = new FactoryMgt();
+                    MadeTabMenu(FactoryMgt);
                     break;
-                case "Form3":
-                    Form3 form3 = new Form3();
-                    MadeTabMenu(form3);
+                case "설비관리":
+                    facilityMgt facilityMgt = new facilityMgt();
+                    MadeTabMenu(facilityMgt);
                     break;
-                case "Form4":
-                    Form4 form4 = new Form4();
-                    MadeTabMenu(form4);
+                case "업체관리":
+                    businessMgt businessMgt = new businessMgt();
+                    MadeTabMenu(businessMgt);
+                    break;
+                case "BOR":
+                    BOR BOR = new BOR();
+                    MadeTabMenu(BOR);
+                    break;
+
+                //품목관리
+                case "품목관리":
+                    ProductMgt ProductMgt = new ProductMgt();
+                    MadeTabMenu(ProductMgt);
+                    break;
+                case "BOM":
+                    BomMgt BomMgt = new BomMgt();
+                    MadeTabMenu(BomMgt);
+                    break;
+
+                //수주/계획관리 - 오더관리
+                case "영업마스터업로드(P/O)":
+                    SalesMasterUpload SalesMasterUpload = new SalesMasterUpload();
+                    MadeTabMenu(SalesMasterUpload);
+                    break;
+                case "영업마스터":
+                    SalesMaster SalesMaster = new SalesMaster();
+                    MadeTabMenu(SalesMaster);
+                    break;
+                case "수요계획":
+                    DemandPlan DemandPlan = new DemandPlan();
+                    MadeTabMenu(DemandPlan);
+                    break;
+
+                //수주/생산관리
+                case "생산계획":
+                    ProductPlan ProductPlan = new ProductPlan();
+                    MadeTabMenu(ProductPlan);
+                    break;
+
+                //구매관리-
+                case "정규발주":
+                    RegularOrder RegularOrder = new RegularOrder();
+                    MadeTabMenu(RegularOrder);
                     break;
             }
         }
@@ -123,23 +201,64 @@ namespace Team3
         {
             switch (name)
             {
-                case "Form1":
-                    Form1 form1 = new Form1();
-                    form1= (Form1)InitForm(form1);
-                    form1.SubWindowState = WinState.independ;
+                //자원관리
+                case "공장관리":
+                    FactoryMgt FactoryMgt = new FactoryMgt();
+                    FactoryMgt = (FactoryMgt)InitForm(FactoryMgt);
+                    FactoryMgt.SubWindowState = WinState.independ;
+                    break;
+                case "설비관리":
+                    facilityMgt facilityMgt = new facilityMgt();
+                    facilityMgt = (facilityMgt)InitForm(facilityMgt);
+                    facilityMgt.SubWindowState = WinState.independ;
+                    break;
+                case "업체관리":
+                    businessMgt businessMgt = new businessMgt();
+                    businessMgt = (businessMgt)InitForm(businessMgt);
+                    businessMgt.SubWindowState = WinState.independ;
+                    break;
+                case "BOR":
+                    BOR BOR = new BOR();
+                    BOR = (BOR)InitForm(BOR);
+                    BOR.SubWindowState = WinState.independ;
                     break;
 
-                case "Form3":
-                    Form3 form3 = new Form3();
-                    form3 = (Form3)InitForm(form3);
-                    form3.SubWindowState = WinState.independ;
+                //품목관리
+                case "품목관리":
+                    ProductMgt ProductMgt = new ProductMgt();
+                    ProductMgt = (ProductMgt)InitForm(ProductMgt);
+                    ProductMgt.SubWindowState = WinState.independ;
+                    break;
+                case "BOM":
+                    BomMgt BomMgt = new BomMgt();
+                    BomMgt = (BomMgt)InitForm(BomMgt);
+                    BomMgt.SubWindowState = WinState.independ;
                     break;
 
-                case "Form4":
-                    Form4 form4 = new Form4();
-                    form4 = (Form4)InitForm(form4);
-                    form4.SubWindowState = WinState.independ;
+                //수주/계획관리 - 오더관리
+                case "영업마스터업로드(P/O)":
+                    SalesMasterUpload SalesMasterUpload = new SalesMasterUpload();
+                    SalesMasterUpload = (SalesMasterUpload)InitForm(SalesMasterUpload);
+                    SalesMasterUpload.SubWindowState = WinState.independ;
                     break;
+                case "영업마스터업로드":
+                    SalesMaster SalesMaster = new SalesMaster();
+                    SalesMaster = (SalesMaster)InitForm(SalesMaster);
+                    SalesMaster.SubWindowState = WinState.independ;
+                    break;
+                case "수요계획":
+                    DemandPlan DemandPlan = new DemandPlan();
+                    DemandPlan = (DemandPlan)InitForm(DemandPlan);
+                    DemandPlan.SubWindowState = WinState.independ;
+                    break;
+
+                //수주/생산관리
+                case "생산계획":
+                    ProductPlan ProductPlan = new ProductPlan();
+                    ProductPlan = (ProductPlan)InitForm(ProductPlan);
+                    ProductPlan.SubWindowState = WinState.independ;
+                    break;
+
             }
 
         }
@@ -277,8 +396,6 @@ namespace Team3
         }
 
 
-
-
         private void treeView5_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             MessageBox.Show(e.Node.Text, e.Node.Index.ToString());
@@ -327,7 +444,7 @@ namespace Team3
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "설비관리")
-            {
+            {         
                 facilityMgt frm = new facilityMgt();
                 MadeTabMenu(frm);
             }
@@ -347,7 +464,7 @@ namespace Team3
         {
             if(e.Node.Text == "품목관리")
             {
-                Materials frm = new Materials();
+                ProductMgt frm = new ProductMgt();
                 MadeTabMenu(frm);
             }
             else if(e.Node.Text == "BOM")
