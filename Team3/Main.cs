@@ -134,8 +134,10 @@ namespace Team3
 
         private void CloseTab(object sender, EventArgs e)
         {
-            MainTab.Controls.Remove(MainTab.SelectedTab);
-          
+            if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
+            {
+                MainTab.Controls.Remove(MainTab.SelectedTab);
+            }
         }
         public void GetForm(string name)
         {
