@@ -43,7 +43,7 @@
             treeNode6});
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("작업지시생성");
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("작업지시현황");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("발주");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("정규발주");
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("발주현황");
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Purchasing", new System.Windows.Forms.TreeNode[] {
             treeNode10,
@@ -62,31 +62,36 @@
             treeNode18,
             treeNode19});
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("생산계획");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("외주계획");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("영업마스터");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("수요계획");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("영업마스터");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("수요계획");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
+            treeNode22,
             treeNode23,
-            treeNode24,
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("품목관리");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("BOM");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("공장관리");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("설비관리");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("업체관리");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("BOR");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
+            treeNode24});
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("품목관리");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("BOM");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("공장관리");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("설비관리");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("업체관리");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("BOR");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
+            treeNode28,
             treeNode29,
             treeNode30,
-            treeNode31,
-            treeNode32});
+            treeNode31});
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.LeftMenuButton = new System.Windows.Forms.Button();
+            this.닫기 = new System.Windows.Forms.Button();
+            this.layoutButton = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -94,6 +99,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LeftMenuTab = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
@@ -120,19 +126,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.MainTab = new System.Windows.Forms.TabControl();
-            this.LeftMenuButton = new System.Windows.Forms.Button();
-            this.닫기 = new System.Windows.Forms.Button();
-            this.layoutButton = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LeftMenuTab.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -142,7 +142,6 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -215,6 +214,101 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1340, 49);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // LeftMenuButton
+            // 
+            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
+            this.LeftMenuButton.FlatAppearance.BorderSize = 0;
+            this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeftMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.LeftMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("LeftMenuButton.Image")));
+            this.LeftMenuButton.Location = new System.Drawing.Point(3, 3);
+            this.LeftMenuButton.Name = "LeftMenuButton";
+            this.LeftMenuButton.Size = new System.Drawing.Size(83, 43);
+            this.LeftMenuButton.TabIndex = 5;
+            this.LeftMenuButton.Text = "메뉴";
+            this.LeftMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.LeftMenuButton.UseVisualStyleBackColor = false;
+            this.LeftMenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // 닫기
+            // 
+            this.닫기.FlatAppearance.BorderSize = 0;
+            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.닫기.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.닫기.Image = ((System.Drawing.Image)(resources.GetObject("닫기.Image")));
+            this.닫기.Location = new System.Drawing.Point(92, 3);
+            this.닫기.Name = "닫기";
+            this.닫기.Size = new System.Drawing.Size(88, 43);
+            this.닫기.TabIndex = 4;
+            this.닫기.Text = "닫기";
+            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.닫기.UseVisualStyleBackColor = true;
+            this.닫기.Click += new System.EventHandler(this.CloseTab);
+            // 
+            // layoutButton
+            // 
+            this.layoutButton.FlatAppearance.BorderSize = 0;
+            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.layoutButton.Image = ((System.Drawing.Image)(resources.GetObject("layoutButton.Image")));
+            this.layoutButton.Location = new System.Drawing.Point(186, 3);
+            this.layoutButton.Name = "layoutButton";
+            this.layoutButton.Size = new System.Drawing.Size(111, 43);
+            this.layoutButton.TabIndex = 12;
+            this.layoutButton.Text = "화면분할";
+            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.layoutButton.UseVisualStyleBackColor = true;
+            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
+            // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
+            this.button15.Location = new System.Drawing.Point(303, 3);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(86, 43);
+            this.button15.TabIndex = 13;
+            this.button15.Text = "설정";
+            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
+            this.button16.Location = new System.Drawing.Point(395, 3);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(86, 43);
+            this.button16.TabIndex = 14;
+            this.button16.Text = "정보";
+            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button17.Image = global::Team3.Properties.Resources.chrome1;
+            this.button17.Location = new System.Drawing.Point(487, 3);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(112, 43);
+            this.button17.TabIndex = 15;
+            this.button17.Text = "EIS";
+            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.Button17_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(605, 3);
@@ -283,6 +377,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 52);
             this.panel4.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Team3.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // LeftMenuTab
             // 
@@ -484,7 +590,7 @@
             this.treeView5.Location = new System.Drawing.Point(0, 33);
             this.treeView5.Name = "treeView5";
             treeNode10.Name = "노드1";
-            treeNode10.Text = "발주";
+            treeNode10.Text = "정규발주";
             treeNode11.Name = "노드2";
             treeNode11.Text = "발주현황";
             treeNode12.Name = "노드0";
@@ -552,11 +658,8 @@
             this.treeView4.Name = "treeView4";
             treeNode21.Name = "노드0";
             treeNode21.Text = "생산계획";
-            treeNode22.Name = "노드1";
-            treeNode22.Text = "외주계획";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
+            treeNode21});
             this.treeView4.Size = new System.Drawing.Size(200, 49);
             this.treeView4.TabIndex = 0;
             this.treeView4.Tag = "4";
@@ -597,16 +700,16 @@
             this.treeView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView3.Location = new System.Drawing.Point(0, 33);
             this.treeView3.Name = "treeView3";
-            treeNode23.Name = "노드1";
-            treeNode23.Text = "영업마스터업로드(PO)";
-            treeNode24.Name = "노드2";
-            treeNode24.Text = "영업마스터";
-            treeNode25.Name = "노드4";
-            treeNode25.Text = "수요계획";
-            treeNode26.Name = "노드0";
-            treeNode26.Text = "오더관리";
+            treeNode22.Name = "노드1";
+            treeNode22.Text = "영업마스터업로드(PO)";
+            treeNode23.Name = "노드2";
+            treeNode23.Text = "영업마스터";
+            treeNode24.Name = "노드4";
+            treeNode24.Text = "수요계획";
+            treeNode25.Name = "노드0";
+            treeNode25.Text = "오더관리";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode26});
+            treeNode25});
             this.treeView3.Size = new System.Drawing.Size(200, 96);
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
@@ -648,13 +751,13 @@
             this.treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView2.Location = new System.Drawing.Point(0, 33);
             this.treeView2.Name = "treeView2";
-            treeNode27.Name = "품목관리";
-            treeNode27.Text = "품목관리";
-            treeNode28.Name = "BOM";
-            treeNode28.Text = "BOM";
+            treeNode26.Name = "품목관리";
+            treeNode26.Text = "품목관리";
+            treeNode27.Name = "BOM";
+            treeNode27.Text = "BOM";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28});
+            treeNode26,
+            treeNode27});
             this.treeView2.Size = new System.Drawing.Size(200, 54);
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
@@ -697,18 +800,19 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode29.Name = "공장관리";
-            treeNode29.Text = "공장관리";
-            treeNode30.Name = "설비관리";
-            treeNode30.Text = "설비관리";
-            treeNode31.Name = "업체관리";
-            treeNode31.Text = "업체관리";
-            treeNode32.Name = "BOR";
-            treeNode32.Text = "BOR";
-            treeNode33.Name = "자원관리";
-            treeNode33.Text = "자원관리";
+            treeNode28.ImageIndex = -2;
+            treeNode28.Name = "공장관리";
+            treeNode28.Text = "공장관리";
+            treeNode29.Name = "설비관리";
+            treeNode29.Text = "설비관리";
+            treeNode30.Name = "업체관리";
+            treeNode30.Text = "업체관리";
+            treeNode31.Name = "BOR";
+            treeNode31.Text = "BOR";
+            treeNode32.Name = "자원관리";
+            treeNode32.Text = "자원관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode33});
+            treeNode32});
             this.treeView1.Size = new System.Drawing.Size(200, 120);
             this.treeView1.TabIndex = 0;
             this.treeView1.Tag = "1";
@@ -724,113 +828,6 @@
             this.MainTab.Size = new System.Drawing.Size(1340, 793);
             this.MainTab.TabIndex = 14;
             this.MainTab.SelectedIndexChanged += new System.EventHandler(this.MainTab_SelectedIndexChanged);
-            // 
-            // LeftMenuButton
-            // 
-            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
-            this.LeftMenuButton.FlatAppearance.BorderSize = 0;
-            this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.LeftMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("LeftMenuButton.Image")));
-            this.LeftMenuButton.Location = new System.Drawing.Point(3, 3);
-            this.LeftMenuButton.Name = "LeftMenuButton";
-            this.LeftMenuButton.Size = new System.Drawing.Size(83, 43);
-            this.LeftMenuButton.TabIndex = 5;
-            this.LeftMenuButton.Text = "메뉴";
-            this.LeftMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeftMenuButton.UseVisualStyleBackColor = false;
-            this.LeftMenuButton.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
-            // 닫기
-            // 
-            this.닫기.FlatAppearance.BorderSize = 0;
-            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.닫기.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.닫기.Image = ((System.Drawing.Image)(resources.GetObject("닫기.Image")));
-            this.닫기.Location = new System.Drawing.Point(92, 3);
-            this.닫기.Name = "닫기";
-            this.닫기.Size = new System.Drawing.Size(88, 43);
-            this.닫기.TabIndex = 4;
-            this.닫기.Text = "닫기";
-            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.닫기.UseVisualStyleBackColor = true;
-            this.닫기.Click += new System.EventHandler(this.CloseTab);
-            // 
-            // layoutButton
-            // 
-            this.layoutButton.FlatAppearance.BorderSize = 0;
-            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.layoutButton.Image = ((System.Drawing.Image)(resources.GetObject("layoutButton.Image")));
-            this.layoutButton.Location = new System.Drawing.Point(186, 3);
-            this.layoutButton.Name = "layoutButton";
-            this.layoutButton.Size = new System.Drawing.Size(111, 43);
-            this.layoutButton.TabIndex = 12;
-            this.layoutButton.Text = "화면분할";
-            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.layoutButton.UseVisualStyleBackColor = true;
-            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.Location = new System.Drawing.Point(303, 3);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(86, 43);
-            this.button15.TabIndex = 13;
-            this.button15.Text = "설정";
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
-            this.button16.Location = new System.Drawing.Point(395, 3);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(86, 43);
-            this.button16.TabIndex = 14;
-            this.button16.Text = "정보";
-            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button17.Image = global::Team3.Properties.Resources.chrome1;
-            this.button17.Location = new System.Drawing.Point(487, 3);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(112, 43);
-            this.button17.TabIndex = 15;
-            this.button17.Text = "EIS";
-            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.Button17_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Team3.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 52);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -857,6 +854,7 @@
             this.panel11.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LeftMenuTab.ResumeLayout(false);
             this.LeftMenuTab.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -867,7 +865,6 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

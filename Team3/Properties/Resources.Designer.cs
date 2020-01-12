@@ -233,6 +233,16 @@ namespace Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Home_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Home_32x32", resourceCulture);
@@ -316,6 +326,16 @@ namespace Team3.Properties {
         internal static System.Drawing.Bitmap ModelEditor_GenerateContent {
             get {
                 object obj = ResourceManager.GetObject("ModelEditor_GenerateContent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap New_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("New_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
