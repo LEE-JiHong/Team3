@@ -148,11 +148,11 @@
     <Compile Include="DevForm\MaterialMgt\ISIMgt.Designer.cs">
       <DependentUpon>ISIMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\Materials.cs">
+    <Compile Include="DevForm\MaterialMgt\ProductMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
-      <DependentUpon>Materials.cs</DependentUpon>
+    <Compile Include="DevForm\MaterialMgt\ProductMgt.Designer.cs">
+      <DependentUpon>ProductMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\MREMgt.cs">
       <SubType>Form</SubType>
@@ -178,11 +178,11 @@
     <Compile Include="DevForm\MaterialMgt\PopUp\MUPMPop.Designer.cs">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.cs">
+    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.Designer.cs">
-      <DependentUpon>MaterialPop.cs</DependentUpon>
+    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.Designer.cs">
+      <DependentUpon>ProductPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\PopUp\SUPMPop.cs">
       <SubType>Form</SubType>
@@ -453,8 +453,8 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\ISIMgt.resx">
       <DependentUpon>ISIMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
-      <DependentUpon>Materials.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\MaterialMgt\ProductMgt.resx">
+      <DependentUpon>ProductMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\MREMgt.resx">
       <DependentUpon>MREMgt.cs</DependentUpon>
@@ -468,8 +468,8 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MUPMPop.resx">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MaterialPop.resx">
-      <DependentUpon>MaterialPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\ProductPop.resx">
+      <DependentUpon>ProductPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\SUPMPop.resx">
       <DependentUpon>SUPMPop.cs</DependentUpon>

@@ -449,6 +449,7 @@
             this.ClientSize = new System.Drawing.Size(1155, 536);
             this.Name = "Materials";
             this.Tag = "품목정보";
+            this.Load += new System.EventHandler(this.Materials_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

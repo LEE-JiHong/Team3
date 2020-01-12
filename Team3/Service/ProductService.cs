@@ -13,8 +13,7 @@ namespace Team3.Service
         public List<ProductVO> GetAllProducts()
         {
             ProductDac dac = new ProductDac();
-            List<ProductVO> list =  dac.GetProductsAll();
-            return list;
+            return dac.GetProductsAll();
         }
     }
 }
