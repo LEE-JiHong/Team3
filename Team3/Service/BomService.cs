@@ -10,11 +10,17 @@ namespace Team3.Service
 {
     class BomService
     {
+        /// <summary>
+        /// 모든 Bom 조회
+        /// </summary>
+        /// <returns></returns>
         public List<BomVO> GetBomAll()
         {
             BomDac dac = new BomDac();
             return dac.GetBomAll();
         }
+
+        
         
         
     }

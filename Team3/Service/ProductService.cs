@@ -10,10 +10,20 @@ namespace Team3.Service
 {
     class ProductService
     {
+        /// <summary>
+        /// 모든 Product 조회
+        /// </summary>
+        /// <returns></returns>
         public List<ProductVO> GetAllProducts()
         {
             ProductDac dac = new ProductDac();
             return dac.GetProductsAll();
+        }
+
+        public bool AddProduct(ProductVO productvo)
+        {
+            ProductDac dac = new ProductDac();
+            return dac.AddProduct(productvo);
         }
     }
 }

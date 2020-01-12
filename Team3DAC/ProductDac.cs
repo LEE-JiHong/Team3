@@ -15,6 +15,10 @@ namespace Team3DAC
 {
     public class ProductDac : ConnectionAccess
     {
+        /// <summary>
+        /// 모든 Product 조회
+        /// </summary>
+        /// <returns></returns>
         public List<ProductVO> GetProductsAll()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -30,6 +34,23 @@ namespace Team3DAC
                 cmd.Connection.Close();
                 return list;
             }
+        }
+
+        public bool AddProduct(ProductVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "AddMeterial";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@M_NAME", VO.PRODUCT_NAME);
+               
+            }
+            return true;
+                
+
         }
     }
 }
