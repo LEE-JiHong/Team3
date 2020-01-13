@@ -53,7 +53,7 @@
             // 
             // panel6
             // 
-            this.panel6.Size = new System.Drawing.Size(402, 256);
+            this.panel6.Size = new System.Drawing.Size(376, 256);
             // 
             // panel5
             // 
@@ -66,6 +66,7 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.label2);
+            this.panel4.Size = new System.Drawing.Size(673, 49);
             // 
             // lblMasterName
             // 
@@ -78,10 +79,12 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.flowLayoutPanel1);
+            this.panel8.Location = new System.Drawing.Point(211, 3);
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.dataGridView2);
+            this.panel10.Size = new System.Drawing.Size(351, 192);
             // 
             // panel9
             // 
@@ -89,7 +92,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(282, 506);
+            this.panel3.Location = new System.Drawing.Point(269, 506);
             // 
             // btnCancel
             // 
@@ -101,21 +104,27 @@
             // 
             // label1
             // 
+            this.label1.Size = new System.Drawing.Size(44, 19);
             this.label1.Text = "발주";
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(697, 36);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(722, 417);
+            this.panel2.Size = new System.Drawing.Size(696, 417);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Location = new System.Drawing.Point(656, 7);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 39);
+            this.label2.Location = new System.Drawing.Point(36, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 5;
@@ -124,7 +133,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(67, 36);
+            this.comboBox1.Location = new System.Drawing.Point(73, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 6;
@@ -133,7 +142,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(232, 39);
+            this.label3.Location = new System.Drawing.Point(238, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 7;
@@ -141,14 +150,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(313, 35);
+            this.textBox1.Location = new System.Drawing.Point(319, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 21);
             this.textBox1.TabIndex = 8;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(580, 31);
+            this.button2.Location = new System.Drawing.Point(586, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -181,7 +190,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(247, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(245, 192);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
@@ -191,13 +200,13 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(379, 194);
+            this.dataGridView2.Size = new System.Drawing.Size(351, 192);
             this.dataGridView2.TabIndex = 0;
             // 
             // OrderDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(778, 585);
+            this.ClientSize = new System.Drawing.Size(752, 585);
             this.Name = "OrderDialog";
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

@@ -28,7 +28,7 @@ namespace Team3
 
         private void ProductPop_Load(object sender, EventArgs e)
         {
-            ComboBoxBinding();
+            //ComboBoxBinding();
 
         }
 
@@ -60,49 +60,49 @@ namespace Team3
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if(MessageBox.Show("등록하시겠습니까?","신규등록",MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                product_service = new ProductService();
-                ProductVO vo = new ProductVO();
+            //if(MessageBox.Show("등록하시겠습니까?","신규등록",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //{
+            //    product_service = new ProductService();
+            //    ProductVO vo = new ProductVO();
 
-                vo.product_id = Convert.ToInt32(txtProduct.Text);
-                vo.product_name = txtProductName.Text;
-                vo.product_unit = cboProductUnit.SelectedValue.ToString();
-                vo.product_unit_count = txtUnitAmount.Text;
-                vo.product_type = cboProductType.SelectedValue.ToString();
-                vo.product_in_sector = cboInWH.Text.ToString();
-                vo.product_out = cboOutWH.Text.ToString();
-                vo.product_leadtime = txtLeadTime.Text;
-                vo.product_lorder_count = Convert.ToInt32(txtLeastOrder.Text);
-                vo.product_safety_count = Convert.ToInt32(txtSafetyAmount.Text);
-                vo.product_admin = cboNameDirector.Text.ToString();
-                vo.product_ordertype = cboOrderType.Text.ToString();
-                vo.product_yn = cboIsUsed.SelectedValue.ToString();
-                vo.product_supply_com = cboDeliveryCompany.Text.ToString();
-                vo.product_demand_com = cboDemandCompany.Text.ToString();
-                vo.product_uadmin = txtModifier.Text;
-                vo.product_udate = txtModifyDate.Text;
-                vo.product_comment = txtNote.Text;
-                vo.product_count = Convert.ToInt32(txtProductCount.Text);
-                vo.product_itemcode = txtBarcode.Text;
-                vo.product_code = txtProductCode.Text;
-                vo.product_lsl = txtProductLsl.Text;
-                vo.product_usl = txtProductUsl.Text;
-                vo.product_meastype = txtMeasType.Text;
+            //    vo.product_id = Convert.ToInt32(txtProduct.Text);
+            //    vo.product_name = txtProductName.Text;
+            //    vo.product_unit = cboProductUnit.SelectedValue.ToString();
+            //    vo.product_unit_count = txtUnitAmount.Text;
+            //    vo.product_type = cboProductType.SelectedValue.ToString();
+            //    vo.product_in_sector = cboInWH.Text.ToString();
+            //    vo.product_out = cboOutWH.Text.ToString();
+            //    vo.product_leadtime = txtLeadTime.Text;
+            //    vo.product_lorder_count = Convert.ToInt32(txtLeastOrder.Text);
+            //    vo.product_safety_count = Convert.ToInt32(txtSafetyAmount.Text);
+            //    vo.product_admin = cboNameDirector.Text.ToString();
+            //    vo.product_ordertype = cboOrderType.Text.ToString();
+            //    vo.product_yn = cboIsUsed.SelectedValue.ToString();
+            //    vo.product_supply_com = cboDeliveryCompany.Text.ToString();
+            //    vo.product_demand_com = cboDemandCompany.Text.ToString();
+            //    vo.product_uadmin = txtModifier.Text;
+            //    vo.product_udate = txtModifyDate.Text;
+            //    vo.product_comment = txtNote.Text;
+            //    vo.product_count = Convert.ToInt32(txtProductCount.Text);
+            //    vo.product_itemcode = txtBarcode.Text;
+            //    vo.product_code = txtProductCode.Text;
+            //    vo.product_lsl = txtProductLsl.Text;
+            //    vo.product_usl = txtProductUsl.Text;
+            //    vo.product_meastype = txtMeasType.Text;
                
 
-                bool bResult = product_service.AddProduct(vo);
-                if (bResult)
-                {
-                    MessageBox.Show("등록성공");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("등록실패 , 다시시도 하세요");
-                    return;
-                }
-            }
+            //    bool bResult = product_service.AddProduct(vo);
+            //    if (bResult)
+            //    {
+            //        MessageBox.Show("등록성공");
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("등록실패 , 다시시도 하세요");
+            //        return;
+            //    }
+            //}
 
             
         }

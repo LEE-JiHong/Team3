@@ -96,7 +96,7 @@ namespace Team3
             SetTrvImage2(treeView6);
             SetTrvImage(treeView7);
             SetTrvImage(treeView8);
-
+            SetTrvImage2(treeView9);
         }
 
         //트리뷰 이미지 설정
@@ -190,6 +190,10 @@ namespace Team3
                     ProductPlan ProductPlan = new ProductPlan();
                     MadeTabMenu(ProductPlan);
                     break;
+                case "자재소요계획":
+                    MRP MRP = new MRP();
+                    MadeTabMenu(MRP);
+                    break;
 
                 //구매관리-Purchase
                 case "정규발주":
@@ -256,6 +260,16 @@ namespace Team3
                     Process_Inventory Process_Inventory = new Process_Inventory();
                     MadeTabMenu(Process_Inventory);
                     break;
+
+                //단가관리
+                case "영업단가관리":
+                    SUPMMgt SUPMMgt = new SUPMMgt();
+                    MadeTabMenu(SUPMMgt);
+                    break;
+                case "자재단가관리":
+                    MUPMMgt MUPMMgt = new MUPMMgt();
+                    MadeTabMenu(MUPMMgt);
+                    break;
             }
         }
 
@@ -319,6 +333,11 @@ namespace Team3
                     ProductPlan ProductPlan = new ProductPlan();
                     ProductPlan = (ProductPlan)InitForm(ProductPlan);
                     ProductPlan.SubWindowState = WinState.independ;
+                    break;
+                case "자재소요계획":
+                    MRP MRP = new MRP();
+                    MRP = (MRP)InitForm(MRP);
+                    MRP.SubWindowState = WinState.independ;
                     break;
 
                 //구매관리-Purchase
@@ -399,6 +418,18 @@ namespace Team3
                     Process_Inventory = (Process_Inventory)InitForm(Process_Inventory);
                     Process_Inventory.SubWindowState = WinState.independ;
                     break;
+
+                //단가관리
+                case "영업단가관리":
+                    SUPMMgt SUPMMgt = new SUPMMgt();
+                    SUPMMgt = (SUPMMgt)InitForm(SUPMMgt);
+                    SUPMMgt.SubWindowState = WinState.independ;
+                    break;
+                case "자재단가관리":
+                    MUPMMgt MUPMMgt = new MUPMMgt();
+                    MUPMMgt = (MUPMMgt)InitForm(MUPMMgt);
+                    MUPMMgt.SubWindowState = WinState.independ;
+                    break;
             }
 
         }
@@ -420,12 +451,14 @@ namespace Team3
         {
             if (MainTab.TabPages.Count > 0)
             {
-                foreach (dynamic item in MainTab.SelectedTab.Controls)
+                if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
                 {
-                   
-                    GetoutForm(item.Tag.ToString());
+                    foreach (dynamic item in MainTab.SelectedTab.Controls)
+                    {
+                        GetoutForm(item.Tag.ToString());
+                    }
                 }
-
+                
             }
         }
 
@@ -671,6 +704,11 @@ namespace Team3
                 ProductPlan frm = new ProductPlan();
                 MadeTabMenu(frm);
             }
+            else if (e.Node.Text == "자재소요계획")
+            {
+                MRP frm = new MRP();
+                MadeTabMenu(frm);
+            }
         }
 
         private void TreeView7_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -697,6 +735,20 @@ namespace Team3
             else if (e.Node.Text == "공정재고현황")
             {
                 Process_Inventory frm = new Process_Inventory();
+                MadeTabMenu(frm);
+            }
+        }
+
+        private void treeView9_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "영업단가관리")
+            {
+                SUPMMgt frm = new SUPMMgt();
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "자재단가관리")
+            {
+                MUPMMgt frm = new MUPMMgt();
                 MadeTabMenu(frm);
             }
         }
