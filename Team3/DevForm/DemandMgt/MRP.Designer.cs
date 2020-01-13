@@ -1,6 +1,6 @@
 ﻿namespace Team3
 {
-    partial class ProcurementPlan
+    partial class MRP
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcurementPlan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MRP));
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,6 +63,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -80,8 +84,8 @@
             // 
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Size = new System.Drawing.Size(77, 15);
-            this.label1.Text = "외주계획";
+            this.label1.Size = new System.Drawing.Size(110, 15);
+            this.label1.Text = "자재소요계획";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
@@ -167,7 +171,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 61;
-            this.label3.Text = "설비";
+            this.label3.Text = "업체";
             // 
             // dataGridView1
             // 
@@ -217,7 +221,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(469, 23);
+            this.label10.Location = new System.Drawing.Point(479, 23);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(14, 15);
             this.label10.TabIndex = 73;
@@ -227,7 +231,7 @@
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(490, 19);
+            this.dateTimePicker2.Location = new System.Drawing.Point(500, 19);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(89, 21);
             this.dateTimePicker2.TabIndex = 72;
@@ -236,7 +240,7 @@
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(374, 19);
+            this.dateTimePicker1.Location = new System.Drawing.Point(384, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(89, 21);
             this.dateTimePicker1.TabIndex = 71;
@@ -263,13 +267,31 @@
             this.textBox3.Size = new System.Drawing.Size(201, 21);
             this.textBox3.TabIndex = 76;
             // 
-            // ProcurementPlan
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4.Location = new System.Drawing.Point(384, 56);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(205, 21);
+            this.textBox4.TabIndex = 78;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(321, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 15);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Shortage";
+            // 
+            // MRP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(914, 724);
-            this.Name = "ProcurementPlan";
-            this.Tag = "외주계획";
-            this.Text = "외주계획";
+            this.Name = "MRP";
+            this.Tag = "자재소요계획";
+            this.Text = "자재소요계획";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -300,5 +322,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
     }
 }

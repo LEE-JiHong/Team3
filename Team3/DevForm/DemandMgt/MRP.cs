@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class ProcurementPlan : Team3.VerticalGridBaseForm
+    public partial class MRP : Team3.VerticalGridBaseForm
     {
-        public ProcurementPlan()
+        public MRP()
         {
             InitializeComponent();
         }
