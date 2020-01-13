@@ -32,7 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,7 +57,8 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 153);
-            this.panel2.Size = new System.Drawing.Size(870, 475);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Size = new System.Drawing.Size(998, 415);
             // 
             // panel1
             // 
@@ -73,7 +74,8 @@
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label12);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Size = new System.Drawing.Size(870, 100);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Size = new System.Drawing.Size(998, 100);
             // 
             // label1
             // 
@@ -87,8 +89,14 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(651, 118);
+            this.panel3.Location = new System.Drawing.Point(778, 118);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Size = new System.Drawing.Size(232, 29);
+            // 
+            // TopMenu
+            // 
+            this.TopMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TopMenu.Size = new System.Drawing.Size(1021, 60);
             // 
             // layoutButton
             // 
@@ -100,7 +108,8 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(894, 642);
+            this.basepanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.basepanel.Size = new System.Drawing.Size(1021, 594);
             // 
             // imageList1
             // 
@@ -117,14 +126,15 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(870, 475);
+            this.dataGridView1.Size = new System.Drawing.Size(998, 415);
             this.dataGridView1.TabIndex = 50;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnExport);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,21 +159,22 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnExport
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = global::Team3.Properties.Resources.ModelEditor_GenerateContent;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(65, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(61, 23);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "엑셀";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.ForeColor = System.Drawing.Color.Black;
+            this.btnExport.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(65, 3);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(61, 23);
+            this.btnExport.TabIndex = 54;
+            this.btnExport.Text = "엑셀";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // label2
             // 
@@ -187,7 +198,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(459, 23);
+            this.label4.Location = new System.Drawing.Point(523, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 16);
             this.label4.TabIndex = 62;
@@ -197,7 +208,7 @@
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(480, 19);
+            this.dateTimePicker2.Location = new System.Drawing.Point(544, 19);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(89, 22);
             this.dateTimePicker2.TabIndex = 59;
@@ -206,7 +217,7 @@
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(368, 19);
+            this.dateTimePicker1.Location = new System.Drawing.Point(432, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(86, 22);
             this.dateTimePicker1.TabIndex = 58;
@@ -215,7 +226,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(606, 22);
+            this.label12.Location = new System.Drawing.Point(733, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 16);
             this.label12.TabIndex = 57;
@@ -225,7 +236,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(324, 22);
+            this.label8.Location = new System.Drawing.Point(388, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 16);
             this.label8.TabIndex = 56;
@@ -233,9 +244,8 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 57);
+            this.comboBox1.Location = new System.Drawing.Point(82, 58);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(218, 24);
             this.comboBox1.TabIndex = 66;
@@ -243,7 +253,7 @@
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(644, 19);
+            this.textBox3.Location = new System.Drawing.Point(771, 19);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(201, 22);
             this.textBox3.TabIndex = 77;
@@ -258,7 +268,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(780, 57);
+            this.button1.Location = new System.Drawing.Point(907, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 78;
@@ -268,9 +278,8 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(77, 18);
+            this.comboBox3.Location = new System.Drawing.Point(82, 19);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(218, 24);
             this.comboBox3.TabIndex = 79;
@@ -278,7 +287,9 @@
             // DemandPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(894, 724);
+            this.ClientSize = new System.Drawing.Size(1021, 676);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(1037, 665);
             this.Name = "DemandPlan";
             this.Tag = "수요계획";
             this.Text = "수요계획";
@@ -299,7 +310,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

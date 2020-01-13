@@ -43,7 +43,7 @@
             treeNode6});
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("작업지시생성");
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("작업지시현황");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("발주");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("정규발주");
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("발주현황");
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Purchasing", new System.Windows.Forms.TreeNode[] {
             treeNode10,
@@ -62,25 +62,24 @@
             treeNode18,
             treeNode19});
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("생산계획");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("외주계획");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("영업마스터");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("수요계획");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("영업마스터");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("수요계획");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
+            treeNode22,
             treeNode23,
-            treeNode24,
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("품목관리");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("BOM");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("공장관리");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("설비관리");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("업체관리");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("BOR");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
+            treeNode24});
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("품목관리");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("BOM");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("공장관리");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("설비관리");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("업체관리");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("BOR");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
+            treeNode28,
             treeNode29,
             treeNode30,
-            treeNode31,
-            treeNode32});
+            treeNode31});
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -92,12 +91,7 @@
             this.layoutButton = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LeftMenuTab = new System.Windows.Forms.Panel();
@@ -126,6 +120,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.MainTab = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -142,6 +138,9 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.MainTab.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -155,6 +154,7 @@
             this.imageList1.Images.SetKeyName(4, "menulist1Blue.png");
             this.imageList1.Images.SetKeyName(5, "cloud-storage-download.png");
             this.imageList1.Images.SetKeyName(6, "menu-symbol-of-three-parallel-lines.png");
+            this.imageList1.Images.SetKeyName(7, "Networking-RHS-031918.jpg.imgo.jpg");
             // 
             // fileSystemWatcher1
             // 
@@ -169,7 +169,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1540, 52);
+            this.panel2.Size = new System.Drawing.Size(1540, 80);
             this.panel2.TabIndex = 12;
             // 
             // panel12
@@ -178,7 +178,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(200, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1340, 52);
+            this.panel12.Size = new System.Drawing.Size(1340, 80);
             this.panel12.TabIndex = 16;
             // 
             // panel11
@@ -186,9 +186,9 @@
             this.panel11.BackColor = System.Drawing.Color.Transparent;
             this.panel11.Controls.Add(this.flowLayoutPanel1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 3);
+            this.panel11.Location = new System.Drawing.Point(0, 18);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1340, 49);
+            this.panel11.Size = new System.Drawing.Size(1340, 62);
             this.panel11.TabIndex = 16;
             // 
             // flowLayoutPanel1
@@ -199,18 +199,13 @@
             this.flowLayoutPanel1.Controls.Add(this.layoutButton);
             this.flowLayoutPanel1.Controls.Add(this.button15);
             this.flowLayoutPanel1.Controls.Add(this.button16);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
-            this.flowLayoutPanel1.Controls.Add(this.button13);
-            this.flowLayoutPanel1.Controls.Add(this.button14);
+            this.flowLayoutPanel1.Controls.Add(this.button17);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1340, 49);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1340, 62);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // LeftMenuButton
@@ -292,65 +287,21 @@
             this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button17
             // 
-            this.button1.Location = new System.Drawing.Point(487, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(568, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(649, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(730, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Visible = false;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(811, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 10;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Visible = false;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(892, 3);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Visible = false;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button17.Image = global::Team3.Properties.Resources.chrome1;
+            this.button17.Location = new System.Drawing.Point(487, 3);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(112, 43);
+            this.button17.TabIndex = 15;
+            this.button17.Text = "EIS";
+            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.Button17_Click);
             // 
             // panel4
             // 
@@ -358,18 +309,18 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 52);
+            this.panel4.Size = new System.Drawing.Size(200, 80);
             this.panel4.TabIndex = 15;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Team3.Properties.Resources.logo;
+            this.pictureBox1.Image = global::Team3.Properties.Resources.logo2;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 52);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(200, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -386,9 +337,9 @@
             this.LeftMenuTab.Controls.Add(this.panel3);
             this.LeftMenuTab.Controls.Add(this.panel1);
             this.LeftMenuTab.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftMenuTab.Location = new System.Drawing.Point(0, 52);
+            this.LeftMenuTab.Location = new System.Drawing.Point(0, 80);
             this.LeftMenuTab.Name = "LeftMenuTab";
-            this.LeftMenuTab.Size = new System.Drawing.Size(200, 793);
+            this.LeftMenuTab.Size = new System.Drawing.Size(200, 765);
             this.LeftMenuTab.TabIndex = 13;
             // 
             // panel10
@@ -397,14 +348,14 @@
             this.panel10.Controls.Add(this.button11);
             this.panel10.Controls.Add(this.treeView8);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 985);
+            this.panel10.Location = new System.Drawing.Point(0, 966);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(183, 114);
             this.panel10.TabIndex = 10;
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button11.Dock = System.Windows.Forms.DockStyle.Top;
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -438,6 +389,7 @@
             this.treeView8.TabIndex = 0;
             this.treeView8.Tag = "8";
             this.treeView8.Visible = false;
+            this.treeView8.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView8_NodeMouseDoubleClick);
             // 
             // panel9
             // 
@@ -445,14 +397,14 @@
             this.panel9.Controls.Add(this.button10);
             this.panel9.Controls.Add(this.treeView7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 854);
+            this.panel9.Location = new System.Drawing.Point(0, 835);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(183, 131);
             this.panel9.TabIndex = 9;
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -489,6 +441,7 @@
             this.treeView7.TabIndex = 0;
             this.treeView7.Tag = "7";
             this.treeView7.Visible = false;
+            this.treeView7.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView7_NodeMouseDoubleClick);
             // 
             // panel8
             // 
@@ -496,14 +449,14 @@
             this.panel8.Controls.Add(this.button9);
             this.panel8.Controls.Add(this.treeView6);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 767);
+            this.panel8.Location = new System.Drawing.Point(0, 748);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(183, 87);
             this.panel8.TabIndex = 8;
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -536,6 +489,7 @@
             this.treeView6.TabIndex = 0;
             this.treeView6.Tag = "6";
             this.treeView6.Visible = false;
+            this.treeView6.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView6_NodeMouseDoubleClick);
             // 
             // panel7
             // 
@@ -543,14 +497,14 @@
             this.panel7.Controls.Add(this.button8);
             this.panel7.Controls.Add(this.treeView5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 465);
+            this.panel7.Location = new System.Drawing.Point(0, 446);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(183, 302);
             this.panel7.TabIndex = 7;
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -573,7 +527,7 @@
             this.treeView5.Location = new System.Drawing.Point(0, 33);
             this.treeView5.Name = "treeView5";
             treeNode10.Name = "노드1";
-            treeNode10.Text = "발주";
+            treeNode10.Text = "정규발주";
             treeNode11.Name = "노드2";
             treeNode11.Text = "발주현황";
             treeNode12.Name = "노드0";
@@ -603,6 +557,7 @@
             this.treeView5.TabIndex = 0;
             this.treeView5.Tag = "5";
             this.treeView5.Visible = false;
+            this.treeView5.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView5_NodeMouseDoubleClick);
             // 
             // panel6
             // 
@@ -612,12 +567,12 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 379);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(183, 86);
+            this.panel6.Size = new System.Drawing.Size(183, 67);
             this.panel6.TabIndex = 6;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -641,15 +596,13 @@
             this.treeView4.Name = "treeView4";
             treeNode21.Name = "노드0";
             treeNode21.Text = "생산계획";
-            treeNode22.Name = "노드1";
-            treeNode22.Text = "외주계획";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
-            this.treeView4.Size = new System.Drawing.Size(200, 49);
+            treeNode21});
+            this.treeView4.Size = new System.Drawing.Size(200, 30);
             this.treeView4.TabIndex = 0;
             this.treeView4.Tag = "4";
             this.treeView4.Visible = false;
+            this.treeView4.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView4_NodeMouseDoubleClick);
             // 
             // panel5
             // 
@@ -664,7 +617,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -686,16 +639,16 @@
             this.treeView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView3.Location = new System.Drawing.Point(0, 33);
             this.treeView3.Name = "treeView3";
-            treeNode23.Name = "노드1";
-            treeNode23.Text = "영업마스터업로드(PO)";
-            treeNode24.Name = "노드2";
-            treeNode24.Text = "영업마스터";
-            treeNode25.Name = "노드4";
-            treeNode25.Text = "수요계획";
-            treeNode26.Name = "노드0";
-            treeNode26.Text = "오더관리";
+            treeNode22.Name = "노드1";
+            treeNode22.Text = "영업마스터업로드(PO)";
+            treeNode23.Name = "노드2";
+            treeNode23.Text = "영업마스터";
+            treeNode24.Name = "노드4";
+            treeNode24.Text = "수요계획";
+            treeNode25.Name = "노드0";
+            treeNode25.Text = "오더관리";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode26});
+            treeNode25});
             this.treeView3.Size = new System.Drawing.Size(200, 96);
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
@@ -715,7 +668,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -737,13 +690,13 @@
             this.treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView2.Location = new System.Drawing.Point(0, 33);
             this.treeView2.Name = "treeView2";
-            treeNode27.Name = "품목관리";
-            treeNode27.Text = "품목관리";
-            treeNode28.Name = "BOM";
-            treeNode28.Text = "BOM";
+            treeNode26.Name = "품목관리";
+            treeNode26.Text = "품목관리";
+            treeNode27.Name = "BOM";
+            treeNode27.Text = "BOM";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28});
+            treeNode26,
+            treeNode27});
             this.treeView2.Size = new System.Drawing.Size(200, 54);
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
@@ -763,7 +716,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -786,18 +739,19 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode29.Name = "공장관리";
-            treeNode29.Text = "공장관리";
-            treeNode30.Name = "설비관리";
-            treeNode30.Text = "설비관리";
-            treeNode31.Name = "업체관리";
-            treeNode31.Text = "업체관리";
-            treeNode32.Name = "BOR";
-            treeNode32.Text = "BOR";
-            treeNode33.Name = "자원관리";
-            treeNode33.Text = "자원관리";
+            treeNode28.ImageIndex = -2;
+            treeNode28.Name = "공장관리";
+            treeNode28.Text = "공장관리";
+            treeNode29.Name = "설비관리";
+            treeNode29.Text = "설비관리";
+            treeNode30.Name = "업체관리";
+            treeNode30.Text = "업체관리";
+            treeNode31.Name = "BOR";
+            treeNode31.Text = "BOR";
+            treeNode32.Name = "자원관리";
+            treeNode32.Text = "자원관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode33});
+            treeNode32});
             this.treeView1.Size = new System.Drawing.Size(200, 120);
             this.treeView1.TabIndex = 0;
             this.treeView1.Tag = "1";
@@ -806,13 +760,36 @@
             // 
             // MainTab
             // 
+            this.MainTab.Controls.Add(this.tabPage1);
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTab.Location = new System.Drawing.Point(200, 52);
+            this.MainTab.Location = new System.Drawing.Point(200, 80);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
-            this.MainTab.Size = new System.Drawing.Size(1340, 793);
+            this.MainTab.Size = new System.Drawing.Size(1340, 765);
             this.MainTab.TabIndex = 14;
             this.MainTab.SelectedIndexChanged += new System.EventHandler(this.MainTab_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1332, 737);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Tag = "메인화면";
+            this.tabPage1.Text = "메인화면";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1332, 737);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // Main
             // 
@@ -850,6 +827,9 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.MainTab.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -894,12 +874,9 @@
         private System.Windows.Forms.Button layoutButton;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

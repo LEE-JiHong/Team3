@@ -35,7 +35,7 @@
             this.btnFindFile = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.txtPlanVersion = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txt);
+            this.panel2.Controls.Add(this.txtPlanVersion);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.txtFilePath);
             this.panel2.Controls.Add(this.btnFindFile);
@@ -160,13 +160,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(208, 21);
             this.dateTimePicker1.TabIndex = 10;
             // 
-            // txt
+            // txtPlanVersion
             // 
-            this.txt.Location = new System.Drawing.Point(108, 162);
-            this.txt.Name = "txt";
-            this.txt.ReadOnly = true;
-            this.txt.Size = new System.Drawing.Size(208, 21);
-            this.txt.TabIndex = 11;
+            this.txtPlanVersion.Location = new System.Drawing.Point(108, 162);
+            this.txtPlanVersion.Name = "txtPlanVersion";
+            this.txtPlanVersion.ReadOnly = true;
+            this.txtPlanVersion.Size = new System.Drawing.Size(208, 21);
+            this.txtPlanVersion.TabIndex = 11;
             // 
             // btnClose
             // 
@@ -190,6 +190,7 @@
             this.Name = "SalesMasterDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "영업마스터업로드";
+            this.Load += new System.EventHandler(this.SalesMasterDialog_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -204,7 +205,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtPlanVersion;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnFindFile;

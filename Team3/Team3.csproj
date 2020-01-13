@@ -118,24 +118,6 @@
     <Compile Include="DevForm\DemandMgt\ProductPlan.Designer.cs">
       <DependentUpon>ProductPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DevForm\Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DevForm\Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
-    </Compile>
     <Compile Include="DevForm\MaterialMgt\BomMgt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +130,11 @@
     <Compile Include="DevForm\MaterialMgt\ISIMgt.Designer.cs">
       <DependentUpon>ISIMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\Materials.cs">
+    <Compile Include="DevForm\MaterialMgt\ProductMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\Materials.Designer.cs">
-      <DependentUpon>Materials.cs</DependentUpon>
+    <Compile Include="DevForm\MaterialMgt\ProductMgt.Designer.cs">
+      <DependentUpon>ProductMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\MREMgt.cs">
       <SubType>Form</SubType>
@@ -178,11 +160,11 @@
     <Compile Include="DevForm\MaterialMgt\PopUp\MUPMPop.Designer.cs">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.cs">
+    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevForm\MaterialMgt\PopUp\MaterialPop.Designer.cs">
-      <DependentUpon>MaterialPop.cs</DependentUpon>
+    <Compile Include="DevForm\MaterialMgt\PopUp\ProductPop.Designer.cs">
+      <DependentUpon>ProductPop.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\MaterialMgt\PopUp\SUPMPop.cs">
       <SubType>Form</SubType>
@@ -378,7 +360,9 @@
     <Compile Include="PurchaseMgt2\RequestRawMaterial%27sDistribution.designer.cs">
       <DependentUpon>RequestRawMaterial%27sDistribution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\BomService.cs" />
     <Compile Include="Service\CommonCodeService.cs" />
+    <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\ResourceService.cs" />
     <Compile Include="Utility\ComboUtil.cs" />
     <Compile Include="Utility\GridViewUtil.cs" />
@@ -436,23 +420,14 @@
     <EmbeddedResource Include="DevForm\DemandMgt\ProductPlan.resx">
       <DependentUpon>ProductPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\BomMgt.resx">
       <DependentUpon>BomMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\ISIMgt.resx">
       <DependentUpon>ISIMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\MaterialMgt\Materials.resx">
-      <DependentUpon>Materials.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\MaterialMgt\ProductMgt.resx">
+      <DependentUpon>ProductMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\MREMgt.resx">
       <DependentUpon>MREMgt.cs</DependentUpon>
@@ -466,8 +441,8 @@
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MUPMPop.resx">
       <DependentUpon>MUPMPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\MaterialPop.resx">
-      <DependentUpon>MaterialPop.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\ProductPop.resx">
+      <DependentUpon>ProductPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\PopUp\SUPMPop.resx">
       <DependentUpon>SUPMPop.cs</DependentUpon>
@@ -608,6 +583,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo.png" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\cross-out.png" />
     <None Include="Resources\close1.png" />
@@ -623,6 +599,8 @@
     <None Include="Icon\Button\ModelEditor_GenerateContent.png" />
     <None Include="Icon\Button\Open2_16x16.png" />
     <None Include="Icon\Button\LoadFrom_16x16.png" />
+    <None Include="Icon\Button\New_16x16.png" />
+    <None Include="Icon\Button\file.png" />
     <Content Include="Icon\Button\pencil.png" />
     <Content Include="Icon\Button\printer.png" />
     <None Include="Icon\Button\Print_16x16.png" />
@@ -632,6 +610,7 @@
     <None Include="Icon\Button\Save_16x16.png" />
     <None Include="Icon\Button\Select_16x16.png" />
     <Content Include="Icon\Button\write.png" />
+    <None Include="Icon\Home\chrome.png" />
     <Content Include="Icon\Home\close.png" />
     <Content Include="Icon\Home\close1.png" />
     <Content Include="Icon\Home\closeBlue.png" />

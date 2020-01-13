@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team3.Service;
+using Team3VO;
 
 namespace Team3
 {
@@ -28,8 +30,14 @@ namespace Team3
         {
             cboDeployment.SelectedIndex = 0;
             cboIsUsed.SelectedIndex = 0;
-            
-           
+
+            BomService service = new BomService();
+
+            List<BomVO> list = service.GetBomAll();
+            dgvBom.DataSource = list;
+
+
+
         }
     }
 }

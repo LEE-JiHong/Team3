@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BomDac.cs" />
     <Compile Include="DemandDac.cs" />
-    <Compile Include="MaterialDac.cs" />
+    <Compile Include="ProductDac.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="OrderDac.cs" />

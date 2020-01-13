@@ -12,17 +12,17 @@ namespace Team3VO
 
   public  class BomVO
     {
-        public int BOM_ID { get; set; }
-        public int BOM_PARENT_ID { get; set; }
-        public int PRODUCT_ID { get; set; }
-        public int BOM_USE_COUNT { get; set; }
-        public string BOM_SDATE { get; set; }
-        public string BOM_EDATE { get; set; }
-        public string BOM_YN { get; set; }
-        public int PLAN_ID { get; set; }
-        public string BOM_COMMENT { get; set; }
-        public string BOM_UADMIN { get; set; }
-        public string BOM_UDATE { get; set; }
+        public int bom_id { get; set; }
+        public int bom_parent_id { get; set; }
+        public int product_id { get; set; }
+        public int bom_use_count { get; set; }
+        public string bom_sdate { get; set; }
+        public string bom_edate { get; set; }
+        public string bom_yn { get; set; }
+        public int plan_id { get; set; }
+        public string bom_comment { get; set; }
+        public string bom_uadmin { get; set; }
+        public string bom_udate { get; set; }
 
         public BomVO() { }
     }

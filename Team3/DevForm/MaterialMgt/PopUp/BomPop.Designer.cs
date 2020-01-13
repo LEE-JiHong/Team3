@@ -45,7 +45,7 @@
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.cboRequiredPlan = new System.Windows.Forms.ComboBox();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.txtAmountRequired = new System.Windows.Forms.TextBox();
+            this.txtUseCount = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtModifier = new System.Windows.Forms.TextBox();
             this.txtModifyDate = new System.Windows.Forms.TextBox();
@@ -68,10 +68,11 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.Size = new System.Drawing.Size(68, 19);
             this.label1.Text = "BOM";
             // 
             // panel1
@@ -84,7 +85,7 @@
             this.panel2.Controls.Add(this.txtModifyDate);
             this.panel2.Controls.Add(this.txtNote);
             this.panel2.Controls.Add(this.txtModifier);
-            this.panel2.Controls.Add(this.txtAmountRequired);
+            this.panel2.Controls.Add(this.txtUseCount);
             this.panel2.Controls.Add(this.dtpEndDate);
             this.panel2.Controls.Add(this.cboRequiredPlan);
             this.panel2.Controls.Add(this.cboIsUsed);
@@ -170,7 +171,6 @@
             this.label7.Size = new System.Drawing.Size(34, 18);
             this.label7.TabIndex = 5;
             this.label7.Text = "비고";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -274,13 +274,13 @@
             this.dtpEndDate.Size = new System.Drawing.Size(168, 21);
             this.dtpEndDate.TabIndex = 17;
             // 
-            // txtAmountRequired
+            // txtUseCount
             // 
-            this.txtAmountRequired.Location = new System.Drawing.Point(92, 72);
-            this.txtAmountRequired.Name = "txtAmountRequired";
-            this.txtAmountRequired.Size = new System.Drawing.Size(168, 21);
-            this.txtAmountRequired.TabIndex = 19;
-            this.txtAmountRequired.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtUseCount.Location = new System.Drawing.Point(92, 72);
+            this.txtUseCount.Name = "txtUseCount";
+            this.txtUseCount.Size = new System.Drawing.Size(168, 21);
+            this.txtUseCount.TabIndex = 19;
+            this.txtUseCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNote
             // 
@@ -289,7 +289,6 @@
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(437, 113);
             this.txtNote.TabIndex = 21;
-            this.txtNote.TextChanged += new System.EventHandler(this.txtNote_TextChanged);
             // 
             // txtModifier
             // 
@@ -330,6 +329,7 @@
             this.ClientSize = new System.Drawing.Size(598, 439);
             this.Controls.Add(this.groupBox1);
             this.Name = "BomPop";
+            this.Load += new System.EventHandler(this.BomPop_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
@@ -351,7 +351,7 @@
         private System.Windows.Forms.TextBox txtModifyDate;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtModifier;
-        private System.Windows.Forms.TextBox txtAmountRequired;
+        private System.Windows.Forms.TextBox txtUseCount;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.ComboBox cboRequiredPlan;
         private System.Windows.Forms.ComboBox cboIsUsed;

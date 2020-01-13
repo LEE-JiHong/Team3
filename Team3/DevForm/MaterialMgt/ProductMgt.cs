@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team3.Service;
+using Team3VO;
 
 namespace Team3
 {
-    public partial class Materials : VerticalGridBaseForm
+    public partial class ProductMgt : VerticalGridBaseForm
     {
-        public Materials()
+        public ProductMgt()
         {
             InitializeComponent();
         }
@@ -24,6 +26,11 @@ namespace Team3
             }
         }
 
-      
+        private void Materials_Load(object sender, EventArgs e)
+        {
+            ProductService service = new ProductService();
+            List<ProductVO> list = service.GetAllProducts();
+            dgvProductList.DataSource = list;
+        }
     }
 }
