@@ -56,7 +56,7 @@
             // 
             this.panel2.Controls.Add(this.dgvMUPM);
             this.panel2.Location = new System.Drawing.Point(12, 105);
-            this.panel2.Size = new System.Drawing.Size(1131, 340);
+            this.panel2.Size = new System.Drawing.Size(1285, 340);
             // 
             // panel1
             // 
@@ -67,7 +67,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblStandardDate);
-            this.panel1.Size = new System.Drawing.Size(1131, 50);
+            this.panel1.Size = new System.Drawing.Size(1285, 50);
             // 
             // label1
             // 
@@ -78,12 +78,12 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(746, 70);
+            this.panel3.Location = new System.Drawing.Point(900, 70);
             this.panel3.Size = new System.Drawing.Size(398, 29);
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(1155, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1309, 60);
             // 
             // layoutButton
             // 
@@ -95,7 +95,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1155, 454);
+            this.basepanel.Size = new System.Drawing.Size(1309, 454);
             // 
             // imageList1
             // 
@@ -221,7 +221,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(379, 19);
+            this.label3.Location = new System.Drawing.Point(418, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 1;
@@ -233,7 +233,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(745, 20);
+            this.label4.Location = new System.Drawing.Point(862, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 16);
             this.label4.TabIndex = 2;
@@ -243,7 +243,7 @@
             // 
             this.dtpStandardDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpStandardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStandardDate.Location = new System.Drawing.Point(88, 15);
+            this.dtpStandardDate.Location = new System.Drawing.Point(103, 15);
             this.dtpStandardDate.Name = "dtpStandardDate";
             this.dtpStandardDate.Size = new System.Drawing.Size(115, 22);
             this.dtpStandardDate.TabIndex = 3;
@@ -253,7 +253,7 @@
             this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCompany.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(780, 16);
+            this.cboCompany.Location = new System.Drawing.Point(934, 16);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(169, 21);
             this.cboCompany.TabIndex = 21;
@@ -266,14 +266,14 @@
             this.dgvMUPM.Location = new System.Drawing.Point(0, 0);
             this.dgvMUPM.Name = "dgvMUPM";
             this.dgvMUPM.RowTemplate.Height = 23;
-            this.dgvMUPM.Size = new System.Drawing.Size(1131, 340);
+            this.dgvMUPM.Size = new System.Drawing.Size(1285, 340);
             this.dgvMUPM.TabIndex = 0;
             // 
             // txtProduct
             // 
             this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProduct.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProduct.Location = new System.Drawing.Point(416, 15);
+            this.txtProduct.Location = new System.Drawing.Point(491, 15);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(206, 22);
             this.txtProduct.TabIndex = 28;
@@ -288,7 +288,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1063, 12);
+            this.btnSelect.Location = new System.Drawing.Point(1216, 12);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 30);
             this.btnSelect.TabIndex = 78;
@@ -299,7 +299,7 @@
             // MUPMMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1155, 536);
+            this.ClientSize = new System.Drawing.Size(1309, 536);
             this.Name = "MUPMMgt";
             this.Tag = "자재단가관리";
             this.panel2.ResumeLayout(false);
