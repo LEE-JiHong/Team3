@@ -62,24 +62,25 @@
             treeNode20,
             treeNode21});
             System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("생산계획");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("영업마스터");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("수요계획");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
-            treeNode24,
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("자재소요계획");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("영업마스터");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("수요계획");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
             treeNode25,
-            treeNode26});
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("품목관리");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("BOM");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("공장관리");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("설비관리");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("업체관리");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("BOR");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
-            treeNode30,
+            treeNode26,
+            treeNode27});
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("품목관리");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("BOM");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("공장관리");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("설비관리");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("업체관리");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("BOR");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
             treeNode31,
             treeNode32,
-            treeNode33});
+            treeNode33,
+            treeNode34});
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("영업단가관리");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("자재단가관리");
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -125,8 +126,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.treeView9 = new System.Windows.Forms.TreeView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -603,8 +604,11 @@
             this.treeView4.Name = "treeView4";
             treeNode23.Name = "노드0";
             treeNode23.Text = "생산계획";
+            treeNode24.Name = "노드0";
+            treeNode24.Text = "자재소요계획";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode23});
+            treeNode23,
+            treeNode24});
             this.treeView4.Size = new System.Drawing.Size(200, 45);
             this.treeView4.TabIndex = 0;
             this.treeView4.Tag = "4";
@@ -646,16 +650,16 @@
             this.treeView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView3.Location = new System.Drawing.Point(0, 33);
             this.treeView3.Name = "treeView3";
-            treeNode24.Name = "노드1";
-            treeNode24.Text = "영업마스터업로드(PO)";
-            treeNode25.Name = "노드2";
-            treeNode25.Text = "영업마스터";
-            treeNode26.Name = "노드4";
-            treeNode26.Text = "수요계획";
-            treeNode27.Name = "노드0";
-            treeNode27.Text = "오더관리";
+            treeNode25.Name = "노드1";
+            treeNode25.Text = "영업마스터업로드(PO)";
+            treeNode26.Name = "노드2";
+            treeNode26.Text = "영업마스터";
+            treeNode27.Name = "노드4";
+            treeNode27.Text = "수요계획";
+            treeNode28.Name = "노드0";
+            treeNode28.Text = "오더관리";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27});
+            treeNode28});
             this.treeView3.Size = new System.Drawing.Size(200, 96);
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
@@ -697,13 +701,13 @@
             this.treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView2.Location = new System.Drawing.Point(0, 33);
             this.treeView2.Name = "treeView2";
-            treeNode28.Name = "품목관리";
-            treeNode28.Text = "품목관리";
-            treeNode29.Name = "BOM";
-            treeNode29.Text = "BOM";
+            treeNode29.Name = "품목관리";
+            treeNode29.Text = "품목관리";
+            treeNode30.Name = "BOM";
+            treeNode30.Text = "BOM";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode28,
-            treeNode29});
+            treeNode29,
+            treeNode30});
             this.treeView2.Size = new System.Drawing.Size(200, 54);
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
@@ -746,19 +750,19 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode30.ImageIndex = -2;
-            treeNode30.Name = "공장관리";
-            treeNode30.Text = "공장관리";
-            treeNode31.Name = "설비관리";
-            treeNode31.Text = "설비관리";
-            treeNode32.Name = "업체관리";
-            treeNode32.Text = "업체관리";
-            treeNode33.Name = "BOR";
-            treeNode33.Text = "BOR";
-            treeNode34.Name = "자원관리";
-            treeNode34.Text = "자원관리";
+            treeNode31.ImageIndex = -2;
+            treeNode31.Name = "공장관리";
+            treeNode31.Text = "공장관리";
+            treeNode32.Name = "설비관리";
+            treeNode32.Text = "설비관리";
+            treeNode33.Name = "업체관리";
+            treeNode33.Text = "업체관리";
+            treeNode34.Name = "BOR";
+            treeNode34.Text = "BOR";
+            treeNode35.Name = "자원관리";
+            treeNode35.Text = "자원관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode34});
+            treeNode35});
             this.treeView1.Size = new System.Drawing.Size(200, 120);
             this.treeView1.TabIndex = 0;
             this.treeView1.Tag = "1";
@@ -809,23 +813,6 @@
             this.panel13.Size = new System.Drawing.Size(183, 84);
             this.panel13.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Tag = "9";
-            this.button1.Text = "단가관리";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.LeftTabMenuClick);
-            // 
             // treeView9
             // 
             this.treeView9.BackColor = System.Drawing.Color.White;
@@ -844,6 +831,24 @@
             this.treeView9.TabIndex = 0;
             this.treeView9.Tag = "9";
             this.treeView9.Visible = false;
+            this.treeView9.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView9_NodeMouseDoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(121)))), ((int)(((byte)(152)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 32);
+            this.button1.TabIndex = 1;
+            this.button1.Tag = "9";
+            this.button1.Text = "단가관리";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.LeftTabMenuClick);
             // 
             // Main
             // 
