@@ -451,12 +451,14 @@ namespace Team3
         {
             if (MainTab.TabPages.Count > 0)
             {
-                foreach (dynamic item in MainTab.SelectedTab.Controls)
+                if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
                 {
-                   
-                    GetoutForm(item.Tag.ToString());
+                    foreach (dynamic item in MainTab.SelectedTab.Controls)
+                    {
+                        GetoutForm(item.Tag.ToString());
+                    }
                 }
-
+                
             }
         }
 
