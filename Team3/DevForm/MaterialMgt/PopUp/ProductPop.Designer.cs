@@ -306,7 +306,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(223, 75);
+            this.label13.Location = new System.Drawing.Point(223, 79);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 18);
             this.label13.TabIndex = 11;
@@ -327,7 +327,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(425, 46);
+            this.label15.Location = new System.Drawing.Point(425, 47);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(60, 18);
             this.label15.TabIndex = 13;
@@ -430,7 +430,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(224, 45);
+            this.label25.Location = new System.Drawing.Point(223, 45);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(60, 18);
             this.label25.TabIndex = 23;
@@ -793,9 +793,9 @@
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(16, 192);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(47, 18);
+            this.label33.Size = new System.Drawing.Size(73, 18);
             this.label33.TabIndex = 62;
-            this.label33.Text = "바코드";
+            this.label33.Text = "아이템코드";
             // 
             // txtProductCode
             // 
@@ -812,7 +812,7 @@
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(60, 18);
             this.label34.TabIndex = 64;
-            this.label34.Text = "제품코드";
+            this.label34.Text = "품명코드";
             // 
             // txtProductLsl
             // 

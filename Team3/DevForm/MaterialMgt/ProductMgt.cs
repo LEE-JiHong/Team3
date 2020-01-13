@@ -28,9 +28,12 @@ namespace Team3
 
         private void Materials_Load(object sender, EventArgs e)
         {
-            ProductService service = new ProductService();
-            List<ProductVO> list = service.GetAllProducts();
-            dgvProductList.DataSource = list;
+            //ProductService service = new ProductService();
+            //List<ProductVO> list = service.GetAllProducts();
+            //dgvProductList.DataSource = list;
+
+
+
         }
     }
 }
