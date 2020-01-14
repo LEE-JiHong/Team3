@@ -10,8 +10,9 @@ namespace Team3VO
     {
         public int product_id { get; set; }
         public int product_lorder_count { get; set; }
-        public int product_count { get; set; }
+
         public int product_safety_count { get; set; }
+        public string product_codename { get; set; }    //품목명
         public string product_name { get; set; }
         public string product_unit { get; set; }
         public string product_unit_count { get; set; }
@@ -32,5 +33,7 @@ namespace Team3VO
         public string product_uadmin { get; set; }
         public string product_udate { get; set; } 
         public string product_comment { get; set; }
+
+        //public int product_count { get; set; }
     }
 }

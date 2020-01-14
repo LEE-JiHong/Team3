@@ -63,7 +63,6 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@product_uadmin", VO.product_uadmin);
                 cmd.Parameters.AddWithValue("@product_udate", VO.product_udate);
                 cmd.Parameters.AddWithValue("@product_comment", VO.product_comment);
-                cmd.Parameters.AddWithValue("@product_count", VO.product_count);
                 cmd.Parameters.AddWithValue("@product_itemcode", VO.product_itemcode);
                 cmd.Parameters.AddWithValue("@product_code", VO.product_code);
                 cmd.Parameters.AddWithValue("@product_lsl", VO.product_lsl);
