@@ -9,13 +9,13 @@ namespace Team3VO
     //SOMaster 부분 VO(영업마스터VO)
     //담당 : 이지홍
 
-    class SOMasterVO
+    public class SOMasterVO
     {
          public int so_id {get;set;}
          public string plan_id {get;set;}
          public string so_wo_id {get;set;}
          public string company_code {get;set;}
-         public string compny_type {get;set;}
+         public string company_type {get;set;}
          public string product_name {get;set;}
          public int so_pcount {get;set;}
          public int so_ocount {get;set;}
