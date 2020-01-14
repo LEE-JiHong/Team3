@@ -14,5 +14,11 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void MRP_Load(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Now;
+            dtpEndDate.Value = DateTime.Now.AddMonths(+1).AddDays(-1);
+        }
     }
 }

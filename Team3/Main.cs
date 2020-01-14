@@ -94,7 +94,6 @@ namespace Team3
             SetTrvImage2(treeView4);
             SetTrvImage(treeView5);
             SetTrvImage2(treeView6);
-            SetTrvImage(treeView7);
             SetTrvImage(treeView8);
             SetTrvImage2(treeView9);
         }
@@ -221,6 +220,10 @@ namespace Team3
                     MaterialReceivingList MaterialReceivingList = new MaterialReceivingList();
                     MadeTabMenu(MaterialReceivingList);
                     break;
+                case "원자재불출":
+                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
+                    MadeTabMenu(RequestRawMaterial_sDistribution);
+                    break;
 
                 //구매관리-Stock
                 case "자재재고현황":
@@ -232,6 +235,12 @@ namespace Team3
                     MadeTabMenu(InOutList);
                     break;
 
+                //구매관리-Material
+                case "자재불출요청":
+                    DMRMgt DMRMgt = new DMRMgt();
+                    MadeTabMenu(DMRMgt);
+                    break;
+
                 //공정관리
                 case "작업지시생성":
                     GOO GOO = new GOO();
@@ -240,16 +249,6 @@ namespace Team3
                 case "작업지시현황":
                     SOO SOO = new SOO();
                     MadeTabMenu(SOO);
-                    break;
-
-                //구매관리
-                case "자재불출요청":
-                    DMRMgt DMRMgt = new DMRMgt();
-                    MadeTabMenu(DMRMgt);
-                    break;
-                case "원자재불출":
-                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
-                    MadeTabMenu(RequestRawMaterial_sDistribution);
                     break;
 
                 //공정등록
@@ -371,6 +370,11 @@ namespace Team3
                     MaterialReceivingList = (MaterialReceivingList)InitForm(MaterialReceivingList);
                     MaterialReceivingList.SubWindowState = WinState.independ;
                     break;
+                case "원자재불출":
+                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
+                    RequestRawMaterial_sDistribution = (RequestRawMaterial_sDistribution)InitForm(RequestRawMaterial_sDistribution);
+                    RequestRawMaterial_sDistribution.SubWindowState = WinState.independ;
+                    break;
 
                 //구매관리-Stock
                 case "자재재고현황":
@@ -384,6 +388,13 @@ namespace Team3
                     InOutList.SubWindowState = WinState.independ;
                     break;
 
+                //구매관리-Material
+                case "자재불출요청":
+                    DMRMgt DMRMgt = new DMRMgt();
+                    DMRMgt = (DMRMgt)InitForm(DMRMgt);
+                    DMRMgt.SubWindowState = WinState.independ;
+                    break;
+
                 //공정관리
                 case "작업지시생성":
                     GOO GOO = new GOO();
@@ -394,18 +405,6 @@ namespace Team3
                     SOO SOO = new SOO();
                     SOO = (SOO)InitForm(SOO);
                     SOO.SubWindowState = WinState.independ;
-                    break;
-
-                //구매관리
-                case "자재불출요청":
-                    DMRMgt DMRMgt = new DMRMgt();
-                    DMRMgt = (DMRMgt)InitForm(DMRMgt);
-                    DMRMgt.SubWindowState = WinState.independ;
-                    break;
-                case "원자재불출":
-                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
-                    RequestRawMaterial_sDistribution = (RequestRawMaterial_sDistribution)InitForm(RequestRawMaterial_sDistribution);
-                    RequestRawMaterial_sDistribution.SubWindowState = WinState.independ;
                     break;
 
                 //공정등록
@@ -635,6 +634,26 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
+            else if (e.Node.Text == "자재불출요청")
+            {
+                DMRMgt frm = new DMRMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "원자재불출")
+            {
+                RequestRawMaterial_sDistribution frm = new RequestRawMaterial_sDistribution();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -821,30 +840,6 @@ namespace Team3
             else if (e.Node.Text == "자재소요계획")
             {
                 MRP frm = new MRP();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
-        }
-
-        private void TreeView7_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            if (e.Node.Text == "자재불출요청")
-            {
-                DMRMgt frm = new DMRMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
-            else if (e.Node.Text == "원자재불출")
-            {
-                RequestRawMaterial_sDistribution frm = new RequestRawMaterial_sDistribution();
                 if (ExsistTap(e.Node.Text))
                 {
                     return;
