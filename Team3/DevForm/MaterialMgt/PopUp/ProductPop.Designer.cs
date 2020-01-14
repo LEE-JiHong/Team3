@@ -107,7 +107,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(479, 639);
+            this.panel3.Location = new System.Drawing.Point(236, 467);
             // 
             // btnCancel
             // 
@@ -120,12 +120,12 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(536, 19);
+            this.label1.Size = new System.Drawing.Size(51, 19);
             this.label1.Text = "품목";
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(1116, 36);
+            this.panel1.Size = new System.Drawing.Size(631, 36);
             // 
             // panel2
             // 
@@ -176,20 +176,20 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(1115, 550);
+            this.panel2.Size = new System.Drawing.Size(630, 378);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(1075, 7);
+            this.button1.Location = new System.Drawing.Point(590, 7);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(16, 15);
+            this.label2.Location = new System.Drawing.Point(16, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 18);
             this.label2.TabIndex = 0;
@@ -384,7 +384,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(16, 48);
+            this.label21.Location = new System.Drawing.Point(16, 50);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(60, 18);
             this.label21.TabIndex = 19;
@@ -495,7 +495,7 @@
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(102, 14);
+            this.txtProduct.Location = new System.Drawing.Point(102, 15);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(100, 21);
             this.txtProduct.TabIndex = 30;
@@ -846,7 +846,7 @@
             // ProductPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1162, 691);
+            this.ClientSize = new System.Drawing.Size(677, 519);
             this.Name = "ProductPop";
             this.Load += new System.EventHandler(this.ProductPop_Load);
             this.panel3.ResumeLayout(false);
