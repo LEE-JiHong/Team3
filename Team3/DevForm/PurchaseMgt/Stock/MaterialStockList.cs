@@ -14,5 +14,11 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            warehouseHistoryPop frm = new warehouseHistoryPop();
+            frm.ShowDialog();
+        }
     }
 }

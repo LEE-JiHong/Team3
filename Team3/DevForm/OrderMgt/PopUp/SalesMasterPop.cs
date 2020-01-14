@@ -107,8 +107,15 @@ namespace Team3
                             DataRow dr = dt.Rows.Add();
                             for (int c = 1; c <= range.Columns.Count; c++)
                             {
-                                dr[0] = dateTimePicker1.Value.ToString();
-                                dr[c] = data[r, c];
+                                dr[0] = dateTimePicker1.Value.ToShortDateString();
+                                if (data[r, c].GetType() != typeof(DateTime))
+                                {
+                                    dr[c] = data[r, c];
+                                }
+                                else
+                                {
+                                    dr[c] = Convert.ToDateTime(data[r, c]).ToShortDateString();
+                                }
                             }
                         }
 

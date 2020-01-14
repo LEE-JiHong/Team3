@@ -250,6 +250,12 @@
     <Compile Include="DevForm\PurchaseMgt\Stock\MaterialStockList.Designer.cs">
       <DependentUpon>MaterialStockList.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Stock\PopUp\warehouseHistoryPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Stock\PopUp\warehouseHistoryPop.Designer.cs">
+      <DependentUpon>warehouseHistoryPop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\MaterialStockList.resx">
       <DependentUpon>MaterialStockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\PopUp\warehouseHistoryPop.resx">
+      <DependentUpon>warehouseHistoryPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Supplier\WatingReceiving.resx">
       <DependentUpon>WatingReceiving.cs</DependentUpon>
