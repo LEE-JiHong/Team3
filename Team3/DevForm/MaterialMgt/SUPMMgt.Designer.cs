@@ -302,6 +302,7 @@
             this.ClientSize = new System.Drawing.Size(1309, 536);
             this.Name = "SUPMMgt";
             this.Tag = "영업단가관리";
+            this.Load += new System.EventHandler(this.SUPMMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

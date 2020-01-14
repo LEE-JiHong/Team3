@@ -24,5 +24,10 @@ namespace Team3
                 
             }
         }
+
+        private void SUPMMgt_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

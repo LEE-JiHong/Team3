@@ -10,7 +10,6 @@ namespace Team3VO
     {
         public int product_id { get; set; }
         public int product_lorder_count { get; set; }
-
         public int product_safety_count { get; set; }
         public string product_codename { get; set; }    //품목명
         public string product_name { get; set; }
