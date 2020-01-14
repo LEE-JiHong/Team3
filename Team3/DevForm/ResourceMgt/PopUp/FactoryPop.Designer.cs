@@ -46,6 +46,8 @@
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtInfoFacility = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,8 +92,10 @@
             this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.cbo);
             this.panel2.Controls.Add(this.cboDivFacility);
             this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cbofacilitiesGroup);
@@ -128,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(273, 27);
+            this.label3.Location = new System.Drawing.Point(275, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 0;
@@ -139,7 +143,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(273, 66);
+            this.label4.Location = new System.Drawing.Point(275, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 18);
             this.label4.TabIndex = 0;
@@ -148,7 +152,7 @@
             // cboDivFacility
             // 
             this.cboDivFacility.FormattingEnabled = true;
-            this.cboDivFacility.Location = new System.Drawing.Point(351, 63);
+            this.cboDivFacility.Location = new System.Drawing.Point(353, 99);
             this.cboDivFacility.Name = "cboDivFacility";
             this.cboDivFacility.Size = new System.Drawing.Size(150, 23);
             this.cboDivFacility.TabIndex = 4;
@@ -157,7 +161,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(27, 143);
+            this.label8.Location = new System.Drawing.Point(275, 180);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 18);
             this.label8.TabIndex = 0;
@@ -165,14 +169,14 @@
             // 
             // txtCodeFacility
             // 
-            this.txtCodeFacility.Location = new System.Drawing.Point(351, 26);
+            this.txtCodeFacility.Location = new System.Drawing.Point(353, 62);
             this.txtCodeFacility.Name = "txtCodeFacility";
             this.txtCodeFacility.Size = new System.Drawing.Size(150, 21);
             this.txtCodeFacility.TabIndex = 2;
             // 
             // txtModifyTime
             // 
-            this.txtModifyTime.Location = new System.Drawing.Point(90, 142);
+            this.txtModifyTime.Location = new System.Drawing.Point(353, 177);
             this.txtModifyTime.Name = "txtModifyTime";
             this.txtModifyTime.Size = new System.Drawing.Size(150, 21);
             this.txtModifyTime.TabIndex = 12;
@@ -202,7 +206,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(273, 109);
+            this.label14.Location = new System.Drawing.Point(275, 145);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 18);
             this.label14.TabIndex = 0;
@@ -211,7 +215,7 @@
             // cboIsUsed
             // 
             this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(351, 139);
+            this.cboIsUsed.Location = new System.Drawing.Point(90, 145);
             this.cboIsUsed.Name = "cboIsUsed";
             this.cboIsUsed.Size = new System.Drawing.Size(150, 23);
             this.cboIsUsed.TabIndex = 13;
@@ -221,7 +225,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Orange;
-            this.label15.Location = new System.Drawing.Point(273, 140);
+            this.label15.Location = new System.Drawing.Point(12, 146);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(60, 18);
             this.label15.TabIndex = 0;
@@ -236,7 +240,7 @@
             // 
             // txtModifier
             // 
-            this.txtModifier.Location = new System.Drawing.Point(351, 102);
+            this.txtModifier.Location = new System.Drawing.Point(353, 138);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(150, 21);
             this.txtModifier.TabIndex = 11;
@@ -253,7 +257,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(27, 186);
+            this.label16.Location = new System.Drawing.Point(29, 214);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(60, 18);
             this.label16.TabIndex = 6;
@@ -261,11 +265,30 @@
             // 
             // txtInfoFacility
             // 
-            this.txtInfoFacility.Location = new System.Drawing.Point(88, 185);
+            this.txtInfoFacility.Location = new System.Drawing.Point(90, 213);
             this.txtInfoFacility.Multiline = true;
             this.txtInfoFacility.Name = "txtInfoFacility";
-            this.txtInfoFacility.Size = new System.Drawing.Size(413, 119);
+            this.txtInfoFacility.Size = new System.Drawing.Size(413, 79);
             this.txtInfoFacility.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Orange;
+            this.label5.Location = new System.Drawing.Point(275, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 18);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "상위시설";
+            // 
+            // cbo
+            // 
+            this.cbo.FormattingEnabled = true;
+            this.cbo.Location = new System.Drawing.Point(353, 24);
+            this.cbo.Name = "cbo";
+            this.cbo.Size = new System.Drawing.Size(150, 23);
+            this.cbo.TabIndex = 4;
             // 
             // FactoryPop
             // 
@@ -301,5 +324,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbofacilitiesGroup;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbo;
+        private System.Windows.Forms.Label label5;
     }
 }

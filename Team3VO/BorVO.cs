@@ -27,6 +27,22 @@ namespace Team3VO
         {
 
         }
+    }
+    public class BORDB_VO
+    {
+        public int BOR_ID { get; set; }
+        public string PRODUCT_NAME { get; set; }
+        public string PRODUCT_CODENAME { get; set; }
+        public string COMMON_TYPE { get; set; }
+        public string COMMON_NAME { get; set; }
+        public string M_CODE { get; set; }
+        public string M_NAME { get; set; }
+        public string BOR_TACKTIME { get; set; }
+        public string BOR_READYTIME { get; set; }
+        public string BOR_YN { get; set; }
+        public string BOR_COMMENT { get; set; }
+
+
 
     }
 }

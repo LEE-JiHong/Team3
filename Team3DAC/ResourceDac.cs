@@ -90,7 +90,22 @@ namespace Team3DAC
                 cmd.Connection.Close();
                 return list;
             }
+        }
+        public List<BORDB_VO> GetBORAll()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetBORAll";
 
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BORDB_VO> list = Helper.DataReaderMapToList<BORDB_VO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
         }
     }
 }

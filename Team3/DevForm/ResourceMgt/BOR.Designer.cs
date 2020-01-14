@@ -39,6 +39,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Location = new System.Drawing.Point(328, 100);
-            this.panel3.Size = new System.Drawing.Size(593, 26);
+            this.panel3.Size = new System.Drawing.Size(593, 29);
             // 
             // TopMenu
             // 
@@ -169,6 +170,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -181,12 +183,13 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.button6);
             this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(593, 26);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(593, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button6
@@ -219,6 +222,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Team3.Properties.Resources.Edit_16x16;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(412, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 23);
+            this.button2.TabIndex = 50;
+            this.button2.Text = "수정";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -226,7 +244,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(412, 3);
+            this.btnAdd.Location = new System.Drawing.Point(354, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(52, 23);
             this.btnAdd.TabIndex = 40;
@@ -260,6 +278,7 @@
             this.Name = "BOR";
             this.Tag = "BOR";
             this.Text = "BOR";
+            this.Load += new System.EventHandler(this.BOR_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -287,5 +306,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button2;
     }
 }

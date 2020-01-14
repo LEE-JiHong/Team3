@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Team3DAC;
 using Team3VO;
+ 
 
 namespace Team3
 {
@@ -33,6 +34,11 @@ namespace Team3
         {
             ResourceDac dac = new ResourceDac();
             return dac.GetMachineGrpAll();
+        }
+        public List<BORDB_VO> GetBORAll()
+        {
+            ResourceDac dac = new ResourceDac();
+            return dac.GetBORAll();
         }
     }
 }
