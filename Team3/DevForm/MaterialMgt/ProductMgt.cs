@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Team3.Service;
 using Team3VO;
 
 namespace Team3
@@ -28,9 +27,9 @@ namespace Team3
 
         private void Materials_Load(object sender, EventArgs e)
         {
-            //ProductService service = new ProductService();
-            //List<ProductVO> list = service.GetAllProducts();
-            //dgvProductList.DataSource = list;
+            ProductService service = new ProductService();
+            List<ProductVO> list = service.GetAllProducts();
+            dgvProductList.DataSource = list;
 
 
 
