@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team3DAC
 {
-    class PriceDac
+    public class PriceDac : ConnectionAccess
     {
     }
 }

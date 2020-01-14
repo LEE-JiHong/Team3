@@ -27,12 +27,18 @@ namespace Team3
 
         private void Materials_Load(object sender, EventArgs e)
         {
+            LoadDGV();
+        }
+        private void LoadDGV()
+        {
             ProductService service = new ProductService();
             List<ProductVO> list = service.GetAllProducts();
+            ProductVO vo = new ProductVO();
+
+            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "ID", , true, 100);
+
+
             dgvProductList.DataSource = list;
-
-
-
         }
     }
 }

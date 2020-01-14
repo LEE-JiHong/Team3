@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-    class ProductPriceVO
+    public class ProductPriceVO
     {
         private int price_id { get; set; }
         private int product_id { get; set; }
