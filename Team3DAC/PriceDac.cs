@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Team3
+namespace Team3DAC
 {
-    class MUPMService
+    class PriceDac
     {
     }
 }
