@@ -52,6 +52,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,7 +105,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(10, 642);
+            this.label2.Location = new System.Drawing.Point(10, 1217);
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.Text = "자재입고";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,8 +148,17 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.label5);
             this.basepanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.basepanel.Size = new System.Drawing.Size(1021, 578);
+            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
+            this.basepanel.Controls.SetChildIndex(this.label1, 0);
+            this.basepanel.Controls.SetChildIndex(this.label2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel4, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel5, 0);
+            this.basepanel.Controls.SetChildIndex(this.label5, 0);
             // 
             // imageList1
             // 
@@ -409,6 +419,19 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Image = global::Team3.Properties.Resources.list_menu;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Location = new System.Drawing.Point(12, 405);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 23);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "자재입고";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MaterialReceiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -459,5 +482,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }
