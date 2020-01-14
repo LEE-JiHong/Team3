@@ -14,5 +14,11 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void SalesMaster_Load(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Now;
+            dtpEndDate.Value = DateTime.Now.AddMonths(+1);
+        }
     }
 }

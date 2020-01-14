@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MREMgt));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAddExcel = new System.Windows.Forms.Button();
+            this.btnFormDownload = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtUnitPrice = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblStandardDate = new System.Windows.Forms.Label();
             this.dtpStandardDate = new System.Windows.Forms.DateTimePicker();
             this.dgvExchange = new System.Windows.Forms.DataGridView();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.btnAddExcel = new System.Windows.Forms.Button();
-            this.btnFormDownload = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnCopy = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,74 +113,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(397, 29);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUnitPrice.FormattingEnabled = true;
-            this.txtUnitPrice.Location = new System.Drawing.Point(677, 18);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(178, 24);
-            this.txtUnitPrice.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(603, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "화폐단위";
-            // 
-            // lblStandardDate
-            // 
-            this.lblStandardDate.AutoSize = true;
-            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStandardDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStandardDate.Location = new System.Drawing.Point(31, 20);
-            this.lblStandardDate.Name = "lblStandardDate";
-            this.lblStandardDate.Size = new System.Drawing.Size(52, 16);
-            this.lblStandardDate.TabIndex = 4;
-            this.lblStandardDate.Text = "기준일자";
-            // 
-            // dtpStandardDate
-            // 
-            this.dtpStandardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStandardDate.Location = new System.Drawing.Point(112, 17);
-            this.dtpStandardDate.Name = "dtpStandardDate";
-            this.dtpStandardDate.Size = new System.Drawing.Size(154, 22);
-            this.dtpStandardDate.TabIndex = 8;
-            // 
-            // dgvExchange
-            // 
-            this.dgvExchange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExchange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvExchange.Location = new System.Drawing.Point(0, 0);
-            this.dgvExchange.Name = "dgvExchange";
-            this.dgvExchange.RowTemplate.Height = 23;
-            this.dgvExchange.Size = new System.Drawing.Size(1119, 333);
-            this.dgvExchange.TabIndex = 0;
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.ForeColor = System.Drawing.Color.Black;
-            this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
-            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1047, 14);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(65, 30);
-            this.btnSelect.TabIndex = 78;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // btnAddExcel
             // 
@@ -266,6 +198,75 @@
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUnitPrice.FormattingEnabled = true;
+            this.txtUnitPrice.Location = new System.Drawing.Point(677, 18);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(178, 24);
+            this.txtUnitPrice.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(603, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "화폐단위";
+            // 
+            // lblStandardDate
+            // 
+            this.lblStandardDate.AutoSize = true;
+            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandardDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblStandardDate.Location = new System.Drawing.Point(31, 20);
+            this.lblStandardDate.Name = "lblStandardDate";
+            this.lblStandardDate.Size = new System.Drawing.Size(52, 16);
+            this.lblStandardDate.TabIndex = 4;
+            this.lblStandardDate.Text = "기준일자";
+            // 
+            // dtpStandardDate
+            // 
+            this.dtpStandardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStandardDate.Location = new System.Drawing.Point(112, 17);
+            this.dtpStandardDate.Name = "dtpStandardDate";
+            this.dtpStandardDate.Size = new System.Drawing.Size(154, 22);
+            this.dtpStandardDate.TabIndex = 8;
+            // 
+            // dgvExchange
+            // 
+            this.dgvExchange.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dgvExchange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExchange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvExchange.Location = new System.Drawing.Point(0, 0);
+            this.dgvExchange.Name = "dgvExchange";
+            this.dgvExchange.RowTemplate.Height = 23;
+            this.dgvExchange.Size = new System.Drawing.Size(1119, 333);
+            this.dgvExchange.TabIndex = 0;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.Black;
+            this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelect.Location = new System.Drawing.Point(1047, 14);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(65, 30);
+            this.btnSelect.TabIndex = 78;
+            this.btnSelect.Text = "조회";
+            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // MREMgt
             // 

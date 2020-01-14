@@ -35,12 +35,12 @@
             this.cboInspectionType = new System.Windows.Forms.ComboBox();
             this.dgvISI = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.btnAddExcel = new System.Windows.Forms.Button();
             this.btnFormDownload = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -133,6 +133,7 @@
             // 
             // dgvISI
             // 
+            this.dgvISI.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvISI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvISI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvISI.Location = new System.Drawing.Point(0, 0);
@@ -154,24 +155,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(401, 29);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.ForeColor = System.Drawing.Color.Black;
-            this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
-            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(804, 14);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(65, 30);
-            this.btnSelect.TabIndex = 78;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // btnAddExcel
             // 
@@ -257,6 +240,24 @@
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.Black;
+            this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelect.Location = new System.Drawing.Point(804, 14);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(65, 30);
+            this.btnSelect.TabIndex = 78;
+            this.btnSelect.Text = "조회";
+            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // ISIMgt
             // 

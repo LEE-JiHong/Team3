@@ -282,6 +282,7 @@
             // 
             // dgvBom
             // 
+            this.dgvBom.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBom.Location = new System.Drawing.Point(0, 0);
