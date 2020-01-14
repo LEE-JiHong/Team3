@@ -14,7 +14,7 @@ using Team3VO;
 
 namespace Team3DAC
 {
-    class OrderDac :ConnectionAccess
+    public class OrderDac :ConnectionAccess
     {
         /// <summary>
         /// 업로드한 영업마스터를 기준으로 영업마스터 생성(insert)
