@@ -94,7 +94,6 @@ namespace Team3
             SetTrvImage2(treeView4);
             SetTrvImage(treeView5);
             SetTrvImage2(treeView6);
-            SetTrvImage(treeView7);
             SetTrvImage(treeView8);
             SetTrvImage2(treeView9);
         }
@@ -137,6 +136,7 @@ namespace Team3
             if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
             {
                 MainTab.Controls.Remove(MainTab.SelectedTab);
+                MainTab.SelectedTab = MainTab.TabPages[MainTab.Controls.Count-1];
             }
         }
         public void GetForm(string name)
@@ -172,7 +172,7 @@ namespace Team3
                     break;
 
                 //수주/계획관리 - 오더관리
-                case "영업마스터업로드(P/O)":
+                case "영업마스터업로드(PO)":
                     SalesMasterUpload SalesMasterUpload = new SalesMasterUpload();
                     MadeTabMenu(SalesMasterUpload);
                     break;
@@ -220,6 +220,10 @@ namespace Team3
                     MaterialReceivingList MaterialReceivingList = new MaterialReceivingList();
                     MadeTabMenu(MaterialReceivingList);
                     break;
+                case "원자재불출":
+                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
+                    MadeTabMenu(RequestRawMaterial_sDistribution);
+                    break;
 
                 //구매관리-Stock
                 case "자재재고현황":
@@ -231,6 +235,12 @@ namespace Team3
                     MadeTabMenu(InOutList);
                     break;
 
+                //구매관리-Material
+                case "자재불출요청":
+                    DMRMgt DMRMgt = new DMRMgt();
+                    MadeTabMenu(DMRMgt);
+                    break;
+
                 //공정관리
                 case "작업지시생성":
                     GOO GOO = new GOO();
@@ -239,16 +249,6 @@ namespace Team3
                 case "작업지시현황":
                     SOO SOO = new SOO();
                     MadeTabMenu(SOO);
-                    break;
-
-                //구매관리
-                case "자재불출요청":
-                    DMRMgt DMRMgt = new DMRMgt();
-                    MadeTabMenu(DMRMgt);
-                    break;
-                case "원자재불출":
-                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
-                    MadeTabMenu(RequestRawMaterial_sDistribution);
                     break;
 
                 //공정등록
@@ -312,12 +312,12 @@ namespace Team3
                     break;
 
                 //수주/계획관리 - 오더관리
-                case "영업마스터업로드(P/O)":
+                case "영업마스터업로드(PO)":
                     SalesMasterUpload SalesMasterUpload = new SalesMasterUpload();
                     SalesMasterUpload = (SalesMasterUpload)InitForm(SalesMasterUpload);
                     SalesMasterUpload.SubWindowState = WinState.independ;
                     break;
-                case "영업마스터업로드":
+                case "영업마스터":
                     SalesMaster SalesMaster = new SalesMaster();
                     SalesMaster = (SalesMaster)InitForm(SalesMaster);
                     SalesMaster.SubWindowState = WinState.independ;
@@ -370,6 +370,11 @@ namespace Team3
                     MaterialReceivingList = (MaterialReceivingList)InitForm(MaterialReceivingList);
                     MaterialReceivingList.SubWindowState = WinState.independ;
                     break;
+                case "원자재불출":
+                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
+                    RequestRawMaterial_sDistribution = (RequestRawMaterial_sDistribution)InitForm(RequestRawMaterial_sDistribution);
+                    RequestRawMaterial_sDistribution.SubWindowState = WinState.independ;
+                    break;
 
                 //구매관리-Stock
                 case "자재재고현황":
@@ -383,6 +388,13 @@ namespace Team3
                     InOutList.SubWindowState = WinState.independ;
                     break;
 
+                //구매관리-Material
+                case "자재불출요청":
+                    DMRMgt DMRMgt = new DMRMgt();
+                    DMRMgt = (DMRMgt)InitForm(DMRMgt);
+                    DMRMgt.SubWindowState = WinState.independ;
+                    break;
+
                 //공정관리
                 case "작업지시생성":
                     GOO GOO = new GOO();
@@ -393,18 +405,6 @@ namespace Team3
                     SOO SOO = new SOO();
                     SOO = (SOO)InitForm(SOO);
                     SOO.SubWindowState = WinState.independ;
-                    break;
-
-                //구매관리
-                case "자재불출요청":
-                    DMRMgt DMRMgt = new DMRMgt();
-                    DMRMgt = (DMRMgt)InitForm(DMRMgt);
-                    DMRMgt.SubWindowState = WinState.independ;
-                    break;
-                case "원자재불출":
-                    RequestRawMaterial_sDistribution RequestRawMaterial_sDistribution = new RequestRawMaterial_sDistribution();
-                    RequestRawMaterial_sDistribution = (RequestRawMaterial_sDistribution)InitForm(RequestRawMaterial_sDistribution);
-                    RequestRawMaterial_sDistribution.SubWindowState = WinState.independ;
                     break;
 
                 //공정등록
@@ -449,7 +449,7 @@ namespace Team3
         }
         private void LayoutButton_Click(object sender, EventArgs e)
         {
-            if (MainTab.TabPages.Count > 0)
+            if (MainTab.TabPages.Count > 1)
             {
                 if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
                 {
@@ -458,9 +458,23 @@ namespace Team3
                         GetoutForm(item.Tag.ToString());
                     }
                 }
-                
             }
         }
+
+        private bool ExsistTap(string tag)
+        {
+            foreach (TabPage tp in MainTab.Controls)
+            {
+                if (tp.Tag.ToString() == tag)
+                {
+                    MainTab.SelectedTab = tp;
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
 
         public void MadeTabMenu(nomalBaseForm frm, int state = 0)
         {
@@ -554,36 +568,90 @@ namespace Team3
             if (e.Node.Text == "정규발주")
             {
                 RegularOrder frm = new RegularOrder();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "발주현황")
             {
                 OrderList frm = new OrderList();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             if (e.Node.Text == "입고대기")
             {
                 WatingReceiving frm = new WatingReceiving();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "자재입고")
             {
                 MaterialReceiving frm = new MaterialReceiving();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "자재입고현황")
             {
                 MaterialReceivingList frm = new MaterialReceivingList();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "자재재고현황")
             {
                 MaterialStockList frm = new MaterialStockList();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "입출고현황")
             {
                 InOutList frm = new InOutList();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "자재불출요청")
+            {
+                DMRMgt frm = new DMRMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "원자재불출")
+            {
+                RequestRawMaterial_sDistribution frm = new RequestRawMaterial_sDistribution();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
@@ -621,21 +689,41 @@ namespace Team3
             if (e.Node.Text == "공장관리")
             {
                 FactoryMgt frm = new FactoryMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "설비관리")
             {         
                 facilityMgt frm = new facilityMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             if (e.Node.Text == "업체관리")
             {
                 businessMgt frm = new businessMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "BOR")
             {
                 BOR frm = new BOR();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
@@ -645,16 +733,31 @@ namespace Team3
             if(e.Node.Text == "품목관리")
             {
                 ProductMgt frm = new ProductMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if(e.Node.Text == "BOM")
             {
                 BomMgt frm = new BomMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else
             {
                 ISIMgt frm = new ISIMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
@@ -664,11 +767,21 @@ namespace Team3
             if (e.Node.Text == "작업지시생성")
             {
                 GOO frm = new GOO();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else
             {
                 SOO frm = new SOO();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
@@ -678,16 +791,31 @@ namespace Team3
             if (e.Node.Text == "영업마스터업로드(PO)")
             {
                 SalesMasterUpload frm = new SalesMasterUpload();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "영업마스터")
             {
                 SalesMaster frm = new SalesMaster();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "수요계획")
             {
                 DemandPlan frm = new DemandPlan();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
@@ -702,25 +830,21 @@ namespace Team3
             if (e.Node.Text == "생산계획")
             {
                 ProductPlan frm = new ProductPlan();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "자재소요계획")
             {
                 MRP frm = new MRP();
-                MadeTabMenu(frm);
-            }
-        }
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
 
-        private void TreeView7_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            if (e.Node.Text == "자재불출요청")
-            {
-                DMRMgt frm = new DMRMgt();
-                MadeTabMenu(frm);
-            }
-            else if (e.Node.Text == "원자재불출")
-            {
-                RequestRawMaterial_sDistribution frm = new RequestRawMaterial_sDistribution();
                 MadeTabMenu(frm);
             }
         }
@@ -730,11 +854,21 @@ namespace Team3
             if (e.Node.Text == "작업실적등록")
             {
                 Business_showings frm = new Business_showings();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "공정재고현황")
             {
                 Process_Inventory frm = new Process_Inventory();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
@@ -744,11 +878,21 @@ namespace Team3
             if (e.Node.Text == "영업단가관리")
             {
                 SUPMMgt frm = new SUPMMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "자재단가관리")
             {
                 MUPMMgt frm = new MUPMMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }

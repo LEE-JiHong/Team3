@@ -19,15 +19,15 @@ namespace Team3
             InitializeComponent();
         }
 
-       
+
         private void businessMgt_Load(object sender, EventArgs e)
         {
             ResourceService service = new ResourceService();
-            lst=service.GetCompanyAll();
-            dataGridView2.DataSource = lst; 
+            lst = service.GetCompanyAll();
+           dataGridView2.DataSource = lst;
         }
 
-        
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -47,14 +47,14 @@ namespace Team3
                     Visible = true
                 };
 
-                string filename = "test" + ".xlsx";
+                string filename = "test" + ".xlsx"; // ++ 파일명 변경 
 
                 string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
                 //byte[] temp = Properties.Resources.order;
 
                 //System.IO.File.WriteAllBytes(tempPath, temp);
 
-                Excel._Workbook workbook ;
+                Excel._Workbook workbook;
 
                 workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
 
@@ -83,9 +83,9 @@ namespace Team3
                             Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
                             myRange.Value2 = dataGridView2[j, i].Value == null ? "" : dataGridView2[j, i].Value;
                         }
-                        catch
+                        catch (Exception err)
                         {
-                            ;
+                            MessageBox.Show(err.Message);
                         }
                     }
                 }

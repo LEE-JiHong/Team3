@@ -59,7 +59,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(309, 476);
+            this.panel3.Location = new System.Drawing.Point(309, 405);
             // 
             // btnCancel
             // 
@@ -108,7 +108,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtCodeFacilityGroup);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(749, 385);
+            this.panel2.Size = new System.Drawing.Size(749, 314);
             this.panel2.TabIndex = 10;
             // 
             // button1
@@ -305,7 +305,7 @@
             this.txtSingularity.Location = new System.Drawing.Point(95, 170);
             this.txtSingularity.Multiline = true;
             this.txtSingularity.Name = "txtSingularity";
-            this.txtSingularity.Size = new System.Drawing.Size(621, 94);
+            this.txtSingularity.Size = new System.Drawing.Size(621, 50);
             this.txtSingularity.TabIndex = 11;
             // 
             // label13
@@ -322,7 +322,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(22, 273);
+            this.label14.Location = new System.Drawing.Point(22, 243);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 15);
             this.label14.TabIndex = 0;
@@ -330,16 +330,16 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(95, 270);
+            this.txtNote.Location = new System.Drawing.Point(95, 240);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(621, 94);
+            this.txtNote.Size = new System.Drawing.Size(621, 50);
             this.txtNote.TabIndex = 12;
             // 
             // FacilitieInfoPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(796, 526);
+            this.ClientSize = new System.Drawing.Size(796, 455);
             this.Name = "FacilitieInfoPop";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
