@@ -32,6 +32,14 @@ namespace Team3
             set { dt = value; }
         }
 
+        string planID;
+
+        public string PlanID
+        {
+            get { return planID; }
+            set { planID = value; }
+        }
+
         private void SalesMasterDialog_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Now;
@@ -99,6 +107,8 @@ namespace Team3
                         {
                             //dt.Columns.Add(i.ToString(), typeof(string));
                             dt.Columns.Add(data[2, i].ToString());
+
+                            planID = data[1, 2].ToString();
                         }
 
                         // 데이터테이블에 2차원 배열에 담은 엑셀데이터 추가

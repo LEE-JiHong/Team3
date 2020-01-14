@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team3VO;
 
 namespace Team3
 {
     public partial class SalesMasterUpload : DgvBaseForm
     {
         string versionName;
-
+        string planID;
         public SalesMasterUpload()
         {
             InitializeComponent();
@@ -57,6 +58,7 @@ namespace Team3
                 dataGridView1.Columns.Clear();
 
                 dataGridView1.DataSource = frm.Data;
+                planID = frm.PlanID;
             }
         }
 
@@ -73,8 +75,17 @@ namespace Team3
                 MessageBox.Show("파일 업로드는 필수입니다.");
             }
             else
-            { 
+            {
+                SOMasterVO vo = new SOMasterVO
+                {
+                    plan_id = planID,
+                    //so_wo_id = dataGridView1.
+
+                };
+
                 //DB
+                OrderService service = new OrderService();
+                bool result = service.AddSOMaster(vo);
             }
         }
     }
