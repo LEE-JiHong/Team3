@@ -26,6 +26,7 @@ namespace Team3
 
             list = service.GetCommonCodeAll();
             {
+                //시설군
                 var mCode = (from item in list
                              where item.COMMON_TYPE == "facility_class_id"
                              select item).ToList();
