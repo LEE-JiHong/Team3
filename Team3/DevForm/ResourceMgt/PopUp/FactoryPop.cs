@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using System.Linq;
 
 
 namespace Team3
 {
     public partial class FactoryPop : DialogForm
     {
+        CommonCodeService service;
         List<CommonVO> list;
         public FactoryPop()
         {
@@ -20,11 +22,23 @@ namespace Team3
 
         private void FactoryPop_Load(object sender, EventArgs e)
         {
-            CommonCodeService service = new CommonCodeService();
-            list=service.GetCommonCodeAll();
-      //      List<CommonVO> mCode =(from item in list
-      //                             where item.)
-      //ComboUtil.ComboBinding<CommonVO>(cbofacilitiesGroup
+            service = new CommonCodeService();
+
+            list = service.GetCommonCodeAll();
+            {
+                var mCode = (from item in list
+                             where item.COMMON_TYPE == "facility_class_id"
+                             select item).ToList();
+
+                ComboUtil.ComboBinding<CommonVO>(cbofacilitiesGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "선택");
+            }
+            {
+                var mCode = (from item in list
+                             where item.COMMON_TYPE == "facility_type"
+                             select item).ToList();
+
+                ComboUtil.ComboBinding<CommonVO>(cboDivFacility, mCode, "COMMON_VALUE", "COMMON_NAME", "선택");
+            }
         }
     }
 }
