@@ -107,5 +107,21 @@ namespace Team3DAC
                 return list;
             }
         }
+        public List<FactoryDB_VO> GetFactoryAll()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetBORAll";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FactoryDB_VO> list = Helper.DataReaderMapToList<FactoryDB_VO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
     }
 }

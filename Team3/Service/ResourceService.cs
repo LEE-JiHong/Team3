@@ -40,5 +40,10 @@ namespace Team3
             ResourceDac dac = new ResourceDac();
             return dac.GetBORAll();
         }
+        public List<FactoryDB_VO> GetFactoryAll()
+        {
+            ResourceDac dac = new ResourceDac();
+            return dac.GetFactoryAll();
+        }
     }
 }

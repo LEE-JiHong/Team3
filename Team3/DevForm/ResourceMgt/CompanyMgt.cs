@@ -24,7 +24,7 @@ namespace Team3
         {
             ResourceService service = new ResourceService();
             lst = service.GetCompanyAll();
-          // dataGridView2.DataSource = lst;
+           dataGridView2.DataSource = lst;
         }
 
 

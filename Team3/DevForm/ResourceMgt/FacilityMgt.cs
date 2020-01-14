@@ -22,10 +22,10 @@ namespace Team3
         {
             ResourceService service = new ResourceService();
             machineList = service.GetMachineAll();
-        //    dataGridView2.DataSource = machineList;
+            dataGridView2.DataSource = machineList;
 
             machineGreadeList= service.GetMachineGrpAll();
-          //  dataGridView1.DataSource =  machineGreadeList;
+            dataGridView1.DataSource =  machineGreadeList;
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)

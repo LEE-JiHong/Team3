@@ -296,6 +296,7 @@
             this.ClientSize = new System.Drawing.Size(604, 472);
             this.Name = "FactoryPop";
             this.Text = "공장정보";
+            this.Load += new System.EventHandler(this.FactoryPop_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

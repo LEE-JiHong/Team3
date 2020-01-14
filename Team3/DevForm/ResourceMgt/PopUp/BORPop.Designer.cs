@@ -258,6 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(605, 440);
             this.Name = "BORPop";
+            this.Load += new System.EventHandler(this.BORPop_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Team3VO;
 using Team3DAC;
 
-namespace Team3.Service
+namespace Team3
 {
     class ProductService
     {

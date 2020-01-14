@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Team3DAC;
 using Team3VO;
 
-namespace Team3.Service
+namespace Team3
 {
-    class CommonCodeService
+  public  class CommonCodeService
     {
         /// <summary>
         /// CommonCode 컬럼 모두 select
