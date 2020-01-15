@@ -110,6 +110,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BOMController.cs" />
+    <Compile Include="Controllers\CommonCodeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PriceController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="DAC\BomDac.cs" />
     <Compile Include="DAC\ConnectionAccess.cs" />
     <Compile Include="DAC\DemandDac.cs" />
@@ -137,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
