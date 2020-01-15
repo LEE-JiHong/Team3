@@ -18,7 +18,6 @@ namespace Team3WebAPI
         /// <summary>
         /// CommonCode
         /// </summary>
-        /// <returns></returns>
         public List<CommonVO> GetCommonCodeAll()
         {
             string sql = "GetCommonCodeAll";
@@ -121,6 +120,30 @@ namespace Team3WebAPI
                 List<FactoryDB_VO> list = Helper.DataReaderMapToList<FactoryDB_VO>(reader);
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+        public bool InsertFactory(FactoryVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "InsertFactory";
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_PARENT);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
             }
         }
     }

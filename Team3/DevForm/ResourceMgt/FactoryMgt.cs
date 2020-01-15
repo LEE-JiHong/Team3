@@ -12,6 +12,7 @@ namespace Team3
 {
     public partial class FactoryMgt : Team3.VerticalGridBaseForm
     {
+        ResourceService service = new ResourceService();
         List<CommonVO> common_list;
         List<FactoryDB_VO> list;
         public FactoryMgt()
@@ -37,13 +38,20 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FactoryPop frm = new FactoryPop();
+            FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Input);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+               
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update);
             if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
         }
-
-
     }
 }
