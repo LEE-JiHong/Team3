@@ -28,7 +28,7 @@ namespace Team3
 
         private void ProductPop_Load(object sender, EventArgs e)
         {
-            //ComboBoxBinding();
+            ComboBoxBinding();
 
         }
 
@@ -65,7 +65,7 @@ namespace Team3
                 product_service = new ProductService();
                 ProductVO vo = new ProductVO();
 
-                vo.product_id = Convert.ToInt32(txtProduct.Text);
+                
                 vo.product_name = txtProductName.Text;
                 vo.product_unit = cboProductUnit.SelectedValue.ToString();
                 vo.product_unit_count = txtUnitAmount.Text;

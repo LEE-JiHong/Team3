@@ -45,7 +45,7 @@ namespace Team3WebAPI
                 cmd.CommandText = "AddProduct";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@product_id", VO.product_id);
+                
                 cmd.Parameters.AddWithValue("@product_name", VO.product_name);
                 cmd.Parameters.AddWithValue("@product_unit", VO.product_unit);
                 cmd.Parameters.AddWithValue("@product_unit_count", VO.product_unit_count);
