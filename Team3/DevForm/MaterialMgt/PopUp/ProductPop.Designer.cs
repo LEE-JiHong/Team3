@@ -61,7 +61,7 @@
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.txtLeastOrder = new System.Windows.Forms.TextBox();
             this.txtConversionAomount = new System.Windows.Forms.TextBox();
-            this.txtModifyDate = new System.Windows.Forms.TextBox();
+            this.txtUdate = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -75,7 +75,7 @@
             this.cboFIS = new System.Windows.Forms.ComboBox();
             this.cboDeliveryCompany = new System.Windows.Forms.ComboBox();
             this.cboOutWH = new System.Windows.Forms.ComboBox();
-            this.cboNameDirector = new System.Windows.Forms.ComboBox();
+            this.cboAdmin = new System.Windows.Forms.ComboBox();
             this.cboIsPhantom = new System.Windows.Forms.ComboBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.cboOrderType = new System.Windows.Forms.ComboBox();
@@ -87,9 +87,9 @@
             this.txtStandard = new System.Windows.Forms.TextBox();
             this.txtLeadTime = new System.Windows.Forms.TextBox();
             this.txtSafetyAmount = new System.Windows.Forms.TextBox();
-            this.txtModifier = new System.Windows.Forms.TextBox();
+            this.txtUadmin = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.txtItemCode = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(236, 467);
+            this.panel3.Location = new System.Drawing.Point(491, 597);
             // 
             // btnCancel
             // 
@@ -120,12 +120,12 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(51, 19);
+            this.label1.Size = new System.Drawing.Size(561, 19);
             this.label1.Text = "품목";
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(631, 36);
+            this.panel1.Size = new System.Drawing.Size(1141, 36);
             // 
             // panel2
             // 
@@ -137,17 +137,17 @@
             this.panel2.Controls.Add(this.label35);
             this.panel2.Controls.Add(this.txtProductCode);
             this.panel2.Controls.Add(this.label34);
-            this.panel2.Controls.Add(this.txtBarcode);
+            this.panel2.Controls.Add(this.txtItemCode);
             this.panel2.Controls.Add(this.label33);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.txtModifier);
+            this.panel2.Controls.Add(this.txtUadmin);
             this.panel2.Controls.Add(this.txtSafetyAmount);
             this.panel2.Controls.Add(this.txtLeadTime);
             this.panel2.Controls.Add(this.cboProductType);
             this.panel2.Controls.Add(this.cboOrderType);
             this.panel2.Controls.Add(this.cboDemandCompany);
             this.panel2.Controls.Add(this.cboIsUsed);
-            this.panel2.Controls.Add(this.cboNameDirector);
+            this.panel2.Controls.Add(this.cboAdmin);
             this.panel2.Controls.Add(this.cboOutWH);
             this.panel2.Controls.Add(this.cboDeliveryCompany);
             this.panel2.Controls.Add(this.txtUnitAmount);
@@ -156,7 +156,7 @@
             this.panel2.Controls.Add(this.cboProductUnit);
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.txtNote);
-            this.panel2.Controls.Add(this.txtModifyDate);
+            this.panel2.Controls.Add(this.txtUdate);
             this.panel2.Controls.Add(this.txtLeastOrder);
             this.panel2.Controls.Add(this.txtProduct);
             this.panel2.Controls.Add(this.label31);
@@ -176,13 +176,13 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(630, 378);
+            this.panel2.Size = new System.Drawing.Size(1140, 508);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(590, 7);
+            this.button1.Location = new System.Drawing.Point(1100, 7);
             // 
             // label2
             // 
@@ -515,12 +515,12 @@
             this.txtConversionAomount.Size = new System.Drawing.Size(100, 21);
             this.txtConversionAomount.TabIndex = 32;
             // 
-            // txtModifyDate
+            // txtUdate
             // 
-            this.txtModifyDate.Location = new System.Drawing.Point(309, 137);
-            this.txtModifyDate.Name = "txtModifyDate";
-            this.txtModifyDate.Size = new System.Drawing.Size(100, 21);
-            this.txtModifyDate.TabIndex = 31;
+            this.txtUdate.Location = new System.Drawing.Point(309, 137);
+            this.txtUdate.Name = "txtUdate";
+            this.txtUdate.Size = new System.Drawing.Size(100, 21);
+            this.txtUdate.TabIndex = 31;
             // 
             // txtNote
             // 
@@ -624,13 +624,13 @@
             this.cboOutWH.Size = new System.Drawing.Size(100, 23);
             this.cboOutWH.TabIndex = 45;
             // 
-            // cboNameDirector
+            // cboAdmin
             // 
-            this.cboNameDirector.FormattingEnabled = true;
-            this.cboNameDirector.Location = new System.Drawing.Point(511, 138);
-            this.cboNameDirector.Name = "cboNameDirector";
-            this.cboNameDirector.Size = new System.Drawing.Size(100, 23);
-            this.cboNameDirector.TabIndex = 46;
+            this.cboAdmin.FormattingEnabled = true;
+            this.cboAdmin.Location = new System.Drawing.Point(511, 138);
+            this.cboAdmin.Name = "cboAdmin";
+            this.cboAdmin.Size = new System.Drawing.Size(100, 23);
+            this.cboAdmin.TabIndex = 46;
             // 
             // cboIsPhantom
             // 
@@ -718,12 +718,12 @@
             this.txtSafetyAmount.TabIndex = 57;
             this.txtSafetyAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtModifier
+            // txtUadmin
             // 
-            this.txtModifier.Location = new System.Drawing.Point(102, 138);
-            this.txtModifier.Name = "txtModifier";
-            this.txtModifier.Size = new System.Drawing.Size(100, 21);
-            this.txtModifier.TabIndex = 58;
+            this.txtUadmin.Location = new System.Drawing.Point(102, 138);
+            this.txtUadmin.Name = "txtUadmin";
+            this.txtUadmin.Size = new System.Drawing.Size(100, 21);
+            this.txtUadmin.TabIndex = 58;
             // 
             // groupBox1
             // 
@@ -758,12 +758,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // txtBarcode
+            // txtItemCode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(102, 192);
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(100, 21);
-            this.txtBarcode.TabIndex = 63;
+            this.txtItemCode.Location = new System.Drawing.Point(102, 192);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.Size = new System.Drawing.Size(100, 21);
+            this.txtItemCode.TabIndex = 63;
             // 
             // label33
             // 
@@ -846,7 +846,7 @@
             // ProductPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(677, 519);
+            this.ClientSize = new System.Drawing.Size(1187, 649);
             this.Name = "ProductPop";
             this.Load += new System.EventHandler(this.ProductPop_Load);
             this.panel3.ResumeLayout(false);
@@ -861,7 +861,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.TextBox txtUadmin;
         private System.Windows.Forms.TextBox txtSafetyAmount;
         private System.Windows.Forms.TextBox txtLeadTime;
         private System.Windows.Forms.TextBox txtStandard;
@@ -873,7 +873,7 @@
         private System.Windows.Forms.ComboBox cboOrderType;
         private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.ComboBox cboIsPhantom;
-        private System.Windows.Forms.ComboBox cboNameDirector;
+        private System.Windows.Forms.ComboBox cboAdmin;
         private System.Windows.Forms.ComboBox cboOutWH;
         private System.Windows.Forms.ComboBox cboDeliveryCompany;
         private System.Windows.Forms.ComboBox cboFIS;
@@ -887,7 +887,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox cboProductUnit;
         private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.TextBox txtModifyDate;
+        private System.Windows.Forms.TextBox txtUdate;
         private System.Windows.Forms.TextBox txtConversionAomount;
         private System.Windows.Forms.TextBox txtLeastOrder;
         private System.Windows.Forms.TextBox txtProduct;
@@ -930,7 +930,7 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtProductCode;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.TextBox txtItemCode;
         private System.Windows.Forms.Label label33;
     }
 }

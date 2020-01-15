@@ -20,10 +20,20 @@ namespace Team3
             return dac.GetProductsAll();
         }
 
+        /// <summary>
+        /// 품목 등록
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         public bool AddProduct(ProductVO vo)
         {
             ProductDac dac = new ProductDac();
             return dac.AddProduct(vo);
+        }
+        public bool UpdateProduct(ProductVO VO)
+        {
+            ProductDac dac = new ProductDac();
+            return dac.UpdateProduct(VO);
         }
     }
 }
