@@ -9,7 +9,7 @@ namespace Team3VO
     public class FactoryVO
     {
         public int FACTORY_ID { get; set; }
-        public int COMPANY_ID { get; set; }
+      
         public string FACTORY_UADMIN { get; set; }
         public string FACTORY_GRADE { get; set; }
         public string FACTORY_PARENT { get; set; }

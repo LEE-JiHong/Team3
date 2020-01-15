@@ -122,13 +122,23 @@ namespace Team3WebAPI
                 return list;
             }
         }
-        public bool InsertFactory()
+        public bool InsertFactory(FactoryVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "InsertFactory";
                 cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_PARENT);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                //cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
 
                 cmd.Connection.Open();
                 var successRow = cmd.ExecuteNonQuery();
