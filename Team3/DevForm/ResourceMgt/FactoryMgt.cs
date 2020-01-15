@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
@@ -11,6 +12,7 @@ namespace Team3
 {
     public partial class FactoryMgt : Team3.VerticalGridBaseForm
     {
+        List<CommonVO> common_list;
         List<FactoryDB_VO> list;
         public FactoryMgt()
         {
@@ -19,21 +21,29 @@ namespace Team3
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
             ResourceService service = new ResourceService();
-            list=service.GetFactoryAll();
+            list = service.GetFactoryAll();
             dataGridView1.DataSource = list;
 
+            CommonCodeService Common_service = new CommonCodeService();
+            common_list = Common_service.GetCommonCodeAll();
+
+            var mCode = (from item in common_list
+                         where item.COMMON_TYPE == "facility_class_id"
+                         select item).ToList();
+
+            ComboUtil.ComboBinding<CommonVO>(cboSearchFacilityGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FactoryPop frm = new FactoryPop();
-            if(frm.ShowDialog()==DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
         }
 
-     
+
     }
 }

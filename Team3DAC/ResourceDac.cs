@@ -111,7 +111,7 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "GetBORAll";
+                string sql = "GetFactoryAll";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;

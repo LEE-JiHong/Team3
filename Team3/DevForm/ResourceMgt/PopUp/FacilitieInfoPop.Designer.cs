@@ -341,6 +341,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(796, 455);
             this.Name = "FacilitieInfoPop";
+            this.Load += new System.EventHandler(this.FacilitieInfoPop_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -31,14 +31,14 @@ namespace Team3
                              where item.COMMON_TYPE == "facility_class_id"
                              select item).ToList();
 
-                ComboUtil.ComboBinding<CommonVO>(cbofacilitiesGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "선택");
+                ComboUtil.ComboBinding<CommonVO>(cbofacilitiesGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
             }
             {
                 var mCode = (from item in list
                              where item.COMMON_TYPE == "facility_type"
                              select item).ToList();
 
-                ComboUtil.ComboBinding<CommonVO>(cboDivFacility, mCode, "COMMON_VALUE", "COMMON_NAME", "선택");
+                ComboUtil.ComboBinding<CommonVO>(cboDivFacility, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
             }
         }
     }

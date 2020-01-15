@@ -8,12 +8,16 @@ using System.Windows.Forms;
 using Team3VO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
+using System.Linq;
 
 namespace Team3
 {
     public partial class businessMgt : Team3.VerticalGridBaseForm
     {
-        public List<CompanyVO> lst;
+        List<CompanyVO> lst;
+        List<CommonVO> common_list;
+        ResourceService service;
+        CommonCodeService common_service;
         public businessMgt()
         {
             InitializeComponent();
@@ -24,7 +28,18 @@ namespace Team3
         {
             ResourceService service = new ResourceService();
             lst = service.GetCompanyAll();
-           dataGridView2.DataSource = lst;
+            dataGridView2.DataSource = lst;
+
+            common_service = new CommonCodeService();
+            common_list = common_service.GetCommonCodeAll();
+            {
+                //사용유무
+                var mCode = (from item in common_list
+                             where item.COMMON_TYPE == "vendor_type"
+                             select item).ToList();
+
+                ComboUtil.ComboBinding<CommonVO>(cboTypeCompany, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
+            }
         }
 
 

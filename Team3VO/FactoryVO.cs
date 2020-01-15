@@ -10,7 +10,7 @@ namespace Team3VO
     {
         public int FACTORY_ID { get; set; }
         public int COMPANY_ID { get; set; }
-        public int FACTORY_UADMIN { get; set; }
+        public string FACTORY_UADMIN { get; set; }
         public string FACTORY_GRADE { get; set; }
         public string FACTORY_PARENT { get; set; }
         public string FACTORY_NAME { get; set; }
@@ -27,7 +27,7 @@ namespace Team3VO
     }
     public class FactoryDB_VO
     {
-    public string    FACTORY_ID { get; set; }
+    public int    FACTORY_ID { get; set; }
     public string    FACILITY_CLASS { get; set; } //시설군
         public string    FACILITY_TYPE { get; set; } //시설구분
         public string    FACILITY_VALUE { get; set; }//시설타입

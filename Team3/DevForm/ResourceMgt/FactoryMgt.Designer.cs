@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FactoryMgt));
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearchFacility = new System.Windows.Forms.TextBox();
-            this.txtSearchFacilityGroup = new System.Windows.Forms.ComboBox();
+            this.cboSearchFacilityGroup = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,7 +58,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtSearchFacilityGroup);
+            this.panel1.Controls.Add(this.cboSearchFacilityGroup);
             this.panel1.Controls.Add(this.txtSearchFacility);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -122,14 +122,14 @@
             this.txtSearchFacility.Size = new System.Drawing.Size(201, 22);
             this.txtSearchFacility.TabIndex = 0;
             // 
-            // txtSearchFacilityGroup
+            // cboSearchFacilityGroup
             // 
-            this.txtSearchFacilityGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSearchFacilityGroup.FormattingEnabled = true;
-            this.txtSearchFacilityGroup.Location = new System.Drawing.Point(373, 31);
-            this.txtSearchFacilityGroup.Name = "txtSearchFacilityGroup";
-            this.txtSearchFacilityGroup.Size = new System.Drawing.Size(201, 24);
-            this.txtSearchFacilityGroup.TabIndex = 1;
+            this.cboSearchFacilityGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cboSearchFacilityGroup.FormattingEnabled = true;
+            this.cboSearchFacilityGroup.Location = new System.Drawing.Point(373, 31);
+            this.cboSearchFacilityGroup.Name = "cboSearchFacilityGroup";
+            this.cboSearchFacilityGroup.Size = new System.Drawing.Size(201, 24);
+            this.cboSearchFacilityGroup.TabIndex = 1;
             // 
             // label3
             // 
@@ -266,7 +266,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox txtSearchFacilityGroup;
+        private System.Windows.Forms.ComboBox cboSearchFacilityGroup;
         private System.Windows.Forms.TextBox txtSearchFacility;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

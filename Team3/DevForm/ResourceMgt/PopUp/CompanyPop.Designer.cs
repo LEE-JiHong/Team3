@@ -393,6 +393,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(808, 451);
             this.Name = "CompanyPop";
+            this.Load += new System.EventHandler(this.CompanyPop_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
