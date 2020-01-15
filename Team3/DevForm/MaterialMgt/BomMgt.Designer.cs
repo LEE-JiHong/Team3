@@ -112,10 +112,6 @@
             // 
             this.cboDeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDeployment.FormattingEnabled = true;
-            this.cboDeployment.Items.AddRange(new object[] {
-            "전체",
-            "정전개",
-            "역전개"});
             this.cboDeployment.Location = new System.Drawing.Point(822, 8);
             this.cboDeployment.Name = "cboDeployment";
             this.cboDeployment.Size = new System.Drawing.Size(178, 24);
@@ -124,10 +120,6 @@
             // cboIsUsed
             // 
             this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Items.AddRange(new object[] {
-            "선택",
-            "사용",
-            "미사용"});
             this.cboIsUsed.Location = new System.Drawing.Point(133, 47);
             this.cboIsUsed.Name = "cboIsUsed";
             this.cboIsUsed.Size = new System.Drawing.Size(216, 24);

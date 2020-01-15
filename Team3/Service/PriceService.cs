@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Team3
 {
-    class SUPMService
+    class PriceService
     {
+
     }
 }

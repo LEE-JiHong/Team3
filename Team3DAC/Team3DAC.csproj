@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="BomDac.cs" />
     <Compile Include="DemandDac.cs" />
-    <Compile Include="MUPMDac.cs" />
     <Compile Include="ProductDac.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />
@@ -52,7 +51,7 @@
     <Compile Include="PurchaseDac.cs" />
     <Compile Include="ResourceDac.cs" />
     <Compile Include="ShiftDac.cs" />
-    <Compile Include="SUMPDac.cs" />
+    <Compile Include="PriceDac.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAC.xml">

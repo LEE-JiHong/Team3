@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
@@ -11,6 +12,9 @@ namespace Team3
 {
     public partial class BomMgt : Team3.VerticalGridBaseForm
     {
+        CommonCodeService common_service;
+        List<CommonVO> codelist;
+        
         public BomMgt()
         {
             InitializeComponent();
@@ -21,22 +25,35 @@ namespace Team3
             BomPop frm = new BomPop();
             if(frm.ShowDialog() == DialogResult.OK)
             {
-                
+              //  toolStripStatusLabel1.Text = "abc";
             }
         }
 
         private void BomMgt_Load(object sender, EventArgs e)
         {
-            cboDeployment.SelectedIndex = 0;
-            cboIsUsed.SelectedIndex = 0;
-
+            LoadDGV();
+            ComboBinding();
+        }
+        private void LoadDGV()
+        {
+            
             BomService service = new BomService();
-
             List<BomVO> list = service.GetBomAll();
+           
+
+
+
             dgvBom.DataSource = list;
+        }
 
-
-
+        private void ComboBinding()
+        {
+            common_service = new CommonCodeService();
+            codelist = common_service.GetCommonCodeAll();
+            List<CommonVO> _cboUseFlag = (from item in codelist
+                                          where item.COMMON_TYPE == "user_flag"
+                                          select item).ToList();
+            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
         }
     }
 }
