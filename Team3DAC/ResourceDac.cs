@@ -18,7 +18,6 @@ namespace Team3DAC
         /// <summary>
         /// CommonCode
         /// </summary>
-        /// <returns></returns>
         public List<CommonVO> GetCommonCodeAll()
         {
             string sql = "GetCommonCodeAll";
@@ -121,6 +120,20 @@ namespace Team3DAC
                 List<FactoryDB_VO> list = Helper.DataReaderMapToList<FactoryDB_VO>(reader);
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+        public bool InsertFactory()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "InsertFactory";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
             }
         }
     }

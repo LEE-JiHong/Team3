@@ -13,12 +13,23 @@ namespace Team3
 {
     public partial class FactoryPop : DialogForm
     {
+        public enum EditMode { Input, Update };
         CommonCodeService service;
         List<CommonVO> list;
-        public FactoryPop()
+        public FactoryPop(EditMode editMode ,int i=0)
         {
             InitializeComponent();
+
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "공장정보 수정";
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "공장정보 추가";
+            }
         }
+       
 
         private void FactoryPop_Load(object sender, EventArgs e)
         {
