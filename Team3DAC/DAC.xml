@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <settings>
-    <add key="team3"><![CDATA[Data Source=whyfi8888.ddns.net,11433;Initial Catalog=team3;User ID=team3;Password=1234]]></add>
-  </settings>
-</configuration>
