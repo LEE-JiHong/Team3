@@ -35,7 +35,7 @@ namespace Team3
             List<ProductVO> list = service.GetAllProducts();
             ProductVO vo = new ProductVO();
 
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "ID", , true, 100);
+            //GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "ID", , true, 100);
 
 
             dgvProductList.DataSource = list;
