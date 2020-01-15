@@ -30,8 +30,16 @@ namespace Team3
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            FacilitiesPop group = new FacilitiesPop();
+            FacilitiesPop group = new FacilitiesPop(FacilitiesPop.EditMode.Input);
             if (group.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+        private void btnG_Update_Click(object sender, EventArgs e)
+        {
+            FacilitiesPop frm = new FacilitiesPop(FacilitiesPop.EditMode.Update, lblID1.Text);
+            if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
@@ -39,11 +47,30 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FacilitieInfoPop frm = new FacilitieInfoPop();
+            FacilitieInfoPop frm = new FacilitieInfoPop(FacilitieInfoPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FacilitieInfoPop frm = new FacilitieInfoPop(FacilitieInfoPop.EditMode.Input);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID2.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+        }
+
+       
     }
 }

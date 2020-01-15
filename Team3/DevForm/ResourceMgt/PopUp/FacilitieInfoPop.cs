@@ -14,10 +14,38 @@ namespace Team3
     {
         CommonCodeService service;
         List<CommonVO> list;
-        public FacilitieInfoPop()
+        public enum EditMode { Input, Update };
+
+
+        public FacilitieInfoPop(EditMode editMode)
         {
             InitializeComponent();
+
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "설비정보 수정";
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "설비정보 추가";
+            }
         }
+        public FacilitieInfoPop(EditMode editMode,string i)
+        {
+            InitializeComponent();
+
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "설비정보 수정";
+                lblID.Text = i;
+
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "설비정보 추가";
+            }
+        }
+
 
         private void FacilitieInfoPop_Load(object sender, EventArgs e)
         {

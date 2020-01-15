@@ -41,17 +41,23 @@ namespace Team3
             FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-               
+             
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update);
+    
+            FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update,lblID.Text);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+               
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+         lblID.Text=   dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

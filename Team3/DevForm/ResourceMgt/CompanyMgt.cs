@@ -46,13 +46,20 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CompanyPop frm = new CompanyPop();
+            CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Update, lblID.Text);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
 
+            }
+        }
         private void BtnExport_Click(object sender, EventArgs e)
         {
             try
@@ -109,6 +116,11 @@ namespace Team3
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

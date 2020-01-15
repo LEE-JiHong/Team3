@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
- 
+
 
 namespace Team3
 {
@@ -41,11 +41,27 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            BORPop frm = new BORPop();
-            if(frm.ShowDialog()== DialogResult.OK)
+            BORPop frm = new BORPop(BORPop.EditMode.Input);
+            if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

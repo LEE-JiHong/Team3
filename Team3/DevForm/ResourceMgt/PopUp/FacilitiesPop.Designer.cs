@@ -41,6 +41,7 @@
             this.txtInfoFacility = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -214,18 +215,33 @@
             this.cboIsUsed.Size = new System.Drawing.Size(172, 23);
             this.cboIsUsed.TabIndex = 2;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(247, 67);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.TabIndex = 4;
+            this.lblID.Text = "lblID";
+            // 
             // FacilitiesPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(411, 479);
+            this.Controls.Add(this.lblID);
             this.Name = "FacilitiesPop";
             this.Load += new System.EventHandler(this.FacilitiesPop_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.lblID, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -244,5 +260,6 @@
         private System.Windows.Forms.TextBox txtInfoFacility;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.Label lblID;
     }
 }

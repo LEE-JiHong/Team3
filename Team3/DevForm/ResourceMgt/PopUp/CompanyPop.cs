@@ -14,9 +14,34 @@ namespace Team3
     {
         CommonCodeService service;
         List<CommonVO> common_list;
-        public CompanyPop()
+        public enum EditMode { Input, Update };
+        public CompanyPop(EditMode editMode)
         {
             InitializeComponent();
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "거래처 수정";
+
+
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "거래처 추가";
+            }
+        }
+        public CompanyPop(EditMode editMode,string i)
+        {
+            InitializeComponent();
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "거래처 수정";
+                lblID.Text = i;
+
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "거래처 추가";
+            }
         }
 
         private void CompanyPop_Load(object sender, EventArgs e)

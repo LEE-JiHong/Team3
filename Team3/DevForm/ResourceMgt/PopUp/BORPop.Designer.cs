@@ -44,6 +44,7 @@
             this.txtNote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -253,17 +254,32 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "(Sec)";
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(472, 67);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.TabIndex = 4;
+            this.lblID.Text = "lblID";
+            // 
             // BORPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(605, 440);
+            this.Controls.Add(this.lblID);
             this.Name = "BORPop";
             this.Load += new System.EventHandler(this.BORPop_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.lblID, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +301,6 @@
         private System.Windows.Forms.ComboBox cboItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblID;
     }
 }

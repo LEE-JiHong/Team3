@@ -47,7 +47,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtInfoFacility = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbo = new System.Windows.Forms.ComboBox();
+            this.cboHigh = new System.Windows.Forms.ComboBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.TabIndex = 15;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -92,7 +94,7 @@
             this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.cbo);
+            this.panel2.Controls.Add(this.cboHigh);
             this.panel2.Controls.Add(this.cboDivFacility);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
@@ -282,26 +284,41 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "상위시설";
             // 
-            // cbo
+            // cboHigh
             // 
-            this.cbo.FormattingEnabled = true;
-            this.cbo.Location = new System.Drawing.Point(353, 24);
-            this.cbo.Name = "cbo";
-            this.cbo.Size = new System.Drawing.Size(150, 23);
-            this.cbo.TabIndex = 4;
+            this.cboHigh.FormattingEnabled = true;
+            this.cboHigh.Location = new System.Drawing.Point(353, 24);
+            this.cboHigh.Name = "cboHigh";
+            this.cboHigh.Size = new System.Drawing.Size(150, 23);
+            this.cboHigh.TabIndex = 4;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(551, 70);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.TabIndex = 4;
+            this.lblID.Text = "lblID";
             // 
             // FactoryPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(604, 472);
+            this.Controls.Add(this.lblID);
             this.Name = "FactoryPop";
             this.Text = "공장정보";
             this.Load += new System.EventHandler(this.FactoryPop_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.lblID, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -325,7 +342,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbofacilitiesGroup;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbo;
+        private System.Windows.Forms.ComboBox cboHigh;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblID;
     }
 }

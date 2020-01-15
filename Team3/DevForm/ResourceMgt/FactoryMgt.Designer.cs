@@ -40,6 +40,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblID);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cboSearchFacilityGroup);
             this.panel1.Controls.Add(this.txtSearchFacility);
@@ -151,6 +153,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1095, 445);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // flowLayoutPanel1
             // 
@@ -245,6 +248,15 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(993, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(35, 16);
+            this.lblID.TabIndex = 13;
+            this.lblID.Text = "lblID";
+            // 
             // FactoryMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -278,5 +290,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label lblID;
     }
 }

@@ -45,5 +45,10 @@ namespace Team3
             ResourceDac dac = new ResourceDac();
             return dac.GetFactoryAll();
         }
+        public bool InsertFactory(FactoryVO VO)
+        {
+            ResourceDac dac= new ResourceDac();
+           return dac.InsertFactory(VO);
+        }
     }
 }

@@ -58,6 +58,7 @@
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.txtUpdateTime = new System.Windows.Forms.TextBox();
             this.cboTypeCompany = new System.Windows.Forms.ComboBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -388,17 +389,32 @@
             this.cboTypeCompany.Size = new System.Drawing.Size(130, 23);
             this.cboTypeCompany.TabIndex = 2;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(750, 64);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.TabIndex = 4;
+            this.lblID.Text = "lblID";
+            // 
             // CompanyPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(808, 451);
+            this.Controls.Add(this.lblID);
             this.Name = "CompanyPop";
             this.Load += new System.EventHandler(this.CompanyPop_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.lblID, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -434,5 +450,6 @@
         private System.Windows.Forms.ComboBox cboTypeCompany;
         private System.Windows.Forms.TextBox txtUpdateTime;
         private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.Label lblID;
     }
 }

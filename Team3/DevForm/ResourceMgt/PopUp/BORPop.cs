@@ -15,11 +15,38 @@ namespace Team3
         CommonCodeService common_service;
         List<CommonVO> common_list;
 
-
-        public BORPop()
+        public enum EditMode { Input, Update };
+        public BORPop(EditMode editMode)
         {
             InitializeComponent();
+
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "BOR정보 수정";
+
+
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "BOR정보 추가";
+            }
         }
+        public BORPop(EditMode editMode,string i)
+        {
+            InitializeComponent();
+
+            if (editMode == EditMode.Update)
+            {
+                this.Text = "BOR정보 수정";
+                lblID.Text = i;
+
+            }
+            if (editMode == EditMode.Input)
+            {
+                this.Text = "BOR정보 추가";
+            }
+        }
+
 
         private void BORPop_Load(object sender, EventArgs e)
         {

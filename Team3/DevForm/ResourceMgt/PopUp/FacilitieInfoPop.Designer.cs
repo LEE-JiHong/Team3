@@ -52,6 +52,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -336,17 +337,32 @@
             this.txtNote.Size = new System.Drawing.Size(621, 50);
             this.txtNote.TabIndex = 12;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(657, 64);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.TabIndex = 11;
+            this.lblID.Text = "lblID";
+            // 
             // FacilitieInfoPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(796, 455);
+            this.Controls.Add(this.lblID);
             this.Name = "FacilitieInfoPop";
             this.Load += new System.EventHandler(this.FacilitieInfoPop_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.lblID, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -376,5 +392,6 @@
         private System.Windows.Forms.TextBox txtSingularity;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblID;
     }
 }

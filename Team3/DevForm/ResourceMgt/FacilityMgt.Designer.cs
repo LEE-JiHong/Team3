@@ -35,12 +35,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnG_Update = new System.Windows.Forms.Button();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,6 +52,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblID1 = new System.Windows.Forms.Label();
+            this.lblID2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -113,6 +115,8 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.lblID2);
+            this.basepanel.Controls.Add(this.lblID1);
             this.basepanel.Controls.Add(this.textBox5);
             this.basepanel.Controls.Add(this.label7);
             this.basepanel.Controls.Add(this.textBox4);
@@ -143,6 +147,8 @@
             this.basepanel.Controls.SetChildIndex(this.textBox4, 0);
             this.basepanel.Controls.SetChildIndex(this.label7, 0);
             this.basepanel.Controls.SetChildIndex(this.textBox5, 0);
+            this.basepanel.Controls.SetChildIndex(this.lblID1, 0);
+            this.basepanel.Controls.SetChildIndex(this.lblID2, 0);
             // 
             // imageList1
             // 
@@ -172,6 +178,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(310, 217);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // dataGridView2
             // 
@@ -182,6 +189,7 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(693, 418);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // button5
             // 
@@ -196,7 +204,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnG_Update);
             this.flowLayoutPanel1.Controls.Add(this.btnAddGroup);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -220,20 +228,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnG_Update
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Team3.Properties.Resources.Edit_16x16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(72, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 23);
-            this.button1.TabIndex = 79;
-            this.button1.Text = "수정";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnG_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnG_Update.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnG_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnG_Update.Image = global::Team3.Properties.Resources.Edit_16x16;
+            this.btnG_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnG_Update.Location = new System.Drawing.Point(72, 3);
+            this.btnG_Update.Name = "btnG_Update";
+            this.btnG_Update.Size = new System.Drawing.Size(52, 23);
+            this.btnG_Update.TabIndex = 79;
+            this.btnG_Update.Text = "수정";
+            this.btnG_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnG_Update.UseVisualStyleBackColor = false;
+            this.btnG_Update.Click += new System.EventHandler(this.btnG_Update_Click);
             // 
             // btnAddGroup
             // 
@@ -255,7 +264,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.button6);
             this.flowLayoutPanel2.Controls.Add(this.button4);
-            this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel2.Controls.Add(this.btnAdd);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -294,20 +303,21 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Team3.Properties.Resources.Edit_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(76, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 23);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "수정";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(76, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(52, 23);
+            this.btnUpdate.TabIndex = 51;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -416,6 +426,24 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "상세설명";
             // 
+            // lblID1
+            // 
+            this.lblID1.AutoSize = true;
+            this.lblID1.Location = new System.Drawing.Point(291, 12);
+            this.lblID1.Name = "lblID1";
+            this.lblID1.Size = new System.Drawing.Size(35, 12);
+            this.lblID1.TabIndex = 41;
+            this.lblID1.Text = "lblID1";
+            // 
+            // lblID2
+            // 
+            this.lblID2.AutoSize = true;
+            this.lblID2.Location = new System.Drawing.Point(712, 18);
+            this.lblID2.Name = "lblID2";
+            this.lblID2.Size = new System.Drawing.Size(35, 12);
+            this.lblID2.TabIndex = 41;
+            this.lblID2.Text = "lblID2";
+            // 
             // facilityMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -453,8 +481,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnAddGroup;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnG_Update;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
@@ -465,5 +493,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblID2;
+        private System.Windows.Forms.Label lblID1;
     }
 }
