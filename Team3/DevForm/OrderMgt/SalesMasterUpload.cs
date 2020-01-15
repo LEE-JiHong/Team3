@@ -12,7 +12,7 @@ namespace Team3
     public partial class SalesMasterUpload : DgvBaseForm
     {
         string versionName;
-        string planID;
+        string wo_id;
         public SalesMasterUpload()
         {
             InitializeComponent();
@@ -58,7 +58,8 @@ namespace Team3
                 dataGridView1.Columns.Clear();
 
                 dataGridView1.DataSource = frm.Data;
-                planID = frm.PlanID;
+                wo_id = frm.PlanID;
+                versionName = frm.PlanVersion;
             }
         }
 
@@ -76,16 +77,38 @@ namespace Team3
             }
             else
             {
-                SOMasterVO vo = new SOMasterVO
-                {
-                    plan_id = planID,
-                    //so_wo_id = dataGridView1.
+                List<SOMasterVO> list = new List<SOMasterVO>();
 
-                };
+                for (int i = 0; i<dataGridView1.Rows.Count; i++)
+                {
+                    SOMasterVO vo = new SOMasterVO();
+                    vo.plan_id = versionName;
+                    vo.so_wo_id = wo_id;
+                    vo.so_pcount = Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value);
+                    vo.company_code = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    vo.so_edate = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                    vo.so_sdate = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    vo.product_name = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                    list.Add(vo);
+                }
 
                 //DB
                 OrderService service = new OrderService();
-                bool result = service.AddSOMaster(vo);
+                bool result = service.AddSOMaster(list);
+
+                if (result)
+                {
+                    Form fc = Application.OpenForms["Main"];
+                    Main frm = (Main)fc;
+
+                    frm.GetForm("영업마스터");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
+                    return;
+                }
             }
         }
     }

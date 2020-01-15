@@ -10,10 +10,10 @@ namespace Team3
 {
     public class OrderService
     {
-        public bool AddSOMaster(SOMasterVO vo)
+        public bool AddSOMaster(List<SOMasterVO> list)
         {
             OrderDac dac = new OrderDac();
-            return dac.AddSOMaster(vo);
+            return dac.AddSOMaster(list);
         }
     }
 }
