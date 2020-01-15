@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using Team3VO;
 
 
-namespace Team3DAC
+namespace Team3WebAPI
 {
     public class ResourceDac : ConnectionAccess
     {

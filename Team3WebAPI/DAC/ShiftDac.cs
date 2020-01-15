@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 using Team3VO;
 
 
-namespace Team3DAC
+namespace Team3WebAPI
 {
-    class PurchaseDac : ConnectionAccess
+    class ShiftDac : ConnectionAccess
     {
         //public List<CommonVO> GetCommonCode()
         //{

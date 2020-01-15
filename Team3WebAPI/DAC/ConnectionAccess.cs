@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 
 
-namespace Team3DAC
+namespace Team3WebAPI
 {
     public abstract class ConnectionAccess
     {
@@ -19,7 +19,7 @@ namespace Team3DAC
                 string connStr = string.Empty;
 
                 XmlDocument configXml = new XmlDocument();
-                configXml.Load(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/DAC.xml");
+                configXml.Load(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/DAC/DAC.xml");
                 XmlNodeList addNodes = configXml.SelectNodes("configuration/settings/add");
                 foreach(XmlNode xmlNode in addNodes)
                 {

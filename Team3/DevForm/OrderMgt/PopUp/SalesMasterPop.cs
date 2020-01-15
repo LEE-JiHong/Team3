@@ -40,6 +40,13 @@ namespace Team3
             set { planID = value; }
         }
 
+        string planVersion;
+        public string PlanVersion
+        {
+            get { return planVersion; }
+            set { planVersion = txtPlanVersion.Text; }
+        }
+
         private void SalesMasterDialog_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Now;
@@ -150,6 +157,7 @@ namespace Team3
 
                     //계획기준버전
                     txtPlanVersion.Text = dateTimePicker1.Value.ToShortDateString().Replace("-","") + "_P";
+                    PlanVersion = txtPlanVersion.Text;
                 }
             }
         }

@@ -57,6 +57,8 @@ namespace Team3
                            where item.COMMON_TYPE == "item_type"
                            select item).ToList();
             ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+
+
         }
     }
 }

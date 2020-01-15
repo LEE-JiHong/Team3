@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Team3DAC
+namespace Team3WebAPI
 {
     public class PriceDac : ConnectionAccess
     {

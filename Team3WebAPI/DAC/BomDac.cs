@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Team3VO;
 
-namespace Team3DAC
+namespace Team3WebAPI
 {
     public class BomDac : ConnectionAccess
     {
