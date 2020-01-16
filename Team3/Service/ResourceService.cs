@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Team3WebAPI;
+using Team3DAC;
 using Team3VO;
  
 
@@ -45,10 +45,10 @@ namespace Team3
             ResourceDac dac = new ResourceDac();
             return dac.GetFactoryAll();
         }
-        public bool InsertFactory(FactoryVO VO)
-        {
-            ResourceDac dac= new ResourceDac();
-           return dac.InsertFactory(VO);
-        }
+        //public bool InsertFactory(FactoryVO VO)
+        //{
+        //    ResourceDac dac= new ResourceDac();
+        //   return dac.InsertFactory(VO);
+        //}
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Team3VO;
-using Team3WebAPI;
+using Team3DAC;
 
 namespace Team3
 {
@@ -30,10 +30,10 @@ namespace Team3
             ProductDac dac = new ProductDac();
             return dac.AddProduct(vo);
         }
-        public bool UpdateProduct(ProductVO VO)
-        {
-            ProductDac dac = new ProductDac();
-            return dac.UpdateProduct(VO);
-        }
+        //public bool UpdateProduct(ProductVO VO)
+        //{
+        //    ProductDac dac = new ProductDac();
+        //    return dac.UpdateProduct(VO);
+        //}
     }
 }

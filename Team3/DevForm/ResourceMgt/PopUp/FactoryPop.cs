@@ -105,7 +105,7 @@ namespace Team3
                 VO.FACTORY_COMMENT = txtInfoFacility.Text;
 
 
-                bResult=Fac_service.InsertFactory(VO);
+                //bResult=Fac_service.InsertFactory(VO);
             }
         }
     }

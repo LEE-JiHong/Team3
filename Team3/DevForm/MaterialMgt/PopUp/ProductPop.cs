@@ -179,17 +179,17 @@ namespace Team3
                     vo.product_meastype = txtMeasType.Text;
                     vo.product_codename = txtProduct.Text;
 
-                    bool bResult = product_service.UpdateProduct(vo);
-                    if (bResult)
-                    {
-                        MessageBox.Show("수정성공");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("수정실패 , 다시시도 하세요");
-                        return;
-                    }
+                    //bool bResult = product_service.UpdateProduct(vo);
+                    //if (bResult)
+                    //{
+                    //    MessageBox.Show("수정성공");
+                    //    this.Close();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("수정실패 , 다시시도 하세요");
+                    //    return;
+                    //}
                 }
             }
 

@@ -75,5 +75,62 @@ namespace Team3DAC
                 }
             }
         }
+
+        /// <summary>
+        /// 영업마스터 조회
+        /// </summary>
+        /// <returns></returns>
+        public List<SOMasterVO> GetSOMasterAll()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "SELECT so_id, plan_id, so_od_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment, so_production_state FROM TBL_SO_MASTER ORDER BY plan_id ASC";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SOMasterVO> list = Helper.DataReaderMapToList<SOMasterVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public List<CompanyVO> GetCompanyAll()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select * from TBL_COMPANY where company_type != 'COOPERATIVE'";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        //public bool UpdateSOMaster(SOMasterVO vo)
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        string sql = "UpdateSOMaster";
+
+        //        cmd.Connection = new SqlConnection(this.ConnectionString);
+        //        cmd.CommandText = sql;
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        cmd.Parameters.AddWithValue("@product_id", vo.product_id);
+
+        //        cmd.Connection.Open();
+        //        var successRow = cmd.ExecuteNonQuery();
+        //        cmd.Connection.Close();
+        //        return successRow > 0;
+        //    }
+        //}
     }
 }
