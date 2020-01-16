@@ -83,7 +83,8 @@ namespace Team3
                 {
                     SOMasterVO vo = new SOMasterVO();
                     vo.plan_id = versionName;
-                    vo.so_wo_id = wo_id;
+                    vo.so_od_id = wo_id;
+                    vo.so_wo_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
                     vo.so_pcount = Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value);
                     vo.company_code = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     vo.so_edate = dataGridView1.Rows[i].Cells[8].Value.ToString();
