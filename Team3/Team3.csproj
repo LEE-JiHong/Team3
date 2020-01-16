@@ -369,9 +369,9 @@
     <Compile Include="Service\BomService.cs" />
     <Compile Include="Service\CommonCodeService.cs" />
     <Compile Include="Service\OrderService.cs" />
+    <Compile Include="Service\PriceService.cs" />
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\ResourceService.cs" />
-    <Compile Include="Service\PriceService.cs" />
     <Compile Include="Utility\ComboUtil.cs" />
     <Compile Include="Utility\GridViewUtil.cs" />
     <Compile Include="WorkOrder\Business_showings.cs">

@@ -1,39 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using Team3VO;
-using Team3WebAPI;
 
-namespace Team3
+namespace Team3WebAPI.Controllers
 {
-    class ProductService
+    public class ProductController : ApiController
     {
         /// <summary>
         /// 모든 Product 조회
         /// </summary>
         /// <returns></returns>
+        // GET: api/Product
         public List<ProductVO> GetAllProducts()
         {
             ProductDac dac = new ProductDac();
             return dac.GetProductsAll();
         }
 
-        /// <summary>
-        /// 품목 등록
-        /// </summary>
-        /// <param name="vo"></param>
-        /// <returns></returns>
+        // GET: api/Product/5
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST: api/Product
         public bool AddProduct(ProductVO vo)
         {
             ProductDac dac = new ProductDac();
             return dac.AddProduct(vo);
         }
-        public bool UpdateProduct(ProductVO VO)
+
+        // PUT: api/Product/5
+        public void Put(int id, [FromBody]string value)
         {
-            ProductDac dac = new ProductDac();
-            return dac.UpdateProduct(VO);
+        }
+
+        // DELETE: api/Product/5
+        public void Delete(int id)
+        {
         }
     }
 }
