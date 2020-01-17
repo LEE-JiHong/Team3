@@ -19,7 +19,7 @@ namespace Team3VO
         public string bom_sdate { get; set; }
         public string bom_edate { get; set; }
         public string bom_yn { get; set; }
-        public int plan_id { get; set; }
+        public int plan_yn { get; set; }
         public string bom_comment { get; set; }
         public string bom_uadmin { get; set; }
         public string bom_udate { get; set; }

@@ -47,7 +47,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@bom_sdate", VO.bom_sdate);
                 cmd.Parameters.AddWithValue("@bom_edate", VO.bom_edate);
                 cmd.Parameters.AddWithValue("@bom_yn", VO.bom_yn);
-                cmd.Parameters.AddWithValue("@plan_id", VO.plan_id);
+                cmd.Parameters.AddWithValue("@plan_id", VO.plan_yn);
                 cmd.Parameters.AddWithValue("@bom_comment", VO.bom_comment);
                 cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
                 cmd.Parameters.AddWithValue("@bom_udate", VO.bom_udate);
