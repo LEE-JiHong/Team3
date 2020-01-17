@@ -146,6 +146,25 @@ namespace Team3WebAPI
                 return successRow > 0;
             }
         }
+
+       public FactoryVO GetFactoryByID(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetFactoryByID";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(reader);
+                cmd.Connection.Close();
+                return list[0];
+            }
+        }
         public bool UpdateFactory(FactoryVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())

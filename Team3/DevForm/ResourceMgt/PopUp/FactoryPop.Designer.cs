@@ -128,6 +128,7 @@
             this.cbofacilitiesGroup.Name = "cbofacilitiesGroup";
             this.cbofacilitiesGroup.Size = new System.Drawing.Size(150, 23);
             this.cbofacilitiesGroup.TabIndex = 0;
+            this.cbofacilitiesGroup.SelectedIndexChanged += new System.EventHandler(this.cbofacilitiesGroup_SelectedIndexChanged);
             // 
             // label3
             // 

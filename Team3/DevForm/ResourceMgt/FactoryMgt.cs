@@ -15,6 +15,7 @@ namespace Team3
         ResourceService service = new ResourceService();
         List<CommonVO> common_list;
         List<FactoryDB_VO> list;
+
         public FactoryMgt()
         {
             InitializeComponent();
@@ -31,7 +32,6 @@ namespace Team3
             var mCode = (from item in common_list
                          where item.COMMON_TYPE == "facility_class_id"
                          select item).ToList();
-
             ComboUtil.ComboBinding<CommonVO>(cboSearchFacilityGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
 
         }
@@ -39,20 +39,15 @@ namespace Team3
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Input);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-             
-            }
-        }
+            frm.ShowDialog();
 
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
     
             FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update,lblID.Text);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-               
-            }
+            frm.ShowDialog();               
+            
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
