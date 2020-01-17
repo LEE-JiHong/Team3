@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.cbofacilitiesGroup = new System.Windows.Forms.ComboBox();
+            this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboDivFacility = new System.Windows.Forms.ComboBox();
+            this.cboTypeFactory = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCodeFacility = new System.Windows.Forms.TextBox();
-            this.txtModifyTime = new System.Windows.Forms.TextBox();
+            this.txtCodeFactory = new System.Windows.Forms.TextBox();
+            this.txtUdate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.cboIsUsed = new System.Windows.Forms.ComboBox();
+            this.cboYN = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtNameFacility = new System.Windows.Forms.TextBox();
-            this.txtModifier = new System.Windows.Forms.TextBox();
+            this.txtNameFactory = new System.Windows.Forms.TextBox();
+            this.txtUadmin = new System.Windows.Forms.TextBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtInfoFacility = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboHigh = new System.Windows.Forms.ComboBox();
+            this.cboParent = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,23 +84,23 @@
             // 
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.cboCompany);
-            this.panel2.Controls.Add(this.txtModifier);
-            this.panel2.Controls.Add(this.txtInfoFacility);
-            this.panel2.Controls.Add(this.txtModifyTime);
-            this.panel2.Controls.Add(this.txtNameFacility);
-            this.panel2.Controls.Add(this.txtCodeFacility);
+            this.panel2.Controls.Add(this.txtUadmin);
+            this.panel2.Controls.Add(this.txtComment);
+            this.panel2.Controls.Add(this.txtUdate);
+            this.panel2.Controls.Add(this.txtNameFactory);
+            this.panel2.Controls.Add(this.txtCodeFactory);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.cboIsUsed);
+            this.panel2.Controls.Add(this.cboYN);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.cboHigh);
-            this.panel2.Controls.Add(this.cboDivFacility);
+            this.panel2.Controls.Add(this.cboParent);
+            this.panel2.Controls.Add(this.cboTypeFactory);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cbofacilitiesGroup);
+            this.panel2.Controls.Add(this.cboFactoryGrade);
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.panel2.Size = new System.Drawing.Size(557, 331);
@@ -121,14 +121,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "시설군";
             // 
-            // cbofacilitiesGroup
+            // cboFactoryGrade
             // 
-            this.cbofacilitiesGroup.FormattingEnabled = true;
-            this.cbofacilitiesGroup.Location = new System.Drawing.Point(90, 24);
-            this.cbofacilitiesGroup.Name = "cbofacilitiesGroup";
-            this.cbofacilitiesGroup.Size = new System.Drawing.Size(150, 23);
-            this.cbofacilitiesGroup.TabIndex = 0;
-            this.cbofacilitiesGroup.SelectedIndexChanged += new System.EventHandler(this.cbofacilitiesGroup_SelectedIndexChanged);
+            this.cboFactoryGrade.FormattingEnabled = true;
+            this.cboFactoryGrade.Location = new System.Drawing.Point(90, 24);
+            this.cboFactoryGrade.Name = "cboFactoryGrade";
+            this.cboFactoryGrade.Size = new System.Drawing.Size(150, 23);
+            this.cboFactoryGrade.TabIndex = 0;
+            this.cboFactoryGrade.SelectedIndexChanged += new System.EventHandler(this.cbofacilitiesGroup_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -152,13 +152,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "시설구분";
             // 
-            // cboDivFacility
+            // cboTypeFactory
             // 
-            this.cboDivFacility.FormattingEnabled = true;
-            this.cboDivFacility.Location = new System.Drawing.Point(353, 99);
-            this.cboDivFacility.Name = "cboDivFacility";
-            this.cboDivFacility.Size = new System.Drawing.Size(150, 23);
-            this.cboDivFacility.TabIndex = 4;
+            this.cboTypeFactory.FormattingEnabled = true;
+            this.cboTypeFactory.Location = new System.Drawing.Point(353, 99);
+            this.cboTypeFactory.Name = "cboTypeFactory";
+            this.cboTypeFactory.Size = new System.Drawing.Size(150, 23);
+            this.cboTypeFactory.TabIndex = 4;
             // 
             // label8
             // 
@@ -170,19 +170,19 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "수정시간";
             // 
-            // txtCodeFacility
+            // txtCodeFactory
             // 
-            this.txtCodeFacility.Location = new System.Drawing.Point(353, 62);
-            this.txtCodeFacility.Name = "txtCodeFacility";
-            this.txtCodeFacility.Size = new System.Drawing.Size(150, 21);
-            this.txtCodeFacility.TabIndex = 2;
+            this.txtCodeFactory.Location = new System.Drawing.Point(353, 62);
+            this.txtCodeFactory.Name = "txtCodeFactory";
+            this.txtCodeFactory.Size = new System.Drawing.Size(150, 21);
+            this.txtCodeFactory.TabIndex = 2;
             // 
-            // txtModifyTime
+            // txtUdate
             // 
-            this.txtModifyTime.Location = new System.Drawing.Point(353, 177);
-            this.txtModifyTime.Name = "txtModifyTime";
-            this.txtModifyTime.Size = new System.Drawing.Size(150, 21);
-            this.txtModifyTime.TabIndex = 12;
+            this.txtUdate.Location = new System.Drawing.Point(353, 177);
+            this.txtUdate.Name = "txtUdate";
+            this.txtUdate.Size = new System.Drawing.Size(150, 21);
+            this.txtUdate.TabIndex = 12;
             // 
             // label10
             // 
@@ -215,13 +215,13 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "수정자";
             // 
-            // cboIsUsed
+            // cboYN
             // 
-            this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(90, 145);
-            this.cboIsUsed.Name = "cboIsUsed";
-            this.cboIsUsed.Size = new System.Drawing.Size(150, 23);
-            this.cboIsUsed.TabIndex = 13;
+            this.cboYN.FormattingEnabled = true;
+            this.cboYN.Location = new System.Drawing.Point(90, 145);
+            this.cboYN.Name = "cboYN";
+            this.cboYN.Size = new System.Drawing.Size(150, 23);
+            this.cboYN.TabIndex = 13;
             // 
             // label15
             // 
@@ -234,19 +234,19 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "사용유무";
             // 
-            // txtNameFacility
+            // txtNameFactory
             // 
-            this.txtNameFacility.Location = new System.Drawing.Point(90, 64);
-            this.txtNameFacility.Name = "txtNameFacility";
-            this.txtNameFacility.Size = new System.Drawing.Size(150, 21);
-            this.txtNameFacility.TabIndex = 3;
+            this.txtNameFactory.Location = new System.Drawing.Point(90, 64);
+            this.txtNameFactory.Name = "txtNameFactory";
+            this.txtNameFactory.Size = new System.Drawing.Size(150, 21);
+            this.txtNameFactory.TabIndex = 3;
             // 
-            // txtModifier
+            // txtUadmin
             // 
-            this.txtModifier.Location = new System.Drawing.Point(353, 138);
-            this.txtModifier.Name = "txtModifier";
-            this.txtModifier.Size = new System.Drawing.Size(150, 21);
-            this.txtModifier.TabIndex = 11;
+            this.txtUadmin.Location = new System.Drawing.Point(353, 138);
+            this.txtUadmin.Name = "txtUadmin";
+            this.txtUadmin.Size = new System.Drawing.Size(150, 21);
+            this.txtUadmin.TabIndex = 11;
             // 
             // cboCompany
             // 
@@ -266,13 +266,13 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "시설설명";
             // 
-            // txtInfoFacility
+            // txtComment
             // 
-            this.txtInfoFacility.Location = new System.Drawing.Point(90, 213);
-            this.txtInfoFacility.Multiline = true;
-            this.txtInfoFacility.Name = "txtInfoFacility";
-            this.txtInfoFacility.Size = new System.Drawing.Size(413, 79);
-            this.txtInfoFacility.TabIndex = 14;
+            this.txtComment.Location = new System.Drawing.Point(90, 213);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(413, 79);
+            this.txtComment.TabIndex = 14;
             // 
             // label5
             // 
@@ -285,13 +285,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "상위시설";
             // 
-            // cboHigh
+            // cboParent
             // 
-            this.cboHigh.FormattingEnabled = true;
-            this.cboHigh.Location = new System.Drawing.Point(353, 24);
-            this.cboHigh.Name = "cboHigh";
-            this.cboHigh.Size = new System.Drawing.Size(150, 23);
-            this.cboHigh.TabIndex = 4;
+            this.cboParent.FormattingEnabled = true;
+            this.cboParent.Location = new System.Drawing.Point(353, 24);
+            this.cboParent.Name = "cboParent";
+            this.cboParent.Size = new System.Drawing.Size(150, 23);
+            this.cboParent.TabIndex = 4;
             // 
             // lblID
             // 
@@ -327,23 +327,23 @@
 
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.TextBox txtModifier;
-        private System.Windows.Forms.TextBox txtInfoFacility;
-        private System.Windows.Forms.TextBox txtModifyTime;
-        private System.Windows.Forms.TextBox txtNameFacility;
-        private System.Windows.Forms.TextBox txtCodeFacility;
+        private System.Windows.Forms.TextBox txtUadmin;
+        private System.Windows.Forms.TextBox txtComment;
+        private System.Windows.Forms.TextBox txtUdate;
+        private System.Windows.Forms.TextBox txtNameFactory;
+        private System.Windows.Forms.TextBox txtCodeFactory;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.ComboBox cboYN;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cboDivFacility;
+        private System.Windows.Forms.ComboBox cboTypeFactory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbofacilitiesGroup;
+        private System.Windows.Forms.ComboBox cboFactoryGrade;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboHigh;
+        private System.Windows.Forms.ComboBox cboParent;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblID;
     }

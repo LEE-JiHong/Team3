@@ -13,7 +13,7 @@ namespace Team3
 {
     public partial class FactoryPop : DialogForm
     {
-
+        FactoryVO VO;
         List<CompanyVO> Company_list;
         public enum EditMode { Input, Update };
         CommonCodeService service;
@@ -26,13 +26,13 @@ namespace Team3
             if (editMode == EditMode.Update)
             {
                 this.Text = "공장정보 수정";
-                txtModifyTime.ReadOnly = true;
+                txtUdate.ReadOnly = true;
 
             }
             if (editMode == EditMode.Input)
             {
                 this.Text = "공장정보 추가";
-                txtModifyTime.ReadOnly = true;
+                txtUdate.ReadOnly = true;
             }
         }
 
@@ -42,7 +42,7 @@ namespace Team3
 
             if (editMode == EditMode.Update)
             {
-                txtModifyTime.ReadOnly = true;
+                txtUdate.ReadOnly = true;
                 this.Text = "공장정보 수정";
                 lblID.Text = i;
 
@@ -51,11 +51,14 @@ namespace Team3
             }
             if (editMode == EditMode.Input)
             {
-                txtModifyTime.ReadOnly = true;
+                txtUdate.ReadOnly = true;
                 this.Text = "공장정보 추가";
             }
         }
-
+        
+        /// <summary>
+        /// 공통코드 LINQ
+        /// </summary>
         public List<CommonVO> Combo(string s)
         {
             var mCode = (from item in Common_list
@@ -80,24 +83,27 @@ namespace Team3
 
             Common_list = service.GetCommonCodeAll();
 
-            ComboUtil.ComboBinding<CommonVO>(cbofacilitiesGroup, Combo("facility_class_id"), "COMMON_VALUE", "COMMON_NAME", "미선택");
-            ComboUtil.ComboBinding<CommonVO>(cboDivFacility, Combo("facility_type"), "COMMON_VALUE", "COMMON_NAME", "미선택");
-            ComboUtil.ComboBinding<CommonVO>(cboIsUsed, Combo("user_flag2"), "COMMON_VALUE", "COMMON_NAME");
+            ComboUtil.ComboBinding<CommonVO>(cboFactoryGrade, Combo("facility_class_id"), "COMMON_VALUE", "COMMON_NAME", "미선택");
+            ComboUtil.ComboBinding<CommonVO>(cboTypeFactory, Combo("facility_type"), "COMMON_VALUE", "COMMON_NAME", "미선택");
+            ComboUtil.ComboBinding<CommonVO>(cboYN, Combo("user_flag2"), "COMMON_VALUE", "COMMON_NAME");
 
             {
+
                 if (this.Text == "공장정보 수정")
                 {
 
-                    FactoryVO VO = R_service.GetFactoryByID(Convert.ToInt32(lblID.Text));
-                    txtCodeFacility.Text = VO.FACTORY_CODE;
-                    txtInfoFacility.Text = VO.FACTORY_COMMENT;
-                    txtModifier.Text = VO.FACTORY_UADMIN;
-                    txtModifyTime.Text = DateTime.Now.ToString();
-                    txtNameFacility.Text = VO.FACTORY_NAME;
-                    cboCompany.Text = VO.COMPANY_ID.ToString();
-                    cboDivFacility.Text = VO.FACTORY_TYPE;
-                    cboHigh.Text = VO.FACTORY_PARENT;
-                    cboIsUsed.Text = VO.FACTORY_YN;
+                    VO = R_service.GetFactoryByID(Convert.ToInt32(lblID.Text));
+                  string Comapany_Name=  (VO.COMPANY_NAME == null) ? "-" : VO.COMPANY_NAME.ToString();
+                    txtCodeFactory.Text = VO.FACTORY_CODE;
+                    txtComment.Text = VO.FACTORY_COMMENT;
+                    txtUadmin.Text = VO.FACTORY_UADMIN;
+                    txtUdate.Text = DateTime.Now.ToString();
+                    txtNameFactory.Text = VO.FACTORY_NAME;
+                    cboCompany.Text = Comapany_Name;
+                    cboTypeFactory.Text = VO.FACTORY_TYPE;
+                    cboParent.Text = VO.FACTORY_PARENT;
+                    cboYN.Text = VO.FACTORY_YN;
+                    cboFactoryGrade.Text = VO.FACTORY_GRADE;
 
                 }
             }
@@ -116,43 +122,44 @@ namespace Team3
             FactoryVO VO = new FactoryVO();
             if (this.Text == "공장정보 추가")
             {
-                VO.FACTORY_GRADE = cbofacilitiesGroup.SelectedValue.ToString();
-                VO.FACTORY_PARENT = cboHigh.SelectedValue.ToString();
+                VO.FACTORY_GRADE = cboFactoryGrade.SelectedValue.ToString();
+                VO.FACTORY_PARENT = cboParent.SelectedValue.ToString();
                 //VO.FACTORY_PARENT = cboHigh.Text;
-                VO.FACTORY_NAME = txtNameFacility.Text;
-                VO.FACTORY_TYPE = cboDivFacility.SelectedValue.ToString();
+                VO.FACTORY_NAME = txtNameFactory.Text;
+                VO.FACTORY_TYPE = cboTypeFactory.SelectedValue.ToString();
                 VO.COMPANY_ID = (int)cboCompany.SelectedValue;
-                VO.FACTORY_YN = cboIsUsed.SelectedValue.ToString();
-                VO.FACTORY_UDATE = DateTime.Now.ToString().Substring(0, 10);
-                VO.FACTORY_UADMIN = txtModifier.Text;
-                VO.FACTORY_CODE = txtCodeFacility.Text;
-                VO.FACTORY_COMMENT = txtInfoFacility.Text;
+                VO.FACTORY_YN = cboYN.SelectedValue.ToString();
+                VO.FACTORY_UDATE = DateTime.Now.ToString();
+                VO.FACTORY_UADMIN = txtUadmin.Text;
+                VO.FACTORY_CODE = txtCodeFactory.Text;
+                VO.FACTORY_COMMENT = txtComment.Text;
                 bResult = Fac_service.InsertFactory(VO);
             }
         }
 
-
-
         private void cbofacilitiesGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbofacilitiesGroup.SelectedIndex == 3) //창고
+               
+        
+            if (cboFactoryGrade.SelectedIndex == 3) //창고
             {
                 List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
                 var High = (from H_Item in F_list
                             where H_Item.FACILITY_CLASS != "창고"
                             select H_Item).ToList();
-                ComboUtil.ComboBinding<FactoryDB_VO>(cboHigh, High, "FACTORY_ID", "FACTORY_NAME");
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "FACTORY_ID", "FACTORY_NAME");
             }
-            else if (cbofacilitiesGroup.SelectedIndex == 2) //공장
+            else if (cboFactoryGrade.SelectedIndex == 2) //공장
             {
                 List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
                 var High = (from H_Item in F_list
                             where H_Item.FACILITY_CLASS == "회사"
                             select H_Item).ToList();
-                ComboUtil.ComboBinding<FactoryDB_VO>(cboHigh, High, "FACTORY_ID", "FACTORY_NAME");
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "FACTORY_ID", "FACTORY_NAME");
             }
             else
             {
+              
 
             }
         }
