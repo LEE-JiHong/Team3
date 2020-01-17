@@ -49,8 +49,8 @@ namespace Team3WebAPI
                         }
                         reader.Close();
 
-                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_od_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate, so_production_state) " +
-                    "values(@plan_id, @so_od_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate, 'REFER')";
+                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_od_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate) " +
+                    "values(@plan_id, @so_od_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate)";
 
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@so_od_id", item.so_od_id);
