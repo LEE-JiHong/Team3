@@ -38,10 +38,6 @@ namespace Team3
         {
             BomService service = new BomService();
             List<BomVO> list = service.GetBomAll();
-           
-
-
-
             dgvBom.DataSource = list;
         }
 

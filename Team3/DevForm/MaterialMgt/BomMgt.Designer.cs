@@ -92,7 +92,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(410, 97);
+            this.panel5.Location = new System.Drawing.Point(541, 97);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -242,14 +242,11 @@
             // 
             // dgvBom
             // 
-            this.dgvBom.AllowUserToAddRows = false;
-            this.dgvBom.AllowUserToDeleteRows = false;
             this.dgvBom.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBom.Location = new System.Drawing.Point(0, 0);
             this.dgvBom.Name = "dgvBom";
-            this.dgvBom.ReadOnly = true;
             this.dgvBom.RowTemplate.Height = 23;
             this.dgvBom.Size = new System.Drawing.Size(834, 313);
             this.dgvBom.TabIndex = 0;

@@ -40,7 +40,7 @@
             this.lblCompany = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.txtStandard = new System.Windows.Forms.TextBox();
-            this.txtDeliveryCompany = new System.Windows.Forms.ComboBox();
+            this.cboSupplyCompany = new System.Windows.Forms.ComboBox();
             this.cboPutWH = new System.Windows.Forms.ComboBox();
             this.cboPerson = new System.Windows.Forms.ComboBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
@@ -76,7 +76,7 @@
             this.panel1.Controls.Add(this.cboIsUsed);
             this.panel1.Controls.Add(this.cboPullWH);
             this.panel1.Controls.Add(this.cboCompany);
-            this.panel1.Controls.Add(this.txtDeliveryCompany);
+            this.panel1.Controls.Add(this.cboSupplyCompany);
             this.panel1.Controls.Add(this.lblDeliveryCompany);
             this.panel1.Controls.Add(this.cboProductType);
             this.panel1.Controls.Add(this.cboPerson);
@@ -213,7 +213,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 8;
-            this.label8.Text = "사용유무";
+            this.label8.Text = "사용여부";
             // 
             // lblWH
             // 
@@ -255,14 +255,14 @@
             this.txtStandard.TabIndex = 10;
             this.txtStandard.Visible = false;
             // 
-            // txtDeliveryCompany
+            // cboSupplyCompany
             // 
-            this.txtDeliveryCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDeliveryCompany.FormattingEnabled = true;
-            this.txtDeliveryCompany.Location = new System.Drawing.Point(781, 49);
-            this.txtDeliveryCompany.Name = "txtDeliveryCompany";
-            this.txtDeliveryCompany.Size = new System.Drawing.Size(209, 24);
-            this.txtDeliveryCompany.TabIndex = 11;
+            this.cboSupplyCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSupplyCompany.FormattingEnabled = true;
+            this.cboSupplyCompany.Location = new System.Drawing.Point(781, 49);
+            this.cboSupplyCompany.Name = "cboSupplyCompany";
+            this.cboSupplyCompany.Size = new System.Drawing.Size(209, 24);
+            this.cboSupplyCompany.TabIndex = 11;
             // 
             // cboPutWH
             // 
@@ -496,7 +496,7 @@
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.ComboBox cboPerson;
         private System.Windows.Forms.ComboBox cboPutWH;
-        private System.Windows.Forms.ComboBox txtDeliveryCompany;
+        private System.Windows.Forms.ComboBox cboSupplyCompany;
         private System.Windows.Forms.TextBox txtStandard;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label label8;
