@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Team3DAC;
 using Team3VO;
- 
+
 
 namespace Team3
 {
     public class ResourceService
     {
+        ResourceDac dac = new ResourceDac();
         /// <summary>
         /// Company 모든컬럼 select
         /// </summary>
         public List<CompanyVO> GetCompanyAll()
         {
-            ResourceDac dac = new ResourceDac();
+           
             return dac.GetCompanyAll();
         }
         /// <summary>
@@ -24,7 +25,6 @@ namespace Team3
         /// </summary>
         public List<MachineVO> GetMachineAll()
         {
-            ResourceDac dac = new ResourceDac();
             return dac.GetMachineAll();
         }
         /// <summary>
@@ -32,23 +32,32 @@ namespace Team3
         /// </summary>
         public List<MachineGradeVO> GetMachineGrpAll()
         {
-            ResourceDac dac = new ResourceDac();
             return dac.GetMachineGrpAll();
         }
         public List<BORDB_VO> GetBORAll()
         {
-            ResourceDac dac = new ResourceDac();
             return dac.GetBORAll();
         }
         public List<FactoryDB_VO> GetFactoryAll()
         {
-            ResourceDac dac = new ResourceDac();
             return dac.GetFactoryAll();
         }
-        //public bool InsertFactory(FactoryVO VO)
-        //{
-        //    ResourceDac dac= new ResourceDac();
-        //   return dac.InsertFactory(VO);
-        //}
+        public bool InsertFactory(FactoryVO VO)
+        {
+            return dac.InsertFactory(VO);
+        }
+        public FactoryVO GetFactoryByID(int id)
+        {
+            return dac.GetFactoryByID(id);
+        }
+        public bool UpdateFactory(FactoryVO VO)
+        {
+           return dac.UpdateFactory(VO);
+                    }
+        public bool DelelteFactory (int Id)
+        {
+         
+            return dac.DeleteFactory(Id);
+        }
     }
 }
