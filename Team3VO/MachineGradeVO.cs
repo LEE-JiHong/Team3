@@ -8,13 +8,13 @@ namespace Team3VO
 {
   public  class MachineGradeVO
     {
-        public int MGRADE_ID { get; set; }
-        public string MGRADE_CODE { get; set; }
-        public string MGRADE_NAME { get; set; }
-        public string MGRADE_YN { get; set; }
-        public string MGRADE_UADMIN { get; set; }
-        public string MGRADE_UDATE { get; set; }
-        public string MGRADE_COMMENT { get; set; }
+        public int mgrade_id { get; set; }
+        public string mgrade_code { get; set; }
+        public string mgrade_name { get; set; }
+        public string mgrade_yn { get; set; }
+        public string mgrade_uadmin { get; set; }
+        public string mgrade_udate { get; set; }
+        public string mgrade_comment { get; set; }
         public MachineGradeVO()
         {
 

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-  public  class UserVO
+    public class UserVO
     {
-        public string USER_ID { get; set; }
-        public string USER_PWD { get; set; }
-        public string USER_NAME { get; set; }
-        public string DEPARTMENT_ID { get; set; }
+        public string user_id { get; set; }
+        public string user_pwd { get; set; }
+        public string user_name { get; set; }
+        public string department_id { get; set; }
 
     }
 }
