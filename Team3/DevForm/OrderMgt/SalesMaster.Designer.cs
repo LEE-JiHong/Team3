@@ -66,7 +66,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(12, 208);
+            this.panel2.Location = new System.Drawing.Point(12, 203);
             this.panel2.Size = new System.Drawing.Size(975, 281);
             // 
             // panel1
@@ -97,7 +97,7 @@
             // 
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(10, 185);
+            this.label1.Location = new System.Drawing.Point(10, 177);
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.Text = "영업마스터";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,7 +105,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(685, 173);
+            this.panel3.Location = new System.Drawing.Point(685, 166);
             this.panel3.Size = new System.Drawing.Size(303, 29);
             // 
             // TopMenu
@@ -281,7 +281,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(127, 3);
+            this.btnRegister.Location = new System.Drawing.Point(123, 3);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(52, 23);
             this.btnRegister.TabIndex = 39;
@@ -297,7 +297,7 @@
             this.btnDemandPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDemandPlan.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnDemandPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDemandPlan.Location = new System.Drawing.Point(21, 3);
+            this.btnDemandPlan.Location = new System.Drawing.Point(17, 3);
             this.btnDemandPlan.Name = "btnDemandPlan";
             this.btnDemandPlan.Size = new System.Drawing.Size(100, 23);
             this.btnDemandPlan.TabIndex = 40;
@@ -341,11 +341,11 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.button2.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(185, 3);
+            this.button2.Location = new System.Drawing.Point(181, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 23);
+            this.button2.Size = new System.Drawing.Size(56, 23);
             this.button2.TabIndex = 44;
             this.button2.Text = "수정";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

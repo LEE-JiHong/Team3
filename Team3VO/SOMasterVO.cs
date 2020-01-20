@@ -13,7 +13,6 @@ namespace Team3VO
     {
          public int so_id {get;set;}
          public string plan_id {get;set;}
-        public string so_od_id { get; set; }
         public string so_wo_id {get;set;}
          public string company_code {get;set;}
          public string company_type {get;set;}
