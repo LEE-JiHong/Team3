@@ -60,5 +60,11 @@ namespace Team3
             SODialog frm = new SODialog();
             frm.ShowDialog();
         }
+
+        private void btnDemandPlan_Click(object sender, EventArgs e)
+        {
+            DemandPop frm = new DemandPop();
+            frm.ShowDialog();
+        }
     }
 }

@@ -20,10 +20,12 @@ namespace Team3
 
         private void SalesMasterUpload_Load(object sender, EventArgs e)
         {
+            versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
+
             //데이터 가져오기(영업마스터 데이터)
 
             //데이터가 없을 경우
-            
+
 
             SetDataGrid();
         }

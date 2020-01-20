@@ -19,7 +19,9 @@ namespace Team3
             InitializeComponent();
 
             //this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Gradient);
+
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
+
             //this.button3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
             //this.button4.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
             //this.button5.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
@@ -39,6 +41,8 @@ namespace Team3
 
         private void Panel_Gradient(object sender, PaintEventArgs e)
         {
+            if (this.panel2.Width < 10) return;
+
             //Color startColor = Color.FromArgb(202, 210, 220);
             //Color middleColor = Color.FromArgb(149, 165, 186);
             //Color endColor = Color.FromArgb(96, 121, 152);
