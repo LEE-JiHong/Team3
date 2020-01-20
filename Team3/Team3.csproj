@@ -634,6 +634,7 @@
     <None Include="Icon\Button\Trash_16x16.png" />
     <None Include="Icon\Button\Save_16x16.png" />
     <None Include="Icon\Button\Select_16x16.png" />
+    <None Include="Icon\Button\State_Validation_Valid.png" />
     <Content Include="Icon\Button\write.png" />
     <None Include="Icon\Home\chrome.png" />
     <Content Include="Icon\Home\close.png" />

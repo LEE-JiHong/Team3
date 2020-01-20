@@ -54,7 +54,8 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1137, 496);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Size = new System.Drawing.Size(1234, 630);
             // 
             // panel1
             // 
@@ -71,21 +72,24 @@
             this.panel1.Controls.Add(this.comboBox4);
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Size = new System.Drawing.Size(1137, 145);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Size = new System.Drawing.Size(997, 116);
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.Size = new System.Drawing.Size(144, 19);
             this.label1.Text = "공정재고현황";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(482, 172);
+            this.panel3.Location = new System.Drawing.Point(424, 138);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(1165, 75);
+            this.TopMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TopMenu.Size = new System.Drawing.Size(1021, 60);
             // 
             // layoutButton
             // 
@@ -97,7 +101,8 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1165, 724);
+            this.basepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.basepanel.Size = new System.Drawing.Size(1021, 584);
             // 
             // imageList1
             // 
@@ -108,10 +113,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(891, 101);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(780, 81);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 29);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
             this.button1.Text = "조회";
             this.button1.UseVisualStyleBackColor = true;
@@ -119,107 +123,101 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(582, 82);
+            this.label7.Location = new System.Drawing.Point(509, 66);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.Size = new System.Drawing.Size(52, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "관리등급";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(582, 36);
+            this.label6.Location = new System.Drawing.Point(509, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 19;
             this.label6.Text = "품목유형";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(338, 82);
+            this.label5.Location = new System.Drawing.Point(296, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 20);
+            this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 20;
             this.label5.Text = "재고량";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 82);
+            this.label3.Location = new System.Drawing.Point(21, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 20);
+            this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 21;
             this.label3.Text = "창고";
             // 
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(112, 78);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox6.Location = new System.Drawing.Point(98, 62);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(162, 28);
+            this.comboBox6.Size = new System.Drawing.Size(142, 24);
             this.comboBox6.TabIndex = 12;
             // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(675, 78);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox5.Location = new System.Drawing.Point(591, 62);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(162, 28);
+            this.comboBox5.Size = new System.Drawing.Size(142, 24);
             this.comboBox5.TabIndex = 13;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(391, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(342, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 26);
+            this.textBox1.Size = new System.Drawing.Size(142, 22);
             this.textBox1.TabIndex = 17;
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(675, 31);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox4.Location = new System.Drawing.Point(591, 25);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(162, 28);
+            this.comboBox4.Size = new System.Drawing.Size(142, 24);
             this.comboBox4.TabIndex = 14;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(391, 78);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox3.Location = new System.Drawing.Point(342, 62);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(162, 28);
+            this.comboBox3.Size = new System.Drawing.Size(142, 24);
             this.comboBox3.TabIndex = 15;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(112, 31);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(98, 25);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(162, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(142, 22);
             this.dateTimePicker2.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 36);
+            this.label4.Location = new System.Drawing.Point(21, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 23;
             this.label4.Text = "입출고일";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(338, 39);
+            this.label8.Location = new System.Drawing.Point(296, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 20);
+            this.label8.Size = new System.Drawing.Size(30, 16);
             this.label8.TabIndex = 24;
             this.label8.Text = "품목";
             // 
@@ -230,37 +228,34 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(670, 36);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(581, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(508, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 29);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 1;
             this.button3.Text = "엑셀";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(489, 4);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Location = new System.Drawing.Point(427, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 29);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 2;
             this.button4.Text = "이력조회";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // Process_Inventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.ClientSize = new System.Drawing.Size(1165, 825);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.MinimumSize = new System.Drawing.Size(1183, 872);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.ClientSize = new System.Drawing.Size(1021, 666);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(1037, 705);
             this.Name = "Process_Inventory";
             this.Tag = "공정재고현황";
             this.panel1.ResumeLayout(false);
