@@ -14,14 +14,14 @@ namespace Team3VO
 
     public class BorVO
     {
-        public int BOR_ID { get; set; }
-        public int BOM_ID { get; set; }
-        public string BOR_ROUTE { get; set; }
-        public int M_ID { get; set; }
-        public int BOR_TACKTIME { get; set; }
-        public int BOR_READYTIME { get; set; }
-        public string BOR_YN { get; set; }
-        public string BOR_COMMENT { get; set; }
+        public int bor_id { get; set; }
+        public int bom_id { get; set; }
+        public string bor_route { get; set; }
+        public int m_id { get; set; }
+        public int bor_tacktime { get; set; }
+        public int bor_readytime { get; set; }
+        public string bor_yn { get; set; }
+        public string bor_comment { get; set; }
 
         public BorVO()
         {
@@ -30,17 +30,17 @@ namespace Team3VO
     }
     public class BORDB_VO
     {
-        public int BOR_ID { get; set; }
-        public string PRODUCT_NAME { get; set; }
-        public string PRODUCT_CODENAME { get; set; }
-        public string COMMON_TYPE { get; set; }
-        public string COMMON_NAME { get; set; }
-        public string M_CODE { get; set; }
-        public string M_NAME { get; set; }
-        public string BOR_TACKTIME { get; set; }
-        public string BOR_READYTIME { get; set; }
-        public string BOR_YN { get; set; }
-        public string BOR_COMMENT { get; set; }
+        public int bor_id { get; set; }
+        public string product_name { get; set; }
+        public string product_codename { get; set; }
+        public string common_type { get; set; }
+        public string common_name { get; set; }
+        public string m_code { get; set; }
+        public string m_name { get; set; }
+        public string bor_tacktime { get; set; }
+        public string bor_readytime { get; set; }
+        public string bor_yn { get; set; }
+        public string bor_comment { get; set; }
 
 
 

@@ -54,14 +54,14 @@ namespace Team3
             {
                 //사용유무
                 var mCode = (from item in list
-                             where item.COMMON_TYPE == "user_flag2"
+                             where item.common_type == "user_flag2"
                              select item).ToList();
 
                 ComboUtil.ComboBinding<CommonVO>(cboIsUsed, mCode, "COMMON_VALUE", "COMMON_NAME");
             }
             {
                 var mCode = (from item in list
-                             where item.COMMON_TYPE == "user_flag2"
+                             where item.common_type == "user_flag2"
                              select item).ToList();
 
                  mCode.Reverse();

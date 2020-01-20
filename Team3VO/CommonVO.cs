@@ -9,10 +9,10 @@ namespace Team3VO
     //공통코드 VO
    public class CommonVO
     {
-        public int COMMON_ID { get; set; }
-        public string COMMON_TYPE { get; set; }
-        public string COMMON_VALUE { get; set; }
-        public string COMMON_NAME { get; set; }
+        public int common_id { get; set; }
+        public string common_type { get; set; }
+        public string common_value { get; set; }
+        public string common_name { get; set; }
 
         public CommonVO()
         {

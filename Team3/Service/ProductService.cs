@@ -20,6 +20,11 @@ namespace Team3
             return dac.GetProductsAll();
         }
 
+        public List<UserVO> GetUserAll()
+        {
+            ProductDac dac = new ProductDac();
+            return dac.GetUserAll();
+        }
         /// <summary>
         /// 품목 등록
         /// </summary>

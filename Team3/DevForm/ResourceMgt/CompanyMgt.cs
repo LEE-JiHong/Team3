@@ -35,7 +35,7 @@ namespace Team3
             {
                 //사용유무
                 var mCode = (from item in common_list
-                             where item.COMMON_TYPE == "vendor_type"
+                             where item.common_type == "vendor_type"
                              select item).ToList();
 
                 ComboUtil.ComboBinding<CommonVO>(cboTypeCompany, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");

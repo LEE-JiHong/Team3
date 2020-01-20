@@ -65,11 +65,11 @@ namespace Team3
             common_service = new CommonCodeService();
             codelist = common_service.GetCommonCodeAll();
             List<CommonVO> _cboUseFlag = (from item in codelist
-                                          where item.COMMON_TYPE == "user_flag"
+                                          where item.common_type == "user_flag"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
-            _cboUseFlag.RemoveAt(0);
-            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+            
+            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME");
 
         }
     }

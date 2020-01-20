@@ -12,6 +12,7 @@ namespace Team3
 {
     public partial class ProductMgt : VerticalGridBaseForm
     {
+        ProductService product_service;
         CommonCodeService common_service = new CommonCodeService();
         List<CommonVO> codelist;
 
@@ -45,8 +46,8 @@ namespace Team3
         private void LoadDGV()
         {
             //품목 가져오기
-            ProductService service = new ProductService();
-            List<ProductVO> list = service.GetAllProducts();
+            ProductService product_service = new ProductService();
+            List<ProductVO> list = product_service.GetAllProducts();
             ProductVO vo = new ProductVO();
 
             //GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "ID", , true, 100);
@@ -55,7 +56,7 @@ namespace Team3
             dgvProductList.DataSource = list;
 
 
-            
+
 
 
 
@@ -65,28 +66,39 @@ namespace Team3
         {
             common_service = new CommonCodeService();
             codelist = common_service.GetCommonCodeAll();
+            product_service = new ProductService();
+            List<UserVO> user_list = product_service.GetUserAll();
             #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
-                                          where item.COMMON_TYPE == "user_flag"
+                                          where item.common_type == "user_flag"
                                           select item).ToList();
-            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택"); 
+            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
             #endregion
 
             #region 품목유형cbo
             _cboUseFlag = (from item in codelist
-                           where item.COMMON_TYPE == "item_type"
+                           where item.common_type == "item_type"
                            select item).ToList();
-            ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택"); 
+            ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
             #endregion
 
             #region 납품업체cbo
             List<CompanyVO> company_list = new List<CompanyVO>();
-            OrderService service = new OrderService();
-            company_list = service.GetCompanyAll("customer");
-            ComboUtil.ComboBinding(cboSupplyCompany, company_list, "company_code", "company_name", "선택");
+            OrderService order_service = new OrderService();
+            company_list = order_service.GetCompanyAll("customer");
+            ComboUtil.ComboBinding(cboCompany, company_list, "company_code", "company_name", "선택");
             #endregion
 
-            ComboUtil.ComboBinding(cboCompany, company_list, "company_code", "company_name", "선택");
+            #region 발주업체cbo
+            company_list = order_service.GetCompanyAll("cooperative");
+            ComboUtil.ComboBinding(cboSupplyCompany, company_list, "company_code", "company_name", "선택");
+
+            List<UserVO> user_vo = new List<UserVO>();
+            #endregion
+            ComboUtil.ComboBinding(cboAdmin, user_list, "USER_ID", "USER_NAME", "선택");
+
+            
+
 
 
 
@@ -140,15 +152,15 @@ namespace Team3
             vo.product_demand_com = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
             vo.product_uadmin = dgvProductList[21, dgvProductList.CurrentRow.Index].Value.ToString();
             vo.product_udate = dgvProductList[22, dgvProductList.CurrentRow.Index].Value.ToString();
-            vo.product_comment = dgvProductList[23, dgvProductList.CurrentRow.Index].Value.ToString(); 
+            vo.product_comment = dgvProductList[23, dgvProductList.CurrentRow.Index].Value.ToString();
             #endregion
 
-            ProductPop frm = new ProductPop(ProductPop.EditMode.Update,vo);
-            if(frm.ShowDialog() == DialogResult.OK)
+            ProductPop frm = new ProductPop(ProductPop.EditMode.Update, vo);
+            if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
-            
+
         }
     }
 }
