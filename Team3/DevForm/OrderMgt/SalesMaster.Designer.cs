@@ -45,7 +45,7 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDemandPlan = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -290,20 +290,21 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // button3
+            // btnDemandPlan
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Team3.Properties.Resources.Edit_16x16;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(21, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "수요계획생성";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDemandPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDemandPlan.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDemandPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDemandPlan.Image = global::Team3.Properties.Resources.Edit_16x16;
+            this.btnDemandPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDemandPlan.Location = new System.Drawing.Point(21, 3);
+            this.btnDemandPlan.Name = "btnDemandPlan";
+            this.btnDemandPlan.Size = new System.Drawing.Size(100, 23);
+            this.btnDemandPlan.TabIndex = 40;
+            this.btnDemandPlan.Text = "수요계획생성";
+            this.btnDemandPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDemandPlan.UseVisualStyleBackColor = false;
+            this.btnDemandPlan.Click += new System.EventHandler(this.btnDemandPlan_Click);
             // 
             // button6
             // 
@@ -325,7 +326,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button6);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.btnRegister);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnDemandPlan);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -441,7 +442,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDemandPlan;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBox1;

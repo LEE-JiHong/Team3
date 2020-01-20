@@ -471,6 +471,9 @@
     <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\PopUp\DemandPop.resx">
+      <DependentUpon>DemandPop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\PopUp\SalesMasterPop.resx">
       <DependentUpon>SalesMasterPop.cs</DependentUpon>
     </EmbeddedResource>
