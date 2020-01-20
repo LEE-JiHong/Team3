@@ -197,13 +197,15 @@ namespace Team3DAC
 
                     cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
                     cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.FACTORY_UADMIN);
-                    cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.FACTORY_PARENT);
-                    if (VO.FACTORY_PARENT == null)
+                    if (VO.FACTORY_PARENT == null ||VO.FACTORY_PARENT=="")
                     {
                         SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
                         param1.Value = DBNull.Value;
                         cmd.Parameters.Add(param1);
                     }
+                    else
+                    cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.FACTORY_PARENT);
+                    
                     cmd.Parameters.AddWithValue("@FACTORY_NAME", VO.FACTORY_NAME);
                     cmd.Parameters.AddWithValue("@FACTORY_CODE", VO.FACTORY_CODE);
                     cmd.Parameters.AddWithValue("@FACTORY_TYPE", VO.FACTORY_TYPE);
@@ -216,7 +218,9 @@ namespace Team3DAC
                         param2.Value = DBNull.Value;
                         cmd.Parameters.Add(param2);
                     }
+                    else
                     cmd.Parameters.AddWithValue("@COMPANY_ID", VO.COMPANY_ID);
+                    
                     cmd.Connection.Open();
                     var successRow = cmd.ExecuteNonQuery();
                     cmd.Connection.Close();
@@ -225,8 +229,9 @@ namespace Team3DAC
             }
             catch (Exception err)
             {
-                return false;
+              
                 string st = err.Message;
+                return false;
             }
         }
         public bool DeleteFactory(int id)
