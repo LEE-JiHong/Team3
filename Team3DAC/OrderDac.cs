@@ -49,11 +49,10 @@ namespace Team3DAC
                         }
                         reader.Close();
 
-                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_od_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate) " +
-                    "values(@plan_id, @so_od_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate)";
+                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate) " +
+                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate)";
 
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
-                        cmd.Parameters.AddWithValue("@so_od_id", item.so_od_id);
                         cmd.Parameters.AddWithValue("@so_wo_id", item.so_wo_id);
                         cmd.Parameters.AddWithValue("@company_type", item.company_type);
                         cmd.Parameters.AddWithValue("@product_name", item.product_name);
@@ -85,7 +84,7 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "SELECT so_id, plan_id, so_od_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
+                string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
