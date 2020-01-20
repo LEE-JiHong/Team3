@@ -22,7 +22,6 @@ namespace Team3
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
-            ResourceService service = new ResourceService();
             list = service.GetFactoryAll();
             dataGridView1.DataSource = list;
 
@@ -54,6 +53,40 @@ namespace Team3
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[5].Value.ToString() + "를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK)
+                {
+                    bool bResult = service.DelelteFactory(Convert.ToInt32(lblID.Text));
+                    if (bResult)
+                    {
+                        MessageBox.Show("삭제완료");
+                    }
+                    else if (!bResult)
+                    {
+                        MessageBox.Show("삭제 실패");
+                        return;
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                string sr = err.Message;
+            }
+        }
+
+        private void FactoryMgt_Activated(object sender, EventArgs e)
+        {
+            list = service.GetFactoryAll();
+            dataGridView1.DataSource = list;
+
         }
     }
 }

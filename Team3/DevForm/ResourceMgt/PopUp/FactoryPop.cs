@@ -130,9 +130,10 @@ namespace Team3
             if (mode== EditMode.Input)
             {
                 VO.FACTORY_GRADE = cboFactoryGrade.SelectedValue.ToString();
-                VO.FACTORY_PARENT = cboParent.SelectedValue.ToString();
-                if (cboParent.Text == "미선택")
+                
+                if (cboParent.Text == "미선택"|| cboParent.Text=="")
                     cboParent.SelectedValue= "";
+                VO.FACTORY_PARENT = cboParent.SelectedValue.ToString();
                 //VO.FACTORY_PARENT = cboHigh.Text;
                 VO.FACTORY_NAME = txtNameFactory.Text;
                 VO.FACTORY_TYPE = cboTypeFactory.SelectedValue.ToString();
