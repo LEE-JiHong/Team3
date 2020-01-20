@@ -57,7 +57,7 @@ namespace Team3
                              where item.common_type == "user_flag2"
                              select item).ToList();
 
-                ComboUtil.ComboBinding<CommonVO>(cboIsUsed, mCode, "COMMON_VALUE", "COMMON_NAME");
+                ComboUtil.ComboBinding<CommonVO>(cboIsUsed, mCode, "common_value", "common_name");
             }
             {
                 var mCode = (from item in list
@@ -65,7 +65,7 @@ namespace Team3
                              select item).ToList();
 
                  mCode.Reverse();
-                ComboUtil.ComboBinding<CommonVO>(cboIsOS, mCode, "COMMON_VALUE", "COMMON_NAME");
+                ComboUtil.ComboBinding<CommonVO>(cboIsOS, mCode, "common_value", "common_name");
             }
         }
     }

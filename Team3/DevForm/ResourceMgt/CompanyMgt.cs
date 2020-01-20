@@ -38,7 +38,7 @@ namespace Team3
                              where item.common_type == "vendor_type"
                              select item).ToList();
 
-                ComboUtil.ComboBinding<CommonVO>(cboTypeCompany, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
+                ComboUtil.ComboBinding<CommonVO>(cboTypeCompany, mCode, "common_value", "common_name", "미선택");
             }
         }
 

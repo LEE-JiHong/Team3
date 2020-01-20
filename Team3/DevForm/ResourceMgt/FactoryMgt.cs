@@ -31,7 +31,7 @@ namespace Team3
             var mCode = (from item in common_list
                          where item.common_type == "facility_class_id"
                          select item).ToList();
-            ComboUtil.ComboBinding<CommonVO>(cboSearchFacilityGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
+            ComboUtil.ComboBinding<CommonVO>(cboSearchFacilityGroup, mCode, "common_value", "common_name", "미선택");
 
         }
 

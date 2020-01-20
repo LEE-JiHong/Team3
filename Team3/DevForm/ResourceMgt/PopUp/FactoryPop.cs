@@ -83,16 +83,16 @@ namespace Team3
                 var C_Code = (from R_Item in Company_list
                               select R_Item).ToList();
 
-                ComboUtil.ComboBinding<CompanyVO>(cboCompany, C_Code, "COMPANY_ID", "COMPANY_NAME", "미선택");
+                ComboUtil.ComboBinding<CompanyVO>(cboCompany, C_Code, "company_id", "company_name", "미선택");
             }
 
             service = new CommonCodeService();
 
             Common_list = service.GetCommonCodeAll();
 
-            ComboUtil.ComboBinding<CommonVO>(cboFactoryGrade, Combo("facility_class_id"), "COMMON_VALUE", "COMMON_NAME", "미선택");
-            ComboUtil.ComboBinding<CommonVO>(cboTypeFactory, Combo("facility_type"), "COMMON_VALUE", "COMMON_NAME", "미선택");
-            ComboUtil.ComboBinding<CommonVO>(cboYN, Combo("user_flag2"), "COMMON_VALUE", "COMMON_NAME");
+            ComboUtil.ComboBinding<CommonVO>(cboFactoryGrade, Combo("facility_class_id"), "common_value", "common_name", "미선택");
+            ComboUtil.ComboBinding<CommonVO>(cboTypeFactory, Combo("facility_type"), "common_value", "common_name", "미선택");
+            ComboUtil.ComboBinding<CommonVO>(cboYN, Combo("user_flag2"), "common_value", "common_name");
 
             {
 
@@ -186,7 +186,7 @@ namespace Team3
                 var High = (from H_Item in F_list
                             where H_Item.FACILITY_CLASS == "회사"
                             select H_Item).ToList();
-                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "FACTORY_ID", "FACTORY_NAME");
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
 
                 if (mode == EditMode.Update)
                 {
