@@ -13,12 +13,15 @@ using Team3VO;
 
 namespace Team3DAC
 {
+    /// <summary>
+    /// CommonCode
+    /// </summary>
+    /// <returns></returns>
     public class ResourceDac : ConnectionAccess
     {
         /// <summary>
         /// CommonCode
         /// </summary>
-        /// <returns></returns>
         public List<CommonVO> GetCommonCodeAll()
         {
             string sql = "GetCommonCodeAll";
@@ -123,5 +126,126 @@ namespace Team3DAC
                 return list;
             }
         }
+        public bool InsertFactory(FactoryVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "InsertFactory";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.FACTORY_UADMIN);
+                
+                if (VO.FACTORY_PARENT == null)
+                {
+                    SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
+                    param1.Value = DBNull.Value;
+                    cmd.Parameters.Add(param1);
+                }
+                else
+                { cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.FACTORY_PARENT); }
+                cmd.Parameters.AddWithValue("@FACTORY_NAME", VO.FACTORY_NAME);
+                cmd.Parameters.AddWithValue("@FACTORY_CODE", VO.FACTORY_CODE);
+                cmd.Parameters.AddWithValue("@FACTORY_TYPE", VO.FACTORY_TYPE);
+                cmd.Parameters.AddWithValue("@FACTORY_YN", VO.FACTORY_YN);
+                cmd.Parameters.AddWithValue("@FACTORY_UDATE", VO.FACTORY_UDATE);
+                cmd.Parameters.AddWithValue("@FACTORY_COMMENT", VO.FACTORY_COMMENT);
+                if (VO.COMPANY_ID == 0)
+                {
+                    SqlParameter param2 = new SqlParameter("@COMPANY_ID", SqlDbType.Int);
+                    param2.Value = DBNull.Value;
+                    cmd.Parameters.Add(param2);
+                }
+                else
+                cmd.Parameters.AddWithValue("COMPANY_ID", VO.COMPANY_ID);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+        public FactoryVO GetFactoryByID(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetFactoryByID";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(reader);
+                cmd.Connection.Close();
+                return list[0];
+            }
+        }
+        public bool UpdateFactory(FactoryVO VO)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.CommandText = "UpdateFactory";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", VO.FACTORY_ID);
+
+                    cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
+                    cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.FACTORY_UADMIN);
+                    cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.FACTORY_PARENT);
+                    if (VO.FACTORY_PARENT == null)
+                    {
+                        SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
+                        param1.Value = DBNull.Value;
+                        cmd.Parameters.Add(param1);
+                    }
+                    cmd.Parameters.AddWithValue("@FACTORY_NAME", VO.FACTORY_NAME);
+                    cmd.Parameters.AddWithValue("@FACTORY_CODE", VO.FACTORY_CODE);
+                    cmd.Parameters.AddWithValue("@FACTORY_TYPE", VO.FACTORY_TYPE);
+                    cmd.Parameters.AddWithValue("@FACTORY_YN", VO.FACTORY_YN);
+                    cmd.Parameters.AddWithValue("@FACTORY_UDATE", VO.FACTORY_UDATE);
+                    cmd.Parameters.AddWithValue("@FACTORY_COMMENT", VO.FACTORY_COMMENT);
+                    if (VO.COMPANY_ID == 0)
+                    {
+                        SqlParameter param2 = new SqlParameter("@COMPANY_ID", SqlDbType.Int);
+                        param2.Value = DBNull.Value;
+                        cmd.Parameters.Add(param2);
+                    }
+                    cmd.Parameters.AddWithValue("@COMPANY_ID", VO.COMPANY_ID);
+                    cmd.Connection.Open();
+                    var successRow = cmd.ExecuteNonQuery();
+                    cmd.Connection.Close();
+                    return successRow > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                return false;
+                string st = err.Message;
+            }
+        }
+        public bool DeleteFactory(int id)
+        {
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "DeleteFactory";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ID", id);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
     }
 }
+
