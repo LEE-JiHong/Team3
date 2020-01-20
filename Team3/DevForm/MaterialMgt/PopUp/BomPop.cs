@@ -67,9 +67,9 @@ namespace Team3
             List<CommonVO> _cboUseFlag = (from item in codelist
                                           where item.common_type == "user_flag"
                                           select item).ToList();
-            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "common_value", "common_name", "선택");
             
-            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME");
+            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "common_value", "common_name");
 
         }
     }

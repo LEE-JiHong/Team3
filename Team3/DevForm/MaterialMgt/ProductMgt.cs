@@ -72,14 +72,14 @@ namespace Team3
             List<CommonVO> _cboUseFlag = (from item in codelist
                                           where item.common_type == "user_flag"
                                           select item).ToList();
-            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "common_value", "common_name", "선택");
             #endregion
 
             #region 품목유형cbo
             _cboUseFlag = (from item in codelist
                            where item.common_type == "item_type"
                            select item).ToList();
-            ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+            ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "common_value", "common_name", "선택");
             #endregion
 
             #region 납품업체cbo
@@ -95,7 +95,7 @@ namespace Team3
 
             List<UserVO> user_vo = new List<UserVO>();
             #endregion
-            ComboUtil.ComboBinding(cboAdmin, user_list, "USER_ID", "USER_NAME", "선택");
+            ComboUtil.ComboBinding(cboAdmin, user_list, "user_id", "user_name", "선택");
 
             
 
