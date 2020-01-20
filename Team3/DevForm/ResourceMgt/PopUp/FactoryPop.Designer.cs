@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboParent = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.txtpr = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -302,10 +303,19 @@
             this.lblID.TabIndex = 4;
             this.lblID.Text = "lblID";
             // 
+            // txtpr
+            // 
+            this.txtpr.AutoSize = true;
+            this.txtpr.Location = new System.Drawing.Point(467, 69);
+            this.txtpr.Name = "txtpr";
+            this.txtpr.Size = new System.Drawing.Size(0, 12);
+            this.txtpr.TabIndex = 5;
+            // 
             // FactoryPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(604, 472);
+            this.Controls.Add(this.txtpr);
             this.Controls.Add(this.lblID);
             this.Name = "FactoryPop";
             this.Text = "공장정보";
@@ -314,6 +324,7 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.lblID, 0);
+            this.Controls.SetChildIndex(this.txtpr, 0);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -346,5 +357,6 @@
         private System.Windows.Forms.ComboBox cboParent;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label txtpr;
     }
 }

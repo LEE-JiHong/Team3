@@ -253,9 +253,8 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(993, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(35, 16);
+            this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 13;
-            this.lblID.Text = "lblID";
             // 
             // FactoryMgt
             // 

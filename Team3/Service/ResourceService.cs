@@ -55,5 +55,11 @@ namespace Team3
             ResourceDac dac = new ResourceDac();
             return dac.GetFactoryByID(id);
         }
+        public bool UpdateFactory(FactoryVO VO)
+        {
+            ResourceDac dac = new ResourceDac();
+           return dac.UpdateFactory(VO);
+            
+        }
     }
 }

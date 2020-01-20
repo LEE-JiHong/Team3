@@ -44,15 +44,16 @@ namespace Team3
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-    
-            FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update,lblID.Text);
-            frm.ShowDialog();               
-            
+            if (lblID.Text != "")
+            {
+                FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update, lblID.Text);
+                frm.ShowDialog();
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-         lblID.Text=   dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

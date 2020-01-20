@@ -176,18 +176,31 @@ namespace Team3DAC
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "UpdateFactory";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", VO.FACTORY_ID);
+
                 cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.FACTORY_GRADE);
                 cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.FACTORY_UADMIN);
-                cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.FACTORY_PARENT);
+                 cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.FACTORY_PARENT);
+                if (VO.FACTORY_PARENT == null)
+                {
+                    SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
+                    param1.Value = DBNull.Value;
+                    cmd.Parameters.Add(param1);
+                }
                 cmd.Parameters.AddWithValue("@FACTORY_NAME", VO.FACTORY_NAME);
                 cmd.Parameters.AddWithValue("@FACTORY_CODE", VO.FACTORY_CODE);
                 cmd.Parameters.AddWithValue("@FACTORY_TYPE", VO.FACTORY_TYPE);
                 cmd.Parameters.AddWithValue("@FACTORY_YN", VO.FACTORY_YN);
                 cmd.Parameters.AddWithValue("@FACTORY_UDATE", VO.FACTORY_UDATE);
                 cmd.Parameters.AddWithValue("@FACTORY_COMMENT", VO.FACTORY_COMMENT);
-                cmd.Parameters.AddWithValue("COMPANY_ID", VO.COMPANY_ID);
+                  cmd.Parameters.AddWithValue("@COMPANY_ID", VO.COMPANY_ID);
+                if (VO.COMPANY_ID == 0)
+                {
+                    SqlParameter param2 = new SqlParameter("@COMPANY_ID", SqlDbType.Int);
+                    param2.Value = DBNull.Value;
+                    cmd.Parameters.Add(param2);
 
-
+                }
                 cmd.Connection.Open();
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
