@@ -29,7 +29,7 @@ namespace Team3
             common_list = Common_service.GetCommonCodeAll();
 
             var mCode = (from item in common_list
-                         where item.COMMON_TYPE == "facility_class_id"
+                         where item.common_type == "facility_class_id"
                          select item).ToList();
             ComboUtil.ComboBinding<CommonVO>(cboSearchFacilityGroup, mCode, "COMMON_VALUE", "COMMON_NAME", "미선택");
 
@@ -61,7 +61,7 @@ namespace Team3
 
             try
             {
-                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[5].Value.ToString() + "를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[5].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
                     bool bResult = service.DelelteFactory(Convert.ToInt32(lblID.Text));
