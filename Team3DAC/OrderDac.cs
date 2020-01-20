@@ -14,7 +14,7 @@ using Team3VO;
 
 namespace Team3DAC
 {
-    public class OrderDac :ConnectionAccess
+    public class OrderDac : ConnectionAccess
     {
         /// <summary>
         /// 업로드한 영업마스터를 기준으로 영업마스터 생성(insert)
@@ -98,11 +98,11 @@ namespace Team3DAC
             }
         }
 
-        public List<CompanyVO> GetCompanyAll()
+        public List<CompanyVO> GetCompanyAll(string company_type)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "select * from TBL_COMPANY where company_type != 'COOPERATIVE'";
+                string sql = $"select * from TBL_COMPANY where company_type != '{company_type}'";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;

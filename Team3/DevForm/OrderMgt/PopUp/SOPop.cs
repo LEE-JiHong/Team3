@@ -22,7 +22,7 @@ namespace Team3
         {
             List<CompanyVO> list = new List<CompanyVO>();
             OrderService service = new OrderService();
-            list = service.GetCompanyAll();
+            list = service.GetCompanyAll("cooperative");
 
             ComboUtil.ComboBinding(cbCompany, list, "company_code", "company_name", "선택");
 

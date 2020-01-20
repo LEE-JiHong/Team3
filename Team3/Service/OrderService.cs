@@ -22,11 +22,13 @@ namespace Team3
             return dac.GetSOMasterAll();
         }
 
-        public List<CompanyVO> GetCompanyAll()
+        public List<CompanyVO> GetCompanyAll(string company_type)//납품업체만
         {
             OrderDac dac = new OrderDac();
-            return dac.GetCompanyAll();
+            return dac.GetCompanyAll(company_type);
         }
+       
+
     }
 
 }
