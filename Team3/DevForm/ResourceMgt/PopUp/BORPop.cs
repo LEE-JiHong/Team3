@@ -55,7 +55,7 @@ namespace Team3
             {
                 //사용유무
                 var mCode = (from item in common_list
-                             where item.COMMON_TYPE == "route"
+                             where item.common_type == "route"
                              select item).ToList();
 
                 ComboUtil.ComboBinding<CommonVO>(cboProcess, mCode, "COMMON_VALUE", "COMMON_NAME","미선택");
@@ -64,7 +64,7 @@ namespace Team3
                 {
                     //사용유무
                     var mCode = (from item in common_list
-                                 where item.COMMON_TYPE == "user_flag2"
+                                 where item.common_type == "user_flag2"
                                  select item).ToList();
 
                     ComboUtil.ComboBinding<CommonVO>(cboIsUsed, mCode, "COMMON_VALUE", "COMMON_NAME");
