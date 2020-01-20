@@ -70,14 +70,14 @@ namespace Team3
             List<UserVO> user_list = product_service.GetUserAll();
             #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
-                                          where item.COMMON_TYPE == "user_flag"
+                                          where item.common_type == "user_flag"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
             #endregion
 
             #region 품목유형cbo
             _cboUseFlag = (from item in codelist
-                           where item.COMMON_TYPE == "item_type"
+                           where item.common_type == "item_type"
                            select item).ToList();
             ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
             #endregion
