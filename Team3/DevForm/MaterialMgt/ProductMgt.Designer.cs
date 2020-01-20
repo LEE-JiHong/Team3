@@ -138,7 +138,7 @@
             this.lblProduct.AutoSize = true;
             this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblProduct.Location = new System.Drawing.Point(37, 13);
+            this.lblProduct.Location = new System.Drawing.Point(37, 15);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(30, 16);
             this.lblProduct.TabIndex = 0;
@@ -209,7 +209,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(352, 15);
+            this.label8.Location = new System.Drawing.Point(683, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 8;
@@ -233,11 +233,11 @@
             this.lblCompany.AutoSize = true;
             this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompany.Location = new System.Drawing.Point(710, 13);
+            this.lblCompany.Location = new System.Drawing.Point(711, 13);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(30, 16);
+            this.lblCompany.Size = new System.Drawing.Size(52, 16);
             this.lblCompany.TabIndex = 6;
-            this.lblCompany.Text = "업체";
+            this.lblCompany.Text = "발주업체";
             // 
             // txtProduct
             // 

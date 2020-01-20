@@ -143,9 +143,8 @@ namespace Team3
                         //dataGridView1.DataSource = dt;
 
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        MessageBox.Show(ex.Message);
                     }
                     finally
                     {
