@@ -68,8 +68,8 @@ namespace Team3
                                           where item.COMMON_TYPE == "user_flag"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
-            _cboUseFlag.RemoveAt(0);
-            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+            
+            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME");
 
         }
     }

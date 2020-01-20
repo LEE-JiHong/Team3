@@ -240,6 +240,8 @@
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(196, 21);
             this.txtOrder.TabIndex = 28;
+            this.txtOrder.TextChanged += new System.EventHandler(this.txtOrder_TextChanged);
+            this.txtOrder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrder_KeyPress);
             // 
             // txtComment
             // 

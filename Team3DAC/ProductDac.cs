@@ -35,7 +35,11 @@ namespace Team3DAC
                 return list;
             }
         }
-
+        /// <summary>
+        /// 품목 추가
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
         public bool AddProduct(ProductVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -77,6 +81,12 @@ namespace Team3DAC
             }
             
         }
+
+        /// <summary>
+        /// 품목수정
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
         public bool UpdateProduct(ProductVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -118,6 +128,22 @@ namespace Team3DAC
                 return successRow > 0;
             }
 
+        }
+
+        public List<UserVO> GetUserAll()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select * from TBL_USER";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<UserVO> list = Helper.DataReaderMapToList<UserVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
         }
     }
 }

@@ -57,8 +57,11 @@ namespace Team3
         private void btnRegister_Click(object sender, EventArgs e)
         {
             //등록버튼
-            SODialog frm = new SODialog();
-            frm.ShowDialog();
+            SODialog frm = new SODialog(SODialog.EditMode.Insert);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         private void btnDemandPlan_Click(object sender, EventArgs e)

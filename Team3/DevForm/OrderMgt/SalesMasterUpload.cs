@@ -12,7 +12,6 @@ namespace Team3
     public partial class SalesMasterUpload : DgvBaseForm
     {
         string versionName;
-        string wo_id;
         public SalesMasterUpload()
         {
             InitializeComponent();
@@ -60,7 +59,6 @@ namespace Team3
                 dataGridView1.Columns.Clear();
 
                 dataGridView1.DataSource = frm.Data;
-                wo_id = frm.PlanID;
                 versionName = frm.PlanVersion;
             }
         }
@@ -85,7 +83,6 @@ namespace Team3
                 {
                     SOMasterVO vo = new SOMasterVO();
                     vo.plan_id = versionName;
-                    vo.so_od_id = wo_id;
                     vo.so_wo_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
                     vo.so_pcount = Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value);
                     vo.company_code = dataGridView1.Rows[i].Cells[3].Value.ToString();
