@@ -69,7 +69,7 @@ namespace Team3
         public List<CommonVO> Combo(string s)
         {
             var mCode = (from item in Common_list
-                         where item.COMMON_TYPE == s
+                         where item.common_type == s
                          select item).ToList();
             return mCode;
         }
@@ -100,17 +100,17 @@ namespace Team3
                 {
 
                     VO = R_service.GetFactoryByID(Convert.ToInt32(lblID.Text));
-                    string Comapany_Name = (VO.COMPANY_NAME == null) ? "" : VO.COMPANY_NAME.ToString();
-                    txtCodeFactory.Text = VO.FACTORY_CODE;
-                    txtComment.Text = VO.FACTORY_COMMENT;
-                    txtUadmin.Text = VO.FACTORY_UADMIN;
+                    string Comapany_Name = (VO.company_name == null) ? "" : VO.company_name.ToString();
+                    txtCodeFactory.Text = VO.factory_code;
+                    txtComment.Text = VO.factory_comment;
+                    txtUadmin.Text = VO.factory_uadmin;
                     txtUdate.Text = DateTime.Now.ToString();
-                    txtNameFactory.Text = VO.FACTORY_NAME;
+                    txtNameFactory.Text = VO.factory_name;
                     cboCompany.Text = Comapany_Name;
-                    cboTypeFactory.Text = VO.FACTORY_TYPE;
-                    txtpr.Text = VO.FACTORY_PARENT;
-                    cboYN.Text = VO.FACTORY_YN;
-                    cboFactoryGrade.Text = VO.FACTORY_GRADE;
+                    cboTypeFactory.Text = VO.factory_type;
+                    txtpr.Text = VO.factory_parent;
+                    cboYN.Text = VO.factory_yn;
+                    cboFactoryGrade.Text = VO.factory_grade;
 
                 }
             }
@@ -127,19 +127,19 @@ namespace Team3
             //}
             bool bResult = false;
             FactoryVO VO = new FactoryVO();
-            VO.FACTORY_GRADE = cboFactoryGrade.SelectedValue.ToString();
+            VO.factory_grade = cboFactoryGrade.SelectedValue.ToString();
 
             if (cboParent.Text == "미선택" || cboParent.Text == "")
                 cboParent.SelectedValue = "";
-            VO.FACTORY_PARENT = cboParent.SelectedValue.ToString();
-            VO.FACTORY_NAME = txtNameFactory.Text;
-            VO.FACTORY_TYPE = cboTypeFactory.SelectedValue.ToString();
-            VO.COMPANY_ID = (int)cboCompany.SelectedValue;
-            VO.FACTORY_YN = cboYN.SelectedValue.ToString();
-            VO.FACTORY_UDATE = DateTime.Now.ToString();
-            VO.FACTORY_UADMIN = txtUadmin.Text;
-            VO.FACTORY_CODE = txtCodeFactory.Text;
-            VO.FACTORY_COMMENT = txtComment.Text;
+            VO.factory_parent = cboParent.SelectedValue.ToString();
+            VO.factory_name = txtNameFactory.Text;
+            VO.factory_type = cboTypeFactory.SelectedValue.ToString();
+            VO.company_id = (int)cboCompany.SelectedValue;
+            VO.factory_yn = cboYN.SelectedValue.ToString();
+            VO.factory_udate = DateTime.Now.ToString();
+            VO.factory_uadmin = txtUadmin.Text;
+            VO.factory_code = txtCodeFactory.Text;
+            VO.factory_comment = txtComment.Text;
 
 
 
@@ -155,7 +155,7 @@ namespace Team3
             if (mode == EditMode.Update)
             {
               
-                VO.FACTORY_ID = Convert.ToInt32(lblID.Text);
+                VO.factory_id = Convert.ToInt32(lblID.Text);
                 bResult = Fac_service.UpdateFactory(VO);
                 if (bResult)
                     MessageBox.Show("수정성공");

@@ -53,7 +53,7 @@ namespace Team3WebAPI
                     "values(@plan_id, @so_od_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate)";
 
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
-                        cmd.Parameters.AddWithValue("@so_od_id", item.so_od_id);
+                    //  cmd.Parameters.AddWithValue("@so_od_id", item.so_od_id);
                         cmd.Parameters.AddWithValue("@so_wo_id", item.so_wo_id);
                         cmd.Parameters.AddWithValue("@company_type", item.company_type);
                         cmd.Parameters.AddWithValue("@product_name", item.product_name);
