@@ -28,13 +28,13 @@ namespace Team3
                 BomVO vo = new BomVO();
 
                 vo.bom_id = Convert.ToInt32(txtNote.Text);
-                vo.bom_parent_id = Convert.ToInt32(cboTopProdduct.Text);
+                vo.bom_parent_id = cboTopProdduct.Text;
                 vo.product_id = Convert.ToInt32(cboProduct.Text);
                 vo.bom_use_count = Convert.ToInt32(txtUseCount.Text);
                 vo.bom_sdate = dtpStartDate.Value.ToString();
                 vo.bom_edate = dtpEndDate.Value.ToString();
                 vo.bom_yn = cboIsUsed.Text;
-                vo.plan_id = Convert.ToInt32(cboRequiredPlan.Text);
+                vo.plan_yn = cboRequiredPlan.Text;
                 vo.bom_comment = txtNote.Text;
                 vo.bom_uadmin = txtModifier.Text;
                 vo.bom_udate = txtModifyDate.Text;

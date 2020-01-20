@@ -44,6 +44,7 @@ namespace Team3
         }
         private void LoadDGV()
         {
+            //품목 가져오기
             ProductService service = new ProductService();
             List<ProductVO> list = service.GetAllProducts();
             ProductVO vo = new ProductVO();
@@ -52,28 +53,61 @@ namespace Team3
 
             //dgvProductList.AutoGenerateColumns = false;
             dgvProductList.DataSource = list;
+
+
+            
+
+
+
+
         }
         private void ComboBinding()
         {
             common_service = new CommonCodeService();
             codelist = common_service.GetCommonCodeAll();
+            #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
                                           where item.COMMON_TYPE == "user_flag"
                                           select item).ToList();
-            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
-
+            ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택"); 
+            #endregion
+            #region 품목유형cbo
             _cboUseFlag = (from item in codelist
                            where item.COMMON_TYPE == "item_type"
                            select item).ToList();
-            ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
+            ComboUtil.ComboBinding(cboProductType, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택"); 
+            #endregion
+            #region 납품업체cbo
+            List<CompanyVO> list = new List<CompanyVO>();
+            OrderService service = new OrderService();
+            list = service.GetCompanyAll();
+
+            ComboUtil.ComboBinding(cboSupplyCompany, list, "company_code", "company_name", "선택");
+            #endregion
+
+            
+            List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
+            ResourceService Resource_service = new ResourceService();
+            f_list = Resource_service.GetFactoryAll();
 
 
+
+        }
+        private static void TestComboBinding<T>(ComboBox combo, List<T> list, string Code, string CodeNm)
+        {
+            if (list == null)
+                list = new List<T>();
+
+            combo.DataSource = list;
+            combo.DisplayMember = CodeNm;
+            combo.ValueMember = Code;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             vo = new ProductVO();
-            
+
+            #region VO추가(수정)
             vo.product_id = Convert.ToInt32(dgvProductList[0, dgvProductList.CurrentRow.Index].Value);
             vo.product_lorder_count = Convert.ToInt32(dgvProductList[1, dgvProductList.CurrentRow.Index].Value);
             vo.product_safety_count = Convert.ToInt32(dgvProductList[2, dgvProductList.CurrentRow.Index].Value);
@@ -97,16 +131,13 @@ namespace Team3
             vo.product_demand_com = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
             vo.product_uadmin = dgvProductList[21, dgvProductList.CurrentRow.Index].Value.ToString();
             vo.product_udate = dgvProductList[22, dgvProductList.CurrentRow.Index].Value.ToString();
-            vo.product_comment = dgvProductList[23, dgvProductList.CurrentRow.Index].Value.ToString();
+            vo.product_comment = dgvProductList[23, dgvProductList.CurrentRow.Index].Value.ToString(); 
+            #endregion
 
             ProductPop frm = new ProductPop(ProductPop.EditMode.Update,vo);
             if(frm.ShowDialog() == DialogResult.OK)
             {
-                
 
-
-                //frm.VO.product_id = Convert.ToInt32(dgvProductList[0, dgvProductList.CurrentRow.Index].Value);
-                //frm.VO.product_name = dgvProductList[4, dgvProductList.CurrentRow.Index].Value.ToString();
             }
             
         }

@@ -19,7 +19,12 @@ namespace Team3
             InitializeComponent();
 
             //this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Gradient);
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient);
+            }
+
             //this.button3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
             //this.button4.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);
             //this.button5.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Gradient2);

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -184,6 +187,12 @@
     <Compile Include="DevForm\OrderMgt\DemandPlan.Designer.cs">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\OrderMgt\PopUp\DemandPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\PopUp\DemandPop.Designer.cs">
+      <DependentUpon>DemandPop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\OrderMgt\PopUp\SalesMasterPop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +343,7 @@
     <Compile Include="DevForm\ShiftMgt\ShiftPop.Designer.cs">
       <DependentUpon>ShiftPop.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoggingUtility.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +471,9 @@
     <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\PopUp\DemandPop.resx">
+      <DependentUpon>DemandPop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\PopUp\SalesMasterPop.resx">
       <DependentUpon>SalesMasterPop.cs</DependentUpon>
     </EmbeddedResource>
@@ -570,6 +583,7 @@
     <EmbeddedResource Include="WorkOrder\Process_Inventory.resx">
       <DependentUpon>Process_Inventory.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

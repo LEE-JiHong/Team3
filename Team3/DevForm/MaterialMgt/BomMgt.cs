@@ -10,7 +10,7 @@ using Team3VO;
 
 namespace Team3
 {
-    public partial class BomMgt : Team3.VerticalGridBaseForm
+    public partial class BomMgt : Team3.HorizonGridBaseForm
     {
         CommonCodeService common_service;
         List<CommonVO> codelist;
@@ -36,13 +36,8 @@ namespace Team3
         }
         private void LoadDGV()
         {
-            
             BomService service = new BomService();
             List<BomVO> list = service.GetBomAll();
-           
-
-
-
             dgvBom.DataSource = list;
         }
 
