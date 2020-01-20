@@ -42,7 +42,7 @@
             this.txtStandard = new System.Windows.Forms.TextBox();
             this.cboSupplyCompany = new System.Windows.Forms.ComboBox();
             this.cboPutWH = new System.Windows.Forms.ComboBox();
-            this.cboPerson = new System.Windows.Forms.ComboBox();
+            this.cboAdmin = new System.Windows.Forms.ComboBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.cboPullWH = new System.Windows.Forms.ComboBox();
@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.cboSupplyCompany);
             this.panel1.Controls.Add(this.lblDeliveryCompany);
             this.panel1.Controls.Add(this.cboProductType);
-            this.panel1.Controls.Add(this.cboPerson);
+            this.panel1.Controls.Add(this.cboAdmin);
             this.panel1.Controls.Add(this.cboPutWH);
             this.panel1.Controls.Add(this.txtProduct);
             this.panel1.Controls.Add(this.label8);
@@ -272,13 +272,13 @@
             this.cboPutWH.Size = new System.Drawing.Size(225, 24);
             this.cboPutWH.TabIndex = 12;
             // 
-            // cboPerson
+            // cboAdmin
             // 
-            this.cboPerson.FormattingEnabled = true;
-            this.cboPerson.Location = new System.Drawing.Point(113, 87);
-            this.cboPerson.Name = "cboPerson";
-            this.cboPerson.Size = new System.Drawing.Size(225, 24);
-            this.cboPerson.TabIndex = 13;
+            this.cboAdmin.FormattingEnabled = true;
+            this.cboAdmin.Location = new System.Drawing.Point(113, 87);
+            this.cboAdmin.Name = "cboAdmin";
+            this.cboAdmin.Size = new System.Drawing.Size(225, 24);
+            this.cboAdmin.TabIndex = 13;
             // 
             // cboProductType
             // 
@@ -494,7 +494,7 @@
         private System.Windows.Forms.ComboBox cboPullWH;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboProductType;
-        private System.Windows.Forms.ComboBox cboPerson;
+        private System.Windows.Forms.ComboBox cboAdmin;
         private System.Windows.Forms.ComboBox cboPutWH;
         private System.Windows.Forms.ComboBox cboSupplyCompany;
         private System.Windows.Forms.TextBox txtStandard;
