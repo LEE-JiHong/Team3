@@ -82,19 +82,19 @@ namespace Team3
             codelist = common_service.GetCommonCodeAll();
 
             List<CommonVO> _cboUnit = (from item in codelist
-                                      where item.COMMON_TYPE == "item_unit"
+                                      where item.common_type == "item_unit"
                                       select item).ToList();
             ComboUtil.ComboBinding(cboProductUnit, _cboUnit, "COMMON_VALUE", "COMMON_NAME", "선택");
 
             
             List<CommonVO> _cboUseFlag = (from item in codelist
-                                          where item.COMMON_TYPE == "user_flag"
+                                          where item.common_type == "user_flag"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "COMMON_VALUE", "COMMON_NAME", "선택");
 
           
             List<CommonVO> _cboProductType = (from item in codelist
-                                              where item.COMMON_TYPE == "item_type"
+                                              where item.common_type == "item_type"
                                               select item).ToList();
             ComboUtil.ComboBinding(cboProductType, _cboProductType, "COMMON_VALUE", "COMMON_NAME", "선택");
             //TODO : User목록 콤보바인딩
