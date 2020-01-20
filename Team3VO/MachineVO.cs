@@ -8,19 +8,19 @@ namespace Team3VO
 {
     public class MachineVO
     {
-        public int M_ID { get; set; }
-        public int MGRADE_ID { get; set; }
-        public string M_CODE { get; set; }
-        public string M_NAME { get; set; }
-        public string M_USE_SECTOR { get; set; }
-        public string M_OK_SECTOR { get; set; }
-        public string M_NG_SECTOR { get; set; }
-        public string M_OS_YN { get; set; }
-        public string M_CHECK { get; set; }
-        public string M_COMMENT { get; set; }
-        public string M_YN { get; set; }
-        public string M_UADMIN { get; set; }
-        public string M_UDATE { get; set; }
+        public int m_id { get; set; }
+        public int mgrade_id { get; set; }
+        public string m_code { get; set; }
+        public string m_name { get; set; }
+        public string m_use_sector { get; set; }
+        public string m_ok_sector { get; set; }
+        public string m_ng_sector { get; set; }
+        public string m_os_yn { get; set; }
+        public string m_check { get; set; }
+        public string m_comment { get; set; }
+        public string m_yn { get; set; }
+        public string m_uadmin { get; set; }
+        public string m_udate { get; set; }
     }
    
 }
