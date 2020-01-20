@@ -113,13 +113,13 @@ namespace Team3
                         for (int i = 1; i <= range.Columns.Count; i++)
                         {
                             //dt.Columns.Add(i.ToString(), typeof(string));
-                            dt.Columns.Add(data[2, i].ToString());
+                            dt.Columns.Add(data[1, i].ToString());
 
-                            planID = data[1, 2].ToString();
+                            //planID = data[1, 2].ToString();
                         }
 
                         // 데이터테이블에 2차원 배열에 담은 엑셀데이터 추가
-                        for (int r = 3; r <= range.Rows.Count; r++)
+                        for (int r = 2; r <= range.Rows.Count; r++)
                         {
                             DataRow dr = dt.Rows.Add();
                             for (int c = 1; c <= range.Columns.Count; c++)

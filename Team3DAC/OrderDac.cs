@@ -49,8 +49,8 @@ namespace Team3DAC
                         }
                         reader.Close();
 
-                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate) " +
-                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate)";
+                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate, so_ocount, so_ccount) " +
+                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate, 0, 0)";
 
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@so_wo_id", item.so_wo_id);
