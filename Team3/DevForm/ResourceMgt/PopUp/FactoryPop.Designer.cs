@@ -182,6 +182,7 @@
             // 
             this.txtUdate.Location = new System.Drawing.Point(353, 177);
             this.txtUdate.Name = "txtUdate";
+            this.txtUdate.ReadOnly = true;
             this.txtUdate.Size = new System.Drawing.Size(150, 21);
             this.txtUdate.TabIndex = 12;
             // 

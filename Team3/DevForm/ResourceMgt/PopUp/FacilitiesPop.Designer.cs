@@ -174,6 +174,7 @@
             // 
             this.txtMgrade_udate.Location = new System.Drawing.Point(145, 178);
             this.txtMgrade_udate.Name = "txtMgrade_udate";
+            this.txtMgrade_udate.ReadOnly = true;
             this.txtMgrade_udate.Size = new System.Drawing.Size(172, 21);
             this.txtMgrade_udate.TabIndex = 1;
             // 

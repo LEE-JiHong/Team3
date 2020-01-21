@@ -84,8 +84,7 @@ namespace Team3
 
         private void FactoryMgt_Activated(object sender, EventArgs e)
         {
-            list = service.GetFactoryAll();
-            dataGridView1.DataSource = list;
+     
 
         }
     }

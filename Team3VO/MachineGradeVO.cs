@@ -15,9 +15,6 @@ namespace Team3VO
         public string mgrade_uadmin { get; set; }
         public string mgrade_udate { get; set; }
         public string mgrade_comment { get; set; }
-        public MachineGradeVO()
-        {
-
-        }
+      
     }
 }

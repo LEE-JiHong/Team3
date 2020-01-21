@@ -1,47 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using Team3VO;
 
 namespace Team3
 {
     public partial class FacilitieInfoPop : DialogForm
     {
+        ResourceService R_service;
         CommonCodeService service;
         List<CommonVO> list;
+        EditMode mode;
         public enum EditMode { Input, Update };
+        MachineVO VO;
 
-
-        public FacilitieInfoPop(EditMode editMode)
+        //추가
+        public FacilitieInfoPop(EditMode editMode, string code, string i)
         {
             InitializeComponent();
 
             if (editMode == EditMode.Update)
             {
+                mode = EditMode.Update;
                 this.Text = "설비정보 수정";
             }
             if (editMode == EditMode.Input)
             {
+                mode = EditMode.Input;
                 this.Text = "설비정보 추가";
+                txtMgrade_code.Text = code;
+                lblCodeID.Text = i;
+
+
             }
         }
-        public FacilitieInfoPop(EditMode editMode,string i)
+        //수정
+        public FacilitieInfoPop(EditMode editMode, MachineVO VO)
         {
             InitializeComponent();
 
             if (editMode == EditMode.Update)
             {
+                mode = EditMode.Update;
                 this.Text = "설비정보 수정";
-                lblID.Text = i;
+                this.VO = VO;
 
             }
             if (editMode == EditMode.Input)
             {
+                mode = EditMode.Input;
                 this.Text = "설비정보 추가";
             }
         }
@@ -49,23 +57,83 @@ namespace Team3
 
         private void FacilitieInfoPop_Load(object sender, EventArgs e)
         {
-            service = new CommonCodeService();
-            list = service.GetCommonCodeAll();
+            //콤보박스 바인딩
             {
-                //사용유무
-                var mCode = (from item in list
-                             where item.common_type == "user_flag2"
-                             select item).ToList();
+                service = new CommonCodeService();
+                list = service.GetCommonCodeAll();
+                {
+                    //사용유무
+                    var mCode = (from item in list
+                                 where item.common_type == "user_flag"
+                                 select item).ToList();
 
-                ComboUtil.ComboBinding<CommonVO>(cboIsUsed, mCode, "common_value", "common_name");
+                    ComboUtil.ComboBinding<CommonVO>(cboIsUsed, mCode, "common_value", "common_name");
+                }
+                {
+                    var mCode = (from item in list
+                                 where item.common_type == "user_flag"
+                                 select item).ToList();
+
+                    mCode.Reverse();
+                    ComboUtil.ComboBinding<CommonVO>(cboIsOS, mCode, "common_value", "common_name");
+                }
+                R_service = new ResourceService();
+                var Fatory_list = R_service.GetFactoryAll();
+
+                var WH1 = (from wh1 in Fatory_list
+                           where wh1.facility_class == "창고"
+                           select wh1).ToList();
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboUseWH, WH1, "factory_id", "factory_name", "미선택");
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboOkWH, WH1, "factory_id", "factory_name", "미선택");
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboNgWH, WH1, "factory_id", "factory_name", "미선택");
             }
+            if (mode == EditMode.Update)
             {
-                var mCode = (from item in list
-                             where item.common_type == "user_flag2"
-                             select item).ToList();
+                MachineVO vo = this.VO;
+                lblID.Text = VO.m_id.ToString();
+                txtMgrade_code.Text = VO.mgrade_code;
+                txtCodeFacility.Text = VO.m_code;
+                txtNameFacility.Text = VO.m_name;
+                cboUseWH.Text = VO.m_use_sector;
+                cboOkWH.Text = VO.m_ok_sector;
+                cboNgWH.Text = VO.m_ng_sector;
+                cboIsUsed.Text = VO.m_yn;
+                cboIsOS.Text = VO.m_os_yn;
+                txtModifier.Text = VO.m_uadmin;
+                txtModifyTime.Text = VO.m_udate;
+                txtCheck.Text = VO.m_check;
+                txtComment.Text = VO.m_comment;
 
-                 mCode.Reverse();
-                ComboUtil.ComboBinding<CommonVO>(cboIsOS, mCode, "common_value", "common_name");
+
+            }
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MachineVO VO = new MachineVO();
+            VO.mgrade_code = txtMgrade_code.Text;
+            VO.m_code = txtCodeFacility.Text;
+            VO.m_name = txtNameFacility.Text;
+            VO.m_use_sector = cboUseWH.Text;
+            VO.m_ok_sector = cboOkWH.Text;
+            VO.m_ng_sector = cboNgWH.Text;
+            VO.m_yn = cboIsUsed.Text;
+            VO.m_os_yn = cboIsOS.Text;
+            VO.m_uadmin = txtModifier.Text;
+            VO.m_udate = txtModifyTime.Text;
+            VO.m_check = txtCheck.Text;
+            VO.m_comment = txtComment.Text;
+            //등록
+            if (mode == EditMode.Input)
+            {
+
+
+                // R_service.InsertMachine(VO);
+            }
+            else if (mode == EditMode.Update)
+            {
+
             }
         }
     }

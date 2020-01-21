@@ -12,14 +12,21 @@ namespace Team3
     public class ResourceService
     {
         ResourceDac dac = new ResourceDac();
+
+
+        //======이하 업체==============
         /// <summary>
         /// Company 모든컬럼 select
         /// </summary>
         public List<CompanyVO> GetCompanyAll()
         {
-           
+
             return dac.GetCompanyAll();
         }
+
+
+
+        //=====이하 설비==============
         /// <summary>
         ///  Machine 설비 모든컬럼 select
         /// </summary>
@@ -27,6 +34,9 @@ namespace Team3
         {
             return dac.GetMachineAll();
         }
+
+
+       //=============이하 설비군=========
         /// <summary>
         /// MachineGreade 설비군 모든컬럼 select
         /// </summary>
@@ -38,10 +48,27 @@ namespace Team3
         {
             return dac.InsertMachineGr(VO);
         }
+        public bool UpdateMachineGr(MachineGradeVO VO)
+        {
+            return dac.UpdateMachineGr(VO);
+        }
+        public bool DeleteMachineGr(int i)
+        {
+            return dac.DeleteMachineGr(i);
+        }
+
+
+
+        //=========이하 BOR=========
+
         public List<BORDB_VO> GetBORAll()
         {
             return dac.GetBORAll();
         }
+
+
+
+        //=============이하 공장=======
         public List<FactoryDB_VO> GetFactoryAll()
         {
             return dac.GetFactoryAll();
@@ -56,11 +83,11 @@ namespace Team3
         }
         public bool UpdateFactory(FactoryVO VO)
         {
-           return dac.UpdateFactory(VO);
-                    }
-        public bool DelelteFactory (int Id)
+            return dac.UpdateFactory(VO);
+        }
+        public bool DelelteFactory(int Id)
         {
-         
+
             return dac.DeleteFactory(Id);
         }
     }

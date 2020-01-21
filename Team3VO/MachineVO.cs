@@ -10,6 +10,7 @@ namespace Team3VO
     {
         public int m_id { get; set; }
         public int mgrade_id { get; set; }
+        public string mgrade_code { get; set; }
         public string m_code { get; set; }
         public string m_name { get; set; }
         public string m_use_sector { get; set; }

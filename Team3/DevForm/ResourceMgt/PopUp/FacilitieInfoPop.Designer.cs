@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodeFacilityGroup = new System.Windows.Forms.TextBox();
+            this.txtMgrade_code = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,16 +43,17 @@
             this.txtNameFacility = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboOkWH = new System.Windows.Forms.ComboBox();
+            this.cboUseWH = new System.Windows.Forms.ComboBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboNgWH = new System.Windows.Forms.ComboBox();
             this.cboIsOS = new System.Windows.Forms.ComboBox();
-            this.txtSingularity = new System.Windows.Forms.TextBox();
+            this.txtCheck = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtNote = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.lblCodeID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.TabIndex = 13;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -85,11 +87,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblCodeID);
             this.panel2.Controls.Add(this.cboIsOS);
-            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.cboNgWH);
             this.panel2.Controls.Add(this.cboIsUsed);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboUseWH);
+            this.panel2.Controls.Add(this.cboOkWH);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtNameFacility);
@@ -97,8 +100,8 @@
             this.panel2.Controls.Add(this.txtModifyTime);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.txtNote);
-            this.panel2.Controls.Add(this.txtSingularity);
+            this.panel2.Controls.Add(this.txtComment);
+            this.panel2.Controls.Add(this.txtCheck);
             this.panel2.Controls.Add(this.txtCodeFacility);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label14);
@@ -107,7 +110,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtCodeFacilityGroup);
+            this.panel2.Controls.Add(this.txtMgrade_code);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(749, 314);
             this.panel2.TabIndex = 10;
@@ -128,13 +131,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "설비군코드";
             // 
-            // txtCodeFacilityGroup
+            // txtMgrade_code
             // 
-            this.txtCodeFacilityGroup.Location = new System.Drawing.Point(95, 22);
-            this.txtCodeFacilityGroup.Name = "txtCodeFacilityGroup";
-            this.txtCodeFacilityGroup.ReadOnly = true;
-            this.txtCodeFacilityGroup.Size = new System.Drawing.Size(150, 21);
-            this.txtCodeFacilityGroup.TabIndex = 0;
+            this.txtMgrade_code.Location = new System.Drawing.Point(95, 22);
+            this.txtMgrade_code.Name = "txtMgrade_code";
+            this.txtMgrade_code.ReadOnly = true;
+            this.txtMgrade_code.Size = new System.Drawing.Size(150, 21);
+            this.txtMgrade_code.TabIndex = 0;
             // 
             // label3
             // 
@@ -172,7 +175,6 @@
             // 
             this.txtModifier.Location = new System.Drawing.Point(564, 95);
             this.txtModifier.Name = "txtModifier";
-            this.txtModifier.ReadOnly = true;
             this.txtModifier.Size = new System.Drawing.Size(150, 21);
             this.txtModifier.TabIndex = 9;
             // 
@@ -261,21 +263,21 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "외주여부";
             // 
-            // comboBox1
+            // cboOkWH
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(332, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 23);
-            this.comboBox1.TabIndex = 4;
+            this.cboOkWH.FormattingEnabled = true;
+            this.cboOkWH.Location = new System.Drawing.Point(332, 56);
+            this.cboOkWH.Name = "cboOkWH";
+            this.cboOkWH.Size = new System.Drawing.Size(150, 23);
+            this.cboOkWH.TabIndex = 4;
             // 
-            // comboBox2
+            // cboUseWH
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(95, 56);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(150, 23);
-            this.comboBox2.TabIndex = 3;
+            this.cboUseWH.FormattingEnabled = true;
+            this.cboUseWH.Location = new System.Drawing.Point(95, 56);
+            this.cboUseWH.Name = "cboUseWH";
+            this.cboUseWH.Size = new System.Drawing.Size(150, 23);
+            this.cboUseWH.TabIndex = 3;
             // 
             // cboIsUsed
             // 
@@ -285,13 +287,13 @@
             this.cboIsUsed.Size = new System.Drawing.Size(150, 23);
             this.cboIsUsed.TabIndex = 6;
             // 
-            // comboBox4
+            // cboNgWH
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(564, 56);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(150, 23);
-            this.comboBox4.TabIndex = 5;
+            this.cboNgWH.FormattingEnabled = true;
+            this.cboNgWH.Location = new System.Drawing.Point(564, 56);
+            this.cboNgWH.Name = "cboNgWH";
+            this.cboNgWH.Size = new System.Drawing.Size(150, 23);
+            this.cboNgWH.TabIndex = 5;
             // 
             // cboIsOS
             // 
@@ -301,13 +303,13 @@
             this.cboIsOS.Size = new System.Drawing.Size(150, 23);
             this.cboIsOS.TabIndex = 8;
             // 
-            // txtSingularity
+            // txtCheck
             // 
-            this.txtSingularity.Location = new System.Drawing.Point(95, 170);
-            this.txtSingularity.Multiline = true;
-            this.txtSingularity.Name = "txtSingularity";
-            this.txtSingularity.Size = new System.Drawing.Size(621, 50);
-            this.txtSingularity.TabIndex = 11;
+            this.txtCheck.Location = new System.Drawing.Point(95, 170);
+            this.txtCheck.Multiline = true;
+            this.txtCheck.Name = "txtCheck";
+            this.txtCheck.Size = new System.Drawing.Size(621, 50);
+            this.txtCheck.TabIndex = 11;
             // 
             // label13
             // 
@@ -329,13 +331,13 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "비고";
             // 
-            // txtNote
+            // txtComment
             // 
-            this.txtNote.Location = new System.Drawing.Point(95, 240);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(621, 50);
-            this.txtNote.TabIndex = 12;
+            this.txtComment.Location = new System.Drawing.Point(95, 240);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(621, 50);
+            this.txtComment.TabIndex = 12;
             // 
             // lblID
             // 
@@ -345,6 +347,15 @@
             this.lblID.Size = new System.Drawing.Size(29, 12);
             this.lblID.TabIndex = 11;
             this.lblID.Text = "lblID";
+            // 
+            // lblCodeID
+            // 
+            this.lblCodeID.AutoSize = true;
+            this.lblCodeID.Location = new System.Drawing.Point(271, 137);
+            this.lblCodeID.Name = "lblCodeID";
+            this.lblCodeID.Size = new System.Drawing.Size(41, 15);
+            this.lblCodeID.TabIndex = 13;
+            this.lblCodeID.Text = "label8";
             // 
             // FacilitieInfoPop
             // 
@@ -368,13 +379,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCodeFacilityGroup;
+        private System.Windows.Forms.TextBox txtMgrade_code;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboIsOS;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboNgWH;
         private System.Windows.Forms.ComboBox cboIsUsed;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboUseWH;
+        private System.Windows.Forms.ComboBox cboOkWH;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNameFacility;
@@ -388,10 +399,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.TextBox txtSingularity;
+        private System.Windows.Forms.TextBox txtComment;
+        private System.Windows.Forms.TextBox txtCheck;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblCodeID;
     }
 }

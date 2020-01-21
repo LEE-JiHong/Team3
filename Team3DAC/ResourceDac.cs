@@ -117,6 +117,45 @@ namespace Team3DAC
                 return successRow > 0;
             }
         }
+        public bool UpdateMachineGr(MachineGradeVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "UpdateMachineGr";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@mgrade_id", VO.mgrade_id);
+                cmd.Parameters.AddWithValue("@mgrade_code", VO.mgrade_code);
+                cmd.Parameters.AddWithValue("@mgrade_name", VO.mgrade_name);
+                cmd.Parameters.AddWithValue("@mgrade_yn", VO.mgrade_yn);
+                cmd.Parameters.AddWithValue("@mgrade_uadmin", VO.mgrade_uadmin);
+                cmd.Parameters.AddWithValue("@mgrade_udate", VO.mgrade_udate);
+                cmd.Parameters.AddWithValue("@mgrade_comment", VO.mgrade_comment);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+                
+            }
+        }
+        public bool DeleteMachineGr(int i)
+        {
+            using (SqlCommand cmd=new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "DeleteMachineGr";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", i);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+
         public List<BORDB_VO> GetBORAll()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -218,28 +257,31 @@ namespace Team3DAC
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ID", VO.factory_id);
 
-                    cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.factory_grade);
-                    cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.factory_uadmin);
-                    cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.factory_parent);
+                    cmd.Parameters.AddWithValue("@factory_grade", VO.factory_grade);
+                    cmd.Parameters.AddWithValue("@factory_uadmin", VO.factory_uadmin);
+
                     if (VO.factory_parent == null)
                     {
-                        SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
+                        SqlParameter param1 = new SqlParameter("@factory_parent", SqlDbType.NVarChar);
                         param1.Value = DBNull.Value;
                         cmd.Parameters.Add(param1);
                     }
-                    cmd.Parameters.AddWithValue("@FACTORY_NAME", VO.factory_name);
-                    cmd.Parameters.AddWithValue("@FACTORY_CODE", VO.factory_code);
-                    cmd.Parameters.AddWithValue("@FACTORY_TYPE", VO.factory_type);
-                    cmd.Parameters.AddWithValue("@FACTORY_YN", VO.factory_yn);
-                    cmd.Parameters.AddWithValue("@FACTORY_UDATE", VO.factory_udate);
-                    cmd.Parameters.AddWithValue("@FACTORY_COMMENT", VO.factory_comment);
+                    else
+                        cmd.Parameters.AddWithValue("@factory_parent", VO.factory_parent);
+                    cmd.Parameters.AddWithValue("@factory_name", VO.factory_name);
+                    cmd.Parameters.AddWithValue("@factory_code", VO.factory_code);
+                    cmd.Parameters.AddWithValue("@factory_type", VO.factory_type);
+                    cmd.Parameters.AddWithValue("@factory_yn", VO.factory_yn);
+                    cmd.Parameters.AddWithValue("@factory_udate", VO.factory_udate);
+                    cmd.Parameters.AddWithValue("@factory_comment", VO.factory_comment);
                     if (VO.company_id == 0)
                     {
-                        SqlParameter param2 = new SqlParameter("@COMPANY_ID", SqlDbType.Int);
+                        SqlParameter param2 = new SqlParameter("@company_id", SqlDbType.Int);
                         param2.Value = DBNull.Value;
                         cmd.Parameters.Add(param2);
                     }
-                    cmd.Parameters.AddWithValue("@COMPANY_ID", VO.company_id);
+                    else
+                        cmd.Parameters.AddWithValue("@company_id", VO.company_id);
                     cmd.Connection.Open();
                     var successRow = cmd.ExecuteNonQuery();
                     cmd.Connection.Close();
