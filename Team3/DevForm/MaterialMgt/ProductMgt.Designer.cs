@@ -41,11 +41,11 @@
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.txtStandard = new System.Windows.Forms.TextBox();
             this.cboSupplyCompany = new System.Windows.Forms.ComboBox();
-            this.cboPutWH = new System.Windows.Forms.ComboBox();
+            this.cboInSector = new System.Windows.Forms.ComboBox();
             this.cboAdmin = new System.Windows.Forms.ComboBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
-            this.cboPullWH = new System.Windows.Forms.ComboBox();
+            this.cboOutSector = new System.Windows.Forms.ComboBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -74,13 +74,13 @@
             // 
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Controls.Add(this.cboIsUsed);
-            this.panel1.Controls.Add(this.cboPullWH);
+            this.panel1.Controls.Add(this.cboOutSector);
             this.panel1.Controls.Add(this.cboCompany);
             this.panel1.Controls.Add(this.cboSupplyCompany);
             this.panel1.Controls.Add(this.lblDeliveryCompany);
             this.panel1.Controls.Add(this.cboProductType);
             this.panel1.Controls.Add(this.cboAdmin);
-            this.panel1.Controls.Add(this.cboPutWH);
+            this.panel1.Controls.Add(this.cboInSector);
             this.panel1.Controls.Add(this.txtProduct);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.lblWH);
@@ -264,13 +264,13 @@
             this.cboSupplyCompany.Size = new System.Drawing.Size(209, 24);
             this.cboSupplyCompany.TabIndex = 11;
             // 
-            // cboPutWH
+            // cboInSector
             // 
-            this.cboPutWH.FormattingEnabled = true;
-            this.cboPutWH.Location = new System.Drawing.Point(113, 49);
-            this.cboPutWH.Name = "cboPutWH";
-            this.cboPutWH.Size = new System.Drawing.Size(225, 24);
-            this.cboPutWH.TabIndex = 12;
+            this.cboInSector.FormattingEnabled = true;
+            this.cboInSector.Location = new System.Drawing.Point(113, 49);
+            this.cboInSector.Name = "cboInSector";
+            this.cboInSector.Size = new System.Drawing.Size(225, 24);
+            this.cboInSector.TabIndex = 12;
             // 
             // cboAdmin
             // 
@@ -298,14 +298,14 @@
             this.cboCompany.Size = new System.Drawing.Size(209, 24);
             this.cboCompany.TabIndex = 15;
             // 
-            // cboPullWH
+            // cboOutSector
             // 
-            this.cboPullWH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboPullWH.FormattingEnabled = true;
-            this.cboPullWH.Location = new System.Drawing.Point(449, 49);
-            this.cboPullWH.Name = "cboPullWH";
-            this.cboPullWH.Size = new System.Drawing.Size(230, 24);
-            this.cboPullWH.TabIndex = 16;
+            this.cboOutSector.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboOutSector.FormattingEnabled = true;
+            this.cboOutSector.Location = new System.Drawing.Point(449, 49);
+            this.cboOutSector.Name = "cboOutSector";
+            this.cboOutSector.Size = new System.Drawing.Size(230, 24);
+            this.cboOutSector.TabIndex = 16;
             // 
             // cboIsUsed
             // 
@@ -491,11 +491,11 @@
 
         #endregion
         private System.Windows.Forms.ComboBox cboIsUsed;
-        private System.Windows.Forms.ComboBox cboPullWH;
+        private System.Windows.Forms.ComboBox cboOutSector;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.ComboBox cboAdmin;
-        private System.Windows.Forms.ComboBox cboPutWH;
+        private System.Windows.Forms.ComboBox cboInSector;
         private System.Windows.Forms.ComboBox cboSupplyCompany;
         private System.Windows.Forms.TextBox txtStandard;
         private System.Windows.Forms.TextBox txtProduct;

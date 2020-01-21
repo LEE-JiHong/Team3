@@ -36,11 +36,20 @@ namespace Team3
         }
         private void LoadDGV()
         {
+            InitControl();
             BomService service = new BomService();
             List<BomVO> list = service.GetBomAll();
             dgvBom.DataSource = list;
+            
         }
 
+        private void InitControl()
+        {
+            //cboDeployment
+            string[] arr_deployment = new string[] {"선택", "정전개", "역전개" };
+            cboDeployment.Items.AddRange(arr_deployment);
+            cboDeployment.SelectedIndex = 0;
+        }
         private void ComboBinding()
         {
             common_service = new CommonCodeService();

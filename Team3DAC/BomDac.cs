@@ -31,6 +31,29 @@ namespace Team3DAC
                 return list;
             }
         }
+        public int GetProductTypeNum(int product_id)
+        {
+            
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                int pType_num = 0;
+                string sql = "GetProductTypeNum";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@product_id", product_id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    pType_num = Convert.ToInt32(reader[0]);
+                }
+                
+                cmd.Connection.Close();
+                return pType_num;
+            }
+        }
         public bool AddBom(BomVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -61,5 +84,6 @@ namespace Team3DAC
             }
 
         }
+        
     }
 }

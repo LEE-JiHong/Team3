@@ -144,6 +144,34 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// planID 가져오기
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetPlanID()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select distinct plan_id from TBL_SO_MASTER";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> list = new List<string>();
+
+                while (reader.Read())
+                {
+                    list.Add(reader[0].ToString());
+                }
+
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
         public bool AddOneSOMaster(SOMasterVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -166,6 +194,62 @@ namespace Team3DAC
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return successRow > 0;
+            }
+        }
+
+        /// <summary>
+        /// firstdate와 enddate에 맞춰서 날짜 가져오기
+        /// </summary>
+        /// <param name="firstDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public List<DayVO> GetDays(string firstDate, string endDate)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetDays";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@FirstDate", firstDate);
+                cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                List<DayVO> list = Helper.DataReaderMapToList<DayVO>(reader);
+
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// planID로 검색하여 영업마스터 가져오기
+        /// </summary>
+        /// <param name="planID"></param>
+        /// <returns></returns>
+        public List<SOMasterVO> GetSOMaster(string planID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "SELECT * FROM TBL_SO_MASTER WHERE plan_id = @PlanID order by so_edate desc";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@PlanID", planID);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                List<SOMasterVO> list = Helper.DataReaderMapToList<SOMasterVO>(reader);
+
+                cmd.Connection.Close();
+                return list;
             }
         }
 

@@ -48,15 +48,15 @@ namespace Team3
                 txtProductLsl.Text = vo.product_lsl;
                 txtProductUsl.Text = vo.product_usl;
                 txtUnitAmount.Text = vo.product_unit_count;
-                cboInWH.Text = vo.product_in_sector;
-                cboOutWH.Text = vo.product_out;
+                cboInSector.Text = vo.product_in_sector;
+                cboOutSector.Text = vo.product_out;
                 cboAdmin.Text = vo.product_admin;
                 cboIsUsed.Text = vo.product_yn;
                 cboOrderType.Text = vo.product_type;
                 txtNote.Text = vo.product_comment;
                 cboDemandCompany.Text = vo.product_demand_com;
                 txtUdate.Text = vo.product_udate;
-                cboDeliveryCompany.Text = vo.product_supply_com;
+                cboSupplyCompany.Text = vo.product_supply_com;
                 txtSafetyAmount.Text = vo.product_safety_count.ToString();
                 txtMeasType.Text = vo.product_meastype;
                 
@@ -78,8 +78,17 @@ namespace Team3
         private void ComboBoxBinding()
         {
             //TODO 메서드 하나로 모듈화
+            ProductService product_service = new ProductService();
+            ResourceService resource_service = new ResourceService();
+            List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
+           
+        
+
             common_service = new CommonCodeService();
             codelist = common_service.GetCommonCodeAll();
+
+            List<UserVO> user_list = product_service.GetUserAll();
+
 
             List<CommonVO> _cboUnit = (from item in codelist
                                       where item.common_type == "item_unit"
@@ -93,11 +102,55 @@ namespace Team3
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "common_value", "common_name", "선택");
 
           
-            List<CommonVO> _cboProductType = (from item in codelist
+            List<CommonVO> _commonlist = (from item in codelist
                                               where item.common_type == "item_type"
                                               select item).ToList();
-            ComboUtil.ComboBinding(cboProductType, _cboProductType, "common_value", "common_name", "선택");
-            //TODO : User목록 콤보바인딩
+            ComboUtil.ComboBinding(cboProductType, _commonlist, "common_value", "common_name", "선택");
+
+            #region 담당자cbo
+
+            ComboUtil.ComboBinding(cboAdmin, user_list, "user_id", "user_name", "선택");
+            #endregion
+
+            #region 입고창고cbo
+            f_list = resource_service.GetFactoryAll();
+            List<FactoryDB_VO> _cboInSector = (from item in f_list
+                                               where item.facility_value == "FAC200"
+                                               select item).ToList();
+            ComboUtil.ComboBinding(cboInSector, _cboInSector, "factory_code", "factory_name", "선택");
+            #endregion
+
+            #region 출고창고cbo
+            List<FactoryDB_VO> _cboOutSector = (from item in f_list
+                                                where item.facility_value == "FAC100"
+                                                select item).ToList();
+            ComboUtil.ComboBinding(cboOutSector, _cboOutSector, "factory_code", "factory_name", "선택");
+            #endregion
+
+
+            #region 발주방식cbo
+            _commonlist = (from item in codelist
+                           where item.common_type == "order_method"
+                           select item).ToList();
+            ComboUtil.ComboBinding(cboOrderType, _commonlist, "common_value", "common_name", "선택");
+            #endregion
+
+            #region 납품업체cbo
+            List<CompanyVO> company_list = new List<CompanyVO>();
+            OrderService order_service = new OrderService();
+            company_list = order_service.GetCompanyAll("customer");
+            ComboUtil.ComboBinding(cboDemandCompany, company_list, "company_code", "company_name", "선택");
+            #endregion
+
+            #region 발주업체cbo
+            company_list = order_service.GetCompanyAll("cooperative");
+            ComboUtil.ComboBinding(cboSupplyCompany, company_list, "company_code", "company_name", "선택");
+
+            List<UserVO> user_vo = new List<UserVO>();
+            #endregion
+
+
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -114,15 +167,15 @@ namespace Team3
                     vo.product_unit = cboProductUnit.Text.ToString();
                     vo.product_unit_count = txtUnitAmount.Text;
                     vo.product_type = cboProductType.SelectedValue.ToString();
-                    vo.product_in_sector = cboInWH.Text.ToString();
-                    vo.product_out = cboOutWH.Text.ToString();
+                    vo.product_in_sector = cboInSector.Text.ToString();
+                    vo.product_out = cboOutSector.Text.ToString();
                     vo.product_leadtime = txtLeadTime.Text;
                     vo.product_lorder_count = Convert.ToInt32(txtLeastOrder.Text);
                     vo.product_safety_count = Convert.ToInt32(txtSafetyAmount.Text);
                     vo.product_admin = cboAdmin.Text.ToString();
                     vo.product_ordertype = cboOrderType.Text.ToString();
                     vo.product_yn = cboIsUsed.SelectedValue.ToString();
-                    vo.product_supply_com = cboDeliveryCompany.Text.ToString();
+                    vo.product_supply_com = cboSupplyCompany.Text.ToString();
                     vo.product_demand_com = cboDemandCompany.Text.ToString();
                     vo.product_uadmin = txtUadmin.Text;
                     vo.product_udate = txtUdate.Text;
@@ -159,15 +212,15 @@ namespace Team3
                     vo.product_unit = cboProductUnit.Text.ToString();
                     vo.product_unit_count = txtUnitAmount.Text;
                     vo.product_type = cboProductType.Text.ToString();
-                    vo.product_in_sector = cboInWH.Text.ToString();
-                    vo.product_out = cboOutWH.Text.ToString();
+                    vo.product_in_sector = cboInSector.Text.ToString();
+                    vo.product_out = cboOutSector.Text.ToString();
                     vo.product_leadtime = txtLeadTime.Text;
                     vo.product_lorder_count = Convert.ToInt32(txtLeastOrder.Text);
                     vo.product_safety_count = Convert.ToInt32(txtSafetyAmount.Text);
                     vo.product_admin = cboAdmin.Text.ToString();
                     vo.product_ordertype = cboOrderType.Text.ToString();
                     vo.product_yn = cboIsUsed.Text.ToString();
-                    vo.product_supply_com = cboDeliveryCompany.Text.ToString();
+                    vo.product_supply_com = cboSupplyCompany.Text.ToString();
                     vo.product_demand_com = cboDemandCompany.Text.ToString();
                     vo.product_uadmin = txtUadmin.Text;
                     vo.product_udate = txtUdate.Text;
