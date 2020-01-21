@@ -66,15 +66,15 @@
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cboFreeOffer = new System.Windows.Forms.ComboBox();
-            this.cboInWH = new System.Windows.Forms.ComboBox();
+            this.cboInSector = new System.Windows.Forms.ComboBox();
             this.cboMgtGrade = new System.Windows.Forms.ComboBox();
             this.cboTotalGroup = new System.Windows.Forms.ComboBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtUnitAmount = new System.Windows.Forms.TextBox();
             this.txtStandardRelaseAount = new System.Windows.Forms.TextBox();
             this.cboFIS = new System.Windows.Forms.ComboBox();
-            this.cboDeliveryCompany = new System.Windows.Forms.ComboBox();
-            this.cboOutWH = new System.Windows.Forms.ComboBox();
+            this.cboSupplyCompany = new System.Windows.Forms.ComboBox();
+            this.cboOutSector = new System.Windows.Forms.ComboBox();
             this.cboAdmin = new System.Windows.Forms.ComboBox();
             this.cboIsPhantom = new System.Windows.Forms.ComboBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
@@ -148,11 +148,11 @@
             this.panel2.Controls.Add(this.cboDemandCompany);
             this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.cboAdmin);
-            this.panel2.Controls.Add(this.cboOutWH);
-            this.panel2.Controls.Add(this.cboDeliveryCompany);
+            this.panel2.Controls.Add(this.cboOutSector);
+            this.panel2.Controls.Add(this.cboSupplyCompany);
             this.panel2.Controls.Add(this.txtUnitAmount);
             this.panel2.Controls.Add(this.txtProductName);
-            this.panel2.Controls.Add(this.cboInWH);
+            this.panel2.Controls.Add(this.cboInSector);
             this.panel2.Controls.Add(this.cboProductUnit);
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.txtNote);
@@ -554,13 +554,13 @@
             this.cboFreeOffer.Size = new System.Drawing.Size(100, 23);
             this.cboFreeOffer.TabIndex = 36;
             // 
-            // cboInWH
+            // cboInSector
             // 
-            this.cboInWH.FormattingEnabled = true;
-            this.cboInWH.Location = new System.Drawing.Point(102, 108);
-            this.cboInWH.Name = "cboInWH";
-            this.cboInWH.Size = new System.Drawing.Size(100, 23);
-            this.cboInWH.TabIndex = 37;
+            this.cboInSector.FormattingEnabled = true;
+            this.cboInSector.Location = new System.Drawing.Point(102, 108);
+            this.cboInSector.Name = "cboInSector";
+            this.cboInSector.Size = new System.Drawing.Size(100, 23);
+            this.cboInSector.TabIndex = 37;
             // 
             // cboMgtGrade
             // 
@@ -608,21 +608,21 @@
             this.cboFIS.Size = new System.Drawing.Size(100, 23);
             this.cboFIS.TabIndex = 43;
             // 
-            // cboDeliveryCompany
+            // cboSupplyCompany
             // 
-            this.cboDeliveryCompany.FormattingEnabled = true;
-            this.cboDeliveryCompany.Location = new System.Drawing.Point(511, 43);
-            this.cboDeliveryCompany.Name = "cboDeliveryCompany";
-            this.cboDeliveryCompany.Size = new System.Drawing.Size(100, 23);
-            this.cboDeliveryCompany.TabIndex = 44;
+            this.cboSupplyCompany.FormattingEnabled = true;
+            this.cboSupplyCompany.Location = new System.Drawing.Point(511, 43);
+            this.cboSupplyCompany.Name = "cboSupplyCompany";
+            this.cboSupplyCompany.Size = new System.Drawing.Size(100, 23);
+            this.cboSupplyCompany.TabIndex = 44;
             // 
-            // cboOutWH
+            // cboOutSector
             // 
-            this.cboOutWH.FormattingEnabled = true;
-            this.cboOutWH.Location = new System.Drawing.Point(309, 110);
-            this.cboOutWH.Name = "cboOutWH";
-            this.cboOutWH.Size = new System.Drawing.Size(100, 23);
-            this.cboOutWH.TabIndex = 45;
+            this.cboOutSector.FormattingEnabled = true;
+            this.cboOutSector.Location = new System.Drawing.Point(309, 110);
+            this.cboOutSector.Name = "cboOutSector";
+            this.cboOutSector.Size = new System.Drawing.Size(100, 23);
+            this.cboOutSector.TabIndex = 45;
             // 
             // cboAdmin
             // 
@@ -874,15 +874,15 @@
         private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.ComboBox cboIsPhantom;
         private System.Windows.Forms.ComboBox cboAdmin;
-        private System.Windows.Forms.ComboBox cboOutWH;
-        private System.Windows.Forms.ComboBox cboDeliveryCompany;
+        private System.Windows.Forms.ComboBox cboOutSector;
+        private System.Windows.Forms.ComboBox cboSupplyCompany;
         private System.Windows.Forms.ComboBox cboFIS;
         private System.Windows.Forms.TextBox txtStandardRelaseAount;
         private System.Windows.Forms.TextBox txtUnitAmount;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.ComboBox cboTotalGroup;
         private System.Windows.Forms.ComboBox cboMgtGrade;
-        private System.Windows.Forms.ComboBox cboInWH;
+        private System.Windows.Forms.ComboBox cboInSector;
         private System.Windows.Forms.ComboBox cboFreeOffer;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox cboProductUnit;

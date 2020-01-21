@@ -39,7 +39,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboTopProdduct = new System.Windows.Forms.ComboBox();
+            this.cboParentProduct = new System.Windows.Forms.ComboBox();
             this.cboAutoDeduction = new System.Windows.Forms.ComboBox();
             this.cboProduct = new System.Windows.Forms.ComboBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
@@ -90,7 +90,7 @@
             this.panel2.Controls.Add(this.cboRequiredPlan);
             this.panel2.Controls.Add(this.cboIsUsed);
             this.panel2.Controls.Add(this.cboProduct);
-            this.panel2.Controls.Add(this.cboTopProdduct);
+            this.panel2.Controls.Add(this.cboParentProduct);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
@@ -226,13 +226,13 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "시작일";
             // 
-            // cboTopProdduct
+            // cboParentProduct
             // 
-            this.cboTopProdduct.FormattingEnabled = true;
-            this.cboTopProdduct.Location = new System.Drawing.Point(92, 12);
-            this.cboTopProdduct.Name = "cboTopProdduct";
-            this.cboTopProdduct.Size = new System.Drawing.Size(168, 23);
-            this.cboTopProdduct.TabIndex = 12;
+            this.cboParentProduct.FormattingEnabled = true;
+            this.cboParentProduct.Location = new System.Drawing.Point(92, 12);
+            this.cboParentProduct.Name = "cboParentProduct";
+            this.cboParentProduct.Size = new System.Drawing.Size(168, 23);
+            this.cboParentProduct.TabIndex = 12;
             // 
             // cboAutoDeduction
             // 
@@ -249,6 +249,7 @@
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(168, 23);
             this.cboProduct.TabIndex = 14;
+            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
             // 
             // cboIsUsed
             // 
@@ -357,7 +358,7 @@
         private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.ComboBox cboAutoDeduction;
-        private System.Windows.Forms.ComboBox cboTopProdduct;
+        private System.Windows.Forms.ComboBox cboParentProduct;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

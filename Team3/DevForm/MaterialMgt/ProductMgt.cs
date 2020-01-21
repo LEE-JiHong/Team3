@@ -67,7 +67,13 @@ namespace Team3
             common_service = new CommonCodeService();
             codelist = common_service.GetCommonCodeAll();
             product_service = new ProductService();
+
+            List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
+            ResourceService resource_service = new ResourceService();
+            f_list = resource_service.GetFactoryAll();
+
             List<UserVO> user_list = product_service.GetUserAll();
+
             #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
                                           where item.common_type == "user_flag"
@@ -95,35 +101,30 @@ namespace Team3
 
             List<UserVO> user_vo = new List<UserVO>();
             #endregion
+
+            #region 담당자cbo
+
             ComboUtil.ComboBinding(cboAdmin, user_list, "user_id", "user_name", "선택");
-
+            #endregion
             
-
-
-
-
-
-
-
-            //List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
-            //ResourceService Resource_service = new ResourceService();
-            //f_list = Resource_service.GetFactoryAll();
-
-
+            #region 입고창고cbo
+            List<FactoryDB_VO> _cboInSector = (from item in f_list
+                                               where item.facility_value == "FAC200"
+                                               select item).ToList();
+            ComboUtil.ComboBinding(cboInSector, _cboInSector, "factory_code", "factory_name", "선택");
+            #endregion
+            
+            #region 출고창고cbo
+            List<FactoryDB_VO> _cboOutSector = (from item in f_list
+                                                where item.facility_value == "FAC100"
+                                                select item).ToList();
+            ComboUtil.ComboBinding(cboOutSector, _cboOutSector, "factory_code", "factory_name", "선택"); 
+            #endregion
 
 
 
         }
-        private static void TestComboBinding<T>(ComboBox combo, List<T> list, string Code, string CodeNm)
-        {
-            if (list == null)
-                list = new List<T>();
-
-            combo.DataSource = list;
-            combo.DisplayMember = CodeNm;
-            combo.ValueMember = Code;
-        }
-
+      
         private void button1_Click(object sender, EventArgs e)
         {
             vo = new ProductVO();

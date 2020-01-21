@@ -14,7 +14,8 @@ namespace Team3
     {
         List<CommonVO> codelist;
         CommonCodeService common_service;
-
+        BomService bom_service;
+        ProductService product_service;
         public BomPop()
         {
             InitializeComponent();
@@ -24,11 +25,11 @@ namespace Team3
         {
             if (MessageBox.Show("등록하시겠습니까?", "신규등록", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                BomService service = new BomService();
+                bom_service = new BomService();
                 BomVO vo = new BomVO();
 
                 vo.bom_id = Convert.ToInt32(txtNote.Text);
-                vo.bom_parent_id = cboTopProdduct.Text;
+                vo.bom_parent_id = cboParentProduct.Text;
                 vo.product_id = Convert.ToInt32(cboProduct.Text);
                 vo.bom_use_count = Convert.ToInt32(txtUseCount.Text);
                 vo.bom_sdate = dtpStartDate.Value.ToString();
@@ -40,7 +41,7 @@ namespace Team3
                 vo.bom_udate = txtModifyDate.Text;
 
 
-                bool bResult = service.AddBom(vo);
+                bool bResult = bom_service.AddBom(vo);
                 if (bResult)
                 {
                     MessageBox.Show("등록성공");
@@ -64,12 +65,38 @@ namespace Team3
         {
             common_service = new CommonCodeService();
             codelist = common_service.GetCommonCodeAll();
+            #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
                                           where item.common_type == "user_flag"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "common_value", "common_name", "선택");
-            
+
             ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "common_value", "common_name");
+            #endregion
+
+            #region 품목cbo
+
+            product_service = new ProductService();
+            List<ProductVO> product_list = new List<ProductVO>();
+            product_list = product_service.GetAllProducts();
+            ComboUtil.ComboBinding(cboProduct, product_list, "product_id", "product_name", "선택");
+            #endregion
+
+            #region 상위품목cbo
+            
+            
+
+
+            #endregion
+        }
+
+        private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bom_service = new BomService();
+            ProductVO vo = (ProductVO)cboProduct.SelectedItem;
+            int prodTypeNum = bom_service.GetProductTypeNum(vo.product_id);
+
+            
 
         }
     }

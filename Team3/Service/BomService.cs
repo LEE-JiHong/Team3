@@ -29,8 +29,13 @@ namespace Team3
             BomDac dac = new BomDac();
             return dac.AddBom(vo);
         }
-        
-        
-        
+        public int GetProductTypeNum(int product_id)
+        {
+            BomDac dac = new BomDac();
+            return dac.GetProductTypeNum(product_id);
+        }
+
+
+
     }
 }
