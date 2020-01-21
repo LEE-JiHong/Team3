@@ -39,5 +39,23 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.AddOneSOMaster(VO);
         }
+
+        public List<DayVO> GetDays(string firstDate, string endDate)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetDays(firstDate, endDate);
+        }
+
+        public List<string> GetPlanID()
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetPlanID();
+        }
+
+        public List<SOMasterVO> GetSOMaster(string planID)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetSOMaster(planID);
+        }
     }
 }

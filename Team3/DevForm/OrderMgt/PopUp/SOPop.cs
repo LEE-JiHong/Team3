@@ -52,7 +52,7 @@ namespace Team3
             List<ProductVO> pList = new List<ProductVO>();
             pList = service.GetProductList();
 
-            ComboUtil.ComboBinding(cbProduct, pList, "product_name", "product_name", "선택");
+            ComboUtil.ComboBinding(cbProduct, pList, "product_codename", "product_name", "선택");
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
