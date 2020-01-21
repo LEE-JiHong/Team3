@@ -8,6 +8,7 @@ namespace Team3
 {
     public partial class FacilitieInfoPop : DialogForm
     {
+        DateTime today = DateTime.Now;
         ResourceService R_service;
         CommonCodeService service;
         List<CommonVO> list;
@@ -30,7 +31,7 @@ namespace Team3
                 mode = EditMode.Input;
                 this.Text = "설비정보 추가";
                 txtMgrade_code.Text = code;
-                lblCodeID.Text = i;
+                lblGrCodeID.Text = i;
 
 
             }
@@ -57,6 +58,7 @@ namespace Team3
 
         private void FacilitieInfoPop_Load(object sender, EventArgs e)
         {
+            txtModifyTime.Text = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
             //콤보박스 바인딩
             {
                 service = new CommonCodeService();
@@ -84,13 +86,20 @@ namespace Team3
                            where wh1.facility_class == "창고"
                            select wh1).ToList();
                 ComboUtil.ComboBinding<FactoryDB_VO>(cboUseWH, WH1, "factory_id", "factory_name", "미선택");
-                ComboUtil.ComboBinding<FactoryDB_VO>(cboOkWH, WH1, "factory_id", "factory_name", "미선택");
-                ComboUtil.ComboBinding<FactoryDB_VO>(cboNgWH, WH1, "factory_id", "factory_name", "미선택");
+                var WH2 = (from wh1 in Fatory_list
+                           where wh1.facility_class == "창고"
+                           select wh1).ToList();
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboOkWH, WH2, "factory_id", "factory_name", "미선택");
+                var WH3 = (from wh1 in Fatory_list
+                           where wh1.facility_class == "창고"
+                           select wh1).ToList();
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboNgWH, WH3, "factory_id", "factory_name", "미선택");
             }
             if (mode == EditMode.Update)
             {
                 MachineVO vo = this.VO;
                 lblID.Text = VO.m_id.ToString();
+                lblGrCodeID.Text = VO.mgrade_id.ToString();
                 txtMgrade_code.Text = VO.mgrade_code;
                 txtCodeFacility.Text = VO.m_code;
                 txtNameFacility.Text = VO.m_name;
@@ -103,15 +112,13 @@ namespace Team3
                 txtModifyTime.Text = VO.m_udate;
                 txtCheck.Text = VO.m_check;
                 txtComment.Text = VO.m_comment;
-
-
             }
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             MachineVO VO = new MachineVO();
+            VO.mgrade_id = Convert.ToInt32(lblGrCodeID.Text);
             VO.mgrade_code = txtMgrade_code.Text;
             VO.m_code = txtCodeFacility.Text;
             VO.m_name = txtNameFacility.Text;
@@ -127,9 +134,7 @@ namespace Team3
             //등록
             if (mode == EditMode.Input)
             {
-
-
-                // R_service.InsertMachine(VO);
+                 R_service.InsertMachine(VO);
             }
             else if (mode == EditMode.Update)
             {

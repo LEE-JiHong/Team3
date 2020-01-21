@@ -54,9 +54,9 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //FacilitieInfoPop frm = new FacilitieInfoPop
-            //    (FacilitieInfoPop.EditMode.Input, dataGridView1.CurrentRow.Cells[1].Value.ToString(), lblID1.Text);
-            //frm.ShowDialog();
+            FacilitieInfoPop frm = new FacilitieInfoPop
+                (FacilitieInfoPop.EditMode.Input, dataGridView1.CurrentRow.Cells[1].Value.ToString(), lblID1.Text);
+            frm.ShowDialog();
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {

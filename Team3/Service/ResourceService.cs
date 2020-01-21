@@ -34,6 +34,10 @@ namespace Team3
         {
             return dac.GetMachineAll();
         }
+        public bool InsertMachine(MachineVO VO)
+        {
+            return dac.InsertMachine(VO);
+        }
 
 
        //=============이하 설비군=========

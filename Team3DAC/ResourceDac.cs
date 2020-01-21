@@ -75,6 +75,36 @@ namespace Team3DAC
                 return list;
             }
         }
+        public bool InsertMachine(MachineVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "InsertMachine";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@mgrade_id", VO.mgrade_id);
+                 cmd.Parameters.AddWithValue("@m_code", VO.m_code);
+                cmd.Parameters.AddWithValue("@m_name",VO.m_name);
+                cmd.Parameters.AddWithValue("@m_use_sector",VO.m_use_sector);
+                cmd.Parameters.AddWithValue("@m_ok_sector", VO.m_ok_sector);
+                cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
+                cmd.Parameters.AddWithValue("@m_os_yn", VO.m_os_yn);
+                cmd.Parameters.AddWithValue("@m_check", VO.m_check);
+                cmd.Parameters.AddWithValue("@m_comment", VO.m_comment);
+                cmd.Parameters.AddWithValue("@m_yn", VO.m_yn);
+                cmd.Parameters.AddWithValue("@m_uadmin", VO.m_uadmin);
+                cmd.Parameters.AddWithValue("@m_udate", VO.m_udate);
+             
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+
         /// <summary>
         /// 설비군 모든 컬럼 select
         /// </summary>

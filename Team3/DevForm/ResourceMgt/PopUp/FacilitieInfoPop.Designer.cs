@@ -53,7 +53,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.lblCodeID = new System.Windows.Forms.Label();
+            this.lblGrCodeID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,7 +87,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblCodeID);
+            this.panel2.Controls.Add(this.lblGrCodeID);
             this.panel2.Controls.Add(this.cboIsOS);
             this.panel2.Controls.Add(this.cboNgWH);
             this.panel2.Controls.Add(this.cboIsUsed);
@@ -344,18 +344,16 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(657, 64);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.Size = new System.Drawing.Size(0, 12);
             this.lblID.TabIndex = 11;
-            this.lblID.Text = "lblID";
             // 
-            // lblCodeID
+            // lblGrCodeID
             // 
-            this.lblCodeID.AutoSize = true;
-            this.lblCodeID.Location = new System.Drawing.Point(271, 137);
-            this.lblCodeID.Name = "lblCodeID";
-            this.lblCodeID.Size = new System.Drawing.Size(41, 15);
-            this.lblCodeID.TabIndex = 13;
-            this.lblCodeID.Text = "label8";
+            this.lblGrCodeID.AutoSize = true;
+            this.lblGrCodeID.Location = new System.Drawing.Point(329, 134);
+            this.lblGrCodeID.Name = "lblGrCodeID";
+            this.lblGrCodeID.Size = new System.Drawing.Size(0, 15);
+            this.lblGrCodeID.TabIndex = 13;
             // 
             // FacilitieInfoPop
             // 
@@ -404,6 +402,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblCodeID;
+        private System.Windows.Forms.Label lblGrCodeID;
     }
 }
