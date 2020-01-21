@@ -34,6 +34,10 @@ namespace Team3
         {
             return dac.GetMachineGrpAll();
         }
+        public bool InsertMachineGr(MachineGradeVO VO)
+        {
+            return dac.InsertMachineGr(VO);
+        }
         public List<BORDB_VO> GetBORAll()
         {
             return dac.GetBORAll();

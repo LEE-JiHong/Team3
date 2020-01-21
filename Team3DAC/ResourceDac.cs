@@ -94,6 +94,29 @@ namespace Team3DAC
                 return list;
             }
         }
+        public bool InsertMachineGr(MachineGradeVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "InsertMachineGr";
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                //  cmd.Parameters.AddWithValue("@MGRADE_ID", VO.mgrade_id);
+                cmd.Parameters.AddWithValue("@mgrade_code", VO.mgrade_code);
+                cmd.Parameters.AddWithValue("@mgrade_name", VO.mgrade_name);
+                cmd.Parameters.AddWithValue("@mgrade_yn", VO.mgrade_yn);
+                cmd.Parameters.AddWithValue("@mgrade_uadmin", VO.mgrade_uadmin);
+                cmd.Parameters.AddWithValue("@mgrade_udate", VO.mgrade_udate);
+                cmd.Parameters.AddWithValue("@mgrade_comment", VO.mgrade_comment);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
         public List<BORDB_VO> GetBORAll()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -135,7 +158,7 @@ namespace Team3DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.factory_grade);
                 cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.factory_uadmin);
-                
+
                 if (VO.factory_parent == null)
                 {
                     SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
@@ -157,7 +180,7 @@ namespace Team3DAC
                     cmd.Parameters.Add(param2);
                 }
                 else
-                cmd.Parameters.AddWithValue("COMPANY_ID", VO.company_id);
+                    cmd.Parameters.AddWithValue("COMPANY_ID", VO.company_id);
 
                 cmd.Connection.Open();
                 var successRow = cmd.ExecuteNonQuery();
@@ -197,15 +220,13 @@ namespace Team3DAC
 
                     cmd.Parameters.AddWithValue("@FACTORY_GRADE", VO.factory_grade);
                     cmd.Parameters.AddWithValue("@FACTORY_UADMIN", VO.factory_uadmin);
-                    if (VO.factory_parent == null ||VO.factory_parent=="")
+                    cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.factory_parent);
+                    if (VO.factory_parent == null)
                     {
                         SqlParameter param1 = new SqlParameter("@FACTORY_PARENT", SqlDbType.NVarChar);
                         param1.Value = DBNull.Value;
                         cmd.Parameters.Add(param1);
                     }
-                    else
-                    cmd.Parameters.AddWithValue("@FACTORY_PARENT", VO.factory_parent);
-                    
                     cmd.Parameters.AddWithValue("@FACTORY_NAME", VO.factory_name);
                     cmd.Parameters.AddWithValue("@FACTORY_CODE", VO.factory_code);
                     cmd.Parameters.AddWithValue("@FACTORY_TYPE", VO.factory_type);
@@ -218,9 +239,7 @@ namespace Team3DAC
                         param2.Value = DBNull.Value;
                         cmd.Parameters.Add(param2);
                     }
-                    else
                     cmd.Parameters.AddWithValue("@COMPANY_ID", VO.company_id);
-                    
                     cmd.Connection.Open();
                     var successRow = cmd.ExecuteNonQuery();
                     cmd.Connection.Close();
@@ -229,9 +248,8 @@ namespace Team3DAC
             }
             catch (Exception err)
             {
-              
-                string st = err.Message;
                 return false;
+                string st = err.Message;
             }
         }
         public bool DeleteFactory(int id)
@@ -253,4 +271,3 @@ namespace Team3DAC
         }
     }
 }
-

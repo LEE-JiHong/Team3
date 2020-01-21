@@ -145,7 +145,7 @@ namespace Team3
 
             if (mode == EditMode.Input)
             {
-              
+
                 bResult = Fac_service.InsertFactory(VO);
                 if (bResult)
                     MessageBox.Show("등록성공");
@@ -154,7 +154,7 @@ namespace Team3
             }
             if (mode == EditMode.Update)
             {
-              
+
                 VO.factory_id = Convert.ToInt32(lblID.Text);
                 bResult = Fac_service.UpdateFactory(VO);
                 if (bResult)
@@ -170,9 +170,9 @@ namespace Team3
             {
                 List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
                 var High = (from H_Item in F_list
-                            where H_Item.FACILITY_CLASS != "창고"
+                            where H_Item.facility_class != "창고"
                             select H_Item).ToList();
-                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "FACTORY_ID", "FACTORY_NAME");
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
 
                 if (mode == EditMode.Update)
                 {
@@ -184,7 +184,7 @@ namespace Team3
             {
                 List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
                 var High = (from H_Item in F_list
-                            where H_Item.FACILITY_CLASS == "회사"
+                            where H_Item.facility_class == "회사"
                             select H_Item).ToList();
                 ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
 

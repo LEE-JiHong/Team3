@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodeFacilityGroup = new System.Windows.Forms.TextBox();
+            this.txtMgrade_code = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNameFacilityGroup = new System.Windows.Forms.TextBox();
+            this.txtMgrade_name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtModifier = new System.Windows.Forms.TextBox();
+            this.txtMgrade_uadmin = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtModifyTime = new System.Windows.Forms.TextBox();
+            this.txtMgrade_udate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtInfoFacility = new System.Windows.Forms.TextBox();
+            this.txtMgrade_comment = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cboIsUsed = new System.Windows.Forms.ComboBox();
+            this.cboYN = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +58,7 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -74,17 +75,17 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cboIsUsed);
-            this.panel2.Controls.Add(this.txtInfoFacility);
+            this.panel2.Controls.Add(this.cboYN);
+            this.panel2.Controls.Add(this.txtMgrade_comment);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.txtModifyTime);
+            this.panel2.Controls.Add(this.txtMgrade_udate);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtModifier);
+            this.panel2.Controls.Add(this.txtMgrade_uadmin);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtNameFacilityGroup);
+            this.panel2.Controls.Add(this.txtMgrade_name);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtCodeFacilityGroup);
+            this.panel2.Controls.Add(this.txtMgrade_code);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(364, 338);
             // 
@@ -104,12 +105,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "설비군 코드";
             // 
-            // txtCodeFacilityGroup
+            // txtMgrade_code
             // 
-            this.txtCodeFacilityGroup.Location = new System.Drawing.Point(145, 24);
-            this.txtCodeFacilityGroup.Name = "txtCodeFacilityGroup";
-            this.txtCodeFacilityGroup.Size = new System.Drawing.Size(172, 21);
-            this.txtCodeFacilityGroup.TabIndex = 1;
+            this.txtMgrade_code.Location = new System.Drawing.Point(145, 24);
+            this.txtMgrade_code.Name = "txtMgrade_code";
+            this.txtMgrade_code.Size = new System.Drawing.Size(172, 21);
+            this.txtMgrade_code.TabIndex = 1;
             // 
             // label3
             // 
@@ -122,12 +123,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "설비군 명";
             // 
-            // txtNameFacilityGroup
+            // txtMgrade_name
             // 
-            this.txtNameFacilityGroup.Location = new System.Drawing.Point(145, 62);
-            this.txtNameFacilityGroup.Name = "txtNameFacilityGroup";
-            this.txtNameFacilityGroup.Size = new System.Drawing.Size(172, 21);
-            this.txtNameFacilityGroup.TabIndex = 1;
+            this.txtMgrade_name.Location = new System.Drawing.Point(145, 62);
+            this.txtMgrade_name.Name = "txtMgrade_name";
+            this.txtMgrade_name.Size = new System.Drawing.Size(172, 21);
+            this.txtMgrade_name.TabIndex = 1;
             // 
             // label4
             // 
@@ -151,12 +152,12 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "수정자";
             // 
-            // txtModifier
+            // txtMgrade_uadmin
             // 
-            this.txtModifier.Location = new System.Drawing.Point(145, 140);
-            this.txtModifier.Name = "txtModifier";
-            this.txtModifier.Size = new System.Drawing.Size(172, 21);
-            this.txtModifier.TabIndex = 1;
+            this.txtMgrade_uadmin.Location = new System.Drawing.Point(145, 140);
+            this.txtMgrade_uadmin.Name = "txtMgrade_uadmin";
+            this.txtMgrade_uadmin.Size = new System.Drawing.Size(172, 21);
+            this.txtMgrade_uadmin.TabIndex = 1;
             // 
             // label6
             // 
@@ -169,12 +170,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "수정시간";
             // 
-            // txtModifyTime
+            // txtMgrade_udate
             // 
-            this.txtModifyTime.Location = new System.Drawing.Point(145, 178);
-            this.txtModifyTime.Name = "txtModifyTime";
-            this.txtModifyTime.Size = new System.Drawing.Size(172, 21);
-            this.txtModifyTime.TabIndex = 1;
+            this.txtMgrade_udate.Location = new System.Drawing.Point(145, 178);
+            this.txtMgrade_udate.Name = "txtMgrade_udate";
+            this.txtMgrade_udate.Size = new System.Drawing.Size(172, 21);
+            this.txtMgrade_udate.TabIndex = 1;
             // 
             // label7
             // 
@@ -187,13 +188,13 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "시설설명";
             // 
-            // txtInfoFacility
+            // txtMgrade_comment
             // 
-            this.txtInfoFacility.Location = new System.Drawing.Point(53, 240);
-            this.txtInfoFacility.Multiline = true;
-            this.txtInfoFacility.Name = "txtInfoFacility";
-            this.txtInfoFacility.Size = new System.Drawing.Size(264, 71);
-            this.txtInfoFacility.TabIndex = 1;
+            this.txtMgrade_comment.Location = new System.Drawing.Point(53, 240);
+            this.txtMgrade_comment.Multiline = true;
+            this.txtMgrade_comment.Name = "txtMgrade_comment";
+            this.txtMgrade_comment.Size = new System.Drawing.Size(264, 71);
+            this.txtMgrade_comment.TabIndex = 1;
             // 
             // label8
             // 
@@ -207,13 +208,13 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "설비군정보";
             // 
-            // cboIsUsed
+            // cboYN
             // 
-            this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(145, 100);
-            this.cboIsUsed.Name = "cboIsUsed";
-            this.cboIsUsed.Size = new System.Drawing.Size(172, 23);
-            this.cboIsUsed.TabIndex = 2;
+            this.cboYN.FormattingEnabled = true;
+            this.cboYN.Location = new System.Drawing.Point(145, 100);
+            this.cboYN.Name = "cboYN";
+            this.cboYN.Size = new System.Drawing.Size(172, 23);
+            this.cboYN.TabIndex = 2;
             // 
             // lblID
             // 
@@ -248,18 +249,18 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtModifyTime;
+        private System.Windows.Forms.TextBox txtMgrade_udate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.TextBox txtMgrade_uadmin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNameFacilityGroup;
+        private System.Windows.Forms.TextBox txtMgrade_name;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodeFacilityGroup;
+        private System.Windows.Forms.TextBox txtMgrade_code;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtInfoFacility;
+        private System.Windows.Forms.TextBox txtMgrade_comment;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.ComboBox cboYN;
         private System.Windows.Forms.Label lblID;
     }
 }

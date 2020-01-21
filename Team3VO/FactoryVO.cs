@@ -28,16 +28,16 @@ namespace Team3VO
     }
     public class FactoryDB_VO
     {
-    public int    FACTORY_ID { get; set; }
-    public string    FACILITY_CLASS { get; set; } //시설군
-        public string    FACILITY_TYPE { get; set; } //시설구분
-        public string    FACILITY_VALUE { get; set; }//시설타입
-        public string    FACTORY_CODE { get; set; } //시설코드
-        public string    FACTORY_NAME { get; set; } //시설명
-        public string    FACTORY_PARENT { get; set; } //상위시설
-        public string    COMPANY_NAME { get; set; } //업체명
-        public string    FACTORY_YN { get; set; } //사용유무
-        public string    FACTORY_UADMIN { get; set; } //수정자
-        public string    FACTORY_UDATE { get; set; } //수정시간
+    public int    factory_id { get; set; }
+    public string    facility_class { get; set; } //시설군
+        public string    facility_type { get; set; } //시설구분
+        public string    facility_value { get; set; }//시설타입
+        public string    factory_code { get; set; } //시설코드
+        public string    factory_name { get; set; } //시설명
+        public string    factory_parent { get; set; } //상위시설
+        public string    company_name { get; set; } //업체명
+        public string    factory_yn { get; set; } //사용유무
+        public string    factory_uadmin { get; set; } //수정자
+        public string    factory_udate { get; set; } //수정시간
     }
 }
