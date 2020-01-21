@@ -34,7 +34,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.btnG_Update = new System.Windows.Forms.Button();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -43,17 +43,19 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAdmin = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblID1 = new System.Windows.Forms.Label();
             this.lblID2 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -70,7 +72,7 @@
             // 
             this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Location = new System.Drawing.Point(338, 43);
-            this.panel3.Size = new System.Drawing.Size(693, 418);
+            this.panel3.Size = new System.Drawing.Size(693, 533);
             // 
             // panel2
             // 
@@ -115,21 +117,23 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.radioButton2);
+            this.basepanel.Controls.Add(this.radioButton1);
             this.basepanel.Controls.Add(this.lblID2);
             this.basepanel.Controls.Add(this.lblID1);
-            this.basepanel.Controls.Add(this.textBox5);
+            this.basepanel.Controls.Add(this.txtComment);
             this.basepanel.Controls.Add(this.label7);
-            this.basepanel.Controls.Add(this.textBox4);
+            this.basepanel.Controls.Add(this.txtDate);
             this.basepanel.Controls.Add(this.label6);
-            this.basepanel.Controls.Add(this.textBox3);
+            this.basepanel.Controls.Add(this.txtAdmin);
             this.basepanel.Controls.Add(this.label5);
-            this.basepanel.Controls.Add(this.textBox2);
+            this.basepanel.Controls.Add(this.txtName);
             this.basepanel.Controls.Add(this.label4);
-            this.basepanel.Controls.Add(this.textBox1);
+            this.basepanel.Controls.Add(this.txtCode);
             this.basepanel.Controls.Add(this.label3);
             this.basepanel.Controls.Add(this.button5);
             this.basepanel.Controls.Add(this.label2);
-            this.basepanel.Size = new System.Drawing.Size(1037, 464);
+            this.basepanel.Size = new System.Drawing.Size(1037, 579);
             this.basepanel.Controls.SetChildIndex(this.panel4, 0);
             this.basepanel.Controls.SetChildIndex(this.panel1, 0);
             this.basepanel.Controls.SetChildIndex(this.panel2, 0);
@@ -138,17 +142,19 @@
             this.basepanel.Controls.SetChildIndex(this.label2, 0);
             this.basepanel.Controls.SetChildIndex(this.button5, 0);
             this.basepanel.Controls.SetChildIndex(this.label3, 0);
-            this.basepanel.Controls.SetChildIndex(this.textBox1, 0);
+            this.basepanel.Controls.SetChildIndex(this.txtCode, 0);
             this.basepanel.Controls.SetChildIndex(this.label4, 0);
-            this.basepanel.Controls.SetChildIndex(this.textBox2, 0);
+            this.basepanel.Controls.SetChildIndex(this.txtName, 0);
             this.basepanel.Controls.SetChildIndex(this.label5, 0);
-            this.basepanel.Controls.SetChildIndex(this.textBox3, 0);
+            this.basepanel.Controls.SetChildIndex(this.txtAdmin, 0);
             this.basepanel.Controls.SetChildIndex(this.label6, 0);
-            this.basepanel.Controls.SetChildIndex(this.textBox4, 0);
+            this.basepanel.Controls.SetChildIndex(this.txtDate, 0);
             this.basepanel.Controls.SetChildIndex(this.label7, 0);
-            this.basepanel.Controls.SetChildIndex(this.textBox5, 0);
+            this.basepanel.Controls.SetChildIndex(this.txtComment, 0);
             this.basepanel.Controls.SetChildIndex(this.lblID1, 0);
             this.basepanel.Controls.SetChildIndex(this.lblID2, 0);
+            this.basepanel.Controls.SetChildIndex(this.radioButton1, 0);
+            this.basepanel.Controls.SetChildIndex(this.radioButton2, 0);
             // 
             // imageList1
             // 
@@ -179,6 +185,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(310, 217);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // dataGridView2
             // 
@@ -187,7 +194,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(693, 418);
+            this.dataGridView2.Size = new System.Drawing.Size(693, 533);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -203,7 +210,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnDel);
             this.flowLayoutPanel1.Controls.Add(this.btnG_Update);
             this.flowLayoutPanel1.Controls.Add(this.btnAddGroup);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,20 +220,21 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(190, 29);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button3
+            // btnDel
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Team3.Properties.Resources.Trash_16x16;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(130, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 23);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "삭제";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(130, 3);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(57, 23);
+            this.btnDel.TabIndex = 50;
+            this.btnDel.Text = "삭제";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnG_Update
             // 
@@ -340,87 +348,87 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(33, 278);
+            this.label3.Location = new System.Drawing.Point(30, 340);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 12);
             this.label3.TabIndex = 29;
             this.label3.Text = "설비군코드";
             // 
-            // textBox1
+            // txtCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 275);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 21);
-            this.textBox1.TabIndex = 32;
+            this.txtCode.Location = new System.Drawing.Point(106, 337);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(176, 21);
+            this.txtCode.TabIndex = 32;
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 302);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 21);
-            this.textBox2.TabIndex = 34;
+            this.txtName.Location = new System.Drawing.Point(106, 364);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(176, 21);
+            this.txtName.TabIndex = 34;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(33, 305);
+            this.label4.Location = new System.Drawing.Point(30, 367);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 12);
             this.label4.TabIndex = 33;
             this.label4.Text = "설비군명";
             // 
-            // textBox3
+            // txtAdmin
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 329);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 21);
-            this.textBox3.TabIndex = 36;
+            this.txtAdmin.Location = new System.Drawing.Point(106, 391);
+            this.txtAdmin.Name = "txtAdmin";
+            this.txtAdmin.Size = new System.Drawing.Size(176, 21);
+            this.txtAdmin.TabIndex = 36;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(33, 332);
+            this.label5.Location = new System.Drawing.Point(30, 394);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 12);
             this.label5.TabIndex = 35;
             this.label5.Text = "수정자";
             // 
-            // textBox4
+            // txtDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 356);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 21);
-            this.textBox4.TabIndex = 38;
+            this.txtDate.Location = new System.Drawing.Point(106, 418);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(176, 21);
+            this.txtDate.TabIndex = 38;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(33, 359);
+            this.label6.Location = new System.Drawing.Point(30, 421);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 37;
             this.label6.Text = "수정시간";
             // 
-            // textBox5
+            // txtComment
             // 
-            this.textBox5.Location = new System.Drawing.Point(33, 402);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(252, 47);
-            this.textBox5.TabIndex = 40;
+            this.txtComment.Location = new System.Drawing.Point(30, 464);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(252, 78);
+            this.txtComment.TabIndex = 40;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(33, 387);
+            this.label7.Location = new System.Drawing.Point(30, 449);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 12);
             this.label7.TabIndex = 39;
@@ -444,10 +452,32 @@
             this.lblID2.TabIndex = 41;
             this.lblID2.Text = "lblID2";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(95, 301);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
+            this.radioButton1.TabIndex = 42;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "사용";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(181, 301);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(59, 16);
+            this.radioButton2.TabIndex = 42;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "미사용";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // facilityMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1037, 546);
+            this.ClientSize = new System.Drawing.Size(1037, 661);
             this.MinimumSize = new System.Drawing.Size(1053, 585);
             this.Name = "facilityMgt";
             this.Tag = "설비관리";
@@ -479,21 +509,23 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAddGroup;
         private System.Windows.Forms.Button btnG_Update;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAdmin;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblID2;
         private System.Windows.Forms.Label lblID1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
