@@ -52,6 +52,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

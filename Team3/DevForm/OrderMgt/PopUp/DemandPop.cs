@@ -117,9 +117,9 @@ namespace Team3
 
                     idx--;
 
-                    if (idx < -1)
+                    if (idx == -1)
                     {
-                        break;
+                        MessageBox.Show("성공");
                     }
                     qty = 0;
                 }
@@ -130,11 +130,13 @@ namespace Team3
 
                 totalQty += Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
 
-                if (soQty > totalQty)
-                {
-                    MessageBox.Show("수량이 계획수량보다 적습니다.");
-                    return;
-                }
+                
+            }
+
+            if (soQty > totalQty)
+            {
+                MessageBox.Show("수량이 계획수량보다 적습니다.");
+                return;
             }
         }
     }
