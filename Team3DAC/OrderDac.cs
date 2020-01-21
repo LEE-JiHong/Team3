@@ -84,7 +84,11 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
+                //string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
+
+                string sql = "select so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename";
+
+                //p.product_codename을 product_name으로 바꾸기
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
@@ -97,6 +101,11 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// 업체 조회
+        /// </summary>
+        /// <param name="company_type">{company_type}이 아닌 업체 조회</param>
+        /// <returns></returns>
         public List<CompanyVO> GetCompanyAll(string company_type)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -111,6 +120,52 @@ namespace Team3DAC
                 List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(reader);
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+
+        /// <summary>
+        /// '완제품'인 제품 조회
+        /// </summary>
+        /// <returns></returns>
+        public List<ProductVO> GetProductList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select * from TBL_PRODUCT where product_type = 'FP'";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ProductVO> list = Helper.DataReaderMapToList<ProductVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public bool AddOneSOMaster(SOMasterVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate, so_ocount, so_ccount) " +
+                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate, 0, 0)";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@plan_id", VO.plan_id);
+                cmd.Parameters.AddWithValue("@so_wo_id", VO.so_wo_id);
+                cmd.Parameters.AddWithValue("@company_code", VO.company_code);
+                cmd.Parameters.AddWithValue("@company_type", VO.company_type);
+                cmd.Parameters.AddWithValue("@product_name", VO.product_name);
+                cmd.Parameters.AddWithValue("@so_pcount", VO.so_pcount);
+                cmd.Parameters.AddWithValue("@so_edate", VO.so_edate);
+                cmd.Parameters.AddWithValue("@so_sdate", VO.so_sdate);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
             }
         }
 

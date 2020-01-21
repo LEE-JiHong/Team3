@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
@@ -14,6 +15,8 @@ namespace Team3
         public enum EditMode { Insert, Update }
         string edit = string.Empty;
         public SOMasterVO vo;
+
+        List<CompanyVO> list;
 
         public SOMasterVO VO
         {
@@ -38,16 +41,50 @@ namespace Team3
 
         private void SODialog_Load(object sender, EventArgs e)
         {
-            List<CompanyVO> list = new List<CompanyVO>();
+            list = new List<CompanyVO>();
+
             OrderService service = new OrderService();
             list = service.GetCompanyAll("cooperative");
 
             ComboUtil.ComboBinding(cbCompany, list, "company_code", "company_name", "선택");
             ComboUtil.ComboBinding(cbDestination, list, "company_code", "company_name");
+
+            List<ProductVO> pList = new List<ProductVO>();
+            pList = service.GetProductList();
+
+            ComboUtil.ComboBinding(cbProduct, pList, "product_name", "product_name", "선택");
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            //영업마스터 추가
+            string planID = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
 
+            SOMasterVO vo = new SOMasterVO();
+            vo.plan_id = planID;
+            vo.so_wo_id = txtSOWO.Text;
+
+            List<CompanyVO> company = (from item in list
+                                          where item.company_code == (string)cbCompany.SelectedValue
+                                          select item).ToList();
+
+            vo.company_code = (string)cbCompany.SelectedValue;
+            vo.company_type = company[0].company_type;
+            vo.product_name = (string)cbProduct.SelectedValue;
+            vo.so_pcount = Convert.ToInt32(txtOrder.Text);
+            vo.so_edate = dtpsDate.Value.ToShortDateString();
+            vo.so_sdate = DateTime.Now.ToShortDateString();
+
+            OrderService service = new OrderService();
+            bool result = service.AddOneSOMaster(vo);
+
+            if (result)
+            {
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("등록 실패");
+            }
         }
 
         private void txtOrder_TextChanged(object sender, EventArgs e)

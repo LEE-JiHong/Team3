@@ -27,8 +27,17 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.GetCompanyAll(company_type);
         }
-       
 
+        public List<ProductVO> GetProductList()
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetProductList();
+        }
+
+        public bool AddOneSOMaster(SOMasterVO VO)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.AddOneSOMaster(VO);
+        }
     }
-
 }
