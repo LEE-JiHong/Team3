@@ -88,14 +88,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.LeftMenuButton = new System.Windows.Forms.Button();
-            this.닫기 = new System.Windows.Forms.Button();
-            this.layoutButton = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LeftMenuTab = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -125,13 +118,19 @@
             this.MainTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.LeftMenuButton = new System.Windows.Forms.Button();
+            this.닫기 = new System.Windows.Forms.Button();
+            this.layoutButton = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LeftMenuTab.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -144,6 +143,7 @@
             this.MainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -211,101 +211,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1340, 62);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // LeftMenuButton
-            // 
-            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
-            this.LeftMenuButton.FlatAppearance.BorderSize = 0;
-            this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.LeftMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("LeftMenuButton.Image")));
-            this.LeftMenuButton.Location = new System.Drawing.Point(3, 3);
-            this.LeftMenuButton.Name = "LeftMenuButton";
-            this.LeftMenuButton.Size = new System.Drawing.Size(83, 43);
-            this.LeftMenuButton.TabIndex = 5;
-            this.LeftMenuButton.Text = "메뉴";
-            this.LeftMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeftMenuButton.UseVisualStyleBackColor = false;
-            this.LeftMenuButton.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
-            // 닫기
-            // 
-            this.닫기.FlatAppearance.BorderSize = 0;
-            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.닫기.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.닫기.Image = ((System.Drawing.Image)(resources.GetObject("닫기.Image")));
-            this.닫기.Location = new System.Drawing.Point(92, 3);
-            this.닫기.Name = "닫기";
-            this.닫기.Size = new System.Drawing.Size(88, 43);
-            this.닫기.TabIndex = 4;
-            this.닫기.Text = "닫기";
-            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.닫기.UseVisualStyleBackColor = true;
-            this.닫기.Click += new System.EventHandler(this.CloseTab);
-            // 
-            // layoutButton
-            // 
-            this.layoutButton.FlatAppearance.BorderSize = 0;
-            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.layoutButton.Image = ((System.Drawing.Image)(resources.GetObject("layoutButton.Image")));
-            this.layoutButton.Location = new System.Drawing.Point(186, 3);
-            this.layoutButton.Name = "layoutButton";
-            this.layoutButton.Size = new System.Drawing.Size(111, 43);
-            this.layoutButton.TabIndex = 12;
-            this.layoutButton.Text = "화면분할";
-            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.layoutButton.UseVisualStyleBackColor = true;
-            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.Location = new System.Drawing.Point(303, 3);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(86, 43);
-            this.button15.TabIndex = 13;
-            this.button15.Text = "설정";
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
-            this.button16.Location = new System.Drawing.Point(395, 3);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(86, 43);
-            this.button16.TabIndex = 14;
-            this.button16.Text = "정보";
-            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
-            this.button17.Image = global::Team3.Properties.Resources.chrome1;
-            this.button17.Location = new System.Drawing.Point(487, 3);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(112, 43);
-            this.button17.TabIndex = 15;
-            this.button17.Text = "EIS";
-            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.Button17_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.pictureBox1);
@@ -314,18 +219,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 80);
             this.panel4.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Team3.Properties.Resources.logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // LeftMenuTab
             // 
@@ -810,6 +703,113 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // LeftMenuButton
+            // 
+            this.LeftMenuButton.BackColor = System.Drawing.Color.Transparent;
+            this.LeftMenuButton.FlatAppearance.BorderSize = 0;
+            this.LeftMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LeftMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeftMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.LeftMenuButton.Image = global::Team3.Properties.Resources.Home_32x32;
+            this.LeftMenuButton.Location = new System.Drawing.Point(3, 3);
+            this.LeftMenuButton.Name = "LeftMenuButton";
+            this.LeftMenuButton.Size = new System.Drawing.Size(83, 43);
+            this.LeftMenuButton.TabIndex = 5;
+            this.LeftMenuButton.Text = "메뉴";
+            this.LeftMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.LeftMenuButton.UseVisualStyleBackColor = false;
+            this.LeftMenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // 닫기
+            // 
+            this.닫기.FlatAppearance.BorderSize = 0;
+            this.닫기.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.닫기.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.닫기.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.닫기.Image = ((System.Drawing.Image)(resources.GetObject("닫기.Image")));
+            this.닫기.Location = new System.Drawing.Point(92, 3);
+            this.닫기.Name = "닫기";
+            this.닫기.Size = new System.Drawing.Size(88, 43);
+            this.닫기.TabIndex = 4;
+            this.닫기.Text = "닫기";
+            this.닫기.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.닫기.UseVisualStyleBackColor = true;
+            this.닫기.Click += new System.EventHandler(this.CloseTab);
+            // 
+            // layoutButton
+            // 
+            this.layoutButton.FlatAppearance.BorderSize = 0;
+            this.layoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.layoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.layoutButton.Image = ((System.Drawing.Image)(resources.GetObject("layoutButton.Image")));
+            this.layoutButton.Location = new System.Drawing.Point(186, 3);
+            this.layoutButton.Name = "layoutButton";
+            this.layoutButton.Size = new System.Drawing.Size(111, 43);
+            this.layoutButton.TabIndex = 12;
+            this.layoutButton.Text = "화면분할";
+            this.layoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.layoutButton.UseVisualStyleBackColor = true;
+            this.layoutButton.Click += new System.EventHandler(this.LayoutButton_Click);
+            // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
+            this.button15.Location = new System.Drawing.Point(303, 3);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(86, 43);
+            this.button15.TabIndex = 13;
+            this.button15.Text = "설정";
+            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
+            this.button16.Location = new System.Drawing.Point(395, 3);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(86, 43);
+            this.button16.TabIndex = 14;
+            this.button16.Text = "정보";
+            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(91)))));
+            this.button17.Image = global::Team3.Properties.Resources.chrome1;
+            this.button17.Location = new System.Drawing.Point(487, 3);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(112, 43);
+            this.button17.TabIndex = 15;
+            this.button17.Text = "EIS";
+            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.Button17_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Team3.Properties.Resources.logo2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -835,7 +835,6 @@
             this.panel11.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LeftMenuTab.ResumeLayout(false);
             this.LeftMenuTab.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -849,6 +848,7 @@
             this.MainTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

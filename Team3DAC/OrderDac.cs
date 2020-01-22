@@ -310,6 +310,38 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// 수요계획 목록 가져오기
+        /// </summary>
+        /// <param name="firstDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public DataTable GetDemandPlan(string firstDate, string endDate)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetDemandPlan";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@StartDate", firstDate);
+                cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+                DataTable dataTable = new DataTable();
+
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                // this will query your database and return the result to your datatable
+                da.Fill(dataTable);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dataTable;
+            }
+        }
+
         //public bool UpdateSOMaster(SOMasterVO vo)
         //{
         //    using (SqlCommand cmd = new SqlCommand())

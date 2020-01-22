@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Team3VO;
 using Team3DAC;
+using System.Data;
 
 namespace Team3
 {
@@ -57,10 +58,17 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.GetSOMaster(planID);
         }
+
         public bool AddDemandPlan(List<DemandPlanVO> list)
         {
             OrderDac dac = new OrderDac();
             return dac.AddDemandPlan(list);
+        }
+
+        public DataTable GetDemandPlan(string firstDate, string endDate)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetDemandPlan(firstDate, endDate);
         }
     }
 }
