@@ -39,7 +39,7 @@
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -271,7 +271,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.button6);
-            this.flowLayoutPanel2.Controls.Add(this.button4);
+            this.flowLayoutPanel2.Controls.Add(this.btnDelete);
             this.flowLayoutPanel2.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel2.Controls.Add(this.btnAdd);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -296,20 +296,21 @@
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnDelete
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Team3.Properties.Resources.Trash_16x16;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(134, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 23);
-            this.button4.TabIndex = 50;
-            this.button4.Text = "삭제";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::Team3.Properties.Resources.Trash_16x16;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(134, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(57, 23);
+            this.btnDelete.TabIndex = 50;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -437,20 +438,19 @@
             // lblID1
             // 
             this.lblID1.AutoSize = true;
-            this.lblID1.Location = new System.Drawing.Point(291, 12);
+            this.lblID1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblID1.Location = new System.Drawing.Point(291, 20);
             this.lblID1.Name = "lblID1";
-            this.lblID1.Size = new System.Drawing.Size(35, 12);
+            this.lblID1.Size = new System.Drawing.Size(0, 12);
             this.lblID1.TabIndex = 41;
-            this.lblID1.Text = "lblID1";
             // 
             // lblID2
             // 
             this.lblID2.AutoSize = true;
             this.lblID2.Location = new System.Drawing.Point(712, 18);
             this.lblID2.Name = "lblID2";
-            this.lblID2.Size = new System.Drawing.Size(35, 12);
+            this.lblID2.Size = new System.Drawing.Size(0, 12);
             this.lblID2.TabIndex = 41;
-            this.lblID2.Text = "lblID2";
             // 
             // radioButton1
             // 
@@ -507,7 +507,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAddGroup;
