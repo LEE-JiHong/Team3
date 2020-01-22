@@ -13,12 +13,18 @@ namespace Team3
     {
         ResourceDac dac = new ResourceDac();
 
+        //
+        public List<UserVO> GetUserAll()
+        {
+            return dac.GetUserAll();
+        }
+
 
         //======이하 업체==============
         /// <summary>
         /// Company 모든컬럼 select
         /// </summary>
-        public List<CompanyVO> GetCompanyAll()
+        public List<CompanyDB_VO> GetCompanyAll()
         {
 
             return dac.GetCompanyAll();

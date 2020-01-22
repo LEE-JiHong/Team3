@@ -38,12 +38,27 @@ namespace Team3DAC
                 return list;
             }
         }
+        //==유저
+        public List<UserVO> GetUserAll()
+        {
+            string sql = "select user_id,user_name from tbl_user;";
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<UserVO> list = Helper.DataReaderMapToList<UserVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
 
         //거래처=============================================================
         /// <summary>
         /// Company 모든컬럼 select
         /// </summary>
-        public List<CompanyVO> GetCompanyAll()
+        public List<CompanyDB_VO> GetCompanyAll()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -54,9 +69,26 @@ namespace Team3DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(reader);
+                List<CompanyDB_VO> list = Helper.DataReaderMapToList<CompanyDB_VO>(reader);
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+        public bool InsertCompany(CompanyVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "InsertCompany";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
             }
         }
         //설비================================================================
