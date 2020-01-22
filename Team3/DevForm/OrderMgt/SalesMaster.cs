@@ -59,7 +59,12 @@ namespace Team3
             SODialog frm = new SODialog(SODialog.EditMode.Insert);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                OrderService service = new OrderService();
+                List<SOMasterVO> list = service.GetSOMasterAll();
 
+                //datagridview
+                SetDataGrid();
+                dataGridView1.DataSource = list;
             }
         }
 
@@ -67,6 +72,16 @@ namespace Team3
         {
             DemandPop frm = new DemandPop();
             frm.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //수정버튼
+            SODialog frm = new SODialog(SODialog.EditMode.Update);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

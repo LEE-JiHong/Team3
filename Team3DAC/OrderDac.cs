@@ -172,6 +172,11 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// 영업마스터 수작업으로 등록
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
         public bool AddOneSOMaster(SOMasterVO VO)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -250,6 +255,90 @@ namespace Team3DAC
 
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+
+        /// <summary>
+        /// 수요계획 생성(생산계획도 동시에 insert)
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public bool AddDemandPlan(List<DemandPlanVO> list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+                try
+                {
+                    cmd.Transaction = tran;
+                    cmd.CommandType = CommandType.Text;
+
+                    foreach (DemandPlanVO item in list)
+                    {
+                        cmd.Parameters.Clear();
+                        
+                        cmd.CommandText = @"insert into TBL_DEMAND_PLAN(so_id, plan_id, d_date, d_count) values (@so_id, @plan_id, @d_date, @d_count); SELECT @@IDENTITY";
+
+                        cmd.Parameters.AddWithValue("@so_id", item.so_id);
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@d_date", item.d_date);
+                        cmd.Parameters.AddWithValue("@d_count", item.d_count);
+
+                        int id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        cmd.CommandText = @"insert into TBL_PRODUCTION_PLAN(d_id, pro_udate) values (@d_id, @pro_udate)";
+                        cmd.Parameters.AddWithValue("@d_id", id);
+                        cmd.Parameters.AddWithValue("@pro_udate", DateTime.Now.ToShortDateString());
+                        cmd.ExecuteNonQuery();
+
+                    }
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    tran.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 수요계획 목록 가져오기
+        /// </summary>
+        /// <param name="firstDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public DataTable GetDemandPlan(string firstDate, string endDate)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetDemandPlan";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@StartDate", firstDate);
+                cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+                DataTable dataTable = new DataTable();
+
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                // this will query your database and return the result to your datatable
+                da.Fill(dataTable);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dataTable;
             }
         }
 

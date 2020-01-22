@@ -17,6 +17,16 @@ namespace Team3
             InitializeComponent();
         }
 
+        private void DemandPlan_Load(object sender, EventArgs e)
+        {
+            dtpEndDate.Value = DateTime.Now.AddMonths(1);
+
+            OrderService service = new OrderService();
+            DataTable dt = service.GetDemandPlan(dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString());
+
+            dataGridView1.DataSource = dt;
+        }
+
         private void BtnExport_Click(object sender, EventArgs e)
         {
             try
@@ -74,5 +84,7 @@ namespace Team3
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        
     }
 }
