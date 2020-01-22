@@ -40,10 +40,10 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,10 +62,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cboPlanID);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.txtProduct);
+            this.panel1.Controls.Add(this.cboCompany);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -245,21 +245,21 @@
             this.label8.TabIndex = 56;
             this.label8.Text = "Date";
             // 
-            // comboBox1
+            // cboCompany
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 24);
-            this.comboBox1.TabIndex = 66;
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(82, 58);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(218, 24);
+            this.cboCompany.TabIndex = 66;
             // 
-            // textBox3
+            // txtProduct
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(771, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 22);
-            this.textBox3.TabIndex = 77;
+            this.txtProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProduct.Location = new System.Drawing.Point(771, 19);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(201, 22);
+            this.txtProduct.TabIndex = 77;
             // 
             // button1
             // 
@@ -279,13 +279,13 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // comboBox3
+            // cboPlanID
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(82, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(218, 24);
-            this.comboBox3.TabIndex = 79;
+            this.cboPlanID.FormattingEnabled = true;
+            this.cboPlanID.Location = new System.Drawing.Point(82, 19);
+            this.cboPlanID.Name = "cboPlanID";
+            this.cboPlanID.Size = new System.Drawing.Size(218, 24);
+            this.cboPlanID.TabIndex = 79;
             // 
             // DemandPlan
             // 
@@ -322,9 +322,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cboCompany;
+        private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboPlanID;
     }
 }
