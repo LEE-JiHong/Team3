@@ -17,6 +17,11 @@ namespace Team3
             InitializeComponent();
         }
 
+        private void DemandPlan_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnExport_Click(object sender, EventArgs e)
         {
             try
@@ -74,5 +79,7 @@ namespace Team3
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        
     }
 }

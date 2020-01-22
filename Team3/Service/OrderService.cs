@@ -57,5 +57,10 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.GetSOMaster(planID);
         }
+        public bool AddDemandPlan(List<DemandPlanVO> list)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.AddDemandPlan(list);
+        }
     }
 }

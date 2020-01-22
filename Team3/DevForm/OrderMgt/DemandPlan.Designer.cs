@@ -293,6 +293,7 @@
             this.Name = "DemandPlan";
             this.Tag = "수요계획";
             this.Text = "수요계획";
+            this.Load += new System.EventHandler(this.DemandPlan_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
