@@ -56,6 +56,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -123,7 +124,13 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.lblID);
             this.basepanel.Size = new System.Drawing.Size(1155, 454);
+            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
+            this.basepanel.Controls.SetChildIndex(this.label1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
+            this.basepanel.Controls.SetChildIndex(this.lblID, 0);
             // 
             // imageList1
             // 
@@ -209,7 +216,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(683, 15);
+            this.label8.Location = new System.Drawing.Point(352, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 8;
@@ -233,7 +240,7 @@
             this.lblCompany.AutoSize = true;
             this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompany.Location = new System.Drawing.Point(711, 13);
+            this.lblCompany.Location = new System.Drawing.Point(683, 15);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(52, 16);
             this.lblCompany.TabIndex = 6;
@@ -330,6 +337,8 @@
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductList.Size = new System.Drawing.Size(1131, 268);
             this.dgvProductList.TabIndex = 0;
+            this.dgvProductList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductList_CellDoubleClick);
+            this.dgvProductList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.SetDgvNumbering);
             // 
             // flowLayoutPanel1
             // 
@@ -468,6 +477,15 @@
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(297, 151);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(38, 12);
+            this.lblID.TabIndex = 16;
+            this.lblID.Text = "label2";
+            // 
             // ProductMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -482,6 +500,7 @@
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
+            this.basepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -517,5 +536,6 @@
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblID;
     }
 }
