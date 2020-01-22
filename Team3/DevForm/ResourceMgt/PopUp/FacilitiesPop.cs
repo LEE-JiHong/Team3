@@ -92,10 +92,15 @@ namespace Team3
                 {
                     bool bResult = R_Service.InsertMachineGr(VO);
                     if (bResult)
+                    {
                         MessageBox.Show("등록성공");
+                        this.DialogResult = DialogResult.OK;
+                   
+                    }
                     else if (!bResult)
                     {
                         MessageBox.Show("등록실패");
+                        this.DialogResult = DialogResult.None;
                         return;
                     }
                 }
@@ -104,10 +109,14 @@ namespace Team3
                     VO.mgrade_id = Convert.ToInt32(lblID.Text);
                     bool bResult = R_Service.UpdateMachineGr(VO);
                     if (bResult)
+                    {
                         MessageBox.Show("수정성공");
+                        this.DialogResult = DialogResult.OK;
+                    }
                     else if (!bResult)
                     {
                         MessageBox.Show("수정실패");
+                        this.DialogResult = DialogResult.None;
                         return;
                     }
                 }

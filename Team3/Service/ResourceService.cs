@@ -38,7 +38,14 @@ namespace Team3
         {
             return dac.InsertMachine(VO);
         }
-
+        public bool UpdateMachine(MachineVO VO)
+        {
+            return dac.UpdateMachine(VO);
+        }
+        public bool DeleteMachin(int i)
+        {
+            return dac.DeleteMachin(i);
+        }
 
        //=============이하 설비군=========
         /// <summary>

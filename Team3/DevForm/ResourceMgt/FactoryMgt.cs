@@ -38,18 +38,24 @@ namespace Team3
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Input);
-            frm.ShowDialog();
-
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                list = service.GetFactoryAll();
+                dataGridView1.DataSource = list;
+            }
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (lblID.Text != "")
             {
                 FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update, lblID.Text);
-                frm.ShowDialog();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    list = service.GetFactoryAll();
+                    dataGridView1.DataSource = list;
+                }
             }
         }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -84,7 +90,7 @@ namespace Team3
 
         private void FactoryMgt_Activated(object sender, EventArgs e)
         {
-     
+
 
         }
     }
