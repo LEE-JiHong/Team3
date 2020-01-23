@@ -33,8 +33,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.rdoWeekday = new System.Windows.Forms.RadioButton();
             this.rdoWeekend = new System.Windows.Forms.RadioButton();
+            this.rdoWeekday = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,7 +60,7 @@
             // 
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Size = new System.Drawing.Size(105, 19);
-            this.label1.Text = "수요계획생성";
+            this.label1.Text = "생산계획생성";
             // 
             // panel1
             // 
@@ -139,17 +139,6 @@
             this.panel5.Size = new System.Drawing.Size(127, 35);
             this.panel5.TabIndex = 74;
             // 
-            // rdoWeekday
-            // 
-            this.rdoWeekday.AutoSize = true;
-            this.rdoWeekday.Location = new System.Drawing.Point(9, 8);
-            this.rdoWeekday.Name = "rdoWeekday";
-            this.rdoWeekday.Size = new System.Drawing.Size(49, 19);
-            this.rdoWeekday.TabIndex = 0;
-            this.rdoWeekday.TabStop = true;
-            this.rdoWeekday.Text = "주중";
-            this.rdoWeekday.UseVisualStyleBackColor = true;
-            // 
             // rdoWeekend
             // 
             this.rdoWeekend.AutoSize = true;
@@ -160,6 +149,17 @@
             this.rdoWeekend.TabStop = true;
             this.rdoWeekend.Text = "주말";
             this.rdoWeekend.UseVisualStyleBackColor = true;
+            // 
+            // rdoWeekday
+            // 
+            this.rdoWeekday.AutoSize = true;
+            this.rdoWeekday.Location = new System.Drawing.Point(9, 8);
+            this.rdoWeekday.Name = "rdoWeekday";
+            this.rdoWeekday.Size = new System.Drawing.Size(49, 19);
+            this.rdoWeekday.TabIndex = 0;
+            this.rdoWeekday.TabStop = true;
+            this.rdoWeekday.Text = "주중";
+            this.rdoWeekday.UseVisualStyleBackColor = true;
             // 
             // DemandPop
             // 

@@ -70,5 +70,11 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.GetDemandPlan(firstDate, endDate);
         }
+
+        public bool AddProductionPlan(string planID)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.AddProductionPlan(planID);
+        }
     }
 }

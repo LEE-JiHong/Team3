@@ -258,8 +258,60 @@ namespace Team3DAC
             }
         }
 
+        ///// <summary>
+        ///// 수요계획 생성(생산계획도 동시에 insert)
+        ///// </summary>
+        ///// <param name="list"></param>
+        ///// <returns></returns>
+        //public bool AddDemandPlan(List<DemandPlanVO> list)
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.Connection = new SqlConnection(this.ConnectionString);
+        //        cmd.Connection.Open();
+        //        SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+        //        try
+        //        {
+        //            cmd.Transaction = tran;
+        //            cmd.CommandType = CommandType.Text;
+
+        //            foreach (DemandPlanVO item in list)
+        //            {
+        //                cmd.Parameters.Clear();
+                        
+        //                cmd.CommandText = @"insert into TBL_DEMAND_PLAN(so_id, plan_id, d_date, d_count) values (@so_id, @plan_id, @d_date, @d_count); SELECT @@IDENTITY";
+
+        //                cmd.Parameters.AddWithValue("@so_id", item.so_id);
+        //                cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+        //                cmd.Parameters.AddWithValue("@d_date", item.d_date);
+        //                cmd.Parameters.AddWithValue("@d_count", item.d_count);
+
+        //                int id = Convert.ToInt32(cmd.ExecuteScalar());
+
+        //                cmd.CommandText = @"insert into TBL_PRODUCTION_PLAN(d_id, pro_udate) values (@d_id, @pro_udate)";
+        //                cmd.Parameters.AddWithValue("@d_id", id);
+        //                cmd.Parameters.AddWithValue("@pro_udate", DateTime.Now.ToShortDateString());
+        //                cmd.ExecuteNonQuery();
+
+        //            }
+
+        //            tran.Commit();
+        //            cmd.Connection.Close();
+        //            return true;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            System.Diagnostics.Debug.WriteLine(ex.Message);
+        //            tran.Rollback();
+        //            cmd.Connection.Close();
+        //            return false;
+        //        }
+        //    }
+        //}
+
         /// <summary>
-        /// 수요계획 생성(생산계획도 동시에 insert)
+        /// 수요계획 생성
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
@@ -279,21 +331,73 @@ namespace Team3DAC
                     foreach (DemandPlanVO item in list)
                     {
                         cmd.Parameters.Clear();
-                        
-                        cmd.CommandText = @"insert into TBL_DEMAND_PLAN(so_id, plan_id, d_date, d_count) values (@so_id, @plan_id, @d_date, @d_count); SELECT @@IDENTITY";
+
+                        cmd.CommandText = @"insert into TBL_DEMAND_PLAN(so_id, plan_id, d_date, d_count) values (@so_id, @plan_id, @d_date, @d_count)";
 
                         cmd.Parameters.AddWithValue("@so_id", item.so_id);
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@d_date", item.d_date);
                         cmd.Parameters.AddWithValue("@d_count", item.d_count);
 
-                        int id = Convert.ToInt32(cmd.ExecuteScalar());
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    tran.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 생산계획 생성
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public bool AddProductionPlan(string planID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+                try
+                {
+                    cmd.Transaction = tran;
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.CommandText = "select d_id from TBL_DEMAND_PLAN where plan_id = @PlanID";
+
+                    cmd.Parameters.AddWithValue("@PlanID", planID);
+
+                    List<int> list = new List<int>();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        list.Add(Convert.ToInt32(reader[0]));
+                    }
+
+                    reader.Close();
+
+                    foreach (int dID in list)
+                    {
+                        cmd.Parameters.Clear();
 
                         cmd.CommandText = @"insert into TBL_PRODUCTION_PLAN(d_id, pro_udate) values (@d_id, @pro_udate)";
-                        cmd.Parameters.AddWithValue("@d_id", id);
+
+                        cmd.Parameters.AddWithValue("@d_id", dID);
                         cmd.Parameters.AddWithValue("@pro_udate", DateTime.Now.ToShortDateString());
                         cmd.ExecuteNonQuery();
-
                     }
 
                     tran.Commit();
@@ -333,7 +437,7 @@ namespace Team3DAC
 
                 cmd.Connection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                // this will query your database and return the result to your datatable
+
                 da.Fill(dataTable);
                 da.Dispose();
 
