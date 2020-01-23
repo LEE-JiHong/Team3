@@ -627,6 +627,7 @@
     <None Include="Icon\Button\New_16x16.png" />
     <None Include="Icon\Button\file.png" />
     <Content Include="Icon\Button\pencil.png" />
+    <None Include="Icon\Button\plus.png" />
     <Content Include="Icon\Button\printer.png" />
     <None Include="Icon\Button\Print_16x16.png" />
     <None Include="Icon\Button\Recurrence_16x16.png" />

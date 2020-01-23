@@ -127,7 +127,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(804, 72);
+            this.button1.Location = new System.Drawing.Point(822, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 70;

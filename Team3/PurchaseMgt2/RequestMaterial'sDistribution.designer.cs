@@ -32,8 +32,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button5 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,10 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,7 +74,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textBox2);
@@ -92,7 +90,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(15, 266);
+            this.label2.Location = new System.Drawing.Point(15, 258);
             this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.Text = "자재불출";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,14 +106,14 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(446, 252);
-            this.panel5.Size = new System.Drawing.Size(437, 29);
+            this.panel5.Location = new System.Drawing.Point(686, 252);
+            this.panel5.Size = new System.Drawing.Size(197, 29);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(834, 93);
-            this.panel4.Size = new System.Drawing.Size(49, 29);
+            this.panel4.Location = new System.Drawing.Point(810, 93);
+            this.panel4.Size = new System.Drawing.Size(73, 29);
             // 
             // layoutButton
             // 
@@ -143,23 +141,26 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(49, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(73, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button5
             // 
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(4, 3);
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(13, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(42, 23);
-            this.button5.TabIndex = 30;
+            this.button5.Size = new System.Drawing.Size(57, 23);
+            this.button5.TabIndex = 52;
             this.button5.Text = "엑셀";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.button2);
-            this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Controls.Add(this.button6);
             this.flowLayoutPanel2.Controls.Add(this.button8);
             this.flowLayoutPanel2.Controls.Add(this.button4);
@@ -167,28 +168,53 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(437, 29);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(197, 29);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
-            // button2
+            // button6
             // 
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(359, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "저장";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(137, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(57, 23);
+            this.button6.TabIndex = 52;
+            this.button6.Text = "엑셀";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // button8
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(278, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "추가";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = global::Team3.Properties.Resources.Save_16x16;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(79, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(52, 23);
+            this.button8.TabIndex = 51;
+            this.button8.Text = "저장";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::Team3.Properties.Resources.plus;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(16, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 23);
+            this.button4.TabIndex = 53;
+            this.button4.Text = "추가";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -311,61 +337,23 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(107, 22);
             this.dateTimePicker1.TabIndex = 25;
             // 
-            // button7
+            // button3
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(746, 42);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(117, 23);
-            this.button7.TabIndex = 36;
-            this.button7.Text = "조회";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(215, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
-            this.button6.TabIndex = 52;
-            this.button6.Text = "엑셀";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Team3.Properties.Resources.Trash_16x16;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(94, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 23);
-            this.button4.TabIndex = 53;
-            this.button4.Text = "추가";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::Team3.Properties.Resources.Save_16x16;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(157, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(52, 23);
-            this.button8.TabIndex = 51;
-            this.button8.Text = "저장";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(797, 40);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(70, 30);
+            this.button3.TabIndex = 80;
+            this.button3.Text = "조회";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // DMRMgt
             // 
@@ -393,10 +381,7 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -409,9 +394,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
     }
 }
