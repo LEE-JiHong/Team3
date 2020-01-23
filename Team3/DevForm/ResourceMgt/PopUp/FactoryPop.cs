@@ -17,7 +17,7 @@ namespace Team3
 
 
         FactoryVO VO;
-        List<CompanyVO> Company_list;
+        List<CompanyDB_VO> Company_list;
 
         CommonCodeService service;
         List<CommonVO> Common_list;
@@ -89,7 +89,7 @@ namespace Team3
                 var C_Code = (from R_Item in Company_list
                               select R_Item).ToList();
 
-                ComboUtil.ComboBinding<CompanyVO>(cboCompany, C_Code, "company_id", "company_name", "미선택");
+                ComboUtil.ComboBinding<CompanyDB_VO>(cboCompany, C_Code, "company_id", "company_name", "미선택");
             }
 
             service = new CommonCodeService();

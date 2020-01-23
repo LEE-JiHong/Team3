@@ -16,6 +16,7 @@ namespace Team3VO
         public int bom_id { get; set; }
         public string bom_parent_id { get; set; }
         public int product_id { get; set; }
+        public string bom_name { get; set; }
         public int bom_level { get; set; }
         public int bom_use_count { get; set; }
         public string bom_sdate { get; set; }

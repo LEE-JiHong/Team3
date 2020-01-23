@@ -106,7 +106,7 @@ namespace Team3
                 vo.plan_id = cbOrderGubun.Text;
                 vo.d_count = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
                 vo.d_date = dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10);
-
+                vo.so_id = somasterList[idx].so_id;
                 if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10)) == Convert.ToDateTime(somasterList[idx].so_edate))
                 {
                     if (qty < somasterList[idx].so_pcount)
@@ -114,7 +114,6 @@ namespace Team3
                         MessageBox.Show("테스트");
                         return;
                     }
-
                     idx--;
 
                     if (idx == -1)
@@ -129,14 +128,29 @@ namespace Team3
                 }
 
                 totalQty += Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-
                 
+                if (vo.d_count > 0)
+                {
+                    list.Add(vo);
+                }
             }
 
             if (soQty > totalQty)
             {
                 MessageBox.Show("수량이 계획수량보다 적습니다.");
                 return;
+            }
+
+            OrderService service = new OrderService();
+            bool result = service.AddDemandPlan(list);
+
+            if (result)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("수요계획 생성 실패");
             }
         }
     }

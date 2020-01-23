@@ -608,6 +608,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\grid %281%29.png" />
+    <None Include="Resources\menu.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\cross-out.png" />

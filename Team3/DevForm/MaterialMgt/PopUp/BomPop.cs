@@ -64,6 +64,7 @@ namespace Team3
         private void ComboBoxBinding()
         {
             common_service = new CommonCodeService();
+            bom_service = new BomService();
             codelist = common_service.GetCommonCodeAll();
             #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
@@ -83,7 +84,9 @@ namespace Team3
             #endregion
 
             #region 상위품목cbo
-            
+            List<BomVO> bom_list = new List<BomVO>();
+            bom_list = bom_service.GetBomAll();
+            ComboUtil.ComboBinding(cboParentProduct, bom_list, "bom_id", "bom_name", "선택");
             
 
 
@@ -92,10 +95,7 @@ namespace Team3
 
         private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bom_service = new BomService();
-            ProductVO vo = (ProductVO)cboProduct.SelectedItem;
-            int prodTypeNum = bom_service.GetProductTypeNum(vo.product_id);
-
+           
             
 
         }

@@ -26,9 +26,27 @@ namespace Team3VO
         public string company_comment { get; set; }
 
 
-        public CompanyVO()
-        {
-
-        }
+    }
+    public class CompanyDB_VO
+    {
+        public int company_id { get; set; }
+        public string company_code { get; set; }
+        public string company_name { get; set; }
+        public string common_name { get; set; }
+        public string company_type { get; set; }
+        public string company_ceo { get; set; }
+        public string company_cnum { get; set; }
+        public string company_btype { get; set; }
+        public string company_gtype { get; set; }
+        public string user_name { get; set; }
+        public int user_id { get; set; }
+        public string company_email { get; set; }
+        public string company_phone { get; set; }
+        public string company_fax { get; set; }
+        public string company_uadmin { get; set; }
+        public string company_udate { get; set; }
+        public string company_comment { get; set; }
+        public string company_yn { get; set; }
+        public string company_order_code { get; set; }
     }
 }

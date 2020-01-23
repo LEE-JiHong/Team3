@@ -59,14 +59,61 @@ namespace Team3
             SODialog frm = new SODialog(SODialog.EditMode.Insert);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                OrderService service = new OrderService();
+                List<SOMasterVO> list = service.GetSOMasterAll();
 
+                //datagridview
+                SetDataGrid();
+                dataGridView1.DataSource = list;
             }
         }
 
         private void btnDemandPlan_Click(object sender, EventArgs e)
         {
-            DemandPop frm = new DemandPop();
-            frm.ShowDialog();
+            ////수요계획생성 버튼
+            //DemandPop frm = new DemandPop();
+            //frm.ShowDialog();
+
+            //try
+            //{
+            //    if (MessageBox.Show("수요계획을 생성하시겠습니까?", "생산계획생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    {
+            //        OrderService service = new OrderService();
+            //        bool result = service.AddProductionPlan(cboPlanID.Text);
+
+            //        if (result)
+            //        {
+            //            Form fc = Application.OpenForms["Main"];
+            //            Main frm = (Main)fc;
+
+            //            frm.GetForm("생산계획");
+            //            this.Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("생산계획 생성에 실패하였습니다. 다시 시도하여 주십시오.");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+            //}
+            //catch (Exception er)
+            //{
+            //    MessageBox.Show(er.Message);
+            //}
+        }
+    
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //수정버튼
+            SODialog frm = new SODialog(SODialog.EditMode.Update);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Team3DAC
     /// <returns></returns>
     public class ResourceDac : ConnectionAccess
     {
+        //공통코드==============================================
         /// <summary>
         /// CommonCode
         /// </summary>
@@ -37,10 +38,27 @@ namespace Team3DAC
                 return list;
             }
         }
+        //==유저
+        public List<UserVO> GetUserAll()
+        {
+            string sql = "select user_id,user_name from tbl_user;";
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<UserVO> list = Helper.DataReaderMapToList<UserVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        //거래처=============================================================
         /// <summary>
         /// Company 모든컬럼 select
         /// </summary>
-        public List<CompanyVO> GetCompanyAll()
+        public List<CompanyDB_VO> GetCompanyAll()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -51,11 +69,29 @@ namespace Team3DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(reader);
+                List<CompanyDB_VO> list = Helper.DataReaderMapToList<CompanyDB_VO>(reader);
                 cmd.Connection.Close();
                 return list;
             }
         }
+        public bool InsertCompany(CompanyVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "InsertCompany";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+        //설비================================================================
         /// <summary>
         /// Machine 설비 모든컬럼 select
         /// </summary>
@@ -86,9 +122,9 @@ namespace Team3DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection.Open();
                 cmd.Parameters.AddWithValue("@mgrade_id", VO.mgrade_id);
-                 cmd.Parameters.AddWithValue("@m_code", VO.m_code);
-                cmd.Parameters.AddWithValue("@m_name",VO.m_name);
-                cmd.Parameters.AddWithValue("@m_use_sector",VO.m_use_sector);
+                cmd.Parameters.AddWithValue("@m_code", VO.m_code);
+                cmd.Parameters.AddWithValue("@m_name", VO.m_name);
+                cmd.Parameters.AddWithValue("@m_use_sector", VO.m_use_sector);
                 cmd.Parameters.AddWithValue("@m_ok_sector", VO.m_ok_sector);
                 cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
                 cmd.Parameters.AddWithValue("@m_os_yn", VO.m_os_yn);
@@ -97,14 +133,60 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@m_yn", VO.m_yn);
                 cmd.Parameters.AddWithValue("@m_uadmin", VO.m_uadmin);
                 cmd.Parameters.AddWithValue("@m_udate", VO.m_udate);
-             
+
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return successRow > 0;
             }
         }
 
+        public bool UpdateMachine(MachineVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "UpdateMachine";
 
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@m_id", VO.m_id);
+                cmd.Parameters.AddWithValue("@mgrade_id", VO.mgrade_id);
+                cmd.Parameters.AddWithValue("@m_code", VO.m_code);
+                cmd.Parameters.AddWithValue("@m_name", VO.m_name);
+                cmd.Parameters.AddWithValue("@m_use_sector", VO.m_use_sector);
+                cmd.Parameters.AddWithValue("@m_ok_sector", VO.m_ok_sector);
+                cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
+                cmd.Parameters.AddWithValue("@m_os_yn", VO.m_os_yn);
+                cmd.Parameters.AddWithValue("@m_check", VO.m_check);
+                cmd.Parameters.AddWithValue("@m_comment", VO.m_comment);
+                cmd.Parameters.AddWithValue("@m_yn", VO.m_yn);
+                cmd.Parameters.AddWithValue("@m_uadmin", VO.m_uadmin);
+                cmd.Parameters.AddWithValue("@m_udate", VO.m_udate);
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+        public bool DeleteMachin(int i)
+        {
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "DELETE FROM [dbo].[TBL_MACHINE] WHERE m_id=@id";
+                cmd.Parameters.AddWithValue("@id", i);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+        //설비군================================================================
         /// <summary>
         /// 설비군 모든 컬럼 select
         /// </summary>
@@ -166,12 +248,12 @@ namespace Team3DAC
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return successRow > 0;
-                
+
             }
         }
         public bool DeleteMachineGr(int i)
         {
-            using (SqlCommand cmd=new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "DeleteMachineGr";
@@ -185,7 +267,7 @@ namespace Team3DAC
             }
         }
 
-
+        //BOR================================================================
         public List<BORDB_VO> GetBORAll()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -202,6 +284,8 @@ namespace Team3DAC
                 return list;
             }
         }
+
+        //공장=============================================================
         public List<FactoryDB_VO> GetFactoryAll()
         {
             using (SqlCommand cmd = new SqlCommand())

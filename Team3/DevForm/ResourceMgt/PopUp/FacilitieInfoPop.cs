@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Windows.Forms;
 using Team3VO;
 
 namespace Team3
@@ -134,11 +135,32 @@ namespace Team3
             //등록
             if (mode == EditMode.Input)
             {
-                 R_service.InsertMachine(VO);
+                bool bResult = R_service.InsertMachine(VO);
+                if (bResult)
+                {
+                    MessageBox.Show("등록성공");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("등록실패");
+                    this.DialogResult = DialogResult.None;
+                }
             }
             else if (mode == EditMode.Update)
             {
-
+                VO.m_id = Convert.ToInt32(lblID.Text);
+                bool bResult = R_service.UpdateMachine(VO);
+                if (bResult)
+                {
+                    MessageBox.Show("수정성공");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("수정실패");
+                    this.DialogResult = DialogResult.None;
+                }
             }
         }
     }

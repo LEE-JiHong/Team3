@@ -25,7 +25,7 @@ namespace Team3
         List<CommonVO> codelist;
         CommonCodeService common_service;
         ProductService product_service;
-        public ProductPop(EditMode edit, ProductVO vo = null)
+        public ProductPop(EditMode edit,int? product_id=null, ProductVO vo = null)
         {
             InitializeComponent();
             if (edit == EditMode.Insert)
@@ -37,29 +37,32 @@ namespace Team3
                 this.edit = "Update";
                 this.vo = vo;
                 //TODO 수정모드일때 발주방식 콤보박스?
-                txtProductName.Text = vo.product_name;
-                txtProductCode.Text = vo.product_code;
-                txtUadmin.Text = vo.product_uadmin;
-                txtLeadTime.Text = vo.product_leadtime;
-                txtLeastOrder.Text = vo.product_lorder_count.ToString();
-                txtProduct.Text = vo.product_codename;
-                cboProductType.Text = vo.product_type;
-                txtItemCode.Text = vo.product_itemcode;
-                txtProductLsl.Text = vo.product_lsl;
-                txtProductUsl.Text = vo.product_usl;
-                txtUnitAmount.Text = vo.product_unit_count;
-                cboInSector.Text = vo.product_in_sector;
-                cboOutSector.Text = vo.product_out;
-                cboAdmin.Text = vo.product_admin;
-                cboIsUsed.Text = vo.product_yn;
-                cboOrderType.Text = vo.product_type;
-                txtNote.Text = vo.product_comment;
-                cboDemandCompany.Text = vo.product_demand_com;
-                txtUdate.Text = vo.product_udate;
-                cboSupplyCompany.Text = vo.product_supply_com;
-                txtSafetyAmount.Text = vo.product_safety_count.ToString();
-                txtMeasType.Text = vo.product_meastype;
-                
+                #region 수정모드일떄 Vo로 받아오는 방법
+                /* txtProductName.Text = vo.product_name;
+                      txtProductCode.Text = vo.product_code;
+                      txtUadmin.Text = vo.product_uadmin;
+                      txtLeadTime.Text = vo.product_leadtime;
+                      txtLeastOrder.Text = vo.product_lorder_count.ToString();
+                      txtProduct.Text = vo.product_codename;
+                      cboProductType.Text = vo.product_type;
+                      txtItemCode.Text = vo.product_itemcode;
+                      txtProductLsl.Text = vo.product_lsl;
+                      txtProductUsl.Text = vo.product_usl;
+                      txtUnitAmount.Text = vo.product_unit_count;
+                      cboInSector.Text = vo.product_in_sector;
+                      cboOutSector.Text = vo.product_out;
+                      cboAdmin.Text = vo.product_admin;
+                      cboIsUsed.Text = vo.product_yn;
+                      cboOrderType.Text = vo.product_type;
+                      txtNote.Text = vo.product_comment;
+                      cboDemandCompany.Text = vo.product_demand_com;
+                      txtUdate.Text = vo.product_udate;
+                      cboSupplyCompany.Text = vo.product_supply_com;
+                      txtSafetyAmount.Text = vo.product_safety_count.ToString();
+                      txtMeasType.Text = vo.product_meastype;*/ 
+                #endregion
+            
+
 
             }
         }

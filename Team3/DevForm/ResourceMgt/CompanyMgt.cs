@@ -14,7 +14,7 @@ namespace Team3
 {
     public partial class businessMgt : Team3.VerticalGridBaseForm
     {
-        List<CompanyVO> lst;
+        List<CompanyDB_VO> lst;
         List<CommonVO> common_list;
         ResourceService service;
         CommonCodeService common_service;

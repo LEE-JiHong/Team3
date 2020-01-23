@@ -13,12 +13,18 @@ namespace Team3
     {
         ResourceDac dac = new ResourceDac();
 
+        //
+        public List<UserVO> GetUserAll()
+        {
+            return dac.GetUserAll();
+        }
+
 
         //======이하 업체==============
         /// <summary>
         /// Company 모든컬럼 select
         /// </summary>
-        public List<CompanyVO> GetCompanyAll()
+        public List<CompanyDB_VO> GetCompanyAll()
         {
 
             return dac.GetCompanyAll();
@@ -38,7 +44,14 @@ namespace Team3
         {
             return dac.InsertMachine(VO);
         }
-
+        public bool UpdateMachine(MachineVO VO)
+        {
+            return dac.UpdateMachine(VO);
+        }
+        public bool DeleteMachin(int i)
+        {
+            return dac.DeleteMachin(i);
+        }
 
        //=============이하 설비군=========
         /// <summary>

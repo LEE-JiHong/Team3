@@ -31,34 +31,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodeCompany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtReprName = new System.Windows.Forms.TextBox();
+            this.txtCEO = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBusiness = new System.Windows.Forms.TextBox();
+            this.txtGtype = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNameCompany = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtLicenseNum = new System.Windows.Forms.TextBox();
+            this.txtCnum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtNameDirector = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtTypeBusiness = new System.Windows.Forms.TextBox();
+            this.txtbtype = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtModifier = new System.Windows.Forms.TextBox();
+            this.txtAdmin = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtInfoCompany = new System.Windows.Forms.TextBox();
-            this.cboIsUsed = new System.Windows.Forms.ComboBox();
-            this.txtUpdateTime = new System.Windows.Forms.TextBox();
-            this.cboTypeCompany = new System.Windows.Forms.ComboBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.cboYN = new System.Windows.Forms.ComboBox();
+            this.txtUdate = new System.Windows.Forms.TextBox();
+            this.cboCompanyType = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.cboUser = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,6 +77,7 @@
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.TabIndex = 20;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -89,13 +90,14 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cboTypeCompany);
-            this.panel2.Controls.Add(this.txtUpdateTime);
-            this.panel2.Controls.Add(this.cboIsUsed);
-            this.panel2.Controls.Add(this.txtInfoCompany);
+            this.panel2.Controls.Add(this.cboUser);
+            this.panel2.Controls.Add(this.cboCompanyType);
+            this.panel2.Controls.Add(this.txtUdate);
+            this.panel2.Controls.Add(this.cboYN);
+            this.panel2.Controls.Add(this.txtComment);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txtModifier);
+            this.panel2.Controls.Add(this.txtAdmin);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.txtFax);
@@ -103,14 +105,13 @@
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtEmail);
-            this.panel2.Controls.Add(this.txtNameDirector);
-            this.panel2.Controls.Add(this.txtBusiness);
+            this.panel2.Controls.Add(this.txtGtype);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtTypeBusiness);
-            this.panel2.Controls.Add(this.txtLicenseNum);
-            this.panel2.Controls.Add(this.txtReprName);
+            this.panel2.Controls.Add(this.txtbtype);
+            this.panel2.Controls.Add(this.txtCnum);
+            this.panel2.Controls.Add(this.txtCEO);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label3);
@@ -154,12 +155,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "대표자명";
             // 
-            // txtReprName
+            // txtCEO
             // 
-            this.txtReprName.Location = new System.Drawing.Point(103, 55);
-            this.txtReprName.Name = "txtReprName";
-            this.txtReprName.Size = new System.Drawing.Size(130, 21);
-            this.txtReprName.TabIndex = 3;
+            this.txtCEO.Location = new System.Drawing.Point(103, 55);
+            this.txtCEO.Name = "txtCEO";
+            this.txtCEO.Size = new System.Drawing.Size(130, 21);
+            this.txtCEO.TabIndex = 3;
             // 
             // label4
             // 
@@ -171,12 +172,12 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "업태";
             // 
-            // txtBusiness
+            // txtGtype
             // 
-            this.txtBusiness.Location = new System.Drawing.Point(103, 88);
-            this.txtBusiness.Name = "txtBusiness";
-            this.txtBusiness.Size = new System.Drawing.Size(130, 21);
-            this.txtBusiness.TabIndex = 6;
+            this.txtGtype.Location = new System.Drawing.Point(103, 88);
+            this.txtGtype.Name = "txtGtype";
+            this.txtGtype.Size = new System.Drawing.Size(130, 21);
+            this.txtGtype.TabIndex = 6;
             // 
             // label6
             // 
@@ -233,12 +234,12 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "사업자등록번호";
             // 
-            // txtLicenseNum
+            // txtCnum
             // 
-            this.txtLicenseNum.Location = new System.Drawing.Point(362, 55);
-            this.txtLicenseNum.Name = "txtLicenseNum";
-            this.txtLicenseNum.Size = new System.Drawing.Size(130, 21);
-            this.txtLicenseNum.TabIndex = 4;
+            this.txtCnum.Location = new System.Drawing.Point(362, 55);
+            this.txtCnum.Name = "txtCnum";
+            this.txtCnum.Size = new System.Drawing.Size(130, 21);
+            this.txtCnum.TabIndex = 4;
             // 
             // label11
             // 
@@ -249,13 +250,6 @@
             this.label11.Size = new System.Drawing.Size(55, 15);
             this.label11.TabIndex = 0;
             this.label11.Text = "담당자명";
-            // 
-            // txtNameDirector
-            // 
-            this.txtNameDirector.Location = new System.Drawing.Point(362, 88);
-            this.txtNameDirector.Name = "txtNameDirector";
-            this.txtNameDirector.Size = new System.Drawing.Size(130, 21);
-            this.txtNameDirector.TabIndex = 7;
             // 
             // label13
             // 
@@ -306,12 +300,12 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "업종";
             // 
-            // txtTypeBusiness
+            // txtbtype
             // 
-            this.txtTypeBusiness.Location = new System.Drawing.Point(589, 55);
-            this.txtTypeBusiness.Name = "txtTypeBusiness";
-            this.txtTypeBusiness.Size = new System.Drawing.Size(130, 21);
-            this.txtTypeBusiness.TabIndex = 5;
+            this.txtbtype.Location = new System.Drawing.Point(589, 55);
+            this.txtbtype.Name = "txtbtype";
+            this.txtbtype.Size = new System.Drawing.Size(130, 21);
+            this.txtbtype.TabIndex = 5;
             // 
             // label18
             // 
@@ -340,12 +334,12 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "수정자";
             // 
-            // txtModifier
+            // txtAdmin
             // 
-            this.txtModifier.Location = new System.Drawing.Point(103, 154);
-            this.txtModifier.Name = "txtModifier";
-            this.txtModifier.Size = new System.Drawing.Size(130, 21);
-            this.txtModifier.TabIndex = 17;
+            this.txtAdmin.Location = new System.Drawing.Point(103, 154);
+            this.txtAdmin.Name = "txtAdmin";
+            this.txtAdmin.Size = new System.Drawing.Size(130, 21);
+            this.txtAdmin.TabIndex = 17;
             // 
             // label15
             // 
@@ -357,37 +351,37 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "업체정보";
             // 
-            // txtInfoCompany
+            // txtComment
             // 
-            this.txtInfoCompany.Location = new System.Drawing.Point(103, 197);
-            this.txtInfoCompany.Multiline = true;
-            this.txtInfoCompany.Name = "txtInfoCompany";
-            this.txtInfoCompany.Size = new System.Drawing.Size(626, 87);
-            this.txtInfoCompany.TabIndex = 19;
+            this.txtComment.Location = new System.Drawing.Point(103, 197);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(626, 87);
+            this.txtComment.TabIndex = 19;
             // 
-            // cboIsUsed
+            // cboYN
             // 
-            this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(589, 121);
-            this.cboIsUsed.Name = "cboIsUsed";
-            this.cboIsUsed.Size = new System.Drawing.Size(130, 23);
-            this.cboIsUsed.TabIndex = 16;
+            this.cboYN.FormattingEnabled = true;
+            this.cboYN.Location = new System.Drawing.Point(589, 121);
+            this.cboYN.Name = "cboYN";
+            this.cboYN.Size = new System.Drawing.Size(130, 23);
+            this.cboYN.TabIndex = 16;
             // 
-            // txtUpdateTime
+            // txtUdate
             // 
-            this.txtUpdateTime.Location = new System.Drawing.Point(362, 154);
-            this.txtUpdateTime.Name = "txtUpdateTime";
-            this.txtUpdateTime.ReadOnly = true;
-            this.txtUpdateTime.Size = new System.Drawing.Size(130, 21);
-            this.txtUpdateTime.TabIndex = 23;
+            this.txtUdate.Location = new System.Drawing.Point(362, 154);
+            this.txtUdate.Name = "txtUdate";
+            this.txtUdate.ReadOnly = true;
+            this.txtUdate.Size = new System.Drawing.Size(130, 21);
+            this.txtUdate.TabIndex = 23;
             // 
-            // cboTypeCompany
+            // cboCompanyType
             // 
-            this.cboTypeCompany.FormattingEnabled = true;
-            this.cboTypeCompany.Location = new System.Drawing.Point(589, 22);
-            this.cboTypeCompany.Name = "cboTypeCompany";
-            this.cboTypeCompany.Size = new System.Drawing.Size(130, 23);
-            this.cboTypeCompany.TabIndex = 2;
+            this.cboCompanyType.FormattingEnabled = true;
+            this.cboCompanyType.Location = new System.Drawing.Point(589, 22);
+            this.cboCompanyType.Name = "cboCompanyType";
+            this.cboCompanyType.Size = new System.Drawing.Size(130, 23);
+            this.cboCompanyType.TabIndex = 2;
             // 
             // lblID
             // 
@@ -397,6 +391,14 @@
             this.lblID.Size = new System.Drawing.Size(29, 12);
             this.lblID.TabIndex = 4;
             this.lblID.Text = "lblID";
+            // 
+            // cboUser
+            // 
+            this.cboUser.FormattingEnabled = true;
+            this.cboUser.Location = new System.Drawing.Point(361, 88);
+            this.cboUser.Name = "cboUser";
+            this.cboUser.Size = new System.Drawing.Size(130, 23);
+            this.cboUser.TabIndex = 2;
             // 
             // CompanyPop
             // 
@@ -425,31 +427,31 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBusiness;
+        private System.Windows.Forms.TextBox txtGtype;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtReprName;
+        private System.Windows.Forms.TextBox txtCEO;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtInfoCompany;
+        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.TextBox txtAdmin;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtNameDirector;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTypeBusiness;
-        private System.Windows.Forms.TextBox txtLicenseNum;
+        private System.Windows.Forms.TextBox txtbtype;
+        private System.Windows.Forms.TextBox txtCnum;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtNameCompany;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboTypeCompany;
-        private System.Windows.Forms.TextBox txtUpdateTime;
-        private System.Windows.Forms.ComboBox cboIsUsed;
+        private System.Windows.Forms.ComboBox cboCompanyType;
+        private System.Windows.Forms.TextBox txtUdate;
+        private System.Windows.Forms.ComboBox cboYN;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ComboBox cboUser;
     }
 }
