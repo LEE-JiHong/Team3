@@ -22,5 +22,6 @@ namespace Team3VO
         public string plan_id { get; set; }
         public string d_date { get; set; }
         public int d_count { get; set; }
+
     }
 }

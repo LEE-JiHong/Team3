@@ -12,7 +12,7 @@ namespace Team3
 {
     public partial class ProductionPop : Team3.DialogForm
     {
-        List<SOMasterVO> somasterList;
+        List<DemandPlanVO> demandList;
 
         public ProductionPop()
         {
@@ -46,9 +46,9 @@ namespace Team3
 
             OrderService service = new OrderService();
 
-            somasterList = service.GetSOMaster(cbOrderGubun.Text);
+            demandList = service.GetDemandPlanFromPlanID(cbOrderGubun.Text);
 
-            string endDate = somasterList[0].so_edate;
+            string endDate = demandList[0].d_date;
 
             List<DayVO> dayList = new List<DayVO>();
 
@@ -86,30 +86,30 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            List<DemandPlanVO> list = new List<DemandPlanVO>();
+            List<ProductionPlanVO> list = new List<ProductionPlanVO>();
 
             int soQty = 0;
 
-            foreach (SOMasterVO vo in somasterList)
+            foreach (DemandPlanVO vo in demandList)
             {
-                soQty += vo.so_pcount;
+                soQty += vo.d_count;
             }
 
             int qty = 0;
             int totalQty = 0;
 
-            int idx = somasterList.Count-1;
+            int idx = demandList.Count-1;
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                DemandPlanVO vo = new DemandPlanVO();
+                ProductionPlanVO vo = new ProductionPlanVO();
                 vo.plan_id = cbOrderGubun.Text;
-                vo.d_count = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                vo.d_date = dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10);
-                vo.so_id = somasterList[idx].so_id;
-                if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10)) == Convert.ToDateTime(somasterList[idx].so_edate))
+                vo.pro_count = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
+                vo.pro_date = dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10);
+                vo.d_id = demandList[idx].d_id;
+                if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10)) == Convert.ToDateTime(demandList[idx].d_date))
                 {
-                    if (qty < somasterList[idx].so_pcount)
+                    if (qty < demandList[idx].d_count)
                     {
                         MessageBox.Show("테스트");
                         return;
@@ -129,7 +129,7 @@ namespace Team3
 
                 totalQty += Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
                 
-                if (vo.d_count > 0)
+                if (vo.pro_count > 0)
                 {
                     list.Add(vo);
                 }
@@ -142,7 +142,7 @@ namespace Team3
             }
 
             OrderService service = new OrderService();
-            bool result = service.AddDemandPlan(list);
+            bool result = service.AddProductionPlan(list);
 
             if (result)
             {

@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
-    class ProductionPlanVO
+    public class ProductionPlanVO
     {
-        public class DemandPlanVO
-        {
-            public int d_id { get; set; }
-            public int so_id { get; set; }
-            public string plan_id { get; set; }
-            public string d_date { get; set; }
-            public int d_count { get; set; }
-        }
-
+        public int pro_id { get; set; }
+        public int d_id { get; set; }
+        public string pro_date { get; set; }
+        public int pro_count { get; set; }
+        public string pro_state { get; set; }
+        public string plan_id { get; set; }
     }
 }

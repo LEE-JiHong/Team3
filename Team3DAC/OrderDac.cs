@@ -258,6 +258,33 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// planID로 검색하여 생산계획 가져오기
+        /// </summary>
+        /// <param name="planID"></param>
+        /// <returns></returns>
+        public List<DemandPlanVO> GetDemandPlanFromPlanID(string planID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "SELECT * FROM TBL_DEMAND_PLAN WHERE plan_id = @PlanID order by d_date desc";
+                    
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@PlanID", planID);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                List<DemandPlanVO> list = Helper.DataReaderMapToList<DemandPlanVO>(reader);
+
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
         ///// <summary>
         ///// 수요계획 생성(생산계획도 동시에 insert)
         ///// </summary>
@@ -279,7 +306,7 @@ namespace Team3DAC
         //            foreach (DemandPlanVO item in list)
         //            {
         //                cmd.Parameters.Clear();
-                        
+
         //                cmd.CommandText = @"insert into TBL_DEMAND_PLAN(so_id, plan_id, d_date, d_count) values (@so_id, @plan_id, @d_date, @d_count); SELECT @@IDENTITY";
 
         //                cmd.Parameters.AddWithValue("@so_id", item.so_id);
@@ -356,12 +383,70 @@ namespace Team3DAC
             }
         }
 
+        ///// <summary>
+        ///// 생산계획 생성
+        ///// </summary>
+        ///// <param name="list"></param>
+        ///// <returns></returns>
+        //public bool AddProductionPlan(string planID)
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.Connection = new SqlConnection(this.ConnectionString);
+        //        cmd.Connection.Open();
+        //        SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+        //        try
+        //        {
+        //            cmd.Transaction = tran;
+        //            cmd.CommandType = CommandType.Text;
+
+        //            cmd.CommandText = "select d_id from TBL_DEMAND_PLAN where plan_id = @PlanID";
+
+        //            cmd.Parameters.AddWithValue("@PlanID", planID);
+
+        //            List<int> list = new List<int>();
+
+        //            SqlDataReader reader = cmd.ExecuteReader();
+
+        //            while (reader.Read())
+        //            {
+        //                list.Add(Convert.ToInt32(reader[0]));
+        //            }
+
+        //            reader.Close();
+
+        //            foreach (int dID in list)
+        //            {
+        //                cmd.Parameters.Clear();
+
+        //                cmd.CommandText = @"insert into TBL_PRODUCTION_PLAN(d_id, pro_udate) values (@d_id, @pro_udate)";
+
+        //                cmd.Parameters.AddWithValue("@d_id", dID);
+        //                cmd.Parameters.AddWithValue("@pro_udate", DateTime.Now.ToShortDateString());
+        //                cmd.ExecuteNonQuery();
+        //            }
+
+        //            tran.Commit();
+        //            cmd.Connection.Close();
+        //            return true;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            System.Diagnostics.Debug.WriteLine(ex.Message);
+        //            tran.Rollback();
+        //            cmd.Connection.Close();
+        //            return false;
+        //        }
+        //    }
+        //}
+
         /// <summary>
         /// 생산계획 생성
         /// </summary>
-        /// <param name="list"></param>
+        /// <param name="planID"></param>
         /// <returns></returns>
-        public bool AddProductionPlan(string planID)
+        public bool AddProductionPlan(List<ProductionPlanVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -374,29 +459,18 @@ namespace Team3DAC
                     cmd.Transaction = tran;
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "select d_id from TBL_DEMAND_PLAN where plan_id = @PlanID";
-
-                    cmd.Parameters.AddWithValue("@PlanID", planID);
-
-                    List<int> list = new List<int>();
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        list.Add(Convert.ToInt32(reader[0]));
-                    }
-
-                    reader.Close();
-
-                    foreach (int dID in list)
+                    foreach (ProductionPlanVO item in list)
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"insert into TBL_PRODUCTION_PLAN(d_id, pro_udate) values (@d_id, @pro_udate)";
+                        cmd.CommandText = @"insert into TBL_PRODUCTION_PLAN(d_id, pro_count, plan_id, pro_date, pro_udate) values (@d_id, @pro_count, @plan_id,@pro_date, @pro_udate)";
 
-                        cmd.Parameters.AddWithValue("@d_id", dID);
+                        cmd.Parameters.AddWithValue("@d_id", item.d_id);
+                        cmd.Parameters.AddWithValue("@pro_count", item.pro_count);
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@pro_date", item.pro_date);
                         cmd.Parameters.AddWithValue("@pro_udate", DateTime.Now.ToShortDateString());
+
                         cmd.ExecuteNonQuery();
                     }
 
@@ -414,55 +488,55 @@ namespace Team3DAC
             }
         }
 
-        /// <summary>
-        /// 수요계획 목록 가져오기
-        /// </summary>
-        /// <param name="firstDate"></param>
-        /// <param name="endDate"></param>
-        /// <returns></returns>
-        public DataTable GetDemandPlan(string firstDate, string endDate)
-        {
-            using (SqlCommand cmd = new SqlCommand())
+            /// <summary>
+            /// 수요계획 목록 가져오기
+            /// </summary>
+            /// <param name="firstDate"></param>
+            /// <param name="endDate"></param>
+            /// <returns></returns>
+            public DataTable GetDemandPlan(string firstDate, string endDate)
             {
-                string sql = "GetDemandPlan";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    string sql = "GetDemandPlan";
 
-                cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = sql;
-                cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.CommandText = sql;
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@StartDate", firstDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                    cmd.Parameters.AddWithValue("@StartDate", firstDate);
+                    cmd.Parameters.AddWithValue("@EndDate", endDate);
 
-                DataTable dataTable = new DataTable();
+                    DataTable dataTable = new DataTable();
 
-                cmd.Connection.Open();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    cmd.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                da.Fill(dataTable);
-                da.Dispose();
+                    da.Fill(dataTable);
+                    da.Dispose();
 
-                cmd.Connection.Close();
-                return dataTable;
+                    cmd.Connection.Close();
+                    return dataTable;
+                }
             }
+
+            //public bool UpdateSOMaster(SOMasterVO vo)
+            //{
+            //    using (SqlCommand cmd = new SqlCommand())
+            //    {
+            //        string sql = "UpdateSOMaster";
+
+            //        cmd.Connection = new SqlConnection(this.ConnectionString);
+            //        cmd.CommandText = sql;
+            //        cmd.CommandType = CommandType.StoredProcedure;
+
+            //        cmd.Parameters.AddWithValue("@product_id", vo.product_id);
+
+            //        cmd.Connection.Open();
+            //        var successRow = cmd.ExecuteNonQuery();
+            //        cmd.Connection.Close();
+            //        return successRow > 0;
+            //    }
+            //}
         }
-
-        //public bool UpdateSOMaster(SOMasterVO vo)
-        //{
-        //    using (SqlCommand cmd = new SqlCommand())
-        //    {
-        //        string sql = "UpdateSOMaster";
-
-        //        cmd.Connection = new SqlConnection(this.ConnectionString);
-        //        cmd.CommandText = sql;
-        //        cmd.CommandType = CommandType.StoredProcedure;
-
-        //        cmd.Parameters.AddWithValue("@product_id", vo.product_id);
-
-        //        cmd.Connection.Open();
-        //        var successRow = cmd.ExecuteNonQuery();
-        //        cmd.Connection.Close();
-        //        return successRow > 0;
-        //    }
-        //}
     }
-}
