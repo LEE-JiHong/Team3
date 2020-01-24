@@ -71,8 +71,11 @@ namespace Team3
         private void btnDemandPlan_Click(object sender, EventArgs e)
         {
             ////수요계획생성 버튼
-            //DemandPop frm = new DemandPop();
-            //frm.ShowDialog();
+            DemandPop frm = new DemandPop();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
 
             //try
             //{

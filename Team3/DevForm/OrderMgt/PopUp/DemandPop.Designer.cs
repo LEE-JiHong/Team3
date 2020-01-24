@@ -32,14 +32,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.rdoWeekend = new System.Windows.Forms.RadioButton();
-            this.rdoWeekday = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -60,7 +56,7 @@
             // 
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Size = new System.Drawing.Size(105, 19);
-            this.label1.Text = "생산계획생성";
+            this.label1.Text = "수요계획생성";
             // 
             // panel1
             // 
@@ -68,7 +64,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.cbOrderGubun);
@@ -85,7 +80,7 @@
             this.cbOrderGubun.FormattingEnabled = true;
             this.cbOrderGubun.Location = new System.Drawing.Point(74, 33);
             this.cbOrderGubun.Name = "cbOrderGubun";
-            this.cbOrderGubun.Size = new System.Drawing.Size(196, 23);
+            this.cbOrderGubun.Size = new System.Drawing.Size(314, 23);
             this.cbOrderGubun.TabIndex = 31;
             // 
             // label8
@@ -121,45 +116,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 77);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(467, 264);
             this.dataGridView1.TabIndex = 73;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.rdoWeekend);
-            this.panel5.Controls.Add(this.rdoWeekday);
-            this.panel5.Location = new System.Drawing.Point(286, 28);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(127, 35);
-            this.panel5.TabIndex = 74;
-            // 
-            // rdoWeekend
-            // 
-            this.rdoWeekend.AutoSize = true;
-            this.rdoWeekend.Location = new System.Drawing.Point(69, 8);
-            this.rdoWeekend.Name = "rdoWeekend";
-            this.rdoWeekend.Size = new System.Drawing.Size(49, 19);
-            this.rdoWeekend.TabIndex = 1;
-            this.rdoWeekend.TabStop = true;
-            this.rdoWeekend.Text = "주말";
-            this.rdoWeekend.UseVisualStyleBackColor = true;
-            // 
-            // rdoWeekday
-            // 
-            this.rdoWeekday.AutoSize = true;
-            this.rdoWeekday.Location = new System.Drawing.Point(9, 8);
-            this.rdoWeekday.Name = "rdoWeekday";
-            this.rdoWeekday.Size = new System.Drawing.Size(49, 19);
-            this.rdoWeekday.TabIndex = 0;
-            this.rdoWeekday.TabStop = true;
-            this.rdoWeekday.Text = "주중";
-            this.rdoWeekday.UseVisualStyleBackColor = true;
             // 
             // DemandPop
             // 
@@ -173,8 +137,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -185,8 +147,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RadioButton rdoWeekend;
-        private System.Windows.Forms.RadioButton rdoWeekday;
     }
 }

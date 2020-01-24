@@ -187,6 +187,12 @@
     <Compile Include="DevForm\OrderMgt\DemandPlan.Designer.cs">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\OrderMgt\PopUp\ProductionPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\OrderMgt\PopUp\ProductionPop.Designer.cs">
+      <DependentUpon>ProductionPop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\OrderMgt\PopUp\DemandPop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\OrderMgt\PopUp\ProductionPop.resx">
+      <DependentUpon>ProductionPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\OrderMgt\PopUp\DemandPop.resx">
       <DependentUpon>DemandPop.cs</DependentUpon>
