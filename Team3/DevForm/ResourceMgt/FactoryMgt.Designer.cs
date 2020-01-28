@@ -54,7 +54,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 132);
-            this.panel2.Size = new System.Drawing.Size(1095, 445);
+            this.panel2.Size = new System.Drawing.Size(1095, 434);
             // 
             // panel1
             // 
@@ -64,7 +64,8 @@
             this.panel1.Controls.Add(this.txtSearchFacility);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Size = new System.Drawing.Size(1095, 83);
+            this.panel1.Location = new System.Drawing.Point(12, 14);
+            this.panel1.Size = new System.Drawing.Size(1095, 80);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -146,12 +147,13 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1095, 445);
+            this.dataGridView1.Size = new System.Drawing.Size(1095, 434);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -242,7 +244,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1024, 48);
+            this.button1.Location = new System.Drawing.Point(1027, 47);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 78;
@@ -257,6 +259,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 13;
+            this.lblID.Visible = false;
             // 
             // FactoryMgt
             // 

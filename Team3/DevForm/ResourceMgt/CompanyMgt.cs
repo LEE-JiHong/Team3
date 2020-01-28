@@ -137,7 +137,7 @@ namespace Team3
                 if (dr == DialogResult.OK)
                 {
                     R_service = new ResourceService();
-                    bool bResult = R_service.DeleteCompany(Convert.ToInt32(lblID.Text));
+                    bool bResult = R_service.DeleteCompany(Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value));
 
                     if (bResult)
                     {
@@ -155,6 +155,46 @@ namespace Team3
             {
                 string str = err.Message;
             }
+        }
+
+        private void cboTypeCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNameCompany_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLicenseNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodeCompany_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

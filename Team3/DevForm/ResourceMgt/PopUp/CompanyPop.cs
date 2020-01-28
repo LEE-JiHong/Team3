@@ -53,7 +53,7 @@ namespace Team3
         private void CompanyPop_Load(object sender, EventArgs e)
         {
 
-         string udate= string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
+            string udate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
             txtUdate.Text = udate;
             service = new CommonCodeService();
             common_list = service.GetCommonCodeAll();
@@ -102,7 +102,7 @@ namespace Team3
                     txtComment.Text = vo.company_comment;
                     txtOrder_code.Text = vo.company_order_code;
                 }
-              
+
             }
         }
 
@@ -125,7 +125,7 @@ namespace Team3
             VO.company_cnum = txtCnum.Text;
             VO.company_ceo = txtCEO.Text;
             VO.company_btype = txtbtype.Text;
-           // VO.company_order_code = txtOrder_code.Text;
+
             bool bResult = false;
             if (mode == EditMode.Input)
             {
@@ -145,8 +145,9 @@ namespace Team3
             }
             if (mode == EditMode.Update)
             {
+                VO.company_order_code = txtOrder_code.Text;
                 VO.company_id = Convert.ToInt32(lblID.Text);
-                 bResult = R_service.UpdateCompany(VO);
+                bResult = R_service.UpdateCompany(VO);
                 if (bResult)
                 {
                     MessageBox.Show("수정성공");

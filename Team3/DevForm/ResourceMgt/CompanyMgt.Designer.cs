@@ -69,7 +69,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Location = new System.Drawing.Point(12, 162);
-            this.panel2.Size = new System.Drawing.Size(967, 307);
+            this.panel2.Size = new System.Drawing.Size(967, 294);
             // 
             // panel1
             // 
@@ -213,80 +213,92 @@
             // 
             // txtCodeCompany
             // 
+            this.txtCodeCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodeCompany.Location = new System.Drawing.Point(138, 24);
             this.txtCodeCompany.Name = "txtCodeCompany";
             this.txtCodeCompany.Size = new System.Drawing.Size(201, 22);
             this.txtCodeCompany.TabIndex = 0;
+            this.txtCodeCompany.TextChanged += new System.EventHandler(this.txtCodeCompany_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(31, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "업체코드";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtLicenseNum
             // 
+            this.txtLicenseNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLicenseNum.Location = new System.Drawing.Point(138, 59);
             this.txtLicenseNum.Name = "txtLicenseNum";
             this.txtLicenseNum.Size = new System.Drawing.Size(201, 22);
             this.txtLicenseNum.TabIndex = 3;
+            this.txtLicenseNum.TextChanged += new System.EventHandler(this.txtLicenseNum_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(31, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.Size = new System.Drawing.Size(85, 16);
             this.label7.TabIndex = 1;
             this.label7.Text = "사업자등록번호";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtNameCompany
             // 
             this.txtNameCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNameCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameCompany.Location = new System.Drawing.Point(447, 24);
             this.txtNameCompany.Name = "txtNameCompany";
             this.txtNameCompany.Size = new System.Drawing.Size(201, 22);
             this.txtNameCompany.TabIndex = 1;
+            this.txtNameCompany.TextChanged += new System.EventHandler(this.txtNameCompany_TextChanged);
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(400, 28);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.Size = new System.Drawing.Size(41, 16);
             this.label8.TabIndex = 1;
             this.label8.Text = "업체명";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(692, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.Size = new System.Drawing.Size(52, 16);
             this.label9.TabIndex = 1;
             this.label9.Text = "업체타입";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // cboTypeCompany
             // 
             this.cboTypeCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTypeCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTypeCompany.FormattingEnabled = true;
             this.cboTypeCompany.Location = new System.Drawing.Point(752, 24);
             this.cboTypeCompany.Name = "cboTypeCompany";
             this.cboTypeCompany.Size = new System.Drawing.Size(201, 24);
             this.cboTypeCompany.TabIndex = 2;
+            this.cboTypeCompany.SelectedIndexChanged += new System.EventHandler(this.cboTypeCompany_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -309,12 +321,13 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(967, 307);
+            this.dataGridView2.Size = new System.Drawing.Size(967, 294);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
@@ -402,6 +415,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 12);
             this.lblID.TabIndex = 5;
+            this.lblID.Visible = false;
             // 
             // businessMgt
             // 
