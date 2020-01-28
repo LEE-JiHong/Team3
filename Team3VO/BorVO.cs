@@ -31,14 +31,15 @@ namespace Team3VO
     public class BORDB_VO
     {
         public int bor_id { get; set; }
+        public int bom_id { get; set; }
         public string product_name { get; set; }
         public string product_codename { get; set; }
         public string common_type { get; set; }
         public string common_name { get; set; }
         public string m_code { get; set; }
         public string m_name { get; set; }
-        public string bor_tacktime { get; set; }
-        public string bor_readytime { get; set; }
+        public int bor_tacktime { get; set; }
+        public int bor_readytime { get; set; }
         public string bor_yn { get; set; }
         public string bor_comment { get; set; }
 

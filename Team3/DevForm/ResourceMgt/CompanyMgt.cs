@@ -28,7 +28,7 @@ namespace Team3
         {
             ResourceService service = new ResourceService();
             lst = service.GetCompanyAll();
-            dataGridView2.DataSource = lst;
+            LoadData();
 
             common_service = new CommonCodeService();
             common_list = common_service.GetCommonCodeAll();
@@ -42,14 +42,19 @@ namespace Team3
             }
         }
 
-
+        private void LoadData()
+        {
+            dataGridView2.DataSource = lst;
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                LoadData();
+                MessageBox.Show("신규 거래처 등록 성공");
+                SetBottomStatusLabel("신규 거래처 등록 성공");
             }
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -62,7 +67,9 @@ namespace Team3
             CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Update, lblID.Text);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                LoadData();
+                MessageBox.Show("거래처 정보 수정 성공");
+                SetBottomStatusLabel("거래처 정보 수정 성공");
             }
         }
         private void BtnExport_Click(object sender, EventArgs e)
@@ -142,7 +149,7 @@ namespace Team3
                     if (bResult)
                     {
                         MessageBox.Show("삭제완료");
-                 
+
                     }
                     else if (!bResult)
                     {
@@ -155,46 +162,6 @@ namespace Team3
             {
                 string str = err.Message;
             }
-        }
-
-        private void cboTypeCompany_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNameCompany_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLicenseNum_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodeCompany_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

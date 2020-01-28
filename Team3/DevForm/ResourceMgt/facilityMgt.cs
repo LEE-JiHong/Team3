@@ -26,10 +26,10 @@ namespace Team3
         private void facilityMgt_Load(object sender, EventArgs e)
         {
             R_service = new ResourceService();
-            Loaddata();
+            LoadData();
         }
 
-        private void Loaddata()
+        private void LoadData()
         {
             machineList = R_service.GetMachineAll();
             dataGridView2.DataSource = machineList;
@@ -43,7 +43,8 @@ namespace Team3
             FacilitiesPop group = new FacilitiesPop(FacilitiesPop.EditMode.Input);
             if(group.ShowDialog()==DialogResult.OK)
             {
-                Loaddata();
+                LoadData();
+                SetBottomStatusLabel("신규 설비군 등록 성공");
             }
         }
         private void btnG_Update_Click(object sender, EventArgs e)
@@ -60,7 +61,8 @@ namespace Team3
 
             if(frm.ShowDialog()==DialogResult.OK)
             {
-                Loaddata();
+                LoadData();
+                SetBottomStatusLabel("설비군 수정 성공");
             }
         }
 
@@ -72,7 +74,8 @@ namespace Team3
                     (FacilitieInfoPop.EditMode.Input, dataGridView1.CurrentRow.Cells[1].Value.ToString(), lblID1.Text);
               if(  frm.ShowDialog()==DialogResult.OK)
                 {
-                    Loaddata();
+                    LoadData();
+                    SetBottomStatusLabel("신규 설비 등록 성공");
                 }
             }
         }
@@ -110,7 +113,8 @@ namespace Team3
                     FacilitieInfoPop frm = new FacilitieInfoPop(FacilitieInfoPop.EditMode.Update, VO);
                    if( frm.ShowDialog()==DialogResult.OK)
                     {
-                        Loaddata();
+                        LoadData();
+                        SetBottomStatusLabel("설비 정보 수정 성공");
                     }
                 }
             }
@@ -147,11 +151,12 @@ namespace Team3
                     if (bResult)
                     {
                         MessageBox.Show("삭제완료");
-                        Loaddata();
+                        SetBottomStatusLabel("설비군 삭제 성공");
+                        LoadData();
                     }
                     else if (!bResult)
                     {
-                        MessageBox.Show("삭제 실패");
+                        MessageBox.Show("선택한 설비군 삭제 실패");
                        
                         return;
                     }
@@ -188,11 +193,13 @@ namespace Team3
                     if (bResult)
                     {
                         MessageBox.Show("삭제완료");
-                        Loaddata();
+                        SetBottomStatusLabel("삭제 성공");
+                        LoadData();
                     }
                     else if (!bResult)
                     {
                         MessageBox.Show("삭제 실패");
+                        SetBottomStatusLabel("삭제 실패");
                         return;
                     }
                 }

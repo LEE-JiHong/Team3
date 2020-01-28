@@ -218,7 +218,6 @@
             this.txtCodeCompany.Name = "txtCodeCompany";
             this.txtCodeCompany.Size = new System.Drawing.Size(201, 22);
             this.txtCodeCompany.TabIndex = 0;
-            this.txtCodeCompany.TextChanged += new System.EventHandler(this.txtCodeCompany_TextChanged);
             // 
             // label6
             // 
@@ -230,7 +229,7 @@
             this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "업체코드";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+          
             // 
             // txtLicenseNum
             // 
@@ -239,7 +238,6 @@
             this.txtLicenseNum.Name = "txtLicenseNum";
             this.txtLicenseNum.Size = new System.Drawing.Size(201, 22);
             this.txtLicenseNum.TabIndex = 3;
-            this.txtLicenseNum.TextChanged += new System.EventHandler(this.txtLicenseNum_TextChanged);
             // 
             // label7
             // 
@@ -251,7 +249,7 @@
             this.label7.Size = new System.Drawing.Size(85, 16);
             this.label7.TabIndex = 1;
             this.label7.Text = "사업자등록번호";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+           
             // 
             // txtNameCompany
             // 
@@ -261,7 +259,6 @@
             this.txtNameCompany.Name = "txtNameCompany";
             this.txtNameCompany.Size = new System.Drawing.Size(201, 22);
             this.txtNameCompany.TabIndex = 1;
-            this.txtNameCompany.TextChanged += new System.EventHandler(this.txtNameCompany_TextChanged);
             // 
             // label8
             // 
@@ -274,7 +271,7 @@
             this.label8.Size = new System.Drawing.Size(41, 16);
             this.label8.TabIndex = 1;
             this.label8.Text = "업체명";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            
             // 
             // label9
             // 
@@ -287,7 +284,7 @@
             this.label9.Size = new System.Drawing.Size(52, 16);
             this.label9.TabIndex = 1;
             this.label9.Text = "업체타입";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+          
             // 
             // cboTypeCompany
             // 
@@ -298,7 +295,6 @@
             this.cboTypeCompany.Name = "cboTypeCompany";
             this.cboTypeCompany.Size = new System.Drawing.Size(201, 24);
             this.cboTypeCompany.TabIndex = 2;
-            this.cboTypeCompany.SelectedIndexChanged += new System.EventHandler(this.cboTypeCompany_SelectedIndexChanged);
             // 
             // button1
             // 

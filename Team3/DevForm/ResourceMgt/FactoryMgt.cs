@@ -24,8 +24,7 @@ namespace Team3
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
-            list = service.GetFactoryAll();
-            dataGridView1.DataSource = list;
+            LoadData();
 
             CommonCodeService Common_service = new CommonCodeService();
             common_list = Common_service.GetCommonCodeAll();
@@ -37,14 +36,22 @@ namespace Team3
 
         }
 
+        private void LoadData()
+        {
+            list = service.GetFactoryAll();
+            dataGridView1.DataSource = list;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                list = service.GetFactoryAll();
-                dataGridView1.DataSource = list;
+                LoadData();
+                SetBottomStatusLabel("성공적으로 등록되었습니다.");
             }
+            else
+                SetBottomStatusLabel("등록실패.");
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -53,8 +60,8 @@ namespace Team3
                 FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update, lblID.Text);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    list = service.GetFactoryAll();
-                    dataGridView1.DataSource = list;
+                    LoadData();
+                    SetBottomStatusLabel("성공적으로 수정되었습니다.");
                 }
             }
         }
@@ -76,10 +83,13 @@ namespace Team3
                     if (bResult)
                     {
                         MessageBox.Show("삭제완료");
+                        LoadData();
+                        SetBottomStatusLabel(dataGridView1.CurrentRow.Cells[5].Value.ToString() + " 이 삭제 되었습니다.");
                     }
                     else if (!bResult)
                     {
                         MessageBox.Show("삭제 실패");
+                        SetBottomStatusLabel("삭제 실패");
                         return;
                     }
                 }
@@ -90,11 +100,7 @@ namespace Team3
             }
         }
 
-        private void FactoryMgt_Activated(object sender, EventArgs e)
-        {
-
-
-        }
+      
 
         private void btnEx_Click(object sender, EventArgs e)
         {
