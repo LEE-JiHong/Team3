@@ -33,7 +33,7 @@ namespace Team3
                 this.Text = "거래처 추가";
             }
         }
-        public CompanyPop(EditMode editMode,string i)
+        public CompanyPop(EditMode editMode, string i)
         {
             InitializeComponent();
             if (editMode == EditMode.Update)
@@ -72,8 +72,32 @@ namespace Team3
             {
                 R_service = new ResourceService();
                 u_list = R_service.GetUserAll();
-                
+
                 ComboUtil.ComboBinding<UserVO>(cboUser, u_list, "user_id", "user_name");
+            }
+            if (mode == EditMode.Update)
+            {
+                if (lblID.Text != "")
+                {
+                    CompanyDB_VO vo = R_service.GetCompanyByID(Convert.ToInt32(lblID.Text));
+
+                    txtCodeCompany.Text = vo.company_code;
+                    txtNameCompany.Text = vo.company_name;
+                    cboCompanyType.Text = vo.company_type;
+                    txtCEO.Text = vo.company_ceo;
+                    txtCnum.Text = vo.company_cnum;
+                    txtbtype.Text = vo.company_btype;
+                    txtGtype.Text = vo.company_gtype;
+                    cboUser.Text = vo.user_name;
+                    txtEmail.Text = vo.company_email;
+                    txtPhone.Text = vo.company_phone;
+                    txtFax.Text = vo.company_fax;
+                    cboYN.Text = vo.company_yn;
+                    txtAdmin.Text = vo.company_uadmin;
+                    txtUdate.Text = vo.company_udate;
+                    txtComment.Text = vo.company_comment;
+                    txtOrder_code.Text = vo.company_order_code;
+                }
             }
         }
 
@@ -94,7 +118,42 @@ namespace Team3
             VO.company_udate = txtUdate.Text;
             VO.company_cnum = txtCnum.Text;
             VO.company_ceo = txtCEO.Text;
-            
+            VO.company_btype = txtbtype.Text;
+            bool bResult = false;
+            if (mode == EditMode.Input)
+            {
+                bResult = R_service.InsertCompany(VO);
+                if (bResult)
+                {
+                    MessageBox.Show("등록성공");
+                    this.DialogResult = DialogResult.OK;
+
+                }
+                else if (!bResult)
+                {
+                    MessageBox.Show("등록실패");
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+            if (mode == EditMode.Update)
+            {
+                // bResult = R_service.UpdateCompany(VO);
+                if (bResult)
+                {
+                    MessageBox.Show("등록성공");
+                    this.DialogResult = DialogResult.OK;
+
+                }
+                else if (!bResult)
+                {
+                    MessageBox.Show("등록실패");
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+
         }
     }
 }
+

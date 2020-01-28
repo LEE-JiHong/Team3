@@ -84,13 +84,103 @@ namespace Team3DAC
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection.Open();
-                
+
+                //         cmd.Parameters.AddWithValue("@company_id", vo.company_id);
+                cmd.Parameters.AddWithValue("@company_code", vo.company_code);
+                cmd.Parameters.AddWithValue("@company_name", vo.company_name);
+                cmd.Parameters.AddWithValue("@company_type", vo.company_type);
+                cmd.Parameters.AddWithValue("@company_ceo", vo.company_ceo);
+                cmd.Parameters.AddWithValue("@company_cnum", vo.company_cnum);
+                cmd.Parameters.AddWithValue("@company_btype", vo.company_btype);
+                cmd.Parameters.AddWithValue("@company_gtype", vo.company_gtype);
+                cmd.Parameters.AddWithValue("@user_id", vo.user_id);
+                cmd.Parameters.AddWithValue("@company_email", vo.company_email);
+                cmd.Parameters.AddWithValue("@company_phone", vo.company_phone);
+                cmd.Parameters.AddWithValue("@company_fax", vo.company_fax);
+                cmd.Parameters.AddWithValue("@company_yn", vo.company_yn);
+                cmd.Parameters.AddWithValue("@company_uadmin", vo.company_uadmin);
+                cmd.Parameters.AddWithValue("@company_udate", vo.company_udate);
+                cmd.Parameters.AddWithValue("@company_comment", vo.company_comment);
+                cmd.Parameters.AddWithValue("@company_order_code", vo.company_order_code);
 
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return successRow > 0;
             }
         }
+        public CompanyDB_VO GetCompanyByID(int i)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetCompanyByID";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", i);
+                cmd.Connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyDB_VO> list = Helper.DataReaderMapToList<CompanyDB_VO>(reader);
+                cmd.Connection.Close();
+                return list[0];
+            }
+        }
+
+        public bool UpdateCompany(CompanyVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "UpdateCompany";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+
+                cmd.Parameters.AddWithValue("@company_id", vo.company_id);
+                cmd.Parameters.AddWithValue("@company_code", vo.company_code);
+                cmd.Parameters.AddWithValue("@company_name", vo.company_name);
+                cmd.Parameters.AddWithValue("@company_type", vo.company_type);
+                cmd.Parameters.AddWithValue("@company_ceo", vo.company_ceo);
+                cmd.Parameters.AddWithValue("@company_cnum", vo.company_cnum);
+                cmd.Parameters.AddWithValue("@company_btype", vo.company_btype);
+                cmd.Parameters.AddWithValue("@company_gtype", vo.company_gtype);
+                cmd.Parameters.AddWithValue("@user_id", vo.user_id);
+                cmd.Parameters.AddWithValue("@company_email", vo.company_email);
+                cmd.Parameters.AddWithValue("@company_phone", vo.company_phone);
+                cmd.Parameters.AddWithValue("@company_fax", vo.company_fax);
+                cmd.Parameters.AddWithValue("@company_yn", vo.company_yn);
+                cmd.Parameters.AddWithValue("@company_uadmin", vo.company_uadmin);
+                cmd.Parameters.AddWithValue("@company_udate", vo.company_udate);
+                cmd.Parameters.AddWithValue("@company_comment", vo.company_comment);
+                cmd.Parameters.AddWithValue("@company_order_code", vo.company_order_code);
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+
+            }
+        }
+        public bool DeleteCompany(int i)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "DeleteCompany";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", i);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+
         //설비================================================================
         /// <summary>
         /// Machine 설비 모든컬럼 select
@@ -404,8 +494,9 @@ namespace Team3DAC
             }
             catch (Exception err)
             {
-                return false;
                 string st = err.Message;
+                return false;
+
             }
         }
         public bool DeleteFactory(int id)
