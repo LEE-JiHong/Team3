@@ -16,7 +16,7 @@ namespace Team3
     {
         List<CompanyDB_VO> lst;
         List<CommonVO> common_list;
-        ResourceService service;
+        ResourceService R_service;
         CommonCodeService common_service;
         public businessMgt()
         {
@@ -54,6 +54,11 @@ namespace Team3
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (lblID.Text == "")
+            {
+                MessageBox.Show("변경할 업체를 선택해주세요");
+                return;
+            }
             CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Update, lblID.Text);
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -121,6 +126,35 @@ namespace Team3
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DialogResult dr = MessageBox.Show(dataGridView2.CurrentRow.Cells[2].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK)
+                {
+                    R_service = new ResourceService();
+                    bool bResult = R_service.DeleteCompany(Convert.ToInt32(lblID.Text));
+
+                    if (bResult)
+                    {
+                        MessageBox.Show("삭제완료");
+                 
+                    }
+                    else if (!bResult)
+                    {
+                        MessageBox.Show("삭제 실패");
+                        return;
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                string str = err.Message;
+            }
         }
     }
 }

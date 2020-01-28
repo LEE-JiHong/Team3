@@ -13,6 +13,7 @@ namespace Team3
     public partial class CompanyPop : Team3.DialogForm
     {
         ResourceService R_service;
+        DateTime today = DateTime.Now;
         CommonCodeService service;
         List<CommonVO> common_list;
         List<UserVO> u_list;
@@ -51,6 +52,9 @@ namespace Team3
 
         private void CompanyPop_Load(object sender, EventArgs e)
         {
+
+         string udate= string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
+            txtUdate.Text = udate;
             service = new CommonCodeService();
             common_list = service.GetCommonCodeAll();
             {
@@ -94,19 +98,21 @@ namespace Team3
                     txtFax.Text = vo.company_fax;
                     cboYN.Text = vo.company_yn;
                     txtAdmin.Text = vo.company_uadmin;
-                    txtUdate.Text = vo.company_udate;
+                    txtUdate.Text = udate;
                     txtComment.Text = vo.company_comment;
                     txtOrder_code.Text = vo.company_order_code;
                 }
+              
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             CompanyVO VO = new CompanyVO();
+
             VO.company_code = txtCodeCompany.Text;
             VO.company_name = txtNameCompany.Text;
-            VO.company_type = txtbtype.Text;
+            VO.company_type = cboCompanyType.SelectedValue.ToString();
             VO.company_gtype = txtGtype.Text;
             VO.user_id = Convert.ToInt32(cboUser.SelectedValue);
             VO.company_email = txtEmail.Text;
@@ -119,6 +125,7 @@ namespace Team3
             VO.company_cnum = txtCnum.Text;
             VO.company_ceo = txtCEO.Text;
             VO.company_btype = txtbtype.Text;
+           // VO.company_order_code = txtOrder_code.Text;
             bool bResult = false;
             if (mode == EditMode.Input)
             {
@@ -138,16 +145,17 @@ namespace Team3
             }
             if (mode == EditMode.Update)
             {
-                // bResult = R_service.UpdateCompany(VO);
+                VO.company_id = Convert.ToInt32(lblID.Text);
+                 bResult = R_service.UpdateCompany(VO);
                 if (bResult)
                 {
-                    MessageBox.Show("등록성공");
+                    MessageBox.Show("수정성공");
                     this.DialogResult = DialogResult.OK;
 
                 }
                 else if (!bResult)
                 {
-                    MessageBox.Show("등록실패");
+                    MessageBox.Show("수정실패");
                     this.DialogResult = DialogResult.None;
                     return;
                 }

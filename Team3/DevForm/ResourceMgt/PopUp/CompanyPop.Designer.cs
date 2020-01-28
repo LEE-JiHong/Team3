@@ -392,9 +392,8 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(750, 64);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.Size = new System.Drawing.Size(0, 12);
             this.lblID.TabIndex = 4;
-            this.lblID.Text = "lblID";
             // 
             // cboUser
             // 

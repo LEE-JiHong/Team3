@@ -38,7 +38,7 @@
             this.btnG_Update = new System.Windows.Forms.Button();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEX = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -270,7 +270,7 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.button6);
+            this.flowLayoutPanel2.Controls.Add(this.btnEX);
             this.flowLayoutPanel2.Controls.Add(this.btnDelete);
             this.flowLayoutPanel2.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel2.Controls.Add(this.btnAdd);
@@ -281,20 +281,21 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(257, 29);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // button6
+            // btnEX
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(197, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
-            this.button6.TabIndex = 49;
-            this.button6.Text = "엑셀";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEX.Location = new System.Drawing.Point(197, 3);
+            this.btnEX.Name = "btnEX";
+            this.btnEX.Size = new System.Drawing.Size(57, 23);
+            this.btnEX.TabIndex = 49;
+            this.btnEX.Text = "엑셀";
+            this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEX.UseVisualStyleBackColor = false;
+            this.btnEX.Click += new System.EventHandler(this.btnEX_Click);
             // 
             // btnDelete
             // 
@@ -506,7 +507,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEX;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;

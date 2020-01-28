@@ -101,7 +101,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@company_uadmin", vo.company_uadmin);
                 cmd.Parameters.AddWithValue("@company_udate", vo.company_udate);
                 cmd.Parameters.AddWithValue("@company_comment", vo.company_comment);
-                cmd.Parameters.AddWithValue("@company_order_code", vo.company_order_code);
+              //  cmd.Parameters.AddWithValue("@company_order_code", vo.company_order_code);
 
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
