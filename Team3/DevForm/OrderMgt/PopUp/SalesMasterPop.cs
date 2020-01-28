@@ -52,6 +52,7 @@ namespace Team3
             dateTimePicker1.Value = DateTime.Now;
         }
 
+        //엑셀 업로드 버튼
         private void btnFindFile_Click(object sender, EventArgs e)
         {
             // 엑셀 변수 선언
@@ -182,11 +183,13 @@ namespace Team3
             }
         }
 
+        //닫기 버튼
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //날짜 validation 체크
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             if (dateTimePicker1.Value < DateTime.Now)
@@ -196,12 +199,13 @@ namespace Team3
             }
         }
 
+        //엑셀파일 업로드하지않은 경우
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dt == null)
             {
-                MessageBox.Show("파일 업로드는 필수입니다.");
-                
+                this.DialogResult = DialogResult.Ignore;
+                return;
             }
         }
     }
