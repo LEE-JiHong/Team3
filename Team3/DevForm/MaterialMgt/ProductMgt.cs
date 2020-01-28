@@ -34,7 +34,9 @@ namespace Team3
             ProductPop frm = new ProductPop(ProductPop.EditMode.Insert);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                List<ProductVO> new_product_list = product_service.GetAllProducts();    //등록후 다시 조회
+                dgvProductList.DataSource = new_product_list;
+                SetBottomStatusLabel("신규 품목이 등록되었습니다.");
             }
         }
 
@@ -84,7 +86,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "비고", "product_comment", false, 130);
 
             #endregion
-            dgvProductList.Columns[0].SortMode = DataGridViewColumnSortMode.Automatic;
+            //dgvProductList.Columns[0].SortMode = DataGridViewColumnSortMode.Automatic;
 
 
 
@@ -173,10 +175,6 @@ namespace Team3
             ProductVO product_vo = new ProductVO();
 
 
-            /*   for (int i = 0; i < dgvProductList.Rows.Count; i++)
-               {
-                   product_vo = (ProductVO)dgvProductList.Rows[i].DataBoundItem;
-               }*/
             foreach (DataGridViewRow row in this.dgvProductList.SelectedRows)
             {
                 product_vo = row.DataBoundItem as ProductVO;
@@ -214,9 +212,9 @@ namespace Team3
             ProductPop frm = new ProductPop(ProductPop.EditMode.Update, product_vo);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                
-
-               
+                List<ProductVO> new_product_list = product_service.GetAllProducts();    //등록후 다시 조회
+                dgvProductList.DataSource = new_product_list;
+                SetBottomStatusLabel("품목 정보가 수정되었습니다.");
             }
 
         }
@@ -224,7 +222,7 @@ namespace Team3
         private void dgvProductList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            lblID.Text = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
+           
         }
 
         private void btnSelect_Click(object sender, EventArgs e)

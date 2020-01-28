@@ -35,10 +35,10 @@ namespace Team3
             ProductDac dac = new ProductDac();
             return dac.AddProduct(vo);
         }
-        //public bool UpdateProduct(ProductVO VO)
-        //{
-        //    ProductDac dac = new ProductDac();
-        //    return dac.UpdateProduct(VO);
-        //}
+        public bool UpdateProduct(ProductVO VO)
+        {
+            ProductDac dac = new ProductDac();
+            return dac.UpdateProduct(VO);
+        }
     }
 }
