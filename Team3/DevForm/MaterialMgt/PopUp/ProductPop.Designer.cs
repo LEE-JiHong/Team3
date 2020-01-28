@@ -62,7 +62,7 @@
             this.txtLeastOrder = new System.Windows.Forms.TextBox();
             this.txtConversionAomount = new System.Windows.Forms.TextBox();
             this.txtUdate = new System.Windows.Forms.TextBox();
-            this.txtNote = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cboFreeOffer = new System.Windows.Forms.ComboBox();
@@ -155,7 +155,7 @@
             this.panel2.Controls.Add(this.cboInSector);
             this.panel2.Controls.Add(this.cboProductUnit);
             this.panel2.Controls.Add(this.label25);
-            this.panel2.Controls.Add(this.txtNote);
+            this.panel2.Controls.Add(this.txtComment);
             this.panel2.Controls.Add(this.txtUdate);
             this.panel2.Controls.Add(this.txtLeastOrder);
             this.panel2.Controls.Add(this.txtProduct);
@@ -522,13 +522,13 @@
             this.txtUdate.Size = new System.Drawing.Size(100, 21);
             this.txtUdate.TabIndex = 31;
             // 
-            // txtNote
+            // txtComment
             // 
-            this.txtNote.Location = new System.Drawing.Point(102, 251);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(509, 111);
-            this.txtNote.TabIndex = 33;
+            this.txtComment.Location = new System.Drawing.Point(102, 251);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(509, 111);
+            this.txtComment.TabIndex = 33;
             // 
             // cboProductUnit
             // 
@@ -886,7 +886,7 @@
         private System.Windows.Forms.ComboBox cboFreeOffer;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox cboProductUnit;
-        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.TextBox txtUdate;
         private System.Windows.Forms.TextBox txtConversionAomount;
         private System.Windows.Forms.TextBox txtLeastOrder;

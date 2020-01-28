@@ -32,7 +32,16 @@ namespace Team3VO
         public string product_uadmin { get; set; }
         public string product_udate { get; set; } 
         public string product_comment { get; set; }
-
-        //public int product_count { get; set; }
+        public string product_type_value { get; set; }
+        //public string product_ordertype_value { get; set; }
+        public string product_insector_value { get; set; }
+        public string product_outsector_value { get; set; }
+        public string product_demandcom_value { get; set; }
+        public string product_supplycom_value { get; set; }
+        public string product_admin_value { get; set; }
+        public string product_uadmin_value { get; set; }
+        public string product_productunit_value { get; set; }
+        public string product_ordertype_value { get; set; }
+        
     }
 }

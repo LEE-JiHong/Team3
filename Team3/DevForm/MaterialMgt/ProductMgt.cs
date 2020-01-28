@@ -34,7 +34,9 @@ namespace Team3
             ProductPop frm = new ProductPop(ProductPop.EditMode.Insert);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                List<ProductVO> new_product_list = product_service.GetAllProducts();    //등록후 다시 조회
+                dgvProductList.DataSource = new_product_list;
+                SetBottomStatusLabel("신규 품목이 등록되었습니다.");
             }
         }
 
@@ -224,7 +226,7 @@ namespace Team3
         private void dgvProductList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            lblID.Text = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
+           
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
