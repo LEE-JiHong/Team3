@@ -95,6 +95,10 @@ namespace Team3
         {
             return dac.GetBORAll();
         }
+        public BORDB_VO GetBORByID(int i,string route)
+        {
+            return dac.GetBORByID(i,route);
+        }
 
 
 

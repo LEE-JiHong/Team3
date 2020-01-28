@@ -38,13 +38,6 @@
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
-            // 
             // TopMenu
             // 
             this.TopMenu.Size = new System.Drawing.Size(894, 60);
@@ -65,6 +58,13 @@
             this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Size = new System.Drawing.Size(894, 454);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
             // 
             // panel3
             // 
@@ -123,6 +123,7 @@
             this.MinimumSize = new System.Drawing.Size(910, 575);
             this.Name = "HorizonDgvBaseForm";
             this.Text = "HorizonDgvBaseForm";
+            this.Load += new System.EventHandler(this.HorizonDgvBaseForm_Load);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -173,6 +173,31 @@ namespace Team3DAC
         }
 
         /// <summary>
+        /// planID 있는지 체크
+        /// </summary>
+        /// <returns></returns>
+        public int GetPlanIDINSOMaster(string planID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select count(*) from TBL_SO_MASTER where plan_id = @planID";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@planID", planID);
+
+                cmd.Connection.Open();
+
+                int resultNum = Convert.ToInt32(cmd.ExecuteScalar());
+
+                cmd.Connection.Close();
+                return resultNum;
+            }
+        }
+
+        /// <summary>
         /// 영업마스터 수작업으로 등록
         /// </summary>
         /// <param name="VO"></param>

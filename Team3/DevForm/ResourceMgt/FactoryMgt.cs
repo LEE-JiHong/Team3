@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
@@ -22,8 +24,7 @@ namespace Team3
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
-            list = service.GetFactoryAll();
-            dataGridView1.DataSource = list;
+            LoadData();
 
             CommonCodeService Common_service = new CommonCodeService();
             common_list = Common_service.GetCommonCodeAll();
@@ -35,14 +36,22 @@ namespace Team3
 
         }
 
+        private void LoadData()
+        {
+            list = service.GetFactoryAll();
+            dataGridView1.DataSource = list;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                list = service.GetFactoryAll();
-                dataGridView1.DataSource = list;
+                LoadData();
+                SetBottomStatusLabel("성공적으로 등록되었습니다.");
             }
+            else
+                SetBottomStatusLabel("등록실패.");
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -51,8 +60,8 @@ namespace Team3
                 FactoryPop frm = new FactoryPop(FactoryPop.EditMode.Update, lblID.Text);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    list = service.GetFactoryAll();
-                    dataGridView1.DataSource = list;
+                    LoadData();
+                    SetBottomStatusLabel("성공적으로 수정되었습니다.");
                 }
             }
         }
@@ -74,10 +83,13 @@ namespace Team3
                     if (bResult)
                     {
                         MessageBox.Show("삭제완료");
+                        LoadData();
+                        SetBottomStatusLabel(dataGridView1.CurrentRow.Cells[5].Value.ToString() + " 이 삭제 되었습니다.");
                     }
                     else if (!bResult)
                     {
                         MessageBox.Show("삭제 실패");
+                        SetBottomStatusLabel("삭제 실패");
                         return;
                     }
                 }
@@ -88,10 +100,97 @@ namespace Team3
             }
         }
 
-        private void FactoryMgt_Activated(object sender, EventArgs e)
+
+
+        private void btnEx_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
 
+                string filename = "test" + ".xlsx"; // ++ 파일명 변경 
 
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.order;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show(err.Message);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //콤보박스 미선택
+            if (cboSearchFacilityGroup.SelectedIndex == 0)
+            {
+                var fine = (from findCode in list
+                            where findCode.factory_code.Contains(txtSearchFacility.Text) || findCode.factory_name.Contains(txtSearchFacility.Text)
+
+                            select findCode).ToList();
+                dataGridView1.DataSource = fine;
+            }
+            //콤보박스 선택 텍스트 미입력
+            else if (cboSearchFacilityGroup.SelectedIndex != 0 && txtSearchFacility.Text == "")
+            {
+                var fine = (from findCode in list
+                            where findCode.facility_class.Contains(cboSearchFacilityGroup.Text)
+                            select findCode).ToList();
+                dataGridView1.DataSource = fine;
+
+            }
+            //콤보박스 텍스트 모두입력
+            else
+            {
+                var fine = (from findCode in list
+                            where (findCode.factory_code.Contains(txtSearchFacility.Text) || 
+                            findCode.factory_name.Contains(txtSearchFacility.Text) )
+                            && findCode.facility_class.Contains(cboSearchFacilityGroup.Text)
+                            select findCode).ToList();
+                dataGridView1.DataSource = fine;
+ 
+            }
         }
     }
 }

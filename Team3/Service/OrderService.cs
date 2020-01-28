@@ -53,6 +53,12 @@ namespace Team3
             return dac.GetPlanID();
         }
 
+        public int GetPlanIDINSOMaster(string planID)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetPlanIDINSOMaster(planID);
+        }
+
         public List<SOMasterVO> GetSOMaster(string planID)
         {
             OrderDac dac = new OrderDac();

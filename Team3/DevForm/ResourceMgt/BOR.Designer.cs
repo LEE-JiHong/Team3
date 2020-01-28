@@ -37,12 +37,13 @@
             this.cboProcess = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEX = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
+            this.lblRoute = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -55,11 +56,12 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(13, 132);
-            this.panel2.Size = new System.Drawing.Size(910, 341);
+            this.panel2.Location = new System.Drawing.Point(12, 132);
+            this.panel2.Size = new System.Drawing.Size(909, 331);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblRoute);
             this.panel1.Controls.Add(this.lblID);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cboProcess);
@@ -68,6 +70,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cboItem);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Size = new System.Drawing.Size(909, 83);
             // 
             // label1
@@ -121,10 +124,10 @@
             // 
             // cboItem
             // 
-            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboItem.Location = new System.Drawing.Point(64, 29);
             this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(201, 21);
+            this.cboItem.Size = new System.Drawing.Size(201, 22);
             this.cboItem.TabIndex = 0;
             // 
             // label3
@@ -154,37 +157,38 @@
             // cboFacility
             // 
             this.cboFacility.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFacility.Location = new System.Drawing.Point(583, 29);
             this.cboFacility.Name = "cboFacility";
-            this.cboFacility.Size = new System.Drawing.Size(201, 21);
+            this.cboFacility.Size = new System.Drawing.Size(201, 22);
             this.cboFacility.TabIndex = 2;
             // 
             // cboProcess
             // 
             this.cboProcess.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProcess.FormattingEnabled = true;
             this.cboProcess.Location = new System.Drawing.Point(315, 28);
             this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(201, 23);
+            this.cboProcess.Size = new System.Drawing.Size(201, 24);
             this.cboProcess.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(910, 341);
+            this.dataGridView1.Size = new System.Drawing.Size(909, 331);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.btnEX);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
@@ -195,20 +199,21 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(593, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button6
+            // btnEX
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(533, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
-            this.button6.TabIndex = 49;
-            this.button6.Text = "엑셀";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEX.Location = new System.Drawing.Point(533, 3);
+            this.btnEX.Name = "btnEX";
+            this.btnEX.Size = new System.Drawing.Size(57, 23);
+            this.btnEX.TabIndex = 49;
+            this.btnEX.Text = "엑셀";
+            this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEX.UseVisualStyleBackColor = false;
+            this.btnEX.Click += new System.EventHandler(this.btnEX_Click);
             // 
             // button3
             // 
@@ -280,9 +285,17 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(785, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(35, 16);
+            this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 73;
-            this.lblID.Text = "lblID";
+            // 
+            // lblRoute
+            // 
+            this.lblRoute.AutoSize = true;
+            this.lblRoute.Location = new System.Drawing.Point(773, 0);
+            this.lblRoute.Name = "lblRoute";
+            this.lblRoute.Size = new System.Drawing.Size(0, 16);
+            this.lblRoute.TabIndex = 74;
+            this.lblRoute.Visible = false;
             // 
             // BOR
             // 
@@ -318,8 +331,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEX;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblRoute;
     }
 }

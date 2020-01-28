@@ -67,7 +67,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 203);
-            this.panel2.Size = new System.Drawing.Size(975, 281);
+            this.panel2.Size = new System.Drawing.Size(975, 280);
             // 
             // panel1
             // 
@@ -272,7 +272,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(975, 281);
+            this.dataGridView1.Size = new System.Drawing.Size(975, 280);
             this.dataGridView1.TabIndex = 37;
             // 
             // btnRegister

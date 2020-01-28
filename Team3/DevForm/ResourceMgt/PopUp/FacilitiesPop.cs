@@ -61,6 +61,7 @@ namespace Team3
 
         private void FacilitiesPop_Load(object sender, EventArgs e)
         {
+            
             string todayFormat = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
             txtMgrade_udate.Text = todayFormat;
             service = new CommonCodeService();

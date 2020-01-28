@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
     public partial class SalesMasterUpload : DgvBaseForm
     {
         string versionName;
+
         public SalesMasterUpload()
         {
             InitializeComponent();
@@ -21,14 +24,10 @@ namespace Team3
         {
             versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
 
-            //데이터 가져오기(영업마스터 데이터)
-
-            //데이터가 없을 경우
-
-
             SetDataGrid();
         }
 
+        //데이터그리드뷰 칼럼 세팅
         private void SetDataGrid()
         {
             dataGridView1.Columns.Clear();
@@ -49,31 +48,78 @@ namespace Team3
         {
             SalesMasterDialog frm = new SalesMasterDialog();
 
-            if (versionName != "")
-            {
-                MessageBox.Show("test");
-            }
-
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                dataGridView1.Columns.Clear();
-
-                dataGridView1.DataSource = frm.Data;
                 versionName = frm.PlanVersion;
+
+                OrderService service = new OrderService();
+
+                int resultNum = service.GetPlanIDINSOMaster(versionName);
+
+                if (resultNum > 0)
+                {
+                    if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        dataGridView1.Columns.Clear();
+                        dataGridView1.DataSource = frm.Data;
+                        SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
+                    }
+                }
+                else
+                {
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = frm.Data;
+                    SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
+                }
             }
         }
 
         //양식 다운로드 버튼
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
 
+                string filename = "test" + ".xlsx";
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);//tempPath
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 0;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 1; j < dataGridView1.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+
+                SetBottomStatusLabel("양식 다운로드가 완료되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
+        //영업마스터 생성
         private void btnCreatePO_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 1)
+            if (dataGridView1.Rows.Count < 1)
             {
                 MessageBox.Show("파일 업로드는 필수입니다.");
+                SetBottomStatusLabel("파일 업로드는 필수입니다.");
             }
             else
             {
@@ -107,6 +153,7 @@ namespace Team3
                 else
                 {
                     MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
+                    SetBottomStatusLabel("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
                     return;
                 }
             }
