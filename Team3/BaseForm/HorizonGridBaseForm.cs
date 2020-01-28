@@ -20,7 +20,7 @@ namespace Team3
         private void HorizonGridBaseForm_Load(object sender, EventArgs e)
         {
             if (this.Tag != null)
-                SetBottomStatusLabel("Welcome! " + this.Tag.ToString() + " 페이지 입니다");
+                SetBottomStatusLabel("Welcome! " + this.Tag.ToString() + " 페이지입니다.");
         }
     }
 }
