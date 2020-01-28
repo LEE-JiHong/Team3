@@ -65,12 +65,12 @@
             // 
             this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Location = new System.Drawing.Point(12, 287);
-            this.panel3.Size = new System.Drawing.Size(870, 153);
+            this.panel3.Size = new System.Drawing.Size(1105, 153);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Size = new System.Drawing.Size(870, 122);
+            this.panel2.Size = new System.Drawing.Size(1105, 122);
             // 
             // panel1
             // 
@@ -85,12 +85,13 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dateTimePicker3);
             this.panel1.Controls.Add(this.dateTimePicker4);
+            this.panel1.Size = new System.Drawing.Size(1105, 73);
             // 
             // label2
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(15, 250);
+            this.label2.Location = new System.Drawing.Point(15, 241);
             this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.Text = "자재불출";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,14 +108,18 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(686, 252);
+            this.panel5.Location = new System.Drawing.Point(921, 252);
             this.panel5.Size = new System.Drawing.Size(197, 29);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(810, 93);
+            this.panel4.Location = new System.Drawing.Point(1045, 93);
             this.panel4.Size = new System.Drawing.Size(73, 29);
+            // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(1129, 60);
             // 
             // layoutButton
             // 
@@ -126,7 +131,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(894, 454);
+            this.basepanel.Size = new System.Drawing.Size(1129, 454);
             // 
             // imageList1
             // 
@@ -221,7 +226,7 @@
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(313, 11);
+            this.textBox1.Location = new System.Drawing.Point(430, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(209, 22);
             this.textBox1.TabIndex = 26;
@@ -230,11 +235,11 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(439, 13);
+            this.label4.Location = new System.Drawing.Point(674, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 15);
+            this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 24;
             this.label4.Text = "작업지시 ID";
             // 
@@ -242,9 +247,9 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(247, 12);
+            this.label3.Location = new System.Drawing.Point(364, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 23;
@@ -266,7 +271,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(186, 17);
+            this.label6.Location = new System.Drawing.Point(186, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 15);
             this.label6.TabIndex = 28;
@@ -276,7 +281,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(537, 11);
+            this.textBox2.Location = new System.Drawing.Point(772, 9);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(209, 22);
             this.textBox2.TabIndex = 30;
@@ -289,7 +294,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(870, 122);
+            this.dataGridView1.Size = new System.Drawing.Size(1105, 122);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
@@ -300,7 +305,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(870, 153);
+            this.dataGridView2.Size = new System.Drawing.Size(1105, 153);
             this.dataGridView2.TabIndex = 1;
             // 
             // label7
@@ -317,9 +322,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 41);
+            this.comboBox1.Location = new System.Drawing.Point(83, 43);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(231, 24);
+            this.comboBox1.Size = new System.Drawing.Size(222, 24);
             this.comboBox1.TabIndex = 32;
             // 
             // button3
@@ -332,7 +337,7 @@
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(797, 40);
+            this.button3.Location = new System.Drawing.Point(1032, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(70, 30);
             this.button3.TabIndex = 80;
@@ -343,7 +348,7 @@
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(205, 11);
+            this.dateTimePicker3.Location = new System.Drawing.Point(205, 9);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(100, 22);
             this.dateTimePicker3.TabIndex = 82;
@@ -351,7 +356,7 @@
             // dateTimePicker4
             // 
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(83, 11);
+            this.dateTimePicker4.Location = new System.Drawing.Point(83, 9);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(100, 22);
             this.dateTimePicker4.TabIndex = 81;
@@ -359,7 +364,7 @@
             // DMRMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.ClientSize = new System.Drawing.Size(1129, 536);
             this.Name = "DMRMgt";
             this.Tag = "자재불출요청";
             this.panel3.ResumeLayout(false);
