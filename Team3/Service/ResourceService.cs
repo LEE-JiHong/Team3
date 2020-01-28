@@ -29,9 +29,22 @@ namespace Team3
 
             return dac.GetCompanyAll();
         }
-
-
-
+        public bool InsertCompany(CompanyVO vo)
+        {
+            return dac.InsertCompany(vo);
+        }
+        public bool UpdateCompany(CompanyVO vo)
+        {
+            return dac.UpdateCompany(vo);
+        }
+        public CompanyDB_VO GetCompanyByID(int i)
+        {
+            return dac.GetCompanyByID(i);
+        }
+        public bool DeleteCompany(int i)
+        {
+            return dac.DeleteCompany(i);
+        }
         //=====이하 설비==============
         /// <summary>
         ///  Machine 설비 모든컬럼 select
@@ -53,7 +66,7 @@ namespace Team3
             return dac.DeleteMachin(i);
         }
 
-       //=============이하 설비군=========
+        //=============이하 설비군=========
         /// <summary>
         /// MachineGreade 설비군 모든컬럼 select
         /// </summary>

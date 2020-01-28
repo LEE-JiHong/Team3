@@ -24,7 +24,7 @@ namespace Team3VO
         public string company_uadmin { get; set; }
         public string company_udate { get; set; }
         public string company_comment { get; set; }
-
+        public string company_order_code { get; set; }
 
     }
     public class CompanyDB_VO

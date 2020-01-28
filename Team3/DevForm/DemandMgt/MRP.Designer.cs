@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MRP));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dtpEndDate);
             this.panel1.Controls.Add(this.dtpStartDate);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
@@ -117,23 +117,24 @@
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(822, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 30);
-            this.button1.TabIndex = 70;
-            this.button1.Text = "조회";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(822, 83);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(65, 30);
+            this.btnSearch.TabIndex = 70;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // label12
             // 
@@ -313,7 +314,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;

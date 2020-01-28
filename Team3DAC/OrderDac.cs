@@ -520,23 +520,51 @@ namespace Team3DAC
                 }
             }
 
-            //public bool UpdateSOMaster(SOMasterVO vo)
-            //{
-            //    using (SqlCommand cmd = new SqlCommand())
-            //    {
-            //        string sql = "UpdateSOMaster";
+        
+        public DataTable GetMRP(string planID,string firstDate, string endDate)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetMRPforOder";
 
-            //        cmd.Connection = new SqlConnection(this.ConnectionString);
-            //        cmd.CommandText = sql;
-            //        cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            //        cmd.Parameters.AddWithValue("@product_id", vo.product_id);
+                cmd.Parameters.AddWithValue("@plan_id", planID);
+                cmd.Parameters.AddWithValue("@StartDate", firstDate);
+                cmd.Parameters.AddWithValue("@EndDate", endDate);
 
-            //        cmd.Connection.Open();
-            //        var successRow = cmd.ExecuteNonQuery();
-            //        cmd.Connection.Close();
-            //        return successRow > 0;
-            //    }
-            //}
+                DataTable dataTable = new DataTable();
+
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dataTable);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dataTable;
+            }
         }
+
+        //public bool UpdateSOMaster(SOMasterVO vo)
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        string sql = "UpdateSOMaster";
+
+        //        cmd.Connection = new SqlConnection(this.ConnectionString);
+        //        cmd.CommandText = sql;
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        cmd.Parameters.AddWithValue("@product_id", vo.product_id);
+
+        //        cmd.Connection.Open();
+        //        var successRow = cmd.ExecuteNonQuery();
+        //        cmd.Connection.Close();
+        //        return successRow > 0;
+        //    }
+        //}
+    }
     }

@@ -59,6 +59,8 @@
             this.cboCompanyType = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.cboUser = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtOrder_code = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,7 +102,9 @@
             this.panel2.Controls.Add(this.txtAdmin);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.txtOrder_code);
             this.panel2.Controls.Add(this.txtFax);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtPhone);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label6);
@@ -273,7 +277,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Orange;
-            this.label14.Location = new System.Drawing.Point(528, 124);
+            this.label14.Location = new System.Drawing.Point(528, 125);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 15);
             this.label14.TabIndex = 0;
@@ -400,6 +404,23 @@
             this.cboUser.Size = new System.Drawing.Size(130, 23);
             this.cboUser.TabIndex = 2;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(528, 160);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "발주코드";
+            // 
+            // txtOrder_code
+            // 
+            this.txtOrder_code.Location = new System.Drawing.Point(589, 157);
+            this.txtOrder_code.Name = "txtOrder_code";
+            this.txtOrder_code.Size = new System.Drawing.Size(130, 21);
+            this.txtOrder_code.TabIndex = 13;
+            // 
             // CompanyPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -453,5 +474,7 @@
         private System.Windows.Forms.ComboBox cboYN;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.ComboBox cboUser;
+        private System.Windows.Forms.TextBox txtOrder_code;
+        private System.Windows.Forms.Label label5;
     }
 }

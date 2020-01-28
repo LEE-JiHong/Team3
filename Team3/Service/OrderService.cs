@@ -82,5 +82,12 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.AddProductionPlan(list);
         }
+
+        public DataTable GetMRP(string planID, string firstDate, string endDate)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetMRP(planID, firstDate, endDate);
+        }
+
     }
 }
