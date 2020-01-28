@@ -20,8 +20,7 @@ namespace Team3
         }
         private void DemandPop_Load(object sender, EventArgs e)
         {
-            rdoWeekday.Checked = true;
-
+           
             OrderService service = new OrderService();
             List<string> list = service.GetPlanID();
 
@@ -33,11 +32,6 @@ namespace Team3
         private void SetDataGrid()
         {
             dataGridView1.Columns.Clear();
-
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "날짜", "date", true);
-            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수량", "", true, 130);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "수량", "", true, 130);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "주중/주말", "plan_type", false, 130);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -48,99 +42,23 @@ namespace Team3
 
             somasterList = service.GetSOMaster(cbOrderGubun.Text);
 
-            string endDate = somasterList[0].so_edate;
+            dataGridView1.DataSource = somasterList;
 
-            List<DayVO> dayList = new List<DayVO>();
-
-            dayList = service.GetDays(startDate, endDate);
-
-            dataGridView1.DataSource = dayList;
-
-            if (rdoWeekday.Checked) //주중 선택
-            {
-                //List<DayVO> weekdayList = (from item in dayList
-                //                       where item.plan_type == "WEEKDAY"
-                //                       select item).ToList();
-                for (int i = 0; i < dayList.Count; i++)
-                {
-                    if (dayList[i].plan_type == "WEEKEND")
-                    {
-                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.DarkGray;
-                    }
-                }
-            }
-            else if (rdoWeekend.Checked) //주말 선택
-            {
-                //List<DayVO> weekEndList = (from item in dayList
-                //                       where item.plan_type == "WEEKEND"
-                //                       select item).ToList();
-                for (int i = 0; i < dayList.Count; i++)
-                {
-                    if (dayList[i].plan_type == "WEEKEND")
-                    {
-                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    }
-                }
-            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             List<DemandPlanVO> list = new List<DemandPlanVO>();
 
-            int soQty = 0;
-
-            foreach (SOMasterVO vo in somasterList)
-            {
-                soQty += vo.so_pcount;
-            }
-
-            int qty = 0;
-            int totalQty = 0;
-
-            int idx = somasterList.Count-1;
-
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < somasterList.Count; i++)
             {
                 DemandPlanVO vo = new DemandPlanVO();
                 vo.plan_id = cbOrderGubun.Text;
-                vo.d_count = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                vo.d_date = dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10);
-                vo.so_id = somasterList[idx].so_id;
-                if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10)) == Convert.ToDateTime(somasterList[idx].so_edate))
-                {
-                    if (qty < somasterList[idx].so_pcount)
-                    {
-                        MessageBox.Show("테스트");
-                        return;
-                    }
-                    idx--;
-
-                    if (idx == -1)
-                    {
-                        MessageBox.Show("성공");
-                    }
-                    qty = 0;
-                }
-                else
-                {
-                    qty += Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                }
-
-                totalQty += Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                
-                if (vo.d_count > 0)
-                {
-                    list.Add(vo);
-                }
+                vo.d_count = somasterList[i].so_pcount;
+                vo.d_date = somasterList[i].so_edate;
+                vo.so_id = somasterList[i].so_id;
+                list.Add(vo);
             }
-
-            if (soQty > totalQty)
-            {
-                MessageBox.Show("수량이 계획수량보다 적습니다.");
-                return;
-            }
-
             OrderService service = new OrderService();
             bool result = service.AddDemandPlan(list);
 

@@ -49,6 +49,7 @@
     <Compile Include="CompanyVO.cs" />
     <Compile Include="MachineGradeVO.cs" />
     <Compile Include="MachineVO.cs" />
+    <Compile Include="ProductionPlanVO.cs" />
     <Compile Include="ProductPriceVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

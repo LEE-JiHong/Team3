@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Business_showingsPop));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnDel = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -47,9 +48,12 @@
             // 
             // lblGrid1Name
             // 
-            this.lblGrid1Name.Location = new System.Drawing.Point(9, 0);
-            this.lblGrid1Name.Size = new System.Drawing.Size(101, 24);
+            this.lblGrid1Name.Image = ((System.Drawing.Image)(resources.GetObject("lblGrid1Name.Image")));
+            this.lblGrid1Name.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrid1Name.Location = new System.Drawing.Point(6, 4);
+            this.lblGrid1Name.Size = new System.Drawing.Size(79, 24);
             this.lblGrid1Name.Text = "실적등록";
+            this.lblGrid1Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel9
             // 
@@ -58,8 +62,12 @@
             // 
             // lblGrid2Name
             // 
-            this.lblGrid2Name.Size = new System.Drawing.Size(166, 27);
+            this.lblGrid2Name.Image = ((System.Drawing.Image)(resources.GetObject("lblGrid2Name.Image")));
+            this.lblGrid2Name.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrid2Name.Location = new System.Drawing.Point(7, 7);
+            this.lblGrid2Name.Size = new System.Drawing.Size(106, 27);
             this.lblGrid2Name.Text = "실적등록이력";
+            this.lblGrid2Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel6
             // 
@@ -112,18 +120,9 @@
             this.dataGridView2.Size = new System.Drawing.Size(962, 184);
             this.dataGridView2.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(238, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "실적취소";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.btnDel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -131,11 +130,29 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(316, 28);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(231, 3);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(82, 23);
+            this.btnDel.TabIndex = 54;
+            this.btnDel.Text = "실적취소";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.UseVisualStyleBackColor = false;
+            // 
             // Business_showingsPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1066, 568);
             this.Name = "Business_showingsPop";
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             this.panel9.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -155,7 +172,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnDel;
     }
 }

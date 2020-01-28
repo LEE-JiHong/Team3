@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemandPlan));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProductionPlan = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -136,7 +136,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.btnProductionPlan);
             this.flowLayoutPanel1.Controls.Add(this.btnExport);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -146,21 +146,22 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 29);
             this.flowLayoutPanel1.TabIndex = 16;
             // 
-            // button2
+            // btnProductionPlan
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(132, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "생산계획생성";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnProductionPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnProductionPlan.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnProductionPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductionPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnProductionPlan.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnProductionPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductionPlan.Location = new System.Drawing.Point(132, 3);
+            this.btnProductionPlan.Name = "btnProductionPlan";
+            this.btnProductionPlan.Size = new System.Drawing.Size(97, 23);
+            this.btnProductionPlan.TabIndex = 53;
+            this.btnProductionPlan.Text = "생산계획생성";
+            this.btnProductionPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProductionPlan.UseVisualStyleBackColor = false;
+            this.btnProductionPlan.Click += new System.EventHandler(this.btnProductionPlan_Click);
             // 
             // btnExport
             // 
@@ -313,7 +314,7 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProductionPlan;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;

@@ -59,6 +59,12 @@ namespace Team3
             return dac.GetSOMaster(planID);
         }
 
+        public List<DemandPlanVO> GetDemandPlanFromPlanID(string planID)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetDemandPlanFromPlanID(planID);
+        }
+
         public bool AddDemandPlan(List<DemandPlanVO> list)
         {
             OrderDac dac = new OrderDac();
@@ -70,5 +76,18 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.GetDemandPlan(firstDate, endDate);
         }
+
+        public bool AddProductionPlan(List<ProductionPlanVO> list)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.AddProductionPlan(list);
+        }
+
+        public DataTable GetMRP(string planID, string firstDate, string endDate)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetMRP(planID, firstDate, endDate);
+        }
+
     }
 }

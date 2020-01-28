@@ -47,6 +47,7 @@
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="OrderDac.cs" />
+    <Compile Include="ProductionDac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseDac.cs" />
     <Compile Include="ResourceDac.cs" />
