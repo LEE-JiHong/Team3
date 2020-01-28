@@ -200,6 +200,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DialogForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DialogForm";
             this.Load += new System.EventHandler(this.DialogForm_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DialogForm_KeyUp);

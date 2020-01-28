@@ -100,7 +100,7 @@ namespace Team3
             }
         }
 
-      
+
 
         private void btnEx_Click(object sender, EventArgs e)
         {
@@ -157,6 +157,39 @@ namespace Team3
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //콤보박스 미선택
+            if (cboSearchFacilityGroup.SelectedIndex == 0)
+            {
+                var fine = (from findCode in list
+                            where findCode.factory_code.Contains(txtSearchFacility.Text) || findCode.factory_name.Contains(txtSearchFacility.Text)
+
+                            select findCode).ToList();
+                dataGridView1.DataSource = fine;
+            }
+            //콤보박스 선택 텍스트 미입력
+            else if (cboSearchFacilityGroup.SelectedIndex != 0 && txtSearchFacility.Text == "")
+            {
+                var fine = (from findCode in list
+                            where findCode.facility_class.Contains(cboSearchFacilityGroup.Text)
+                            select findCode).ToList();
+                dataGridView1.DataSource = fine;
+
+            }
+            //콤보박스 텍스트 모두입력
+            else
+            {
+                var fine = (from findCode in list
+                            where (findCode.factory_code.Contains(txtSearchFacility.Text) || 
+                            findCode.factory_name.Contains(txtSearchFacility.Text) )
+                            && findCode.facility_class.Contains(cboSearchFacilityGroup.Text)
+                            select findCode).ToList();
+                dataGridView1.DataSource = fine;
+ 
             }
         }
     }
