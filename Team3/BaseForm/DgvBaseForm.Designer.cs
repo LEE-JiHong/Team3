@@ -36,13 +36,6 @@
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
-            // 
             // layoutButton
             // 
             this.layoutButton.FlatAppearance.BorderSize = 0;
@@ -56,6 +49,13 @@
             this.basepanel.Controls.Add(this.panel3);
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.label1);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
+            this.imageList1.Images.SetKeyName(2, "closeBlue.png");
             // 
             // panel2
             // 
@@ -92,6 +92,7 @@
             this.ClientSize = new System.Drawing.Size(900, 845);
             this.Name = "DgvBaseForm";
             this.Text = "DgvBaseForm";
+            this.Load += new System.EventHandler(this.DgvBaseForm_Load);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);

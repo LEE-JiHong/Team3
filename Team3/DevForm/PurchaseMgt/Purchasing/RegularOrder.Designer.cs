@@ -72,7 +72,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 190);
-            this.panel2.Size = new System.Drawing.Size(958, 443);
+            this.panel2.Size = new System.Drawing.Size(958, 435);
             // 
             // panel1
             // 
@@ -257,7 +257,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(958, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(958, 435);
             this.dataGridView1.TabIndex = 16;
             // 
             // flowLayoutPanel1

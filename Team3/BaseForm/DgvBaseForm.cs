@@ -14,5 +14,10 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void DgvBaseForm_Load(object sender, EventArgs e)
+        {
+            SetBottomStatusLabel("Welcome!");
+        }
     }
 }

@@ -17,5 +17,10 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void HorizonDgvBaseForm_Load(object sender, EventArgs e)
+        {
+            SetBottomStatusLabel("Welcome!");
+        }
     }
 }

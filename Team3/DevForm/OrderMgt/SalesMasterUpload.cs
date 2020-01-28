@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
@@ -24,7 +26,6 @@ namespace Team3
             //데이터 가져오기(영업마스터 데이터)
 
             //데이터가 없을 경우
-
 
             SetDataGrid();
         }
@@ -66,7 +67,38 @@ namespace Team3
         //양식 다운로드 버튼
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
 
+                string filename = "test" + ".xlsx";
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);//tempPath
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 0;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 1; j < dataGridView1.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnCreatePO_Click(object sender, EventArgs e)

@@ -52,10 +52,8 @@ namespace Team3
 
         private void nomalBaseForm_Load(object sender, EventArgs e)
         {
-
+            SetBottomStatusLabel("Welcome!");
         }
-
-
 
         private void 닫기_Click(object sender, EventArgs e)
         {

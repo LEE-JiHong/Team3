@@ -25,7 +25,7 @@ namespace Team3
 
         private void Vertical2GridBaseForm_Load(object sender, EventArgs e)
         {
-         
+            SetBottomStatusLabel("Welcome!");
         }
     }
 }

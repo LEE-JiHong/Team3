@@ -16,5 +16,10 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void HorizonGridBaseForm_Load(object sender, EventArgs e)
+        {
+            SetBottomStatusLabel("Welcome!");
+        }
     }
 }
