@@ -187,6 +187,22 @@ namespace Team3
             this.Close();
         }
 
-        
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker1.Value < DateTime.Now)
+            {
+                MessageBox.Show("현재 날짜보다 작은 날짜는 선택할 수 없습니다.", "날짜 오류");
+                dateTimePicker1.Value = DateTime.Now;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (dt == null)
+            {
+                MessageBox.Show("파일 업로드는 필수입니다.");
+                
+            }
+        }
     }
 }

@@ -24,8 +24,6 @@ namespace Team3
         {
             versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
 
-            //SetBottomStatusLabel("영업마스터업로드");
-
             SetDataGrid();
         }
 
@@ -64,12 +62,14 @@ namespace Team3
                     {
                         dataGridView1.Columns.Clear();
                         dataGridView1.DataSource = frm.Data;
+                        SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
                     }
                 }
                 else
                 {
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = frm.Data;
+                    SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
                 }
             }
         }
@@ -104,6 +104,8 @@ namespace Team3
                     Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
                     myRange.Value2 = dataGridView1.Columns[j].HeaderText;
                 }
+
+                SetBottomStatusLabel("양식 다운로드가 완료되었습니다.");
             }
             catch (Exception ex)
             {
@@ -111,11 +113,13 @@ namespace Team3
             }
         }
 
+        //영업마스터 생성
         private void btnCreatePO_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count < 1)
             {
                 MessageBox.Show("파일 업로드는 필수입니다.");
+                SetBottomStatusLabel("파일 업로드는 필수입니다.");
             }
             else
             {

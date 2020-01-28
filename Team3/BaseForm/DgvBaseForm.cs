@@ -17,7 +17,8 @@ namespace Team3
 
         private void DgvBaseForm_Load(object sender, EventArgs e)
         {
-            SetBottomStatusLabel("Welcome!");
+            if (this.Tag != null)
+                SetBottomStatusLabel("Welcome! " + this.Tag.ToString() + " 페이지입니다.");
         }
     }
 }
