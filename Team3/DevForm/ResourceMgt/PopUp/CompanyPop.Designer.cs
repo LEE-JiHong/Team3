@@ -144,6 +144,7 @@
             // 
             // txtCodeCompany
             // 
+            this.txtCodeCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCodeCompany.Location = new System.Drawing.Point(103, 22);
             this.txtCodeCompany.Name = "txtCodeCompany";
             this.txtCodeCompany.Size = new System.Drawing.Size(130, 21);
@@ -161,6 +162,7 @@
             // 
             // txtCEO
             // 
+            this.txtCEO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCEO.Location = new System.Drawing.Point(103, 55);
             this.txtCEO.Name = "txtCEO";
             this.txtCEO.Size = new System.Drawing.Size(130, 21);
@@ -178,6 +180,7 @@
             // 
             // txtGtype
             // 
+            this.txtGtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtGtype.Location = new System.Drawing.Point(103, 88);
             this.txtGtype.Name = "txtGtype";
             this.txtGtype.Size = new System.Drawing.Size(130, 21);
@@ -195,6 +198,7 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtPhone.Location = new System.Drawing.Point(103, 121);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(130, 21);
@@ -223,6 +227,7 @@
             // 
             // txtNameCompany
             // 
+            this.txtNameCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtNameCompany.Location = new System.Drawing.Point(362, 22);
             this.txtNameCompany.Name = "txtNameCompany";
             this.txtNameCompany.Size = new System.Drawing.Size(130, 21);
@@ -240,6 +245,7 @@
             // 
             // txtCnum
             // 
+            this.txtCnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCnum.Location = new System.Drawing.Point(362, 55);
             this.txtCnum.Name = "txtCnum";
             this.txtCnum.Size = new System.Drawing.Size(130, 21);
@@ -267,6 +273,7 @@
             // 
             // txtFax
             // 
+            this.txtFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtFax.Location = new System.Drawing.Point(362, 121);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(130, 21);
@@ -306,6 +313,7 @@
             // 
             // txtbtype
             // 
+            this.txtbtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtbtype.Location = new System.Drawing.Point(589, 55);
             this.txtbtype.Name = "txtbtype";
             this.txtbtype.Size = new System.Drawing.Size(130, 21);
@@ -323,6 +331,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtEmail.Location = new System.Drawing.Point(589, 88);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(130, 21);
@@ -340,6 +349,7 @@
             // 
             // txtAdmin
             // 
+            this.txtAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtAdmin.Location = new System.Drawing.Point(103, 154);
             this.txtAdmin.Name = "txtAdmin";
             this.txtAdmin.Size = new System.Drawing.Size(130, 21);
@@ -357,6 +367,7 @@
             // 
             // txtComment
             // 
+            this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtComment.Location = new System.Drawing.Point(103, 197);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
@@ -365,6 +376,7 @@
             // 
             // cboYN
             // 
+            this.cboYN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboYN.FormattingEnabled = true;
             this.cboYN.Location = new System.Drawing.Point(589, 121);
             this.cboYN.Name = "cboYN";
@@ -373,6 +385,7 @@
             // 
             // txtUdate
             // 
+            this.txtUdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtUdate.Location = new System.Drawing.Point(362, 154);
             this.txtUdate.Name = "txtUdate";
             this.txtUdate.ReadOnly = true;
@@ -381,6 +394,7 @@
             // 
             // cboCompanyType
             // 
+            this.cboCompanyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboCompanyType.FormattingEnabled = true;
             this.cboCompanyType.Location = new System.Drawing.Point(589, 22);
             this.cboCompanyType.Name = "cboCompanyType";
@@ -392,12 +406,13 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(750, 64);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.Size = new System.Drawing.Size(0, 12);
             this.lblID.TabIndex = 4;
-            this.lblID.Text = "lblID";
+            this.lblID.Visible = false;
             // 
             // cboUser
             // 
+            this.cboUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboUser.FormattingEnabled = true;
             this.cboUser.Location = new System.Drawing.Point(361, 88);
             this.cboUser.Name = "cboUser";
@@ -416,8 +431,10 @@
             // 
             // txtOrder_code
             // 
+            this.txtOrder_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtOrder_code.Location = new System.Drawing.Point(589, 157);
             this.txtOrder_code.Name = "txtOrder_code";
+            this.txtOrder_code.ReadOnly = true;
             this.txtOrder_code.Size = new System.Drawing.Size(130, 21);
             this.txtOrder_code.TabIndex = 13;
             // 

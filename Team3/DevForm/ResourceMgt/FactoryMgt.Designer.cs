@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEx = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 132);
-            this.panel2.Size = new System.Drawing.Size(1095, 445);
+            this.panel2.Size = new System.Drawing.Size(1095, 434);
             // 
             // panel1
             // 
@@ -64,7 +64,8 @@
             this.panel1.Controls.Add(this.txtSearchFacility);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Size = new System.Drawing.Size(1095, 83);
+            this.panel1.Location = new System.Drawing.Point(12, 14);
+            this.panel1.Size = new System.Drawing.Size(1095, 80);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -146,18 +147,19 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1095, 445);
+            this.dataGridView1.Size = new System.Drawing.Size(1095, 434);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.btnEx);
             this.flowLayoutPanel1.Controls.Add(this.btnDel);
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
@@ -168,20 +170,21 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button6
+            // btnEx
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(203, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
-            this.button6.TabIndex = 49;
-            this.button6.Text = "엑셀";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnEx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEx.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEx.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEx.Location = new System.Drawing.Point(203, 3);
+            this.btnEx.Name = "btnEx";
+            this.btnEx.Size = new System.Drawing.Size(57, 23);
+            this.btnEx.TabIndex = 49;
+            this.btnEx.Text = "엑셀";
+            this.btnEx.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEx.UseVisualStyleBackColor = false;
+            this.btnEx.Click += new System.EventHandler(this.btnEx_Click);
             // 
             // btnDel
             // 
@@ -241,7 +244,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1024, 48);
+            this.button1.Location = new System.Drawing.Point(1027, 47);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 78;
@@ -256,6 +259,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 13;
+            this.lblID.Visible = false;
             // 
             // FactoryMgt
             // 
@@ -286,7 +290,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEx;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;

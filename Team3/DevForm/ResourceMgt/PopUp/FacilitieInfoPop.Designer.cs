@@ -133,6 +133,7 @@
             // 
             // txtMgrade_code
             // 
+            this.txtMgrade_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtMgrade_code.Location = new System.Drawing.Point(95, 22);
             this.txtMgrade_code.Name = "txtMgrade_code";
             this.txtMgrade_code.ReadOnly = true;
@@ -173,6 +174,7 @@
             // 
             // txtModifier
             // 
+            this.txtModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtModifier.Location = new System.Drawing.Point(564, 95);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(150, 21);
@@ -191,6 +193,7 @@
             // 
             // txtCodeFacility
             // 
+            this.txtCodeFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCodeFacility.Location = new System.Drawing.Point(332, 22);
             this.txtCodeFacility.Name = "txtCodeFacility";
             this.txtCodeFacility.Size = new System.Drawing.Size(150, 21);
@@ -219,6 +222,7 @@
             // 
             // txtModifyTime
             // 
+            this.txtModifyTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtModifyTime.Location = new System.Drawing.Point(564, 131);
             this.txtModifyTime.Name = "txtModifyTime";
             this.txtModifyTime.ReadOnly = true;
@@ -238,6 +242,7 @@
             // 
             // txtNameFacility
             // 
+            this.txtNameFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtNameFacility.Location = new System.Drawing.Point(564, 22);
             this.txtNameFacility.Name = "txtNameFacility";
             this.txtNameFacility.Size = new System.Drawing.Size(150, 21);
@@ -265,6 +270,7 @@
             // 
             // cboOkWH
             // 
+            this.cboOkWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboOkWH.FormattingEnabled = true;
             this.cboOkWH.Location = new System.Drawing.Point(332, 56);
             this.cboOkWH.Name = "cboOkWH";
@@ -273,6 +279,7 @@
             // 
             // cboUseWH
             // 
+            this.cboUseWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboUseWH.FormattingEnabled = true;
             this.cboUseWH.Location = new System.Drawing.Point(95, 56);
             this.cboUseWH.Name = "cboUseWH";
@@ -281,6 +288,7 @@
             // 
             // cboIsUsed
             // 
+            this.cboIsUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboIsUsed.FormattingEnabled = true;
             this.cboIsUsed.Location = new System.Drawing.Point(95, 93);
             this.cboIsUsed.Name = "cboIsUsed";
@@ -289,6 +297,7 @@
             // 
             // cboNgWH
             // 
+            this.cboNgWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboNgWH.FormattingEnabled = true;
             this.cboNgWH.Location = new System.Drawing.Point(564, 56);
             this.cboNgWH.Name = "cboNgWH";
@@ -297,6 +306,7 @@
             // 
             // cboIsOS
             // 
+            this.cboIsOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboIsOS.FormattingEnabled = true;
             this.cboIsOS.Location = new System.Drawing.Point(332, 94);
             this.cboIsOS.Name = "cboIsOS";
@@ -305,6 +315,7 @@
             // 
             // txtCheck
             // 
+            this.txtCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCheck.Location = new System.Drawing.Point(95, 170);
             this.txtCheck.Multiline = true;
             this.txtCheck.Name = "txtCheck";
@@ -333,6 +344,7 @@
             // 
             // txtComment
             // 
+            this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtComment.Location = new System.Drawing.Point(95, 240);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
@@ -346,10 +358,12 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 12);
             this.lblID.TabIndex = 11;
+            this.lblID.Visible = false;
             // 
             // lblGrCodeID
             // 
             this.lblGrCodeID.AutoSize = true;
+            this.lblGrCodeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrCodeID.Location = new System.Drawing.Point(329, 134);
             this.lblGrCodeID.Name = "lblGrCodeID";
             this.lblGrCodeID.Size = new System.Drawing.Size(0, 15);

@@ -114,6 +114,7 @@
             // 
             // cboItem
             // 
+            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboItem.FormattingEnabled = true;
             this.cboItem.Location = new System.Drawing.Point(98, 25);
             this.cboItem.Name = "cboItem";
@@ -133,6 +134,7 @@
             // 
             // cboFacility
             // 
+            this.cboFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFacility.FormattingEnabled = true;
             this.cboFacility.Location = new System.Drawing.Point(98, 69);
             this.cboFacility.Name = "cboFacility";
@@ -163,6 +165,7 @@
             // 
             // cboProcess
             // 
+            this.cboProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProcess.FormattingEnabled = true;
             this.cboProcess.Location = new System.Drawing.Point(371, 25);
             this.cboProcess.Name = "cboProcess";
@@ -193,6 +196,7 @@
             // 
             // cboIsUsed
             // 
+            this.cboIsUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboIsUsed.FormattingEnabled = true;
             this.cboIsUsed.Location = new System.Drawing.Point(371, 112);
             this.cboIsUsed.Name = "cboIsUsed";
@@ -201,6 +205,7 @@
             // 
             // txtWaitDay
             // 
+            this.txtWaitDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWaitDay.Location = new System.Drawing.Point(98, 112);
             this.txtWaitDay.Name = "txtWaitDay";
             this.txtWaitDay.Size = new System.Drawing.Size(165, 21);
@@ -208,6 +213,7 @@
             // 
             // txtTactTime
             // 
+            this.txtTactTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTactTime.Location = new System.Drawing.Point(371, 71);
             this.txtTactTime.Name = "txtTactTime";
             this.txtTactTime.Size = new System.Drawing.Size(165, 21);
@@ -226,6 +232,7 @@
             // 
             // txtNote
             // 
+            this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNote.Location = new System.Drawing.Point(98, 157);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
@@ -235,22 +242,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(8, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(46, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "(hour)";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Orange;
             this.label11.Location = new System.Drawing.Point(294, 89);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.Size = new System.Drawing.Size(41, 15);
             this.label11.TabIndex = 0;
             this.label11.Text = "(Sec)";
             // 
@@ -259,9 +266,9 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(472, 67);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(29, 12);
+            this.lblID.Size = new System.Drawing.Size(0, 12);
             this.lblID.TabIndex = 4;
-            this.lblID.Text = "lblID";
+            this.lblID.Visible = false;
             // 
             // BORPop
             // 
