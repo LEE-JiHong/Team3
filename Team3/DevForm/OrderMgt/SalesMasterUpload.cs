@@ -14,6 +14,7 @@ namespace Team3
     public partial class SalesMasterUpload : DgvBaseForm
     {
         string versionName;
+
         public SalesMasterUpload()
         {
             InitializeComponent();
@@ -21,15 +22,14 @@ namespace Team3
 
         private void SalesMasterUpload_Load(object sender, EventArgs e)
         {
-            versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
+            //versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
 
-            //데이터 가져오기(영업마스터 데이터)
-
-            //데이터가 없을 경우
+            versionName = "20200121_P";
 
             SetDataGrid();
         }
 
+        //데이터그리드뷰 칼럼 세팅
         private void SetDataGrid()
         {
             dataGridView1.Columns.Clear();
@@ -50,17 +50,24 @@ namespace Team3
         {
             SalesMasterDialog frm = new SalesMasterDialog();
 
-            if (versionName != "")
-            {
-                MessageBox.Show("test");
-            }
-
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                dataGridView1.Columns.Clear();
-
-                dataGridView1.DataSource = frm.Data;
                 versionName = frm.PlanVersion;
+
+                OrderService service = new OrderService();
+                List<string> list = service.GetPlanID();
+
+                foreach (string pID in list)
+                {
+                    if (versionName == pID)
+                    {
+                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?") == DialogResult.OK)
+                        {
+                            dataGridView1.Columns.Clear();
+                            dataGridView1.DataSource = frm.Data;
+                        }
+                    }
+                }
             }
         }
 
@@ -139,6 +146,7 @@ namespace Team3
                 else
                 {
                     MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
+                    SetBottomStatusLabel("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
                     return;
                 }
             }
