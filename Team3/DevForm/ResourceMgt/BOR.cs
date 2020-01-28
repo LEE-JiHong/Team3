@@ -18,6 +18,7 @@ namespace Team3
         CommonCodeService common_service;
         List<CommonVO> common_list;
         List<BORDB_VO> list;
+        
         public BOR()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace Team3
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text);
+            BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text,lblRoute.Text);
             if (frm.ShowDialog() == DialogResult.OK)
             {
 
@@ -64,6 +65,7 @@ namespace Team3
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            lblRoute.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void btnEX_Click(object sender, EventArgs e)

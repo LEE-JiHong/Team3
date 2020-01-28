@@ -43,6 +43,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
+            this.lblRoute = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblRoute);
             this.panel1.Controls.Add(this.lblID);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cboProcess);
@@ -285,7 +287,15 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 73;
-            this.lblID.Visible = false;
+            // 
+            // lblRoute
+            // 
+            this.lblRoute.AutoSize = true;
+            this.lblRoute.Location = new System.Drawing.Point(773, 0);
+            this.lblRoute.Name = "lblRoute";
+            this.lblRoute.Size = new System.Drawing.Size(0, 16);
+            this.lblRoute.TabIndex = 74;
+            this.lblRoute.Visible = false;
             // 
             // BOR
             // 
@@ -324,5 +334,6 @@
         private System.Windows.Forms.Button btnEX;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblRoute;
     }
 }

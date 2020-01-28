@@ -268,7 +268,6 @@
             this.Name = "FactoryMgt";
             this.Tag = "공장관리";
             this.Text = "공장관리";
-            this.Activated += new System.EventHandler(this.FactoryMgt_Activated);
             this.Load += new System.EventHandler(this.FactoryMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
