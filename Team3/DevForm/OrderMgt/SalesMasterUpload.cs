@@ -22,9 +22,9 @@ namespace Team3
 
         private void SalesMasterUpload_Load(object sender, EventArgs e)
         {
-            //versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
+            versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
 
-            versionName = "20200121_P";
+            //SetBottomStatusLabel("영업마스터업로드");
 
             SetDataGrid();
         }
@@ -55,18 +55,21 @@ namespace Team3
                 versionName = frm.PlanVersion;
 
                 OrderService service = new OrderService();
-                List<string> list = service.GetPlanID();
 
-                foreach (string pID in list)
+                int resultNum = service.GetPlanIDINSOMaster(versionName);
+
+                if (resultNum > 0)
                 {
-                    if (versionName == pID)
+                    if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?") == DialogResult.OK)
-                        {
-                            dataGridView1.Columns.Clear();
-                            dataGridView1.DataSource = frm.Data;
-                        }
+                        dataGridView1.Columns.Clear();
+                        dataGridView1.DataSource = frm.Data;
                     }
+                }
+                else
+                {
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = frm.Data;
                 }
             }
         }
@@ -110,7 +113,7 @@ namespace Team3
 
         private void btnCreatePO_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 1)
+            if (dataGridView1.Rows.Count < 1)
             {
                 MessageBox.Show("파일 업로드는 필수입니다.");
             }

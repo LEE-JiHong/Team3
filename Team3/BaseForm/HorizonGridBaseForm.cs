@@ -19,7 +19,7 @@ namespace Team3
 
         private void HorizonGridBaseForm_Load(object sender, EventArgs e)
         {
-            SetBottomStatusLabel("Welcome!");
+            SetBottomStatusLabel(this.Tag.ToString());
         }
     }
 }

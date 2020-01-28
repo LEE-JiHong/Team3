@@ -17,7 +17,7 @@ namespace Team3
 
         private void DgvBaseForm_Load(object sender, EventArgs e)
         {
-            SetBottomStatusLabel("Welcome!");
+            SetBottomStatusLabel(this.Tag.ToString());
         }
     }
 }
