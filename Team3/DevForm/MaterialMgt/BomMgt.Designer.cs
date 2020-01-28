@@ -86,13 +86,16 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.Image = global::Team3.Properties.Resources.list_menu;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.Text = "BOM";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(541, 97);
+            this.panel5.Location = new System.Drawing.Point(672, 97);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 

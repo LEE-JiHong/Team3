@@ -56,7 +56,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.lblID = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -94,9 +93,12 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 155);
-            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.Image = global::Team3.Properties.Resources.list_menu;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(12, 153);
+            this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.Text = "품목정보";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
@@ -124,13 +126,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.lblID);
             this.basepanel.Size = new System.Drawing.Size(1155, 454);
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
-            this.basepanel.Controls.SetChildIndex(this.lblID, 0);
             // 
             // imageList1
             // 
@@ -478,15 +474,6 @@
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(297, 151);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(38, 12);
-            this.lblID.TabIndex = 16;
-            this.lblID.Text = "label2";
-            // 
             // ProductMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -501,7 +488,6 @@
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
-            this.basepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -537,6 +523,5 @@
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblID;
     }
 }
