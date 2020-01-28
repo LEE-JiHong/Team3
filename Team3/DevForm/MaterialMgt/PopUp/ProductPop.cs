@@ -25,15 +25,17 @@ namespace Team3
         List<CommonVO> codelist;
         CommonCodeService common_service;
         ProductService product_service;
-        public ProductPop(EditMode edit,int? product_id=null, ProductVO vo = null)
+        public ProductPop(EditMode edit,  ProductVO vo = null)
         {
             InitializeComponent();
             if (edit == EditMode.Insert)
             {
+                this.Text = "품목 등록";
                 this.edit = "Insert";
             }
             else if (edit == EditMode.Update)
             {
+                this.Text = "품목 수정";
                 this.edit = "Update";
                 this.vo = vo;
                 //TODO 수정모드일때 발주방식 콤보박스?
@@ -59,11 +61,12 @@ namespace Team3
                       txtUdate.Text = vo.product_udate;
                       cboSupplyCompany.Text = vo.product_supply_com;
                       txtSafetyAmount.Text = vo.product_safety_count.ToString();
-                      txtMeasType.Text = vo.product_meastype;*/ 
+                      txtMeasType.Text = vo.product_meastype;*/
                 #endregion
-            
-
-
+                txtProductName.Text = vo.product_name;
+                txtProduct.Text = vo.product_codename;
+                
+                txtSafetyAmount.Text = vo.product_safety_count.ToString();
             }
         }
 
@@ -74,7 +77,17 @@ namespace Team3
 
         private void ProductPop_Load(object sender, EventArgs e)
         {
+            Dictionary<string,string> dic = new Dictionary<string, string>();
+            dic.Add("SP", "반제품");
+            dic.Add("RM", "원자재");
+            dic.Add("FP", "제품");
             ComboBoxBinding();
+            if(edit == "Update")
+            {
+                var _key = dic.FirstOrDefault(x => x.Value == vo.product_type).Key;
+                cboProductType.SelectedValue = _key;
+              
+            }
 
         }
 
