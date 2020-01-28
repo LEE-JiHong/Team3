@@ -214,6 +214,7 @@
             this.txtReadyTime.Name = "txtReadyTime";
             this.txtReadyTime.Size = new System.Drawing.Size(165, 21);
             this.txtReadyTime.TabIndex = 4;
+            this.txtReadyTime.Leave += new System.EventHandler(this.txtReadyTime_Leave);
             // 
             // txtTactTime
             // 

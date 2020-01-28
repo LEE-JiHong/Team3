@@ -118,6 +118,34 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            #region
+            if (txtCodeFacility.Text=="")
+            {
+                MessageBox.Show("설비코드을 입력해주세요");
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+            else if(txtNameFacility.Text=="")
+            {
+                MessageBox.Show("설비명을 입력해주세요");
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+            if (cboUseWH.SelectedIndex == 0)
+            {
+                MessageBox.Show("소진창고를 선택해주세요");
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+            else if (cboOkWH.SelectedIndex == 0)
+            {
+                MessageBox.Show("양품창고를 선택해주세요");
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+           if (cboNgWH.SelectedIndex == 0)
+                cboNgWH.Text = "";
+            #endregion
             MachineVO VO = new MachineVO();
             VO.mgrade_id = Convert.ToInt32(lblGrCodeID.Text);
             VO.mgrade_code = txtMgrade_code.Text;

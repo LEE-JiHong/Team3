@@ -12,6 +12,7 @@ namespace Team3
 {
     public partial class BORPop : Team3.DialogForm
     {
+
         CommonCodeService common_service;
         List<CommonVO> common_list;
         BORDB_VO vo;
@@ -57,10 +58,13 @@ namespace Team3
 
         private void BORPop_Load(object sender, EventArgs e)
         {
+
+            R_survice = new ResourceService();
+            #region 콤보박스 바인딩
             common_service = new CommonCodeService();
             common_list = common_service.GetCommonCodeAll();
             {
-                //사용유무
+                //공정
                 var mCode = (from item in common_list
                              where item.common_type == "route"
                              select item).ToList();
@@ -68,22 +72,27 @@ namespace Team3
                 ComboUtil.ComboBinding<CommonVO>(cboRoute, mCode, "common_value", "common_name", "미선택");
             }
             {
-                {
-                    //사용유무
-                    var mCode = (from item in common_list
-                                 where item.common_type == "user_flag"
-                                 select item).ToList();
 
-                    ComboUtil.ComboBinding<CommonVO>(cboYN, mCode, "common_value", "common_name");
-                }
+                //사용유무
+                var mCode = (from item in common_list
+                             where item.common_type == "user_flag"
+                             select item).ToList();
+
+                ComboUtil.ComboBinding<CommonVO>(cboYN, mCode, "common_value", "common_name");
             }
+            R_survice = new ResourceService();
+            List<MachineVO> lst = R_survice.GetMachineAll();
+            ComboUtil.ComboBinding<MachineVO>(cboM_name, lst, "m_id", "m_name", "미선택");
+            ProductService product_service = new ProductService();
+            List<ProductVO> list = product_service.GetAllProducts();
+            ComboUtil.ComboBinding<ProductVO>(cboP_Name, list, "product_id", "product_name", "미선택");
+            #endregion
 
             if (mode == EditMode.Update)
             {
                 R_survice = new ResourceService();
-                vo = R_survice.GetBORByID(Convert.ToInt32(lblID.Text),lblRoute.Text);
+                vo = R_survice.GetBORByID(Convert.ToInt32(lblID.Text), lblRoute.Text);
                 lblID.Text = vo.bor_id.ToString();
-
                 cboP_Name.Text = vo.product_name;
                 cboM_name.Text = vo.m_name;
                 cboYN.Text = vo.bor_yn;
@@ -98,6 +107,53 @@ namespace Team3
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            BorVO vo = new BorVO();
+            if (cboP_Name.SelectedIndex == 0 || cboM_name.SelectedIndex == 0 ||
+                cboRoute.SelectedIndex == 0)
+            {
+                MessageBox.Show("선택하지 않은 값이 있습니다");
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+            else
+            {
+                if (mode == EditMode.Input)
+                {
+                    // vo.bor_id = Convert.ToInt32(lblID.Text);
+                    vo.bor_comment = txtComment.Text;
+                    vo.bor_readytime = Convert.ToInt32(txtReadyTime.Text);
+                    vo.bor_tacktime = Convert.ToInt32(txtTactTime.Text);
+                    vo.m_id = Convert.ToInt32(cboM_name.SelectedValue);
+                    vo.bom_id = Convert.ToInt32(cboP_Name.SelectedValue);
+                    vo.bor_route = cboRoute.SelectedValue.ToString();
+                    vo.bor_yn = cboYN.SelectedValue.ToString();
+                    bool bResult = R_survice.InsertBOR(vo);
+                  
+                    if (bResult)
+                    {
+                        MessageBox.Show("등록성공");
+                        this.DialogResult = DialogResult.OK;
+                        return;
+                    }
+                    else if (!bResult)
+                    {
+                        MessageBox.Show("등록실패");
+                        this.DialogResult = DialogResult.None;
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void txtReadyTime_Leave(object sender, EventArgs e)
+        {
+            int su = Convert.ToInt32(txtReadyTime.Text);
+            if (su > 36)
+            {
+                txtReadyTime.Text = "";
+                MessageBox.Show("36시간 보다 클 수 없습니다");
+                return;
+            }
         }
     }
 }

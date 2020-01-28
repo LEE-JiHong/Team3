@@ -26,6 +26,26 @@ namespace Team3
 
         private void businessMgt_Load(object sender, EventArgs e)
         {
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체ID", "company_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체코드", "company_code", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체명", "company_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체타입", "common_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체타입", "company_type", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "대표자명", "company_ceo", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사업자등록번호", "company_cnum", true);
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업종", "company_btype", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업태", "company_gtype", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "담당자", "user_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "담당자id", "user_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이메일", "company_email", true); 
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "전화번호", "company_phone", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "팩스", "company_fax", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "company_uadmin", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정시간", "company_udate", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체정보", "company_comment", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "company_yn", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체발주코드", "company_order_code", false);
             ResourceService service = new ResourceService();
             lst = service.GetCompanyAll();
             LoadData();
@@ -149,11 +169,12 @@ namespace Team3
                     if (bResult)
                     {
                         MessageBox.Show("삭제완료");
-
+                        SetBottomStatusLabel("거래처 삭제완료");
                     }
                     else if (!bResult)
                     {
                         MessageBox.Show("삭제 실패");
+                        SetBottomStatusLabel("삭제실패");
                         return;
                     }
                 }

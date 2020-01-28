@@ -24,8 +24,19 @@ namespace Team3
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
-            LoadData();
 
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "factory_id",false ,60);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설군", "facility_class", true, 80);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설구분", "facility_type", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설타입", "facility_value", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설코드", "factory_code", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설명", "factory_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상위시설", "factory_parent", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "업체명", "company_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "factory_yn", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "factory_uadmin", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정시간", "factory_udate", true);
+            LoadData();
             CommonCodeService Common_service = new CommonCodeService();
             common_list = Common_service.GetCommonCodeAll();
 

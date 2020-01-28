@@ -27,7 +27,7 @@ namespace Team3
         {
             ResourceService service = new ResourceService();
             list = service.GetBORAll();
-            dataGridView1.DataSource = list;
+            LoadData();
 
             common_service = new CommonCodeService();
             common_list = common_service.GetCommonCodeAll();
@@ -42,12 +42,17 @@ namespace Team3
 
         }
 
+        private void LoadData()
+        {
+            dataGridView1.DataSource = list;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             BORPop frm = new BORPop(BORPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                LoadData();
             }
         }
 
@@ -56,7 +61,7 @@ namespace Team3
             BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text,lblRoute.Text);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                LoadData();
             }
 
 
@@ -123,6 +128,38 @@ namespace Team3
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            ResourceService R_service = new ResourceService();
+            try
+            {
+                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[2].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK)
+                {
+                    R_service = new ResourceService();
+                    bool bResult = R_service.DeleteBOR(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+
+                    if (bResult)
+                    {
+                        LoadData();
+                        SetBottomStatusLabel("삭제완료");
+                        MessageBox.Show("삭제완료");
+
+                    }
+                    else if (!bResult)
+                    {
+                        MessageBox.Show("삭제 실패");
+                        SetBottomStatusLabel("삭제실패");
+                        return;
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                string str = err.Message;
             }
         }
     }

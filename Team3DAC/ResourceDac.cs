@@ -216,7 +216,15 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@m_name", VO.m_name);
                 cmd.Parameters.AddWithValue("@m_use_sector", VO.m_use_sector);
                 cmd.Parameters.AddWithValue("@m_ok_sector", VO.m_ok_sector);
-                cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
+
+                if (VO.m_ng_sector == "")
+                {
+                    SqlParameter param1 = new SqlParameter("@m_ng_sector", SqlDbType.NVarChar);
+                    param1.Value = DBNull.Value;
+                    cmd.Parameters.Add(param1);
+                }
+                else
+                    cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
                 cmd.Parameters.AddWithValue("@m_os_yn", VO.m_os_yn);
                 cmd.Parameters.AddWithValue("@m_check", VO.m_check);
                 cmd.Parameters.AddWithValue("@m_comment", VO.m_comment);
@@ -246,7 +254,15 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@m_name", VO.m_name);
                 cmd.Parameters.AddWithValue("@m_use_sector", VO.m_use_sector);
                 cmd.Parameters.AddWithValue("@m_ok_sector", VO.m_ok_sector);
-                cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
+
+                if (VO.m_ng_sector == "")
+                {
+                    SqlParameter param1 = new SqlParameter("@m_ng_sector", SqlDbType.NVarChar);
+                    param1.Value = DBNull.Value;
+                    cmd.Parameters.Add(param1);
+                }
+                else
+                    cmd.Parameters.AddWithValue("@m_ng_sector", VO.m_ng_sector);
                 cmd.Parameters.AddWithValue("@m_os_yn", VO.m_os_yn);
                 cmd.Parameters.AddWithValue("@m_check", VO.m_check);
                 cmd.Parameters.AddWithValue("@m_comment", VO.m_comment);
@@ -374,7 +390,7 @@ namespace Team3DAC
                 return list;
             }
         }
-        public BORDB_VO GetBORByID(int i,string route)
+        public BORDB_VO GetBORByID(int i, string route)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -392,7 +408,46 @@ namespace Team3DAC
                 return list[0];
             }
         }
+        public bool InsertBOR(BorVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "InsertBOR";
 
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@bor_id", vo.bor_id);
+                cmd.Parameters.AddWithValue("@bor_comment", vo.bor_comment);
+                cmd.Parameters.AddWithValue("@bor_readytime",vo.bor_readytime);
+                cmd.Parameters.AddWithValue("@bor_tacktime",vo.bor_tacktime);
+                cmd.Parameters.AddWithValue("@m_id",vo.m_id);
+                cmd.Parameters.AddWithValue("@bom_id",vo.bom_id);
+                cmd.Parameters.AddWithValue("@bor_route",vo.bor_route);
+                cmd.Parameters.AddWithValue("@bor_yn",vo.bor_yn);
+                cmd.Connection.Open();
+ 
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+        public bool DeleteBOR(int i)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "delete from TBL_BOR where bor_id=@id";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@id", i);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
 
         //공장=============================================================
         public List<FactoryDB_VO> GetFactoryAll()

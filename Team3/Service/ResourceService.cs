@@ -95,12 +95,18 @@ namespace Team3
         {
             return dac.GetBORAll();
         }
-        public BORDB_VO GetBORByID(int i,string route)
+        public BORDB_VO GetBORByID(int i, string route)
         {
-            return dac.GetBORByID(i,route);
+            return dac.GetBORByID(i, route);
         }
-
-
+        public bool InsertBOR(BorVO vo)
+        {
+            return dac.InsertBOR(vo);
+        }
+        public bool DeleteBOR(int i)
+        {
+            return dac.DeleteBOR(i);
+        }
 
         //=============이하 공장=======
         public List<FactoryDB_VO> GetFactoryAll()

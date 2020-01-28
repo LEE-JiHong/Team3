@@ -368,6 +368,7 @@
             this.lblGrCodeID.Name = "lblGrCodeID";
             this.lblGrCodeID.Size = new System.Drawing.Size(0, 15);
             this.lblGrCodeID.TabIndex = 13;
+            this.lblGrCodeID.Visible = false;
             // 
             // FacilitieInfoPop
             // 
