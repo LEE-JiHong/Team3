@@ -170,48 +170,66 @@ namespace Team3
         private void button1_Click(object sender, EventArgs e)
         {
             vo = new ProductVO();
+            ProductVO product_vo = new ProductVO();
+
+
+            /*   for (int i = 0; i < dgvProductList.Rows.Count; i++)
+               {
+                   product_vo = (ProductVO)dgvProductList.Rows[i].DataBoundItem;
+               }*/
+            foreach (DataGridViewRow row in this.dgvProductList.SelectedRows)
+            {
+                product_vo = row.DataBoundItem as ProductVO;
+            }
 
             #region VO추가(수정)
-          
-               /* vo.product_id = Convert.ToInt32(dgvProductList[0, dgvProductList.CurrentRow.Index].Value);
-                vo.product_lorder_count = Convert.ToInt32(dgvProductList[1, dgvProductList.CurrentRow.Index].Value);
-                vo.product_safety_count = Convert.ToInt32(dgvProductList[2, dgvProductList.CurrentRow.Index].Value);
-                vo.product_codename = dgvProductList[3, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_name = dgvProductList[4, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_unit = dgvProductList[5, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_unit_count = dgvProductList[6, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_type = dgvProductList[7, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_in_sector = dgvProductList[8, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_code = dgvProductList[9, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_lsl = dgvProductList[10, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_usl = dgvProductList[11, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_meastype = dgvProductList[12, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_out = dgvProductList[13, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_leadtime = dgvProductList[14, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_admin = dgvProductList[15, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_ordertype = dgvProductList[16, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_itemcode = dgvProductList[17, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_yn = dgvProductList[18, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_supply_com = dgvProductList[19, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_demand_com = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_uadmin = dgvProductList[21, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_udate = dgvProductList[22, dgvProductList.CurrentRow.Index].Value.ToString();
-                vo.product_comment = dgvProductList[23, dgvProductList.CurrentRow.Index].Value.ToString();
-            */
+
+            /* vo.product_id = Convert.ToInt32(dgvProductList[0, dgvProductList.CurrentRow.Index].Value);
+             vo.product_lorder_count = Convert.ToInt32(dgvProductList[1, dgvProductList.CurrentRow.Index].Value);
+             vo.product_safety_count = Convert.ToInt32(dgvProductList[2, dgvProductList.CurrentRow.Index].Value);
+             vo.product_codename = dgvProductList[3, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_name = dgvProductList[4, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_unit = dgvProductList[5, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_unit_count = dgvProductList[6, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_type = dgvProductList[7, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_in_sector = dgvProductList[8, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_code = dgvProductList[9, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_lsl = dgvProductList[10, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_usl = dgvProductList[11, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_meastype = dgvProductList[12, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_out = dgvProductList[13, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_leadtime = dgvProductList[14, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_admin = dgvProductList[15, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_ordertype = dgvProductList[16, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_itemcode = dgvProductList[17, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_yn = dgvProductList[18, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_supply_com = dgvProductList[19, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_demand_com = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_uadmin = dgvProductList[21, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_udate = dgvProductList[22, dgvProductList.CurrentRow.Index].Value.ToString();
+             vo.product_comment = dgvProductList[23, dgvProductList.CurrentRow.Index].Value.ToString();
+         */
             #endregion
 
-            ProductPop frm = new ProductPop(ProductPop.EditMode.Update,Convert.ToInt32(lblID.Text));
+            ProductPop frm = new ProductPop(ProductPop.EditMode.Update, product_vo);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                
 
+               
             }
 
         }
 
         private void dgvProductList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             lblID.Text = dgvProductList[20, dgvProductList.CurrentRow.Index].Value.ToString();
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
