@@ -24,8 +24,6 @@ namespace Team3
         {
             versionName = DateTime.Now.ToShortDateString().Replace("-", "") + "_P";
 
-            SetBottomStatusLabel("영업마스터업로드");
-
             SetDataGrid();
         }
 
