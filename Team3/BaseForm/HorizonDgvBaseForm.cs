@@ -20,7 +20,8 @@ namespace Team3
 
         private void HorizonDgvBaseForm_Load(object sender, EventArgs e)
         {
-            SetBottomStatusLabel("Welcome!");
+            if (this.Tag != null)
+                SetBottomStatusLabel("Welcome! " + this.Tag.ToString() + " 페이지 입니다");
         }
     }
 }
