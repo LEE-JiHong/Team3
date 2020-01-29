@@ -125,94 +125,102 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //if (cboCompany.SelectedIndex == 0)
-            //{
-            //    MessageBox.Show("업체를 선택해주세요");
-            //    this.DialogResult = DialogResult.None;
-            //    return;
-            //}
-            bool bResult = false;
-            FactoryVO VO = new FactoryVO();
-            VO.factory_grade = cboFactoryGrade.SelectedValue.ToString();
-
-            if (cboParent.Text == "미선택" || cboParent.Text == "")
-                cboParent.SelectedValue = "";
-            else
-                VO.factory_parent = cboParent.SelectedValue.ToString();
-            VO.factory_name = txtNameFactory.Text;
-            VO.factory_type = cboTypeFactory.SelectedValue.ToString();
-            VO.company_id = (int)cboCompany.SelectedValue;
-            VO.factory_yn = cboYN.SelectedValue.ToString();
-            VO.factory_udate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
-            VO.factory_uadmin = txtUadmin.Text;
-            VO.factory_code = txtCodeFactory.Text;
-            VO.factory_comment = txtComment.Text;
-
-
-
-            if (mode == EditMode.Input)
+            try
             {
+                //if (cboCompany.SelectedIndex == 0)
+                //{
+                //    MessageBox.Show("업체를 선택해주세요");
+                //    this.DialogResult = DialogResult.None;
+                //    return;
+                //}
+                bool bResult = false;
+                FactoryVO VO = new FactoryVO();
+                VO.factory_grade = cboFactoryGrade.SelectedValue.ToString();
 
-                bResult = Fac_service.InsertFactory(VO);
-                if (bResult)
-                    MessageBox.Show("등록성공");
-                else if (!bResult)
+                if (cboParent.Text == "미선택" || cboParent.Text == "")
+                    cboParent.SelectedValue = "";
+                else
+                    VO.factory_parent = cboParent.SelectedValue.ToString();
+                VO.factory_name = txtNameFactory.Text;
+                VO.factory_type = cboTypeFactory.SelectedValue.ToString();
+                VO.company_id = (int)cboCompany.SelectedValue;
+                VO.factory_yn = cboYN.SelectedValue.ToString();
+                VO.factory_udate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
+                VO.factory_uadmin = txtUadmin.Text;
+                VO.factory_code = txtCodeFactory.Text;
+                VO.factory_comment = txtComment.Text;
+
+
+
+                if (mode == EditMode.Input)
                 {
-                    MessageBox.Show("등록실패");
-                    return;
+
+                    bResult = Fac_service.InsertFactory(VO);
+                    if (bResult)
+                        MessageBox.Show("등록성공");
+                    else if (!bResult)
+                    {
+                        MessageBox.Show("등록실패");
+                        return;
+                    }
+                }
+                if (mode == EditMode.Update)
+                {
+
+                    VO.factory_id = Convert.ToInt32(lblID.Text);
+                    bResult = Fac_service.UpdateFactory(VO);
+                    if (bResult)
+                        MessageBox.Show("수정성공");
+                    else if (!bResult)
+                    {
+                        MessageBox.Show("수정실패");
+                        return;
+                    }
                 }
             }
-            if (mode == EditMode.Update)
+            catch (Exception err)
             {
-
-                VO.factory_id = Convert.ToInt32(lblID.Text);
-                bResult = Fac_service.UpdateFactory(VO);
-                if (bResult)
-                    MessageBox.Show("수정성공");
-                else if (!bResult)
-                {
-                    MessageBox.Show("수정실패");
-                    return;
-                }
+                string str = err.Message;
             }
         }
 
-            private void cbofacilitiesGroup_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbofacilitiesGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboFactoryGrade.SelectedIndex == 3) //창고
             {
-                if (cboFactoryGrade.SelectedIndex == 3) //창고
+                List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
+                var High = (from H_Item in F_list
+                            where H_Item.facility_class != "창고"
+                            select H_Item).ToList();
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
+
+                if (mode == EditMode.Update)
                 {
-                    List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
-                    var High = (from H_Item in F_list
-                                where H_Item.facility_class != "창고"
-                                select H_Item).ToList();
-                    ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
 
-                    if (mode == EditMode.Update)
-                    {
-
-                        cboParent.Text = txtpr.Text;
-                    }
-                }
-                else if (cboFactoryGrade.SelectedIndex == 2) //공장
-                {
-                    List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
-                    var High = (from H_Item in F_list
-                                where H_Item.facility_class == "회사"
-                                select H_Item).ToList();
-                    ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
-
-                    if (mode == EditMode.Update)
-                    {
-
-                        cboParent.Text = txtpr.Text;
-                    }
-                }
-
-                else if (cboFactoryGrade.SelectedIndex == 1)
-                {
-                    cboParent.Text = "";
-
+                    cboParent.Text = txtpr.Text;
                 }
             }
+            else if (cboFactoryGrade.SelectedIndex == 2) //공장
+            {
+                List<FactoryDB_VO> F_list = R_service.GetFactoryAll();
+                var High = (from H_Item in F_list
+                            where H_Item.facility_class == "회사"
+                            select H_Item).ToList();
+                ComboUtil.ComboBinding<FactoryDB_VO>(cboParent, High, "factory_id", "factory_name");
+
+                if (mode == EditMode.Update)
+                {
+
+                    cboParent.Text = txtpr.Text;
+                }
+            }
+
+            else if (cboFactoryGrade.SelectedIndex == 1)
+            {
+                cboParent.Text = "";
+
+            }
+
         }
     }
+}

@@ -108,60 +108,67 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CompanyVO VO = new CompanyVO();
-
-            VO.company_code = txtCodeCompany.Text;
-            VO.company_name = txtNameCompany.Text;
-            VO.company_type = cboCompanyType.SelectedValue.ToString();
-            VO.company_gtype = txtGtype.Text;
-            VO.user_id = Convert.ToInt32(cboUser.SelectedValue);
-            VO.company_email = txtEmail.Text;
-            VO.company_phone = txtPhone.Text;
-            VO.company_fax = txtFax.Text;
-            VO.company_yn = cboYN.SelectedValue.ToString();
-            VO.company_comment = txtComment.Text;
-            VO.company_uadmin = txtAdmin.Text;
-            VO.company_udate = txtUdate.Text;
-            VO.company_cnum = txtCnum.Text;
-            VO.company_ceo = txtCEO.Text;
-            VO.company_btype = txtbtype.Text;
-
-            bool bResult = false;
-            if (mode == EditMode.Input)
+            try
             {
-                bResult = R_service.InsertCompany(VO);
-                if (bResult)
-                {
-                 //   MessageBox.Show("등록성공");
-                    this.DialogResult = DialogResult.OK;
+                CompanyVO VO = new CompanyVO();
 
-                }
-                else if (!bResult)
+                VO.company_code = txtCodeCompany.Text;
+                VO.company_name = txtNameCompany.Text;
+                VO.company_type = cboCompanyType.SelectedValue.ToString();
+                VO.company_gtype = txtGtype.Text;
+                VO.user_id = Convert.ToInt32(cboUser.SelectedValue);
+                VO.company_email = txtEmail.Text;
+                VO.company_phone = txtPhone.Text;
+                VO.company_fax = txtFax.Text;
+                VO.company_yn = cboYN.SelectedValue.ToString();
+                VO.company_comment = txtComment.Text;
+                VO.company_uadmin = txtAdmin.Text;
+                VO.company_udate = txtUdate.Text;
+                VO.company_cnum = txtCnum.Text;
+                VO.company_ceo = txtCEO.Text;
+                VO.company_btype = txtbtype.Text;
+
+                bool bResult = false;
+                if (mode == EditMode.Input)
                 {
-               //     MessageBox.Show("등록실패");
-                    this.DialogResult = DialogResult.None;
-                    return;
+                    bResult = R_service.InsertCompany(VO);
+                    if (bResult)
+                    {
+                        //   MessageBox.Show("등록성공");
+                        this.DialogResult = DialogResult.OK;
+
+                    }
+                    else if (!bResult)
+                    {
+                        //     MessageBox.Show("등록실패");
+                        this.DialogResult = DialogResult.None;
+                        return;
+                    }
+                }
+                if (mode == EditMode.Update)
+                {
+                    VO.company_order_code = txtOrder_code.Text;
+                    VO.company_id = Convert.ToInt32(lblID.Text);
+                    bResult = R_service.UpdateCompany(VO);
+                    if (bResult)
+                    {
+                        //    MessageBox.Show("수정성공");
+                        this.DialogResult = DialogResult.OK;
+
+                    }
+                    else if (!bResult)
+                    {
+                        //    MessageBox.Show("수정실패");
+                        this.DialogResult = DialogResult.None;
+                        return;
+                    }
                 }
             }
-            if (mode == EditMode.Update)
+            catch(Exception err)
             {
-                VO.company_order_code = txtOrder_code.Text;
-                VO.company_id = Convert.ToInt32(lblID.Text);
-                bResult = R_service.UpdateCompany(VO);
-                if (bResult)
-                {
-                //    MessageBox.Show("수정성공");
-                    this.DialogResult = DialogResult.OK;
-
-                }
-                else if (!bResult)
-                {
-                //    MessageBox.Show("수정실패");
-                    this.DialogResult = DialogResult.None;
-                    return;
-                }
+                string str = err.Message;
             }
-
+            }
         }
     }
 }

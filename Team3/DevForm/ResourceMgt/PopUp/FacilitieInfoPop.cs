@@ -118,77 +118,84 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            #region
-            if (txtCodeFacility.Text=="")
+            try
             {
-                MessageBox.Show("설비코드을 입력해주세요");
-                this.DialogResult = DialogResult.None;
-                return;
-            }
-            else if(txtNameFacility.Text=="")
-            {
-                MessageBox.Show("설비명을 입력해주세요");
-                this.DialogResult = DialogResult.None;
-                return;
-            }
-            if (cboUseWH.SelectedIndex == 0)
-            {
-                MessageBox.Show("소진창고를 선택해주세요");
-                this.DialogResult = DialogResult.None;
-                return;
-            }
-            else if (cboOkWH.SelectedIndex == 0)
-            {
-                MessageBox.Show("양품창고를 선택해주세요");
-                this.DialogResult = DialogResult.None;
-                return;
-            }
-           if (cboNgWH.SelectedIndex == 0)
-                cboNgWH.Text = "";
-            #endregion
-            MachineVO VO = new MachineVO();
-            VO.mgrade_id = Convert.ToInt32(lblGrCodeID.Text);
-            VO.mgrade_code = txtMgrade_code.Text;
-            VO.m_code = txtCodeFacility.Text;
-            VO.m_name = txtNameFacility.Text;
-            VO.m_use_sector = cboUseWH.Text;
-            VO.m_ok_sector = cboOkWH.Text;
-            VO.m_ng_sector = cboNgWH.Text;
-            VO.m_yn = cboIsUsed.Text;
-            VO.m_os_yn = cboIsOS.Text;
-            VO.m_uadmin = txtModifier.Text;
-            VO.m_udate = txtModifyTime.Text;
-            VO.m_check = txtCheck.Text;
-            VO.m_comment = txtComment.Text;
-            //등록
-            if (mode == EditMode.Input)
-            {
-                bool bResult = R_service.InsertMachine(VO);
-                if (bResult)
+                #region
+                if (txtCodeFacility.Text == "")
                 {
-                    MessageBox.Show("등록성공");
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("등록실패");
+                    MessageBox.Show("설비코드을 입력해주세요");
                     this.DialogResult = DialogResult.None;
+                    return;
+                }
+                else if (txtNameFacility.Text == "")
+                {
+                    MessageBox.Show("설비명을 입력해주세요");
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+                if (cboUseWH.SelectedIndex == 0)
+                {
+                    MessageBox.Show("소진창고를 선택해주세요");
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+                else if (cboOkWH.SelectedIndex == 0)
+                {
+                    MessageBox.Show("양품창고를 선택해주세요");
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+                if (cboNgWH.SelectedIndex == 0)
+                    cboNgWH.Text = "";
+                #endregion
+                MachineVO VO = new MachineVO();
+                VO.mgrade_id = Convert.ToInt32(lblGrCodeID.Text);
+                VO.mgrade_code = txtMgrade_code.Text;
+                VO.m_code = txtCodeFacility.Text;
+                VO.m_name = txtNameFacility.Text;
+                VO.m_use_sector = cboUseWH.Text;
+                VO.m_ok_sector = cboOkWH.Text;
+                VO.m_ng_sector = cboNgWH.Text;
+                VO.m_yn = cboIsUsed.Text;
+                VO.m_os_yn = cboIsOS.Text;
+                VO.m_uadmin = txtModifier.Text;
+                VO.m_udate = txtModifyTime.Text;
+                VO.m_check = txtCheck.Text;
+                VO.m_comment = txtComment.Text;
+                //등록
+                if (mode == EditMode.Input)
+                {
+                    bool bResult = R_service.InsertMachine(VO);
+                    if (bResult)
+                    {
+                        MessageBox.Show("등록성공");
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록실패");
+                        this.DialogResult = DialogResult.None;
+                    }
+                }
+                else if (mode == EditMode.Update)
+                {
+                    VO.m_id = Convert.ToInt32(lblID.Text);
+                    bool bResult = R_service.UpdateMachine(VO);
+                    if (bResult)
+                    {
+                        MessageBox.Show("수정성공");
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("수정실패");
+                        this.DialogResult = DialogResult.None;
+                    }
                 }
             }
-            else if (mode == EditMode.Update)
+            catch(Exception err)
             {
-                VO.m_id = Convert.ToInt32(lblID.Text);
-                bool bResult = R_service.UpdateMachine(VO);
-                if (bResult)
-                {
-                    MessageBox.Show("수정성공");
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("수정실패");
-                    this.DialogResult = DialogResult.None;
-                }
+                string str = err.Message;
             }
         }
     }
