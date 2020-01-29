@@ -26,6 +26,8 @@ namespace Team3VO
         public string bom_comment { get; set; }
         public string bom_uadmin { get; set; }
         public string bom_udate { get; set; }
+        public string bom_unit { get; set; }
+        public string bom_codename { get; set; }
 
        
     }

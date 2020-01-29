@@ -10,8 +10,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Team3VO;
 
-
-
 namespace Team3DAC
 {
     public class OrderDac : ConnectionAccess
@@ -86,7 +84,7 @@ namespace Team3DAC
             {
                 //string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
 
-                string sql = "select so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename";
+                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename";
 
                 //p.product_codename을 product_name으로 바꾸기
 
@@ -219,6 +217,35 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@so_pcount", VO.so_pcount);
                 cmd.Parameters.AddWithValue("@so_edate", VO.so_edate);
                 cmd.Parameters.AddWithValue("@so_sdate", VO.so_sdate);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
+
+        /// <summary>
+        /// 영업마스터 수정
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
+        public bool UpdateOneSOMaster(SOMasterVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "update TBL_SO_MASTER set company_code = @company_code, company_type = @company_type, product_name = @product_name, so_pcount = @so_pcount, so_ccount=@so_ccount, so_comment = @so_comment, so_udate = @so_udate where so_id = @so_id";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@company_code", VO.company_code);
+                cmd.Parameters.AddWithValue("@company_type", VO.company_type);
+                cmd.Parameters.AddWithValue("@product_name", VO.product_codename);
+                cmd.Parameters.AddWithValue("@so_pcount", VO.so_pcount);
+                cmd.Parameters.AddWithValue("@so_ccount", VO.so_ccount);
+                cmd.Parameters.AddWithValue("@so_comment", VO.so_comment);
+                cmd.Parameters.AddWithValue("@so_udate", VO.so_udate);
+                cmd.Parameters.AddWithValue("@so_id", VO.so_id);
 
                 cmd.Connection.Open();
                 var successRow = cmd.ExecuteNonQuery();
