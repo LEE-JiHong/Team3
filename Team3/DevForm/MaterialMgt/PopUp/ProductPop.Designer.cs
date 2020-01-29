@@ -107,7 +107,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(491, 597);
+            this.panel3.Location = new System.Drawing.Point(242, 469);
             // 
             // btnCancel
             // 
@@ -120,12 +120,12 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(561, 19);
+            this.label1.Size = new System.Drawing.Size(62, 19);
             this.label1.Text = "품목";
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(1141, 36);
+            this.panel1.Size = new System.Drawing.Size(642, 36);
             // 
             // panel2
             // 
@@ -176,13 +176,13 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(1140, 508);
+            this.panel2.Size = new System.Drawing.Size(641, 380);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(1100, 7);
+            this.button1.Location = new System.Drawing.Point(601, 7);
             // 
             // label2
             // 
@@ -846,7 +846,7 @@
             // ProductPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1187, 649);
+            this.ClientSize = new System.Drawing.Size(688, 521);
             this.Name = "ProductPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ProductPop_Load);

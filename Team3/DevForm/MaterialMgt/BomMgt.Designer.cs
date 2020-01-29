@@ -95,7 +95,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(714, 99);
+            this.panel5.Location = new System.Drawing.Point(845, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -253,6 +253,7 @@
             this.dgvBom.RowTemplate.Height = 23;
             this.dgvBom.Size = new System.Drawing.Size(834, 313);
             this.dgvBom.TabIndex = 0;
+            this.dgvBom.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBom_CellDoubleClick);
             // 
             // flowLayoutPanel1
             // 

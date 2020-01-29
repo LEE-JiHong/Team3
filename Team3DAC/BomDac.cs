@@ -15,21 +15,27 @@ namespace Team3DAC
         /// 모든 Bom 조회
         /// </summary>
         /// <returns></returns>
-        public List<BomVO> GetBomAll()
+        public List<BomVO> GetBomAll(string bom_id = null)
         {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                string sql = "GetBomAll";
-
-                cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = sql;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<BomVO> list = Helper.DataReaderMapToList<BomVO>(reader);
-                cmd.Connection.Close();
-                return list;
-            }
+           
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    string sql = "GetBomAll";
+                    if (bom_id == null)
+                        cmd.Parameters.AddWithValue("@bom_id", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@bom_id", Convert.ToInt32(bom_id));
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.CommandText = sql;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<BomVO> list = Helper.DataReaderMapToList<BomVO>(reader);
+                    cmd.Connection.Close();
+                    return list;
+                }
+           
+           
         }
         public int GetProductTypeNum(int product_id)
         {
