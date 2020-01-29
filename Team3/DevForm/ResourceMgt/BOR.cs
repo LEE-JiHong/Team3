@@ -15,19 +15,19 @@ namespace Team3
 {
     public partial class BOR : Team3.VerticalGridBaseForm
     {
+        ResourceService service = new ResourceService();
         CommonCodeService common_service;
         List<CommonVO> common_list;
         List<BORDB_VO> list;
-        
+
         public BOR()
         {
             InitializeComponent();
         }
         private void BOR_Load(object sender, EventArgs e)
         {
-            ResourceService service = new ResourceService();
-            list = service.GetBORAll();
             LoadData();
+
 
             common_service = new CommonCodeService();
             common_list = common_service.GetCommonCodeAll();
@@ -44,6 +44,8 @@ namespace Team3
 
         private void LoadData()
         {
+            list = service.GetBORAll();
+          
             dataGridView1.DataSource = list;
         }
 
@@ -53,18 +55,28 @@ namespace Team3
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
+                SetBottomStatusLabel("등록 성공");
+                MessageBox.Show("등록 성공");
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text,lblRoute.Text);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (lblID.Text != "")
             {
-                LoadData();
+                BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text, lblRoute.Text);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                    SetBottomStatusLabel("수정 성공");
+                    MessageBox.Show("수정 성공");
+                }
             }
-
-
+            else
+            {
+                SetBottomStatusLabel("선택된 BOR이 없습니다");
+                MessageBox.Show("선택된 BOR이 없습니다.");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -151,8 +163,8 @@ namespace Team3
                     }
                     else if (!bResult)
                     {
-                        MessageBox.Show("삭제 실패");
                         SetBottomStatusLabel("삭제실패");
+                        MessageBox.Show("삭제 실패");  
                         return;
                     }
                 }

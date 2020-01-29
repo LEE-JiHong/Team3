@@ -90,6 +90,7 @@ namespace Team3
 
             if (mode == EditMode.Update)
             {
+
                 R_survice = new ResourceService();
                 vo = R_survice.GetBORByID(Convert.ToInt32(lblID.Text), lblRoute.Text);
                 lblID.Text = vo.bor_id.ToString();
@@ -117,27 +118,46 @@ namespace Team3
             }
             else
             {
+
+               
+                vo.bor_comment = txtComment.Text;
+                vo.bor_readytime = Convert.ToInt32(txtReadyTime.Text);
+                vo.bor_tacktime = Convert.ToInt32(txtTactTime.Text);
+                vo.m_id = Convert.ToInt32(cboM_name.SelectedValue);
+                vo.bom_id = Convert.ToInt32(cboP_Name.SelectedValue);
+                vo.bor_route = cboRoute.SelectedValue.ToString();
+                vo.bor_yn = cboYN.SelectedValue.ToString();
+                bool bResult=false;
                 if (mode == EditMode.Input)
                 {
-                    // vo.bor_id = Convert.ToInt32(lblID.Text);
-                    vo.bor_comment = txtComment.Text;
-                    vo.bor_readytime = Convert.ToInt32(txtReadyTime.Text);
-                    vo.bor_tacktime = Convert.ToInt32(txtTactTime.Text);
-                    vo.m_id = Convert.ToInt32(cboM_name.SelectedValue);
-                    vo.bom_id = Convert.ToInt32(cboP_Name.SelectedValue);
-                    vo.bor_route = cboRoute.SelectedValue.ToString();
-                    vo.bor_yn = cboYN.SelectedValue.ToString();
-                    bool bResult = R_survice.InsertBOR(vo);
-                  
+                    bResult = R_survice.InsertBOR(vo);
                     if (bResult)
                     {
-                        MessageBox.Show("등록성공");
+                  //      MessageBox.Show("등록성공");
                         this.DialogResult = DialogResult.OK;
                         return;
                     }
                     else if (!bResult)
                     {
-                        MessageBox.Show("등록실패");
+                      //  MessageBox.Show("등록실패");
+                        this.DialogResult = DialogResult.None;
+                        return;
+                    }
+                }
+               else if (mode == EditMode.Update)
+                {
+                     vo.bor_id = Convert.ToInt32(lblID.Text);
+                    bResult = R_survice.UpdateBOR(vo);
+                    if (bResult)
+                    {
+                      //  MessageBox.Show("수정성공");
+                        this.DialogResult = DialogResult.OK;
+                        
+                        return;
+                    }
+                    else if (!bResult)
+                    {
+                       // MessageBox.Show("수정실패");
                         this.DialogResult = DialogResult.None;
                         return;
                     }

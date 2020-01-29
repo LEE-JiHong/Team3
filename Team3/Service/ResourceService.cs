@@ -107,6 +107,10 @@ namespace Team3
         {
             return dac.DeleteBOR(i);
         }
+        public bool UpdateBOR(BorVO vo)
+        {
+            return dac.UpdateBOR(vo);
+        }
 
         //=============이하 공장=======
         public List<FactoryDB_VO> GetFactoryAll()
