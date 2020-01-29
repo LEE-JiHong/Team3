@@ -17,6 +17,7 @@ namespace Team3VO
          public string company_code {get;set;}
          public string company_type {get;set;}
          public string product_name {get;set;}
+         public string product_codename { get; set; }
          public int so_pcount {get;set;}
          public int so_ocount {get;set;}
          public int so_ccount {get;set;}
