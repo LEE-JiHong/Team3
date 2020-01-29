@@ -197,6 +197,7 @@
             this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 56;
             this.label3.Text = "업체";
+            this.label3.Visible = false;
             // 
             // label4
             // 
@@ -235,6 +236,7 @@
             this.label12.Size = new System.Drawing.Size(30, 16);
             this.label12.TabIndex = 57;
             this.label12.Text = "품목";
+            this.label12.Visible = false;
             // 
             // label8
             // 
@@ -253,6 +255,7 @@
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(218, 24);
             this.cboCompany.TabIndex = 66;
+            this.cboCompany.Visible = false;
             // 
             // txtProduct
             // 
@@ -261,6 +264,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(201, 22);
             this.txtProduct.TabIndex = 77;
+            this.txtProduct.Visible = false;
             // 
             // button1
             // 

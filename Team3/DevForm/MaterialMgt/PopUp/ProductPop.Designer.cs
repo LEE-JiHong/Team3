@@ -848,6 +848,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1187, 649);
             this.Name = "ProductPop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ProductPop_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

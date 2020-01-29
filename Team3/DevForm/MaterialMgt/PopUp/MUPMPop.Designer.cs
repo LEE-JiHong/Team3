@@ -351,6 +351,7 @@
             this.ClientSize = new System.Drawing.Size(630, 444);
             this.Controls.Add(this.groupBox1);
             this.Name = "MUPMPop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);

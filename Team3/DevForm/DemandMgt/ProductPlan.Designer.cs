@@ -40,7 +40,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.comboBox7);
+            this.panel1.Controls.Add(this.cboPlanID);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -231,13 +231,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(89, 22);
             this.dateTimePicker1.TabIndex = 95;
             // 
-            // comboBox7
+            // cboPlanID
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(95, 20);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(205, 24);
-            this.comboBox7.TabIndex = 98;
+            this.cboPlanID.FormattingEnabled = true;
+            this.cboPlanID.Location = new System.Drawing.Point(95, 20);
+            this.cboPlanID.Name = "cboPlanID";
+            this.cboPlanID.Size = new System.Drawing.Size(205, 24);
+            this.cboPlanID.TabIndex = 98;
             // 
             // comboBox1
             // 
@@ -262,6 +262,7 @@
             this.Name = "ProductPlan";
             this.Tag = "생산계획";
             this.Text = "생산계획";
+            this.Load += new System.EventHandler(this.ProductPlan_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -288,7 +289,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cboPlanID;
         private System.Windows.Forms.TextBox textBox1;
     }
 }

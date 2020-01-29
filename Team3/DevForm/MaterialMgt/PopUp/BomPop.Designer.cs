@@ -330,6 +330,7 @@
             this.ClientSize = new System.Drawing.Size(598, 439);
             this.Controls.Add(this.groupBox1);
             this.Name = "BomPop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.BomPop_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
