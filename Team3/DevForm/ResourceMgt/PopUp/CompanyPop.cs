@@ -132,13 +132,13 @@ namespace Team3
                 bResult = R_service.InsertCompany(VO);
                 if (bResult)
                 {
-                    MessageBox.Show("등록성공");
+                 //   MessageBox.Show("등록성공");
                     this.DialogResult = DialogResult.OK;
 
                 }
                 else if (!bResult)
                 {
-                    MessageBox.Show("등록실패");
+               //     MessageBox.Show("등록실패");
                     this.DialogResult = DialogResult.None;
                     return;
                 }
@@ -150,13 +150,13 @@ namespace Team3
                 bResult = R_service.UpdateCompany(VO);
                 if (bResult)
                 {
-                    MessageBox.Show("수정성공");
+                //    MessageBox.Show("수정성공");
                     this.DialogResult = DialogResult.OK;
 
                 }
                 else if (!bResult)
                 {
-                    MessageBox.Show("수정실패");
+                //    MessageBox.Show("수정실패");
                     this.DialogResult = DialogResult.None;
                     return;
                 }
