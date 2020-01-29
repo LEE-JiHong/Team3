@@ -45,7 +45,7 @@
             this.btnFormDownload = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBomDetail = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,7 +54,7 @@
             this.basepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBomDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,7 +80,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvBomDetail);
             this.panel3.Location = new System.Drawing.Point(862, 126);
             this.panel3.Size = new System.Drawing.Size(329, 313);
             // 
@@ -95,7 +95,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(845, 99);
+            this.panel5.Location = new System.Drawing.Point(1107, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -245,12 +245,16 @@
             // 
             // dgvBom
             // 
+            this.dgvBom.AllowUserToAddRows = false;
+            this.dgvBom.AllowUserToDeleteRows = false;
             this.dgvBom.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBom.Location = new System.Drawing.Point(0, 0);
             this.dgvBom.Name = "dgvBom";
+            this.dgvBom.ReadOnly = true;
             this.dgvBom.RowTemplate.Height = 23;
+            this.dgvBom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBom.Size = new System.Drawing.Size(834, 313);
             this.dgvBom.TabIndex = 0;
             this.dgvBom.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBom_CellDoubleClick);
@@ -337,19 +341,20 @@
             this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopy.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvBomDetail
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(329, 313);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvBomDetail.AllowUserToAddRows = false;
+            this.dgvBomDetail.AllowUserToDeleteRows = false;
+            this.dgvBomDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dgvBomDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBomDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBomDetail.Location = new System.Drawing.Point(0, 0);
+            this.dgvBomDetail.Name = "dgvBomDetail";
+            this.dgvBomDetail.ReadOnly = true;
+            this.dgvBomDetail.RowTemplate.Height = 23;
+            this.dgvBomDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBomDetail.Size = new System.Drawing.Size(329, 313);
+            this.dgvBomDetail.TabIndex = 2;
             // 
             // BomMgt
             // 
@@ -368,7 +373,7 @@
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBomDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,6 +396,6 @@
         private System.Windows.Forms.Button btnFormDownload;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnCopy;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBomDetail;
     }
 }

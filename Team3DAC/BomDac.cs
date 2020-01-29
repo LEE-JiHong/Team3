@@ -17,29 +17,33 @@ namespace Team3DAC
         /// <returns></returns>
         public List<BomVO> GetBomAll(string bom_id = null)
         {
-           
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    string sql = "GetBomAll";
-                    if (bom_id == null)
-                        cmd.Parameters.AddWithValue("@bom_id", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@bom_id", Convert.ToInt32(bom_id));
-                    cmd.Connection = new SqlConnection(this.ConnectionString);
-                    cmd.CommandText = sql;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    List<BomVO> list = Helper.DataReaderMapToList<BomVO>(reader);
-                    cmd.Connection.Close();
-                    return list;
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetBomAll";
+                if (bom_id == null)
+                { 
+                    cmd.Parameters.AddWithValue("@bom_id", DBNull.Value);
                 }
-           
-           
+                else
+                {
+                    cmd.Parameters.AddWithValue("@bom_id", Convert.ToInt32(bom_id));
+                }
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BomVO> list = Helper.DataReaderMapToList<BomVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+
+
         }
         public int GetProductTypeNum(int product_id)
         {
-            
+
             using (SqlCommand cmd = new SqlCommand())
             {
                 int pType_num = 0;
@@ -55,7 +59,7 @@ namespace Team3DAC
                 {
                     pType_num = Convert.ToInt32(reader[0]);
                 }
-                
+
                 cmd.Connection.Close();
                 return pType_num;
             }
@@ -80,7 +84,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@bom_comment", VO.bom_comment);
                 cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
                 cmd.Parameters.AddWithValue("@bom_udate", VO.bom_udate);
-               
+
 
 
                 cmd.Connection.Open();
@@ -90,6 +94,6 @@ namespace Team3DAC
             }
 
         }
-        
+
     }
 }

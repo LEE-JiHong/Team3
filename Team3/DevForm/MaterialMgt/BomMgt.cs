@@ -39,7 +39,7 @@ namespace Team3
             InitControl();
             BomService service = new BomService();
             List<BomVO> list = service.GetBomAll();
-
+            
             dgvBom.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBom.Columns.Add("Number", "No.");
             dgvBom.Columns[0].Width = 53;
@@ -67,7 +67,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "BomID", "bom_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "상위품목", "bom_parent_id", false, 130);
             #endregion
-
+            dgvBom.AutoGenerateColumns = false;
             dgvBom.DataSource = list;
             
         }
@@ -91,7 +91,11 @@ namespace Team3
 
         private void dgvBom_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dgvBom[11,dgvBom.CurrentRow.Index].Value.ToString());
+            //dgvBom[11, dgvBom.CurrentRow.Index].Value.ToString()
+            BomService service = new BomService();
+            List<BomVO> bomDetail =  service.GetBomAll(dgvBom[11, dgvBom.CurrentRow.Index].Value.ToString());
+            dgvBomDetail.DataSource = bomDetail;
+
         }
     }
 }
