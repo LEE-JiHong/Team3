@@ -27,5 +27,31 @@ namespace Team3DAC
                 return list;
             }
         }
+        public DataTable GetProductPlan(string planid, string startDate, string endDate)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetProductionPlan";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                cmd.Parameters.AddWithValue("@plan_id", planid);
+                cmd.Parameters.AddWithValue("@StartDate", startDate);
+                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                 
+                DataTable dataTable = new DataTable();
+
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dataTable);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dataTable;
+            }
+        }
     }
 }
