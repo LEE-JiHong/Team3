@@ -23,7 +23,7 @@ namespace Team3
             InitializeComponent();
         }
 
-
+        ResourceService service = new ResourceService();
         private void businessMgt_Load(object sender, EventArgs e)
         {
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체ID", "company_id", false);
@@ -46,8 +46,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체정보", "company_comment", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "company_yn", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체발주코드", "company_order_code", false);
-            ResourceService service = new ResourceService();
-            lst = service.GetCompanyAll();
+            
+           
             LoadData();
 
             common_service = new CommonCodeService();
@@ -64,6 +64,7 @@ namespace Team3
 
         private void LoadData()
         {
+            lst = service.GetCompanyAll();
             dataGridView2.DataSource = lst;
         }
 

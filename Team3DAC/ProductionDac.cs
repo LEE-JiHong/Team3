@@ -11,7 +11,7 @@ namespace Team3DAC
 {
     public class ProductionDac : ConnectionAccess
     {
-        public List<BomVO> GetBomAll()
+        public List<CommonVO> GetBomAll()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -22,7 +22,7 @@ namespace Team3DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<BomVO> list = Helper.DataReaderMapToList<BomVO>(reader);
+                List<CommonVO> list = Helper.DataReaderMapToList<CommonVO>(reader);
                 cmd.Connection.Close();
                 return list;
             }

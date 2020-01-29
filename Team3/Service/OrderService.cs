@@ -41,6 +41,12 @@ namespace Team3
             return dac.AddOneSOMaster(VO);
         }
 
+        public bool UpdateOneSOMaster(SOMasterVO VO)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.UpdateOneSOMaster(VO);
+        }
+
         public List<DayVO> GetDays(string firstDate, string endDate)
         {
             OrderDac dac = new OrderDac();

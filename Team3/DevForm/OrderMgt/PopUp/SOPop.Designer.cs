@@ -233,6 +233,7 @@
             this.txtCancel.Name = "txtCancel";
             this.txtCancel.Size = new System.Drawing.Size(196, 21);
             this.txtCancel.TabIndex = 27;
+            this.txtCancel.TextChanged += new System.EventHandler(this.txtCancel_TextChanged);
             // 
             // txtOrder
             // 

@@ -14,5 +14,18 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void ProductPlan_Load(object sender, EventArgs e)
+        {
+            InitComboBox();
+        }
+
+        private void InitComboBox()
+        {
+            OrderService service = new OrderService();
+            List<string> list = service.GetPlanID();
+            list.Insert(0, "전체");
+            cboPlanID.DataSource = list;
+        }
     }
 }

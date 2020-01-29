@@ -111,11 +111,26 @@ namespace Team3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            SOMasterVO vo = new SOMasterVO();
+
+            foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
+            {
+                vo = row.DataBoundItem as SOMasterVO;
+                //if (vo != null)
+                //{
+                //    MessageBox.Show("데이터를 선택하여주십시오.");
+                //}
+            }
+            //for (int i = 0; i <= dataGridView1.Rows.Count; i++)
+            //{
+            //    vo = (SOMasterVO)dataGridView1.SelectedRows[i].DataBoundItem;
+            //}
+
             //수정버튼
-            SODialog frm = new SODialog(SODialog.EditMode.Update);
+            SODialog frm = new SODialog(SODialog.EditMode.Update,vo);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                
             }
         }
     }
