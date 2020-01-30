@@ -472,6 +472,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Enabled = false;
             this.radioButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.radioButton1.Location = new System.Drawing.Point(95, 301);
             this.radioButton1.Name = "radioButton1";
@@ -484,6 +485,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.radioButton2.Location = new System.Drawing.Point(181, 301);
             this.radioButton2.Name = "radioButton2";
