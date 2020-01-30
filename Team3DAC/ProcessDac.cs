@@ -34,5 +34,23 @@ namespace Team3DAC
                 return table;
             }
         }
+        public bool UpdateCommand(int num,string tdate)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "UpdateCommand";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", num);
+                cmd.Parameters.AddWithValue("@pro_date", tdate);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+        }
     }
 }

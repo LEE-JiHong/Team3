@@ -16,5 +16,10 @@ namespace Team3.Service
             ProcessDac dac = new ProcessDac();
             return dac.GetProductionPlanCheck(startDate,endDate);
         }
+        public bool UpdateCommand(int num, string tdate)
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.UpdateCommand(num, tdate);
+        }
     }
 }
