@@ -28,6 +28,10 @@ namespace Team3VO
         public string bom_udate { get; set; }
         public string bom_unit { get; set; }
         public string bom_codename { get; set; }
+        public string bom_parent_codename { get; set; }
+        public string bom_typevalue { get; set; }
+        public string bom_type { get; set; }
+
 
        
     }

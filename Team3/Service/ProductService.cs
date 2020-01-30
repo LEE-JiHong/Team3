@@ -14,10 +14,10 @@ namespace Team3
         /// 모든 Product 조회
         /// </summary>
         /// <returns></returns>
-        public List<ProductVO> GetAllProducts()
+        public List<ProductVO> GetAllProducts(string product_type_value=null)
         {
             ProductDac dac = new ProductDac();
-            return dac.GetProductsAll();
+            return dac.GetProductsAll(product_type_value);
         }
 
         public List<UserVO> GetUserAll()

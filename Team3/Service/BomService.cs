@@ -14,10 +14,10 @@ namespace Team3
         /// 모든 Bom 조회
         /// </summary>
         /// <returns></returns>
-        public List<BomVO> GetBomAll(string bom_id = null)
+        public List<BomVO> GetBomAll(string bom_id = null,string product_id=null)
         {
             BomDac dac = new BomDac();
-            return dac.GetBomAll(bom_id);
+            return dac.GetBomAll(bom_id,product_id);
         }
 
         /// <summary>
