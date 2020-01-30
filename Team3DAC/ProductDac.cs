@@ -19,12 +19,20 @@ namespace Team3DAC
         /// 모든 Product 조회
         /// </summary>
         /// <returns></returns>
-        public List<ProductVO> GetProductsAll()
+        public List<ProductVO> GetProductsAll(string product_type_value=null)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 string sql = "GetProductsAll";
-
+                if(product_type_value != null)
+                {
+                    cmd.Parameters.AddWithValue("@product_type_value", product_type_value);
+                }
+                else if(product_type_value == null)
+                {
+                    cmd.Parameters.AddWithValue("@product_type_value", DBNull.Value);
+                }
+                
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.StoredProcedure;

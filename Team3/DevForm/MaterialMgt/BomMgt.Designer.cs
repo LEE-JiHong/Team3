@@ -33,11 +33,9 @@
             this.lblStandardDate = new System.Windows.Forms.Label();
             this.lblUse = new System.Windows.Forms.Label();
             this.lblProduct = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtStandardDate = new System.Windows.Forms.TextBox();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
-            this.cboDeployment = new System.Windows.Forms.ComboBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.dgvBom = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,11 +58,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSelect);
-            this.panel1.Controls.Add(this.cboDeployment);
             this.panel1.Controls.Add(this.cboIsUsed);
             this.panel1.Controls.Add(this.txtProduct);
             this.panel1.Controls.Add(this.txtStandardDate);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.lblProduct);
             this.panel1.Controls.Add(this.lblUse);
             this.panel1.Controls.Add(this.lblStandardDate);
@@ -95,7 +91,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(1107, 99);
+            this.panel5.Location = new System.Drawing.Point(1500, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -160,10 +156,11 @@
             // 
             // lblUse
             // 
+            this.lblUse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUse.AutoSize = true;
             this.lblUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUse.Location = new System.Drawing.Point(31, 50);
+            this.lblUse.Location = new System.Drawing.Point(862, 11);
             this.lblUse.Name = "lblUse";
             this.lblUse.Size = new System.Drawing.Size(52, 16);
             this.lblUse.TabIndex = 20;
@@ -180,18 +177,6 @@
             this.lblProduct.Size = new System.Drawing.Size(30, 16);
             this.lblProduct.TabIndex = 22;
             this.lblProduct.Text = "품목";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(890, 12);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 16);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "전개방식";
             // 
             // txtStandardDate
             // 
@@ -210,20 +195,12 @@
             // 
             // cboIsUsed
             // 
+            this.cboIsUsed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(149, 47);
+            this.cboIsUsed.Location = new System.Drawing.Point(945, 8);
             this.cboIsUsed.Name = "cboIsUsed";
             this.cboIsUsed.Size = new System.Drawing.Size(216, 24);
             this.cboIsUsed.TabIndex = 30;
-            // 
-            // cboDeployment
-            // 
-            this.cboDeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboDeployment.FormattingEnabled = true;
-            this.cboDeployment.Location = new System.Drawing.Point(968, 8);
-            this.cboDeployment.Name = "cboDeployment";
-            this.cboDeployment.Size = new System.Drawing.Size(193, 24);
-            this.cboDeployment.TabIndex = 34;
             // 
             // btnSelect
             // 
@@ -355,6 +332,7 @@
             this.dgvBomDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBomDetail.Size = new System.Drawing.Size(329, 313);
             this.dgvBomDetail.TabIndex = 2;
+            this.dgvBomDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBomDetail_CellDoubleClick);
             // 
             // BomMgt
             // 
@@ -383,11 +361,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvBom;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.ComboBox cboDeployment;
         private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.TextBox txtStandardDate;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblUse;
         private System.Windows.Forms.Label lblStandardDate;

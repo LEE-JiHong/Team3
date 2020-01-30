@@ -16,47 +16,84 @@ namespace Team3
         CommonCodeService common_service;
         BomService bom_service;
         ProductService product_service;
-        public BomPop()
+
+
+        public enum EditMode { Insert, Update }
+        EditMode edit = EditMode.Insert;
+        public BomVO vo;
+        public BomVO VO
+        {
+            get { return vo; }
+            set { vo = value; }
+        }
+
+
+
+        public BomPop(EditMode edit, BomVO vo = null)
         {
             InitializeComponent();
+            if (edit == EditMode.Insert)
+            {
+                this.Text = "BOM 등록";
+                this.edit = EditMode.Insert;
+            }
+            else if (edit == EditMode.Update)
+            {
+                this.Text = "BOM 수정";
+                this.edit = EditMode.Update;
+                this.vo = vo;
+
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("등록하시겠습니까?", "신규등록", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (edit == EditMode.Insert)
             {
-                bom_service = new BomService();
-                BomVO vo = new BomVO();
+                
 
-                vo.bom_id = Convert.ToInt32(txtNote.Text);
-                vo.bom_parent_id = cboParentProduct.Text;
-                vo.product_id = Convert.ToInt32(cboProduct.Text);
-                vo.bom_use_count = Convert.ToInt32(txtUseCount.Text);
-                vo.bom_sdate = dtpStartDate.Value.ToString();
-                vo.bom_edate = dtpEndDate.Value.ToString();
-                vo.bom_yn = cboIsUsed.Text;
-                vo.plan_yn = cboRequiredPlan.Text;
-                vo.bom_comment = txtNote.Text;
-                vo.bom_uadmin = txtModifier.Text;
-                vo.bom_udate = txtModifyDate.Text;
-
-
-                bool bResult = bom_service.AddBom(vo);
-                if (bResult)
+                if (MessageBox.Show("등록하시겠습니까?", "신규등록", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    MessageBox.Show("등록성공");
-                    this.Close();
+                    bom_service = new BomService();
+                    BomVO vo = new BomVO();
+
+                    
+                    vo.bom_parent_id =cboParentProduct.SelectedValue.ToString();
+                    vo.product_id = Convert.ToInt32(cboProduct.SelectedValue);
+                    vo.bom_use_count = Convert.ToInt32(txtUseCount.Text.Trim());
+                    vo.bom_sdate = dtpStartDate.Value.ToString();
+                    vo.bom_edate = dtpEndDate.Value.ToString();
+                    vo.bom_yn = cboIsUsed.SelectedValue.ToString();
+                    vo.plan_yn = cboRequiredPlan.SelectedValue.ToString();
+                    vo.bom_comment = txtNote.Text;
+                    vo.bom_uadmin = txtModifier.Text;
+                    vo.bom_udate = txtModifyDate.Text;
+                    
+
+
+                    bool bResult = bom_service.AddBom(vo);
+                    if (bResult)
+                    {
+                        MessageBox.Show("등록성공");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록실패 , 다시시도 하세요");
+                        return;
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("등록실패 , 다시시도 하세요");
-                    return;
-                }
+            }
+            else if(edit == EditMode.Update)
+            {
+                
             }
         }
 
         private void BomPop_Load(object sender, EventArgs e)
         {
+            txtModifier.Enabled = false;
+            txtModifyDate.Enabled = false;
             ComboBoxBinding();
 
         }
@@ -79,7 +116,7 @@ namespace Team3
 
             product_service = new ProductService();
             List<ProductVO> product_list = new List<ProductVO>();
-            product_list = product_service.GetAllProducts();
+            product_list = product_service.GetAllProducts("FP");
             ComboUtil.ComboBinding(cboProduct, product_list, "product_id", "product_name", "선택");
             #endregion
 
@@ -99,5 +136,7 @@ namespace Team3
             
 
         }
+
+       
     }
 }
