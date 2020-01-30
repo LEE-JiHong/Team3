@@ -50,25 +50,32 @@ namespace Team3
         {
             if (edit == EditMode.Insert)
             {
-                
+
 
                 if (MessageBox.Show("등록하시겠습니까?", "신규등록", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     bom_service = new BomService();
                     BomVO vo = new BomVO();
 
-                    
-                    vo.bom_parent_id =cboParentProduct.SelectedValue.ToString();
+                    if (cboParentProduct.SelectedIndex == 0)
+                    {
+                        vo.bom_parent_id = null;
+                    }
+                    else
+                    {
+                        vo.bom_parent_id = cboParentProduct.SelectedValue.ToString();
+                    }
+
                     vo.product_id = Convert.ToInt32(cboProduct.SelectedValue);
                     vo.bom_use_count = Convert.ToInt32(txtUseCount.Text.Trim());
-                    vo.bom_sdate = dtpStartDate.Value.ToString();
-                    vo.bom_edate = dtpEndDate.Value.ToString();
+                    vo.bom_sdate = dtpStartDate.Value.ToString("yyyy-MM-dd");
+                    vo.bom_edate = dtpEndDate.Value.ToString("yyyy-MM-dd");
                     vo.bom_yn = cboIsUsed.SelectedValue.ToString();
                     vo.plan_yn = cboRequiredPlan.SelectedValue.ToString();
                     vo.bom_comment = txtNote.Text;
                     vo.bom_uadmin = txtModifier.Text;
                     vo.bom_udate = txtModifyDate.Text;
-                    
+
 
 
                     bool bResult = bom_service.AddBom(vo);
@@ -84,9 +91,46 @@ namespace Team3
                     }
                 }
             }
-            else if(edit == EditMode.Update)
+            else if (edit == EditMode.Update)
             {
-                
+
+                if (MessageBox.Show("수정하시겠습니까?", "품목수정", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    bom_service = new BomService();
+                    BomVO vo = new BomVO();
+
+
+                    if (cboParentProduct.SelectedIndex == 0)
+                    {
+                        vo.bom_parent_id = null;
+                    }
+                    else
+                    {
+                        vo.bom_parent_id = (cboParentProduct.SelectedValue==null)?"": cboParentProduct.SelectedValue.ToString();
+                    }
+                    vo.bom_id = this.vo.bom_id;
+                    vo.product_id = Convert.ToInt32(cboProduct.SelectedValue);
+                    vo.bom_use_count = Convert.ToInt32(txtUseCount.Text.Trim());
+                    vo.bom_sdate = dtpStartDate.Value.ToString("yyyy-MM-dd");
+                    vo.bom_edate = dtpEndDate.Value.ToString("yyyy-MM-dd");
+                    vo.bom_yn = cboIsUsed.SelectedValue.ToString();
+                    vo.plan_yn = cboRequiredPlan.SelectedValue.ToString();
+                    vo.bom_comment = txtNote.Text;
+                    vo.bom_uadmin = txtModifier.Text;
+                    vo.bom_udate = txtModifyDate.Text;
+
+                    bool bResult = bom_service.UpdateBOM(vo);
+                    if (bResult)
+                    {
+                        MessageBox.Show("수정성공");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("수정실패 , 다시시도 하세요");
+                        return;
+                    }
+                }
             }
         }
 
@@ -96,6 +140,42 @@ namespace Team3
             txtModifyDate.Enabled = false;
             ComboBoxBinding();
 
+            if (edit == EditMode.Update)
+            {
+
+                IsNullCbo2(vo.product_id, cboProduct);
+                IsNullCbo2(Convert.ToInt32(vo.bom_parent_id), cboParentProduct);
+                IsNullCbo(vo.bom_yn, cboIsUsed);
+                IsNullCbo(vo.plan_yn, cboRequiredPlan);
+
+
+
+                txtUseCount.Text = vo.bom_use_count.ToString();
+                txtModifier.Text = vo.bom_uadmin;
+                txtModifyDate.Text = vo.bom_udate;
+                txtNote.Text = vo.bom_comment;
+                dtpEndDate.Value = Convert.ToDateTime( vo.bom_edate);
+                dtpStartDate.Value = Convert.ToDateTime( vo.bom_sdate);
+                
+            }
+
+        }
+
+        private void IsNullCbo2(int vo, ComboBox cbo)
+        {
+                cbo.SelectedValue = vo;
+        }
+
+        private void IsNullCbo(string vo, ComboBox cbo)
+        {
+            if (vo == null || vo == "")
+            {
+                cbo.SelectedIndex = 0;
+            }
+            else
+            {
+                cbo.SelectedValue = vo;
+            }
         }
 
         private void ComboBoxBinding()
@@ -116,15 +196,15 @@ namespace Team3
 
             product_service = new ProductService();
             List<ProductVO> product_list = new List<ProductVO>();
-            product_list = product_service.GetAllProducts("FP");
+            product_list = product_service.GetAllProducts();
             ComboUtil.ComboBinding(cboProduct, product_list, "product_id", "product_name", "선택");
             #endregion
 
             #region 상위품목cbo
             List<BomVO> bom_list = new List<BomVO>();
             bom_list = bom_service.GetBomAll();
-            ComboUtil.ComboBinding(cboParentProduct, bom_list, "bom_id", "bom_name", "선택");
-            
+            ComboUtil.ComboBinding(cboParentProduct, bom_list, "product_id", "bom_name", "-");
+
 
 
             #endregion
@@ -132,11 +212,9 @@ namespace Team3
 
         private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            
+
+
 
         }
-
-       
     }
 }

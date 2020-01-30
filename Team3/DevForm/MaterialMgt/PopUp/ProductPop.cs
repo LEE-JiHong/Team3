@@ -11,6 +11,7 @@ using Team3VO;
 namespace Team3
 {
     //컨트롤 위치 맞추기
+    //TODO 발주방식 콤보박스로 바꾸기
     public partial class ProductPop : Team3.DialogForm
     {
         public enum EditMode { Insert, Update }

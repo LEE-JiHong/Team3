@@ -35,6 +35,12 @@ namespace Team3
             return dac.GetProductTypeNum(product_id);
         }
 
+        public bool UpdateBOM(BomVO VO)
+        {
+            BomDac dac = new BomDac();
+            return dac.UpdateBOM(VO);
+        }
+
 
 
     }

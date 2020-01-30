@@ -45,12 +45,12 @@
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.cboRequiredPlan = new System.Windows.Forms.ComboBox();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.txtUseCount = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtModifier = new System.Windows.Forms.TextBox();
             this.txtModifyDate = new System.Windows.Forms.TextBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUseCount = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,11 +81,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtUseCount);
             this.panel2.Controls.Add(this.dtpStartDate);
             this.panel2.Controls.Add(this.txtModifyDate);
             this.panel2.Controls.Add(this.txtNote);
             this.panel2.Controls.Add(this.txtModifier);
-            this.panel2.Controls.Add(this.txtUseCount);
             this.panel2.Controls.Add(this.dtpEndDate);
             this.panel2.Controls.Add(this.cboRequiredPlan);
             this.panel2.Controls.Add(this.cboIsUsed);
@@ -275,14 +275,6 @@
             this.dtpEndDate.Size = new System.Drawing.Size(168, 21);
             this.dtpEndDate.TabIndex = 17;
             // 
-            // txtUseCount
-            // 
-            this.txtUseCount.Location = new System.Drawing.Point(92, 72);
-            this.txtUseCount.Name = "txtUseCount";
-            this.txtUseCount.Size = new System.Drawing.Size(168, 21);
-            this.txtUseCount.TabIndex = 19;
-            this.txtUseCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // txtNote
             // 
             this.txtNote.Location = new System.Drawing.Point(92, 162);
@@ -324,6 +316,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // txtUseCount
+            // 
+            this.txtUseCount.Location = new System.Drawing.Point(92, 75);
+            this.txtUseCount.Name = "txtUseCount";
+            this.txtUseCount.Size = new System.Drawing.Size(168, 21);
+            this.txtUseCount.TabIndex = 25;
+            // 
             // BomPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -353,7 +352,6 @@
         private System.Windows.Forms.TextBox txtModifyDate;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtModifier;
-        private System.Windows.Forms.TextBox txtUseCount;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.ComboBox cboRequiredPlan;
         private System.Windows.Forms.ComboBox cboIsUsed;
@@ -371,5 +369,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtUseCount;
     }
 }

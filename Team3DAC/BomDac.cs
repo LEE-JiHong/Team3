@@ -81,6 +81,41 @@ namespace Team3DAC
                 cmd.CommandText = "AddBom";
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                if (VO.bom_parent_id == null)
+                {
+                    cmd.Parameters.AddWithValue("@bom_parent_id", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@bom_parent_id", VO.bom_parent_id); 
+                }
+                cmd.Parameters.AddWithValue("@product_id", VO.product_id);
+                cmd.Parameters.AddWithValue("@bom_use_count", VO.bom_use_count);
+                cmd.Parameters.AddWithValue("@bom_sdate", VO.bom_sdate);
+                cmd.Parameters.AddWithValue("@bom_edate", VO.bom_edate);
+                cmd.Parameters.AddWithValue("@bom_yn", VO.bom_yn);
+                cmd.Parameters.AddWithValue("@plan_yn", VO.plan_yn);
+                cmd.Parameters.AddWithValue("@bom_comment", VO.bom_comment);
+                cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
+                cmd.Parameters.AddWithValue("@bom_udate", VO.bom_udate);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+            }
+
+        }
+        public bool UpdateBOM(BomVO VO)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "UpdateBOM";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
                 cmd.Parameters.AddWithValue("@bom_id", VO.bom_id);
                 cmd.Parameters.AddWithValue("@bom_parent_id", VO.bom_parent_id);
                 cmd.Parameters.AddWithValue("@product_id", VO.product_id);
@@ -88,11 +123,10 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@bom_sdate", VO.bom_sdate);
                 cmd.Parameters.AddWithValue("@bom_edate", VO.bom_edate);
                 cmd.Parameters.AddWithValue("@bom_yn", VO.bom_yn);
-                cmd.Parameters.AddWithValue("@plan_id", VO.plan_yn);
+                cmd.Parameters.AddWithValue("@plan_yn", VO.plan_yn);
                 cmd.Parameters.AddWithValue("@bom_comment", VO.bom_comment);
                 cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
                 cmd.Parameters.AddWithValue("@bom_udate", VO.bom_udate);
-
 
 
                 cmd.Connection.Open();

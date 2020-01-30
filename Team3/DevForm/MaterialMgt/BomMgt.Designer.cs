@@ -43,6 +43,8 @@
             this.btnFormDownload = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.dgvBomDetail = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,7 +93,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(1500, 99);
+            this.panel5.Location = new System.Drawing.Point(1893, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -99,8 +101,8 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(785, 96);
-            this.panel4.Size = new System.Drawing.Size(406, 29);
+            this.panel4.Location = new System.Drawing.Point(644, 96);
+            this.panel4.Size = new System.Drawing.Size(547, 29);
             // 
             // TopMenu
             // 
@@ -134,7 +136,7 @@
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(14, 3);
+            this.btnAdd.Location = new System.Drawing.Point(155, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(52, 23);
             this.btnAdd.TabIndex = 25;
@@ -219,6 +221,7 @@
             this.btnSelect.Text = "조회";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // dgvBom
             // 
@@ -243,11 +246,13 @@
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnCopy);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
+            this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
+            this.flowLayoutPanel1.Controls.Add(this.btnClear);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(406, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(547, 29);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnAddExcel
@@ -259,7 +264,7 @@
             this.btnAddExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddExcel.Image = global::Team3.Properties.Resources.LoadFrom_16x16;
             this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExcel.Location = new System.Drawing.Point(308, 3);
+            this.btnAddExcel.Location = new System.Drawing.Point(449, 3);
             this.btnAddExcel.Name = "btnAddExcel";
             this.btnAddExcel.Size = new System.Drawing.Size(95, 23);
             this.btnAddExcel.TabIndex = 29;
@@ -276,7 +281,7 @@
             this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnFormDownload.Image = global::Team3.Properties.Resources.Open2_16x16;
             this.btnFormDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormDownload.Location = new System.Drawing.Point(196, 3);
+            this.btnFormDownload.Location = new System.Drawing.Point(337, 3);
             this.btnFormDownload.Name = "btnFormDownload";
             this.btnFormDownload.Size = new System.Drawing.Size(106, 23);
             this.btnFormDownload.TabIndex = 28;
@@ -293,7 +298,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(134, 3);
+            this.btnExcel.Location = new System.Drawing.Point(275, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(56, 23);
             this.btnExcel.TabIndex = 27;
@@ -310,13 +315,49 @@
             this.btnCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCopy.Image = global::Team3.Properties.Resources.Copy_16x16;
             this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopy.Location = new System.Drawing.Point(72, 3);
+            this.btnCopy.Location = new System.Drawing.Point(213, 3);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(56, 23);
             this.btnCopy.TabIndex = 26;
             this.btnCopy.Text = "복사";
             this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopy.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdate.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(97, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(52, 23);
+            this.btnUpdate.TabIndex = 31;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClear.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(27, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(64, 23);
+            this.btnClear.TabIndex = 30;
+            this.btnClear.Text = "초기화";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvBomDetail
             // 
@@ -373,5 +414,7 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.DataGridView dgvBomDetail;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnClear;
     }
 }
