@@ -98,7 +98,7 @@ namespace Team3
             {
                 FacilitieInfoPop frm = new FacilitieInfoPop
                     (FacilitieInfoPop.EditMode.Input, dataGridView1.CurrentRow.Cells[1].Value.ToString(), lblID1.Text);
- 
+
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadData();
@@ -106,7 +106,7 @@ namespace Team3
                 }
 
             }
-            else if( lblID1.Text=="")
+            else if (lblID1.Text == "")
                 MessageBox.Show("설비군을 선택해주세요");
             SetBottomStatusLabel("선택된 설비군이 없습니다");
 
@@ -115,7 +115,7 @@ namespace Team3
         {
             if (lblID2.Text == "")
             {
-                 
+
                 SetBottomStatusLabel("선택된 설비가 없습니다");
                 MessageBox.Show("변경할 설비를 선택해주세요");
             }
@@ -132,7 +132,10 @@ namespace Team3
                     VO.m_name = rows.Cells[4].Value.ToString();
                     VO.m_use_sector = rows.Cells[5].Value.ToString();
                     VO.m_ok_sector = rows.Cells[6].Value.ToString();
-                    VO.m_ng_sector = rows.Cells[7].Value.ToString();
+                    if (rows.Cells[7].Value == null)
+                    { VO.m_ng_sector = ""; }
+                    else
+                        VO.m_ng_sector = rows.Cells[7].Value.ToString();
                     VO.m_yn = rows.Cells[11].Value.ToString();
                     VO.m_os_yn = rows.Cells[8].Value.ToString();
                     VO.m_uadmin = rows.Cells[12].Value.ToString();
