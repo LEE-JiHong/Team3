@@ -130,7 +130,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(375, 55);
+            this.label5.Location = new System.Drawing.Point(374, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 31;
@@ -352,6 +352,8 @@
             this.ClientSize = new System.Drawing.Size(1124, 724);
             this.Name = "SOO";
             this.Tag = "작업지시현황";
+            this.Text = "작업지시현황";
+            this.Load += new System.EventHandler(this.SOO_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

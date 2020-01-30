@@ -241,6 +241,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1108, 496);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // flowLayoutPanel1
             // 
@@ -355,6 +356,8 @@
             this.ClientSize = new System.Drawing.Size(1132, 724);
             this.Name = "GOO";
             this.Tag = "작업지시생성";
+            this.Text = "작업지시생성";
+            this.Load += new System.EventHandler(this.GOO_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

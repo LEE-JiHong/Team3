@@ -25,6 +25,7 @@ namespace Team3
 
         private void facilityMgt_Load(object sender, EventArgs e)
         {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "mgrade_id", false, 60);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비군 코드", "mgrade_code", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비군명", "mgrade_name", true);
@@ -33,6 +34,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정시간", "mgrade_udate", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설설명", "mgrade_comment", false);
 
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "ID", "m_id", false, 60);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비ID", "mgrade_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비군코드", "mgrade_code", false);
