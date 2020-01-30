@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BomDac.cs" />
     <Compile Include="DemandDac.cs" />
+    <Compile Include="ProcessDac.cs" />
     <Compile Include="ProductDac.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />

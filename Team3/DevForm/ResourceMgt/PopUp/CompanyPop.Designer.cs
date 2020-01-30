@@ -84,6 +84,7 @@
             // 
             // label1
             // 
+            this.label1.Location = new System.Drawing.Point(21, 7);
             this.label1.Size = new System.Drawing.Size(80, 19);
             this.label1.Text = "업체정보";
             // 

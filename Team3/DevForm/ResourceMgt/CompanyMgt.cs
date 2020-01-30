@@ -26,6 +26,7 @@ namespace Team3
         ResourceService service = new ResourceService();
         private void businessMgt_Load(object sender, EventArgs e)
         {
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체ID", "company_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체코드", "company_code", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체명", "company_name", true);

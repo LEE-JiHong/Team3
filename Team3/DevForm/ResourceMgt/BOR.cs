@@ -27,6 +27,7 @@ namespace Team3
         private void BOR_Load(object sender, EventArgs e)
         {
             LoadData();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 셀 클릭하면 행 전체가 선택
 
 
             common_service = new CommonCodeService();

@@ -24,7 +24,7 @@ namespace Team3
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "factory_id",false ,60);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설군", "facility_class", true, 80);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설구분", "facility_type", true);

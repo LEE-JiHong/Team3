@@ -46,9 +46,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnWork = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -241,13 +241,15 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1108, 496);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnWork);
             this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -301,20 +303,21 @@
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnWork
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(73, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "작업지시확정";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnWork.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWork.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnWork.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWork.Location = new System.Drawing.Point(73, 3);
+            this.btnWork.Name = "btnWork";
+            this.btnWork.Size = new System.Drawing.Size(101, 23);
+            this.btnWork.TabIndex = 51;
+            this.btnWork.Text = "작업지시확정";
+            this.btnWork.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnWork.UseVisualStyleBackColor = false;
+            this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
             // 
             // button5
             // 
@@ -331,23 +334,24 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnSearch
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Image = global::Team3.Properties.Resources.Zoom_16x16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1034, 49);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 30);
-            this.button6.TabIndex = 79;
-            this.button6.Text = "조회";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(1034, 49);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(70, 30);
+            this.btnSearch.TabIndex = 79;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // GOO
             // 
@@ -355,6 +359,8 @@
             this.ClientSize = new System.Drawing.Size(1132, 724);
             this.Name = "GOO";
             this.Tag = "작업지시생성";
+            this.Text = "작업지시생성";
+            this.Load += new System.EventHandler(this.GOO_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -384,11 +390,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnWork;
         private System.Windows.Forms.Button button5;
     }
 }

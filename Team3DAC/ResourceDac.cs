@@ -417,16 +417,16 @@ namespace Team3DAC
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@bor_id", vo.bor_id);
+                //    cmd.Parameters.AddWithValue("@bor_id", vo.bor_id);
                 cmd.Parameters.AddWithValue("@bor_comment", vo.bor_comment);
-                cmd.Parameters.AddWithValue("@bor_readytime",vo.bor_readytime);
-                cmd.Parameters.AddWithValue("@bor_tacktime",vo.bor_tacktime);
-                cmd.Parameters.AddWithValue("@m_id",vo.m_id);
-                cmd.Parameters.AddWithValue("@bom_id",vo.bom_id);
-                cmd.Parameters.AddWithValue("@bor_route",vo.bor_route);
-                cmd.Parameters.AddWithValue("@bor_yn",vo.bor_yn);
+                cmd.Parameters.AddWithValue("@bor_readytime", vo.bor_readytime);
+                cmd.Parameters.AddWithValue("@bor_tacktime", vo.bor_tacktime);
+                cmd.Parameters.AddWithValue("@m_id", vo.m_id);
+                cmd.Parameters.AddWithValue("@bom_id", vo.bom_id);
+                cmd.Parameters.AddWithValue("@bor_route", vo.bor_route);
+                cmd.Parameters.AddWithValue("@bor_yn", vo.bor_yn);
                 cmd.Connection.Open();
- 
+
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return successRow > 0;
