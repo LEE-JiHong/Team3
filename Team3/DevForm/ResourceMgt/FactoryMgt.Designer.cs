@@ -168,7 +168,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 29);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnEx
             // 
@@ -180,7 +180,7 @@
             this.btnEx.Location = new System.Drawing.Point(203, 3);
             this.btnEx.Name = "btnEx";
             this.btnEx.Size = new System.Drawing.Size(57, 23);
-            this.btnEx.TabIndex = 49;
+            this.btnEx.TabIndex = 3;
             this.btnEx.Text = "엑셀";
             this.btnEx.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEx.UseVisualStyleBackColor = false;
@@ -196,7 +196,7 @@
             this.btnDel.Location = new System.Drawing.Point(140, 3);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(57, 23);
-            this.btnDel.TabIndex = 50;
+            this.btnDel.TabIndex = 2;
             this.btnDel.Text = "삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDel.UseVisualStyleBackColor = false;
@@ -212,7 +212,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(82, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(52, 23);
-            this.btnUpdate.TabIndex = 51;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -228,7 +228,7 @@
             this.btnAdd.Location = new System.Drawing.Point(24, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(52, 23);
-            this.btnAdd.TabIndex = 48;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -247,7 +247,7 @@
             this.btnSearch.Location = new System.Drawing.Point(1027, 47);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(65, 30);
-            this.btnSearch.TabIndex = 78;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "조회";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;

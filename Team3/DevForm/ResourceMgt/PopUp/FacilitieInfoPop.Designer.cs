@@ -62,6 +62,7 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(309, 405);
+            this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -71,7 +72,7 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.TabIndex = 13;
+            this.btnSave.TabIndex = 11;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
@@ -113,7 +114,7 @@
             this.panel2.Controls.Add(this.txtMgrade_code);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(749, 314);
-            this.panel2.TabIndex = 10;
+            this.panel2.TabIndex = 0;
             // 
             // button1
             // 
@@ -138,7 +139,8 @@
             this.txtMgrade_code.Name = "txtMgrade_code";
             this.txtMgrade_code.ReadOnly = true;
             this.txtMgrade_code.Size = new System.Drawing.Size(150, 21);
-            this.txtMgrade_code.TabIndex = 0;
+            this.txtMgrade_code.TabIndex = 20;
+            this.txtMgrade_code.TabStop = false;
             // 
             // label3
             // 
@@ -178,7 +180,7 @@
             this.txtModifier.Location = new System.Drawing.Point(564, 95);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(150, 21);
-            this.txtModifier.TabIndex = 9;
+            this.txtModifier.TabIndex = 8;
             // 
             // label6
             // 
@@ -227,7 +229,8 @@
             this.txtModifyTime.Name = "txtModifyTime";
             this.txtModifyTime.ReadOnly = true;
             this.txtModifyTime.Size = new System.Drawing.Size(150, 21);
-            this.txtModifyTime.TabIndex = 1;
+            this.txtModifyTime.TabIndex = 21;
+            this.txtModifyTime.TabStop = false;
             // 
             // label10
             // 
@@ -311,7 +314,7 @@
             this.cboIsOS.Location = new System.Drawing.Point(332, 94);
             this.cboIsOS.Name = "cboIsOS";
             this.cboIsOS.Size = new System.Drawing.Size(150, 23);
-            this.cboIsOS.TabIndex = 8;
+            this.cboIsOS.TabIndex = 7;
             // 
             // txtCheck
             // 
@@ -320,7 +323,7 @@
             this.txtCheck.Multiline = true;
             this.txtCheck.Name = "txtCheck";
             this.txtCheck.Size = new System.Drawing.Size(621, 50);
-            this.txtCheck.TabIndex = 11;
+            this.txtCheck.TabIndex = 9;
             // 
             // label13
             // 
@@ -349,7 +352,7 @@
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(621, 50);
-            this.txtComment.TabIndex = 12;
+            this.txtComment.TabIndex = 10;
             // 
             // lblID
             // 

@@ -67,7 +67,7 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.TabIndex = 15;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
@@ -109,7 +109,7 @@
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(560, 7);
+            this.button1.Location = new System.Drawing.Point(525, 7);
             // 
             // label2
             // 
@@ -161,7 +161,7 @@
             this.cboTypeFactory.Location = new System.Drawing.Point(353, 99);
             this.cboTypeFactory.Name = "cboTypeFactory";
             this.cboTypeFactory.Size = new System.Drawing.Size(150, 23);
-            this.cboTypeFactory.TabIndex = 4;
+            this.cboTypeFactory.TabIndex = 5;
             // 
             // label8
             // 
@@ -179,7 +179,7 @@
             this.txtCodeFactory.Location = new System.Drawing.Point(353, 62);
             this.txtCodeFactory.Name = "txtCodeFactory";
             this.txtCodeFactory.Size = new System.Drawing.Size(150, 21);
-            this.txtCodeFactory.TabIndex = 2;
+            this.txtCodeFactory.TabIndex = 3;
             // 
             // txtUdate
             // 
@@ -188,7 +188,8 @@
             this.txtUdate.Name = "txtUdate";
             this.txtUdate.ReadOnly = true;
             this.txtUdate.Size = new System.Drawing.Size(150, 21);
-            this.txtUdate.TabIndex = 12;
+            this.txtUdate.TabIndex = 23;
+            this.txtUdate.TabStop = false;
             // 
             // label10
             // 
@@ -228,7 +229,7 @@
             this.cboYN.Location = new System.Drawing.Point(90, 145);
             this.cboYN.Name = "cboYN";
             this.cboYN.Size = new System.Drawing.Size(150, 23);
-            this.cboYN.TabIndex = 13;
+            this.cboYN.TabIndex = 6;
             // 
             // label15
             // 
@@ -247,7 +248,7 @@
             this.txtNameFactory.Location = new System.Drawing.Point(90, 64);
             this.txtNameFactory.Name = "txtNameFactory";
             this.txtNameFactory.Size = new System.Drawing.Size(150, 21);
-            this.txtNameFactory.TabIndex = 3;
+            this.txtNameFactory.TabIndex = 2;
             // 
             // txtUadmin
             // 
@@ -255,7 +256,7 @@
             this.txtUadmin.Location = new System.Drawing.Point(353, 138);
             this.txtUadmin.Name = "txtUadmin";
             this.txtUadmin.Size = new System.Drawing.Size(150, 21);
-            this.txtUadmin.TabIndex = 11;
+            this.txtUadmin.TabIndex = 7;
             // 
             // cboCompany
             // 
@@ -264,7 +265,7 @@
             this.cboCompany.Location = new System.Drawing.Point(90, 102);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(150, 23);
-            this.cboCompany.TabIndex = 7;
+            this.cboCompany.TabIndex = 4;
             // 
             // label16
             // 
@@ -283,7 +284,7 @@
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(413, 79);
-            this.txtComment.TabIndex = 14;
+            this.txtComment.TabIndex = 8;
             // 
             // label5
             // 
@@ -303,7 +304,7 @@
             this.cboParent.Location = new System.Drawing.Point(353, 24);
             this.cboParent.Name = "cboParent";
             this.cboParent.Size = new System.Drawing.Size(150, 23);
-            this.cboParent.TabIndex = 4;
+            this.cboParent.TabIndex = 1;
             // 
             // lblID
             // 
