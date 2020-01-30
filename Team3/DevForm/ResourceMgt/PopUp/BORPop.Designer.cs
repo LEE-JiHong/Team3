@@ -54,6 +54,7 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(198, 388);
+            this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -99,6 +100,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.Color.Orange;
             this.panel2.Size = new System.Drawing.Size(554, 299);
+            this.panel2.TabIndex = 0;
             // 
             // button1
             // 
@@ -110,7 +112,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(8, 28);
+            this.label2.Location = new System.Drawing.Point(8, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 0;
@@ -130,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(8, 73);
+            this.label3.Location = new System.Drawing.Point(8, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 0;
@@ -140,7 +142,7 @@
             // 
             this.cboM_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboM_name.FormattingEnabled = true;
-            this.cboM_name.Location = new System.Drawing.Point(98, 69);
+            this.cboM_name.Location = new System.Drawing.Point(98, 70);
             this.cboM_name.Name = "cboM_name";
             this.cboM_name.Size = new System.Drawing.Size(165, 23);
             this.cboM_name.TabIndex = 2;
@@ -192,7 +194,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Orange;
-            this.label9.Location = new System.Drawing.Point(281, 115);
+            this.label9.Location = new System.Drawing.Point(294, 115);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 15);
             this.label9.TabIndex = 0;
@@ -202,7 +204,7 @@
             // 
             this.cboYN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYN.FormattingEnabled = true;
-            this.cboYN.Location = new System.Drawing.Point(371, 112);
+            this.cboYN.Location = new System.Drawing.Point(371, 111);
             this.cboYN.Name = "cboYN";
             this.cboYN.Size = new System.Drawing.Size(165, 23);
             this.cboYN.TabIndex = 7;
@@ -214,7 +216,7 @@
             this.txtReadyTime.Name = "txtReadyTime";
             this.txtReadyTime.Size = new System.Drawing.Size(165, 21);
             this.txtReadyTime.TabIndex = 4;
-            this.txtReadyTime.Leave += new System.EventHandler(this.txtReadyTime_Leave);
+            this.txtReadyTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTactTime_KeyPress);
             // 
             // txtTactTime
             // 
@@ -223,6 +225,7 @@
             this.txtTactTime.Name = "txtTactTime";
             this.txtTactTime.Size = new System.Drawing.Size(165, 21);
             this.txtTactTime.TabIndex = 3;
+            this.txtTactTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTactTime_KeyPress);
             // 
             // label10
             // 

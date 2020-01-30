@@ -69,6 +69,7 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(315, 401);
+            this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -125,6 +126,7 @@
             this.panel2.Controls.Add(this.txtCodeCompany);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(761, 310);
+            this.panel2.TabIndex = 0;
             // 
             // button1
             // 
@@ -202,7 +204,7 @@
             this.txtPhone.Location = new System.Drawing.Point(103, 121);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(130, 21);
-            this.txtPhone.TabIndex = 12;
+            this.txtPhone.TabIndex = 9;
             // 
             // label8
             // 
@@ -277,7 +279,7 @@
             this.txtFax.Location = new System.Drawing.Point(362, 121);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(130, 21);
-            this.txtFax.TabIndex = 13;
+            this.txtFax.TabIndex = 10;
             // 
             // label14
             // 
@@ -353,7 +355,7 @@
             this.txtAdmin.Location = new System.Drawing.Point(103, 154);
             this.txtAdmin.Name = "txtAdmin";
             this.txtAdmin.Size = new System.Drawing.Size(130, 21);
-            this.txtAdmin.TabIndex = 17;
+            this.txtAdmin.TabIndex = 12;
             // 
             // label15
             // 
@@ -372,7 +374,7 @@
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(626, 87);
-            this.txtComment.TabIndex = 19;
+            this.txtComment.TabIndex = 13;
             // 
             // cboYN
             // 
@@ -381,7 +383,7 @@
             this.cboYN.Location = new System.Drawing.Point(589, 121);
             this.cboYN.Name = "cboYN";
             this.cboYN.Size = new System.Drawing.Size(130, 23);
-            this.cboYN.TabIndex = 16;
+            this.cboYN.TabIndex = 11;
             // 
             // txtUdate
             // 
@@ -391,6 +393,7 @@
             this.txtUdate.ReadOnly = true;
             this.txtUdate.Size = new System.Drawing.Size(130, 21);
             this.txtUdate.TabIndex = 23;
+            this.txtUdate.TabStop = false;
             // 
             // cboCompanyType
             // 
@@ -417,7 +420,7 @@
             this.cboUser.Location = new System.Drawing.Point(361, 88);
             this.cboUser.Name = "cboUser";
             this.cboUser.Size = new System.Drawing.Size(130, 23);
-            this.cboUser.TabIndex = 2;
+            this.cboUser.TabIndex = 7;
             // 
             // label5
             // 
@@ -436,7 +439,8 @@
             this.txtOrder_code.Name = "txtOrder_code";
             this.txtOrder_code.ReadOnly = true;
             this.txtOrder_code.Size = new System.Drawing.Size(130, 21);
-            this.txtOrder_code.TabIndex = 13;
+            this.txtOrder_code.TabIndex = 24;
+            this.txtOrder_code.TabStop = false;
             // 
             // CompanyPop
             // 

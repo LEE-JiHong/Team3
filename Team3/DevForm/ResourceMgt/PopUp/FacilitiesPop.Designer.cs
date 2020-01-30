@@ -50,6 +50,7 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(103, 427);
+            this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -88,11 +89,12 @@
             this.panel2.Controls.Add(this.txtMgrade_code);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Size = new System.Drawing.Size(364, 338);
+            this.panel2.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(513, 7);
+            this.button1.Location = new System.Drawing.Point(332, 5);
             // 
             // label2
             // 
@@ -111,7 +113,7 @@
             this.txtMgrade_code.Location = new System.Drawing.Point(145, 24);
             this.txtMgrade_code.Name = "txtMgrade_code";
             this.txtMgrade_code.Size = new System.Drawing.Size(172, 21);
-            this.txtMgrade_code.TabIndex = 1;
+            this.txtMgrade_code.TabIndex = 0;
             // 
             // label3
             // 
@@ -160,7 +162,7 @@
             this.txtMgrade_uadmin.Location = new System.Drawing.Point(145, 140);
             this.txtMgrade_uadmin.Name = "txtMgrade_uadmin";
             this.txtMgrade_uadmin.Size = new System.Drawing.Size(172, 21);
-            this.txtMgrade_uadmin.TabIndex = 1;
+            this.txtMgrade_uadmin.TabIndex = 3;
             // 
             // label6
             // 
@@ -180,7 +182,8 @@
             this.txtMgrade_udate.Name = "txtMgrade_udate";
             this.txtMgrade_udate.ReadOnly = true;
             this.txtMgrade_udate.Size = new System.Drawing.Size(172, 21);
-            this.txtMgrade_udate.TabIndex = 1;
+            this.txtMgrade_udate.TabIndex = 15;
+            this.txtMgrade_udate.TabStop = false;
             // 
             // label7
             // 
@@ -200,7 +203,7 @@
             this.txtMgrade_comment.Multiline = true;
             this.txtMgrade_comment.Name = "txtMgrade_comment";
             this.txtMgrade_comment.Size = new System.Drawing.Size(264, 71);
-            this.txtMgrade_comment.TabIndex = 1;
+            this.txtMgrade_comment.TabIndex = 4;
             // 
             // label8
             // 

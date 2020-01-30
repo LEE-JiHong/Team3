@@ -107,6 +107,13 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int su = Convert.ToInt32(txtReadyTime.Text);
+            if (su > 36)
+            {
+                txtReadyTime.Text = "";
+                MessageBox.Show("36시간 보다 클 수 없습니다");
+                return;
+            }
             try
             {
                 BorVO vo = new BorVO();
@@ -173,14 +180,13 @@ namespace Team3
             }
         }
 
-        private void txtReadyTime_Leave(object sender, EventArgs e)
+   
+
+        private void txtTactTime_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int su = Convert.ToInt32(txtReadyTime.Text);
-            if (su > 36)
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
             {
-                txtReadyTime.Text = "";
-                MessageBox.Show("36시간 보다 클 수 없습니다");
-                return;
+                e.Handled = true;
             }
         }
     }

@@ -5,6 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
+using Team3VO;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
@@ -15,18 +19,23 @@ namespace Team3
             InitializeComponent();
         }
         ProductionService service = new ProductionService();
+        ResourceService R_service = new ResourceService();
 
         private void ProductPlan_Load(object sender, EventArgs e)
         {
             InitComboBox();
 
             DateTime today = DateTime.Now;
-
+            dataGridView1.AllowUserToAddRows = false;
             string startDate = today.AddDays(-10).ToString("yyyyMMdd");
             string endDate = today.AddDays(20).ToString("yyyyMMdd");
-             
-           DataTable dt= service.GetProductPlan("20200121_P", startDate,endDate);
-            dataGridView1.DataSource = dt;
+            dateTimePicker1.Value = today.AddDays(-10);
+            dateTimePicker2.Value = today.AddDays(20);
+
+            DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
+
+
+            //  dataGridView1.DataSource = dt;
 
         }
 
@@ -34,14 +43,126 @@ namespace Team3
         {
             OrderService service = new OrderService();
             List<string> list = service.GetPlanID();
-            list.Insert(0, "전체");
+            // list.Insert(0, );
             cboPlanID.DataSource = list;
-        }
+           List<MachineVO> lst= R_service.GetMachineAll();
+            ComboUtil.ComboBinding(cboMachine, lst, "m_id", "m_name","전체");
+            
+        } 
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString()) ;
-            dataGridView1.DataSource = dt;
+
+            string Machine = cboMachine.Text;
+            DataTable  dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString()); ;
+            DataTable table = new DataTable ();
+            try
+            {
+                //if (Machine == "전체" && txtProduct.Text == "") //둘다 빈값
+                //{
+                //    dataGridView1.DataSource = dt;
+                //}
+                if (txtProduct.Text == "" && Machine == "전체") // 둘다 빈값
+                {
+                    dataGridView1.DataSource = dt;
+                }
+                else if (txtProduct.Text != ""&& Machine == "전체")  //product만 입력
+                {
+
+                     table =
+                              dt.AsEnumerable().Where(Row =>
+                              Row.Field<string>("product_codename") == txtProduct.Text).CopyToDataTable();
+                    dataGridView1.DataSource = table;
+
+                }
+                else if(Machine != "" && txtProduct.Text=="") //설비만 입력
+                {
+                     table =
+                              dt.AsEnumerable().Where(Row =>
+                              Row.Field<string>("m_name") == cboMachine.Text).CopyToDataTable();
+                    dataGridView1.DataSource = table;
+
+                }
+                else if(Machine != "" && txtProduct.Text != "") //둘다 입력
+                {
+                     table =
+                         dt.AsEnumerable().Where(Row =>
+                         Row.Field<string>("m_name") == cboMachine.Text &&Row.Field<string>("product_codename")==txtProduct.Text).CopyToDataTable();
+                    dataGridView1.DataSource = table;
+
+                }
+               
+            }
+
+            catch (InvalidOperationException )
+            {
+                SetBottomStatusLabel("해당 조건의 검색결과가 없습니다");
+                MessageBox.Show("해당 조건의 검색결과가 없습니다");
+               
+            }
+            catch(Exception err)
+            {
+                string str = err.Message;
+            }
+        }
+
+        private void btnEX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
+
+                string filename = "test" + ".xlsx"; // ++ 파일명 변경 
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.order;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show(err.Message);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
+ 
