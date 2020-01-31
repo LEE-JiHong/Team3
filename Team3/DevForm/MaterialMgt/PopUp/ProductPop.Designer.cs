@@ -97,8 +97,8 @@
             this.label35 = new System.Windows.Forms.Label();
             this.txtProductUsl = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.txtMeasType = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
+            this.cboMeasType = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -129,7 +129,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtMeasType);
+            this.panel2.Controls.Add(this.cboMeasType);
             this.panel2.Controls.Add(this.label37);
             this.panel2.Controls.Add(this.txtProductUsl);
             this.panel2.Controls.Add(this.label36);
@@ -826,13 +826,6 @@
             this.label36.TabIndex = 68;
             this.label36.Text = "품목 최댓값";
             // 
-            // txtMeasType
-            // 
-            this.txtMeasType.Location = new System.Drawing.Point(511, 167);
-            this.txtMeasType.Name = "txtMeasType";
-            this.txtMeasType.Size = new System.Drawing.Size(100, 21);
-            this.txtMeasType.TabIndex = 71;
-            // 
             // label37
             // 
             this.label37.AutoSize = true;
@@ -842,6 +835,14 @@
             this.label37.Size = new System.Drawing.Size(60, 18);
             this.label37.TabIndex = 70;
             this.label37.Text = "측정방식";
+            // 
+            // cboMeasType
+            // 
+            this.cboMeasType.FormattingEnabled = true;
+            this.cboMeasType.Location = new System.Drawing.Point(511, 165);
+            this.cboMeasType.Name = "cboMeasType";
+            this.cboMeasType.Size = new System.Drawing.Size(100, 23);
+            this.cboMeasType.TabIndex = 72;
             // 
             // ProductPop
             // 
@@ -923,7 +924,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtMeasType;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtProductUsl;
         private System.Windows.Forms.Label label36;
@@ -933,5 +933,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtItemCode;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox cboMeasType;
     }
 }

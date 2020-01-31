@@ -70,6 +70,7 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -350,6 +351,7 @@
             this.ClientSize = new System.Drawing.Size(630, 444);
             this.Controls.Add(this.groupBox1);
             this.Name = "SUPMPop";
+            this.Load += new System.EventHandler(this.SUPMPop_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
