@@ -43,7 +43,7 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,7 +62,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboPlanID);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dtpEndDate);
@@ -254,13 +254,13 @@
             this.textBox3.Size = new System.Drawing.Size(201, 21);
             this.textBox3.TabIndex = 76;
             // 
-            // comboBox1
+            // cboPlanID
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 23);
-            this.comboBox1.TabIndex = 79;
+            this.cboPlanID.FormattingEnabled = true;
+            this.cboPlanID.Location = new System.Drawing.Point(75, 19);
+            this.cboPlanID.Name = "cboPlanID";
+            this.cboPlanID.Size = new System.Drawing.Size(201, 23);
+            this.cboPlanID.TabIndex = 79;
             // 
             // comboBox2
             // 
@@ -307,6 +307,6 @@
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPlanID;
     }
 }
