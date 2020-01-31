@@ -389,6 +389,7 @@
     <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductionService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\PurchasingService.cs" />
     <Compile Include="Service\ResourceService.cs" />
     <Compile Include="Service\ShiftService.cs" />
     <Compile Include="Utility\ComboUtil.cs" />
@@ -623,6 +624,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icon\Home\Print_32x32.png" />
     <None Include="Resources\grid %281%29.png" />
     <None Include="Resources\menu.png" />
     <None Include="Resources\logo.png" />

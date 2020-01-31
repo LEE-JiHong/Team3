@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team3VO;
 
 namespace Team3
 {
     //Sales of unit's price management 영업 단가 관리
     public partial class SUPMMgt : Team3.VerticalGridBaseForm
     {
+        PriceService price_service;
         public SUPMMgt()
         {
             InitializeComponent();
@@ -18,16 +20,72 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SUPMPop frm = new SUPMPop();
-            if(frm.ShowDialog() == DialogResult.OK)
+            SUPMPop frm = new SUPMPop(SUPMPop.EditMode.Insert);
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                
+                price_service = new PriceService();
+                List<PriceInfoVO> new_priceinfo_list = price_service.GetPriceInfo("CUSTOMER");    //등록후 다시 조회
+                dgvSUPM.DataSource = new_priceinfo_list;
+                SetBottomStatusLabel("신규 영업 단가가 등록되었습니다.");
             }
         }
 
         private void SUPMMgt_Load(object sender, EventArgs e)
         {
+            InitControl();
+        }
+        private void InitControl()
+        {
+            OrderService order_service = new OrderService();
+            #region 납품업체cbo
+            List<CompanyVO> company_list = order_service.GetCompanyAll("COOPERATIVE");
+            ComboUtil.ComboBinding(cboCompany, company_list, "company_id", "company_name", "선택");
+            #endregion
 
+
+
+
+
+            price_service = new PriceService();
+            List<PriceInfoVO> pricelist = price_service.GetPriceInfo("CUSTOMER");
+
+            dgvSUPM.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSUPM.Columns.Add("Number", "No.");
+            dgvSUPM.Columns[0].Width = 53;
+
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체", "company_code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체명", "company_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "단위", "product_unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "현재단가", "price_present", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "이전단가", "price_past", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "시작일", "price_sdate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "종료일", "price_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "비고", "price_comment", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "사용유무", "price_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
+
+            dgvSUPM.AutoGenerateColumns = false;
+            dgvSUPM.DataSource = pricelist;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            PriceInfoVO vo = new PriceInfoVO();
+            foreach (DataGridViewRow row in this.dgvSUPM.SelectedRows)
+            {
+                vo = row.DataBoundItem as PriceInfoVO;
+            }
+
+            SUPMPop frm = new SUPMPop(SUPMPop.EditMode.Update, vo);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                price_service = new PriceService();
+                List<PriceInfoVO> newPricelist = price_service.GetPriceInfo("CUSTOMER");    //등록후 다시 조회
+                dgvSUPM.DataSource = newPricelist;
+                dgvSUPM.ClearSelection();
+                SetBottomStatusLabel("영업단가 수정이 완료되었습니다.");
+            }
         }
     }
 }

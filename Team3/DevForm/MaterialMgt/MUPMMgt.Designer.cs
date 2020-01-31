@@ -34,6 +34,7 @@
             this.btnFormDownload = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblStandardDate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -81,8 +82,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(900, 70);
-            this.panel3.Size = new System.Drawing.Size(398, 29);
+            this.panel3.Location = new System.Drawing.Point(838, 70);
+            this.panel3.Size = new System.Drawing.Size(460, 29);
             // 
             // TopMenu
             // 
@@ -113,12 +114,13 @@
             this.flowLayoutPanel1.Controls.Add(this.btnFormDownload);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnCopy);
+            this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(398, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(460, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnAddExcel
@@ -130,7 +132,7 @@
             this.btnAddExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddExcel.Image = global::Team3.Properties.Resources.LoadFrom_16x16;
             this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExcel.Location = new System.Drawing.Point(300, 3);
+            this.btnAddExcel.Location = new System.Drawing.Point(362, 3);
             this.btnAddExcel.Name = "btnAddExcel";
             this.btnAddExcel.Size = new System.Drawing.Size(95, 23);
             this.btnAddExcel.TabIndex = 34;
@@ -147,7 +149,7 @@
             this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnFormDownload.Image = global::Team3.Properties.Resources.Open2_16x16;
             this.btnFormDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormDownload.Location = new System.Drawing.Point(188, 3);
+            this.btnFormDownload.Location = new System.Drawing.Point(250, 3);
             this.btnFormDownload.Name = "btnFormDownload";
             this.btnFormDownload.Size = new System.Drawing.Size(106, 23);
             this.btnFormDownload.TabIndex = 33;
@@ -164,7 +166,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(126, 3);
+            this.btnExcel.Location = new System.Drawing.Point(188, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(56, 23);
             this.btnExcel.TabIndex = 32;
@@ -181,13 +183,31 @@
             this.btnCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCopy.Image = global::Team3.Properties.Resources.Copy_16x16;
             this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopy.Location = new System.Drawing.Point(64, 3);
+            this.btnCopy.Location = new System.Drawing.Point(126, 3);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(56, 23);
             this.btnCopy.TabIndex = 31;
             this.btnCopy.Text = "복사";
             this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopy.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdate.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(68, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(52, 23);
+            this.btnUpdate.TabIndex = 31;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAdd
             // 
@@ -198,7 +218,7 @@
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(6, 3);
+            this.btnAdd.Location = new System.Drawing.Point(10, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(52, 23);
             this.btnAdd.TabIndex = 30;
@@ -269,6 +289,7 @@
             this.dgvMUPM.Location = new System.Drawing.Point(0, 0);
             this.dgvMUPM.Name = "dgvMUPM";
             this.dgvMUPM.RowTemplate.Height = 23;
+            this.dgvMUPM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMUPM.Size = new System.Drawing.Size(1285, 340);
             this.dgvMUPM.TabIndex = 0;
             // 
@@ -305,6 +326,7 @@
             this.ClientSize = new System.Drawing.Size(1309, 536);
             this.Name = "MUPMMgt";
             this.Tag = "자재단가관리";
+            this.Load += new System.EventHandler(this.MUPMMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -334,5 +356,6 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

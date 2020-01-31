@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddOrder = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dgvCompany = new System.Windows.Forms.DataGridView();
+            this.dgvOrdering = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -45,22 +45,24 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdering)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
             // 
-            this.panel6.Size = new System.Drawing.Size(376, 256);
+            this.panel6.Location = new System.Drawing.Point(309, 92);
+            this.panel6.Size = new System.Drawing.Size(376, 298);
             // 
             // panel5
             // 
-            this.panel5.Size = new System.Drawing.Size(267, 256);
+            this.panel5.Location = new System.Drawing.Point(12, 92);
+            this.panel5.Size = new System.Drawing.Size(267, 298);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.btnSearch);
+            this.panel4.Controls.Add(this.cboCompany);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Size = new System.Drawing.Size(673, 49);
             // 
@@ -68,6 +70,7 @@
             // 
             this.lblMasterName.Image = global::Team3.Properties.Resources.list_menu;
             this.lblMasterName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMasterName.Location = new System.Drawing.Point(9, 18);
             this.lblMasterName.Size = new System.Drawing.Size(79, 19);
             this.lblMasterName.Text = "발주업체";
             this.lblMasterName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -76,28 +79,34 @@
             // 
             this.lblDetailName.Image = global::Team3.Properties.Resources.list_menu;
             this.lblDetailName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDetailName.Location = new System.Drawing.Point(3, 3);
+            this.lblDetailName.Location = new System.Drawing.Point(12, 18);
             this.lblDetailName.Size = new System.Drawing.Size(56, 19);
             this.lblDetailName.Text = "발주";
             this.lblDetailName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(104, 11);
+            this.panel7.Visible = false;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.flowLayoutPanel1);
-            this.panel8.Location = new System.Drawing.Point(211, 3);
+            this.panel8.Location = new System.Drawing.Point(211, 11);
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.dataGridView2);
-            this.panel10.Size = new System.Drawing.Size(351, 192);
+            this.panel10.Controls.Add(this.dgvOrdering);
+            this.panel10.Size = new System.Drawing.Size(351, 234);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.dataGridView1);
+            this.panel9.Controls.Add(this.dgvCompany);
+            this.panel9.Size = new System.Drawing.Size(245, 234);
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(231, 506);
+            this.panel3.Location = new System.Drawing.Point(235, 506);
             // 
             // btnCancel
             // 
@@ -109,7 +118,7 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(44, 19);
+            this.label1.Size = new System.Drawing.Size(56, 19);
             this.label1.Text = "발주";
             // 
             // panel1
@@ -118,7 +127,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(696, 417);
+            this.panel2.Size = new System.Drawing.Size(696, 411);
             // 
             // button1
             // 
@@ -129,19 +138,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 16);
+            this.label2.Location = new System.Drawing.Point(31, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "업체";
             // 
-            // comboBox1
+            // cboCompany
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(266, 23);
-            this.comboBox1.TabIndex = 6;
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(73, 13);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(266, 23);
+            this.cboCompany.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
@@ -169,51 +178,55 @@
             this.btnAddOrder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddOrder.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvCompany
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(245, 192);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCompany.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompany.Name = "dgvCompany";
+            this.dgvCompany.RowTemplate.Height = 23;
+            this.dgvCompany.Size = new System.Drawing.Size(245, 234);
+            this.dgvCompany.TabIndex = 0;
             // 
-            // dataGridView2
+            // dgvOrdering
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(351, 192);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvOrdering.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dgvOrdering.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdering.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrdering.Location = new System.Drawing.Point(0, 0);
+            this.dgvOrdering.Name = "dgvOrdering";
+            this.dgvOrdering.RowTemplate.Height = 23;
+            this.dgvOrdering.Size = new System.Drawing.Size(351, 234);
+            this.dgvOrdering.TabIndex = 0;
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::Team3.Properties.Resources.Zoom_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(594, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 30);
-            this.button2.TabIndex = 90;
-            this.button2.Text = "조회";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(594, 8);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(65, 30);
+            this.btnSearch.TabIndex = 90;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // OrderDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(752, 585);
+            this.ClientSize = new System.Drawing.Size(752, 565);
             this.Name = "OrderDialog";
+            this.Load += new System.EventHandler(this.OrderDialog_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -225,19 +238,19 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdering)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOrdering;
+        private System.Windows.Forms.DataGridView dgvCompany;
         private System.Windows.Forms.Button btnAddOrder;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

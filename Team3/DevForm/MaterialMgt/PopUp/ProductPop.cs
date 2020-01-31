@@ -64,6 +64,7 @@ namespace Team3
                 IsNullCbo(vo.product_productunit_value, cboProductUnit);
                 IsNullCbo(vo.product_ordertype_value, cboOrderType);
                 IsNullCbo(vo.product_type_value, cboProductType);
+                IsNullCbo(vo.product_meastypevalue, cboMeasType);
                 
 
                 txtProductName.Text = vo.product_name;
@@ -77,7 +78,7 @@ namespace Team3
                 txtProductUsl.Text = vo.product_usl;
                 txtProductCode.Text = vo.product_code;
                 txtComment.Text = vo.product_comment;
-                txtMeasType.Text = vo.product_meastype;
+               
                 txtUnitAmount.Text = vo.product_unit_count;
                 txtSafetyAmount.Text = vo.product_safety_count.ToString();
             }
@@ -124,6 +125,11 @@ namespace Team3
                                           where item.common_type == "item_type"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboProductType, _commonlist, "common_value", "common_name", "선택");
+
+            List<CommonVO> _commonmeastype = (from item in codelist
+                                       where item.common_type == "meastype"
+                                       select item).ToList();
+            ComboUtil.ComboBinding(cboMeasType, _commonmeastype, "common_value", "common_name", "선택");
 
             #region 담당자cbo
 
@@ -200,7 +206,7 @@ namespace Team3
                     vo.product_code = txtProductCode.Text;
                     vo.product_lsl = txtProductLsl.Text;
                     vo.product_usl = txtProductUsl.Text;
-                    vo.product_meastype = txtMeasType.Text;
+                    vo.product_meastype = cboMeasType.SelectedValue.ToString();
                     vo.product_codename = txtProduct.Text;
 
                     foreach (var item in panel2.Controls)
@@ -261,7 +267,7 @@ namespace Team3
                     vo.product_code = txtProductCode.Text;
                     vo.product_lsl = txtProductLsl.Text;
                     vo.product_usl = txtProductUsl.Text;
-                    vo.product_meastype = txtMeasType.Text;
+                    vo.product_meastype = (cboMeasType.SelectedValue==null)?"": cboMeasType.SelectedValue.ToString();
                     vo.product_codename = txtProduct.Text;
 
                     bool bResult = product_service.UpdateProduct(vo);
