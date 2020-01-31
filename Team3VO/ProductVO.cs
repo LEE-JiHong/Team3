@@ -42,6 +42,7 @@ namespace Team3VO
         public string product_uadmin_value { get; set; }
         public string product_productunit_value { get; set; }
         public string product_ordertype_value { get; set; }
+        public string product_meastypevalue { get; set; }
         
     }
 }
