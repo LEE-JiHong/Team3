@@ -403,6 +403,16 @@ namespace Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Print_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Print_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Recurrence_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Recurrence_16x16", resourceCulture);
