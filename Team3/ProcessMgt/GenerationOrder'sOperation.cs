@@ -31,9 +31,11 @@ namespace Team3
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             dataGridView1.Columns.Add(checkBoxColumn);
 
+            LoadData();
+        }
 
-
-
+        private void LoadData()
+        {
             dt = P_service.GetProductionPlanCheck(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
             dataGridView1.DataSource = dt;
         }
@@ -51,7 +53,7 @@ namespace Team3
                 if (e.RowIndex > -1 && e.RowIndex < dt.Rows.Count)
                 {
                     int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[11].Value.ToString());
-                    string proDate = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+                    //string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     bool bresult = false;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
@@ -92,6 +94,7 @@ namespace Team3
                 {
                     P_service.UpdateCommand(Convert.ToInt32(lst[i].ToString()), strlist[i].ToString());
                 }
+                
 
             }
             catch (Exception err)

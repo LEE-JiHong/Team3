@@ -23,20 +23,26 @@ namespace Team3
 
         private void ProductPlan_Load(object sender, EventArgs e)
         {
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "bor_route", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품코드", "product_codename", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품명", "producct_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "영업마스터ID", "plan_id", false);
             InitComboBox();
 
             DateTime today = DateTime.Now;
             dataGridView1.AllowUserToAddRows = false;
-            string startDate = today.AddDays(-10).ToString("yyyyMMdd");
-            string endDate = today.AddDays(20).ToString("yyyyMMdd");
+            //string startDate = today.AddDays(-10).ToString("yyyyMMdd");
+            //string endDate = today.AddDays(20).ToString("yyyyMMdd");
             dateTimePicker1.Value = today.AddDays(-10);
             dateTimePicker2.Value = today.AddDays(20);
 
-            DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
+            //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
 
 
             //  dataGridView1.DataSource = dt;
-
+           
         }
 
         private void InitComboBox()

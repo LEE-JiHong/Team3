@@ -26,6 +26,22 @@ namespace Team3
         }
         private void BOR_Load(object sender, EventArgs e)
         {
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bor_id", "bor_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bom_id", "bom_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "common_type", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정명", "common_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_code", true);
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "Tack Time", "bor_tacktime", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정선행시간", "bor_readytime", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "bor_yn", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "bor_comment", true);
+
+
+
             LoadData();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 셀 클릭하면 행 전체가 선택
 

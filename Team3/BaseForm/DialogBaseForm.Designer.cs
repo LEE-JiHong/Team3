@@ -224,6 +224,6 @@
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Panel panel4;
     }
 }
