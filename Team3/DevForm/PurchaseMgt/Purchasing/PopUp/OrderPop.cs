@@ -11,13 +11,15 @@ namespace Team3
 {
     public partial class OrderDialog : DialogDgvBaseForm
     {
+        string planID;
         int companyName;
         CheckBox headerCheckBox = new CheckBox();
 
-        public OrderDialog(int companyName)
+        public OrderDialog(int companyName, string planID)
         {
             InitializeComponent();
             this.companyName = companyName;
+            this.planID = planID;
         }
 
         private void OrderDialog_Load(object sender, EventArgs e)
@@ -40,6 +42,9 @@ namespace Team3
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
             dgvCompany.Controls.Add(headerCheckBox);
+
+            PurchasingService service = new PurchasingService();
+            dgvOrdering.DataSource = service.GetOrderList(planID);
         }
 
         private void HeaderCheckbox_Click(object sender, EventArgs e)
