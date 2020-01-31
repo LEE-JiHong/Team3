@@ -24,7 +24,7 @@ namespace Team3
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 price_service = new PriceService();
-                List<PriceInfoVO> new_priceinfo_list = price_service.GetPriceInfo("COOPERATIVE");    //등록후 다시 조회
+                List<PriceInfoVO> new_priceinfo_list = price_service.GetPriceInfo("CUSTOMER");    //등록후 다시 조회
                 dgvSUPM.DataSource = new_priceinfo_list;
                 SetBottomStatusLabel("신규 영업 단가가 등록되었습니다.");
             }
