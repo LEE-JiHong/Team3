@@ -23,13 +23,16 @@ namespace Team3
             get { return vo; }
             set { vo = value; }
         }
-        public SUPMPop(EditMode edit, PriceInfoVO vo = null)
+
+        public List<PriceInfoVO> list;
+        public SUPMPop(EditMode edit, List<PriceInfoVO> list = null, PriceInfoVO vo = null)
         {
             InitializeComponent();
             if (edit == EditMode.Insert)
             {
                 this.Text = "영업 단가 등록";
                 this.edit = EditMode.Insert;
+                this.list = list;
             }
             else if (edit == EditMode.Update)
             {
@@ -51,8 +54,6 @@ namespace Team3
                     price_service = new PriceService();
                     PriceInfoVO vo = new PriceInfoVO();
 
-
-
                     vo.product_id = Convert.ToInt32(cboProduct.SelectedValue);
                     vo.company_id = Convert.ToInt32(cboCompany.SelectedValue);
                     vo.price_present = Convert.ToDecimal(txtCurrentPrice.Text);
@@ -63,8 +64,6 @@ namespace Team3
                     vo.price_uadmin = txtModifier.Text;
                     vo.price_yn = cboIsUsed.SelectedValue.ToString();
                     vo.price_comment = txtNote.Text;
-
-
 
                     bool bResult = price_service.AddPriceInfo(vo);
                     if (bResult)
@@ -160,7 +159,31 @@ namespace Team3
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "common_value", "common_name", "선택");
             #endregion
+            
 
+        }
+
+        private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProduct.SelectedIndex == 0)
+            {
+                return;
+            }
+            else
+            {
+                List<PriceInfoVO> p_list = (from item in list
+                                            where item.product_id == Convert.ToInt32(cboProduct.SelectedValue) && item.price_edate == "9999-12-31"
+                                            select item).ToList();
+
+                if (p_list.Count > 0)
+                {
+                    txtBeforePrice.Text = p_list[0].price_present.ToString();
+                }
+                else
+                {
+                    txtBeforePrice.Text = "";
+                }
+            }
 
         }
     }
