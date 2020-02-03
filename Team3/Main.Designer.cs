@@ -77,7 +77,7 @@
             System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("설비관리");
             System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("업체관리");
             System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("BOR");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Shift기준정보");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Shift");
             System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
             treeNode30,
             treeNode31,
@@ -787,7 +787,7 @@
             treeNode33.Name = "BOR";
             treeNode33.Text = "BOR";
             treeNode34.Name = "노드0";
-            treeNode34.Text = "Shift기준정보";
+            treeNode34.Text = "Shift";
             treeNode35.Name = "자원관리";
             treeNode35.Text = "자원관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {

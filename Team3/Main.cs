@@ -164,7 +164,7 @@ namespace Team3
                     BOR BOR = new BOR();
                     MadeTabMenu(BOR);
                     break;
-                case "Shift기준정보":
+                case "Shift":
                     ShiftMain shiftMain = new ShiftMain();
                     MadeTabMenu(shiftMain);
                     break;
@@ -306,7 +306,7 @@ namespace Team3
                     BOR = (BOR)InitForm(BOR);
                     BOR.SubWindowState = WinState.independ;
                     break;
-                case "Shift기준정보":
+                case "Shift":
                     ShiftMain shiftMain = new ShiftMain();
                     shiftMain = (ShiftMain)InitForm(shiftMain);
                     shiftMain.SubWindowState = WinState.independ;
@@ -738,7 +738,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            else if (e.Node.Text == "Shift기준정보")
+            else if (e.Node.Text == "Shift")
             {
                 ShiftMain frm = new ShiftMain();
                 if (ExsistTap(e.Node.Text))
