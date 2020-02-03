@@ -22,13 +22,15 @@ namespace Team3
             get { return vo; }
             set { vo = value; }
         }
-        public MUPMPop(EditMode edit, PriceInfoVO vo = null)
+        public List<PriceInfoVO> list;
+        public MUPMPop(EditMode edit, List<PriceInfoVO> list = null, PriceInfoVO vo = null)
         {
             InitializeComponent();
             if (edit == EditMode.Insert)
             {
                 this.Text = "자재단가 등록";
                 this.edit = EditMode.Insert;
+                this.list = list;
             }
             else if (edit == EditMode.Update)
             {
@@ -49,8 +51,6 @@ namespace Team3
                 {
                     price_service = new PriceService();
                     PriceInfoVO vo = new PriceInfoVO();
-
-
 
                     vo.product_id= Convert.ToInt32(cboProduct.SelectedValue);
                     vo.company_id= Convert.ToInt32(cboCompany.SelectedValue);
@@ -132,6 +132,9 @@ namespace Team3
                 //txt수정자
                 txtNote.Text = vo.price_comment;
 
+
+                txtModifyDate.Enabled = false;
+                txtEndDate.Enabled = false;
             }
         }
 
@@ -162,6 +165,41 @@ namespace Team3
             #endregion
 
             
+        }
+
+        private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProduct.SelectedIndex == 0)
+            {
+                return;
+            }
+            else
+            {
+                if (edit == EditMode.Insert)
+                {
+
+                    List<PriceInfoVO> p_list = (from item in list
+                                                where item.product_id == Convert.ToInt32(cboProduct.SelectedValue) && item.price_edate == "9999-12-31"
+                                                select item).ToList();
+                    if (p_list.Count > 0)
+                    {
+                        txtBeforePrice.Text = p_list[0].price_present.ToString();
+                        cboCompany.SelectedValue = p_list[0].company_id;
+                        txtEndDate.Text = p_list[0].price_edate;
+                        txtNote.Text = p_list[0].price_comment;
+                        txtModifyDate.Text = p_list[0].price_udate;
+                        txtModifier.Text = p_list[0].price_uadmin;
+                        cboIsUsed.SelectedValue = p_list[0].price_yn;
+
+                    }
+                    else
+                    {
+                        txtBeforePrice.Text = "";
+                    }
+
+                }
+
+            }
         }
     }
 }

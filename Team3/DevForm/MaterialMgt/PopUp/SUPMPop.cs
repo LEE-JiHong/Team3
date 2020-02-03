@@ -119,21 +119,29 @@ namespace Team3
         private void SUPMPop_Load(object sender, EventArgs e)
         {
             CboBinding();
+            SetUpdateLoad();
+        }
+
+        private void SetUpdateLoad()
+        {
             if (edit == EditMode.Update)
             {
                 cboCompany.SelectedValue = vo.company_id;
                 cboProduct.SelectedValue = vo.product_id;
                 cboIsUsed.SelectedValue = vo.price_yn;
-                txtBeforePrice.Text = vo.price_present.ToString();
-                txtCurrentPrice.Text = vo.price_past.ToString();
+                txtBeforePrice.Text =  vo.price_past.ToString();
+                txtCurrentPrice.Text = vo.price_present.ToString();
                 dtpStartDate.Value = Convert.ToDateTime(vo.price_sdate);
                 txtEndDate.Text = vo.price_edate;
                 txtModifyDate.Text = vo.price_udate;
                 //txt수정자
                 txtNote.Text = vo.price_comment;
 
+                txtModifyDate.Enabled = false;
+                txtEndDate.Enabled = false;
             }
         }
+
         private void CboBinding()
         {
             OrderService order_service = new OrderService();
@@ -171,18 +179,30 @@ namespace Team3
             }
             else
             {
-                List<PriceInfoVO> p_list = (from item in list
-                                            where item.product_id == Convert.ToInt32(cboProduct.SelectedValue) && item.price_edate == "9999-12-31"
-                                            select item).ToList();
+                if (edit == EditMode.Insert)
+                {
 
-                if (p_list.Count > 0)
-                {
-                    txtBeforePrice.Text = p_list[0].price_present.ToString();
+                    List<PriceInfoVO> p_list = (from item in list
+                                                where item.product_id == Convert.ToInt32(cboProduct.SelectedValue) && item.price_edate == "9999-12-31"
+                                                select item).ToList();
+                    if (p_list.Count > 0)
+                    {
+                        txtBeforePrice.Text = p_list[0].price_present.ToString();
+                        cboCompany.SelectedValue = p_list[0].company_id;
+                        txtEndDate.Text = p_list[0].price_edate;
+                        txtNote.Text = p_list[0].price_comment;
+                        txtModifyDate.Text = p_list[0].price_udate;
+                        txtModifier.Text = p_list[0].price_uadmin;
+                        cboIsUsed.SelectedValue = p_list[0].price_yn;
+
+                    }
+                    else
+                    {
+                        txtBeforePrice.Text = "";
+                    }
+
                 }
-                else
-                {
-                    txtBeforePrice.Text = "";
-                }
+
             }
 
         }

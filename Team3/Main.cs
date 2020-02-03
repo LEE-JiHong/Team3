@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
+using Team3.DevForm.NewFolder1;
+using Team3.DevForm.ShipmentMgt;
 
 namespace Team3
 {
@@ -100,6 +102,7 @@ namespace Team3
             SetTrvImage2(treeView6);
             SetTrvImage(treeView8);
             SetTrvImage2(treeView9);
+            SetTrvImage2(treeView10);
         }
 
         //트리뷰 이미지 설정
@@ -910,6 +913,51 @@ namespace Team3
             else if (e.Node.Text == "자재단가관리")
             {
                 MUPMMgt frm = new MUPMMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
+        }
+
+        private void treeView10_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text == "고객주문별재고현황")
+            {
+                InventoryStatusByOrder frm = new InventoryStatusByOrder();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return; 
+                }
+               
+
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "제품출하")
+            {
+                ProductForwardingMgt frm = new ProductForwardingMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm); 
+            }
+            else if (e.Node.Text == "출하현황")
+            {
+                ShippingStatusMgt frm = new ShippingStatusMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
+            else if (e.Node.Text == "매출마감")
+            {
+                ShipmentClosingMgt frm = new ShipmentClosingMgt();
                 if (ExsistTap(e.Node.Text))
                 {
                     return;
