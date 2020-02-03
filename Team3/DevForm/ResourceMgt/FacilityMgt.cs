@@ -120,6 +120,7 @@ namespace Team3
 
                 SetBottomStatusLabel("선택된 설비가 없습니다");
                 MessageBox.Show("변경할 설비를 선택해주세요");
+                return;
             }
             else
             {
@@ -134,10 +135,12 @@ namespace Team3
                     VO.m_name = rows.Cells[4].Value.ToString();
                     VO.m_use_sector = rows.Cells[5].Value.ToString();
                     VO.m_ok_sector = rows.Cells[6].Value.ToString();
+                   
                     if (rows.Cells[7].Value == null)
                     { VO.m_ng_sector = ""; }
                     else
                         VO.m_ng_sector = rows.Cells[7].Value.ToString();
+
                     VO.m_yn = rows.Cells[11].Value.ToString();
                     VO.m_os_yn = rows.Cells[8].Value.ToString();
                     VO.m_uadmin = rows.Cells[12].Value.ToString();
@@ -173,11 +176,6 @@ namespace Team3
             txtDate.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            lblID2.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -306,6 +304,11 @@ namespace Team3
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID2.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

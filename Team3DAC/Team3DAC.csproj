@@ -55,6 +55,7 @@
     <Compile Include="ResourceDac.cs" />
     <Compile Include="ShiftDac.cs" />
     <Compile Include="PriceDac.cs" />
+    <Compile Include="ShipmentDac.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAC.xml">

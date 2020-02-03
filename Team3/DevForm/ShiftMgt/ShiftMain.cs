@@ -18,22 +18,12 @@ namespace Team3
             InitializeComponent();
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            ShiftService S_service = new ShiftService();
-            
-            ShiftPop frm = new ShiftPop();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
 
-            }
-        }
-
+        ShiftService S_service = new ShiftService();
         private void ShiftMain_Load(object sender, EventArgs e)
         {
-            ShiftService S_service = new ShiftService();
-            DataTable dt = S_service.GetShiftAll();
-            dataGridView1.DataSource = dt;
+            //     ShiftService S_service = new ShiftService();
+            LoadData();
 
             ResourceService R_service = new ResourceService();
             List<MachineVO> m_list = R_service.GetMachineAll();
@@ -47,6 +37,42 @@ namespace Team3
                               where shift.common_type == "shift_code"
                               select shift).ToList();
             ComboUtil.ComboBinding(cboShift, shift_code, "common_value", "common_name");
+        }
+
+        private void LoadData()
+        {
+            DataTable dt = S_service.GetShiftAll();
+            dataGridView1.DataSource = dt;
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            ShiftService S_service = new ShiftService();
+
+            ShiftPop frm = new ShiftPop(ShiftPop.EditMode.Input);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                
+                LoadData();
+                SetBottomStatusLabel("등록 성공");
+                MessageBox.Show("등록 성공");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ShiftPop frm = new ShiftPop(ShiftPop.EditMode.Update, lblID.Text);
+            if(frm.ShowDialog()==DialogResult.OK)
+            {
+                LoadData();
+                SetBottomStatusLabel("수정 성공");
+                MessageBox.Show("수정 성공");
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

@@ -12,10 +12,36 @@ namespace Team3
 {
     public partial class ShiftPop : Team3.DialogForm
     {
+
         DateTime today = DateTime.Now;
-        public ShiftPop()
+        public enum EditMode { Input, Update };
+        EditMode mode;
+
+
+        public ShiftPop(EditMode editMode)
         {
             InitializeComponent();
+            if (editMode == EditMode.Update)
+            {
+                mode = EditMode.Update;
+            }
+            if (editMode == EditMode.Input)
+            {
+                mode = EditMode.Input;
+            }
+        }
+        public ShiftPop(EditMode editMode, string i)
+        {
+            InitializeComponent();
+            if (editMode == EditMode.Update)
+            {
+                mode = EditMode.Update;
+                lblID.Text = i;
+            }
+            if (editMode == EditMode.Input)
+            {
+                mode = EditMode.Input;
+            }
         }
 
         private void ShiftPop_Load(object sender, EventArgs e)
@@ -46,6 +72,8 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool bResult = false;
+
             ShiftVO vo = new ShiftVO();
             ShiftService S_service = new ShiftService();
             vo.m_id = int.Parse(cboM_code.SelectedValue.ToString());
@@ -53,15 +81,40 @@ namespace Team3
             vo.shift_stime = txtStime.Text;
             vo.shift_etime = txtEtime.Text;
             vo.shift_sdate = dtpSdate.Value.ToShortDateString();
-            vo.shift_edate = dtpEdate.Value.ToShortDateString(); 
+            vo.shift_edate = dtpEdate.Value.ToShortDateString();
             vo.shift_udate = txtUdate.Text;
             vo.shift_uadmin = txtUadmin.Text;
             vo.shift_yn = cboYN.Text;
             vo.shift_comment = txtComment.Text;
-             S_service.InsertShift(vo);
-            this.DialogResult = DialogResult.OK;
-             
+            if (mode == EditMode.Input)
+            {
+                bResult = S_service.InsertShift(vo);
+                this.DialogResult = DialogResult.OK;
+                if (bResult)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else if (!bResult)
+                {
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
 
+            }
+            if (mode == EditMode.Update)
+            {
+                vo.s_id = Convert.ToInt32(lblID.Text);
+                bResult = S_service.UpdateShift(vo);
+                if (bResult)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else if (!bResult)
+                {
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+            }
         }
     }
 }

@@ -23,5 +23,10 @@ namespace Team3
             ShiftDac dac = new ShiftDac();
             return dac.InsertShift(vo);
         }
+        public bool UpdateShift(ShiftVO vo)
+        {
+            ShiftDac dac = new ShiftDac();
+            return dac.UpdateShift(vo);
+        }
     }
 }

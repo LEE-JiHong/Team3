@@ -98,7 +98,6 @@ namespace Team3
         private void SetDgvNumbering(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             StringFormat drawFormat = new StringFormat();
-            //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
             drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
 
             using (Brush brush = new SolidBrush(Color.Black))
