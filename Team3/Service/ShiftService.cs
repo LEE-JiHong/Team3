@@ -28,5 +28,15 @@ namespace Team3
             ShiftDac dac = new ShiftDac();
             return dac.UpdateShift(vo);
         }
+        public ShiftVO GetShiftByID(int i)
+        {
+            ShiftDac dac = new ShiftDac();
+            return dac.GetShiftByID(i);
+        }
+        public bool DeleteShift(int i)
+        {
+            ShiftDac dac = new ShiftDac();
+            return dac.DeleteShift(i);
+        }
     }
 }

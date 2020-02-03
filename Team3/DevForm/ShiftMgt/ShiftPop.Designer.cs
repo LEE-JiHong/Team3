@@ -73,6 +73,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtUadmin);
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.dtpEdate);
             this.panel2.Controls.Add(this.dtpSdate);
@@ -88,7 +89,6 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtUdate);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.txtUadmin);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);

@@ -10,7 +10,10 @@ namespace Team3VO
     {
         public int   s_id { get; set; }
         public int   m_id { get; set; }
+        public string m_code { get; set; }
+        public string m_name { get; set; }
         public string shift_id { get; set; }
+        public string shift_name { get; set; }
         public string shift_stime { get; set; }
         public string shift_etime { get; set; }
         public string shift_sdate { get; set; }

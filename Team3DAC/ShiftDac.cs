@@ -88,5 +88,35 @@ namespace Team3DAC
 
             }
         }
+        public ShiftVO GetShiftByID(int i)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetShiftByID";
+                cmd.Parameters.AddWithValue("@s_id", i);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(reader);
+                cmd.Connection.Close();
+                return list[0];
+            }
+        }
+        public bool DeleteShift(int i)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "delete from TBL_MACHINE_SHIFT where s_id=@id; ";
+                cmd.Parameters.AddWithValue("@id", i);
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+
+            }
+        }
     }
 }

@@ -21,28 +21,26 @@ namespace Team3
         ProductionService service = new ProductionService();
         ResourceService R_service = new ResourceService();
 
+      
         private void ProductPlan_Load(object sender, EventArgs e)
         {
+            dataGridView1.Visible = false;
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_name", true);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "bor_route", true);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품코드", "product_codename", true);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품명", "producct_name", true);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "영업마스터ID", "plan_id", false);
+            
+                InitComboBox();
 
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "bor_route", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품코드", "product_codename", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품명", "producct_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "영업마스터ID", "plan_id", false);
-            InitComboBox();
-
-            DateTime today = DateTime.Now;
-            dataGridView1.AllowUserToAddRows = false;
-            //string startDate = today.AddDays(-10).ToString("yyyyMMdd");
-            //string endDate = today.AddDays(20).ToString("yyyyMMdd");
-            dateTimePicker1.Value = today.AddDays(-10);
-            dateTimePicker2.Value = today.AddDays(20);
-
-            //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
-
-
-            //  dataGridView1.DataSource = dt;
-           
+                DateTime today = DateTime.Now;
+                dataGridView1.AllowUserToAddRows = false;
+                //string startDate = today.AddDays(-10).ToString("yyyyMMdd");
+                //string endDate = today.AddDays(20).ToString("yyyyMMdd");
+                dateTimePicker1.Value = today.AddDays(-10);
+                dateTimePicker2.Value = today.AddDays(20);
+                //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
+                //  dataGridView1.DataSource = dt;
         }
 
         private void InitComboBox()
@@ -58,7 +56,7 @@ namespace Team3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.Visible = true;
             string Machine = cboMachine.Text;
             DataTable  dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString()); ;
             DataTable table = new DataTable ();

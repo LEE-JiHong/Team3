@@ -46,7 +46,25 @@ namespace Team3
 
         private void ShiftPop_Load(object sender, EventArgs e)
         {
+            ShiftService S_service = new ShiftService();
+
             InitComboBind();
+            if (mode == EditMode.Update)
+            {
+                ShiftVO vo = S_service.GetShiftByID(Convert.ToInt32(lblID.Text));
+                cboM_code.Text = vo.m_code;
+                cboShiftID.Text = vo.shift_name;
+                txtStime.Text = vo.shift_stime;
+                txtEtime.Text = vo.shift_etime;
+                dtpSdate.Value = Convert.ToDateTime(vo.shift_sdate);
+                dtpEdate.Value = Convert.ToDateTime(vo.shift_edate);
+                cboYN.Text = vo.shift_yn;
+                txtComment.Text = vo.shift_comment;
+                txtUadmin.Text = vo.shift_uadmin;
+                txtUdate.Text = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
+
+
+            }
         }
 
         private void InitComboBind()
@@ -72,6 +90,12 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (dtpSdate.Value > dtpEdate.Value)
+            {
+                MessageBox.Show("시작일과 종료일을 확인해주세요");
+                this.DialogResult = DialogResult.None;
+                return;
+            }
             bool bResult = false;
 
             ShiftVO vo = new ShiftVO();
