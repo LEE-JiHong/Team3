@@ -963,6 +963,26 @@ namespace Team3
                     return;
                 }
 
+                MadeTabMenu(frm); 
+            }
+            else if (e.Node.Text == "매출마감현황")
+            {
+                ShipmentClosingStatusMgt frm = new ShipmentClosingStatusMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm); 
+            }
+            else if (e.Node.Text == "거래처별월마감")
+            {
+                ShipmentClosingMonthMgt frm = new ShipmentClosingMonthMgt();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
                 MadeTabMenu(frm);
             }
         }
