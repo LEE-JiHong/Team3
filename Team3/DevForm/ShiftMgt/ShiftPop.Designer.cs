@@ -48,6 +48,7 @@
             this.txtEtime = new System.Windows.Forms.MaskedTextBox();
             this.dtpSdate = new System.Windows.Forms.DateTimePicker();
             this.dtpEdate = new System.Windows.Forms.DateTimePicker();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.dtpEdate);
             this.panel2.Controls.Add(this.dtpSdate);
             this.panel2.Controls.Add(this.txtEtime);
@@ -290,6 +292,14 @@
             this.dtpEdate.Size = new System.Drawing.Size(145, 21);
             this.dtpEdate.TabIndex = 5;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(140, 14);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 15);
+            this.lblID.TabIndex = 10;
+            // 
             // ShiftPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -326,5 +336,6 @@
         private System.Windows.Forms.MaskedTextBox txtEtime;
         private System.Windows.Forms.DateTimePicker dtpEdate;
         private System.Windows.Forms.DateTimePicker dtpSdate;
+        private System.Windows.Forms.Label lblID;
     }
 }

@@ -74,13 +74,13 @@ namespace Team3
 
         //    LinearGradientBrush br = new LinearGradientBrush(this.button3.ClientRectangle, System.Drawing.Color.Black, System.Drawing.Color.Black, 0, false);
 
-           
+
 
         //    ColorBlend cb = new ColorBlend();
         //    cb.Positions = new[] { 0, 1 / 2f, 1 };
         //    cb.Colors = new[] { startColor, middleColor, endColor };
         //    br.InterpolationColors = cb;
-            
+
         //    br.RotateTransform(0);
         //    e.Graphics.FillRectangle(br, this.ClientRectangle);
         //    button3.Text = "관리";
@@ -140,7 +140,7 @@ namespace Team3
             if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
             {
                 MainTab.Controls.Remove(MainTab.SelectedTab);
-                MainTab.SelectedTab = MainTab.TabPages[MainTab.Controls.Count-1];
+                MainTab.SelectedTab = MainTab.TabPages[MainTab.Controls.Count - 1];
             }
         }
         public void GetForm(string name)
@@ -163,6 +163,10 @@ namespace Team3
                 case "BOR":
                     BOR BOR = new BOR();
                     MadeTabMenu(BOR);
+                    break;
+                case "Shift기준정보":
+                    ShiftMain shiftMain = new ShiftMain();
+                    MadeTabMenu(shiftMain);
                     break;
 
                 //품목관리
@@ -302,7 +306,11 @@ namespace Team3
                     BOR = (BOR)InitForm(BOR);
                     BOR.SubWindowState = WinState.independ;
                     break;
-
+                case "Shift기준정보":
+                    ShiftMain shiftMain = new ShiftMain();
+                    shiftMain = (ShiftMain)InitForm(shiftMain);
+                    shiftMain.SubWindowState = WinState.independ;
+                    break;
                 //품목관리
                 case "품목관리":
                     ProductMgt ProductMgt = new ProductMgt();
@@ -440,7 +448,7 @@ namespace Team3
 
         private Form InitForm(Form frm)
         {
-            frm.Tag = MainTab.SelectedTab.Text;           
+            frm.Tag = MainTab.SelectedTab.Text;
             frm.ControlBox = true;
             frm.FormBorderStyle = FormBorderStyle.FixedSingle;
             frm.ShowIcon = true;
@@ -482,7 +490,7 @@ namespace Team3
 
         public void MadeTabMenu(nomalBaseForm frm, int state = 0)
         {
-      
+
             frm.SubWindowState = WinState.sub;
             frm.ControlBox = false;
             frm.FormBorderStyle = FormBorderStyle.None;
@@ -493,9 +501,9 @@ namespace Team3
 
             TabPage p1 = new TabPage();
             p1.Tag = frm.Tag.ToString();
-            p1.BackColor = Color.AliceBlue;  
+            p1.BackColor = Color.AliceBlue;
             p1.Text = frm.Tag.ToString();
-            
+
             foreach (TabPage item in MainTab.Controls)
             {
                 if (item.Tag.ToString() == p1.Tag.ToString())
@@ -548,7 +556,7 @@ namespace Team3
             }
 
             LeftMenuTab.HorizontalScroll.SmallChange = 10;
-    }
+        }
 
         private void InitLeftTab()
         {
@@ -701,7 +709,7 @@ namespace Team3
                 MadeTabMenu(frm);
             }
             else if (e.Node.Text == "설비관리")
-            {         
+            {
                 facilityMgt frm = new facilityMgt();
                 if (ExsistTap(e.Node.Text))
                 {
@@ -710,7 +718,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            if (e.Node.Text == "업체관리")
+            else if (e.Node.Text == "업체관리")
             {
                 businessMgt frm = new businessMgt();
                 if (ExsistTap(e.Node.Text))
@@ -730,11 +738,21 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
+            else if (e.Node.Text == "Shift기준정보")
+            {
+                ShiftMain frm = new ShiftMain();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
+
+                MadeTabMenu(frm);
+            }
         }
 
         private void treeView2_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if(e.Node.Text == "품목관리")
+            if (e.Node.Text == "품목관리")
             {
                 ProductMgt frm = new ProductMgt();
                 if (ExsistTap(e.Node.Text))
@@ -744,7 +762,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            else if(e.Node.Text == "BOM")
+            else if (e.Node.Text == "BOM")
             {
                 BomMgt frm = new BomMgt();
                 if (ExsistTap(e.Node.Text))

@@ -13,7 +13,7 @@ using Team3VO;
 
 namespace Team3DAC
 {
-   public class ShiftDac : ConnectionAccess
+    public class ShiftDac : ConnectionAccess
     {
         public DataTable GetShiftAll()
         {
@@ -25,8 +25,8 @@ namespace Team3DAC
                 cmd.Connection.Open();
                 DataTable table = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                
-                 
+
+
                 da.Fill(table);
                 da.Dispose();
 
@@ -43,7 +43,35 @@ namespace Team3DAC
 
                 cmd.Parameters.AddWithValue("@m_id", vo.m_id);
                 cmd.Parameters.AddWithValue("@shift_id", vo.shift_id);
-                 cmd.Parameters.AddWithValue("@shift_stime", vo.shift_stime);
+                cmd.Parameters.AddWithValue("@shift_stime", vo.shift_stime);
+                cmd.Parameters.AddWithValue("@shift_etime", vo.shift_etime);
+                cmd.Parameters.AddWithValue("@shift_sdate", vo.shift_sdate);
+                cmd.Parameters.AddWithValue("@shift_edate", vo.shift_edate);
+                cmd.Parameters.AddWithValue("@shift_yn", vo.shift_yn);
+                cmd.Parameters.AddWithValue("@shift_uadmin", vo.shift_uadmin);
+                cmd.Parameters.AddWithValue("@shift_udate", vo.shift_udate);
+                cmd.Parameters.AddWithValue("@shift_comment", vo.shift_comment);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
+
+            }
+        }
+
+        public bool UpdateShift(ShiftVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "UpdateShift";
+
+                cmd.Parameters.AddWithValue("@s_id", vo.s_id);
+                cmd.Parameters.AddWithValue("@m_id", vo.m_id);
+                cmd.Parameters.AddWithValue("@shift_id", vo.shift_id);
+                cmd.Parameters.AddWithValue("@shift_stime", vo.shift_stime);
                 cmd.Parameters.AddWithValue("@shift_etime", vo.shift_etime);
                 cmd.Parameters.AddWithValue("@shift_sdate", vo.shift_sdate);
                 cmd.Parameters.AddWithValue("@shift_edate", vo.shift_edate);
