@@ -39,7 +39,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업태", "company_gtype", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "담당자", "user_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "담당자id", "user_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이메일", "company_email", true); 
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이메일", "company_email", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "전화번호", "company_phone", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "팩스", "company_fax", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "company_uadmin", true);
@@ -47,8 +47,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체정보", "company_comment", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "company_yn", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체발주코드", "company_order_code", false);
-            
-           
+
+
             LoadData();
 
             common_service = new CommonCodeService();
@@ -74,6 +74,7 @@ namespace Team3
             CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Input);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+
                 LoadData();
                 MessageBox.Show("신규 거래처 등록 성공");
                 SetBottomStatusLabel("신규 거래처 등록 성공");
@@ -184,6 +185,125 @@ namespace Team3
             catch (Exception err)
             {
                 string str = err.Message;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            lst = service.GetCompanyAll();
+
+            // 코드만 입력
+            if (txtCodeCompany.Text != "")
+            {   //이름+
+                if (txtNameCompany.Text != "")
+                { //사업자번호 +
+                    if(txtLicenseNum.Text != "")
+                    {
+                        var A_code = (from code in lst
+                                      where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
+                                      && code.company_cnum.Contains(txtLicenseNum.Text)
+                                      select code).ToList();
+                        dataGridView2.DataSource = A_code;
+                    }
+                    //코드 + 이름
+                    var c_code = (from code in lst
+                                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
+                                  select code).ToList();
+                    dataGridView2.DataSource = c_code;
+                }
+
+                else if(txtLicenseNum.Text != "")
+                {
+                    var c_code = (from code in lst
+                                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_cnum.Contains(txtLicenseNum.Text)
+                                  select code).ToList();
+                    dataGridView2.DataSource = c_code;
+                }
+
+                else if(cboTypeCompany.Text != "미선택")
+                {
+                    var c_code = (from code in lst
+                                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
+                                  select code).ToList();
+                    dataGridView2.DataSource = c_code;
+                }
+
+                else
+                {
+                    var c_code = (from code in lst
+                                  where code.company_code.Contains(txtCodeCompany.Text)
+                                  select code).ToList();
+                    dataGridView2.DataSource = c_code;
+                }
+            }
+            //이름만 입력
+            else if (txtNameCompany.Text != "")
+            {
+                var c_code = (from code in lst
+                              where code.company_name.Contains(txtNameCompany.Text)
+                              select code).ToList();
+                dataGridView2.DataSource = c_code;
+            }
+            //사업자번호만 입력
+            else if (txtLicenseNum.Text != "")
+            {
+                var c_code = (from code in lst
+                              where code.company_cnum.Contains(txtLicenseNum.Text)
+                              select code).ToList();
+                dataGridView2.DataSource = c_code;
+            }
+            //타입만 선택
+            else if (cboTypeCompany.Text != "미선택")
+            {
+                var c_code = (from code in lst
+                              where code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
+                              select code).ToList();
+                dataGridView2.DataSource = c_code;
+            }
+
+            ////코드와 이름만 입력
+            //if (txtCodeCompany.Text != "" && txtNameCompany.Text != "")
+            //{
+            //    var c_code = (from code in lst
+            //                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
+            //                  select code).ToList();
+            //    dataGridView2.DataSource = c_code;
+            //}
+            //코드와 사업자번호 입력
+            //else if (txtCodeCompany.Text != "" && txtLicenseNum.Text != "")
+            //{
+            //    var c_code = (from code in lst
+            //                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_cnum.Contains(txtLicenseNum.Text)
+            //                  select code).ToList();
+            //    dataGridView2.DataSource = c_code;
+            //}
+            ////코드, 타입
+            //else if (txtCodeCompany.Text != "" && cboTypeCompany.Text != "미선택")
+            //{
+            //    var c_code = (from code in lst
+            //                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
+            //                  select code).ToList();
+            //    dataGridView2.DataSource = c_code;
+            //}
+
+
+            //코드, 이름, 사업자 번호 입력
+            if (txtCodeCompany.Text != "" && txtNameCompany.Text != "" && txtLicenseNum.Text != "")
+            {
+                var c_code = (from code in lst
+                              where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
+                              && code.company_cnum.Contains(txtLicenseNum.Text)
+                              select code).ToList();
+                dataGridView2.DataSource = c_code;
+            }
+            //모두 입력
+            if (txtCodeCompany.Text != "" && txtNameCompany.Text != "" && txtLicenseNum.Text != "" && (cboTypeCompany.Text != "미선택"))
+            {
+                var c_code = (from code in lst
+                              where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
+                              && code.company_cnum.Contains(txtLicenseNum.Text) && code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
+                              select code).ToList();
+                dataGridView2.DataSource = c_code;
             }
         }
     }

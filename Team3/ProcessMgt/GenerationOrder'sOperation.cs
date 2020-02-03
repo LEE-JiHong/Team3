@@ -22,14 +22,31 @@ namespace Team3
         private void GOO_Load(object sender, EventArgs e)
         {
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AllowUserToAddRows = false;
             comboBox1.Items.Add("계획시작");
             comboBox1.Items.Add("납기일");
             comboBox1.Items.Add("등록시간");
             comboBox1.SelectedIndex = 0;
-            dateTimePicker1.Value = DateTime.Now.AddDays(-1);
+            dateTimePicker1.Value = DateTime.Now.AddDays(-7);
             dateTimePicker2.Value = DateTime.Now.AddDays(7);
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            checkBoxColumn.HeaderText = "선택";
             dataGridView1.Columns.Add(checkBoxColumn);
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "WorkID", true, 60);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상태", "pro_state", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비코드", "m_code", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "계획수량", "pro_count", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "지시수량", "pro_pcount", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "계획시작일", "pro_date", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "마스터ID", "plan_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품ID", "pro_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "소요시간", "use_time", true);
+
 
             LoadData();
         }
@@ -94,7 +111,7 @@ namespace Team3
                 {
                     P_service.UpdateCommand(Convert.ToInt32(lst[i].ToString()), strlist[i].ToString());
                 }
-                
+
 
             }
             catch (Exception err)

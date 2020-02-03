@@ -87,7 +87,7 @@ namespace Team3
 
                     txtCodeCompany.Text = vo.company_code;
                     txtNameCompany.Text = vo.company_name;
-                    cboCompanyType.Text = vo.company_type;
+                    cboCompanyType.Text = vo.common_name;
                     txtCEO.Text = vo.company_ceo;
                     txtCnum.Text = vo.company_cnum;
                     txtbtype.Text = vo.company_btype;
