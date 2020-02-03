@@ -20,7 +20,14 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SUPMPop frm = new SUPMPop(SUPMPop.EditMode.Insert);
+            List<PriceInfoVO> list = new List<PriceInfoVO>();
+            foreach (DataGridViewRow row in this.dgvSUPM.Rows)
+            {
+                PriceInfoVO vo = new PriceInfoVO();
+                vo = row.DataBoundItem as PriceInfoVO;
+                list.Add(vo);            
+            }
+            SUPMPop frm = new SUPMPop(SUPMPop.EditMode.Insert, list);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 price_service = new PriceService();
@@ -77,7 +84,7 @@ namespace Team3
                 vo = row.DataBoundItem as PriceInfoVO;
             }
 
-            SUPMPop frm = new SUPMPop(SUPMPop.EditMode.Update, vo);
+            SUPMPop frm = new SUPMPop(SUPMPop.EditMode.Update, null,vo);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 price_service = new PriceService();

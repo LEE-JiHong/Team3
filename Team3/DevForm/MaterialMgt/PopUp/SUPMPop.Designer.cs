@@ -109,6 +109,10 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Size = new System.Drawing.Size(630, 444);
+            // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
@@ -230,6 +234,7 @@
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(177, 23);
             this.cboProduct.TabIndex = 62;
+            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
             // 
             // cboIsUsed
             // 
@@ -352,6 +357,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SUPMPop";
             this.Load += new System.EventHandler(this.SUPMPop_Load);
+            this.Controls.SetChildIndex(this.panel4, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);

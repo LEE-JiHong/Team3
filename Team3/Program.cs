@@ -27,8 +27,8 @@ namespace Team3
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-              Application.Run(new Main());
-          //  Application.Run(new ShiftMain());
+            Application.Run(new Main());
+            //Application.Run(new ShiftMain());
 
         }
 
