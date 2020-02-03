@@ -124,13 +124,13 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
             grid.AutoGenerateColumns = false;
             grid.AllowUserToAddRows = false;
 
-            grid.RowsDefaultCellStyle.BackColor = Color.Bisque;
-            grid.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            grid.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            grid.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
 
             grid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grid.DefaultCellStyle.SelectionBackColor = Color.Teal;
-            grid.DefaultCellStyle.SelectionForeColor = Color.Yellow;
+            //grid.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
+            //grid.DefaultCellStyle.SelectionForeColor = Color.Yellow;
 
             grid.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             //grid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

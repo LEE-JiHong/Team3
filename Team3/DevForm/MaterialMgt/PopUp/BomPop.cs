@@ -106,7 +106,7 @@ namespace Team3
                     }
                     else
                     {
-                        vo.bom_parent_id = (cboParentProduct.SelectedValue==null)?"": cboParentProduct.SelectedValue.ToString();
+                        vo.bom_parent_id = (cboParentProduct.SelectedValue == null) ? "" : cboParentProduct.SelectedValue.ToString();
                     }
                     vo.bom_id = this.vo.bom_id;
                     vo.product_id = Convert.ToInt32(cboProduct.SelectedValue);
@@ -148,22 +148,19 @@ namespace Team3
                 IsNullCbo(vo.bom_yn, cboIsUsed);
                 IsNullCbo(vo.plan_yn, cboRequiredPlan);
 
-
-
                 txtUseCount.Text = vo.bom_use_count.ToString();
                 txtModifier.Text = vo.bom_uadmin;
                 txtModifyDate.Text = vo.bom_udate;
                 txtNote.Text = vo.bom_comment;
-                dtpEndDate.Value = Convert.ToDateTime( vo.bom_edate);
-                dtpStartDate.Value = Convert.ToDateTime( vo.bom_sdate);
-                
+                dtpEndDate.Value = Convert.ToDateTime(vo.bom_edate);
+                dtpStartDate.Value = Convert.ToDateTime(vo.bom_sdate);
             }
 
         }
 
         private void IsNullCbo2(int vo, ComboBox cbo)
         {
-                cbo.SelectedValue = vo;
+            cbo.SelectedValue = vo;
         }
 
         private void IsNullCbo(string vo, ComboBox cbo)

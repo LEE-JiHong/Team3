@@ -110,6 +110,10 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Size = new System.Drawing.Size(630, 444);
+            // 
             // txtBeforePrice
             // 
             this.txtBeforePrice.Location = new System.Drawing.Point(387, 46);
@@ -157,6 +161,7 @@
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(177, 23);
             this.cboProduct.TabIndex = 39;
+            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
             // 
             // cboIsUsed
             // 
@@ -354,6 +359,7 @@
             this.Name = "MUPMPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MUPMPop_Load);
+            this.Controls.SetChildIndex(this.panel4, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);

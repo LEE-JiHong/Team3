@@ -26,7 +26,7 @@ namespace Team3
             //dataGridView1.Columns.Add("공급L/T", "P/N");
             //dataGridView1.Columns.Add("표준발주", "P/N");
             //dataGridView1.Columns.Add("현재고", "P/N");
-
+            //GridViewUtil.SetDataGridView(dataGridView1);
             SetCombo();
         }
         private void SetCombo()
@@ -57,6 +57,7 @@ namespace Team3
 
             OrderService service = new OrderService();
             dataGridView1.DataSource = service.GetMRP(planID, dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString());
+            
         }
     }
 }

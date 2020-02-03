@@ -11,7 +11,7 @@ namespace Team3
 {
     class PurchasingService
     {
-        public DataTable GetOrderList(string planID)
+        public DataSet GetOrderList(string planID)
         {
             PurchasingDAC dac = new PurchasingDAC();
             return dac.GetOrderList(planID);

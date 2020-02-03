@@ -52,19 +52,19 @@
             // panel6
             // 
             this.panel6.Location = new System.Drawing.Point(309, 92);
-            this.panel6.Size = new System.Drawing.Size(376, 298);
+            this.panel6.Size = new System.Drawing.Size(888, 425);
             // 
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(12, 92);
-            this.panel5.Size = new System.Drawing.Size(267, 298);
+            this.panel5.Size = new System.Drawing.Size(267, 425);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Controls.Add(this.cboCompany);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Size = new System.Drawing.Size(673, 49);
+            this.panel4.Size = new System.Drawing.Size(1185, 49);
             // 
             // lblMasterName
             // 
@@ -92,21 +92,21 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.flowLayoutPanel1);
-            this.panel8.Location = new System.Drawing.Point(211, 11);
+            this.panel8.Location = new System.Drawing.Point(723, 11);
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.dgvOrdering);
-            this.panel10.Size = new System.Drawing.Size(351, 234);
+            this.panel10.Size = new System.Drawing.Size(863, 361);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.dgvCompany);
-            this.panel9.Size = new System.Drawing.Size(245, 234);
+            this.panel9.Size = new System.Drawing.Size(245, 361);
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(235, 506);
+            this.panel3.Location = new System.Drawing.Point(485, 633);
             // 
             // btnCancel
             // 
@@ -118,27 +118,29 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.Text = "발주";
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(697, 36);
+            this.panel1.Location = new System.Drawing.Point(27, 21);
+            this.panel1.Size = new System.Drawing.Size(1209, 36);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(696, 411);
+            this.panel2.Location = new System.Drawing.Point(27, 85);
+            this.panel2.Size = new System.Drawing.Size(1208, 538);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(656, 7);
+            this.button1.Location = new System.Drawing.Point(1168, 7);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 17);
+            this.label2.Location = new System.Drawing.Point(27, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 5;
@@ -147,9 +149,9 @@
             // cboCompany
             // 
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(73, 13);
+            this.cboCompany.Location = new System.Drawing.Point(69, 12);
             this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(266, 23);
+            this.cboCompany.Size = new System.Drawing.Size(197, 23);
             this.cboCompany.TabIndex = 6;
             // 
             // flowLayoutPanel1
@@ -177,27 +179,36 @@
             this.btnAddOrder.Text = "발주";
             this.btnAddOrder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddOrder.UseVisualStyleBackColor = false;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // dgvCompany
             // 
+            this.dgvCompany.AllowUserToAddRows = false;
+            this.dgvCompany.AllowUserToDeleteRows = false;
             this.dgvCompany.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCompany.Location = new System.Drawing.Point(0, 0);
             this.dgvCompany.Name = "dgvCompany";
+            this.dgvCompany.ReadOnly = true;
             this.dgvCompany.RowTemplate.Height = 23;
-            this.dgvCompany.Size = new System.Drawing.Size(245, 234);
+            this.dgvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCompany.Size = new System.Drawing.Size(245, 361);
             this.dgvCompany.TabIndex = 0;
             // 
             // dgvOrdering
             // 
+            this.dgvOrdering.AllowUserToAddRows = false;
+            this.dgvOrdering.AllowUserToDeleteRows = false;
             this.dgvOrdering.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvOrdering.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrdering.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrdering.Location = new System.Drawing.Point(0, 0);
+            this.dgvOrdering.MultiSelect = false;
             this.dgvOrdering.Name = "dgvOrdering";
             this.dgvOrdering.RowTemplate.Height = 23;
-            this.dgvOrdering.Size = new System.Drawing.Size(351, 234);
+            this.dgvOrdering.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrdering.Size = new System.Drawing.Size(863, 361);
             this.dgvOrdering.TabIndex = 0;
             // 
             // btnSearch
@@ -210,7 +221,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(594, 8);
+            this.btnSearch.Location = new System.Drawing.Point(1106, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(65, 30);
             this.btnSearch.TabIndex = 90;
@@ -221,7 +232,7 @@
             // OrderDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(752, 565);
+            this.ClientSize = new System.Drawing.Size(1264, 692);
             this.Name = "OrderDialog";
             this.Load += new System.EventHandler(this.OrderDialog_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
