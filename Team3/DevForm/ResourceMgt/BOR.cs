@@ -26,6 +26,7 @@ namespace Team3
         }
         private void BOR_Load(object sender, EventArgs e)
         {
+            this.ImeMode = ImeMode.Hangul;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bor_id", "bor_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bom_id", "bom_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
@@ -189,6 +190,44 @@ namespace Team3
             catch (Exception err)
             {
                 string str = err.Message;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            list = service.GetBORAll();
+            if (txtItem.Text != "")
+            {
+                List<BORDB_VO> p_list;
+                if (cboProcess.Text != "미선택")
+                {
+                      p_list = (from r_list in list
+                                  where r_list.common_name.Contains(cboProcess.Text) && r_list.product_codename.Contains(txtItem.Text)
+                                  select r_list).ToList();
+                }
+                else
+                {
+                      p_list = (from r_list in list
+                                  where r_list.product_codename.Contains(txtItem.Text)
+                                  select r_list).ToList();
+                }
+                dataGridView1.DataSource = p_list;
+            }
+           else if (cboProcess.Text != "미선택")
+            {
+                var p_list = (from r_list in list
+                              where r_list.common_name.Contains(cboProcess.Text)
+                              select r_list).ToList();
+
+                dataGridView1.DataSource = p_list;
+            }
+            else if (txtFacility.Text != "")
+            {
+                var p_list = (from r_list in list
+                              where r_list.m_name.Contains(txtFacility.Text) || r_list.m_code.Contains(txtFacility.Text)
+                              select r_list).ToList();
+
+                dataGridView1.DataSource = p_list;
             }
         }
     }

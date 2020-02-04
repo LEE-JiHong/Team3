@@ -39,7 +39,7 @@ namespace Team3
 
             ResourceService R_service = new ResourceService();
             List<MachineVO> m_list = R_service.GetMachineAll();
-            ComboUtil.ComboBinding(cboMachine, m_list, "m_id", "m_name");
+            ComboUtil.ComboBinding(cboMachine, m_list, "m_id", "m_name","미선택");
 
             CommonCodeService C_service = new CommonCodeService();
 
@@ -48,7 +48,7 @@ namespace Team3
             var shift_code = (from shift in c_list
                               where shift.common_type == "shift_code"
                               select shift).ToList();
-            ComboUtil.ComboBinding(cboShift, shift_code, "common_value", "common_name");
+            ComboUtil.ComboBinding(cboShift, shift_code, "common_value", "common_name", "전체");
         }
 
         private void LoadData()
@@ -124,6 +124,17 @@ namespace Team3
             catch (Exception err)
             {
                 string str = err.Message;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dt = S_service.GetShiftAll();
+            DataTable table = new DataTable();
+            if (cboShift.Text != "전체")
+            {
+                table = dt.AsEnumerable().Where(Row => Row.Field<string>("common_name") == cboShift.Text).CopyToDataTable();
+                dataGridView1.DataSource = table;
             }
         }
     }
