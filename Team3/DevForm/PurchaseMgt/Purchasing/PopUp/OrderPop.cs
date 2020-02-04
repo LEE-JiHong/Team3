@@ -74,6 +74,7 @@ namespace Team3
             //GridCheckBox(dgvCompany);
             GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "No.", "count", true, 50);
             GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "발주업체", "company_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "업체코드", "company_order_code", true);
         }
 
         private void HeaderCheckbox_Click(object sender, EventArgs e)
@@ -116,13 +117,63 @@ namespace Team3
                 {
                     OrderVO vo = new OrderVO();
                     vo.product_codename = row.Cells[3].Value.ToString();
-                    vo.company_name = row.Cells[2].Value.ToString();
+
+                    for (int i = 0; i < dgvCompany.Rows.Count; i++)
+                    {
+                        if (dgvCompany.Rows[i].Cells[1].Value.ToString() == row.Cells[2].Value.ToString())
+                        {
+                            vo.order_id = dgvCompany.Rows[i].Cells[2].Value.ToString();
+                        }
+                    }
+
                     vo.order_count = Convert.ToInt32(row.Cells[8].Value);
-                    vo.plan_id = row.Cells[1].Value.ToString();
+                    vo.plan_id = row.Cells[1].Value.ToString().Trim();
 
                     list.Add(vo);
                 }
             }
+
+            for (int i = 0; i < dgvCompany.Rows.Count; i++)
+            {
+                List<int> orders = new List<int>();
+                int num = 1;
+                for (int c = 0; c < list.Count; c++)
+                {
+                    if (dgvCompany.Rows[i].Cells[2].Value.ToString() == list[c].order_id)
+                    {
+                        if (!orders.Contains(Convert.ToInt32(dgvCompany.Rows[i].Cells[2].Value)))
+                        {
+                            list[c].order_id += "-" + string.Format("{0:D4}", num);
+                            orders.Add(Convert.ToInt32(dgvCompany.Rows[i].Cells[2].Value));
+                        }
+                        else
+                        {
+                            list[c].order_id += "-" + string.Format("{0:D4}", num);
+                        }
+                        num++;
+                    }
+                }
+            }
+
+            try
+            {
+                PurchasingService service = new PurchasingService();
+                bool result = service.InsertOrder(list);
+
+                if (result)
+                {
+                    MessageBox.Show("성공적으로 발주완료하였습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("발주실패");
+                }
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
         }
     }
 }
