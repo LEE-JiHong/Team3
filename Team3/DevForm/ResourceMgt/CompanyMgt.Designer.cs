@@ -414,6 +414,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(990, 554);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "businessMgt";
             this.Tag = "업체관리";
             this.Text = "업체관리";
