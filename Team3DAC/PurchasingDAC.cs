@@ -52,32 +52,36 @@ namespace Team3DAC
                     cmd.Transaction = tran;
                     cmd.CommandType = CommandType.Text;
 
+                    int num = 1;
+
                     foreach (OrderVO item in list)
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@company_name", item.company_name);
+                        cmd.Parameters.AddWithValue("@product_codename", item.product_codename);
 
-                        cmd.CommandText = @"select company_order_code from TBL_COMPANY where company_name = @company_name";
+                        cmd.CommandText = @"select product_id from TBL_PRODUCT where product_codename = @product_codename";
 
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.Read())
                         {
-                            item.order_id = reader["company_order_code"].ToString();
+                            item.product_id = Convert.ToInt32(reader["product_id"]);
                         }
                         reader.Close();
 
-                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate, so_ocount, so_ccount) " +
-                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate, 0, 0)";
+                        item.order_serial = DateTime.Now.ToShortDateString().Replace("-", "") + string.Format("{0:D4}", num);
+                        num++;
 
-                        //cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
-                        //cmd.Parameters.AddWithValue("@so_wo_id", item.so_wo_id);
-                        //cmd.Parameters.AddWithValue("@company_type", item.company_type);
-                        //cmd.Parameters.AddWithValue("@product_name", item.product_name);
-                        //cmd.Parameters.AddWithValue("@so_pcount", item.so_pcount);
-                        //cmd.Parameters.AddWithValue("@so_edate", item.so_edate);
-                        //cmd.Parameters.AddWithValue("@so_sdate", item.so_sdate);
-                        //cmd.ExecuteNonQuery();
+                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate)";
+
+                        cmd.Parameters.AddWithValue("@order_id", item.order_id);
+                        cmd.Parameters.AddWithValue("@order_count", item.order_count);
+                        cmd.Parameters.AddWithValue("@product_id", item.product_id);
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@order_serial", item.order_serial);
+                        cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
+
+                        cmd.ExecuteNonQuery();
                     }
 
                     tran.Commit();
