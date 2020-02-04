@@ -203,6 +203,7 @@
             this.dgvOrdering.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvOrdering.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrdering.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrdering.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.dgvOrdering.Location = new System.Drawing.Point(0, 0);
             this.dgvOrdering.MultiSelect = false;
             this.dgvOrdering.Name = "dgvOrdering";
