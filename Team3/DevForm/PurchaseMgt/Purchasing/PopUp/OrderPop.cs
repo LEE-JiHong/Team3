@@ -176,6 +176,17 @@ namespace Team3
             }
 
         }
+
+        private void DgvOrdering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //수량 입력하면 체크박스 true
+            if (dgvOrdering.SelectedRows[e.RowIndex].Cells[7].Value.ToString() != "")
+            {
+                //DataGridViewCheckBoxCell chkBox = dgvOrdering.SelectedRows[e.RowIndex].Cells["chk"] as DataGridViewCheckBoxCell;
+                //chkBox.Value = headerCheckBox.Checked;
+                MessageBox.Show("Test");
+            }
+        }
     }
 }
 

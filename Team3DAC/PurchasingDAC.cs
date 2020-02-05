@@ -11,6 +11,11 @@ namespace Team3DAC
 {
     public class PurchasingDAC : ConnectionAccess
     {
+        /// <summary>
+        ///  정규발주 데이터그리드뷰 조회
+        /// </summary>
+        /// <param name="planID"></param>
+        /// <returns></returns>
         public DataSet GetOrderList(string planID)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -39,6 +44,11 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// OrderPop - 발주 insert
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public bool InsertOrder(List<OrderVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -99,6 +109,10 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// 발주현황 조회
+        /// </summary>
+        /// <returns></returns>
         public DataTable GetOrderList()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -119,6 +133,49 @@ namespace Team3DAC
 
                 cmd.Connection.Close();
                 return ds;
+            }
+        }
+
+        /// <summary>
+        /// 발주 취소(delete)
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
+        public bool DeleteOrder(List<string> list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+                try
+                {
+                    cmd.Transaction = tran;
+                    cmd.CommandType = CommandType.Text;
+
+                    foreach (string orderid in list)
+                    {
+                        cmd.Parameters.Clear();
+
+                        cmd.CommandText = @"delete from TBL_ORDER where order_id = @order_id";
+
+                        cmd.Parameters.AddWithValue("@order_id", orderid);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    tran.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
             }
         }
     }

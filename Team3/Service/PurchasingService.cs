@@ -28,5 +28,12 @@ namespace Team3
             PurchasingDAC dac = new PurchasingDAC();
             return dac.GetOrderList();
         }
+
+        public bool DeleteOrder(List<string> list)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.DeleteOrder(list);
+        }
+
     }
 }

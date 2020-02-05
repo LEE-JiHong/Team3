@@ -211,6 +211,7 @@
             this.dgvOrdering.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrdering.Size = new System.Drawing.Size(863, 361);
             this.dgvOrdering.TabIndex = 0;
+            this.dgvOrdering.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrdering_CellValueChanged);
             // 
             // btnSearch
             // 
