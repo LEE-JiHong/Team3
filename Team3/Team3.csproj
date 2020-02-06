@@ -385,6 +385,12 @@
     <Compile Include="DevForm\ShipmentMgt\ShippingStatusMgt.Designer.cs">
       <DependentUpon>ShippingStatusMgt.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaitForm.designer.cs">
+      <DependentUpon>frmWaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoggingUtility.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -616,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ShipmentMgt\ShippingStatusMgt.resx">
       <DependentUpon>ShippingStatusMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaitForm.resx">
+      <DependentUpon>frmWaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

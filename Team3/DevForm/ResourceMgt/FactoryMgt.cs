@@ -116,6 +116,15 @@ namespace Team3
 
         private void btnEx_Click(object sender, EventArgs e)
         {
+            using (frmWaitForm frm = new frmWaitForm(ExcelLoad))
+            {
+                frm.ShowDialog(this);
+            }
+          
+        }
+
+        private void ExcelLoad()
+        {
             try
             {
                 Excel.Application excel = new Excel.Application
