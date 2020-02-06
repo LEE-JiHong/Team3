@@ -69,16 +69,16 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(12, 432);
+            this.panel3.Location = new System.Drawing.Point(12, 375);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Size = new System.Drawing.Size(998, 133);
+            this.panel3.Size = new System.Drawing.Size(998, 190);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 155);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Size = new System.Drawing.Size(998, 236);
+            this.panel2.Size = new System.Drawing.Size(998, 181);
             // 
             // panel1
             // 
@@ -105,7 +105,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(10, 1217);
+            this.label2.Location = new System.Drawing.Point(10, 1332);
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.Text = "자재입고";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,7 +122,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(798, 397);
+            this.panel5.Location = new System.Drawing.Point(798, 341);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Size = new System.Drawing.Size(212, 29);
             // 
@@ -327,7 +327,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(998, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(998, 181);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
@@ -339,7 +339,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(998, 133);
+            this.dataGridView2.Size = new System.Drawing.Size(998, 190);
             this.dataGridView2.TabIndex = 0;
             // 
             // label10
@@ -425,7 +425,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Image = global::Team3.Properties.Resources.list_menu;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(12, 405);
+            this.label5.Location = new System.Drawing.Point(12, 350);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 23);
             this.label5.TabIndex = 21;

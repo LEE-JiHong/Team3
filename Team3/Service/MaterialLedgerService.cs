@@ -11,34 +11,6 @@ namespace Team3
 {
     class MaterialLedgerService
     {
-        public DataSet GetOrderList(string planID)
-        {
-            PurchasingDAC dac = new PurchasingDAC();
-            return dac.GetOrderList(planID);
-        }
 
-        public bool InsertOrder(List<OrderVO> list)
-        {
-            PurchasingDAC dac = new PurchasingDAC();
-            return dac.InsertOrder(list);
-        }
-
-        public DataTable GetOrderList()
-        {
-            PurchasingDAC dac = new PurchasingDAC();
-            return dac.GetOrderList();
-        }
-
-        public bool UpdateOrder(List<OrderVO> list)
-        {
-            PurchasingDAC dac = new PurchasingDAC();
-            return dac.UpdateOrder(list);
-        }
-
-        public bool UpdateOrderDate(OrderVO vo)
-        {
-            PurchasingDAC dac = new PurchasingDAC();
-            return dac.UpdateOrderDate(vo);
-        }
     }
 }
