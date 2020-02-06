@@ -77,6 +77,14 @@ namespace Team3
         //양식 다운로드 버튼
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            using (frmWaitForm frm = new frmWaitForm(ExcelDown))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void ExcelDown()
+        {
             try
             {
                 Excel.Application excel = new Excel.Application
@@ -96,7 +104,7 @@ namespace Team3
 
                 int StartCol = 0;
                 int StartRow = 1;
-                int j = 0, i = 0;
+                int j = 0;
 
                 //Write Headers
                 for (j = 1; j < dataGridView1.Columns.Count; j++)
