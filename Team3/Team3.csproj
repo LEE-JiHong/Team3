@@ -181,6 +181,12 @@
     <Compile Include="DevForm\MaterialMgt\SUPMMgt.Designer.cs">
       <DependentUpon>SUPMMgt.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\PopUp\EditDatePop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForm\PurchaseMgt\Purchasing\PopUp\EditDatePop.Designer.cs">
+      <DependentUpon>EditDatePop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\ShipmentMgt\InventoryStatusByOrderMgt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,6 +437,7 @@
     <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductionService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\MaterialLedgerService.cs" />
     <Compile Include="Service\PurchasingService.cs" />
     <Compile Include="Service\ResourceService.cs" />
     <Compile Include="Service\ShiftService.cs" />
@@ -520,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\MaterialMgt\SUPMMgt.resx">
       <DependentUpon>SUPMMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\PopUp\EditDatePop.resx">
+      <DependentUpon>EditDatePop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ShipmentMgt\InventoryStatusByOrderMgt.resx">
       <DependentUpon>InventoryStatusByOrderMgt.cs</DependentUpon>

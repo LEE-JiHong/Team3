@@ -51,6 +51,7 @@
     <Compile Include="ProductionDac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseDac.cs" />
+    <Compile Include="MaterialLedgerDAC.cs" />
     <Compile Include="PurchasingDAC.cs" />
     <Compile Include="ResourceDac.cs" />
     <Compile Include="ShiftDac.cs" />

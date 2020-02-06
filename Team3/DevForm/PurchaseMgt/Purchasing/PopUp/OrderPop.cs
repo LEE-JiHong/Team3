@@ -26,14 +26,15 @@ namespace Team3
         private void OrderDialog_Load(object sender, EventArgs e)
         {
             SetCombo();
+
             SetDataGridCompany();
+            SetDataGridOrdering();
 
             PurchasingService service = new PurchasingService();
             DataSet ds = service.GetOrderList(planID);
             dgvOrdering.DataSource = ds.Tables[0];
             dgvCompany.DataSource = ds.Tables[1];
 
-            SetDataGridOrdering();
 
             SetRowNumber(dgvCompany);
 
@@ -42,6 +43,10 @@ namespace Team3
         private void SetDataGridOrdering()
         {
             dgvOrdering.Columns.Clear();
+
+
+            GridViewUtil.SetDataGridView(dgvOrdering);
+            dgvOrdering.AutoGenerateColumns = false;
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "";
@@ -180,11 +185,9 @@ namespace Team3
         private void DgvOrdering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //수량 입력하면 체크박스 true
-            if (dgvOrdering.SelectedRows[e.RowIndex].Cells[7].Value.ToString() != "")
+            if (dgvOrdering.Rows[e.RowIndex].Cells[7].Value != null)
             {
-                //DataGridViewCheckBoxCell chkBox = dgvOrdering.SelectedRows[e.RowIndex].Cells["chk"] as DataGridViewCheckBoxCell;
-                //chkBox.Value = headerCheckBox.Checked;
-                MessageBox.Show("Test");
+                dgvOrdering.Rows[e.RowIndex].Cells["chk"].Value = true;
             }
         }
     }

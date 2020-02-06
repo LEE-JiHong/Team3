@@ -35,5 +35,10 @@ namespace Team3
             return dac.UpdateOrder(list);
         }
 
+        public bool UpdateOrderDate(OrderVO vo)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.UpdateOrderDate(vo);
+        }
     }
 }

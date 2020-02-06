@@ -158,11 +158,12 @@ namespace Team3DAC
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"update TBL_ORDER set order_count - @order_count where order_id = @order_id and plan_id = @plan_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate where order_id = @order_id and plan_id = @plan_id";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
 
                         cmd.ExecuteNonQuery();
                     }
@@ -178,6 +179,31 @@ namespace Team3DAC
                     cmd.Connection.Close();
                     return false;
                 }
+            }
+        }
+
+        /// <summary>
+        /// 납기일 변경
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+
+        public bool UpdateOrderDate(OrderVO vo)
+        { 
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update TBL_ORDER set order_pdate = @order_pdate where order_id = @order_id and plan_id = @plan_id";
+
+                cmd.Parameters.AddWithValue("@order_pdate", vo.order_pdate);
+                cmd.Parameters.AddWithValue("@order_id", vo.order_id);
+                cmd.Parameters.AddWithValue("@plan_id", vo.plan_id);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
             }
         }
     }

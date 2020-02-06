@@ -28,7 +28,7 @@ namespace Team3
 
             SetDataGrid();
 
-            //SetRowNumber();
+            SetRowNumber();
         }
 
         private void SetDataGrid()
@@ -52,7 +52,7 @@ namespace Team3
             headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
 
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true, 30);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주번호", "order_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "PlanID", "plan_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납품업체", "company_name", true, 78);
@@ -61,7 +61,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true, 78);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납기일", "order_pdate", true, 78);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주량", "order_count", true, 78);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "입고량", "", true, 78);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "입고량", "", true, 78);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출발량", "company_order_code", true, 78);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "취소량", "", true, 78);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소가능량", "order_count", true, 100);
@@ -74,7 +74,7 @@ namespace Team3
         {
             for (int count = 0; count <= (dataGridView1.Rows.Count - 1); count++)
             {
-                dataGridView1.Rows[count].Cells[0].Value = string.Format((count + 1).ToString(), "0");
+                dataGridView1.Rows[count].Cells[1].Value = string.Format((count + 1).ToString(), "0");
             }
         }
 
@@ -126,6 +126,35 @@ namespace Team3
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //수량 입력하면 체크박스 true
+            if (dataGridView1.Rows[e.RowIndex].Cells[12].Value != null)
+            {
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value))
+                {
+                    MessageBox.Show("취소수량이 발주수량보다 클 수는 없습니다. 다시 입력하여 주십시오.");
+                    dataGridView1.Rows[e.RowIndex].Cells[12].Value = null;
+                }
+                else
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
+                }
+            }
+        }
+
+        private void btnEditDate_Click(object sender, EventArgs e)
+        {
+            OrderVO vo = new OrderVO();
+
+            vo.order_pdate = dataGridView1.SelectedRows[0].Cells[8].Value.ToString();
+            vo.order_id = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            vo.plan_id = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+
+            EditDatePop frm = new EditDatePop(vo);
+            frm.ShowDialog();
         }
     }
 }
