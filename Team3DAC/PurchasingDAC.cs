@@ -11,6 +11,11 @@ namespace Team3DAC
 {
     public class PurchasingDAC : ConnectionAccess
     {
+        /// <summary>
+        ///  정규발주 데이터그리드뷰 조회
+        /// </summary>
+        /// <param name="planID"></param>
+        /// <returns></returns>
         public DataSet GetOrderList(string planID)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -39,6 +44,11 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// OrderPop - 발주 insert
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public bool InsertOrder(List<OrderVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -72,7 +82,7 @@ namespace Team3DAC
                         item.order_serial = DateTime.Now.ToShortDateString().Replace("-", "") + string.Format("{0:D4}", num);
                         num++;
 
-                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate)";
+                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate)";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
@@ -80,6 +90,79 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@order_serial", item.order_serial);
                         cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@order_pdate", item.order_pdate);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    tran.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 발주현황 조회
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetOrderList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetOrderList";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+
+                DataTable ds = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(ds);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return ds;
+            }
+        }
+
+        /// <summary>
+        /// 발주 취소(delete)
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
+        public bool UpdateOrder(List<OrderVO> list)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+                try
+                {
+                    cmd.Transaction = tran;
+                    cmd.CommandType = CommandType.Text;
+
+                    foreach (OrderVO item in list)
+                    {
+                        cmd.Parameters.Clear();
+
+                        cmd.CommandText = @"update TBL_ORDER set order_count - @order_count where order_id = @order_id and plan_id = @plan_id";
+
+                        cmd.Parameters.AddWithValue("@order_id", item.order_id);
+                        cmd.Parameters.AddWithValue("@order_count", item.order_count);
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
 
                         cmd.ExecuteNonQuery();
                     }

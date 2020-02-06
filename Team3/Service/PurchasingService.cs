@@ -22,5 +22,18 @@ namespace Team3
             PurchasingDAC dac = new PurchasingDAC();
             return dac.InsertOrder(list);
         }
+
+        public DataTable GetOrderList()
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.GetOrderList();
+        }
+
+        public bool UpdateOrder(List<OrderVO> list)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.UpdateOrder(list);
+        }
+
     }
 }

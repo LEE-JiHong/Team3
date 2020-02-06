@@ -62,7 +62,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "품목", "product_codename", true);
             //GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "창고", "factory_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "품명", "producct_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "납기일", "pro_date", true);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvOrdering, "납기일", "pro_date", true);
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "현재고", "present_count", true,70, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "발주제안수량", "pro_count", true, 110,DataGridViewContentAlignment.MiddleRight,true);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvOrdering, "발주수량", "", true, 80, DataGridViewContentAlignment.MiddleRight);
@@ -72,9 +72,9 @@ namespace Team3
         {
             dgvCompany.Columns.Clear();
             //GridCheckBox(dgvCompany);
-            GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "No.", "count", true, 50);
+            GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "No.", "count", true, 30);
             GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "발주업체", "company_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "업체코드", "company_order_code", true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "업체코드", "company_order_code", true, 78);
         }
 
         private void HeaderCheckbox_Click(object sender, EventArgs e)
@@ -128,6 +128,7 @@ namespace Team3
 
                     vo.order_count = Convert.ToInt32(row.Cells[8].Value);
                     vo.plan_id = row.Cells[1].Value.ToString().Trim();
+                    vo.order_pdate = row.Cells[5].Value.ToString().Trim();
 
                     list.Add(vo);
                 }
@@ -174,6 +175,17 @@ namespace Team3
                 MessageBox.Show(err.Message);
             }
 
+        }
+
+        private void DgvOrdering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //수량 입력하면 체크박스 true
+            if (dgvOrdering.SelectedRows[e.RowIndex].Cells[7].Value.ToString() != "")
+            {
+                //DataGridViewCheckBoxCell chkBox = dgvOrdering.SelectedRows[e.RowIndex].Cells["chk"] as DataGridViewCheckBoxCell;
+                //chkBox.Value = headerCheckBox.Checked;
+                MessageBox.Show("Test");
+            }
         }
     }
 }

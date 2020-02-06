@@ -58,7 +58,7 @@
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(13, 171);
-            this.panel2.Size = new System.Drawing.Size(898, 409);
+            this.panel2.Size = new System.Drawing.Size(999, 409);
             // 
             // panel1
             // 
@@ -73,7 +73,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblStandardDate);
-            this.panel1.Size = new System.Drawing.Size(898, 116);
+            this.panel1.Size = new System.Drawing.Size(999, 116);
             // 
             // label1
             // 
@@ -86,12 +86,12 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(656, 136);
+            this.panel3.Location = new System.Drawing.Point(757, 136);
             this.panel3.Size = new System.Drawing.Size(255, 29);
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(923, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1024, 60);
             // 
             // layoutButton
             // 
@@ -103,7 +103,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(923, 592);
+            this.basepanel.Size = new System.Drawing.Size(1024, 592);
             this.basepanel.Tag = "고객주문별재고현황";
             // 
             // imageList1
@@ -123,7 +123,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(830, 83);
+            this.btnSelect.Location = new System.Drawing.Point(931, 83);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 30);
             this.btnSelect.TabIndex = 85;
@@ -144,7 +144,7 @@
             this.cboToFac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboToFac.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboToFac.FormattingEnabled = true;
-            this.cboToFac.Location = new System.Drawing.Point(614, 19);
+            this.cboToFac.Location = new System.Drawing.Point(715, 19);
             this.cboToFac.Name = "cboToFac";
             this.cboToFac.Size = new System.Drawing.Size(209, 21);
             this.cboToFac.TabIndex = 83;
@@ -164,7 +164,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(542, 23);
+            this.label4.Location = new System.Drawing.Point(643, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 81;
@@ -279,7 +279,7 @@
             this.cboFromFac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFromFac.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboFromFac.FormattingEnabled = true;
-            this.cboFromFac.Location = new System.Drawing.Point(355, 20);
+            this.cboFromFac.Location = new System.Drawing.Point(405, 20);
             this.cboFromFac.Name = "cboFromFac";
             this.cboFromFac.Size = new System.Drawing.Size(209, 21);
             this.cboFromFac.TabIndex = 89;
@@ -290,7 +290,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(283, 24);
+            this.label5.Location = new System.Drawing.Point(333, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 88;
@@ -304,13 +304,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(898, 409);
+            this.dataGridView1.Size = new System.Drawing.Size(999, 409);
             this.dataGridView1.TabIndex = 0;
             // 
             // InventoryStatusByOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(923, 674);
+            this.ClientSize = new System.Drawing.Size(1024, 674);
             this.Name = "InventoryStatusByOrder";
             this.Tag = "고객주문별재고현황";
             this.Load += new System.EventHandler(this.InventoryStatusByOrder_Load);

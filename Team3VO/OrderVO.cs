@@ -22,6 +22,7 @@ namespace Team3VO
         public string order_uadmin { get; set; }
         public string product_codename { get; set; }
         public string company_name { get; set; }
+        public string order_pdate { get; set; }
     }
 
     //public class SubOrderVO
