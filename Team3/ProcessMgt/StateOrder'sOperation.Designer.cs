@@ -68,18 +68,14 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.comboBox7);
             this.panel1.Controls.Add(this.comboBox6);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.comboBox5);
             this.panel1.Controls.Add(this.comboBox4);
             this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -103,7 +99,17 @@
             // 
             // TopMenu
             // 
+            this.TopMenu.Controls.Add(this.label7);
+            this.TopMenu.Controls.Add(this.comboBox7);
+            this.TopMenu.Controls.Add(this.comboBox2);
+            this.TopMenu.Controls.Add(this.textBox1);
             this.TopMenu.Size = new System.Drawing.Size(1124, 60);
+            this.TopMenu.Controls.SetChildIndex(this.textBox1, 0);
+            this.TopMenu.Controls.SetChildIndex(this.comboBox2, 0);
+            this.TopMenu.Controls.SetChildIndex(this.comboBox7, 0);
+            this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
+            this.TopMenu.Controls.SetChildIndex(this.label7, 0);
+            this.TopMenu.Controls.SetChildIndex(this.layoutButton, 0);
             // 
             // layoutButton
             // 
@@ -162,10 +168,11 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(456, 15);
+            this.textBox1.Location = new System.Drawing.Point(828, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 22);
+            this.textBox1.Size = new System.Drawing.Size(180, 21);
             this.textBox1.TabIndex = 28;
+            this.textBox1.Visible = false;
             // 
             // comboBox5
             // 
@@ -197,10 +204,11 @@
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(377, 15);
+            this.comboBox2.Location = new System.Drawing.Point(749, 12);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(73, 24);
+            this.comboBox2.Size = new System.Drawing.Size(73, 20);
             this.comboBox2.TabIndex = 24;
+            this.comboBox2.Visible = false;
             // 
             // label2
             // 
@@ -261,20 +269,22 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(714, 52);
+            this.label7.Location = new System.Drawing.Point(488, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 15);
             this.label7.TabIndex = 36;
             this.label7.Text = "OrderType";
+            this.label7.Visible = false;
             // 
             // comboBox7
             // 
             this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(817, 50);
+            this.comboBox7.Location = new System.Drawing.Point(591, 13);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(148, 24);
+            this.comboBox7.Size = new System.Drawing.Size(148, 20);
             this.comboBox7.TabIndex = 35;
+            this.comboBox7.Visible = false;
             // 
             // dataGridView1
             // 
@@ -359,6 +369,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
+            this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
