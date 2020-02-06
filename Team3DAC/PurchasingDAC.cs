@@ -141,7 +141,7 @@ namespace Team3DAC
         /// </summary>
         /// <param name="VO"></param>
         /// <returns></returns>
-        public bool DeleteOrder(List<string> list)
+        public bool UpdateOrder(List<OrderVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -154,13 +154,15 @@ namespace Team3DAC
                     cmd.Transaction = tran;
                     cmd.CommandType = CommandType.Text;
 
-                    foreach (string orderid in list)
+                    foreach (OrderVO item in list)
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"delete from TBL_ORDER where order_id = @order_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count - @order_count where order_id = @order_id and plan_id = @plan_id";
 
-                        cmd.Parameters.AddWithValue("@order_id", orderid);
+                        cmd.Parameters.AddWithValue("@order_id", item.order_id);
+                        cmd.Parameters.AddWithValue("@order_count", item.order_count);
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
 
                         cmd.ExecuteNonQuery();
                     }

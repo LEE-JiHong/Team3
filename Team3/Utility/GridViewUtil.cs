@@ -136,7 +136,7 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
             //grid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid.AllowUserToResizeColumns = false;
+           // grid.AllowUserToResizeColumns = false;
         }
        
 
