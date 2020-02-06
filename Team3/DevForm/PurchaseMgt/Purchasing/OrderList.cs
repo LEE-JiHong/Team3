@@ -127,5 +127,14 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //수량 입력하면 체크박스 true
+            if (dataGridView1.Rows[e.RowIndex].Cells[12].Value != null)
+            {
+                dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
+            }
+        }
     }
 }

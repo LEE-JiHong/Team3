@@ -158,11 +158,12 @@ namespace Team3DAC
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"update TBL_ORDER set order_count - @order_count where order_id = @order_id and plan_id = @plan_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate where order_id = @order_id and plan_id = @plan_id";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
 
                         cmd.ExecuteNonQuery();
                     }
