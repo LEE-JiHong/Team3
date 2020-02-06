@@ -29,7 +29,7 @@ namespace Team3
                               where item.common_type == "create_work_order"
                               select item).ToList();
 
-                ComboUtil.ComboBinding(comboBox3, list_c, "common_value", "common_name");
+                ComboUtil.ComboBinding(cboStatus, list_c, "common_value", "common_name", "미선택");
             }
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AllowUserToAddRows = false;
@@ -37,7 +37,7 @@ namespace Team3
             comboBox1.Items.Add("납기일");
             comboBox1.Items.Add("등록시간");
 
-         
+
             comboBox1.SelectedIndex = 0;
             dateTimePicker1.Value = DateTime.Now.AddDays(-7);
             dateTimePicker2.Value = DateTime.Now.AddDays(7);
@@ -54,7 +54,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "WorkID", true, 60);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상태", "pro_state", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상태", "common_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상태", "pro_state", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비코드", "m_code", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "계획수량", "pro_count", true);
@@ -63,6 +64,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "마스터ID", "plan_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품ID", "pro_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "소요시간", "use_time", true);
+    
 
 
             LoadData();
@@ -86,12 +88,12 @@ namespace Team3
             {
                 if (e.RowIndex > -1 && e.RowIndex < dt.Rows.Count)
                 {
-                    int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[11].Value.ToString());
+                    int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[12].Value.ToString());
                     //string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     bool bresult = false;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
-                        if (Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value) == p_id)
+                        if (Convert.ToInt32(dataGridView1.Rows[i].Cells[12].Value) == p_id)
                         {
                             bresult = Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value);
                             dataGridView1.Rows[i].Cells[0].Value = !bresult;
@@ -116,8 +118,8 @@ namespace Team3
                 {
                     if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true) //체크박스가 true?
                     {
-                        lst.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value.ToString())); //true인 행의 아이디를 가져옴
-                        strlist.Add(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                        lst.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[12].Value.ToString())); //true인 행의 아이디를 가져옴
+                        strlist.Add(dataGridView1.Rows[i].Cells[10].Value.ToString());
                     }
                 }
                 int k = lst.Count;
@@ -147,49 +149,65 @@ namespace Team3
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            dt = P_service.GetProductionPlanCheck(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
-
-            table = dt.AsEnumerable().Where(Row =>
-                               Row.Field<string>("pro_state") == comboBox3.SelectedValue.ToString()).CopyToDataTable();
-            if (cboMachine.Text == "미선택")
-                dataGridView1.DataSource = table;
-
-            if (cboMachine.Text != "미선택")
-            {
-                DataTable Machine = table.AsEnumerable().Where(Row =>
-                                Row.Field<string>("m_name") == cboMachine.Text).CopyToDataTable();
-                dataGridView1.DataSource = Machine;
-            }
-
-        }
-
-        private void dataGridView1_BindingContextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
             try
             {
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    if (dataGridView1.Rows[i].Cells[4].Value.ToString() == "CREATE")
-                    {
-                        dataGridView1.Rows[i].Cells[4].Value = "작업생성";
-                    }
-                    else if (dataGridView1.Rows[i].Cells[4].Value.ToString() == "COMMAND")
-                    {
-                        dataGridView1.Rows[i].Cells[4].Value = "작업지시";
-                    }
+                dt = P_service.GetProductionPlanCheck(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
 
+                if (cboStatus.Text != "미선택")
+                {
+                    DataView dv = dt.DefaultView;
+                    dv.RowFilter = "common_name = '" + cboStatus.Text + "'";
+                    if (dv.Count > 0)
+                    {
+                        table = dv.ToTable();
+                    }
+                  
+                    if (cboMachine.Text != "미선택")
+                    {
+                        dv = table.DefaultView;
+                        dv.RowFilter = "m_name ='" + cboMachine.Text + "'";
+                        if (dv.Count > 0)
+                        {
+                            table = dv.ToTable();
+                        }
+                    }
                 }
+                else
+                {
+                    DataView dv = dt.DefaultView;
+                    dv.RowFilter = "m_name ='" + cboMachine.Text + "'";
+                    if (dv.Count > 0)
+                    {
+                        table = dv.ToTable();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("조건이 없습니다");
+                    }
+                }
+                dataGridView1.DataSource = dt;
+                //if (cboMachine.Text == "미선택")
+                //    dataGridView1.DataSource = table;
+
+                //else
+                //    dataGridView1.DataSource = null;
+
+                //if (cboMachine.Text != "미선택")
+                //{
+                //    DataTable Machine = table.AsEnumerable().Where(Row =>
+                //                    Row.Field<string>("m_name") == cboMachine.Text).CopyToDataTable();
+                //    dataGridView1.DataSource = Machine;
+                //}
+
 
             }
             catch (Exception err)
             {
                 string st = err.Message;
             }
+
         }
+
     }
 }
