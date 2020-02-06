@@ -313,6 +313,7 @@
             this.ClientSize = new System.Drawing.Size(1024, 674);
             this.Name = "InventoryStatusByOrder";
             this.Tag = "고객주문별재고현황";
+            this.Text = "9";
             this.Load += new System.EventHandler(this.InventoryStatusByOrder_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

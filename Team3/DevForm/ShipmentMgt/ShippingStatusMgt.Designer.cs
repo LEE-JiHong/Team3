@@ -42,8 +42,6 @@
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.cboOutSector = new System.Windows.Forms.ComboBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblDeliveryCompany = new System.Windows.Forms.Label();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.cboAdmin = new System.Windows.Forms.ComboBox();
@@ -58,6 +56,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -267,27 +267,6 @@
             this.cboCompany.Size = new System.Drawing.Size(225, 24);
             this.cboCompany.TabIndex = 119;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(468, 133);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(230, 24);
-            this.comboBox1.TabIndex = 115;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(370, 136);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 16);
-            this.label6.TabIndex = 107;
-            this.label6.Text = "B2BI취소수량";
-            // 
             // lblDeliveryCompany
             // 
             this.lblDeliveryCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -453,6 +432,27 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(370, 136);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 16);
+            this.label6.TabIndex = 107;
+            this.label6.Text = "B2BI취소수량";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(468, 133);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(230, 24);
+            this.comboBox1.TabIndex = 115;
+            // 
             // ShippingStatusMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -487,8 +487,6 @@
         private System.Windows.Forms.ComboBox cboIsUsed;
         private System.Windows.Forms.ComboBox cboOutSector;
         private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDeliveryCompany;
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.ComboBox cboAdmin;
@@ -503,5 +501,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

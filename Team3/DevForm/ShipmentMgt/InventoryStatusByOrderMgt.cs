@@ -24,13 +24,13 @@ namespace Team3.DevForm.NewFolder1
             f_list = resource_service.GetFactoryAll();
 
             List<FactoryDB_VO> _cboFromFac = (from item in f_list
-                                               where item.facility_value == "FAC300"
+                                               where item.facility_value == "FAC400"
                                                select item).ToList();
             ComboUtil.ComboBinding(cboFromFac, _cboFromFac, "factory_code", "factory_name", "선택");
 
 
             List<FactoryDB_VO> _cboToFac = (from item in f_list
-                                               where item.facility_value == "FAC400"
+                                               where item.facility_value == "FAC700"
                                                select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
         }
