@@ -141,7 +141,7 @@ namespace Team3DAC
         /// </summary>
         /// <param name="VO"></param>
         /// <returns></returns>
-        public bool DeleteOrder(List<string> list)
+        public bool UpdateOrder(List<OrderVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -154,13 +154,16 @@ namespace Team3DAC
                     cmd.Transaction = tran;
                     cmd.CommandType = CommandType.Text;
 
-                    foreach (string orderid in list)
+                    foreach (OrderVO item in list)
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"delete from TBL_ORDER where order_id = @order_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate where order_id = @order_id and plan_id = @plan_id";
 
-                        cmd.Parameters.AddWithValue("@order_id", orderid);
+                        cmd.Parameters.AddWithValue("@order_id", item.order_id);
+                        cmd.Parameters.AddWithValue("@order_count", item.order_count);
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
 
                         cmd.ExecuteNonQuery();
                     }
@@ -176,6 +179,31 @@ namespace Team3DAC
                     cmd.Connection.Close();
                     return false;
                 }
+            }
+        }
+
+        /// <summary>
+        /// 납기일 변경
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+
+        public bool UpdateOrderDate(OrderVO vo)
+        { 
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update TBL_ORDER set order_pdate = @order_pdate where order_id = @order_id and plan_id = @plan_id";
+
+                cmd.Parameters.AddWithValue("@order_pdate", vo.order_pdate);
+                cmd.Parameters.AddWithValue("@order_id", vo.order_id);
+                cmd.Parameters.AddWithValue("@plan_id", vo.plan_id);
+
+                cmd.Connection.Open();
+                var successRow = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return successRow > 0;
             }
         }
     }

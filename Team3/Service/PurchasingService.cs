@@ -29,11 +29,16 @@ namespace Team3
             return dac.GetOrderList();
         }
 
-        public bool DeleteOrder(List<string> list)
+        public bool UpdateOrder(List<OrderVO> list)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.DeleteOrder(list);
+            return dac.UpdateOrder(list);
         }
 
+        public bool UpdateOrderDate(OrderVO vo)
+        {
+            PurchasingDAC dac = new PurchasingDAC();
+            return dac.UpdateOrderDate(vo);
+        }
     }
 }
