@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
@@ -13,6 +14,7 @@ namespace Team3
     //Material of unit's price management 자재 단가 관리
     public partial class MUPMMgt : Team3.VerticalGridBaseForm
     {
+        List<PriceInfoVO> pricelist;
         PriceService price_service;
         public MUPMMgt()
         {
@@ -46,33 +48,31 @@ namespace Team3
         private void InitControl()
         {
             OrderService order_service = new OrderService();
-            #region 발주업체cbo
+            #region 업체cbo
             List<CompanyVO> company_list = order_service.GetCompanyAll("CUSTOMER");
-            ComboUtil.ComboBinding(cboCompany, company_list, "company_id", "company_name", "선택");
+            ComboUtil.ComboBinding(cboCompany, company_list, "company_id", "company_name", "전체");
             #endregion
 
-
-
-
-
             price_service = new PriceService();
-            List<PriceInfoVO> pricelist = price_service.GetPriceInfo("COOPERATIVE");
+            pricelist = price_service.GetPriceInfo("COOPERATIVE");
 
             dgvMUPM.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvMUPM.Columns.Add("Number", "No.");
             dgvMUPM.Columns[0].Width = 53;
 
+            #region DGV바인딩
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "업체", "company_code", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "업체명", "company_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "단위", "product_unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "현재단가", "price_present", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "이전단가", "price_past", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "현재단가", "price_present", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "이전단가", "price_past", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "시작일", "price_sdate", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "종료일", "price_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "비고", "price_comment", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "사용유무", "price_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            #endregion
 
             dgvMUPM.AutoGenerateColumns = false;
             dgvMUPM.DataSource = pricelist;
@@ -124,5 +124,74 @@ namespace Team3
                 Clipboard.SetDataObject(dataObj);
         }
 
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            if (txtProduct.Text != "")
+            {
+                if (cboCompany.SelectedIndex > 0)       //업체 선택했을 떄
+                {
+                    var _product = (from code in pricelist
+                                    where code.product_codename.ToUpper().Contains(txtProduct.Text.ToUpper())
+                                    && code.company_id == Convert.ToInt32(cboCompany.SelectedValue)
+                                    select code).ToList();
+                    dgvMUPM.DataSource = _product;
+                    PrintResultCount(_product);
+                    if (_product.Count == 0)
+                    {
+                        dgvMUPM.DataSource = _product;
+                        PrintResultCount(_product);
+                    }
+
+                }
+
+                else if (cboCompany.SelectedIndex == 0)                   //업체를 선택하지 않았을 때 
+                {
+                    var _product = (from code in pricelist
+                                    where code.product_codename.ToUpper().Contains(txtProduct.Text.ToUpper())
+                                    select code).ToList();
+                    dgvMUPM.DataSource = _product;
+                    PrintResultCount(_product);
+                }
+            }
+            else if (txtProduct.Text == "")
+            {
+
+                if (cboCompany.SelectedIndex > 0)       //업체 선택했을 떄
+                {
+                    var _product = (from code in pricelist
+                                    where code.company_id == Convert.ToInt32(cboCompany.SelectedValue)
+                                    select code).ToList();
+                    dgvMUPM.DataSource = _product;
+                    PrintResultCount(_product);
+                    if (_product.Count == 0)
+                    {
+                        dgvMUPM.DataSource = _product;
+                        PrintResultCount(_product);
+                    }
+
+                }
+                else if (cboCompany.SelectedIndex == 0)                      //업체를 선택하지 않았을 때
+                {
+                    var _product = (from code in pricelist
+                                    where code.product_codename.Contains(txtProduct.Text) 
+                                    select code).ToList();
+                    dgvMUPM.DataSource = _product;
+                    PrintResultCount(_product);
+                }
+            }
+        }
+
+        private void PrintResultCount(List<PriceInfoVO> _product)
+        {
+            SetBottomStatusLabel($"{_product.Count}건이 검색되었습니다.");
+        }
+
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSelect.PerformClick();
+            }
+        }
     }
 }

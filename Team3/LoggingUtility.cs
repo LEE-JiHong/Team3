@@ -178,6 +178,11 @@ namespace Team3
                 log.Error(message, ex);
         }
 
+        internal static void GetLoggingUtility(string message, object level)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 오류 로그 쓰기
         /// </summary>

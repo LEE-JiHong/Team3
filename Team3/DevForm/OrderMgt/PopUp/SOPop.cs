@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,9 +41,9 @@ namespace Team3
                 this.vo = vo;
                 this.edit = EditMode.Update;
                 txtSOWO.Enabled = false;
+                cbProduct.Enabled = false;
             }
         }
-
 
         private void SODialog_Load(object sender, EventArgs e)
         {
@@ -99,15 +100,23 @@ namespace Team3
                 vo.so_comment = txtComment.Text;
 
                 OrderService service = new OrderService();
-                bool result = service.AddOneSOMaster(vo);
 
-                if (result)
+                try
                 {
-                    DialogResult = DialogResult.OK;
+                    bool result = service.AddOneSOMaster(vo);
+
+                    if (result)
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록에 실패하였습니다.");
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("등록 실패");
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
             else if (edit == EditMode.Update)
@@ -126,17 +135,27 @@ namespace Team3
                 vo.so_edate = dtpsDate.Value.ToShortDateString();
                 vo.so_udate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
                 vo.so_comment = txtComment.Text;
+                vo.so_edate = dtpsDate.Value.ToShortDateString();
 
                 OrderService service = new OrderService();
-                bool result = service.UpdateOneSOMaster(vo);
 
-                if (result)
+                try
                 {
-                    DialogResult = DialogResult.OK;
+                    bool result = service.UpdateOneSOMaster(vo);
+
+                    if (result)
+                    {
+                        MessageBox.Show("수정이 완료되었습니다.");
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("수정에 실패하였습니다.");
+                    }
                 }
-                else
+                catch(Exception err)
                 {
-                    MessageBox.Show("등록 실패");
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
         }

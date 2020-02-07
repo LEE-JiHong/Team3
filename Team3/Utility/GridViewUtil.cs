@@ -120,7 +120,6 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
         /// <param name="grid"></param>
         public static void SetDataGridView(DataGridView grid)
         {
-            
             grid.AutoGenerateColumns = false;
             grid.AllowUserToAddRows = false;
 
@@ -136,9 +135,7 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
             //grid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-           // grid.AllowUserToResizeColumns = false;
+            //grid.AllowUserToResizeColumns = false;
         }
-       
-
     }
 }
