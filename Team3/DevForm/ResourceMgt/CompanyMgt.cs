@@ -47,7 +47,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체정보", "company_comment", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "company_yn", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체발주코드", "company_order_code", false);
-
+            GridViewUtil.SetDataGridView(dataGridView2);
 
             LoadData();
 

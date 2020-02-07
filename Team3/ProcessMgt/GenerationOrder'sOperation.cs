@@ -33,12 +33,7 @@ namespace Team3
             }
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AllowUserToAddRows = false;
-            comboBox1.Items.Add("계획시작");
-            comboBox1.Items.Add("납기일");
-            comboBox1.Items.Add("등록시간");
-
-
-            comboBox1.SelectedIndex = 0;
+           
             dateTimePicker1.Value = DateTime.Now.AddDays(-7);
             dateTimePicker2.Value = DateTime.Now.AddDays(7);
             ResourceService R_service = new ResourceService();
@@ -64,7 +59,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "마스터ID", "plan_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품ID", "pro_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "소요시간", "use_time", true);
-
+            GridViewUtil.SetDataGridView(dataGridView1);
 
 
             LoadData();

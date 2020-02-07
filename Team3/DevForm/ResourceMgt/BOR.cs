@@ -27,20 +27,9 @@ namespace Team3
         private void BOR_Load(object sender, EventArgs e)
         {
             this.ImeMode = ImeMode.Hangul;
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bor_id", "bor_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bom_id", "bom_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "common_type", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정명", "common_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_code", true);
-
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "Tack Time", "bor_tacktime", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정선행시간", "bor_readytime", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "bor_yn", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "bor_comment", true);
-
+            GridViewUtil.SetDataGridView(dataGridView1);
+            dgvColumnSet();
+            
 
 
             LoadData();
@@ -63,7 +52,7 @@ namespace Team3
         private void LoadData()
         {
             list = service.GetBORAll();
-          
+
             dataGridView1.DataSource = list;
         }
 
@@ -182,7 +171,7 @@ namespace Team3
                     else if (!bResult)
                     {
                         SetBottomStatusLabel("삭제실패");
-                        MessageBox.Show("삭제 실패");  
+                        MessageBox.Show("삭제 실패");
                         return;
                     }
                 }
@@ -195,40 +184,47 @@ namespace Team3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            list = service.GetBORAll();
-            if (txtItem.Text != "")
-            {
-                List<BORDB_VO> p_list;
-                if (cboProcess.Text != "미선택")
-                {
-                      p_list = (from r_list in list
-                                  where r_list.common_name.Contains(cboProcess.Text) && r_list.product_codename.Contains(txtItem.Text)
-                                  select r_list).ToList();
-                }
-                else
-                {
-                      p_list = (from r_list in list
-                                  where r_list.product_codename.Contains(txtItem.Text)
-                                  select r_list).ToList();
-                }
-                dataGridView1.DataSource = p_list;
-            }
-           else if (cboProcess.Text != "미선택")
-            {
-                var p_list = (from r_list in list
-                              where r_list.common_name.Contains(cboProcess.Text)
-                              select r_list).ToList();
 
-                dataGridView1.DataSource = p_list;
-            }
-            else if (txtFacility.Text != "")
+            dataGridView1.Columns.Clear();
+            BORDB_VO vo = new BORDB_VO();
+            vo.product_name = txtItem.Text;
+            if (cboProcess.Text == "미선택")
             {
-                var p_list = (from r_list in list
-                              where r_list.m_name.Contains(txtFacility.Text) || r_list.m_code.Contains(txtFacility.Text)
-                              select r_list).ToList();
-
-                dataGridView1.DataSource = p_list;
+                vo.common_name = "";
             }
+            else
+                vo.common_name = cboProcess.Text;
+            vo.m_name = txtFacility.Text;
+
+            List<BORDB_VO> list = service.BOR_Search(vo);
+            if (list == null)
+            {
+
+                return;
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+                dgvColumnSet();
+                dataGridView1.DataSource = list;
+            }
+        }
+
+        private void dgvColumnSet()
+        {
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "bor_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bom_id", "bom_id", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "common_type", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정명", "common_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_code", true);
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "Tack Time", "bor_tacktime", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정선행시간", "bor_readytime", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "bor_yn", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "bor_comment", true);
         }
     }
 }

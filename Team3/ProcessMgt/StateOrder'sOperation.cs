@@ -21,10 +21,10 @@ namespace Team3
         {
             InitializeComponent();
         }
-
+        ProcessService P_service = new ProcessService();
         private void SOO_Load(object sender, EventArgs e)
         {
-            ProcessService P_service = new ProcessService();
+            
             ResourceService R_service = new ResourceService();
             CommonCodeService C_service = new CommonCodeService();
             List<CommonVO> c_list = C_service.GetCommonCodeAll();
@@ -45,11 +45,19 @@ namespace Team3
                 
                ComboUtil.ComboBinding(cboMachine, R_service.GetMachineAll(), "m_id", "m_name", "미선택");
             }
-            dateTimePicker1.Value = DateTime.Now.AddDays(-7);
-            dateTimePicker2.Value = DateTime.Now.AddDays(7);
-            //DataTable dt = P_service.GetProductionPlanCheck(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
-           // dataGridView1.DataSource = dt;
-           
+            dateTimePicker1.Value = Convert.ToDateTime("2020-01-28"); 
+            dateTimePicker2.Value = Convert.ToDateTime("2020-03-28");
+            DataTable dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
+            
+            dataGridView1.DataSource = dt;
+            GridViewUtil.SetDataGridView(dataGridView1);
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
+            dataGridView1.DataSource = dt;
         }
     }
 }

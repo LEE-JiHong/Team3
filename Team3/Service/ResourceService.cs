@@ -111,6 +111,10 @@ namespace Team3
         {
             return dac.UpdateBOR(vo);
         }
+        public  List<BORDB_VO> BOR_Search(BORDB_VO vo)
+        {
+            return dac.BOR_Search(vo);
+        }
 
         //=============이하 공장=======
         public List<FactoryDB_VO> GetFactoryAll()

@@ -473,6 +473,43 @@ namespace Team3DAC
             }
         }
 
+        public List<BORDB_VO> BOR_Search(BORDB_VO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("select     b.bor_id as bor_id,	a.product_id as bom_id,	a.product_codename as product_codename,	a.product_name as product_name , ");
+                sb.Append("c.common_value as common_type ,	c.common_name as common_name,	d.m_code as m_code,	d.m_name as m_name,	b.bor_tacktime as bor_tacktime , ");
+                sb.Append(" b.bor_readytime as bor_readytime,	b.bor_yn as bor_yn,	b.bor_comment as bor_comment from tbl_product a inner join tbl_bor b on ");
+                sb.Append(" a.product_id = b.product_id inner join tbl_common_code c on c.common_value = b.bor_route and c.common_type = 'route' inner join  ");
+                sb.Append(" tbl_machine d on d.m_id = b.m_id where 1 = 1   ");
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                
+                if (vo.product_name != "")
+                {
+                    cmd.Parameters.AddWithValue("@product_name", vo.product_name);
+                    sb.Append(" and product_name = @product_name");
+                }
+                if (vo.common_name != "")
+                {
+                    cmd.Parameters.AddWithValue("@common_name", vo.common_name);
+                    sb.Append(" and common_name = @common_name");
+                }
+                if (vo.m_name != "")
+                {
+                    cmd.Parameters.AddWithValue("@m_name", vo.m_name);
+                    sb.Append("  and m_name = @m_name");
+                }
+                cmd.CommandText = sb.ToString() ;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BORDB_VO> list = Helper.DataReaderMapToList<BORDB_VO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
         //공장=============================================================
         public List<FactoryDB_VO> GetFactoryAll()
         {

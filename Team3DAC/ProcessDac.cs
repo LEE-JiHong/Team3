@@ -24,17 +24,17 @@ namespace Team3DAC
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", EndDate); 
+                cmd.Parameters.AddWithValue("@EndDate", EndDate);
                 cmd.Connection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 cmd.Connection.Close();
                 DataTable table = new DataTable();
                 da.Fill(table);
-                 
+
                 return table;
             }
         }
-        public bool UpdateCommand(int num,string tdate)
+        public bool UpdateCommand(int num, string tdate)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -50,6 +50,26 @@ namespace Team3DAC
                 var successRow = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return successRow > 0;
+            }
+        }
+        public DataTable GetProductionPlanCheckHis(string startDate, string EndDate, string state = "CREATE")
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetProductionPlanCheckHis";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@StartDate", startDate);
+                cmd.Parameters.AddWithValue("@EndDate", EndDate);
+                cmd.Parameters.AddWithValue("@State", state);
+                DataTable table = new DataTable();
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(table);
+                da.Dispose();
+                cmd.Connection.Close();
+
+                return table;
             }
         }
     }

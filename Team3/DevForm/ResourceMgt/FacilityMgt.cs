@@ -33,6 +33,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "mgrade_uadmin", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정시간", "mgrade_udate", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "시설설명", "mgrade_comment", false);
+            GridViewUtil.SetDataGridView(dataGridView1);
 
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "ID", "m_id", false, 60);
@@ -49,6 +50,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "m_yn", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "m_uadmin", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정시간", "m_udate", true);
+            GridViewUtil.SetDataGridView(dataGridView2);
 
 
 

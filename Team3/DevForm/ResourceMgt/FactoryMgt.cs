@@ -37,6 +37,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "factory_yn", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "factory_uadmin", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정시간", "factory_udate", true);
+            GridViewUtil.SetDataGridView(dataGridView1);
             LoadData();
             CommonCodeService Common_service = new CommonCodeService();
             common_list = Common_service.GetCommonCodeAll();
