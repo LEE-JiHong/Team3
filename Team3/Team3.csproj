@@ -37,6 +37,7 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -442,6 +443,12 @@
     <Compile Include="Service\ResourceService.cs" />
     <Compile Include="Service\ShiftService.cs" />
     <Compile Include="Service\ShipmentService.cs" />
+    <Compile Include="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\ComboUtil.cs" />
     <Compile Include="Utility\GridViewUtil.cs" />
     <Compile Include="WorkOrder\Business_showings.cs">
@@ -660,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseMgt2\RequestRawMaterial%27sDistribution.resx">
       <DependentUpon>RequestRawMaterial%27sDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkOrder\Business_showings.resx">
       <DependentUpon>Business_showings.cs</DependentUpon>
