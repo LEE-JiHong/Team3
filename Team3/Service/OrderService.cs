@@ -17,10 +17,10 @@ namespace Team3
             return dac.AddSOMaster(list);
         }
 
-        public List<SOMasterVO> GetSOMasterAll()
+        public List<SOMasterVO> GetSOMasterAll(WhereSoVO vo)
         {
             OrderDac dac = new OrderDac();
-            return dac.GetSOMasterAll();
+            return dac.GetSOMasterAll(vo);
         }
 
         public List<CompanyVO> GetCompanyAll(string company_type)//납품업체만

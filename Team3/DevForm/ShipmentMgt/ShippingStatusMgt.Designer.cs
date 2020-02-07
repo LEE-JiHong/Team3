@@ -52,7 +52,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblWHing = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClientOrder = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -63,13 +63,13 @@
             this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientOrder)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvClientOrder);
             this.panel2.Location = new System.Drawing.Point(12, 246);
             this.panel2.Size = new System.Drawing.Size(1234, 335);
             // 
@@ -376,16 +376,16 @@
             this.label4.TabIndex = 108;
             this.label4.Text = "출하처리자";
             // 
-            // dataGridView1
+            // dgvClientOrder
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1234, 335);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvClientOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dgvClientOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvClientOrder.Location = new System.Drawing.Point(0, 0);
+            this.dgvClientOrder.Name = "dgvClientOrder";
+            this.dgvClientOrder.RowTemplate.Height = 23;
+            this.dgvClientOrder.Size = new System.Drawing.Size(1234, 335);
+            this.dgvClientOrder.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
@@ -414,6 +414,7 @@
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnAdd
             // 
@@ -465,7 +466,7 @@
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientOrder)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -497,7 +498,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblWHing;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClientOrder;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnAdd;

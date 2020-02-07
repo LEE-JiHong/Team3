@@ -93,7 +93,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(1893, 99);
+            this.panel5.Location = new System.Drawing.Point(2024, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -305,6 +305,7 @@
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnCopy
             // 

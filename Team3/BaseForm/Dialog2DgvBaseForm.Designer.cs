@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel4 = new System.Windows.Forms.Panel();
+            //this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblGrid1Name = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            //this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
+            //this.panel2.Controls.Add(this.linePanel);
             this.panel2.Size = new System.Drawing.Size(1019, 427);
             // 
             // button1
@@ -76,16 +76,16 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.panel7);
-            this.panel4.Controls.Add(this.lblGrid1Name);
-            this.panel4.Location = new System.Drawing.Point(21, 20);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(974, 140);
-            this.panel4.TabIndex = 0;
+            //this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            //| System.Windows.Forms.AnchorStyles.Right)));
+            //this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //this.panel4.Controls.Add(this.panel6);
+            //this.panel4.Controls.Add(this.panel7);
+            //this.panel4.Controls.Add(this.lblGrid1Name);
+            //this.panel4.Location = new System.Drawing.Point(21, 20);
+            //this.panel4.Name = "panel4";
+            //this.panel4.Size = new System.Drawing.Size(974, 140);
+            //this.panel4.TabIndex = 0;
             // 
             // panel6
             // 
@@ -165,7 +165,7 @@
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.linePanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -176,7 +176,7 @@
         protected System.Windows.Forms.Label lblGrid1Name;
         protected System.Windows.Forms.Panel panel9;
         protected System.Windows.Forms.Label lblGrid2Name;
-        protected System.Windows.Forms.Panel panel4;
+       // protected System.Windows.Forms.Panel panel4;
         protected System.Windows.Forms.Panel panel5;
         protected System.Windows.Forms.Panel panel6;
         protected System.Windows.Forms.Panel panel8;
