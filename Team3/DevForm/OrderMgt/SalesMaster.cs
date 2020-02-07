@@ -25,6 +25,10 @@ namespace Team3
             dtpStartDate.Value = DateTime.Now;
             dtpEndDate.Value = DateTime.Now.AddMonths(+1).AddDays(-1);
 
+            //등록일 초기화
+            dtpRegFirstDate.Value = DateTime.Now.AddMonths(-1);
+            dtpRegLastDate.Value = DateTime.Now;
+
             OrderService service = new OrderService();
             //List<SOMasterVO> list = service.GetSOMasterAll();
 
@@ -130,6 +134,9 @@ namespace Team3
             WhereSoVO vo = new WhereSoVO();
             vo.startDate = dtpStartDate.Value.ToShortDateString();
             vo.endDate = dtpEndDate.Value.ToShortDateString();
+
+            vo.RegStartDate = dtpRegFirstDate.Value.ToShortDateString();
+            vo.RegEndDate = dtpRegLastDate.Value.ToShortDateString();
 
             if (cboCompany.Text != "선택")
             {

@@ -84,7 +84,13 @@ namespace Team3DAC
             {
                 //string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
 
-                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename where CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate)";
+                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename where CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate) and CONVERT (DATETIME, so_sdate) >= CONVERT (DATETIME, @regstartDate) and CONVERT (DATETIME, so_sdate) <= CONVERT (DATETIME, @regendDate)";
+
+                if (vo.CompanyName != null)
+                {
+                    sql += " and company_name = @company_name";
+                    cmd.Parameters.AddWithValue("@company_name", vo.CompanyName);
+                }
 
                 //p.product_codename을 product_name으로 바꾸기
 
@@ -94,6 +100,8 @@ namespace Team3DAC
 
                 cmd.Parameters.AddWithValue("@startDate", vo.startDate);
                 cmd.Parameters.AddWithValue("@endDate", vo.endDate);
+                cmd.Parameters.AddWithValue("@regstartDate", vo.RegStartDate);
+                cmd.Parameters.AddWithValue("@regendDate", vo.RegEndDate);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

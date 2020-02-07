@@ -43,6 +43,7 @@ namespace Team3VO
         public string endDate { get; set; } 
 
         public string CompanyName { get; set; }
-        public string RegisterDate { get; set; }
+        public string RegStartDate { get; set; }
+        public string RegEndDate { get; set; }
     }
 }

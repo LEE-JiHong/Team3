@@ -34,7 +34,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cboCompany = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.cboDestination = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnRegister = new System.Windows.Forms.Button();
@@ -46,6 +45,9 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpRegLastDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRegFirstDate = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,12 +65,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dtpRegLastDate);
+            this.panel1.Controls.Add(this.dtpRegFirstDate);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dtpEndDate);
             this.panel1.Controls.Add(this.dtpStartDate);
             this.panel1.Controls.Add(this.cboDestination);
-            this.panel1.Controls.Add(this.dateTimePicker3);
             this.panel1.Controls.Add(this.cboCompany);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label7);
@@ -163,15 +167,6 @@
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(218, 24);
             this.cboCompany.TabIndex = 30;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(763, 17);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(201, 22);
-            this.dateTimePicker3.TabIndex = 32;
             // 
             // cboDestination
             // 
@@ -291,15 +286,15 @@
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEndDate.Location = new System.Drawing.Point(203, 18);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(89, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(95, 22);
             this.dtpEndDate.TabIndex = 67;
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(91, 18);
+            this.dtpStartDate.Location = new System.Drawing.Point(86, 18);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(86, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(94, 22);
             this.dtpStartDate.TabIndex = 66;
             // 
             // btnSearch
@@ -320,6 +315,34 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(848, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 16);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "~";
+            // 
+            // dtpRegLastDate
+            // 
+            this.dtpRegLastDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpRegLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpRegLastDate.Location = new System.Drawing.Point(869, 17);
+            this.dtpRegLastDate.Name = "dtpRegLastDate";
+            this.dtpRegLastDate.Size = new System.Drawing.Size(95, 22);
+            this.dtpRegLastDate.TabIndex = 73;
+            // 
+            // dtpRegFirstDate
+            // 
+            this.dtpRegFirstDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpRegFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpRegFirstDate.Location = new System.Drawing.Point(752, 17);
+            this.dtpRegFirstDate.Name = "dtpRegFirstDate";
+            this.dtpRegFirstDate.Size = new System.Drawing.Size(94, 22);
+            this.dtpRegFirstDate.TabIndex = 72;
             // 
             // SalesMaster
             // 
@@ -351,7 +374,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cboDestination;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnDemandPlan;
@@ -362,5 +384,8 @@
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpRegLastDate;
+        private System.Windows.Forms.DateTimePicker dtpRegFirstDate;
     }
 }
