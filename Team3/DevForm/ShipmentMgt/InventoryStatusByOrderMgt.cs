@@ -13,6 +13,7 @@ namespace Team3.DevForm.NewFolder1
 {
     public partial class InventoryStatusByOrder : Team3.VerticalGridBaseForm
     {
+        List<ShipmentVO> shipment_list;
         public InventoryStatusByOrder()
         {
             InitializeComponent();
@@ -35,8 +36,13 @@ namespace Team3.DevForm.NewFolder1
             List<FactoryDB_VO> _cboToFac = (from item in f_list
                                             where item.facility_value == "FAC700"
                                             select item).ToList();
-            ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택"); 
+            ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
+
+            ShipmentService service_shipment = new ShipmentService();
+            shipment_list = service_shipment.GetInventoryStatusByOrder();
+            dgvStockStatus.DataSource = shipment_list;
+            
             
 
         }

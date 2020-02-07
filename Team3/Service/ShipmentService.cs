@@ -4,10 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Team3DAC;
+using Team3VO;
 
 namespace Team3
 {
     class ShipmentService : ConnectionAccess
     {
+        public List<ShipmentVO> GetInventoryStatusByOrder()
+        {
+            ShipmentDac dac = new ShipmentDac();
+            return dac.GetInventoryStatusByOrder();
+        }
     }
 }
