@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShipmentClosingMgt));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.lblStandardDate = new System.Windows.Forms.Label();
-            this.cboCompany = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCustomer = new System.Windows.Forms.ComboBox();
+            this.cboWH = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDeliveryCompany = new System.Windows.Forms.Label();
-            this.cboInSector = new System.Windows.Forms.ComboBox();
+            this.cboDestination = new System.Windows.Forms.ComboBox();
             this.lblWH = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtShipmentAdmin = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,19 +67,19 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtShipmentAdmin);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnSelect);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtOrderNum);
+            this.panel1.Controls.Add(this.txtProduct);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpToDate);
             this.panel1.Controls.Add(this.lblStandardDate);
-            this.panel1.Controls.Add(this.cboCompany);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboCustomer);
+            this.panel1.Controls.Add(this.cboWH);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblDeliveryCompany);
-            this.panel1.Controls.Add(this.cboInSector);
+            this.panel1.Controls.Add(this.cboDestination);
             this.panel1.Controls.Add(this.lblWH);
             this.panel1.Controls.Add(this.lblCompany);
             this.panel1.Controls.Add(this.label5);
@@ -135,21 +135,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(1188, 415);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox3
+            // txtOrderNum
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(804, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 22);
-            this.textBox3.TabIndex = 126;
+            this.txtOrderNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOrderNum.Location = new System.Drawing.Point(804, 52);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(209, 22);
+            this.txtOrderNum.TabIndex = 126;
             // 
-            // textBox1
+            // txtProduct
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(468, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 22);
-            this.textBox1.TabIndex = 125;
+            this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProduct.Location = new System.Drawing.Point(468, 52);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(230, 22);
+            this.txtProduct.TabIndex = 125;
             // 
             // label2
             // 
@@ -183,22 +183,22 @@
             this.lblStandardDate.TabIndex = 121;
             this.lblStandardDate.Text = "납기일";
             // 
-            // cboCompany
+            // cboCustomer
             // 
-            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(804, 13);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(209, 24);
-            this.cboCompany.TabIndex = 119;
+            this.cboCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCustomer.FormattingEnabled = true;
+            this.cboCustomer.Location = new System.Drawing.Point(804, 13);
+            this.cboCustomer.Name = "cboCustomer";
+            this.cboCustomer.Size = new System.Drawing.Size(209, 24);
+            this.cboCustomer.TabIndex = 119;
             // 
-            // comboBox1
+            // cboWH
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(128, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 24);
-            this.comboBox1.TabIndex = 115;
+            this.cboWH.FormattingEnabled = true;
+            this.cboWH.Location = new System.Drawing.Point(128, 13);
+            this.cboWH.Name = "cboWH";
+            this.cboWH.Size = new System.Drawing.Size(225, 24);
+            this.cboWH.TabIndex = 115;
             // 
             // label6
             // 
@@ -223,13 +223,13 @@
             this.lblDeliveryCompany.TabIndex = 106;
             this.lblDeliveryCompany.Text = "고객주문번호";
             // 
-            // cboInSector
+            // cboDestination
             // 
-            this.cboInSector.FormattingEnabled = true;
-            this.cboInSector.Location = new System.Drawing.Point(128, 52);
-            this.cboInSector.Name = "cboInSector";
-            this.cboInSector.Size = new System.Drawing.Size(225, 24);
-            this.cboInSector.TabIndex = 116;
+            this.cboDestination.FormattingEnabled = true;
+            this.cboDestination.Location = new System.Drawing.Point(128, 52);
+            this.cboDestination.Name = "cboDestination";
+            this.cboDestination.Size = new System.Drawing.Size(225, 24);
+            this.cboDestination.TabIndex = 116;
             // 
             // lblWH
             // 
@@ -350,12 +350,12 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 130;
             // 
-            // textBox2
+            // txtShipmentAdmin
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 22);
-            this.textBox2.TabIndex = 131;
+            this.txtShipmentAdmin.Location = new System.Drawing.Point(128, 97);
+            this.txtShipmentAdmin.Name = "txtShipmentAdmin";
+            this.txtShipmentAdmin.Size = new System.Drawing.Size(225, 22);
+            this.txtShipmentAdmin.TabIndex = 131;
             // 
             // ShipmentClosingMgt
             // 
@@ -379,16 +379,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Label lblStandardDate;
-        private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCustomer;
+        private System.Windows.Forms.ComboBox cboWH;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDeliveryCompany;
-        private System.Windows.Forms.ComboBox cboInSector;
+        private System.Windows.Forms.ComboBox cboDestination;
         private System.Windows.Forms.Label lblWH;
         private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Label label5;
@@ -397,7 +397,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtShipmentAdmin;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -37,9 +37,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblStandardDate = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboIsDone = new System.Windows.Forms.ComboBox();
+            this.cboPurchaseSales = new System.Windows.Forms.ComboBox();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,9 +58,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSelect);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboCompany);
+            this.panel1.Controls.Add(this.cboPurchaseSales);
+            this.panel1.Controls.Add(this.cboIsDone);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtpFromDate);
             this.panel1.Controls.Add(this.label4);
@@ -198,31 +198,31 @@
             this.lblStandardDate.TabIndex = 90;
             this.lblStandardDate.Text = "마감월";
             // 
-            // comboBox1
+            // cboIsDone
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 24);
-            this.comboBox1.TabIndex = 100;
+            this.cboIsDone.FormattingEnabled = true;
+            this.cboIsDone.Location = new System.Drawing.Point(103, 71);
+            this.cboIsDone.Name = "cboIsDone";
+            this.cboIsDone.Size = new System.Drawing.Size(127, 24);
+            this.cboIsDone.TabIndex = 100;
             // 
-            // comboBox2
+            // cboPurchaseSales
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(443, 17);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(127, 24);
-            this.comboBox2.TabIndex = 101;
+            this.cboPurchaseSales.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboPurchaseSales.FormattingEnabled = true;
+            this.cboPurchaseSales.Location = new System.Drawing.Point(443, 17);
+            this.cboPurchaseSales.Name = "cboPurchaseSales";
+            this.cboPurchaseSales.Size = new System.Drawing.Size(127, 24);
+            this.cboPurchaseSales.TabIndex = 101;
             // 
-            // comboBox3
+            // cboCompany
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(739, 17);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(127, 24);
-            this.comboBox3.TabIndex = 102;
+            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(739, 17);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(127, 24);
+            this.cboCompany.TabIndex = 102;
             // 
             // btnSelect
             // 
@@ -266,9 +266,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCompany;
+        private System.Windows.Forms.ComboBox cboPurchaseSales;
+        private System.Windows.Forms.ComboBox cboIsDone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Label label4;
