@@ -24,16 +24,21 @@ namespace Team3.DevForm.NewFolder1
             ResourceService resource_service = new ResourceService();
             f_list = resource_service.GetFactoryAll();
 
+            #region From창고cbo
             List<FactoryDB_VO> _cboFromFac = (from item in f_list
-                                               where item.facility_value == "FAC400"
-                                               select item).ToList();
+                                              where item.facility_value == "FAC400"
+                                              select item).ToList();
             ComboUtil.ComboBinding(cboFromFac, _cboFromFac, "factory_code", "factory_name", "선택");
+            #endregion
 
-
+            #region To창고cbo
             List<FactoryDB_VO> _cboToFac = (from item in f_list
-                                               where item.facility_value == "FAC700"
-                                               select item).ToList();
-            ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
+                                            where item.facility_value == "FAC700"
+                                            select item).ToList();
+            ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택"); 
+            #endregion
+            
+
         }
 
         private void btnExcel_Click(object sender, EventArgs e)

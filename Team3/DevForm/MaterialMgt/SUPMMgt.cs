@@ -13,6 +13,7 @@ namespace Team3
     //Sales of unit's price management 영업 단가 관리
     public partial class SUPMMgt : Team3.VerticalGridBaseForm
     {
+        List<PriceInfoVO> pricelist;
         PriceService price_service;
         public SUPMMgt()
         {
@@ -55,7 +56,7 @@ namespace Team3
 
 
             price_service = new PriceService();
-            List<PriceInfoVO> pricelist = price_service.GetPriceInfo("CUSTOMER");
+             pricelist = price_service.GetPriceInfo("CUSTOMER");
 
             dgvSUPM.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSUPM.Columns.Add("Number", "No.");
@@ -120,6 +121,11 @@ namespace Team3
             DataObject dataObj = dgvSUPM.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

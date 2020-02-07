@@ -302,6 +302,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(206, 22);
             this.txtProduct.TabIndex = 28;
+            this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // btnSelect
             // 
@@ -320,6 +321,7 @@
             this.btnSelect.Text = "조회";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // MUPMMgt
             // 
