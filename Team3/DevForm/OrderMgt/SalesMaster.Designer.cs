@@ -38,7 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnDemandPlan = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -226,24 +226,25 @@
             this.btnDemandPlan.UseVisualStyleBackColor = false;
             this.btnDemandPlan.Click += new System.EventHandler(this.btnDemandPlan_Click);
             // 
-            // button6
+            // btnExcel
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(243, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
-            this.button6.TabIndex = 43;
-            this.button6.Text = "엑셀";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(243, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(57, 23);
+            this.btnExcel.TabIndex = 43;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnEdit);
             this.flowLayoutPanel1.Controls.Add(this.btnRegister);
             this.flowLayoutPanel1.Controls.Add(this.btnDemandPlan);
@@ -375,7 +376,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cboDestination;
         private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnDemandPlan;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

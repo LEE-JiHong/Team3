@@ -101,5 +101,10 @@ namespace Team3
             return dac.GetMRP(planID, firstDate, endDate);
         }
 
+        public int SearchPlanIDInDemand(string plan_id)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.SearchPlanIDInDemand(plan_id);
+        }
     }
 }
