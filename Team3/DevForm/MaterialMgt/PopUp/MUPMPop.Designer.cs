@@ -112,7 +112,7 @@
             // 
             // panel4
             // 
-            this.panel4.Size = new System.Drawing.Size(630, 444);
+            this.linePanel.Size = new System.Drawing.Size(630, 444);
             // 
             // txtBeforePrice
             // 
@@ -359,7 +359,7 @@
             this.Name = "MUPMPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MUPMPop_Load);
-            this.Controls.SetChildIndex(this.panel4, 0);
+            this.Controls.SetChildIndex(this.linePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);

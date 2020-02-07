@@ -78,19 +78,23 @@ namespace Team3DAC
         /// 영업마스터 조회
         /// </summary>
         /// <returns></returns>
-        public List<SOMasterVO> GetSOMasterAll()
+        public List<SOMasterVO> GetSOMasterAll(WhereSoVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 //string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
 
-                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename";
+                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename where CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate)";
 
                 //p.product_codename을 product_name으로 바꾸기
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@startDate", vo.startDate);
+                cmd.Parameters.AddWithValue("@endDate", vo.endDate);
+
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<SOMasterVO> list = Helper.DataReaderMapToList<SOMasterVO>(reader);

@@ -77,7 +77,7 @@
             // 
             // panel4
             // 
-            this.panel4.Size = new System.Drawing.Size(385, 259);
+            this.linePanel.Size = new System.Drawing.Size(385, 259);
             // 
             // label2
             // 
