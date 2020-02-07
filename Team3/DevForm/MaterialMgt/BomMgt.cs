@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Team3
 {
@@ -50,6 +52,7 @@ namespace Team3
             dgvBom.Columns.Add("Number", "No.");
             dgvBom.Columns[0].Width = 53;
 
+            #region DGV바인딩
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목유형", "bom_type", true, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목", "bom_codename", true, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품명", "bom_name", true, 220);
@@ -61,7 +64,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "종료일", "bom_edate", true, 130, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정일", "bom_udate", true, 130, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter); 
+            #endregion
 
             #region visible_false
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품번", "product_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -104,6 +108,7 @@ namespace Team3
             dgvBomDetail.Columns.Add("Number", "No.");
             dgvBomDetail.Columns[0].Width = 53;
 
+            #region DGV바인딩
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "상위품목", "bom_parent_codename", true, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "품목", "bom_codename", true, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "품명", "bom_name", true, 220);
@@ -117,7 +122,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "소요계획", "plan_yn", true, 78, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "수정일", "bom_udate", true, 130, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter); 
+            #endregion
 
             #region visible_false
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "품번", "product_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -267,6 +273,32 @@ namespace Team3
                 dgvBom.DataSource = searchList;
             }
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            dgvBom.ClearSelection();//전체선택이 풀려있음
+        }
+        private void copyAlltoClipboard()       //복사기능
+        {
+            dgvBom.SelectAll();
+            DataObject dataObj = dgvBom.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
     }
 }

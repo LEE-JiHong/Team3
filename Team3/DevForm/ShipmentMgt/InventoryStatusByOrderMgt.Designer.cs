@@ -44,19 +44,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboFromFac = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStockStatus = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.basepanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStockStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvStockStatus);
             this.panel2.Location = new System.Drawing.Point(13, 171);
             this.panel2.Size = new System.Drawing.Size(999, 409);
             // 
@@ -221,6 +221,7 @@
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnFormDownload
             // 
@@ -296,16 +297,16 @@
             this.label5.TabIndex = 88;
             this.label5.Text = "From창고";
             // 
-            // dataGridView1
+            // dgvStockStatus
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(999, 409);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvStockStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dgvStockStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStockStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStockStatus.Location = new System.Drawing.Point(0, 0);
+            this.dgvStockStatus.Name = "dgvStockStatus";
+            this.dgvStockStatus.RowTemplate.Height = 23;
+            this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
+            this.dgvStockStatus.TabIndex = 0;
             // 
             // InventoryStatusByOrder
             // 
@@ -322,7 +323,7 @@
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStockStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,6 +346,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpToDate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStockStatus;
     }
 }

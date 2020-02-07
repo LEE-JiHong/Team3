@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
@@ -197,6 +199,94 @@ namespace Team3
         private void btnSelect_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+
+            copyAlltoClipboard();
+
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            dgvProductList.ClearSelection();//전체선택이 풀려있음
+
+
+        }
+        private void ExcelLoad()
+        {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
+
+                string filename = "test" + ".xlsx"; // ++ 파일명 변경 
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.order;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dgvProductList.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dgvProductList.Columns[j].HeaderText;
+                }
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dgvProductList.Rows.Count; i++)
+                {
+                    for (j = 0; j < dgvProductList.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dgvProductList[j, i].Value == null ? "" : dgvProductList[j, i].Value;
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show(err.Message);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        
+        private void copyAlltoClipboard()       //복사기능
+        {
+            dgvProductList.SelectAll();
+            DataObject dataObj = dgvProductList.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
     }
 }
