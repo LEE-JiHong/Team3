@@ -111,7 +111,7 @@
             // 
             // panel4
             // 
-            this.panel4.Size = new System.Drawing.Size(630, 444);
+            this.linePanel.Size = new System.Drawing.Size(630, 444);
             // 
             // comboBox5
             // 
@@ -357,7 +357,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SUPMPop";
             this.Load += new System.EventHandler(this.SUPMPop_Load);
-            this.Controls.SetChildIndex(this.panel4, 0);
+            this.Controls.SetChildIndex(this.linePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);

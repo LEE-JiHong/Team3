@@ -78,19 +78,31 @@ namespace Team3DAC
         /// 영업마스터 조회
         /// </summary>
         /// <returns></returns>
-        public List<SOMasterVO> GetSOMasterAll()
+        public List<SOMasterVO> GetSOMasterAll(WhereSoVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 //string sql = "SELECT so_id, plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_ocount, so_ccount, so_edate, so_sdate, so_uadmin, so_udate, so_comment FROM TBL_SO_MASTER ORDER BY plan_id ASC";
 
-                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename";
+                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename where CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate) and CONVERT (DATETIME, so_sdate) >= CONVERT (DATETIME, @regstartDate) and CONVERT (DATETIME, so_sdate) <= CONVERT (DATETIME, @regendDate)";
+
+                if (vo.CompanyName != null)
+                {
+                    sql += " and company_name = @company_name";
+                    cmd.Parameters.AddWithValue("@company_name", vo.CompanyName);
+                }
 
                 //p.product_codename을 product_name으로 바꾸기
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@startDate", vo.startDate);
+                cmd.Parameters.AddWithValue("@endDate", vo.endDate);
+                cmd.Parameters.AddWithValue("@regstartDate", vo.RegStartDate);
+                cmd.Parameters.AddWithValue("@regendDate", vo.RegEndDate);
+
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<SOMasterVO> list = Helper.DataReaderMapToList<SOMasterVO>(reader);
@@ -235,22 +247,42 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "update TBL_SO_MASTER set company_code = @company_code, company_type = @company_type, product_name = @product_name, so_pcount = @so_pcount, so_ccount=@so_ccount, so_comment = @so_comment, so_udate = @so_udate where so_id = @so_id";
-                cmd.CommandType = CommandType.Text;
-
-                cmd.Parameters.AddWithValue("@company_code", VO.company_code);
-                cmd.Parameters.AddWithValue("@company_type", VO.company_type);
-                cmd.Parameters.AddWithValue("@product_name", VO.product_codename);
-                cmd.Parameters.AddWithValue("@so_pcount", VO.so_pcount);
-                cmd.Parameters.AddWithValue("@so_ccount", VO.so_ccount);
-                cmd.Parameters.AddWithValue("@so_comment", VO.so_comment);
-                cmd.Parameters.AddWithValue("@so_udate", VO.so_udate);
-                cmd.Parameters.AddWithValue("@so_id", VO.so_id);
-
                 cmd.Connection.Open();
-                var successRow = cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-                return successRow > 0;
+                SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+                try
+                {
+                    cmd.Transaction = tran;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "update TBL_SO_MASTER set company_code = @company_code, company_type = @company_type, product_name = @product_name, so_pcount = @so_pcount, so_ccount=@so_ccount, so_comment = @so_comment, so_udate = @so_udate, so_edate = @so_edate where so_id = @so_id";
+
+                    cmd.Parameters.AddWithValue("@company_code", VO.company_code);
+                    cmd.Parameters.AddWithValue("@company_type", VO.company_type);
+                    cmd.Parameters.AddWithValue("@product_name", VO.product_codename);
+                    cmd.Parameters.AddWithValue("@so_pcount", VO.so_pcount);
+                    cmd.Parameters.AddWithValue("@so_ccount", VO.so_ccount);
+                    cmd.Parameters.AddWithValue("@so_comment", VO.so_comment);
+                    cmd.Parameters.AddWithValue("@so_udate", VO.so_udate);
+                    cmd.Parameters.AddWithValue("@so_id", VO.so_id);
+                    cmd.Parameters.AddWithValue("@so_edate", VO.so_edate);
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "update TBL_DEMAND_PLAN set d_date = @so_edate where so_id = @so_id";
+
+                    cmd.ExecuteNonQuery();
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    tran.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
             }
         }
 
@@ -292,7 +324,7 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "SELECT * FROM TBL_SO_MASTER WHERE plan_id = @PlanID order by so_edate desc";
+                string sql = "select so_id, so_wo_id, s.company_code, company_name, p.product_name, p.product_codename, so_pcount, so_ccount, so_ocount, so_comment, so_edate, so_sdate, so_uadmin, so_udate from dbo.TBL_SO_MASTER s inner join dbo.TBL_COMPANY c on s.company_code = c.company_code inner join dbo.TBL_PRODUCT p on s.product_name = p.product_codename WHERE plan_id = @PlanID order by so_edate desc";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
@@ -334,6 +366,28 @@ namespace Team3DAC
 
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+
+        /// <summary>
+        /// planID로 검색하여 수요계획테이블에 해당 plan_id가 있는지 확인
+        /// </summary>
+        /// <param name="VO"></param>
+        /// <returns></returns>
+        public int SearchPlanIDInDemand(string plan_id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "select count(*) from TBL_DEMAND_PLAN where plan_id = @plan_id";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@plan_id", plan_id);
+
+                cmd.Connection.Open();
+                int Row = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.Connection.Close();
+                return Row;
             }
         }
 
