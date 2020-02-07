@@ -600,7 +600,7 @@ namespace Team3DAC
         /// <param name="firstDate"></param>
         /// <param name="endDate"></param>
         /// <returns></returns>
-        public DataTable GetDemandPlan(string firstDate, string endDate)
+        public DataTable GetDemandPlan(string firstDate, string endDate, string planID)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -612,6 +612,7 @@ namespace Team3DAC
 
                 cmd.Parameters.AddWithValue("@StartDate", firstDate);
                 cmd.Parameters.AddWithValue("@EndDate", endDate);
+                cmd.Parameters.AddWithValue("@plan_id", planID);
 
                 DataTable dataTable = new DataTable();
 

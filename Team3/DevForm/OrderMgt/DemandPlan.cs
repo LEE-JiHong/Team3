@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
-    public partial class DemandPlan : Team3.VerticalGridBaseForm
+    public partial class DemandPlan : VerticalGridBaseForm
     {
         public DemandPlan()
         {
@@ -20,15 +21,23 @@ namespace Team3
         private void DemandPlan_Load(object sender, EventArgs e)
         {
             OrderService service = new OrderService();
-            List<string> list = service.GetPlanID();
 
-            cboPlanID.DataSource = list;
+            try
+            {
+                List<string> list = service.GetPlanID();
 
-            dtpEndDate.Value = DateTime.Now.AddMonths(1);
+                cboPlanID.DataSource = list;
 
-            DataTable dt = service.GetDemandPlan(dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString());
+                dtpEndDate.Value = DateTime.Now.AddMonths(1);
 
-            dataGridView1.DataSource = dt;
+                DataTable dt = service.GetDemandPlan(dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString(), cboPlanID.Text);
+
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
 
         private void BtnExport_Click(object sender, EventArgs e)
@@ -94,7 +103,7 @@ namespace Team3
             ProductionPop frm = new ProductionPop();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                
             }
             //try
             //{
@@ -125,6 +134,19 @@ namespace Team3
             //{
             //    MessageBox.Show(er.Message);
             //} 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //조회 버튼
+            try
+            {
+                ////////////////////////////////2020207 18:20
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
     }
 }

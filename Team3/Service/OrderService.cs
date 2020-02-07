@@ -83,10 +83,10 @@ namespace Team3
             return dac.AddDemandPlan(list);
         }
 
-        public DataTable GetDemandPlan(string firstDate, string endDate)
+        public DataTable GetDemandPlan(string firstDate, string endDate, string planID)
         {
             OrderDac dac = new OrderDac();
-            return dac.GetDemandPlan(firstDate, endDate);
+            return dac.GetDemandPlan(firstDate, endDate, planID);
         }
 
         public bool AddProductionPlan(List<ProductionPlanVO> list)
