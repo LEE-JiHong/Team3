@@ -83,7 +83,7 @@
             this.panel1.Controls.Add(this.txtLicenseNum);
             this.panel1.Controls.Add(this.txtCodeCompany);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Size = new System.Drawing.Size(966, 113);
+            this.panel1.Size = new System.Drawing.Size(966, 110);
             // 
             // label1
             // 
@@ -118,6 +118,7 @@
             // 
             // basepanel
             // 
+            this.basepanel.Margin = new System.Windows.Forms.Padding(1);
             this.basepanel.Size = new System.Drawing.Size(990, 472);
             // 
             // imageList1
@@ -302,7 +303,7 @@
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(888, 80);
+            this.btnSearch.Location = new System.Drawing.Point(888, 77);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(65, 30);
             this.btnSearch.TabIndex = 4;
@@ -342,11 +343,13 @@
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.Location = new System.Drawing.Point(254, 3);
+            this.btnExport.Location = new System.Drawing.Point(259, 1);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(1);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(57, 23);
+            this.btnExport.Size = new System.Drawing.Size(54, 26);
             this.btnExport.TabIndex = 49;
             this.btnExport.Text = "엑셀";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -358,11 +361,13 @@
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(191, 3);
+            this.btnDel.Location = new System.Drawing.Point(203, 1);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(1);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(57, 23);
+            this.btnDel.Size = new System.Drawing.Size(54, 26);
             this.btnDel.TabIndex = 50;
             this.btnDel.Text = "삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -374,11 +379,13 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(133, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(147, 1);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(52, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(54, 26);
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -390,11 +397,13 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(75, 3);
+            this.btnAdd.Location = new System.Drawing.Point(91, 1);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(52, 23);
+            this.btnAdd.Size = new System.Drawing.Size(54, 26);
             this.btnAdd.TabIndex = 48;
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

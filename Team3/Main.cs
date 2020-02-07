@@ -986,6 +986,15 @@ namespace Team3
                 MadeTabMenu(frm);
             }
         }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            SettingForm frm = new SettingForm();
+            if(frm.ShowDialog()==DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
 
