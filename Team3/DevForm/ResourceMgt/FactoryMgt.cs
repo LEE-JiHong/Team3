@@ -132,10 +132,10 @@ namespace Team3
                     Visible = true
                 };
 
-                string filename = "test" + ".xlsx"; // ++ 파일명 변경 
+                string filename = this.Tag.ToString() + ".xlsx"; // ++ 파일명 변경 
 
                 string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
-                //byte[] temp = Properties.Resources.order;
+                //byte[] temp = Properties.Resources.;
 
                 //System.IO.File.WriteAllBytes(tempPath, temp);
 

@@ -61,10 +61,10 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "계획수량", "pro_count", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "지시수량", "pro_pcount", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "계획시작일", "pro_date", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "마스터ID", "plan_id", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "마스터ID", "plan_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품ID", "pro_id", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "소요시간", "use_time", true);
-    
+
 
 
             LoadData();
@@ -153,53 +153,70 @@ namespace Team3
             {
                 dt = P_service.GetProductionPlanCheck(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
 
-                if (cboStatus.Text != "미선택")
+                if (textBox1.Text != "" && cboStatus.Text == "미선택" && cboMachine.Text == "미선택")
                 {
                     DataView dv = dt.DefaultView;
-                    dv.RowFilter = "common_name = '" + cboStatus.Text + "'";
+                    dv.RowFilter = "product_codename = '" + textBox1.Text + "'";
                     if (dv.Count > 0)
                     {
                         table = dv.ToTable();
+                        dataGridView1.DataSource = table;
+                        textBox1.Text = "";
                     }
-                  
-                    if (cboMachine.Text != "미선택")
+                }
+
+                else if (cboStatus.Text == "미선택" && cboMachine.Text == "미선택")
+                {
+                    dataGridView1.DataSource = dt;
+                }
+
+                else
+                {
+                    if (cboStatus.Text != "미선택")
                     {
-                        dv = table.DefaultView;
-                        dv.RowFilter = "m_name ='" + cboMachine.Text + "'";
+                        DataView dv = dt.DefaultView;
+                        dv.RowFilter = "common_name = '" + cboStatus.Text + "'";
                         if (dv.Count > 0)
                         {
                             table = dv.ToTable();
                         }
+
+                        if (cboMachine.Text != "미선택")
+                        {
+                            dv = table.DefaultView;
+                            dv.RowFilter = "m_name ='" + cboMachine.Text + "'";
+                            if (dv.Count > 0)
+                            {
+                                table = dv.ToTable();
+                            }
+
+                        }
+                        if (table.Columns.Count == 0)
+                        {
+                            dataGridView1.DataSource = dt;
+                        }
+                        else if(table.Columns.Count>0)
+                        {
+                            dataGridView1.DataSource = dt;
+                        }
+                     
+                    }
+                    else //상태 없을경우
+                    {
+                        DataView dv = dt.DefaultView;
+                        dv.RowFilter = "m_name ='" + cboMachine.Text + "'";
+                        if (dv.Count > 0)
+                        {
+                            table = dv.ToTable();
+
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = dt;
+                        }
+                        dataGridView1.DataSource = table;
                     }
                 }
-                else
-                {
-                    DataView dv = dt.DefaultView;
-                    dv.RowFilter = "m_name ='" + cboMachine.Text + "'";
-                    if (dv.Count > 0)
-                    {
-                        table = dv.ToTable();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("조건이 없습니다");
-                    }
-                }
-                dataGridView1.DataSource = dt;
-                //if (cboMachine.Text == "미선택")
-                //    dataGridView1.DataSource = table;
-
-                //else
-                //    dataGridView1.DataSource = null;
-
-                //if (cboMachine.Text != "미선택")
-                //{
-                //    DataTable Machine = table.AsEnumerable().Where(Row =>
-                //                    Row.Field<string>("m_name") == cboMachine.Text).CopyToDataTable();
-                //    dataGridView1.DataSource = Machine;
-                //}
-
 
             }
             catch (Exception err)
@@ -208,6 +225,5 @@ namespace Team3
             }
 
         }
-
     }
 }
