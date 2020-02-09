@@ -106,5 +106,10 @@ namespace Team3
             OrderDac dac = new OrderDac();
             return dac.SearchPlanIDInDemand(plan_id);
         }
+        public int GetMaxUPHCount(string plan_id)
+        {
+            OrderDac dac = new OrderDac();
+            return dac.GetMaxUPHCount(plan_id);
+        }
     }
 }

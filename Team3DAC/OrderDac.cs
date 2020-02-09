@@ -655,5 +655,27 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        ///  planID로 UPH 조회
+        /// </summary>
+        /// <param name="plan_id"></param>
+        /// <returns></returns>
+        public int GetMaxUPHCount(string plan_id)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetMaxUPHCount";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@plan_id", plan_id);
+
+                cmd.Connection.Open();
+                int Row = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.Connection.Close();
+                return Row;
+            }
+        }
+
     }
 }

@@ -30,9 +30,9 @@ namespace Team3
 
                 dtpEndDate.Value = DateTime.Now.AddMonths(1);
 
-                DataTable dt = service.GetDemandPlan(dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString(), cboPlanID.Text);
+                //DataTable dt = service.GetDemandPlan(dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString(), cboPlanID.Text);
 
-                dataGridView1.DataSource = dt;
+                //dataGridView1.DataSource = dt;
             }
             catch (Exception err)
             {
@@ -141,7 +141,28 @@ namespace Team3
             //조회 버튼
             try
             {
-                ////////////////////////////////2020207 18:20
+                string startDate = dtpStartDate.Value.ToShortDateString();
+                string endDate = dtpEndDate.Value.ToShortDateString();
+                string planID = cboPlanID.Text;
+
+                OrderService service = new OrderService();
+                DataTable dt = service.GetDemandPlan(startDate, endDate, planID);
+
+                dt.Columns[0].ColumnName = "번호";
+                dt.Columns[1].ColumnName = "고객사코드";
+                dt.Columns[2].ColumnName = "고객사설비";
+                dt.Columns[3].ColumnName = "고객사명";
+                dt.Columns[4].ColumnName = "고객주문번호";
+                dt.Columns[5].ColumnName = "품목";
+
+
+                //foreach (DataColumn dc in dt.Columns)
+                //{
+                //    dc.ColumnName = "dd";
+                //}
+
+                dataGridView1.DataSource = dt;
+                 
             }
             catch (Exception err)
             {
