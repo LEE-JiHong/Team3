@@ -11,7 +11,7 @@ using Team3VO;
 
 namespace Team3
 {
-    public partial class ProductionPop : Team3.DialogForm
+    public partial class ProductionPop : DialogForm
     {
         int TotalCount;
 
