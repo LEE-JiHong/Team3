@@ -12,15 +12,16 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
-    public partial class RegularOrder : VerticalGridBaseForm
+    public partial class RegularOrder2 : Team3.VerticalGridBaseForm
     {
-        public RegularOrder()
+        public RegularOrder2()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void RegularOrder_Load(object sender, EventArgs e)
         {
+
             //dataGridView1.Columns.Add("P/N",);
             //dataGridView1.Columns.Add("품목명", "품목명");
             //dataGridView1.Columns.Add("품목유형", "품목유형");
@@ -31,7 +32,6 @@ namespace Team3
             //GridViewUtil.SetDataGridView(dataGridView1);
             SetCombo();
         }
-
         private void SetCombo()
         {
             OrderService service = new OrderService();
@@ -81,7 +81,12 @@ namespace Team3
             }
         }
 
-        private void btnExcel_Click(object sender, EventArgs e)
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //수량 입력하면 체크박스 true
+        }
+
+        private void BtnExcel_Click(object sender, EventArgs e)
         {
             try
             {
@@ -137,11 +142,6 @@ namespace Team3
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //수량 입력하면 체크박스 true
         }
     }
 }
