@@ -142,16 +142,16 @@
             // cboToFac
             // 
             this.cboToFac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboToFac.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboToFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cboToFac.FormattingEnabled = true;
             this.cboToFac.Location = new System.Drawing.Point(715, 19);
             this.cboToFac.Name = "cboToFac";
-            this.cboToFac.Size = new System.Drawing.Size(209, 21);
+            this.cboToFac.Size = new System.Drawing.Size(209, 24);
             this.cboToFac.TabIndex = 83;
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(98, 20);
             this.dtpFromDate.Name = "dtpFromDate";
@@ -259,7 +259,7 @@
             // 
             // dtpToDate
             // 
-            this.dtpToDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(219, 20);
             this.dtpToDate.Name = "dtpToDate";
@@ -278,11 +278,11 @@
             // cboFromFac
             // 
             this.cboFromFac.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboFromFac.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFromFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cboFromFac.FormattingEnabled = true;
             this.cboFromFac.Location = new System.Drawing.Point(405, 20);
             this.cboFromFac.Name = "cboFromFac";
-            this.cboFromFac.Size = new System.Drawing.Size(209, 21);
+            this.cboFromFac.Size = new System.Drawing.Size(209, 24);
             this.cboFromFac.TabIndex = 89;
             // 
             // label5
@@ -305,6 +305,7 @@
             this.dgvStockStatus.Location = new System.Drawing.Point(0, 0);
             this.dgvStockStatus.Name = "dgvStockStatus";
             this.dgvStockStatus.RowTemplate.Height = 23;
+            this.dgvStockStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
             this.dgvStockStatus.TabIndex = 0;
             // 

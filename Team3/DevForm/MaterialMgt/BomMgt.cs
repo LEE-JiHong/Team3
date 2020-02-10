@@ -75,7 +75,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "BomID", "bom_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "상위품목", "bom_parent_id", false, 130);
             #endregion
-
+            GridViewUtil.SetDataGridView(dgvBom);
             dgvBom.AutoGenerateColumns = false;
             dgvBom.DataSource = BOM_list;
             dgvBom.ClearSelection();

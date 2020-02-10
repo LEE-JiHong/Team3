@@ -167,7 +167,8 @@ namespace Team3
             
         }
 
-        private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
+       
+        private void cboProduct_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboProduct.SelectedIndex == 0)
             {
