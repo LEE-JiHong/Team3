@@ -90,8 +90,8 @@ namespace Team3
                     vo.price_id = this.vo.price_id;
                     vo.product_id = Convert.ToInt32(cboProduct.SelectedValue);
                     vo.company_id = Convert.ToInt32(cboCompany.SelectedValue);
-                    vo.price_present = Convert.ToDecimal(txtBeforePrice.Text);
-                    vo.price_past = Convert.ToDecimal(txtCurrentPrice.Text);
+                    vo.price_present = Convert.ToDecimal(txtCurrentPrice.Text);
+                    vo.price_past = Convert.ToDecimal(txtBeforePrice.Text); 
                     vo.price_sdate = dtpStartDate.Value.ToString("yyyy-MM-dd");
                     vo.price_edate = txtEndDate.Text;
                     vo.price_udate = txtModifyDate.Text;

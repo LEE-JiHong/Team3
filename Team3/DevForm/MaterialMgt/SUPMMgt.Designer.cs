@@ -56,7 +56,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvSUPM);
-            this.panel2.Location = new System.Drawing.Point(12, 102);
+            this.panel2.Location = new System.Drawing.Point(12, 105);
             this.panel2.Size = new System.Drawing.Size(1285, 343);
             // 
             // panel1
