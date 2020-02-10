@@ -268,7 +268,7 @@ namespace Team3
             else
             {
                 searchList = (from item in BOM_list
-                              where item.bom_name.Contains(searchName)
+                              where item.bom_codename.ToUpper().Contains(searchName.ToUpper())
                               select item).ToList();
 
                 dgvBom.DataSource = searchList;
@@ -300,6 +300,14 @@ namespace Team3
             DataObject dataObj = dgvBom.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSelect.PerformClick();
+            }
         }
     }
 }

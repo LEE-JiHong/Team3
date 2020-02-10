@@ -57,7 +57,7 @@
             // 
             this.panel2.Controls.Add(this.dgvMUPM);
             this.panel2.Location = new System.Drawing.Point(12, 105);
-            this.panel2.Size = new System.Drawing.Size(1285, 340);
+            this.panel2.Size = new System.Drawing.Size(1285, 343);
             // 
             // panel1
             // 
@@ -291,7 +291,7 @@
             this.dgvMUPM.Name = "dgvMUPM";
             this.dgvMUPM.RowTemplate.Height = 23;
             this.dgvMUPM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMUPM.Size = new System.Drawing.Size(1285, 340);
+            this.dgvMUPM.Size = new System.Drawing.Size(1285, 343);
             this.dgvMUPM.TabIndex = 0;
             // 
             // txtProduct
