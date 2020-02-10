@@ -60,5 +60,10 @@ namespace Team3WebAPI.Controllers
             //ViewBag.Data3 = data3;
             return View();
         }
+
+        public ActionResult Main()
+        {
+            return View();
+        }
     }
 }
