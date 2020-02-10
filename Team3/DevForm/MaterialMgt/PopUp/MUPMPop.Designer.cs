@@ -110,7 +110,7 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             // 
-            // panel4
+            // linePanel
             // 
             this.linePanel.Size = new System.Drawing.Size(630, 444);
             // 
@@ -161,7 +161,7 @@
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(177, 23);
             this.cboProduct.TabIndex = 39;
-            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
+            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged_1);
             // 
             // cboIsUsed
             // 

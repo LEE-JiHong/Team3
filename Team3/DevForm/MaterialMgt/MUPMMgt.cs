@@ -30,7 +30,7 @@ namespace Team3
                 vo = row.DataBoundItem as PriceInfoVO;
                 list.Add(vo);
             }
-            MUPMPop frm = new MUPMPop(MUPMPop.EditMode.Insert);
+            MUPMPop frm = new MUPMPop(MUPMPop.EditMode.Insert,list);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 price_service = new PriceService();
@@ -73,7 +73,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "비고", "price_comment", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "사용유무", "price_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
             #endregion
-
+            GridViewUtil.SetDataGridView(dgvMUPM);
             dgvMUPM.AutoGenerateColumns = false;
             dgvMUPM.DataSource = pricelist;
         }

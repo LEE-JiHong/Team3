@@ -293,8 +293,8 @@
             // 
             // dgvSUPM
             // 
+            this.dgvSUPM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSUPM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dgvSUPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSUPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSUPM.Location = new System.Drawing.Point(0, 0);
             this.dgvSUPM.Name = "dgvSUPM";
