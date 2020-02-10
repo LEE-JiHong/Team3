@@ -42,7 +42,8 @@ namespace Team3.DevForm.NewFolder1
             ShipmentService service_shipment = new ShipmentService();
             shipment_list = service_shipment.GetInventoryStatusByOrder();
             dgvStockStatus.DataSource = shipment_list;
-
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "", true, 130);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "", true, 130);
 
 
         }
@@ -73,12 +74,6 @@ namespace Team3.DevForm.NewFolder1
                 Clipboard.SetDataObject(dataObj);
         }
 
-        private void dgvStockStatus_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            for (int i = 0; i < dgvStockStatus.Columns.Count; i++)
-            {
-                MessageBox.Show(dgvStockStatus[i, e.RowIndex].Value.GetType().ToString());
-            }
-        }
+        
     }
 }

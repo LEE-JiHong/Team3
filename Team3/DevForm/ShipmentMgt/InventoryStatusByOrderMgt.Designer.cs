@@ -299,6 +299,7 @@
             // 
             // dgvStockStatus
             // 
+            this.dgvStockStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStockStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvStockStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStockStatus.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -308,7 +309,6 @@
             this.dgvStockStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
             this.dgvStockStatus.TabIndex = 0;
-            this.dgvStockStatus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockStatus_CellClick);
             // 
             // InventoryStatusByOrder
             // 
