@@ -38,12 +38,12 @@ namespace Team3.DevForm.NewFolder1
                                             select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
-
+            DataTable dt = new DataTable();
             ShipmentService service_shipment = new ShipmentService();
             shipment_list = service_shipment.GetInventoryStatusByOrder();
             dgvStockStatus.DataSource = shipment_list;
-            
-            
+
+
 
         }
 
@@ -71,6 +71,14 @@ namespace Team3.DevForm.NewFolder1
             DataObject dataObj = dgvStockStatus.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void dgvStockStatus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            for (int i = 0; i < dgvStockStatus.Columns.Count; i++)
+            {
+                MessageBox.Show(dgvStockStatus[i, e.RowIndex].Value.GetType().ToString());
+            }
         }
     }
 }

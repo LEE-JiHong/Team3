@@ -16,7 +16,7 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 string sql = "GetInventoryStatusByOrder";
-                
+
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -27,5 +27,6 @@ namespace Team3DAC
                 return list;
             }
         }
+
     }
 }
