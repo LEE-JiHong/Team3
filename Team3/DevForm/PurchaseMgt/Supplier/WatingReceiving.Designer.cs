@@ -88,7 +88,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(13, 256);
+            this.label2.Location = new System.Drawing.Point(13, 266);
             this.label2.Size = new System.Drawing.Size(110, 19);
             this.label2.Text = "자재입고처리";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -249,6 +249,8 @@
             // 
             // dgvWatingReceive
             // 
+            this.dgvWatingReceive.AllowUserToAddRows = false;
+            this.dgvWatingReceive.AllowUserToDeleteRows = false;
             this.dgvWatingReceive.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvWatingReceive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWatingReceive.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -261,6 +263,7 @@
             // 
             // dgvResult
             // 
+            this.dgvResult.AllowUserToDeleteRows = false;
             this.dgvResult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
