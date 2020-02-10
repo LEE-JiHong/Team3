@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,10 @@ using Team3VO;
 
 namespace Team3
 {
-    public partial class ProductionPop : Team3.DialogForm
+    public partial class ProductionPop : DialogForm
     {
+        int TotalCount;
+
         List<DemandPlanVO> demandList;
 
         public ProductionPop()
@@ -42,17 +45,19 @@ namespace Team3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            TotalCount = 0;
+
             string startDate = DateTime.Now.ToShortDateString();
 
             OrderService service = new OrderService();
 
             demandList = service.GetDemandPlanFromPlanID(cbOrderGubun.Text);
 
-            string endDate = demandList[0].d_date;
+            DateTime dt = Convert.ToDateTime(demandList[0].d_date).AddDays(-1);
 
-            List<DayVO> dayList = new List<DayVO>();
+            string endDate = dt.ToShortDateString();
 
-            dayList = service.GetDays(startDate, endDate);
+            List<DayVO> dayList = service.GetDays(startDate, endDate);
 
             dataGridView1.DataSource = dayList;
 
@@ -66,6 +71,7 @@ namespace Team3
                     if (dayList[i].plan_type == "WEEKEND")
                     {
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.DarkGray;
+                        dataGridView1.Rows[i].ReadOnly = true;
                     }
                 }
             }
@@ -79,9 +85,17 @@ namespace Team3
                     if (dayList[i].plan_type == "WEEKEND")
                     {
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                        dataGridView1.Rows[i].ReadOnly = false;
                     }
                 }
             }
+
+            foreach (DemandPlanVO vo in demandList)
+            {
+                TotalCount += vo.d_count;   
+            }
+
+            lblCount.Text = TotalCount.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -151,6 +165,35 @@ namespace Team3
             else
             {
                 MessageBox.Show("생산계획 생성 실패");
+            }
+        }
+
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int uphCount = 0;
+
+            try
+            {
+                string planID =  cbOrderGubun.Text;
+
+                OrderService service = new OrderService();
+                uphCount = service.GetMaxUPHCount(planID);
+
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+
+            //수량 입력하면 하루생산량 체크
+            if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value) > uphCount)
+            {
+                MessageBox.Show("Test");
+            }
+            else
+            {
+                TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                lblCount.Text = TotalCount.ToString();
             }
         }
     }

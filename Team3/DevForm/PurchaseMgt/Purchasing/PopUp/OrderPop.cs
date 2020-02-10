@@ -37,7 +37,6 @@ namespace Team3
 
 
             SetRowNumber(dgvCompany);
-
         }
 
         private void SetDataGridOrdering()
@@ -192,8 +191,6 @@ namespace Team3
         }
     }
 }
-
-
 
 //List<string> companyList = (from r in dt.AsEnumerable()
 //                            select r.Field<string>("company_name")).ToList();
