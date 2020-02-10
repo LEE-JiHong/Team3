@@ -35,9 +35,9 @@ namespace Team3
         private void SetCombo()
         {
             OrderService service = new OrderService();
-            List<CompanyVO> Companylist = service.GetCompanyAll("CUSTOMER");
+            //List<CompanyVO> Companylist = service.GetCompanyAll("CUSTOMER");
 
-            ComboUtil.ComboBinding(cboCompany, Companylist, "company_code", "company_name", "전체");
+            //ComboUtil.ComboBinding(cboCompany, Companylist, "company_code", "company_name", "전체");
 
             List<string> planIDlist = service.GetPlanID();
             cboPlanID.DataSource = planIDlist;
@@ -48,7 +48,7 @@ namespace Team3
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            OrderDialog frm = new OrderDialog(cboCompany.SelectedIndex, cboPlanID.Text);
+            OrderDialog frm = new OrderDialog(cboPlanID.Text);
             frm.ShowDialog();
         }
 
@@ -72,6 +72,8 @@ namespace Team3
                 dt.Columns[5].ColumnMapping = MappingType.Hidden;
 
                 dataGridView1.DataSource = dt;
+
+                //GridViewUtil.SetDataGridView(dataGridView1);
 
                 SetBottomStatusLabel("조회가 완료되었습니다.");
             }

@@ -13,13 +13,13 @@ namespace Team3
     public partial class OrderDialog : DialogDgvBaseForm
     {
         string planID;
-        int companyName;
+        //int companyName;
         CheckBox headerCheckBox = new CheckBox();
 
-        public OrderDialog(int companyName, string planID)
+        public OrderDialog(string planID)
         {
             InitializeComponent();
-            this.companyName = companyName;
+            //this.companyName = companyName;
             this.planID = planID;
         }
 
@@ -34,8 +34,7 @@ namespace Team3
             DataSet ds = service.GetOrderList(planID);
             dgvOrdering.DataSource = ds.Tables[0];
             dgvCompany.DataSource = ds.Tables[1];
-
-
+            
             SetRowNumber(dgvCompany);
         }
 
@@ -98,7 +97,7 @@ namespace Team3
             List<CompanyVO> Companylist = service.GetCompanyAll("CUSTOMER");
 
             ComboUtil.ComboBinding(cboCompany, Companylist, "company_code", "company_name", "전체");
-            cboCompany.SelectedIndex = companyName;
+           // cboCompany.SelectedIndex = companyName;
         }
 
         private void SetRowNumber(DataGridView dgv)
