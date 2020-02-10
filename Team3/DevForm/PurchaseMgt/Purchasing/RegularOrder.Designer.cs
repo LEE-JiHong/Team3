@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegularOrder));
-            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -37,7 +36,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -54,26 +52,25 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(13, 173);
-            this.panel2.Size = new System.Drawing.Size(958, 453);
+            this.panel2.Location = new System.Drawing.Point(13, 119);
+            this.panel2.Size = new System.Drawing.Size(958, 507);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cboCompany);
             this.panel1.Controls.Add(this.cboPlanID);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpEndDate);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.dtpStartDate);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Size = new System.Drawing.Size(958, 116);
+            this.panel1.Size = new System.Drawing.Size(958, 65);
             // 
             // label1
             // 
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(15, 95);
             this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.Text = "정규발주";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -81,7 +78,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(815, 138);
+            this.panel3.Location = new System.Drawing.Point(815, 84);
             this.panel3.Size = new System.Drawing.Size(156, 29);
             // 
             // TopMenu
@@ -106,15 +103,6 @@
             this.imageList1.Images.SetKeyName(0, "close.png");
             this.imageList1.Images.SetKeyName(1, "layout.png");
             this.imageList1.Images.SetKeyName(2, "menulist1.png");
-            // 
-            // cboCompany
-            // 
-            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(736, 21);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(205, 24);
-            this.cboCompany.TabIndex = 103;
             // 
             // cboPlanID
             // 
@@ -162,7 +150,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(876, 58);
+            this.btnSearch.Location = new System.Drawing.Point(874, 18);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(65, 30);
             this.btnSearch.TabIndex = 98;
@@ -189,16 +177,6 @@
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 96;
             this.label2.Text = "PlanID";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(656, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 95;
-            this.label3.Text = "업체코드";
             // 
             // flowLayoutPanel1
             // 
@@ -257,7 +235,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(958, 453);
+            this.dataGridView1.Size = new System.Drawing.Size(958, 507);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
@@ -284,10 +262,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboPlanID;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpEndDate;

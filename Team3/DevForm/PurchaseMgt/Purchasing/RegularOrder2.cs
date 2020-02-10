@@ -48,7 +48,7 @@ namespace Team3
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            OrderDialog frm = new OrderDialog(cboCompany.SelectedIndex, cboPlanID.Text);
+            OrderDialog frm = new OrderDialog(cboPlanID.Text);
             frm.ShowDialog();
         }
 

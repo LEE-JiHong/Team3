@@ -35,9 +35,12 @@
             this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.dgvOrdering = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lblCompany = new System.Windows.Forms.Label();
+            this.cboCompnay = new System.Windows.Forms.ComboBox();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -47,6 +50,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdering)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -58,13 +62,6 @@
             // 
             this.panel5.Location = new System.Drawing.Point(12, 92);
             this.panel5.Size = new System.Drawing.Size(267, 425);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnSearch);
-            this.panel4.Controls.Add(this.cboCompany);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Size = new System.Drawing.Size(1185, 49);
             // 
             // lblMasterName
             // 
@@ -128,13 +125,21 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(27, 85);
             this.panel2.Size = new System.Drawing.Size(1208, 538);
+            this.panel2.Controls.SetChildIndex(this.panel5, 0);
+            this.panel2.Controls.SetChildIndex(this.panel6, 0);
+            this.panel2.Controls.SetChildIndex(this.panel4, 0);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(1168, 7);
+            // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(1264, 692);
             // 
             // label2
             // 
@@ -151,7 +156,7 @@
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(69, 12);
             this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(197, 23);
+            this.cboCompany.Size = new System.Drawing.Size(197, 20);
             this.cboCompany.TabIndex = 6;
             // 
             // flowLayoutPanel1
@@ -231,19 +236,60 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.lblCompany);
+            this.panel4.Controls.Add(this.cboCompnay);
+            this.panel4.Location = new System.Drawing.Point(12, 13);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1185, 67);
+            this.panel4.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Image = global::Team3.Properties.Resources.Zoom_16x16;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(1104, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 30);
+            this.button2.TabIndex = 99;
+            this.button2.Text = "조회";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // lblCompany
+            // 
+            this.lblCompany.AutoSize = true;
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompany.Location = new System.Drawing.Point(29, 27);
+            this.lblCompany.Name = "lblCompany";
+            this.lblCompany.Size = new System.Drawing.Size(34, 18);
+            this.lblCompany.TabIndex = 21;
+            this.lblCompany.Text = "업체";
+            // 
+            // cboCompnay
+            // 
+            this.cboCompnay.FormattingEnabled = true;
+            this.cboCompnay.Location = new System.Drawing.Point(93, 25);
+            this.cboCompnay.Name = "cboCompnay";
+            this.cboCompnay.Size = new System.Drawing.Size(273, 23);
+            this.cboCompnay.TabIndex = 20;
+            // 
             // OrderDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1264, 692);
             this.Name = "OrderDialog";
             this.Load += new System.EventHandler(this.OrderDialog_Load);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.panel3, 0);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -253,6 +299,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdering)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +313,9 @@
         private System.Windows.Forms.DataGridView dgvCompany;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cboCompnay;
+        private System.Windows.Forms.Label lblCompany;
+        private System.Windows.Forms.Button button2;
     }
 }
