@@ -216,11 +216,11 @@ namespace Team3
                     MadeTabMenu(OrderList);
                     break;
 
-                //구매관리-Supplier
-                //case "입고대기":
-                //    WatingReceiving WatingReceiving = new WatingReceiving();
-                //    MadeTabMenu(WatingReceiving);
-                //    break;
+                //구매관리 - Supplier
+                case "입고대기":
+                    WatingReceiving WatingReceiving = new WatingReceiving();
+                    MadeTabMenu(WatingReceiving);
+                    break;
 
                 //구매관리-Material Ledger
                 case "자재입고":
@@ -368,11 +368,11 @@ namespace Team3
                     break;
 
                 //구매관리-Supplier
-                //case "입고대기":
-                //    WatingReceiving WatingReceiving = new WatingReceiving();
-                //    WatingReceiving = (WatingReceiving)InitForm(WatingReceiving);
-                //    WatingReceiving.SubWindowState = WinState.independ;
-                //    break;
+                case "입고대기":
+                    WatingReceiving WatingReceiving = new WatingReceiving();
+                    WatingReceiving = (WatingReceiving)InitForm(WatingReceiving);
+                    WatingReceiving.SubWindowState = WinState.independ;
+                    break;
 
                 //구매관리-Material Ledger
                 case "자재입고":
@@ -599,16 +599,16 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            //if (e.Node.Text == "입고대기")
-            //{
-            //    WatingReceiving frm = new WatingReceiving();
-            //    if (ExsistTap(e.Node.Text))
-            //    {
-            //        return;
-            //    }
+            else if (e.Node.Text == "입고대기")
+            {
+                WatingReceiving frm = new WatingReceiving();
+                if (ExsistTap(e.Node.Text))
+                {
+                    return;
+                }
 
-            //    MadeTabMenu(frm);
-            //}
+                MadeTabMenu(frm);
+            }
             else if (e.Node.Text == "자재입고")
             {
                 MaterialReceiving frm = new MaterialReceiving();

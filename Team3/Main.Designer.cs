@@ -70,28 +70,31 @@
             System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("자재불출요청");
             System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Material", new System.Windows.Forms.TreeNode[] {
             treeNode27});
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("생산계획");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("자재소요계획");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("영업마스터");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("수요계획");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode32,
-            treeNode33});
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("품목관리");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("BOM");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("공장관리");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("설비관리");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("업체관리");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("BOR");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Shift");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
-            treeNode37,
-            treeNode38,
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("입고대기");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Supplier", new System.Windows.Forms.TreeNode[] {
+            treeNode29});
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("생산계획");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("자재소요계획");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("영업마스터업로드(PO)");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("영업마스터");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("수요계획");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("오더관리", new System.Windows.Forms.TreeNode[] {
+            treeNode33,
+            treeNode34,
+            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("품목관리");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("BOM");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("공장관리");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("설비관리");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("업체관리");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("BOR");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Shift");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("자원관리", new System.Windows.Forms.TreeNode[] {
             treeNode39,
             treeNode40,
-            treeNode41});
+            treeNode41,
+            treeNode42,
+            treeNode43});
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -673,11 +676,16 @@
             treeNode27.Text = "자재불출요청";
             treeNode28.Name = "노드1";
             treeNode28.Text = "Material";
+            treeNode29.Name = "입고대기";
+            treeNode29.Text = "입고대기";
+            treeNode30.Name = "Supplier";
+            treeNode30.Text = "Supplier";
             this.treeView5.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode19,
             treeNode23,
             treeNode26,
-            treeNode28});
+            treeNode28,
+            treeNode30});
             this.treeView5.Size = new System.Drawing.Size(200, 312);
             this.treeView5.TabIndex = 0;
             this.treeView5.Tag = "5";
@@ -719,13 +727,13 @@
             this.treeView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView4.Location = new System.Drawing.Point(0, 34);
             this.treeView4.Name = "treeView4";
-            treeNode29.Name = "노드0";
-            treeNode29.Text = "생산계획";
-            treeNode30.Name = "노드0";
-            treeNode30.Text = "자재소요계획";
+            treeNode31.Name = "노드0";
+            treeNode31.Text = "생산계획";
+            treeNode32.Name = "노드0";
+            treeNode32.Text = "자재소요계획";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode29,
-            treeNode30});
+            treeNode31,
+            treeNode32});
             this.treeView4.Size = new System.Drawing.Size(200, 45);
             this.treeView4.TabIndex = 0;
             this.treeView4.Tag = "4";
@@ -767,16 +775,16 @@
             this.treeView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView3.Location = new System.Drawing.Point(0, 33);
             this.treeView3.Name = "treeView3";
-            treeNode31.Name = "노드1";
-            treeNode31.Text = "영업마스터업로드(PO)";
-            treeNode32.Name = "노드2";
-            treeNode32.Text = "영업마스터";
-            treeNode33.Name = "노드4";
-            treeNode33.Text = "수요계획";
-            treeNode34.Name = "노드0";
-            treeNode34.Text = "오더관리";
+            treeNode33.Name = "노드1";
+            treeNode33.Text = "영업마스터업로드(PO)";
+            treeNode34.Name = "노드2";
+            treeNode34.Text = "영업마스터";
+            treeNode35.Name = "노드4";
+            treeNode35.Text = "수요계획";
+            treeNode36.Name = "노드0";
+            treeNode36.Text = "오더관리";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode34});
+            treeNode36});
             this.treeView3.Size = new System.Drawing.Size(200, 96);
             this.treeView3.TabIndex = 0;
             this.treeView3.Tag = "3";
@@ -818,13 +826,13 @@
             this.treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.treeView2.Location = new System.Drawing.Point(0, 33);
             this.treeView2.Name = "treeView2";
-            treeNode35.Name = "품목관리";
-            treeNode35.Text = "품목관리";
-            treeNode36.Name = "BOM";
-            treeNode36.Text = "BOM";
+            treeNode37.Name = "품목관리";
+            treeNode37.Text = "품목관리";
+            treeNode38.Name = "BOM";
+            treeNode38.Text = "BOM";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode36});
+            treeNode37,
+            treeNode38});
             this.treeView2.Size = new System.Drawing.Size(200, 54);
             this.treeView2.TabIndex = 0;
             this.treeView2.Tag = "2";
@@ -867,21 +875,21 @@
             this.treeView1.FullRowSelect = true;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode37.ImageIndex = -2;
-            treeNode37.Name = "공장관리";
-            treeNode37.Text = "공장관리";
-            treeNode38.Name = "설비관리";
-            treeNode38.Text = "설비관리";
-            treeNode39.Name = "업체관리";
-            treeNode39.Text = "업체관리";
-            treeNode40.Name = "BOR";
-            treeNode40.Text = "BOR";
-            treeNode41.Name = "노드0";
-            treeNode41.Text = "Shift";
-            treeNode42.Name = "자원관리";
-            treeNode42.Text = "자원관리";
+            treeNode39.ImageIndex = -2;
+            treeNode39.Name = "공장관리";
+            treeNode39.Text = "공장관리";
+            treeNode40.Name = "설비관리";
+            treeNode40.Text = "설비관리";
+            treeNode41.Name = "업체관리";
+            treeNode41.Text = "업체관리";
+            treeNode42.Name = "BOR";
+            treeNode42.Text = "BOR";
+            treeNode43.Name = "노드0";
+            treeNode43.Text = "Shift";
+            treeNode44.Name = "자원관리";
+            treeNode44.Text = "자원관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode42});
+            treeNode44});
             this.treeView1.Size = new System.Drawing.Size(200, 132);
             this.treeView1.TabIndex = 0;
             this.treeView1.Tag = "1";
