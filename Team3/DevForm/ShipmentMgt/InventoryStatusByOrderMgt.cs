@@ -14,9 +14,12 @@ namespace Team3.DevForm.NewFolder1
     public partial class InventoryStatusByOrder : Team3.VerticalGridBaseForm
     {
         List<ShipmentVO> shipment_list;
+        CheckBox headerCheckBox = new CheckBox();
+        DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
         public InventoryStatusByOrder()
         {
             InitializeComponent();
+
         }
 
         private void InventoryStatusByOrder_Load(object sender, EventArgs e)
@@ -38,13 +41,68 @@ namespace Team3.DevForm.NewFolder1
                                             select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
-
+            DataTable dt = new DataTable();
             ShipmentService service_shipment = new ShipmentService();
             shipment_list = service_shipment.GetInventoryStatusByOrder();
-            dgvStockStatus.DataSource = shipment_list;
-            
-            
 
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.HeaderText = "";
+            chk.Name = "chk";
+            chk.Width = 30;
+            dgvStockStatus.Columns.Add(chk);
+
+            Point headerLocation = dgvStockStatus.GetCellDisplayRectangle(0, -1, true).Location;
+
+            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            headerCheckBox.BackColor = Color.White;
+            headerCheckBox.Size = new Size(18, 18);
+            headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
+            dgvStockStatus.Controls.Add(headerCheckBox);
+
+            //TODO 
+
+
+           
+
+
+
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "", true, 130);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "", true, 130);
+
+            #region DGV콤보박스
+           
+
+            comboBoxColumn.HeaderText = "TO창고";
+            comboBoxColumn.Name = "combo";
+            
+            for (int i = 0; i < _cboFromFac.Count; i++)
+            {
+                comboBoxColumn.DisplayMember = _cboToFac[i].factory_name;
+                comboBoxColumn.ValueMember = _cboToFac[i].factory_id.ToString();
+                comboBoxColumn.Items.Add(_cboToFac[i].factory_name);
+            }
+
+            dgvStockStatus.Columns.Add(comboBoxColumn);
+            dgvStockStatus.Rows.Add();
+            dgvStockStatus.AllowUserToAddRows = false;
+            #endregion
+
+
+
+            dgvStockStatus.DataSource = shipment_list;
+
+
+        }
+        private void HeaderCheckbox_Click(object sender, EventArgs e)
+        {
+            dgvStockStatus.EndEdit();
+
+            foreach (DataGridViewRow row in dgvStockStatus.Rows)
+            {
+                DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
+                chkBox.Value = headerCheckBox.Checked;
+            }
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -71,6 +129,31 @@ namespace Team3.DevForm.NewFolder1
             DataObject dataObj = dgvStockStatus.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void dgvStockStatus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ShipmentVO vo = new ShipmentVO();
+            for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+            {
+                MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
+                MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
+              // MessageBox.Show(comboBoxColumn.ValueMember.ToString()); 
+                
+            }
+
+
+               // MessageBox.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

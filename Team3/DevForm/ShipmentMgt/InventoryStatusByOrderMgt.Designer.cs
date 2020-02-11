@@ -45,6 +45,7 @@
             this.cboFromFac = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvStockStatus = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -103,8 +104,14 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.button1);
             this.basepanel.Size = new System.Drawing.Size(1024, 592);
             this.basepanel.Tag = "고객주문별재고현황";
+            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
+            this.basepanel.Controls.SetChildIndex(this.label1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
+            this.basepanel.Controls.SetChildIndex(this.button1, 0);
             // 
             // imageList1
             // 
@@ -142,16 +149,16 @@
             // cboToFac
             // 
             this.cboToFac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboToFac.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboToFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cboToFac.FormattingEnabled = true;
             this.cboToFac.Location = new System.Drawing.Point(715, 19);
             this.cboToFac.Name = "cboToFac";
-            this.cboToFac.Size = new System.Drawing.Size(209, 21);
+            this.cboToFac.Size = new System.Drawing.Size(209, 24);
             this.cboToFac.TabIndex = 83;
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(98, 20);
             this.dtpFromDate.Name = "dtpFromDate";
@@ -256,10 +263,11 @@
             this.btnUpdate.Text = "이동처리";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dtpToDate
             // 
-            this.dtpToDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(219, 20);
             this.dtpToDate.Name = "dtpToDate";
@@ -278,11 +286,11 @@
             // cboFromFac
             // 
             this.cboFromFac.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboFromFac.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFromFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cboFromFac.FormattingEnabled = true;
             this.cboFromFac.Location = new System.Drawing.Point(405, 20);
             this.cboFromFac.Name = "cboFromFac";
-            this.cboFromFac.Size = new System.Drawing.Size(209, 21);
+            this.cboFromFac.Size = new System.Drawing.Size(209, 24);
             this.cboFromFac.TabIndex = 89;
             // 
             // label5
@@ -299,14 +307,27 @@
             // 
             // dgvStockStatus
             // 
+            this.dgvStockStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStockStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvStockStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStockStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStockStatus.Location = new System.Drawing.Point(0, 0);
             this.dgvStockStatus.Name = "dgvStockStatus";
             this.dgvStockStatus.RowTemplate.Height = 23;
+            this.dgvStockStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
             this.dgvStockStatus.TabIndex = 0;
+            this.dgvStockStatus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockStatus_CellClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(272, 138);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // InventoryStatusByOrder
             // 
@@ -347,5 +368,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DataGridView dgvStockStatus;
+        private System.Windows.Forms.Button button1;
     }
 }

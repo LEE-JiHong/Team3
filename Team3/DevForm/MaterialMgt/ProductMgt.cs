@@ -91,7 +91,7 @@ namespace Team3
             //dgvProductList.Columns[0].SortMode = DataGridViewColumnSortMode.Automatic;
 
 
-
+            GridViewUtil.SetDataGridView(dgvProductList);
             dgvProductList.AutoGenerateColumns = false;
             dgvProductList.DataSource = list;
         }

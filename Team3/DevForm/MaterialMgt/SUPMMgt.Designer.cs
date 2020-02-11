@@ -56,7 +56,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvSUPM);
-            this.panel2.Location = new System.Drawing.Point(12, 102);
+            this.panel2.Location = new System.Drawing.Point(12, 105);
             this.panel2.Size = new System.Drawing.Size(1285, 343);
             // 
             // panel1
@@ -293,8 +293,8 @@
             // 
             // dgvSUPM
             // 
+            this.dgvSUPM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSUPM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dgvSUPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSUPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSUPM.Location = new System.Drawing.Point(0, 0);
             this.dgvSUPM.Name = "dgvSUPM";

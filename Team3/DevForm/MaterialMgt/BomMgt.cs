@@ -75,7 +75,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "BomID", "bom_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "상위품목", "bom_parent_id", false, 130);
             #endregion
-
+            GridViewUtil.SetDataGridView(dgvBom);
             dgvBom.AutoGenerateColumns = false;
             dgvBom.DataSource = BOM_list;
             dgvBom.ClearSelection();
@@ -268,7 +268,7 @@ namespace Team3
             else
             {
                 searchList = (from item in BOM_list
-                              where item.bom_name.Contains(searchName)
+                              where item.bom_codename.ToUpper().Contains(searchName.ToUpper())
                               select item).ToList();
 
                 dgvBom.DataSource = searchList;
@@ -300,6 +300,14 @@ namespace Team3
             DataObject dataObj = dgvBom.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSelect.PerformClick();
+            }
         }
     }
 }
