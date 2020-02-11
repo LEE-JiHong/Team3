@@ -9,8 +9,19 @@ using System.Data;
 
 namespace Team3
 {
-    class MaterialLedgerService
+    public class MaterialLedgerService
     {
 
+        public List<OrderStateVO> GetOrderState()
+        {
+            MaterialLedgerDAC dac = new MaterialLedgerDAC();
+            return dac.GetOrderState();
+        }
+
+        public DataTable GetWatingReceivingList(SupplierVO vo)
+        {
+            MaterialLedgerDAC dac = new MaterialLedgerDAC();
+            return dac.GetWatingReceivingList(vo);
+        }
     }
 }
