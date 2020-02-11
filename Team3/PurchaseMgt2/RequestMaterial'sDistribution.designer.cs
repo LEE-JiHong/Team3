@@ -34,7 +34,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -83,15 +83,15 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dateTimePicker3);
-            this.panel1.Controls.Add(this.dateTimePicker4);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Size = new System.Drawing.Size(1105, 73);
             // 
             // label2
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(15, 259);
+            this.label2.Location = new System.Drawing.Point(15, 256);
             this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.Text = "자재불출";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -169,7 +169,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.button6);
             this.flowLayoutPanel2.Controls.Add(this.button8);
-            this.flowLayoutPanel2.Controls.Add(this.button4);
+            this.flowLayoutPanel2.Controls.Add(this.btnAdd);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -207,20 +207,21 @@
             this.button8.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnAdd
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Team3.Properties.Resources.plus;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(9, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 23);
-            this.button4.TabIndex = 53;
-            this.button4.Text = "추가";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::Team3.Properties.Resources.plus;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(9, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(57, 23);
+            this.btnAdd.TabIndex = 53;
+            this.btnAdd.Text = "추가";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // textBox1
             // 
@@ -296,6 +297,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1105, 122);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -345,21 +347,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker3
+            // dateTimePicker2
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(205, 9);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(100, 22);
-            this.dateTimePicker3.TabIndex = 82;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(205, 9);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(100, 22);
+            this.dateTimePicker2.TabIndex = 82;
             // 
-            // dateTimePicker4
+            // dateTimePicker1
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(83, 9);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(100, 22);
-            this.dateTimePicker4.TabIndex = 81;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(83, 9);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(100, 22);
+            this.dateTimePicker1.TabIndex = 81;
             // 
             // DMRMgt
             // 
@@ -367,6 +369,8 @@
             this.ClientSize = new System.Drawing.Size(1129, 536);
             this.Name = "DMRMgt";
             this.Tag = "자재불출요청";
+            this.Text = "자재불출요청";
+            this.Load += new System.EventHandler(this.DMRMgt_Load);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -400,10 +404,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

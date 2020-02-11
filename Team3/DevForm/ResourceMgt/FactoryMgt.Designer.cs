@@ -55,6 +55,7 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 135);
             this.panel2.Size = new System.Drawing.Size(1095, 431);
+            this.panel2.TabIndex = 3;
             // 
             // panel1
             // 
@@ -66,7 +67,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Size = new System.Drawing.Size(1095, 80);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // label1
             // 
@@ -86,6 +87,7 @@
             // TopMenu
             // 
             this.TopMenu.Size = new System.Drawing.Size(1119, 60);
+            this.TopMenu.TabIndex = 0;
             // 
             // layoutButton
             // 
@@ -98,7 +100,7 @@
             // basepanel
             // 
             this.basepanel.Size = new System.Drawing.Size(1119, 586);
-            this.basepanel.TabIndex = 1;
+            this.basepanel.TabIndex = 4;
             // 
             // imageList1
             // 
@@ -154,7 +156,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1095, 431);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // flowLayoutPanel1

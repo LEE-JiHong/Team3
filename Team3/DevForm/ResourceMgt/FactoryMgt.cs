@@ -21,6 +21,7 @@ namespace Team3
         public FactoryMgt()
         {
             InitializeComponent();
+ 
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
@@ -47,12 +48,17 @@ namespace Team3
                          select item).ToList();
             ComboUtil.ComboBinding<CommonVO>(cboSearchFacilityGroup, mCode, "common_value", "common_name", "미선택");
 
+            panel1.Focus(); 
+            dataGridView1.CurrentCell = null;
+            
+         dataGridView1.ClearSelection();
         }
 
         private void LoadData()
         {
             list = service.GetFactoryAll();
             dataGridView1.DataSource = list;
+            dataGridView1.CurrentCell = null;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -76,6 +82,11 @@ namespace Team3
                     LoadData();
                     SetBottomStatusLabel("성공적으로 수정되었습니다.");
                 }
+            }
+            else
+            {
+                MessageBox.Show("선택된 창고 정보가 없습니다.");
+                SetBottomStatusLabel("선택된 창고 정보가 없습니다.");
             }
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -213,6 +224,11 @@ namespace Team3
                 dataGridView1.DataSource = fine;
  
             }
+            if(dataGridView1.Rows.Count<1)
+            {
+                SetBottomStatusLabel("검색 결과가 없습니다");
+            }
+            dataGridView1.CurrentCell = null;
         }
     }
 }

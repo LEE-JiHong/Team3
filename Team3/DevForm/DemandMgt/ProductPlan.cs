@@ -24,14 +24,14 @@ namespace Team3
       
         private void ProductPlan_Load(object sender, EventArgs e)
         {
-            dataGridView1.Visible = false;
-                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_name", true);
-                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "bor_route", true);
-                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품코드", "product_codename", true);
-                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품명", "producct_name", true);
-                GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "영업마스터ID", "plan_id", false);
+            DataTable dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
+           
             
-                InitComboBox();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Columns.Clear();
+
+            InitComboBox();
 
                 DateTime today = DateTime.Now;
                 dataGridView1.AllowUserToAddRows = false;
@@ -56,7 +56,13 @@ namespace Team3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dataGridView1.Visible = true;
+            dataGridView1.DataSource = null;
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "bor_route", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품코드", "product_codename", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품명", "producct_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "영업마스터ID", "plan_id", false);
+           
             string Machine = cboMachine.Text;
             DataTable  dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString()); ;
             DataTable table = new DataTable ();

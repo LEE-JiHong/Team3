@@ -72,5 +72,91 @@ namespace Team3DAC
                 return table;
             }
         }
+        public DataTable GetProductFromBOM(string i)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetProductFromBOM";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@parentid", i);
+
+
+                DataTable table = new DataTable();
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(table);
+                da.Dispose();
+                List<int> productID = new List<int>();
+                for (int k = 0; table.Rows.Count > k; k++)
+                {
+                    productID.Add(Convert.ToInt32(table.Rows[k][0].ToString()));
+                }
+                cmd.Connection.Close();
+
+                return table;
+            }
+        }
     }
 }
+
+//        public DataTable AAA(string id, string date)
+//        {
+//        //    using (SqlCommand cmd = new SqlCommand())
+//        //    {
+//        //        StringBuilder sb = new StringBuilder();
+//        //        try
+//        //        {
+//        //            cmd.Connection = new SqlConnection(this.ConnectionString);
+//        //            cmd.Connection.Open();
+//        //            //SqlTransaction tran = cmd.Connection.BeginTransaction();
+//        //            string sql_1 = @"select p.product_id from TBL_PRODUCTION_PLAN pp 
+//        //                                        inner join TBL_DEMAND_PLAN dp on pp.d_id = dp.d_id
+//        //                                        inner join TBL_SO_MASTER so on dp.so_id = so.so_id
+//        //                                        inner join TBL_PRODUCT p on p.product_codename = so.product_name
+//        //                                        where pp.plan_id = @id and pp.pro_date =@Date ";
+//        //            //cmd.Transaction = tran;
+//        //            cmd.CommandText = sql_1;
+
+//        //            cmd.Parameters.AddWithValue("@id", id);
+//        //            cmd.Parameters.AddWithValue("@Date", date);
+//        //            SqlDataReader reader = cmd.ExecuteReader();//id
+
+
+//        //            string tID = string.Empty;
+//        //            reader.Read();
+
+//        //            tID = reader[0].ToString(); //id
+//        //            cmd.Parameters.Clear();
+//        //            cmd.Dispose();
+//        //            reader.Close();
+
+//        //            cmd.CommandText = "GetSemiManFromBOM";
+//        //            cmd.CommandType = CommandType.StoredProcedure;
+//        //            cmd.Parameters.AddWithValue("@parentid", tID);
+
+
+//        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
+//        //            DataTable dt = new DataTable();
+//        //            da.Fill(dt);
+//        //            List<int> productID = new List<int>();
+//        //            for (int i = 0; dt.Rows.Count > i; i++)
+//        //            {
+//        //               productID.Add(Convert.ToInt32(dt.Rows[i][0].ToString()));
+//        //            }
+//        //           //string sql_2 =@"select from "
+
+//        //            cmd.Dispose();
+//        //            return dt;
+//        //        }
+
+//        //        catch (Exception err)
+//        //        {
+//        //            string st = err.Message;
+//                  return null;
+//        //        }
+//            }
+//        }
+//    }
+//}
