@@ -14,6 +14,7 @@ namespace Team3
     public partial class SODialog : Team3.DialogForm
     {
         DateTime today = DateTime.Now;
+        List<ProductVO> pList;
 
         public enum EditMode { Insert, Update }
         EditMode edit = EditMode.Insert;
@@ -108,6 +109,7 @@ namespace Team3
                     if (result)
                     {
                         DialogResult = DialogResult.OK;
+
                     }
                     else
                     {

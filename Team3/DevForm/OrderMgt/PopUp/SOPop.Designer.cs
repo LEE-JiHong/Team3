@@ -53,7 +53,8 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(223, 402);
+            this.panel3.Location = new System.Drawing.Point(255, 502);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             // 
             // btnCancel
             // 
@@ -88,20 +89,25 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(23, 84);
-            this.panel2.Size = new System.Drawing.Size(581, 307);
+            this.panel2.Location = new System.Drawing.Point(26, 105);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel2.Size = new System.Drawing.Size(664, 383);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(718, 582);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 26);
+            this.label2.Location = new System.Drawing.Point(16, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.Size = new System.Drawing.Size(63, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "고객WO";
             // 
@@ -110,9 +116,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(14, 60);
+            this.label3.Location = new System.Drawing.Point(16, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 15);
+            this.label3.Size = new System.Drawing.Size(47, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "고객사";
             // 
@@ -121,9 +127,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Orange;
-            this.label5.Location = new System.Drawing.Point(14, 95);
+            this.label5.Location = new System.Drawing.Point(16, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.Size = new System.Drawing.Size(47, 18);
             this.label5.TabIndex = 8;
             this.label5.Text = "납기일";
             // 
@@ -131,9 +137,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 132);
+            this.label6.Location = new System.Drawing.Point(16, 165);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
+            this.label6.Size = new System.Drawing.Size(60, 18);
             this.label6.TabIndex = 9;
             this.label6.Text = "출고수량";
             // 
@@ -141,9 +147,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 169);
+            this.label9.Location = new System.Drawing.Point(16, 211);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 15);
+            this.label9.Size = new System.Drawing.Size(34, 18);
             this.label9.TabIndex = 12;
             this.label9.Text = "비고";
             // 
@@ -151,9 +157,9 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(294, 133);
+            this.label13.Location = new System.Drawing.Point(336, 166);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 15);
+            this.label13.Size = new System.Drawing.Size(60, 18);
             this.label13.TabIndex = 17;
             this.label13.Text = "취소수량";
             // 
@@ -161,9 +167,9 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(294, 96);
+            this.label14.Location = new System.Drawing.Point(336, 120);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 15);
+            this.label14.Size = new System.Drawing.Size(60, 18);
             this.label14.TabIndex = 16;
             this.label14.Text = "주문수량";
             // 
@@ -172,9 +178,9 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Orange;
-            this.label15.Location = new System.Drawing.Point(294, 27);
+            this.label15.Location = new System.Drawing.Point(336, 34);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 15);
+            this.label15.Size = new System.Drawing.Size(34, 18);
             this.label15.TabIndex = 15;
             this.label15.Text = "품목";
             // 
@@ -182,88 +188,103 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(294, 60);
+            this.label16.Location = new System.Drawing.Point(336, 75);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 15);
+            this.label16.Size = new System.Drawing.Size(47, 18);
             this.label16.TabIndex = 14;
             this.label16.Text = "도착지";
             // 
             // txtSOWO
             // 
-            this.txtSOWO.Location = new System.Drawing.Point(82, 23);
+            this.txtSOWO.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.txtSOWO.Location = new System.Drawing.Point(94, 29);
+            this.txtSOWO.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSOWO.Name = "txtSOWO";
-            this.txtSOWO.Size = new System.Drawing.Size(196, 21);
+            this.txtSOWO.Size = new System.Drawing.Size(223, 24);
             this.txtSOWO.TabIndex = 19;
             // 
             // cbCompany
             // 
             this.cbCompany.FormattingEnabled = true;
-            this.cbCompany.Location = new System.Drawing.Point(82, 56);
+            this.cbCompany.Location = new System.Drawing.Point(94, 70);
+            this.cbCompany.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCompany.Name = "cbCompany";
-            this.cbCompany.Size = new System.Drawing.Size(196, 23);
+            this.cbCompany.Size = new System.Drawing.Size(223, 26);
             this.cbCompany.TabIndex = 21;
             // 
             // cbDestination
             // 
             this.cbDestination.FormattingEnabled = true;
-            this.cbDestination.Location = new System.Drawing.Point(374, 56);
+            this.cbDestination.Location = new System.Drawing.Point(427, 70);
+            this.cbDestination.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbDestination.Name = "cbDestination";
-            this.cbDestination.Size = new System.Drawing.Size(196, 23);
+            this.cbDestination.Size = new System.Drawing.Size(223, 26);
             this.cbDestination.TabIndex = 22;
             // 
             // cbProduct
             // 
             this.cbProduct.FormattingEnabled = true;
-            this.cbProduct.Location = new System.Drawing.Point(374, 23);
+            this.cbProduct.Location = new System.Drawing.Point(427, 29);
+            this.cbProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbProduct.Name = "cbProduct";
-            this.cbProduct.Size = new System.Drawing.Size(196, 23);
+            this.cbProduct.Size = new System.Drawing.Size(223, 26);
             this.cbProduct.TabIndex = 24;
             // 
             // txtOutput
             // 
             this.txtOutput.Enabled = false;
-            this.txtOutput.Location = new System.Drawing.Point(82, 130);
+            this.txtOutput.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.txtOutput.Location = new System.Drawing.Point(94, 162);
+            this.txtOutput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(196, 21);
+            this.txtOutput.Size = new System.Drawing.Size(223, 24);
             this.txtOutput.TabIndex = 26;
             // 
             // txtCancel
             // 
-            this.txtCancel.Location = new System.Drawing.Point(374, 130);
+            this.txtCancel.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.txtCancel.Location = new System.Drawing.Point(427, 162);
+            this.txtCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCancel.Name = "txtCancel";
-            this.txtCancel.Size = new System.Drawing.Size(196, 21);
+            this.txtCancel.Size = new System.Drawing.Size(223, 24);
             this.txtCancel.TabIndex = 27;
             this.txtCancel.TextChanged += new System.EventHandler(this.txtCancel_TextChanged);
             // 
             // txtOrder
             // 
-            this.txtOrder.Location = new System.Drawing.Point(374, 93);
+            this.txtOrder.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.txtOrder.Location = new System.Drawing.Point(427, 116);
+            this.txtOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(196, 21);
+            this.txtOrder.Size = new System.Drawing.Size(223, 24);
             this.txtOrder.TabIndex = 28;
             this.txtOrder.TextChanged += new System.EventHandler(this.txtOrder_TextChanged);
             this.txtOrder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrder_KeyPress);
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(82, 167);
+            this.txtComment.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.txtComment.Location = new System.Drawing.Point(94, 209);
+            this.txtComment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(488, 125);
+            this.txtComment.Size = new System.Drawing.Size(557, 155);
             this.txtComment.TabIndex = 32;
             // 
             // dtpsDate
             // 
             this.dtpsDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpsDate.Location = new System.Drawing.Point(82, 92);
+            this.dtpsDate.Location = new System.Drawing.Point(94, 115);
+            this.dtpsDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpsDate.Name = "dtpsDate";
-            this.dtpsDate.Size = new System.Drawing.Size(196, 21);
+            this.dtpsDate.Size = new System.Drawing.Size(223, 24);
             this.dtpsDate.TabIndex = 33;
             // 
             // SODialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(628, 466);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(718, 582);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "SODialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.SODialog_Load);
