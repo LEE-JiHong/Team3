@@ -18,7 +18,7 @@ namespace Team3
         ProductService product_service;
 
 
-        public enum EditMode { Insert, Update }
+        public enum EditMode { Insert, Update }     //추가,수정 모드
         EditMode edit = EditMode.Insert;
         public BomVO vo;
         public BomVO VO
@@ -48,7 +48,7 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (edit == EditMode.Insert)
+            if (edit == EditMode.Insert)        //신규등록
             {
 
 
@@ -91,7 +91,7 @@ namespace Team3
                     }
                 }
             }
-            else if (edit == EditMode.Update)
+            else if (edit == EditMode.Update)       //수정
             {
 
                 if (MessageBox.Show("수정하시겠습니까?", "품목수정", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -140,7 +140,7 @@ namespace Team3
             txtModifyDate.Enabled = false;
             ComboBoxBinding();
 
-            if (edit == EditMode.Update)
+            if (edit == EditMode.Update)        //수정모드일때 vo를 받아와서 매핑
             {
 
                 IsNullCbo2(vo.product_id, cboProduct);
@@ -161,7 +161,7 @@ namespace Team3
         private void IsNullCbo2(int vo, ComboBox cbo)
         {
             cbo.SelectedValue = vo;
-        }
+        }   //cbo.SelectedValue null처리(int)
 
         private void IsNullCbo(string vo, ComboBox cbo)
         {
@@ -173,7 +173,7 @@ namespace Team3
             {
                 cbo.SelectedValue = vo;
             }
-        }
+        }   //cbo.SelectedValue null처리(string)
 
         private void ComboBoxBinding()
         {

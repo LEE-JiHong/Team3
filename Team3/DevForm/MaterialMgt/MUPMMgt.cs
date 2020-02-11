@@ -61,16 +61,16 @@ namespace Team3
             dgvMUPM.Columns[0].Width = 53;
 
             #region DGV바인딩
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "업체", "company_code", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "업체명", "company_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "업체", "company_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "업체명", "company_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "단위", "product_unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "현재단가", "price_present", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "이전단가", "price_past", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "시작일", "price_sdate", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "종료일", "price_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "비고", "price_comment", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "비고", "price_comment", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvMUPM, "사용유무", "price_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
             #endregion
             GridViewUtil.SetDataGridView(dgvMUPM);

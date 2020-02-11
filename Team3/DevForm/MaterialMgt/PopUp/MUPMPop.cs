@@ -129,7 +129,6 @@ namespace Team3
                 dtpStartDate.Value = Convert.ToDateTime( vo.price_sdate);
                 txtEndDate.Text = vo.price_edate;
                 txtModifyDate.Text = vo.price_udate;
-                //txt수정자
                 txtNote.Text = vo.price_comment;
 
 
@@ -168,7 +167,12 @@ namespace Team3
         }
 
        
-        private void cboProduct_SelectedIndexChanged_1(object sender, EventArgs e)
+        /// <summary>
+        /// 신규등록시 기존에 등록 기록이 있으면 가장 최신 데이터 조회 후 매핑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cboProduct_SelectedIndexChanged_1(object sender, EventArgs e)  
         {
             if (cboProduct.SelectedIndex == 0)
             {
@@ -184,8 +188,8 @@ namespace Team3
                                                 select item).ToList();
                     if (p_list.Count > 0)
                     {
-                        txtBeforePrice.Text = p_list[0].price_present.ToString();
-                        cboCompany.SelectedValue = p_list[0].company_id;
+                        txtBeforePrice.Text = p_list[0].price_present.ToString();   //해당 품목의 제일 최신 단가가                                                                                    
+                        cboCompany.SelectedValue = p_list[0].company_id;           //새로등록할 이력의 이전단가가 된다.
                         txtEndDate.Text = p_list[0].price_edate;
                         txtNote.Text = p_list[0].price_comment;
                         txtModifyDate.Text = p_list[0].price_udate;

@@ -25,7 +25,7 @@ namespace Team3VO
         public string product_codename { get; set; }
         public string from_wh { get; set; }
         public string from_wh_value { get; set; }
-        public string to_wh { get; set; }
+       public string to_wh { get; set; }
         public string to_wh_value { get; set; }
 
        
