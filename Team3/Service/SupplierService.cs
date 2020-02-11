@@ -16,5 +16,11 @@ namespace Team3
             SupplierDAC dac = new SupplierDAC();
             return dac.GetAlreadyOrderList(vo);
         }
+
+        public bool UpdateOrderState(List<WatingReceivingVO> list)
+        {
+            SupplierDAC dac = new SupplierDAC();
+            return dac.UpdateOrderState(list);
+        }
     }
 }
