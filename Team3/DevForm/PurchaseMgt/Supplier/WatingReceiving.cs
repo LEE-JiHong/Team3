@@ -10,8 +10,10 @@ namespace Team3
 {
     public partial class WatingReceiving : Vertical2GridBaseForm
     {
-        CheckBox headerCheckBox = new CheckBox();
+        CheckBox headerCheckBox1 = new CheckBox();
+        CheckBox headerCheckBox2 = new CheckBox();
         List<CompanyVO> CompanyList;
+        DataTable dt;
 
         public WatingReceiving()
         {
@@ -46,7 +48,6 @@ namespace Team3
         {
             dgvWatingReceive.Columns.Clear();
 
-
             GridViewUtil.SetDataGridView(dgvWatingReceive);
             dgvWatingReceive.AutoGenerateColumns = false;
 
@@ -58,20 +59,20 @@ namespace Team3
 
             Point headerLocation = dgvWatingReceive.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox.BackColor = Color.White;
-            headerCheckBox.Size = new Size(18, 18);
-            headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
-            dgvWatingReceive.Controls.Add(headerCheckBox);
+            headerCheckBox1.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            headerCheckBox1.BackColor = Color.White;
+            headerCheckBox1.Size = new Size(18, 18);
+            headerCheckBox1.Click += new EventHandler(HeaderCheckbox_Click);
+            dgvWatingReceive.Controls.Add(headerCheckBox1);
 
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주번호", "order_id", true, 110);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주일자", "order_ddate", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주업체", "company_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "품목", "product_codename", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "품명", "product_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주량", "order_count", true, 70);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "납기일", "order_pdate", true, 110);
-            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "주문상태", "common_name", true, 80);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주시리얼", "order_serial", true, 110);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주일자", "order_ddate", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주업체", "company_name", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "품목", "product_codename", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "품명", "product_name", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "발주량", "order_count", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "입고일자", "order_pdate", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvWatingReceive, "주문상태", "common_name", true, 200);
         }
 
         private void SetDataGridResult()
@@ -90,20 +91,21 @@ namespace Team3
 
             Point headerLocation = dgvResult.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox.BackColor = Color.White;
-            headerCheckBox.Size = new Size(18, 18);
-            headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click2);
-            dgvResult.Controls.Add(headerCheckBox);
+            headerCheckBox2.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            headerCheckBox2.BackColor = Color.White;
+            headerCheckBox2.Size = new Size(18, 18);
+            headerCheckBox2.Click += new EventHandler(HeaderCheckbox_Click2);
+            dgvResult.Controls.Add(headerCheckBox2);
 
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주번호", "order_id", true, 110);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주일자", "order_ddate", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주업체", "company_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "품목", "product_codename", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "품명", "product_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주량", "order_count", true, 70);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "납기일", "order_pdate", true, 110);
-            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "주문상태", "common_name", true, 80);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주시리얼", "order_serial", true, 110);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주일자", "order_ddate", true,200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주업체", "company_name", true,200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "품목", "product_codename", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "품명", "product_name", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "발주량", "order_count", true, 200);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvResult, "입고일자", "order_pdate", true, 200);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvResult, "출발일", "order_sdate", true, 200);
+            GridViewUtil.AddNewColumnToDataGridView(dgvResult, "주문상태", "common_name", true, 200);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -127,7 +129,7 @@ namespace Team3
                 }
 
                 SupplierService service = new SupplierService();
-                DataTable dt = service.GetAlreadyOrderList(vo);
+                dt = service.GetAlreadyOrderList(vo);
 
                 dgvWatingReceive.DataSource = dt;
             }
@@ -144,7 +146,7 @@ namespace Team3
             foreach (DataGridViewRow row in dgvWatingReceive.Rows)
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
-                chkBox.Value = headerCheckBox.Checked;
+                chkBox.Value = headerCheckBox1.Checked;
             }
         }
 
@@ -155,7 +157,7 @@ namespace Team3
             foreach (DataGridViewRow row in dgvResult.Rows)
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
-                chkBox.Value = headerCheckBox.Checked;
+                chkBox.Value = headerCheckBox2.Checked;
             }
         }
 
@@ -166,39 +168,110 @@ namespace Team3
 
         private void btnChoose_Click(object sender, EventArgs e)
         {
-            List<DataGridViewRow> list = new List<DataGridViewRow>();
+            List<DataGridViewRow> dlist = new List<DataGridViewRow>();
+            List<WatingReceivingVO> list = new List<WatingReceivingVO>();
+
             foreach (DataGridViewRow row in dgvWatingReceive.Rows)
             {
                 bool isCellChecked = Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
                 if (isCellChecked)
                 {
-                    DataGridViewRow newRow = new DataGridViewRow();
-                    newRow = row;
+                    //DataRow newrow = (row.DataBoundItem as DataRowView).Row;
 
-                    list.Add(newRow);
+                    WatingReceivingVO vo = new WatingReceivingVO();
+                    vo.order_id = row.Cells[1].Value.ToString();
+                    vo.order_ddate = row.Cells[2].Value.ToString();
+                    vo.company_name = row.Cells[3].Value.ToString();
+                    vo.product_codename = row.Cells[4].Value.ToString();
+                    vo.product_name = row.Cells[5].Value.ToString();
+                    vo.order_count = Convert.ToInt32(row.Cells[6].Value);
+                    vo.order_pdate = row.Cells[7].Value.ToString();
+                    vo.common_name = row.Cells[8].Value.ToString();
+
+                    list.Add(vo);
+                    dlist.Add(row);
                 }
             }
 
-            int i = 0;
-            foreach (DataGridViewRow row in list)
+            foreach (WatingReceivingVO vo in list)
             {
-                //DataGridViewRow newRow = new DataGridViewRow();
-                //newRow = row;
-
-                // dgvResult.Rows.Insert(row.Index, row);
-
-
-                // dgvResult.Rows.Add(row);
-                // dgvResult.accept();
-
-                dgvResult.Rows.Add();
-
-                dgvWatingReceive.Rows.Remove(row);
-
-
-
+                dgvResult.Rows.Add(true,vo.order_id,vo.order_ddate, vo.company_name, vo.product_codename, vo.product_name, vo.order_count, vo.order_pdate, DateTime.Now.ToShortDateString(), vo.common_name);
             }
-           // dgvResult.DataSource = list;
+
+            foreach (DataGridViewRow row in dlist)
+            {
+                dgvWatingReceive.Rows.Remove(row);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> dlist = new List<DataGridViewRow>();
+
+            foreach (DataGridViewRow row in dgvResult.Rows)
+            {
+                bool isCellChecked = Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
+                if (isCellChecked)
+                {
+                    WatingReceivingVO vo = new WatingReceivingVO();
+                    vo.order_id = row.Cells[1].Value.ToString();
+                    vo.order_ddate = row.Cells[2].Value.ToString();
+                    vo.company_name = row.Cells[3].Value.ToString();
+                    vo.product_codename = row.Cells[4].Value.ToString();
+                    vo.product_name = row.Cells[5].Value.ToString();
+                    vo.order_count = Convert.ToInt32(row.Cells[6].Value);
+                    vo.order_pdate = row.Cells[7].Value.ToString();
+                    vo.common_name = row.Cells[8].Value.ToString();
+
+                    dt.Rows.Add(vo.order_id, vo.order_ddate, vo.company_name, vo.product_codename, vo.product_name, vo.order_count, vo.order_pdate, vo.common_name);
+                    dlist.Add(row);
+                }
+            }
+
+            foreach (DataGridViewRow row in dlist)
+            {
+                dgvResult.Rows.Remove(row);
+            }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            List<WatingReceivingVO> list = new List<WatingReceivingVO>();
+
+            foreach (DataGridViewRow row in dgvResult.Rows)
+            {
+                bool isCellChecked = Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
+                if (isCellChecked)
+                {
+                    WatingReceivingVO vo = new WatingReceivingVO();
+                    vo.order_id = row.Cells[1].Value.ToString();
+                    vo.order_pdate = row.Cells[7].Value.ToString().Trim();
+                    vo.order_sdate = row.Cells[8].Value.ToString().Trim();
+                    //vo.order_count = Convert.ToInt32(row.Cells[8].Value);
+
+                    list.Add(vo);
+                }
+            }
+
+            try
+            {
+                SupplierService service = new SupplierService();
+                bool result = service.UpdateOrderState(list);
+
+                if (result)
+                {
+                    MessageBox.Show("성공적으로 입고대기처리가 완료되었습니다.");
+                    dgvResult.Rows.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("입고대기처리가 실패하였습니다. 다시 시도하여 주십시오.");
+                }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
     }
 }

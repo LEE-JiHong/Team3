@@ -10,7 +10,7 @@ namespace Team3VO
     //담당 : 이지홍
 
     /// <summary>
-    /// 영업마스터 VO
+    /// 입고대기 조건검색 vo
     /// </summary>
     public class SupplierVO
     {
@@ -19,5 +19,30 @@ namespace Team3VO
         public string end_date { get; set; }
         public string company_name { get; set; }
         public string order_id { get; set; }
+    }
+
+    /// <summary>
+    /// 입고대기 vo
+    /// </summary>
+    public class WatingReceivingVO
+    { 
+        public string order_id { get; set; }
+        public string order_ddate { get; set; }
+        public string company_name { get; set; }
+        public string product_codename { get; set; }
+        public string product_name { get; set; }
+        public int order_count { get; set; }
+        public string order_pdate { get; set; }
+        public string order_sdate { get; set; }
+        public string common_name { get; set; }
+    }
+
+    /// <summary>
+    /// 발주상태 vo
+    /// </summary>
+    public class OrderStateVO
+    {
+        public string state_code { get; set; }
+        public string state_name { get; set; }
     }
 }

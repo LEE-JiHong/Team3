@@ -88,7 +88,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(13, 266);
+            this.label2.Location = new System.Drawing.Point(12, 256);
             this.label2.Size = new System.Drawing.Size(110, 19);
             this.label2.Text = "자재입고처리";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,8 +105,8 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(671, 249);
-            this.panel5.Size = new System.Drawing.Size(212, 29);
+            this.panel5.Location = new System.Drawing.Point(680, 249);
+            this.panel5.Size = new System.Drawing.Size(203, 29);
             // 
             // panel4
             // 
@@ -214,7 +214,7 @@
             this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(212, 29);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(203, 29);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // btnCancel
@@ -224,13 +224,14 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Image = global::Team3.Properties.Resources.Recurrence_16x16;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(149, 3);
+            this.btnCancel.Location = new System.Drawing.Point(140, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(60, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "취소";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -239,13 +240,14 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(41, 3);
+            this.btnOK.Location = new System.Drawing.Point(32, 3);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(102, 23);
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "입고대기처리";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // dgvWatingReceive
             // 
