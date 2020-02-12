@@ -73,6 +73,8 @@ namespace Team3
             headerCheckBox1.Click += new EventHandler(HeaderCheckbox_Click);
             dgvWatingList.Controls.Add(headerCheckBox1);
 
+            //GridViewUtil.SetDataGridColumnColor(dgvWatingList);
+
             GridViewUtil.AddNewColumnToDataGridView(dgvWatingList, "발주시리얼", "order_serial", true, 110);
             GridViewUtil.AddNewColumnToDataGridView(dgvWatingList, "발주일자", "order_ddate", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dgvWatingList, "발주업체", "company_name", true, 150);

@@ -16,5 +16,10 @@ namespace Team3
             ShipmentDac dac = new ShipmentDac();
             return dac.GetInventoryStatusByOrder();
         }
+        public bool TransferProcessing(ShipmentVO vo)
+        {
+            ShipmentDac dac = new ShipmentDac();
+            return dac.TransferProcessing(vo);
+        }
     }
 }

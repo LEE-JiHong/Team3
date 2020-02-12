@@ -13,6 +13,7 @@ namespace Team3VO
         public int so_ccount { get; set; }
         public int so_pcount { get; set; }
         public int w_count_present { get; set; }
+        public int product_id { get; set; }
 
 
         public string so_edate { get; set; }
@@ -25,9 +26,12 @@ namespace Team3VO
         public string product_codename { get; set; }
         public string from_wh { get; set; }
         public string from_wh_value { get; set; }
-       public string to_wh { get; set; }
+        public string to_wh { get; set; }
         public string to_wh_value { get; set; }
+        public string uadmin { get; set; }
+        public string comment { get; set; }
+        public int factory_id { get; set; }
 
-       
+
     }
 }
