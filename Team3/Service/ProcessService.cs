@@ -41,5 +41,10 @@ namespace Team3.Service
             ProcessDac dac = new ProcessDac();
             return dac.GetDMRMgt(vo);
         }
+        public DataTable GetDMR_dt(DMRVO vo)
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.GetDMR_dt(vo);
+        }
     }
 }

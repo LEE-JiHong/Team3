@@ -121,6 +121,33 @@ namespace Team3DAC
 
             }
         }
+        public DataTable GetDMR_dt(DMRVO vo)
+        {
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+
+                cmd.CommandText = "GetDMRMgt";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@plan_id", vo.plan_id);
+                cmd.Parameters.AddWithValue("@pro_id", vo.pro_id);
+                cmd.Parameters.AddWithValue("@WH", vo.factory_name);
+                cmd.Parameters.AddWithValue("@product_codename", vo.product_codename);
+                cmd.Connection.Open();
+                DataTable table = new DataTable();
+   
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(table);
+                da.Dispose();
+                cmd.Connection.Close();
+
+                return table;
+
+
+            }
+        }
     }
 }
 
