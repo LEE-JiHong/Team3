@@ -88,7 +88,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(12, 256);
+            this.label2.Location = new System.Drawing.Point(12, 266);
             this.label2.Size = new System.Drawing.Size(110, 19);
             this.label2.Text = "자재입고처리";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,7 +136,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(312, 15);
+            this.label6.Location = new System.Drawing.Point(308, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 41;
@@ -314,7 +314,7 @@
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(373, 11);
+            this.cboCompany.Location = new System.Drawing.Point(369, 11);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(206, 24);
             this.cboCompany.TabIndex = 89;
