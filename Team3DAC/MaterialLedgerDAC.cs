@@ -21,7 +21,7 @@ namespace Team3DAC
             {
                 StringBuilder sql = new StringBuilder();
 
-                sql.Append($"select common_name as state_name, common_value as state_code from TBL_COMMON_CODE where common_type = 'material_order_state'");
+                sql.Append($"select common_name as state_name, common_value as state_code from TBL_COMMON_CODE where common_type = 'material_order_state' and common_value != 'P_COMPLETE'");
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql.ToString();
@@ -52,6 +52,10 @@ namespace Team3DAC
                 {
                     sql.Append($" and order_state = @order_state");
                     cmd.Parameters.AddWithValue("@order_state", vo.order_state);
+                }
+                else
+                {
+                    sql.Append($" and order_state != 'P_COMPLETE'");
                 }
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
@@ -125,7 +129,7 @@ namespace Team3DAC
                         if (result > 0)
                         {
                             cmd.Parameters.AddWithValue("@w_id", result);
-                            cmd.CommandText = @"update TBL_WAREHOUSE set w_count_present = w_count_present + @order_count where w_id = @w_id";
+                            cmd.CommandText = @"update TBL_WAREHOUSE set w_count_present = w_count_present + @order_count, w_count_past = w_count_present where w_id = @w_id";
                         }
                         else
                         {
@@ -152,7 +156,7 @@ namespace Team3DAC
                             cmd.ExecuteNonQuery();
                         }
 
-                        cmd.Parameters.AddWithValue("@wh_comment", item.product_name + "입고");
+                        cmd.Parameters.AddWithValue("@wh_comment", item.product_name + " 입고");
                         cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToShortDateString());
 
                         cmd.CommandText = @"select w_id from TBL_WAREHOUSE where plan_id = @plan_id and factory_id = @factory_id and product_id = @product_id";
