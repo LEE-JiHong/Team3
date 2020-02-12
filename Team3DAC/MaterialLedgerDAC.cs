@@ -183,5 +183,54 @@ namespace Team3DAC
                 }
             }
         }
+
+        /// <summary>
+        /// 자재입고현황 목록 - warehouse_his로 하는 거 같음
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+        public DataTable GetMaterialInList(SupplierVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                StringBuilder sql = new StringBuilder();
+
+                sql.Append($"SELECT distinct w_id, w.plan_id, product_codename, product_name, factory_name, (w.w_count_present-w.w_count_past) as '입고량', order_serial, order_pdate FROM TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_ORDER o on o.plan_id = w.plan_id inner join TBL_PRODUCT p on p.product_id = w.product_id inner join TBL_COMPANY c on c.company_code = p.product_demand_com WHERE f.factory_type = 'FAC200'");
+
+                if (vo.company_name != null)
+                {
+                    sql.Append(" and company_name = @company_name");
+                    cmd.Parameters.AddWithValue("@company_name", vo.company_name);
+                }
+
+                if (vo.order_state != null)
+                {
+                    sql.Append($" and order_state = @order_state");
+                    cmd.Parameters.AddWithValue("@order_state", vo.order_state);
+                }
+                else
+                {
+                    sql.Append($" and order_state != 'P_COMPLETE'");
+                }
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql.ToString();
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@startDate", vo.start_date);
+                cmd.Parameters.AddWithValue("@endDate", vo.end_date);
+
+                DataTable dataTable = new DataTable();
+
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dataTable);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dataTable;
+            }
+        }
     }
 }

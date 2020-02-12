@@ -45,23 +45,4 @@ namespace Team3VO
         public string state_code { get; set; }
         public string state_name { get; set; }
     }
-
-    public class MaterialReceivingVO
-    {
-        public string order_serial { get; set; }
-        public string plan_id { get; set; }
-        public string company_name { get; set; }
-        public string product_codename { get; set; }
-        public string product_name { get; set; }
-        public int order_count { get; set; }
-        public int order_qcount { get; set; }
-        public int factory_id { get; set; }
-        public int product_id { get; set; }
-        public string order_pdate { get; set; }
-        public string order_sdate { get; set; }
-        public string common_name { get; set; }
-        public int w_id { get; set; }
-        public string wh_comment { get; set; }
-        public string wh_udate { get; set; }
-    }
 }
