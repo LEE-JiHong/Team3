@@ -14,6 +14,7 @@ namespace Team3
     public partial class ProductionPop : DialogForm
     {
         int TotalCount;
+        int uphCount;
 
         List<DemandPlanVO> demandList;
 
@@ -46,56 +47,67 @@ namespace Team3
         private void btnSearch_Click(object sender, EventArgs e)
         {
             TotalCount = 0;
-
-            string startDate = DateTime.Now.ToShortDateString();
-
-            OrderService service = new OrderService();
-
-            demandList = service.GetDemandPlanFromPlanID(cbOrderGubun.Text);
-
-            DateTime dt = Convert.ToDateTime(demandList[0].d_date).AddDays(-1);
-
-            string endDate = dt.ToShortDateString();
-
-            List<DayVO> dayList = service.GetDays(startDate, endDate);
-
-            dataGridView1.DataSource = dayList;
-
-            if (rdoWeekday.Checked) //주중 선택
+            
+            try
             {
-                //List<DayVO> weekdayList = (from item in dayList
-                //                       where item.plan_type == "WEEKDAY"
-                //                       select item).ToList();
-                for (int i = 0; i < dayList.Count; i++)
+                OrderService service = new OrderService();
+                lblUPH.Text = service.GetMaxUPHCount(cbOrderGubun.Text).ToString();
+
+                string startDate = DateTime.Now.ToShortDateString();
+
+                demandList = service.GetDemandPlanFromPlanID(cbOrderGubun.Text);
+
+                DateTime dt = Convert.ToDateTime(demandList[0].d_date).AddDays(-1);
+
+                string endDate = dt.ToShortDateString();
+
+                List<DayVO> dayList = service.GetDays(startDate, endDate);
+
+                dataGridView1.DataSource = dayList;
+
+                if (rdoWeekday.Checked) //주중 선택
                 {
-                    if (dayList[i].plan_type == "WEEKEND")
+                    //List<DayVO> weekdayList = (from item in dayList
+                    //                       where item.plan_type == "WEEKDAY"
+                    //                       select item).ToList();
+                    for (int i = 0; i < dayList.Count; i++)
                     {
-                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.DarkGray;
-                        dataGridView1.Rows[i].ReadOnly = true;
+                        if (dayList[i].plan_type == "WEEKEND")
+                        {
+                            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.DarkGray;
+                            dataGridView1.Rows[i].ReadOnly = true;
+                        }
                     }
                 }
-            }
-            else if (rdoWeekend.Checked) //주말 선택
-            {
-                //List<DayVO> weekEndList = (from item in dayList
-                //                       where item.plan_type == "WEEKEND"
-                //                       select item).ToList();
-                for (int i = 0; i < dayList.Count; i++)
+                else if (rdoWeekend.Checked) //주말 선택
                 {
-                    if (dayList[i].plan_type == "WEEKEND")
+                    //List<DayVO> weekEndList = (from item in dayList
+                    //                       where item.plan_type == "WEEKEND"
+                    //                       select item).ToList();
+                    for (int i = 0; i < dayList.Count; i++)
                     {
-                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                        dataGridView1.Rows[i].ReadOnly = false;
+                        if (dayList[i].plan_type == "WEEKEND")
+                        {
+                            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                            dataGridView1.Rows[i].ReadOnly = false;
+                        }
                     }
                 }
+
+                foreach (DemandPlanVO vo in demandList)
+                {
+                    TotalCount += vo.d_count;
+                }
+
+                lblCount.Text = TotalCount.ToString();
             }
 
-            foreach (DemandPlanVO vo in demandList)
+            catch (Exception err)
             {
-                TotalCount += vo.d_count;   
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
 
-            lblCount.Text = TotalCount.ToString();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -173,7 +185,7 @@ namespace Team3
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int uphCount = 0;
+            uphCount = 0;
 
             try
             {
@@ -185,7 +197,7 @@ namespace Team3
                 //수량 입력하면 하루생산량 체크
                 if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value) > uphCount)
                 {
-                    MessageBox.Show("UPH를 초과하였습니다. 다시 입력하여 주십시오.");
+                    MessageBox.Show("일 최대 생산량을 초과하였습니다. 다시 입력하여 주십시오.");
                     dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
                     return;
                 }

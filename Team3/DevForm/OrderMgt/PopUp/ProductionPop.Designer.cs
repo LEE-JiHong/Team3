@@ -37,6 +37,8 @@
             this.rdoWeekday = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
+            this.lblUPH = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +72,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblUPH);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblCount);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.panel5);
@@ -190,6 +194,25 @@
             this.lblCount.TabIndex = 76;
             this.lblCount.Text = "0";
             // 
+            // lblUPH
+            // 
+            this.lblUPH.AutoSize = true;
+            this.lblUPH.Location = new System.Drawing.Point(458, 78);
+            this.lblUPH.Name = "lblUPH";
+            this.lblUPH.Size = new System.Drawing.Size(14, 15);
+            this.lblUPH.TabIndex = 78;
+            this.lblUPH.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(363, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "일 최대 생산량";
+            // 
             // ProductionPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -219,5 +242,7 @@
         private System.Windows.Forms.RadioButton rdoWeekday;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUPH;
+        private System.Windows.Forms.Label label4;
     }
 }
