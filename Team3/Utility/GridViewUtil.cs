@@ -137,5 +137,12 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
             grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //grid.AllowUserToResizeColumns = false;
         }
+
+        public static void SetDataGridColumnColor(DataGridView grid)
+        {
+            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 121, 152);
+            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            grid.EnableHeadersVisualStyles = false;
+        }
     }
 }

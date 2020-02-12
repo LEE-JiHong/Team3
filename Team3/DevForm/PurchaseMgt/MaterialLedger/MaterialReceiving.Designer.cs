@@ -93,7 +93,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(10, 2252);
+            this.label2.Location = new System.Drawing.Point(10, 2367);
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.Text = "자재입고";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
