@@ -70,6 +70,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "계획수량", "pro_count", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "지시수량", "pro_pcount", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수량", "pro_mcount", true);
+            GridViewUtil.SetDataGridView(dataGridView1);
             dataGridView1.DataSource = dt;
         }
 

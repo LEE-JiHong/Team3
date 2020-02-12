@@ -36,5 +36,10 @@ namespace Team3.Service
             ProcessDac dac = new ProcessDac();
             return dac.GetProductFromBOM(i);
         }
+        public List<DMRVO> GetDMRMgt(DMRVO vo)
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.GetDMRMgt(vo);
+        }
     }
 }
