@@ -98,6 +98,29 @@ namespace Team3DAC
                 return table;
             }
         }
+        public List<DMRVO> GetDMRMgt(DMRVO vo)
+        {
+            
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                 
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+          
+                cmd.CommandText = "GetDMRMgt";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@plan_id", vo.plan_id);
+                cmd.Parameters.AddWithValue("@pro_id",vo.pro_id);
+                cmd.Parameters.AddWithValue("@WH", vo.factory_name);
+                cmd.Parameters.AddWithValue("@product_codename", vo.product_codename);
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<DMRVO> list = Helper.DataReaderMapToList<DMRVO>(reader);
+                cmd.Connection.Close();
+                return list;
+               
+
+            }
+        }
     }
 }
 

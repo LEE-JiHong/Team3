@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3.Service;
+using Team3VO;
 
 namespace Team3
 {
@@ -33,6 +34,7 @@ namespace Team3
             ProcessService P_service = new ProcessService();
             dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
             dataGridView1.DataSource = dt;
+            GridViewUtil.SetDataGridView(dataGridView1);
         }
         ProcessService P_service = new ProcessService();
         List<string> lst = new List<string>();
@@ -44,27 +46,37 @@ namespace Team3
             //ProcessService P_service = new ProcessService();
             //DataTable dt = P_service.AAA(id, date);
             //dataGridView2.DataSource = dt;
+            List<DMRVO> lst = new List<DMRVO>();
+            ProcessService P_service = new ProcessService();
+            DMRVO vo = new DMRVO();
             try
             {
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value) == true) //체크박스가 true?
                     {
-                        lst.Add(dataGridView1.Rows[i].Cells[9].Value.ToString()); //true인 행의 아이디를 가져옴
-                        st.Add(dataGridView1.Rows[i].Cells[11].Value.ToString());
+                        vo.product_codename = dataGridView1.Rows[i].Cells[9].Value.ToString(); //코드네임
+
+                        vo.factory_name = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                        vo.pro_id = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                        vo.plan_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        lst.AddRange(P_service.GetDMRMgt(vo));
+
                     }
                 }
+                //lst = P_service.GetDMRMgt(vo);
+                dataGridView2.DataSource = lst;
                 int k = lst.Count;
-                lst = lst.Distinct().ToList(); //중복제거
+             //lst = lst.Distinct().ToList(); //중복제거
 
                 //bool bResult = false;
                 for (int i = 0; i < lst.Count; i++)
                 {
-                 //   dt.Rows.Add(P_service.GetProductFromBOM(lst[i]));
-                    
-                    
+                    //   dt.Rows.Add(P_service.GetProductFromBOM(lst[i]));
+
+
                 }
-          //      dataGridView2.DataSource = dt;
+                //      dataGridView2.DataSource = dt;
 
 
             }

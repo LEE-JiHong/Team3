@@ -23,7 +23,7 @@ namespace Team3
         private void EditDatePop_Load(object sender, EventArgs e)
         {
             dtpAsisDate.Value = Convert.ToDateTime(vo.order_pdate);
-            dtpTobeDate.Value = DateTime.Now;
+            //dtpTobeDate.Value = DateTime.Now;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -23,10 +23,10 @@ namespace Team3
             return dac.InsertOrder(list);
         }
 
-        public DataTable GetOrderList()
+        public DataTable GetOrderList(SupplierVO vo)
         {
             PurchasingDAC dac = new PurchasingDAC();
-            return dac.GetOrderList();
+            return dac.GetOrderList(vo);
         }
 
         public bool UpdateOrder(List<OrderVO> list)

@@ -76,6 +76,15 @@ namespace Team3
                 //GridViewUtil.SetDataGridView(dataGridView1);
 
                 SetBottomStatusLabel("조회가 완료되었습니다.");
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (i % 3 == 2)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightYellow;
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                    }
+                }
             }
             catch (Exception err)
             {

@@ -141,6 +141,7 @@ namespace Team3
             //조회 버튼
             try
             {
+                
                 string startDate = dtpStartDate.Value.ToShortDateString();
                 string endDate = dtpEndDate.Value.ToShortDateString();
                 string planID = cboPlanID.Text;
@@ -162,7 +163,7 @@ namespace Team3
                 //}
 
                 dataGridView1.DataSource = dt;
-                 
+                //GridViewUtil.SetDataGridView(dataGridView1);
             }
             catch (Exception err)
             {

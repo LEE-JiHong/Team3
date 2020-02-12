@@ -24,6 +24,7 @@ namespace Team3
       
         private void ProductPlan_Load(object sender, EventArgs e)
         {
+
             DataTable dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
            
             
@@ -39,8 +40,9 @@ namespace Team3
                 //string endDate = today.AddDays(20).ToString("yyyyMMdd");
                 dateTimePicker1.Value = today.AddDays(-10);
                 dateTimePicker2.Value = today.AddDays(20);
-                //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
-                //  dataGridView1.DataSource = dt;
+            //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
+            //  dataGridView1.DataSource = dt;
+        
         }
 
         private void InitComboBox()
@@ -62,7 +64,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품코드", "product_codename", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "상품명", "producct_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "영업마스터ID", "plan_id", false);
-           
+ 
             string Machine = cboMachine.Text;
             DataTable  dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString()); ;
             DataTable table = new DataTable ();
@@ -101,7 +103,9 @@ namespace Team3
                     dataGridView1.DataSource = table;
 
                 }
-               
+
+     
+
             }
 
             catch (InvalidOperationException )

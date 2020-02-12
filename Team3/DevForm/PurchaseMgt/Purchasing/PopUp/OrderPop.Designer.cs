@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.dgvCompany = new System.Windows.Forms.DataGridView();
@@ -61,7 +60,7 @@
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(12, 92);
-            this.panel5.Size = new System.Drawing.Size(267, 425);
+            this.panel5.Size = new System.Drawing.Size(276, 425);
             // 
             // lblMasterName
             // 
@@ -83,7 +82,7 @@
             // 
             // panel7
             // 
-            this.panel7.Location = new System.Drawing.Point(104, 11);
+            this.panel7.Location = new System.Drawing.Point(113, 11);
             this.panel7.Visible = false;
             // 
             // panel8
@@ -99,7 +98,7 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.dgvCompany);
-            this.panel9.Size = new System.Drawing.Size(245, 361);
+            this.panel9.Size = new System.Drawing.Size(254, 361);
             // 
             // panel3
             // 
@@ -115,6 +114,7 @@
             // 
             // label1
             // 
+            this.label1.Location = new System.Drawing.Point(9, 8);
             this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.Text = "발주";
             // 
@@ -150,14 +150,6 @@
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "업체";
-            // 
-            // cboCompany
-            // 
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(69, 12);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(197, 20);
-            this.cboCompany.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
@@ -195,11 +187,11 @@
             this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCompany.Location = new System.Drawing.Point(0, 0);
             this.dgvCompany.Name = "dgvCompany";
-            this.dgvCompany.ReadOnly = true;
             this.dgvCompany.RowTemplate.Height = 23;
             this.dgvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompany.Size = new System.Drawing.Size(245, 361);
+            this.dgvCompany.Size = new System.Drawing.Size(254, 361);
             this.dgvCompany.TabIndex = 0;
+            this.dgvCompany.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompany_CellValueChanged);
             // 
             // dgvOrdering
             // 
@@ -268,7 +260,7 @@
             // 
             this.lblCompany.AutoSize = true;
             this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompany.Location = new System.Drawing.Point(29, 27);
+            this.lblCompany.Location = new System.Drawing.Point(29, 26);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(34, 18);
             this.lblCompany.TabIndex = 21;
@@ -277,7 +269,7 @@
             // cboCompnay
             // 
             this.cboCompnay.FormattingEnabled = true;
-            this.cboCompnay.Location = new System.Drawing.Point(93, 25);
+            this.cboCompnay.Location = new System.Drawing.Point(93, 24);
             this.cboCompnay.Name = "cboCompnay";
             this.cboCompnay.Size = new System.Drawing.Size(273, 23);
             this.cboCompnay.TabIndex = 20;
@@ -306,7 +298,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cboCompany;
+       // private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvOrdering;

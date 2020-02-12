@@ -37,6 +37,8 @@
             this.rdoWeekday = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
+            this.lblUPH = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +72,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblUPH);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblCount);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.panel5);
@@ -132,6 +136,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.dataGridView1.Location = new System.Drawing.Point(17, 110);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
@@ -176,9 +181,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 16);
+            this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 75;
-            this.label2.Text = "수량";
+            this.label2.Text = "계획수량";
             // 
             // lblCount
             // 
@@ -188,6 +193,25 @@
             this.lblCount.Size = new System.Drawing.Size(14, 15);
             this.lblCount.TabIndex = 76;
             this.lblCount.Text = "0";
+            // 
+            // lblUPH
+            // 
+            this.lblUPH.AutoSize = true;
+            this.lblUPH.Location = new System.Drawing.Point(458, 78);
+            this.lblUPH.Name = "lblUPH";
+            this.lblUPH.Size = new System.Drawing.Size(14, 15);
+            this.lblUPH.TabIndex = 78;
+            this.lblUPH.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(363, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "일 최대 생산량";
             // 
             // ProductionPop
             // 
@@ -218,5 +242,7 @@
         private System.Windows.Forms.RadioButton rdoWeekday;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUPH;
+        private System.Windows.Forms.Label label4;
     }
 }

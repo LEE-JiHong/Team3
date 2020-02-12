@@ -113,19 +113,37 @@ namespace Team3DAC
         /// 발주현황 조회
         /// </summary>
         /// <returns></returns>
-        public DataTable GetOrderList()
+        public DataTable GetOrderList(SupplierVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "GetOrderList";
+                StringBuilder sql = new StringBuilder();
+
+                sql.Append("select order_id, c.company_name, cc.common_name, p.product_codename, product_name, o.order_pdate, o.order_count, concat(LEFT(order_serial, 4),'-',SUBSTRING(order_serial, 5,2),'-',SUBSTRING(order_serial, 7,2)) as order_ddate,o.plan_id from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id inner join TBL_COMPANY c on p.product_demand_com = c.company_code inner join TBL_COMMON_CODE cc on o.order_state = cc.common_value where CONVERT (DATETIME, o.order_pdate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, o.order_pdate) <= CONVERT (DATETIME, @endDate)");
+
+                if (vo.company_name != null)
+                {
+                    sql.Append(" and company_name = @company_name");
+                    cmd.Parameters.AddWithValue("@company_name", vo.company_name);
+                }
+
+                if (vo.order_id != null)
+                {
+                    sql.Append($" and order_id like '%{vo.order_id}%'");
+                    // cmd.Parameters.AddWithValue("@order_id", vo.order_id);
+                }
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = sql;
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = sql.ToString();
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@startDate", vo.start_date);
+                cmd.Parameters.AddWithValue("@endDate", vo.end_date);
+
+                DataTable ds = new DataTable();
 
                 cmd.Connection.Open();
 
-                DataTable ds = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                 da.Fill(ds);
