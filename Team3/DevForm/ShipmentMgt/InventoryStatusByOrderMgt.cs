@@ -61,38 +61,59 @@ namespace Team3.DevForm.NewFolder1
             dgvStockStatus.Controls.Add(headerCheckBox);
 
             //TODO 
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "출고수량", "so_ocount", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "취소수량", "so_ccount", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "잔여수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "납기일", "so_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업로드날짜", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "PlanID", "plan_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "고객사코드", "company_code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업체유형", "company_type", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고", "from_wh", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고코드", "from_wh_value", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품번", "product_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
 
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고", "to_wh", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
 
-           
-
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고id", "factory_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "비고", "comment", false, 100, DataGridViewContentAlignment.MiddleCenter);
 
 
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "", true, 130);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "", true, 130);
+           
 
             #region DGV콤보박스
-           
+
 
             comboBoxColumn.HeaderText = "TO창고";
             comboBoxColumn.Name = "combo";
             
+
             for (int i = 0; i < _cboFromFac.Count; i++)
             {
                 comboBoxColumn.DisplayMember = _cboToFac[i].factory_name;
                 comboBoxColumn.ValueMember = _cboToFac[i].factory_id.ToString();
                 comboBoxColumn.Items.Add(_cboToFac[i].factory_name);
             }
+            
 
             dgvStockStatus.Columns.Add(comboBoxColumn);
             dgvStockStatus.Rows.Add();
             dgvStockStatus.AllowUserToAddRows = false;
             #endregion
 
-
+            //dgvStockStatus.AutoGenerateColumns = false;
 
             dgvStockStatus.DataSource = shipment_list;
 
-
+            
         }
         private void HeaderCheckbox_Click(object sender, EventArgs e)
         {
@@ -133,7 +154,10 @@ namespace Team3.DevForm.NewFolder1
 
         private void dgvStockStatus_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+            {
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -141,19 +165,66 @@ namespace Team3.DevForm.NewFolder1
             ShipmentVO vo = new ShipmentVO();
             for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
             {
-                MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
-                MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
-              // MessageBox.Show(comboBoxColumn.ValueMember.ToString()); 
+                //MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
+                //MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
+                //MessageBox.Show(comboBoxColumn.ValueMember.ToString());
                 
+                //MessageBox.Show(dgvStockStatus.SelectedRows.Count.ToString()); 
+
             }
 
 
-               // MessageBox.Show();
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            ShipmentVO _shipvo = new ShipmentVO();
+            foreach (DataGridViewRow row in this.dgvStockStatus.SelectedRows)
+            {
+                _shipvo = row.DataBoundItem as ShipmentVO;
+            }
+            ShipmentService shipment_service = new ShipmentService();
+            int count = dgvStockStatus.SelectedRows.Count;
+            if(MessageBox.Show($"선택하신 {count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
+            {
+                ShipmentVO vo = new ShipmentVO();
+                vo.plan_id = _shipvo.plan_id;
+                vo.to_wh_value = _shipvo.to_wh_value;
+                vo.factory_id = Convert.ToInt32(comboBoxColumn.ValueMember);
+                //vo.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                bool bResult = shipment_service.TransferProcessing(vo);
+                if (bResult)        //이동처리 성공시
+                {
+                    SetBottomStatusLabel($"선택하신 {count}건의 이동처리가 완료되었습니다.");
+                }
+                else            //이동처리 실패시
+                {
+                    MessageBox.Show("등록실패 , 다시시도 하세요");
+                    return;
+                }
+
+
+            }
+
+
+
+
+          
         }
     }
 }
