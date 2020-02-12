@@ -82,7 +82,7 @@ namespace Team3DAC
                         item.order_serial = DateTime.Now.ToShortDateString().Replace("-", "") + string.Format("{0:D4}", num);
                         num++;
 
-                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate)";
+                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate, order_qcount) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate, @order_count)";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);

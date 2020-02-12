@@ -114,6 +114,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvMaterialReceiving, "품목", "product_codename", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dgvMaterialReceiving, "품명", "product_name", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dgvMaterialReceiving, "발주량", "order_count", true, 150);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvMaterialReceiving, "입고량", "order_qcount", true, 150);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvMaterialReceiving, "입고일자", "order_pdate", true, 150);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvMaterialReceiving, "출발일", "order_sdate", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dgvMaterialReceiving, "주문상태", "common_name", true, 150);
@@ -202,7 +203,7 @@ namespace Team3
 
             foreach (WatingReceivingVO vo in list)
             {
-                dgvMaterialReceiving.Rows.Add(true, vo.order_id, vo.order_ddate, vo.company_name, vo.product_codename, vo.product_name, vo.order_count, vo.order_pdate, vo.order_sdate, vo.common_name);
+                dgvMaterialReceiving.Rows.Add(true, vo.order_id, vo.order_ddate, vo.company_name, vo.product_codename, vo.product_name, vo.order_count,"", vo.order_pdate, vo.order_sdate, vo.common_name);
             }
 
             foreach (DataGridViewRow row in dlist)
@@ -247,6 +248,45 @@ namespace Team3
             //order_state = P_COMPLETE 로 바꾸고
             //warehouse에 insert
             //
+
+            List<MaterialReceivingVO> list = new List<MaterialReceivingVO>();
+
+            foreach (DataGridViewRow row in dgvMaterialReceiving.Rows)
+            {
+                bool isCellChecked = Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
+                if (isCellChecked)
+                {
+                    MaterialReceivingVO vo = new MaterialReceivingVO();
+                    vo.order_serial = row.Cells[1].Value.ToString();
+                    vo.product_codename = row.Cells[4].Value.ToString();
+                    vo.order_count = Convert.ToInt32(row.Cells[7].Value);
+                    vo.order_pdate = row.Cells[8].Value.ToString().Trim();
+                    vo.product_name = row.Cells[5].Value.ToString().Trim();
+                    vo.order_sdate = row.Cells[8].Value.ToString().Trim();
+
+                    list.Add(vo);
+                }
+            }
+
+            try
+            {
+                MaterialLedgerService service = new MaterialLedgerService();
+                bool result = service.AddMaterialQauntity(list);
+
+                if (result)
+                {
+                    MessageBox.Show("성공적으로 입고처리가 완료되었습니다.");
+                    dgvMaterialReceiving.Rows.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("입고처리 실패하였습니다. 다시 시도하여 주십시오.");
+                }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
     }
 }
