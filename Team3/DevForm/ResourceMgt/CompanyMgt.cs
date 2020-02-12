@@ -191,13 +191,13 @@ namespace Team3
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lst = service.GetCompanyAll();
-
             // 코드만 입력
+
             if (txtCodeCompany.Text != "")
             {   //이름+
                 if (txtNameCompany.Text != "")
                 { //사업자번호 +
-                    if(txtLicenseNum.Text != "")
+                    if (txtLicenseNum.Text != "")
                     {
                         var A_code = (from code in lst
                                       where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
@@ -212,7 +212,7 @@ namespace Team3
                     dataGridView2.DataSource = c_code;
                 }
 
-                else if(txtLicenseNum.Text != "")
+                else if (txtLicenseNum.Text != "")
                 {
                     var c_code = (from code in lst
                                   where code.company_code.Contains(txtCodeCompany.Text) && code.company_cnum.Contains(txtLicenseNum.Text)
@@ -220,7 +220,7 @@ namespace Team3
                     dataGridView2.DataSource = c_code;
                 }
 
-                else if(cboTypeCompany.Text != "미선택")
+                else if (cboTypeCompany.Text != "미선택")
                 {
                     var c_code = (from code in lst
                                   where code.company_code.Contains(txtCodeCompany.Text) && code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
@@ -261,31 +261,6 @@ namespace Team3
                 dataGridView2.DataSource = c_code;
             }
 
-            ////코드와 이름만 입력
-            //if (txtCodeCompany.Text != "" && txtNameCompany.Text != "")
-            //{
-            //    var c_code = (from code in lst
-            //                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_name.Contains(txtNameCompany.Text)
-            //                  select code).ToList();
-            //    dataGridView2.DataSource = c_code;
-            //}
-            //코드와 사업자번호 입력
-            //else if (txtCodeCompany.Text != "" && txtLicenseNum.Text != "")
-            //{
-            //    var c_code = (from code in lst
-            //                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_cnum.Contains(txtLicenseNum.Text)
-            //                  select code).ToList();
-            //    dataGridView2.DataSource = c_code;
-            //}
-            ////코드, 타입
-            //else if (txtCodeCompany.Text != "" && cboTypeCompany.Text != "미선택")
-            //{
-            //    var c_code = (from code in lst
-            //                  where code.company_code.Contains(txtCodeCompany.Text) && code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
-            //                  select code).ToList();
-            //    dataGridView2.DataSource = c_code;
-            //}
-
 
             //코드, 이름, 사업자 번호 입력
             if (txtCodeCompany.Text != "" && txtNameCompany.Text != "" && txtLicenseNum.Text != "")
@@ -304,7 +279,13 @@ namespace Team3
                               && code.company_cnum.Contains(txtLicenseNum.Text) && code.company_type.Contains(cboTypeCompany.SelectedValue.ToString())
                               select code).ToList();
                 dataGridView2.DataSource = c_code;
+
             }
+            else if (txtCodeCompany.Text == "" && txtNameCompany.Text == "" && txtLicenseNum.Text == "" && (cboTypeCompany.Text == "미선택"))
+            {
+                dataGridView2.DataSource = lst;
+            }
+
         }
     }
 }

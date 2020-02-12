@@ -33,21 +33,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cboFactory = new System.Windows.Forms.ComboBox();
+            this.cboWH = new System.Windows.Forms.ComboBox();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.cboMachine = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnEX = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,17 +71,22 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.radioButton5);
+            this.panel1.Controls.Add(this.radioButton4);
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton6);
+            this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cboFactory);
-            this.panel1.Controls.Add(this.cboStatus);
+            this.panel1.Controls.Add(this.cboWH);
             this.panel1.Controls.Add(this.cboMachine);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Size = new System.Drawing.Size(1100, 119);
             // 
             // label1
@@ -99,7 +110,9 @@
             this.TopMenu.Controls.Add(this.comboBox7);
             this.TopMenu.Controls.Add(this.comboBox2);
             this.TopMenu.Controls.Add(this.textBox1);
+            this.TopMenu.Controls.Add(this.cboStatus);
             this.TopMenu.Size = new System.Drawing.Size(1124, 60);
+            this.TopMenu.Controls.SetChildIndex(this.cboStatus, 0);
             this.TopMenu.Controls.SetChildIndex(this.textBox1, 0);
             this.TopMenu.Controls.SetChildIndex(this.comboBox2, 0);
             this.TopMenu.Controls.SetChildIndex(this.comboBox7, 0);
@@ -128,22 +141,22 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(441, 30);
+            this.label5.Location = new System.Drawing.Point(53, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 15);
+            this.label5.Size = new System.Drawing.Size(58, 15);
             this.label5.TabIndex = 31;
-            this.label5.Text = "상태";
+            this.label5.Text = "작업 상태";
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(52, 67);
+            this.label4.Location = new System.Drawing.Point(425, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 30;
@@ -155,7 +168,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(804, 30);
+            this.label3.Location = new System.Drawing.Point(807, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 29;
@@ -170,28 +183,29 @@
             this.textBox1.TabIndex = 28;
             this.textBox1.Visible = false;
             // 
-            // cboFactory
+            // cboWH
             // 
-            this.cboFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboFactory.FormattingEnabled = true;
-            this.cboFactory.Location = new System.Drawing.Point(841, 25);
-            this.cboFactory.Name = "cboFactory";
-            this.cboFactory.Size = new System.Drawing.Size(148, 24);
-            this.cboFactory.TabIndex = 27;
+            this.cboWH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboWH.FormattingEnabled = true;
+            this.cboWH.Location = new System.Drawing.Point(844, 26);
+            this.cboWH.Name = "cboWH";
+            this.cboWH.Size = new System.Drawing.Size(148, 24);
+            this.cboWH.TabIndex = 27;
             // 
             // cboStatus
             // 
-            this.cboStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(478, 25);
+            this.cboStatus.Location = new System.Drawing.Point(715, 30);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(180, 24);
+            this.cboStatus.Size = new System.Drawing.Size(180, 20);
             this.cboStatus.TabIndex = 26;
+            this.cboStatus.Visible = false;
             // 
             // cboMachine
             // 
+            this.cboMachine.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboMachine.FormattingEnabled = true;
-            this.cboMachine.Location = new System.Drawing.Point(139, 62);
+            this.cboMachine.Location = new System.Drawing.Point(465, 26);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Size = new System.Drawing.Size(219, 24);
             this.cboMachine.TabIndex = 25;
@@ -210,7 +224,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(241, 29);
+            this.label2.Location = new System.Drawing.Point(207, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 16);
             this.label2.TabIndex = 23;
@@ -219,7 +233,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(258, 26);
+            this.dateTimePicker2.Location = new System.Drawing.Point(224, 27);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(100, 22);
             this.dateTimePicker2.TabIndex = 22;
@@ -227,18 +241,10 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(139, 26);
+            this.dateTimePicker1.Location = new System.Drawing.Point(105, 27);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 22);
             this.dateTimePicker1.TabIndex = 21;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(55, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(73, 24);
-            this.comboBox1.TabIndex = 20;
             // 
             // label7
             // 
@@ -265,6 +271,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -277,7 +284,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.btnEX);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -300,20 +307,21 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnEX
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(4, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 23);
-            this.button5.TabIndex = 51;
-            this.button5.Text = "엑셀";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEX.Location = new System.Drawing.Point(4, 3);
+            this.btnEX.Name = "btnEX";
+            this.btnEX.Size = new System.Drawing.Size(57, 23);
+            this.btnEX.TabIndex = 51;
+            this.btnEX.Text = "엑셀";
+            this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEX.UseVisualStyleBackColor = false;
+            this.btnEX.Click += new System.EventHandler(this.btnEX_Click);
             // 
             // btnSearch
             // 
@@ -333,6 +341,95 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(171, 75);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(48, 20);
+            this.radioButton1.TabIndex = 81;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Tag = "작업지시";
+            this.radioButton1.Text = "지시";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(225, 75);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(48, 20);
+            this.radioButton2.TabIndex = 82;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Tag = "작업생성";
+            this.radioButton2.Text = "생성";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(279, 75);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(48, 20);
+            this.radioButton3.TabIndex = 83;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Tag = "작업중단";
+            this.radioButton3.Text = "중단";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(333, 75);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(48, 20);
+            this.radioButton4.TabIndex = 84;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Tag = "작업취소";
+            this.radioButton4.Text = "취소";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(387, 75);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(48, 20);
+            this.radioButton5.TabIndex = 85;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Tag = "작업완료";
+            this.radioButton5.Text = "완료";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(56, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 15);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "투입일";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(117, 75);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(48, 20);
+            this.radioButton6.TabIndex = 81;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Tag = "전체";
+            this.radioButton6.Text = "전체";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // SOO
             // 
@@ -361,20 +458,26 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cboFactory;
+        private System.Windows.Forms.ComboBox cboWH;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnEX;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton radioButton6;
     }
 }

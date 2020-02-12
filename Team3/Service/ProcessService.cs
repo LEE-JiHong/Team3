@@ -9,12 +9,12 @@ using Team3VO;
 
 namespace Team3.Service
 {
-   public class ProcessService
+    public class ProcessService
     {
-        public DataTable GetProductionPlanCheck(string startDate , string endDate)
+        public DataTable GetProductionPlanCheck(string startDate, string endDate)
         {
             ProcessDac dac = new ProcessDac();
-            return dac.GetProductionPlanCheck(startDate,endDate);
+            return dac.GetProductionPlanCheck(startDate, endDate);
         }
         public bool UpdateCommand(int num, string tdate)
         {
@@ -25,6 +25,16 @@ namespace Team3.Service
         {
             ProcessDac dac = new ProcessDac();
             return dac.GetProductionPlanCheckHis(startDate, endDate);
+        }
+        //public DataTable AAA(string id, string date)
+        //{
+        //    ProcessDac dac = new ProcessDac();
+        //    return dac.AAA(id, date);
+        //}
+        public DataTable GetProductFromBOM(string i)
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.GetProductFromBOM(i);
         }
     }
 }

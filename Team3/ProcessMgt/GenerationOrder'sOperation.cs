@@ -33,7 +33,7 @@ namespace Team3
             }
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AllowUserToAddRows = false;
-           
+
             dateTimePicker1.Value = DateTime.Now.AddDays(-7);
             dateTimePicker2.Value = DateTime.Now.AddDays(7);
             ResourceService R_service = new ResourceService();
@@ -175,7 +175,6 @@ namespace Team3
                         {
                             table = dv.ToTable();
                         }
-
                         if (cboMachine.Text != "미선택")
                         {
                             dv = table.DefaultView;
@@ -190,11 +189,11 @@ namespace Team3
                         {
                             dataGridView1.DataSource = dt;
                         }
-                        else if(table.Columns.Count>0)
+                        else if (table.Columns.Count > 0)
                         {
-                            dataGridView1.DataSource = dt;
+                            dataGridView1.DataSource = table;
                         }
-                     
+
                     }
                     else //상태 없을경우
                     {

@@ -39,7 +39,7 @@ namespace Team3
 
             ResourceService R_service = new ResourceService();
             List<MachineVO> m_list = R_service.GetMachineAll();
-            ComboUtil.ComboBinding(cboMachine, m_list, "m_id", "m_name","미선택");
+            ComboUtil.ComboBinding(cboMachine, m_list, "m_id", "m_name", "미선택");
 
             CommonCodeService C_service = new CommonCodeService();
 
@@ -131,10 +131,43 @@ namespace Team3
         {
             DataTable dt = S_service.GetShiftAll();
             DataTable table = new DataTable();
-            if (cboShift.Text != "전체")
+            if (cboShift.Text == "전체" && cboMachine.Text == "미선택")
+            {
+                dataGridView1.DataSource = dt;
+            }
+            else if (cboShift.Text != "전체")
             {
                 table = dt.AsEnumerable().Where(Row => Row.Field<string>("common_name") == cboShift.Text).CopyToDataTable();
+                
                 dataGridView1.DataSource = table;
+
+            }
+
+            else if (cboMachine.Text != "미선택")
+            {
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = "m_name = '" + cboMachine.Text + "'";
+                if (dv.Count > 0)
+                {
+                    table = dv.ToTable();
+                    dataGridView1.DataSource = table;
+
+                }
+                else
+                {
+                    dataGridView1.DataSource = dt;
+                }
+
+            }
+            if(cboShift.Text != "전체" &&cboMachine.Text != "미선택")
+            {
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = "common_name = '" + cboShift.Text + "' and m_name = '" + cboMachine.Text + "'";
+                if (dv.Count > 0)
+                {
+                    table = dv.ToTable();
+                    dataGridView1.DataSource = table;
+                }
             }
         }
     }
