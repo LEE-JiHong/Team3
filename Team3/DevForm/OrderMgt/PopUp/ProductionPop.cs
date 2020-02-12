@@ -125,14 +125,15 @@ namespace Team3
                 {
                     if (qty < demandList[idx].d_count)
                     {
-                        MessageBox.Show("테스트");
+                        MessageBox.Show($"{demandList[idx].d_date} 이전에 {demandList[idx].d_count}개를 입력해야 합니다.");
+                        
                         return;
                     }
                     idx--;
 
                     if (idx == -1)
                     {
-                        MessageBox.Show("성공");
+                        //MessageBox.Show("성공");
                     }
                     qty = 0;
                 }
@@ -160,11 +161,13 @@ namespace Team3
 
             if (result)
             {
+                MessageBox.Show("성공적으로 생산계획을 생성하였습니다.");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("생산계획 생성 실패");
+                MessageBox.Show("생산계획 생성 실패하였습니다. 다시 시도하여 주십시오.");
+                return;
             }
         }
 
@@ -179,21 +182,41 @@ namespace Team3
                 OrderService service = new OrderService();
                 uphCount = service.GetMaxUPHCount(planID);
 
+                //수량 입력하면 하루생산량 체크
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value) > uphCount)
+                {
+                    MessageBox.Show("UPH를 초과하였습니다. 다시 입력하여 주십시오.");
+                    dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                    return;
+                }
+                else
+                {
+                    if (Convert.ToInt32(lblCount.Text) == 0)
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                        return;
+                    }
+                    else
+                    {
+                        TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+
+                        if (TotalCount < 0)
+                        {
+                            MessageBox.Show("계획수량을 초과하였습니다. 다시 입력하여 주십시오.");
+                            dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                            return;
+                        }
+                        else
+                        {
+                            lblCount.Text = TotalCount.ToString();
+                        }   
+                    }
+                }
+
             }
             catch (Exception err)
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
-            }
-
-            //수량 입력하면 하루생산량 체크
-            if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value) > uphCount)
-            {
-                MessageBox.Show("Test");
-            }
-            else
-            {
-                TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                lblCount.Text = TotalCount.ToString();
             }
         }
     }

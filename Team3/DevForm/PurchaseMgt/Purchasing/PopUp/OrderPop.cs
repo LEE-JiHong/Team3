@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,9 @@ namespace Team3
     {
         string planID;
         //int companyName;
-        CheckBox headerCheckBox = new CheckBox();
+        List<CompanyVO> Companylist;
+        CheckBox headerCheckBox1 = new CheckBox();
+        CheckBox headerCheckBox2 = new CheckBox();
 
         public OrderDialog(string planID)
         {
@@ -26,16 +29,25 @@ namespace Team3
         private void OrderDialog_Load(object sender, EventArgs e)
         {
             SetCombo();
-
+           
             SetDataGridCompany();
             SetDataGridOrdering();
 
             PurchasingService service = new PurchasingService();
-            DataSet ds = service.GetOrderList(planID);
-            dgvOrdering.DataSource = ds.Tables[0];
-            dgvCompany.DataSource = ds.Tables[1];
+
+            try
+            {
+                DataSet ds = service.GetOrderList(planID);
+                dgvOrdering.DataSource = ds.Tables[0];
+                dgvCompany.DataSource = ds.Tables[1];
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+
             
-            SetRowNumber(dgvCompany);
+            //SetRowNumber(dgvCompany);
         }
 
         private void SetDataGridOrdering()
@@ -54,11 +66,11 @@ namespace Team3
 
             Point headerLocation = dgvOrdering.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox.BackColor = Color.White;
-            headerCheckBox.Size = new Size(18, 18);
-            headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
-            dgvOrdering.Controls.Add(headerCheckBox);
+            headerCheckBox1.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            headerCheckBox1.BackColor = Color.White;
+            headerCheckBox1.Size = new Size(18, 18);
+            headerCheckBox1.Click += new EventHandler(HeaderCheckbox_Click);
+            dgvOrdering.Controls.Add(headerCheckBox1);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "Plan ID", "plan_id", true,110);
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "발주업체", "company_name", true);
@@ -74,8 +86,26 @@ namespace Team3
         private void SetDataGridCompany()
         {
             dgvCompany.Columns.Clear();
+
+            GridViewUtil.SetDataGridView(dgvCompany);
+            dgvCompany.AutoGenerateColumns = false;
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.HeaderText = "";
+            chk.Name = "chk";
+            chk.Width = 30;
+            dgvCompany.Columns.Add(chk);
+
+            Point headerLocation = dgvCompany.GetCellDisplayRectangle(0, -1, true).Location;
+
+            headerCheckBox2.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            headerCheckBox2.BackColor = Color.White;
+            headerCheckBox2.Size = new Size(18, 18);
+            headerCheckBox2.Click += new EventHandler(HeaderCheckbox_Click2);
+            dgvCompany.Controls.Add(headerCheckBox2);
+
             //GridCheckBox(dgvCompany);
-            GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "No.", "count", true, 30);
+            //GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "No.", "count", true, 30);
             GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "발주업체", "company_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "업체코드", "company_order_code", true, 78);
         }
@@ -87,16 +117,27 @@ namespace Team3
             foreach (DataGridViewRow row in dgvOrdering.Rows)
             {
                 DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
-                chkBox.Value = headerCheckBox.Checked;
+                chkBox.Value = headerCheckBox1.Checked;
+            }
+        }
+
+        private void HeaderCheckbox_Click2(object sender, EventArgs e)
+        {
+            dgvCompany.EndEdit();
+
+            foreach (DataGridViewRow row in dgvCompany.Rows)
+            {
+                DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
+                chkBox.Value = headerCheckBox2.Checked;
             }
         }
 
         private void SetCombo()
         {
             OrderService service = new OrderService();
-            List<CompanyVO> Companylist = service.GetCompanyAll("CUSTOMER");
+            Companylist = service.GetCompanyAll("CUSTOMER");
 
-            ComboUtil.ComboBinding(cboCompany, Companylist, "company_code", "company_name", "전체");
+            ComboUtil.ComboBinding(cboCompnay, Companylist, "company_code", "company_name", "전체");
            // cboCompany.SelectedIndex = companyName;
         }
 
@@ -167,10 +208,12 @@ namespace Team3
                 if (result)
                 {
                     MessageBox.Show("성공적으로 발주완료하였습니다.");
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("발주실패");
+                    MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.");
+                    return;
                 }
             }
             catch(Exception err)
@@ -186,6 +229,32 @@ namespace Team3
             if (dgvOrdering.Rows[e.RowIndex].Cells[7].Value != null)
             {
                 dgvOrdering.Rows[e.RowIndex].Cells["chk"].Value = true;
+            }
+        }
+
+        private void dgvCompany_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            bool isCellChecked = Convert.ToBoolean(dgvCompany.Rows[e.RowIndex].Cells["chk"].EditedFormattedValue);
+            if (isCellChecked)
+            {
+                for (int i = 0; i < dgvOrdering.Rows.Count; i++)
+                {
+                    if (dgvCompany.Rows[e.RowIndex].Cells[1].Value.ToString() == dgvOrdering.Rows[i].Cells[2].Value.ToString())
+                    {
+                        dgvOrdering.Rows[i].Cells["chk"].Value = true;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dgvOrdering.Rows.Count; i++)
+                {
+                    if (dgvCompany.Rows[e.RowIndex].Cells[1].Value.ToString() == dgvOrdering.Rows[i].Cells[2].Value.ToString())
+                    {
+                        dgvOrdering.Rows[i].Cells["chk"].Value = false;
+                        //dgvOrdering.Rows[e.RowIndex].Cells[7].Value = null;
+                    }
+                }
             }
         }
     }

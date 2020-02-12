@@ -14,6 +14,7 @@ namespace Team3
     {
         DataTable dt;
         CheckBox headerCheckBox = new CheckBox();
+        List<CompanyVO> CompanyList;
 
         public OrderList()
         {
@@ -22,13 +23,32 @@ namespace Team3
 
         private void OrderList_Load(object sender, EventArgs e)
         {
-            PurchasingService service = new PurchasingService();
+            dtpStartDate.Value = DateTime.Now;
+            dtpEndDate.Value = DateTime.Now.AddMonths(+1);
 
-            dt = service.GetOrderList();
+            OrderService service = new OrderService();
+
+            //발주업체 콤보박스 바인딩
+            CompanyList = new List<CompanyVO>();
+
+            try
+            {
+                CompanyList = service.GetCompanyAll("customer");
+                ComboUtil.ComboBinding(cboCompany, CompanyList, "company_code", "company_name", "선택");
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+
+
+            //PurchasingService service = new PurchasingService();
+
+            //dt = service.GetOrderList();
 
             SetDataGrid();
 
-            SetRowNumber();
+            //SetRowNumber();
         }
 
         private void SetDataGrid()
@@ -52,7 +72,7 @@ namespace Team3
             headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
             dataGridView1.Controls.Add(headerCheckBox);
 
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true);
+            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주번호", "order_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "PlanID", "plan_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납품업체", "company_name", true, 78);
@@ -98,9 +118,9 @@ namespace Team3
                 if (isCellChecked)
                 {
                     OrderVO vo = new OrderVO();
-                    vo.order_id = row.Cells[2].Value.ToString();
-                    vo.plan_id = row.Cells[3].Value.ToString();
-                    vo.order_count = Convert.ToInt32(row.Cells[12].Value);
+                    vo.order_id = row.Cells[1].Value.ToString();
+                    vo.plan_id = row.Cells[2].Value.ToString();
+                    vo.order_count = Convert.ToInt32(row.Cells[11].Value);
 
                     list.Add(vo);
                 }
@@ -116,10 +136,13 @@ namespace Team3
                 if (result)
                 {
                     MessageBox.Show("성공적으로 발주취소가 완료되었습니다.");
+                    SetBottomStatusLabel("성공적으로 발주취소가 완료되었습니다.");
+                    btnSearch.PerformClick();
                 }
                 else
                 {
-                    MessageBox.Show("발주취소 실패");
+                    MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    SetBottomStatusLabel("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
                 }
             }
             catch(Exception err)
@@ -131,12 +154,12 @@ namespace Team3
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //수량 입력하면 체크박스 true
-            if (dataGridView1.Rows[e.RowIndex].Cells[12].Value != null)
+            if (dataGridView1.Rows[e.RowIndex].Cells[11].Value != null)
             {
-                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value))
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value))
                 {
                     MessageBox.Show("취소수량이 발주수량보다 클 수는 없습니다. 다시 입력하여 주십시오.");
-                    dataGridView1.Rows[e.RowIndex].Cells[12].Value = null;
+                    dataGridView1.Rows[e.RowIndex].Cells[11].Value = null;
                 }
                 else
                 {
@@ -149,12 +172,46 @@ namespace Team3
         {
             OrderVO vo = new OrderVO();
 
-            vo.order_pdate = dataGridView1.SelectedRows[0].Cells[8].Value.ToString();
-            vo.order_id = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            vo.plan_id = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            vo.order_pdate = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
+            vo.order_id = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            vo.plan_id = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
 
             EditDatePop frm = new EditDatePop(vo);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //조회 버튼
+            try
+            {
+                SupplierVO vo = new SupplierVO();
+                //vo.order_state = "O_COMPLETE";
+                vo.start_date = dtpStartDate.Value.ToShortDateString();
+                vo.end_date = dtpEndDate.Value.ToShortDateString();
+
+                if (cboCompany.Text != "선택")
+                {
+                    vo.company_name = cboCompany.Text;
+                }
+
+                if (txtOrderID.Text != "")
+                {
+                    vo.order_id = txtOrderID.Text;
+                }
+                PurchasingService service = new PurchasingService();
+
+                dt = service.GetOrderList(vo);
+
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
     }
 }

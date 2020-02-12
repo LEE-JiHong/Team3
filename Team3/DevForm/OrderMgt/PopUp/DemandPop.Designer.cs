@@ -40,7 +40,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(173, 443);
+            this.panel3.Location = new System.Drawing.Point(348, 443);
             // 
             // btnCancel
             // 
@@ -55,12 +55,12 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Size = new System.Drawing.Size(105, 19);
+            this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.Text = "수요계획생성";
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(505, 36);
+            this.panel1.Size = new System.Drawing.Size(854, 36);
             // 
             // panel2
             // 
@@ -68,19 +68,23 @@
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.cbOrderGubun);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Size = new System.Drawing.Size(504, 352);
+            this.panel2.Size = new System.Drawing.Size(853, 352);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(469, 7);
+            this.button1.Location = new System.Drawing.Point(818, 7);
+            // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(900, 505);
             // 
             // cbOrderGubun
             // 
             this.cbOrderGubun.FormattingEnabled = true;
             this.cbOrderGubun.Location = new System.Drawing.Point(74, 33);
             this.cbOrderGubun.Name = "cbOrderGubun";
-            this.cbOrderGubun.Size = new System.Drawing.Size(314, 23);
+            this.cbOrderGubun.Size = new System.Drawing.Size(203, 23);
             this.cbOrderGubun.TabIndex = 31;
             // 
             // label8
@@ -103,7 +107,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(419, 31);
+            this.btnSearch.Location = new System.Drawing.Point(768, 31);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(65, 30);
             this.btnSearch.TabIndex = 72;
@@ -122,13 +126,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(816, 264);
             this.dataGridView1.TabIndex = 73;
             // 
             // DemandPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(551, 505);
+            this.ClientSize = new System.Drawing.Size(900, 505);
             this.Name = "DemandPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.DemandPop_Load);

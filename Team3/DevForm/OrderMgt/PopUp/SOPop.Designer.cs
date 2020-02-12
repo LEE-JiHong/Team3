@@ -95,6 +95,10 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(628, 466);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -190,6 +194,7 @@
             // 
             // txtSOWO
             // 
+            this.txtSOWO.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtSOWO.Location = new System.Drawing.Point(82, 23);
             this.txtSOWO.Name = "txtSOWO";
             this.txtSOWO.Size = new System.Drawing.Size(196, 21);
@@ -222,6 +227,7 @@
             // txtOutput
             // 
             this.txtOutput.Enabled = false;
+            this.txtOutput.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtOutput.Location = new System.Drawing.Point(82, 130);
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.Size = new System.Drawing.Size(196, 21);
@@ -229,6 +235,7 @@
             // 
             // txtCancel
             // 
+            this.txtCancel.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtCancel.Location = new System.Drawing.Point(374, 130);
             this.txtCancel.Name = "txtCancel";
             this.txtCancel.Size = new System.Drawing.Size(196, 21);
@@ -237,6 +244,7 @@
             // 
             // txtOrder
             // 
+            this.txtOrder.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtOrder.Location = new System.Drawing.Point(374, 93);
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(196, 21);
@@ -246,6 +254,7 @@
             // 
             // txtComment
             // 
+            this.txtComment.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtComment.Location = new System.Drawing.Point(82, 167);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";

@@ -62,6 +62,7 @@ namespace Team3
                 dt.Columns[5].ColumnMapping = MappingType.Hidden;
 
                 dataGridView1.DataSource = dt;
+                //GridViewUtil.SetDataGridView(dataGridView1);
 
                 SetBottomStatusLabel("조회가 완료되었습니다.");
             }

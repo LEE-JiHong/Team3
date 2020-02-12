@@ -54,7 +54,7 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(12, 125);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Size = new System.Drawing.Size(998, 443);
+            this.panel2.Size = new System.Drawing.Size(998, 453);
             // 
             // panel1
             // 
@@ -123,7 +123,8 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(998, 443);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(998, 453);
             this.dataGridView1.TabIndex = 50;
             // 
             // flowLayoutPanel1
@@ -213,11 +214,11 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(388, 27);
+            this.label8.Location = new System.Drawing.Point(363, 27);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 16);
+            this.label8.Size = new System.Drawing.Size(63, 16);
             this.label8.TabIndex = 56;
-            this.label8.Text = "Date";
+            this.label8.Text = "고객납기일";
             // 
             // btnSearch
             // 
