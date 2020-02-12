@@ -60,11 +60,11 @@ namespace Team3
                         vo.factory_name = dataGridView1.Rows[i].Cells[11].Value.ToString();
                         vo.pro_id = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value.ToString());
                         vo.plan_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                      //  lst=P_service.GetDMRMgt(vo);
+                        lst.AddRange(P_service.GetDMRMgt(vo));
 
                     }
                 }
-                lst = P_service.GetDMRMgt(vo);
+                //lst = P_service.GetDMRMgt(vo);
                 dataGridView2.DataSource = lst;
                 int k = lst.Count;
              //lst = lst.Distinct().ToList(); //중복제거

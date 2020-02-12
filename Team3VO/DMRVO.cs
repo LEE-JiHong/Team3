@@ -10,7 +10,7 @@ namespace Team3VO
     {
         public int pro_id { get; set; }
         public string plan_id { get; set; }//플랜ID
-        public string product_id { get; set; }//상품ID
+        public int product_id { get; set; }//상품ID
         public string product_codename { get; set; } //상품코드명
         public string product_name { get; set; }//상품명
         public string factory_id { get; set; }//창고아이디
