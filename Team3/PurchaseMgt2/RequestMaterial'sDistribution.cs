@@ -25,6 +25,7 @@ namespace Team3
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            checkBoxColumn.Name = "ck";
             checkBoxColumn.HeaderText = "선택";
             dataGridView1.Columns.Add(checkBoxColumn);
 
@@ -48,36 +49,41 @@ namespace Team3
         }
 
 
+
+
         ProcessService P_service = new ProcessService();
         List<string> lst = new List<string>();
         List<string> st = new List<string>();
-
+        DataTable ndt = new DataTable();
         private void btnAdd_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = null;
-            DataTable ndt = new DataTable();
+            dataGridView2.Columns.Clear();
+            ndt = null;
+
             //string id = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             //string date = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             //ProcessService P_service = new ProcessService();
             //DataTable dt = P_service.AAA(id, date);
             //dataGridView2.DataSource = dt;
 
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "pro_id", "pro_id", true,100,DataGridViewContentAlignment.MiddleLeft,false,false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "플랜id", "plan_id", true,100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "상품코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "상품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "창고아이디", "factory_id", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2 ,"창고이름", "factory_name", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "개수", "pro_count", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2 ,"들어가는 수", "bom_use_count", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2 ,"현재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이전재고", "w_count_past", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고", "req_factory", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청수량", "req_count", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청일", "req_date", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사유", "reason", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft, false, false);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "product_id", "product_id", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "창고아이디", "factory_id", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "창고이름", "factory_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "개수", "pro_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "들어가는 수", "bom_use_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "현재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "이전재고", "w_count_past", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청창고", "req_factory", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청수량", "req_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청일", "req_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "사유", "reason", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청창고ID", "req_factory_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
 
             List<DMRVO> lst = new List<DMRVO>();
             ProcessService P_service = new ProcessService();
@@ -90,34 +96,29 @@ namespace Team3
                     {
                         vo.product_codename = dataGridView1.Rows[i].Cells[9].Value.ToString(); //코드네임
 
-                        vo.factory_name = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                        vo.factory_name = dataGridView1.Rows[i].Cells[11].Value.ToString(); //창고명
                         vo.pro_id = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value.ToString());
                         vo.plan_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
                         if (P_service.GetDMRMgt(vo).Count >= 5)
                         {
-                            ndt = (P_service.GetDMR_dt(vo));
+                            lst = (P_service.GetDMRMgt(vo));
                         }
                     }
                 }
-                //  lst = P_service.GetDMRMgt(vo);
- 
-
-                dataGridView2.DataSource = ndt;
-
-
-                int k = lst.Count;
-                //lst = lst.Distinct().ToList(); //중복제거
-
-                //bool bResult = false;
                 for (int i = 0; i < lst.Count; i++)
                 {
-                    //   dt.Rows.Add(P_service.GetProductFromBOM(lst[i]));
-
-
+                    lst[i].req_date = DateTime.Now.ToShortDateString();
                 }
+                //  lst = P_service.GetDMRMgt(vo);
+                dataGridView2.DataSource = lst;
+                //int k = lst.Count;
+                //lst = lst.Distinct().ToList(); //중복제거
+                //bool bResult = false;
+                //for (int i = 0; i < lst.Count; i++)
+                //{
+                //   dt.Rows.Add(P_service.GetProductFromBOM(lst[i]));
+                //}
                 //      dataGridView2.DataSource = dt;
-
-
             }
 
             catch (Exception err)
@@ -153,9 +154,13 @@ namespace Team3
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
-
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    dataGridView1.Rows[i].Cells[0].Value = false;
+                }
                 int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
                 //string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 bool bresult = false;
@@ -189,6 +194,24 @@ namespace Team3
 
             }
             dataGridView1.DataSource = table;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            List<DMRVO> n_dt = (List<DMRVO>)dataGridView2.DataSource;
+            bool bResult;
+            bResult=  P_service.tranWH(n_dt); 
+      if(bResult)
+            {
+                MessageBox.Show("성공");
+            }
+      else
+                MessageBox.Show("실패");
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
