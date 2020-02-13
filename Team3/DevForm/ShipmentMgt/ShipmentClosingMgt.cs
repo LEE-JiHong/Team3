@@ -41,5 +41,10 @@ namespace Team3.DevForm.ShipmentMgt
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
         }
+
+        private void ShipmentClosingMgt_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

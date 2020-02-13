@@ -317,7 +317,6 @@
             this.dgvStockStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
             this.dgvStockStatus.TabIndex = 0;
-            this.dgvStockStatus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockStatus_CellClick);
             // 
             // button1
             // 

@@ -221,7 +221,7 @@
             this.lblStandardDate.Name = "lblStandardDate";
             this.lblStandardDate.Size = new System.Drawing.Size(41, 16);
             this.lblStandardDate.TabIndex = 123;
-            this.lblStandardDate.Text = "출하일";
+            this.lblStandardDate.Text = "이동일";
             // 
             // btnSelect
             // 
@@ -429,7 +429,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(79, 23);
             this.btnAdd.TabIndex = 40;
-            this.btnAdd.Text = "출하취소";
+            this.btnAdd.Text = "이동취소";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
