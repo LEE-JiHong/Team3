@@ -22,7 +22,6 @@ namespace Team3.DevForm.NewFolder1
 
         }
 
-
         private void InventoryStatusByOrder_Load(object sender, EventArgs e)
         {
             List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
@@ -102,13 +101,13 @@ namespace Team3.DevForm.NewFolder1
             comboBoxColumn.HeaderText = "TO창고";
             comboBoxColumn.Name = "combo";
 
-           
+
             for (int i = 0; i < _cboToFac.Count; i++)
             {
                 comboBoxColumn.DisplayMember = _cboToFac[i].factory_name;
                 comboBoxColumn.ValueMember = _cboToFac[i].factory_id.ToString();
                 comboBoxColumn.Items.Add(_cboToFac[i].factory_name);
-                
+
             }
             comboBoxColumn.Items.RemoveAt(0);
 
@@ -162,13 +161,7 @@ namespace Team3.DevForm.NewFolder1
                 Clipboard.SetDataObject(dataObj);
         }
 
-        private void dgvStockStatus_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
-            {
-
-            }
-        }
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -177,7 +170,7 @@ namespace Team3.DevForm.NewFolder1
             {
                 //MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
                 //MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
-               
+
                 if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
                 {
                     continue;
@@ -189,9 +182,6 @@ namespace Team3.DevForm.NewFolder1
                 //MessageBox.Show(dgvStockStatus.SelectedRows.Count.ToString()); 
 
             }
-
-
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -219,21 +209,8 @@ namespace Team3.DevForm.NewFolder1
                         //MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
                         vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
                     }
-
-
-
                     //vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
-                   
                 }
-              
-
-
-
-
-
-
-
-
                 vo.w_count_present = _shipvo.transfer_count;
                 vo.uadmin = 1002;
                 vo.wh_comment = _shipvo.wh_comment;
