@@ -46,5 +46,10 @@ namespace Team3.Service
             ProcessDac dac = new ProcessDac();
             return dac.GetDMR_dt(vo);
         }
+        public bool tranWH(List<DMRVO> lst)
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.tranWH(lst);
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Team3
         /// <param name="textAlign"></param>
         /// <param name="numCheck">숫자 천 단위 설정</param>
         public static void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName,
-        bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft, bool numCheck = false, bool TY=true)
+        bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft, bool numCheck = false)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -30,7 +30,7 @@ namespace Team3
             col.Width = width;
             col.Visible = visibility;
             col.ValueType = typeof(string);
-            col.ReadOnly = TY;
+            col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
 
             if (numCheck)

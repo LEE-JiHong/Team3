@@ -33,7 +33,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(15, 253);
+            this.label2.Location = new System.Drawing.Point(12, 265);
             this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.Text = "자재불출";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,7 +108,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(921, 252);
+            this.panel5.Location = new System.Drawing.Point(921, 255);
             this.panel5.Size = new System.Drawing.Size(197, 29);
             // 
             // panel4
@@ -168,7 +168,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.button6);
-            this.flowLayoutPanel2.Controls.Add(this.button8);
+            this.flowLayoutPanel2.Controls.Add(this.btnSave);
             this.flowLayoutPanel2.Controls.Add(this.btnAdd);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -192,20 +192,21 @@
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnSave
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::Team3.Properties.Resources.Save_16x16;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(72, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(59, 23);
-            this.button8.TabIndex = 51;
-            this.button8.Text = "저장";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Image = global::Team3.Properties.Resources.Save_16x16;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(72, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(59, 23);
+            this.btnSave.TabIndex = 51;
+            this.btnSave.Text = "저장";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -364,11 +365,13 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1105, 153);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // DMRMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1129, 536);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "DMRMgt";
             this.Tag = "자재불출요청";
             this.Text = "자재불출요청";
@@ -403,7 +406,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button5;

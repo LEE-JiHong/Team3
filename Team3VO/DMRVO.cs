@@ -20,12 +20,14 @@ namespace Team3VO
         public int plan_count { get; set; } //계획수량
         public int w_count_present { get; set; }//현재고
         public int w_count_past { get; set; }//이전재고
+       public int req_factory_id { get; set; }
         public string req_factory { get; set; }//요청창고
         public string req_count { get; set; } //요청수량
         public string req_date { get; set; }// 요청일
         public string reason { get; set; }//사유
         public int nam { get; set; } //잔량
-
+        public int w_id { get; set; }
+        public string order_id { get; set; }
     }
     public class DMRDBVO
     {
