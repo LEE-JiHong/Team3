@@ -19,15 +19,19 @@ namespace Team3
 
         private void MaterialStockList_Load(object sender, EventArgs e)
         {
-            //품목유형 콤보박스 바인딩
+            
             StockService service = new StockService();
-
-            List<CommonVO> productTypeList = new List<CommonVO>();
-
             try
             {
+                //품목유형 콤보박스 바인딩
+                List<CommonVO> productTypeList = new List<CommonVO>();
                 productTypeList = service.GetProductType("item_type");
                 ComboUtil.ComboBinding(cboProductType, productTypeList, "common_value", "common_name", "선택");
+
+                List<FactoryComboVO> factoryList = new List<FactoryComboVO>();
+                factoryList = service.GetFactory();
+                ComboUtil.ComboBinding(cboFactory, factoryList, "factory_code", "factory_name", "선택");
+
             }
             catch (Exception err)
             {
@@ -49,8 +53,10 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "창고", "factory_name", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목타입", "product_type", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목유형", "product_type", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "재고량", "w_count_present", true, 150);
+
+            GridViewUtil.SetDoNotSort(dataGridView1);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -58,13 +64,30 @@ namespace Team3
             //조회버튼
             try
             {
+                MaterialStockVO vo = new MaterialStockVO();
+
+                if (txtProductCode.Text != "")
+                {
+                    vo.product_codename = txtProductCode.Text;
+                }
+
+                if (cboProductType.Text != "선택")
+                {
+                    vo.product_type = cboProductType.Text;
+                }
+
+                if (cboFactory.Text != "선택")
+                {
+                    vo.factory_code = cboFactory.SelectedValue.ToString();
+                }
+
                 StockService service = new StockService();
-                DataTable dt = service.GetMaterialStockList();
+                DataTable dt = service.GetMaterialStockList(vo);
                 SetDataGrid();
                 dataGridView1.DataSource = dt;
                 SetRowNumber();
 
-               // dataGridView1.Columns["w_count_present"].DefaultCellStyle.BackColor = Color.Red;
+                //dataGridView1.Columns[6].DefaultCellStyle.BackColor = Color.Red;
             }
             catch (Exception err)
             {

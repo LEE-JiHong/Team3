@@ -34,24 +34,24 @@ namespace Team3DAC
             }
         }
 
-        public List<CommonVO> GetFactory(string factory)
+        public List<FactoryComboVO> GetFactory()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = $"select common_name, common_value from TBL_COMMON_CODE where common_type = '{factory}'";
+                string sql = $"select factory_name, factory_code from TBL_FACTORY";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<CommonVO> list = Helper.DataReaderMapToList<CommonVO>(reader);
+                List<FactoryComboVO> list = Helper.DataReaderMapToList<FactoryComboVO>(reader);
                 cmd.Connection.Close();
                 return list;
             }
         }
 
-        public DataTable GetMaterialStockList()
+        public DataTable GetMaterialStockList(MaterialStockVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -59,8 +59,27 @@ namespace Team3DAC
 
                 //sql.Append($"select w_id, plan_id, factory_code, factory_name, p.product_codename, product_name, w_count_present, common_name as product_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_PRODUCT p on p.product_id = w.product_id inner join TBL_COMMON_CODE c on c.common_value = p.product_type where 1=1");
 
-                sql.Append($"select w.factory_id, factory_code,p.product_id,sum(w_count_present) as w_count_present, factory_name, product_codename, product_name, common_name as product_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_PRODUCT p on p.product_id = w.product_id  inner join TBL_COMMON_CODE c on c.common_value = p.product_type group by w.factory_id, p.product_id, factory_name, factory_code, product_codename, product_name, common_name");
+                sql.Append($"select w.factory_id, factory_code,p.product_id,sum(w_count_present) as w_count_present, factory_name, product_codename, product_name, common_name as product_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_PRODUCT p on p.product_id = w.product_id inner join TBL_COMMON_CODE c on c.common_value = p.product_type where 1=1");
 
+                if (vo.factory_code != null)
+                {
+                    sql.Append(" and f.factory_code = @factory_code");
+                    cmd.Parameters.AddWithValue("@factory_code", vo.factory_code);
+                }
+
+                if (vo.product_type != null)
+                {
+                    sql.Append($" and common_name = @product_type");
+                    cmd.Parameters.AddWithValue("@product_type", vo.product_type);
+                }
+
+                if (vo.product_codename != null)
+                {
+                    sql.Append($" and product_codename like '%{vo.product_codename}%'");
+                    //cmd.Parameters.AddWithValue("@product_codename", vo.order_id);
+                }
+
+                sql.Append($" group by w.factory_id, p.product_id, factory_name, factory_code, product_codename, product_name, common_name");
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql.ToString();
