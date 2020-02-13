@@ -164,17 +164,22 @@ namespace Team3
                 //    dataGridView1.Rows[i].Cells[0].Value = false;
                 //}
                 int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
-                //string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+
                 bool bresult = false;
+
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
+                { 
+
                     if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) == p_id)
                     {
+                        //dataGridView1.Rows[i].Cells[0].Value = !bresult;
+
                         bresult = Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value);
                         dataGridView1.Rows[i].Cells[0].Value = !bresult;
                     }
+                    
                 }
-
 
             }
             catch (Exception err)
@@ -235,9 +240,5 @@ namespace Team3
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
