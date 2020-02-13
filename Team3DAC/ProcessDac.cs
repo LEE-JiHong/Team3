@@ -100,16 +100,16 @@ namespace Team3DAC
         }
         public List<DMRVO> GetDMRMgt(DMRVO vo)
         {
-            
+
             using (SqlCommand cmd = new SqlCommand())
             {
-                 
+
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-          
+
                 cmd.CommandText = "GetDMRMgt";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@plan_id", vo.plan_id);
-                cmd.Parameters.AddWithValue("@pro_id",vo.pro_id);
+                cmd.Parameters.AddWithValue("@pro_id", vo.pro_id);
                 cmd.Parameters.AddWithValue("@WH", vo.factory_name);
                 cmd.Parameters.AddWithValue("@product_codename", vo.product_codename);
                 cmd.Connection.Open();
@@ -117,7 +117,7 @@ namespace Team3DAC
                 List<DMRVO> list = Helper.DataReaderMapToList<DMRVO>(reader);
                 cmd.Connection.Close();
                 return list;
-               
+
 
             }
         }
@@ -137,7 +137,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@product_codename", vo.product_codename);
                 cmd.Connection.Open();
                 DataTable table = new DataTable();
-   
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(table);
                 da.Dispose();
@@ -148,9 +148,72 @@ namespace Team3DAC
 
             }
         }
+        public bool tranWH(List<DMRVO> lst)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                StringBuilder sb = new StringBuilder();
+                try
+                {
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.Connection.Open();
+                    SqlTransaction tran = cmd.Connection.BeginTransaction();
+                    string sql_1 = @"update TBL_WAREHOUSE set w_count_present = w_count_present - @req_count  
+                                        where plan_id = @plan_id  and factory_id = @req_factory_id  and product_id = @product_id; 
+                                     insert into TBL_WAREHOUSE_HIS(w_id, product_id, wh_product_count, order_id,wh_udate, wh_comment, wh_category) 
+                                                                            values(@w_id, @product_id, @req_count,@order_id,     @req_date,    @reason, 'P_MOVE_ITEM')";
+;
+
+                    cmd.Transaction = tran;
+                    cmd.CommandText = sql_1;
+                    //뺴는작업
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@req_factory_id", lst[i].req_factory_id);
+                        cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
+                        cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
+                        cmd.Parameters.AddWithValue("@req_count", lst[i].req_count);
+                        cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
+                        cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
+                        cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    
+                    sql_1 = "FrodMove";
+                    cmd.CommandText = sql_1;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@factory_id", lst[i].factory_id);
+                        cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
+                        cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
+                        cmd.Parameters.AddWithValue("@req_count", lst[i].req_count);
+                        cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
+                        cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
+                        cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    tran.Commit();
+                    cmd.Connection.Close();
+
+                    return true;
+                  
+                }
+                catch (Exception err)
+                {
+                    string st = err.Message;
+                    return false;
+                }
+            }
+        }
     }
 }
-
 //        public DataTable AAA(string id, string date)
 //        {
 //        //    using (SqlCommand cmd = new SqlCommand())

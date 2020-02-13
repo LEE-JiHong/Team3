@@ -36,7 +36,7 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboFactory = new System.Windows.Forms.ComboBox();
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.cboProductType);
             this.panel1.Controls.Add(this.txtProductCode);
-            this.panel1.Controls.Add(this.comboBox7);
+            this.panel1.Controls.Add(this.cboFactory);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label4);
@@ -184,6 +184,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -196,14 +198,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(996, 415);
             this.dataGridView1.TabIndex = 0;
             // 
-            // comboBox7
+            // cboFactory
             // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(770, 17);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(205, 24);
-            this.comboBox7.TabIndex = 84;
+            this.cboFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboFactory.FormattingEnabled = true;
+            this.cboFactory.Location = new System.Drawing.Point(770, 17);
+            this.cboFactory.Name = "cboFactory";
+            this.cboFactory.Size = new System.Drawing.Size(205, 24);
+            this.cboFactory.TabIndex = 84;
             // 
             // txtProductCode
             // 
@@ -244,6 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1019, 660);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(976, 573);
             this.Name = "MaterialStockList";
@@ -269,7 +272,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cboFactory;
         private System.Windows.Forms.TextBox txtProductCode;
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.Button btnSearch;

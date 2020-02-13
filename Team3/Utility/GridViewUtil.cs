@@ -22,7 +22,7 @@ namespace Team3
         /// <param name="textAlign"></param>
         /// <param name="numCheck">숫자 천 단위 설정</param>
         public static void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName,
-        bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft, bool numCheck = false, bool TY=true)
+        bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft, bool numCheck = false)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -30,7 +30,7 @@ namespace Team3
             col.Width = width;
             col.Visible = visibility;
             col.ValueType = typeof(string);
-            col.ReadOnly = TY;
+            col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
 
             if (numCheck)
@@ -128,7 +128,7 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
 
             grid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grid.DefaultCellStyle.SelectionBackColor = Color.DarkGray;
+            grid.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
             grid.DefaultCellStyle.SelectionForeColor = Color.White;
 
             grid.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
@@ -138,11 +138,27 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
             //grid.AllowUserToResizeColumns = false;
         }
 
+        /// <summary>
+        /// 컬럼 헤더 색상 세팅
+        /// </summary>
+        /// <param name="grid"></param>
         public static void SetDataGridColumnColor(DataGridView grid)
         {
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 121, 152);
             grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             grid.EnableHeadersVisualStyles = false;
+        }
+
+        /// <summary>
+        /// 데이터그리드뷰 정렬 막기
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void SetDoNotSort(DataGridView dgv)
+        {
+            foreach (DataGridViewColumn i in dgv.Columns)
+            {
+                i.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }

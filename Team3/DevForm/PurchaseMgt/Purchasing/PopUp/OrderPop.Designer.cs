@@ -305,7 +305,7 @@
         private System.Windows.Forms.DataGridView dgvCompany;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Panel panel4;
+       // private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cboCompnay;
         private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Button button2;
