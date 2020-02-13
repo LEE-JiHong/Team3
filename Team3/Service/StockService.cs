@@ -23,5 +23,13 @@ namespace Team3
             StockDAC dac = new StockDAC();
             return dac.GetMaterialStockList();
         }
+
+        public DataTable GetMaterialHistory(StockVO vo)
+        {
+            StockDAC dac = new StockDAC();
+            return dac.GetMaterialHistory(vo);
+        }
+
+
     }
 }

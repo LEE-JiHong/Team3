@@ -59,6 +59,7 @@
     <Compile Include="ShiftVO.cs" />
     <Compile Include="ShipmentVO.cs" />
     <Compile Include="MaterialLedgerVO.cs" />
+    <Compile Include="StockVO.cs" />
     <Compile Include="SupplierVO.cs" />
     <Compile Include="SOMasterVO.cs" />
     <Compile Include="UserVO.cs" />

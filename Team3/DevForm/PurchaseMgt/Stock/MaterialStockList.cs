@@ -75,7 +75,11 @@ namespace Team3
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            warehouseHistoryPop frm = new warehouseHistoryPop();
+            StockVO vo = new StockVO();
+            vo.product_codename = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            vo.factory_code = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+
+            warehouseHistoryPop frm = new warehouseHistoryPop(vo);
             frm.ShowDialog();
         }
 
