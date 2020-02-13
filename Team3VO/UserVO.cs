@@ -13,5 +13,9 @@ namespace Team3VO
         public string user_name { get; set; }
         public string department_id { get; set; }
 
+        public string user_pic { get; set; }
+
+        public string user_national { get; set; }
+
     }
 }
