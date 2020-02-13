@@ -128,8 +128,8 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
 
             grid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //grid.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
-            //grid.DefaultCellStyle.SelectionForeColor = Color.Yellow;
+            grid.DefaultCellStyle.SelectionBackColor = Color.DarkGray;
+            grid.DefaultCellStyle.SelectionForeColor = Color.White;
 
             grid.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             //grid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

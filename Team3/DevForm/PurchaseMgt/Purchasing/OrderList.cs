@@ -86,8 +86,6 @@ namespace Team3
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "취소량", "", true, 78);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소가능량", "order_count", true, 100);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주일", "order_ddate", true, 78);
-
-            dataGridView1.DataSource = dt;
         }
 
         private void SetRowNumber()
