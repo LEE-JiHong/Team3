@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
+using log4net.Core;
 
 namespace Team3
 {
@@ -63,102 +64,112 @@ namespace Team3
             var fileContent = string.Empty;
             var filePath = string.Empty;
 
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "엑셀 파일 (*.xls)|*.xls|엑셀 파일 (*.xlsx)|*.xlsx|모든 파일 (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    //filePath = openFileDialog.FileName;
+                    openFileDialog.InitialDirectory = "c:\\";
+                    openFileDialog.Filter = "엑셀 파일 (*.xls)|*.xls|엑셀 파일 (*.xlsx)|*.xlsx|모든 파일 (*.*)|*.*";
+                    openFileDialog.FilterIndex = 2;
+                    openFileDialog.RestoreDirectory = true;
 
-                    txtFilePath.Text = openFileDialog.FileName;
-
-                    FilePath = txtFilePath.Text;
-
-                    var fileStream = openFileDialog.OpenFile();
-
-                    using (StreamReader reader = new StreamReader(fileStream))
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        fileContent = reader.ReadToEnd();
-                    }
+                        //filePath = openFileDialog.FileName;
 
-                    try
-                    {
-                        // 데이터그리드뷰 클리어
-                        //SetDataGrid();
-                        //dataGridView1.Columns.Clear();
+                        txtFilePath.Text = openFileDialog.FileName;
 
-                        // 엑셀데이터를 담을 데이터테이블 선언
-                        dt = new DataTable();
+                        FilePath = txtFilePath.Text;
 
-                        // 엑셀 변수들 초기화
-                        xlApp = new Excel.Application();
-                        xlWorkbook = xlApp.Workbooks.Open(txtFilePath.Text);
-                        xlWorksheet = (Excel.Worksheet)xlWorkbook.Worksheets.get_Item(1); // 첫 번째 시트
+                        var fileStream = openFileDialog.OpenFile();
 
-                        // 시트에서 범위 설정
-                        // UsedRange는 사용된 셀 모두이므로 
-                        // 범위를 따로 지정하려면 
-                        // xlWorksheet.Range[xlWorksheet.Cells[시작 행, 시작 열], xlWorksheet.Cells[끝 행, 끝 열]]
-                        Excel.Range range = xlWorksheet.UsedRange;
-
-                        // 2차원 배열에 담기
-                        object[,] data = range.Value;
-
-                        // 데이터테이블에 엑셀 칼럼만큼 칼럼 추가
-
-                        dt.Columns.Add("planDate");
-                        for (int i = 1; i <= range.Columns.Count; i++)
+                        using (StreamReader reader = new StreamReader(fileStream))
                         {
-                            //dt.Columns.Add(i.ToString(), typeof(string));
-                            dt.Columns.Add(data[1, i].ToString());
-
-                            //planID = data[1, 2].ToString();
+                            fileContent = reader.ReadToEnd();
                         }
 
-                        // 데이터테이블에 2차원 배열에 담은 엑셀데이터 추가
-                        for (int r = 2; r <= range.Rows.Count; r++)
+                        try
                         {
-                            DataRow dr = dt.Rows.Add();
-                            for (int c = 1; c <= range.Columns.Count; c++)
+                            // 데이터그리드뷰 클리어
+                            //SetDataGrid();
+                            //dataGridView1.Columns.Clear();
+
+                            // 엑셀데이터를 담을 데이터테이블 선언
+                            dt = new DataTable();
+
+                            // 엑셀 변수들 초기화
+                            xlApp = new Excel.Application();
+                            xlWorkbook = xlApp.Workbooks.Open(txtFilePath.Text);
+                            xlWorksheet = (Excel.Worksheet)xlWorkbook.Worksheets.get_Item(1); // 첫 번째 시트
+
+                            // 시트에서 범위 설정
+                            // UsedRange는 사용된 셀 모두이므로 
+                            // 범위를 따로 지정하려면 
+                            // xlWorksheet.Range[xlWorksheet.Cells[시작 행, 시작 열], xlWorksheet.Cells[끝 행, 끝 열]]
+                            Excel.Range range = xlWorksheet.UsedRange;
+
+                            // 2차원 배열에 담기
+                            object[,] data = range.Value;
+
+                            // 데이터테이블에 엑셀 칼럼만큼 칼럼 추가
+
+                            dt.Columns.Add("planDate");
+                            for (int i = 1; i <= range.Columns.Count; i++)
                             {
-                                dr[0] = dateTimePicker1.Value.ToShortDateString();
-                                if (data[r, c].GetType() != typeof(DateTime))
+                                //dt.Columns.Add(i.ToString(), typeof(string));
+                                dt.Columns.Add(data[1, i].ToString());
+
+                                //planID = data[1, 2].ToString();
+                            }
+
+                            // 데이터테이블에 2차원 배열에 담은 엑셀데이터 추가
+                            for (int r = 2; r <= range.Rows.Count; r++)
+                            {
+                                DataRow dr = dt.Rows.Add();
+                                for (int c = 1; c <= range.Columns.Count; c++)
                                 {
-                                    dr[c] = data[r, c];
-                                }
-                                else
-                                {
-                                    dr[c] = Convert.ToDateTime(data[r, c]).ToShortDateString();
+                                    dr[0] = dateTimePicker1.Value.ToShortDateString();
+                                    if (data[r, c].GetType() != typeof(DateTime))
+                                    {
+                                        dr[c] = data[r, c];
+                                    }
+                                    else
+                                    {
+                                        dr[c] = Convert.ToDateTime(data[r, c]).ToShortDateString();
+                                    }
                                 }
                             }
+
+                            xlWorkbook.Close(true);
+                            xlApp.Quit();
+
+                            // 데이터그리드뷰에 데이터테이블 바인딩
+                            //dataGridView1.DataSource = dt;
+
+                        }
+                        catch
+                        {
+                        }
+                        finally
+                        {
+                            // 사용이 끝난 엑셀파일 Release
+                            ReleaseExcelObject(xlWorksheet);
+                            ReleaseExcelObject(xlWorkbook);
+                            ReleaseExcelObject(xlApp);
                         }
 
-                        xlWorkbook.Close(true);
-                        xlApp.Quit();
-
-                        // 데이터그리드뷰에 데이터테이블 바인딩
-                        //dataGridView1.DataSource = dt;
-
+                        //계획기준버전
+                        txtPlanVersion.Text = dateTimePicker1.Value.ToShortDateString().Replace("-", "") + "_P";
+                        PlanVersion = txtPlanVersion.Text;
                     }
-                    catch
-                    {
-                    }
-                    finally
-                    {
-                        // 사용이 끝난 엑셀파일 Release
-                        ReleaseExcelObject(xlWorksheet);
-                        ReleaseExcelObject(xlWorkbook);
-                        ReleaseExcelObject(xlApp);
-                    }
-
-                    //계획기준버전
-                    txtPlanVersion.Text = dateTimePicker1.Value.ToShortDateString().Replace("-","") + "_P";
-                    PlanVersion = txtPlanVersion.Text;
                 }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                ReleaseExcelObject(xlWorksheet);
+                ReleaseExcelObject(xlWorkbook);
+                ReleaseExcelObject(xlApp);
             }
         }
 
