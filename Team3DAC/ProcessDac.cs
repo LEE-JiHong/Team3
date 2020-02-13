@@ -160,7 +160,9 @@ namespace Team3DAC
                     SqlTransaction tran = cmd.Connection.BeginTransaction();
                     string sql_1 = @"update TBL_WAREHOUSE set w_count_present = w_count_present - @req_count  
                                         where plan_id = @plan_id  and factory_id = @req_factory_id  and product_id = @product_id; 
-                                        insert into" ;
+                                     insert into TBL_WAREHOUSE_HIS(w_id, product_id, wh_product_count, order_id,wh_udate, wh_comment, wh_category) 
+                                                                            values(@w_id, @product_id, @req_count,@order_id,     @req_date,    @reason, 'P_MOVE_ITEM')";
+;
 
                     cmd.Transaction = tran;
                     cmd.CommandText = sql_1;
@@ -172,7 +174,10 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
                         cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
                         cmd.Parameters.AddWithValue("@req_count", lst[i].req_count);
-                        cmd.Parameters.AddWithValue("w_id", lst[i].reason);
+                        cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
+                        cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
+                        cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -187,6 +192,11 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
                         cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
                         cmd.Parameters.AddWithValue("@req_count", lst[i].req_count);
+                        cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
+                        cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
+                        cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
+
                         cmd.ExecuteNonQuery();
                     }
                     tran.Commit();

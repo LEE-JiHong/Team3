@@ -27,6 +27,7 @@ namespace Team3VO
         public string reason { get; set; }//사유
         public int nam { get; set; } //잔량
         public int w_id { get; set; }
+        public string order_id { get; set; }
     }
     public class DMRDBVO
     {
