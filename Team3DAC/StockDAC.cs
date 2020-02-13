@@ -56,9 +56,10 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 StringBuilder sql = new StringBuilder();
-                    
-                   sql.Append($"select w_id, plan_id, factory_code, factory_name, p.product_codename, product_name, w_count_present, common_name as product_type, w_count_past from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_PRODUCT p on p.product_id = w.product_id inner join TBL_COMMON_CODE c on c.common_value = p.product_type where 1=1");
 
+                //sql.Append($"select w_id, plan_id, factory_code, factory_name, p.product_codename, product_name, w_count_present, common_name as product_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_PRODUCT p on p.product_id = w.product_id inner join TBL_COMMON_CODE c on c.common_value = p.product_type where 1=1");
+
+                sql.Append($"select w.factory_id, factory_code,p.product_id,sum(w_count_present) as w_count_present, factory_name, product_codename, product_name, common_name as product_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_PRODUCT p on p.product_id = w.product_id  inner join TBL_COMMON_CODE c on c.common_value = p.product_type group by w.factory_id, p.product_id, factory_name, factory_code, product_codename, product_name, common_name");
 
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);

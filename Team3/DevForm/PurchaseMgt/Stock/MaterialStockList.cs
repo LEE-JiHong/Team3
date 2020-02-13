@@ -10,7 +10,7 @@ using Team3VO;
 
 namespace Team3
 {
-    public partial class MaterialStockList : Team3.VerticalGridBaseForm
+    public partial class MaterialStockList : VerticalGridBaseForm
     {
         public MaterialStockList()
         {
@@ -19,9 +19,6 @@ namespace Team3
 
         private void MaterialStockList_Load(object sender, EventArgs e)
         {
-            dtpStartDate.Value = DateTime.Now.AddMonths(-1);
-            dtpEndDate.Value = DateTime.Now;
-
             //품목유형 콤보박스 바인딩
             StockService service = new StockService();
 
@@ -37,7 +34,25 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
 
+            SetDataGrid();
         }
+
+        private void SetDataGrid()
+        {
+            dataGridView1.Columns.Clear();
+
+            GridViewUtil.SetDataGridView(dataGridView1);
+            dataGridView1.AutoGenerateColumns = false;
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true, 100);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "창고코드", "factory_code", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "창고", "factory_name", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목타입", "product_type", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "재고량", "w_count_present", true, 150);
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //조회버튼
@@ -45,7 +60,11 @@ namespace Team3
             {
                 StockService service = new StockService();
                 DataTable dt = service.GetMaterialStockList();
+                SetDataGrid();
                 dataGridView1.DataSource = dt;
+                SetRowNumber();
+
+               // dataGridView1.Columns["w_count_present"].DefaultCellStyle.BackColor = Color.Red;
             }
             catch (Exception err)
             {
@@ -58,6 +77,14 @@ namespace Team3
         {
             warehouseHistoryPop frm = new warehouseHistoryPop();
             frm.ShowDialog();
+        }
+
+        private void SetRowNumber()
+        {
+            for (int count = 0; count <= (dataGridView1.Rows.Count - 1); count++)
+            {
+                dataGridView1.Rows[count].Cells[0].Value = string.Format((count + 1).ToString(), "0");
+            }
         }
     }
 }
