@@ -18,10 +18,22 @@ namespace Team3
             return dac.GetProductType(product_type);
         }
 
-        public DataTable GetMaterialStockList()
+        public DataTable GetMaterialStockList(MaterialStockVO vo)
         {
             StockDAC dac = new StockDAC();
-            return dac.GetMaterialStockList();
+            return dac.GetMaterialStockList(vo);
+        }
+
+        public DataTable GetMaterialHistory(StockVO vo)
+        {
+            StockDAC dac = new StockDAC();
+            return dac.GetMaterialHistory(vo);
+        }
+
+        public List<FactoryComboVO> GetFactory()
+        {
+            StockDAC dac = new StockDAC();
+            return dac.GetFactory();
         }
     }
 }

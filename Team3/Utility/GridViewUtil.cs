@@ -128,8 +128,8 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
 
             grid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //grid.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
-            //grid.DefaultCellStyle.SelectionForeColor = Color.Yellow;
+            grid.DefaultCellStyle.SelectionBackColor = Color.DarkGray;
+            grid.DefaultCellStyle.SelectionForeColor = Color.White;
 
             grid.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             //grid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -138,11 +138,27 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
             //grid.AllowUserToResizeColumns = false;
         }
 
+        /// <summary>
+        /// 컬럼 헤더 색상 세팅
+        /// </summary>
+        /// <param name="grid"></param>
         public static void SetDataGridColumnColor(DataGridView grid)
         {
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 121, 152);
             grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             grid.EnableHeadersVisualStyles = false;
+        }
+
+        /// <summary>
+        /// 데이터그리드뷰 정렬 막기
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void SetDoNotSort(DataGridView dgv)
+        {
+            foreach (DataGridViewColumn i in dgv.Columns)
+            {
+                i.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }

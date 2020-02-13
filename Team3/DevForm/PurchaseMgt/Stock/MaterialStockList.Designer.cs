@@ -32,18 +32,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboFactory = new System.Windows.Forms.ComboBox();
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,17 +58,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dtpEndDate);
-            this.panel1.Controls.Add(this.dtpStartDate);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.cboProductType);
             this.panel1.Controls.Add(this.txtProductCode);
-            this.panel1.Controls.Add(this.comboBox7);
+            this.panel1.Controls.Add(this.cboFactory);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Size = new System.Drawing.Size(996, 101);
             // 
@@ -119,9 +111,9 @@
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(696, 21);
+            this.label13.Location = new System.Drawing.Point(354, 19);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 16);
             this.label13.TabIndex = 41;
@@ -129,9 +121,8 @@
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(371, 22);
+            this.label9.Location = new System.Drawing.Point(29, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 16);
             this.label9.TabIndex = 39;
@@ -139,21 +130,13 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 58);
+            this.label4.Location = new System.Drawing.Point(691, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 16);
             this.label4.TabIndex = 38;
             this.label4.Text = "창고";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "입고일";
             // 
             // flowLayoutPanel1
             // 
@@ -201,6 +184,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,27 +198,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(996, 415);
             this.dataGridView1.TabIndex = 0;
             // 
-            // comboBox7
+            // cboFactory
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(96, 55);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(205, 24);
-            this.comboBox7.TabIndex = 84;
+            this.cboFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboFactory.FormattingEnabled = true;
+            this.cboFactory.Location = new System.Drawing.Point(770, 17);
+            this.cboFactory.Name = "cboFactory";
+            this.cboFactory.Size = new System.Drawing.Size(205, 24);
+            this.cboFactory.TabIndex = 84;
             // 
             // txtProductCode
             // 
-            this.txtProductCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtProductCode.Location = new System.Drawing.Point(427, 19);
+            this.txtProductCode.Location = new System.Drawing.Point(85, 17);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(206, 22);
             this.txtProductCode.TabIndex = 88;
             // 
             // cboProductType
             // 
-            this.cboProductType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProductType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboProductType.FormattingEnabled = true;
-            this.cboProductType.Location = new System.Drawing.Point(770, 18);
+            this.cboProductType.Location = new System.Drawing.Point(428, 16);
             this.cboProductType.Name = "cboProductType";
             this.cboProductType.Size = new System.Drawing.Size(205, 24);
             this.cboProductType.TabIndex = 90;
@@ -257,35 +242,11 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(187, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 16);
-            this.label10.TabIndex = 95;
-            this.label10.Text = "~";
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(208, 17);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(93, 22);
-            this.dtpEndDate.TabIndex = 94;
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(96, 17);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(86, 22);
-            this.dtpStartDate.TabIndex = 93;
-            // 
             // MaterialStockList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1019, 660);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(976, 573);
             this.Name = "MaterialStockList";
@@ -309,17 +270,13 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cboFactory;
         private System.Windows.Forms.TextBox txtProductCode;
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dtpEndDate;
-        private System.Windows.Forms.DateTimePicker dtpStartDate;
     }
 }

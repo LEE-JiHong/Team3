@@ -83,6 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(628, 533);
             this.Name = "warehouseHistoryPop";
+            this.Load += new System.EventHandler(this.warehouseHistoryPop_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
