@@ -29,6 +29,20 @@ namespace Team3
             checkBoxColumn.HeaderText = "선택";
             dataGridView1.Columns.Add(checkBoxColumn);
 
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "", "pro_date", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, " ", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "설비코드", "m_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "설비명", "m_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상태", "pro_state", true, 100, DataGridViewContentAlignment.MiddleLeft);//ff
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상태", "common_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상품코드", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상품명", "producct_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "소요창고", "m_use_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "양품창고", "m_ok_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "불량창고", "m_ng_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "계획수량", "pro_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
 
 
             DateTime today = DateTime.Now;
@@ -46,6 +60,7 @@ namespace Team3
                 dataGridView1.DataSource = table;
 
             }
+
             GridViewUtil.SetDataGridView(dataGridView1);
         }
 
@@ -56,36 +71,19 @@ namespace Team3
         List<string> lst = new List<string>();
         List<string> st = new List<string>();
         DataTable ndt = new DataTable();
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = null;
             dataGridView2.Columns.Clear();
             ndt = null;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+               
+            }
+         
 
-            //string id = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            //string date = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            //ProcessService P_service = new ProcessService();
-            //DataTable dt = P_service.AAA(id, date);
-            //dataGridView2.DataSource = dt;
-
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "product_id", "product_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "창고아이디", "factory_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "창고이름", "factory_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//ff
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "개수", "pro_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "들어가는 수", "bom_use_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
-
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "현재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "이전재고", "w_count_past", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청창고", "req_factory", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청수량", "req_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청일", "req_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "사유", "reason", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청창고ID", "req_factory_id", true, 100, DataGridViewContentAlignment.MiddleLeft);
 
             List<DMRVO> lst = new List<DMRVO>();
             ProcessService P_service = new ProcessService();
@@ -169,7 +167,7 @@ namespace Team3
                 bool bresult = false;
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                { 
+                {
 
                     if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) == p_id)
                     {
@@ -178,7 +176,7 @@ namespace Team3
                         bresult = Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value);
                         dataGridView1.Rows[i].Cells[0].Value = !bresult;
                     }
-                    
+
                 }
 
             }
@@ -191,7 +189,7 @@ namespace Team3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-         
+
 
             DataTable table = new DataTable();
             dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
