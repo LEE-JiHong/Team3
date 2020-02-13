@@ -413,6 +413,7 @@
             this.MinimumSize = new System.Drawing.Size(1037, 705);
             this.Name = "RequestRawMaterial_sDistribution";
             this.Tag = "원자재불출";
+            this.Text = "원자재불출";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
