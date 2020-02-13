@@ -62,14 +62,16 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvResult);
-            this.panel3.Location = new System.Drawing.Point(12, 284);
-            this.panel3.Size = new System.Drawing.Size(870, 174);
+            this.panel3.Location = new System.Drawing.Point(14, 488);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel3.Size = new System.Drawing.Size(1138, 218);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvWatingReceive);
-            this.panel2.Location = new System.Drawing.Point(12, 130);
-            this.panel2.Size = new System.Drawing.Size(870, 114);
+            this.panel2.Location = new System.Drawing.Point(14, 162);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel2.Size = new System.Drawing.Size(1138, 275);
             // 
             // panel1
             // 
@@ -82,14 +84,15 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Size = new System.Drawing.Size(870, 76);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel1.Size = new System.Drawing.Size(1138, 95);
             // 
             // label2
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(12, 266);
-            this.label2.Size = new System.Drawing.Size(110, 19);
+            this.label2.Location = new System.Drawing.Point(14, 331);
+            this.label2.Size = new System.Drawing.Size(126, 24);
             this.label2.Text = "자재입고처리";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -97,22 +100,28 @@
             // 
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(13, 104);
-            this.label1.Size = new System.Drawing.Size(123, 19);
+            this.label1.Location = new System.Drawing.Point(15, 130);
+            this.label1.Size = new System.Drawing.Size(141, 24);
             this.label1.Text = "입고대기리스트";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(680, 249);
-            this.panel5.Size = new System.Drawing.Size(203, 29);
+            this.panel5.Location = new System.Drawing.Point(920, 444);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel5.Size = new System.Drawing.Size(232, 36);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(680, 95);
-            this.panel4.Size = new System.Drawing.Size(203, 29);
+            this.panel4.Location = new System.Drawing.Point(920, 119);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel4.Size = new System.Drawing.Size(232, 36);
+            // 
+            // TopMenu
+            // 
+            this.TopMenu.Size = new System.Drawing.Size(1165, 75);
             // 
             // layoutButton
             // 
@@ -124,7 +133,8 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(894, 473);
+            this.basepanel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.basepanel.Size = new System.Drawing.Size(1165, 724);
             // 
             // imageList1
             // 
@@ -136,9 +146,9 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(308, 15);
+            this.label6.Location = new System.Drawing.Point(424, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 16);
+            this.label6.Size = new System.Drawing.Size(57, 20);
             this.label6.TabIndex = 41;
             this.label6.Text = "납품업체";
             // 
@@ -146,18 +156,18 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(581, 15);
+            this.label5.Location = new System.Drawing.Point(807, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 16);
+            this.label5.Size = new System.Drawing.Size(57, 20);
             this.label5.TabIndex = 40;
             this.label5.Text = "발주번호";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 16);
+            this.label4.Location = new System.Drawing.Point(19, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 39;
             this.label4.Text = "납기일자";
             // 
@@ -169,8 +179,9 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(203, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 36);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -180,9 +191,10 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(140, 3);
+            this.btnExcel.Location = new System.Drawing.Point(160, 4);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(60, 23);
+            this.btnExcel.Size = new System.Drawing.Size(69, 29);
             this.btnExcel.TabIndex = 3;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,9 +208,10 @@
             this.btnChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoose.Image = global::Team3.Properties.Resources.Select_16x16;
             this.btnChoose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChoose.Location = new System.Drawing.Point(77, 3);
+            this.btnChoose.Location = new System.Drawing.Point(89, 4);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(57, 23);
+            this.btnChoose.Size = new System.Drawing.Size(65, 29);
             this.btnChoose.TabIndex = 2;
             this.btnChoose.Text = "선택";
             this.btnChoose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -213,8 +226,9 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(203, 29);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(232, 36);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // btnCancel
@@ -224,9 +238,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Image = global::Team3.Properties.Resources.Recurrence_16x16;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(140, 3);
+            this.btnCancel.Location = new System.Drawing.Point(160, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(60, 23);
+            this.btnCancel.Size = new System.Drawing.Size(69, 29);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "취소";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -240,9 +255,10 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(32, 3);
+            this.btnOK.Location = new System.Drawing.Point(37, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(102, 23);
+            this.btnOK.Size = new System.Drawing.Size(117, 29);
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "입고대기처리";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -256,11 +272,14 @@
             this.dgvWatingReceive.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvWatingReceive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWatingReceive.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWatingReceive.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.dgvWatingReceive.Location = new System.Drawing.Point(0, 0);
+            this.dgvWatingReceive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvWatingReceive.Name = "dgvWatingReceive";
+            this.dgvWatingReceive.RowHeadersWidth = 51;
             this.dgvWatingReceive.RowTemplate.Height = 23;
             this.dgvWatingReceive.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWatingReceive.Size = new System.Drawing.Size(870, 114);
+            this.dgvWatingReceive.Size = new System.Drawing.Size(1138, 275);
             this.dgvWatingReceive.TabIndex = 0;
             // 
             // dgvResult
@@ -269,54 +288,61 @@
             this.dgvResult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResult.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.dgvResult.Location = new System.Drawing.Point(0, 0);
+            this.dgvResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvResult.Name = "dgvResult";
+            this.dgvResult.RowHeadersWidth = 51;
             this.dgvResult.RowTemplate.Height = 23;
             this.dgvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResult.Size = new System.Drawing.Size(870, 174);
+            this.dgvResult.Size = new System.Drawing.Size(1138, 218);
             this.dgvResult.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(179, 17);
+            this.label10.Location = new System.Drawing.Point(205, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 16);
+            this.label10.Size = new System.Drawing.Size(16, 20);
             this.label10.TabIndex = 85;
             this.label10.Text = "~";
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(200, 13);
+            this.dtpEndDate.Location = new System.Drawing.Point(229, 16);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(90, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(102, 26);
             this.dtpEndDate.TabIndex = 84;
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(84, 13);
+            this.dtpStartDate.Location = new System.Drawing.Point(96, 16);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(89, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(101, 26);
             this.dtpStartDate.TabIndex = 83;
             // 
             // txtOrderID
             // 
             this.txtOrderID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOrderID.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtOrderID.Location = new System.Drawing.Point(648, 12);
+            this.txtOrderID.Location = new System.Drawing.Point(884, 15);
+            this.txtOrderID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(206, 22);
+            this.txtOrderID.Size = new System.Drawing.Size(235, 26);
             this.txtOrderID.TabIndex = 88;
             // 
             // cboCompany
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(369, 11);
+            this.cboCompany.Location = new System.Drawing.Point(494, 14);
+            this.cboCompany.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(206, 24);
+            this.cboCompany.Size = new System.Drawing.Size(235, 28);
             this.cboCompany.TabIndex = 89;
             // 
             // btnSearch
@@ -329,9 +355,10 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(789, 39);
+            this.btnSearch.Location = new System.Drawing.Point(1045, 49);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(65, 30);
+            this.btnSearch.Size = new System.Drawing.Size(74, 38);
             this.btnSearch.TabIndex = 93;
             this.btnSearch.Text = "조회";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -340,8 +367,10 @@
             // 
             // WatingReceiving
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(894, 555);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(1165, 825);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.MinimumSize = new System.Drawing.Size(1183, 872);
             this.Name = "WatingReceiving";
             this.Tag = "입고대기";
             this.Text = "입고대기";

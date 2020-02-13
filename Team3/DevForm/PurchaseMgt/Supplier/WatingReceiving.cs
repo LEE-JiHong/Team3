@@ -265,7 +265,7 @@ namespace Team3
                 }
                 else
                 {
-                    MessageBox.Show("입고대기처리가 실패하였습니다. 다시 시도하여 주십시오.");
+                    MessageBox.Show("입고대기처리 실패하였습니다. 다시 시도하여 주십시오.");
                 }
             }
             catch (Exception err)

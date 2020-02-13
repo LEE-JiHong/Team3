@@ -23,5 +23,11 @@ namespace Team3
             MaterialLedgerDAC dac = new MaterialLedgerDAC();
             return dac.GetWatingReceivingList(vo);
         }
+
+        public bool AddMaterialQauntity(List<MaterialReceivingVO> list)
+        {
+            MaterialLedgerDAC dac = new MaterialLedgerDAC();
+            return dac.AddMaterialQauntity(list);
+        }
     }
 }
