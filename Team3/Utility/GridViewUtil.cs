@@ -128,7 +128,7 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
 
             grid.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grid.DefaultCellStyle.SelectionBackColor = Color.DarkGray;
+            grid.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
             grid.DefaultCellStyle.SelectionForeColor = Color.White;
 
             grid.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
