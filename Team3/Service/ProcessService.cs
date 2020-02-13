@@ -51,5 +51,10 @@ namespace Team3.Service
             ProcessDac dac = new ProcessDac();
             return dac.tranWH(lst);
         }
+        public List<WorkRecode_VO> WorkRecode()
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.WorkRecode();
+        }
     }
 }

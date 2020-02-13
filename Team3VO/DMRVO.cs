@@ -20,7 +20,7 @@ namespace Team3VO
         public int plan_count { get; set; } //계획수량
         public int w_count_present { get; set; }//현재고
         public int w_count_past { get; set; }//이전재고
-       public int req_factory_id { get; set; }
+        public int req_factory_id { get; set; }
         public string req_factory { get; set; }//요청창고
         public string req_count { get; set; } //요청수량
         public string req_date { get; set; }// 요청일
@@ -41,5 +41,22 @@ namespace Team3VO
         public int w_count_past { get; set; }//이전재고
         public int nam { get; set; }
     }
-    
+
+    public class WorkRecode_VO
+    {
+        public string worknum { get; set; }
+        public int  pro_id { get; set; }
+        public string pro_date { get; set; }
+        public string pd_stime { get; set; }
+        public string pd_etime { get; set; }
+        public int product_id { get; set; }
+        public string product_name { get; set; }
+        public string pro_state { get; set; }
+        public string common_name { get; set; }
+        public int worktime { get; set; }
+        public int pro_count { get; set; }
+        public int ok_cnt { get; set; }
+        public int ng_cnt { get; set; }
+        public string m_name { get; set; }
+    }
 }
