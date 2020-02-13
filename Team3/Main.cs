@@ -11,11 +11,15 @@ using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using Team3.DevForm.NewFolder1;
 using Team3.DevForm.ShipmentMgt;
+using System.Timers;
+using System.Configuration;
+using System.IO;
 
 namespace Team3
 {
     public partial class Main : Form
     {
+        System.Timers.Timer timer1;
         public Main()
         {
             InitializeComponent();
@@ -103,7 +107,72 @@ namespace Team3
             SetTrvImage(treeView8);
             SetTrvImage2(treeView9);
             SetTrvImage2(treeView10);
+
+
+
+            timer1 = new System.Timers.Timer(int.Parse(ConfigurationManager.AppSettings["txtDataCollectTime"]));
+            timer1.Enabled = true;
+            timer1.Elapsed += timer1_Elapsed;
+            timer1.AutoReset = true;
+
+
+
+
         }
+
+
+
+        string orgFolder = ConfigurationManager.AppSettings["OrgFolder"];
+        string doneFolder = ConfigurationManager.AppSettings["DoneFolder"];
+        private void timer1_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Program.Log.WriteInfo("데이터수집 타이머 호출 시작 ...");
+            int icnt = 0;
+            try
+            {
+                //orgFolder안의 파일을 선택(1초 이전의 최종수정된 파일)
+                string[] files = Directory.GetFiles(orgFolder);
+                foreach (string file in files)
+                {
+                    DateTime dt = File.GetLastWriteTime(file);
+                    if ((DateTime.Now - dt).Seconds > 1)
+                    {
+                        //파일 내용 읽어서 DB 에 insert
+                        ////49/126/1
+                        ///
+                        string[] arrData = new string[10];
+                        string[] alllines = File.ReadAllLines(file);
+                        GatheringService service = new GatheringService();
+                        foreach (string line in alllines)
+                        {
+                            arrData = line.Split('/');                                              
+                            if (arrData.Length == 8)
+                            {
+                                if (service.InsertGatheringData(arrData))
+                                {
+                                    string fileName = Path.GetFileName(file);
+                                    string destFileName = Path.Combine(doneFolder, fileName);
+                                    File.Move(file, destFileName);
+                                }
+                                else
+                                {
+                                    Program.Log.WriteError($"Gathering 실패,{arrData[1]}");
+                                }
+                                //파일 폴더이동
+                            }
+                        }                                    
+                    }
+                    icnt++;
+                }
+                Program.Log.WriteInfo($"{icnt} 개 파일 이동 완료 ...");
+            }
+            catch (Exception err)
+            {
+                Program.Log.WriteError(err.Message);
+            }
+        }
+
+
 
         //트리뷰 이미지 설정
         //트리뷰는 폴더img, 노드는 파일img
@@ -929,9 +998,9 @@ namespace Team3
                 InventoryStatusByOrder frm = new InventoryStatusByOrder();
                 if (ExsistTap(e.Node.Text))
                 {
-                    return; 
+                    return;
                 }
-               
+
 
                 MadeTabMenu(frm);
             }
@@ -943,7 +1012,7 @@ namespace Team3
                     return;
                 }
 
-                MadeTabMenu(frm); 
+                MadeTabMenu(frm);
             }
             else if (e.Node.Text == "출하현황")
             {
@@ -963,7 +1032,7 @@ namespace Team3
                     return;
                 }
 
-                MadeTabMenu(frm); 
+                MadeTabMenu(frm);
             }
             else if (e.Node.Text == "매출마감현황")
             {
@@ -973,7 +1042,7 @@ namespace Team3
                     return;
                 }
 
-                MadeTabMenu(frm); 
+                MadeTabMenu(frm);
             }
             else if (e.Node.Text == "거래처별월마감")
             {
@@ -990,7 +1059,7 @@ namespace Team3
         private void btnSet_Click(object sender, EventArgs e)
         {
             SettingForm frm = new SettingForm();
-            if(frm.ShowDialog()==DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
 
             }
