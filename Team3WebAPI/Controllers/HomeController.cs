@@ -5,6 +5,8 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Team3WebAPI;
+using Team3VO;
+
 
 namespace Team3WebAPI.Controllers
 {
@@ -13,6 +15,13 @@ namespace Team3WebAPI.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
+
+            HomeDac hdac = new HomeDac();
+            List<UserVO> userlist = hdac.GetLastestUsers();
+
+
+
             //OrderDac oDac = new OrderDAC();
             //List<OrderStatsVO> list = oDac.GetOrderBestProduct();
 
