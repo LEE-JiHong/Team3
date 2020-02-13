@@ -55,7 +55,7 @@
             // panel2
             // 
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Size = new System.Drawing.Size(1488, 890);
+            this.panel2.Size = new System.Drawing.Size(1615, 1020);
             // 
             // panel1
             // 
@@ -290,6 +290,7 @@
             this.MinimumSize = new System.Drawing.Size(1037, 705);
             this.Name = "Process_Inventory";
             this.Tag = "공정재고현황";
+            this.Text = "공정재고현황";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

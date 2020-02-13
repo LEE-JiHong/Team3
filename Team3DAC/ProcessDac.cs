@@ -212,6 +212,26 @@ namespace Team3DAC
                 }
             }
         }
+        public List<WorkRecode_VO> WorkRecode()
+        {
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandText = "WorkRecode";
+                cmd.CommandType = CommandType.StoredProcedure;
+               
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkRecode_VO> list = Helper.DataReaderMapToList<WorkRecode_VO>(reader);
+                cmd.Connection.Close();
+                return list;
+
+
+            }
+        }
+
     }
 }
 //        public DataTable AAA(string id, string date)
