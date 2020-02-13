@@ -22,6 +22,7 @@ namespace Team3.DevForm.NewFolder1
 
         }
 
+
         private void InventoryStatusByOrder_Load(object sender, EventArgs e)
         {
             List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
@@ -41,24 +42,30 @@ namespace Team3.DevForm.NewFolder1
                                             select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
+
+
+
+
+
             DataTable dt = new DataTable();
             ShipmentService service_shipment = new ShipmentService();
             shipment_list = service_shipment.GetInventoryStatusByOrder();
 
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "";
+            chk.HeaderText = "선택";
+
             chk.Name = "chk";
             chk.Width = 30;
             dgvStockStatus.Columns.Add(chk);
 
-            Point headerLocation = dgvStockStatus.GetCellDisplayRectangle(0, -1, true).Location;
+            //Point headerLocation = dgvStockStatus.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox.BackColor = Color.White;
-            headerCheckBox.Size = new Size(18, 18);
-            headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
-            dgvStockStatus.Controls.Add(headerCheckBox);
+            //headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            //headerCheckBox.BackColor = Color.White;
+            //headerCheckBox.Size = new Size(18, 18);
+            //headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
+            //dgvStockStatus.Controls.Add(headerCheckBox);
 
             //TODO 
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -81,28 +88,31 @@ namespace Team3.DevForm.NewFolder1
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고id", "factory_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "비고", "comment", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
 
 
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "", true, 130);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "", true, 130);
-           
+
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", true, 130);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130);
+
 
             #region DGV콤보박스
 
 
             comboBoxColumn.HeaderText = "TO창고";
             comboBoxColumn.Name = "combo";
-            
 
-            for (int i = 0; i < _cboFromFac.Count; i++)
+           
+            for (int i = 0; i < _cboToFac.Count; i++)
             {
                 comboBoxColumn.DisplayMember = _cboToFac[i].factory_name;
                 comboBoxColumn.ValueMember = _cboToFac[i].factory_id.ToString();
                 comboBoxColumn.Items.Add(_cboToFac[i].factory_name);
+                
             }
-            
+            comboBoxColumn.Items.RemoveAt(0);
+
+
 
             dgvStockStatus.Columns.Add(comboBoxColumn);
             dgvStockStatus.Rows.Add();
@@ -113,7 +123,7 @@ namespace Team3.DevForm.NewFolder1
 
             dgvStockStatus.DataSource = shipment_list;
 
-            
+
         }
         private void HeaderCheckbox_Click(object sender, EventArgs e)
         {
@@ -167,8 +177,15 @@ namespace Team3.DevForm.NewFolder1
             {
                 //MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
                 //MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
-                //MessageBox.Show(comboBoxColumn.ValueMember.ToString());
-                
+               
+                if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
+                {
+                    continue;
+                }
+                else
+                {
+                    MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
+                }
                 //MessageBox.Show(dgvStockStatus.SelectedRows.Count.ToString()); 
 
             }
@@ -186,13 +203,29 @@ namespace Team3.DevForm.NewFolder1
             }
             ShipmentService shipment_service = new ShipmentService();
             int count = dgvStockStatus.SelectedRows.Count;
-            if(MessageBox.Show($"선택하신 {count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
+            if (MessageBox.Show($"선택하신 {count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
             {
                 ShipmentVO vo = new ShipmentVO();
                 vo.plan_id = _shipvo.plan_id;
-                vo.to_wh_value = _shipvo.to_wh_value;
-                vo.factory_id = Convert.ToInt32(comboBoxColumn.ValueMember);
-                //vo.
+
+                for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+                {
+                    if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        //MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
+                        vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
+                    }
+
+
+
+                    //vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
+                   
+                }
+              
 
 
 
@@ -201,12 +234,12 @@ namespace Team3.DevForm.NewFolder1
 
 
 
-
-
-
-
-
-
+                vo.w_count_present = _shipvo.transfer_count;
+                vo.uadmin = 1002;
+                vo.wh_comment = _shipvo.wh_comment;
+                vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
+                vo.product_id = _shipvo.product_id;
+                vo.category = "P_ORDER_MOVE";
                 bool bResult = shipment_service.TransferProcessing(vo);
                 if (bResult)        //이동처리 성공시
                 {
@@ -217,14 +250,7 @@ namespace Team3.DevForm.NewFolder1
                     MessageBox.Show("등록실패 , 다시시도 하세요");
                     return;
                 }
-
-
             }
-
-
-
-
-          
         }
     }
 }

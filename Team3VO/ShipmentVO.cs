@@ -28,10 +28,12 @@ namespace Team3VO
         public string from_wh_value { get; set; }
         public string to_wh { get; set; }
         public string to_wh_value { get; set; }
-        public string uadmin { get; set; }
-        public string comment { get; set; }
-        public int factory_id { get; set; }
-
+        public int uadmin { get; set; }
+        public string wh_comment { get; set; }
+        public string factory_name { get; set; }
+        public string category { get; set; }
+        public string udate { get; set; }
+        public int transfer_count { get; set; }
 
     }
 }
