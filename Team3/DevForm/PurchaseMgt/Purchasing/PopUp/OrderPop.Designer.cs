@@ -34,10 +34,6 @@
             this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.dgvOrdering = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.lblCompany = new System.Windows.Forms.Label();
-            this.cboCompnay = new System.Windows.Forms.ComboBox();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -49,18 +45,17 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdering)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
-            this.panel6.Location = new System.Drawing.Point(309, 92);
-            this.panel6.Size = new System.Drawing.Size(888, 425);
+            this.panel6.Location = new System.Drawing.Point(309, 17);
+            this.panel6.Size = new System.Drawing.Size(888, 500);
             // 
             // panel5
             // 
-            this.panel5.Location = new System.Drawing.Point(12, 92);
-            this.panel5.Size = new System.Drawing.Size(276, 425);
+            this.panel5.Location = new System.Drawing.Point(12, 17);
+            this.panel5.Size = new System.Drawing.Size(281, 500);
             // 
             // lblMasterName
             // 
@@ -82,7 +77,7 @@
             // 
             // panel7
             // 
-            this.panel7.Location = new System.Drawing.Point(113, 11);
+            this.panel7.Location = new System.Drawing.Point(118, 11);
             this.panel7.Visible = false;
             // 
             // panel8
@@ -93,12 +88,12 @@
             // panel10
             // 
             this.panel10.Controls.Add(this.dgvOrdering);
-            this.panel10.Size = new System.Drawing.Size(863, 361);
+            this.panel10.Size = new System.Drawing.Size(863, 436);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.dgvCompany);
-            this.panel9.Size = new System.Drawing.Size(254, 361);
+            this.panel9.Size = new System.Drawing.Size(259, 436);
             // 
             // panel3
             // 
@@ -125,12 +120,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(27, 85);
             this.panel2.Size = new System.Drawing.Size(1208, 538);
-            this.panel2.Controls.SetChildIndex(this.panel5, 0);
-            this.panel2.Controls.SetChildIndex(this.panel6, 0);
-            this.panel2.Controls.SetChildIndex(this.panel4, 0);
             // 
             // button1
             // 
@@ -189,7 +180,7 @@
             this.dgvCompany.Name = "dgvCompany";
             this.dgvCompany.RowTemplate.Height = 23;
             this.dgvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompany.Size = new System.Drawing.Size(254, 361);
+            this.dgvCompany.Size = new System.Drawing.Size(259, 436);
             this.dgvCompany.TabIndex = 0;
             this.dgvCompany.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompany_CellValueChanged);
             // 
@@ -206,7 +197,7 @@
             this.dgvOrdering.Name = "dgvOrdering";
             this.dgvOrdering.RowTemplate.Height = 23;
             this.dgvOrdering.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrdering.Size = new System.Drawing.Size(863, 361);
+            this.dgvOrdering.Size = new System.Drawing.Size(863, 436);
             this.dgvOrdering.TabIndex = 0;
             this.dgvOrdering.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrdering_CellValueChanged);
             // 
@@ -228,52 +219,6 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.lblCompany);
-            this.panel4.Controls.Add(this.cboCompnay);
-            this.panel4.Location = new System.Drawing.Point(12, 13);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1185, 67);
-            this.panel4.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::Team3.Properties.Resources.Zoom_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1104, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 30);
-            this.button2.TabIndex = 99;
-            this.button2.Text = "조회";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // lblCompany
-            // 
-            this.lblCompany.AutoSize = true;
-            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompany.Location = new System.Drawing.Point(29, 26);
-            this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(34, 18);
-            this.lblCompany.TabIndex = 21;
-            this.lblCompany.Text = "업체";
-            // 
-            // cboCompnay
-            // 
-            this.cboCompnay.FormattingEnabled = true;
-            this.cboCompnay.Location = new System.Drawing.Point(93, 24);
-            this.cboCompnay.Name = "cboCompnay";
-            this.cboCompnay.Size = new System.Drawing.Size(273, 23);
-            this.cboCompnay.TabIndex = 20;
-            // 
             // OrderDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -291,8 +236,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdering)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -305,9 +248,5 @@
         private System.Windows.Forms.DataGridView dgvCompany;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.Button btnSearch;
-       // private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cboCompnay;
-        private System.Windows.Forms.Label lblCompany;
-        private System.Windows.Forms.Button button2;
     }
 }

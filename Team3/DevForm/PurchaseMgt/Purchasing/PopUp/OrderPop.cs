@@ -28,8 +28,6 @@ namespace Team3
 
         private void OrderDialog_Load(object sender, EventArgs e)
         {
-            SetCombo();
-           
             SetDataGridCompany();
             SetDataGridOrdering();
 
@@ -59,18 +57,18 @@ namespace Team3
             dgvOrdering.AutoGenerateColumns = false;
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "";
+            chk.HeaderText = "선택";
             chk.Name = "chk";
-            chk.Width = 30;
+            chk.Width = 40;
             dgvOrdering.Columns.Add(chk);
 
             Point headerLocation = dgvOrdering.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox1.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox1.BackColor = Color.White;
-            headerCheckBox1.Size = new Size(18, 18);
-            headerCheckBox1.Click += new EventHandler(HeaderCheckbox_Click);
-            dgvOrdering.Controls.Add(headerCheckBox1);
+            //headerCheckBox1.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            //headerCheckBox1.BackColor = Color.White;
+            //headerCheckBox1.Size = new Size(18, 18);
+            //headerCheckBox1.Click += new EventHandler(HeaderCheckbox_Click);
+            //dgvOrdering.Controls.Add(headerCheckBox1);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "Plan ID", "plan_id", true,110);
             GridViewUtil.AddNewColumnToDataGridView(dgvOrdering, "발주업체", "company_name", true);
@@ -91,18 +89,18 @@ namespace Team3
             dgvCompany.AutoGenerateColumns = false;
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "";
+            chk.HeaderText = "선택";
             chk.Name = "chk";
-            chk.Width = 30;
+            chk.Width = 40;
             dgvCompany.Columns.Add(chk);
 
             Point headerLocation = dgvCompany.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox2.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox2.BackColor = Color.White;
-            headerCheckBox2.Size = new Size(18, 18);
-            headerCheckBox2.Click += new EventHandler(HeaderCheckbox_Click2);
-            dgvCompany.Controls.Add(headerCheckBox2);
+            //headerCheckBox2.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            //headerCheckBox2.BackColor = Color.White;
+            //headerCheckBox2.Size = new Size(18, 18);
+            //headerCheckBox2.Click += new EventHandler(HeaderCheckbox_Click2);
+            //dgvCompany.Controls.Add(headerCheckBox2);
 
             //GridCheckBox(dgvCompany);
             //GridViewUtil.AddNewColumnToDataGridView(dgvCompany, "No.", "count", true, 30);
@@ -130,15 +128,6 @@ namespace Team3
                 DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
                 chkBox.Value = headerCheckBox2.Checked;
             }
-        }
-
-        private void SetCombo()
-        {
-            OrderService service = new OrderService();
-            Companylist = service.GetCompanyAll("CUSTOMER");
-
-            ComboUtil.ComboBinding(cboCompnay, Companylist, "company_code", "company_name", "전체");
-           // cboCompany.SelectedIndex = companyName;
         }
 
         private void SetRowNumber(DataGridView dgv)

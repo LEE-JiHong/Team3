@@ -20,7 +20,7 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "GetOrder";
+                string sql = "GetRealOrder";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
@@ -44,6 +44,28 @@ namespace Team3DAC
             }
         }
 
+        public int GetOrderSerialCount(string planID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select count(*) from TBL_ORDER where plan_id = @plan_id";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@plan_id", planID);
+
+                cmd.Connection.Open();
+
+                int resultNum = Convert.ToInt32(cmd.ExecuteScalar());
+
+                cmd.Connection.Close();
+
+                return resultNum;
+            }
+        }
+
         /// <summary>
         /// OrderPop - 발주 insert
         /// </summary>
@@ -62,7 +84,7 @@ namespace Team3DAC
                     cmd.Transaction = tran;
                     cmd.CommandType = CommandType.Text;
 
-                    int num = 1;
+                    //int num = 1;
 
                     foreach (OrderVO item in list)
                     {
@@ -79,18 +101,25 @@ namespace Team3DAC
                         }
                         reader.Close();
 
-                        item.order_serial = DateTime.Now.ToShortDateString().Replace("-", "") + string.Format("{0:D4}", num);
-                        num++;
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.CommandText = @"select count(*) from TBL_ORDER where plan_id = @plan_id";
 
-                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate, order_qcount) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate, @order_count)";
+                        int resultNum = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        resultNum++;
+
+                        item.order_serial = DateTime.Now.ToShortDateString().Replace("-", "") + string.Format("{0:D4}", resultNum);
+                       // num++;
+
+                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate, order_qcount) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate, @order_qcount)";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
                         cmd.Parameters.AddWithValue("@product_id", item.product_id);
-                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@order_serial", item.order_serial);
                         cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
                         cmd.Parameters.AddWithValue("@order_pdate", item.order_pdate);
+                        cmd.Parameters.AddWithValue("@order_qcount", item.order_count);
 
                         cmd.ExecuteNonQuery();
                     }
