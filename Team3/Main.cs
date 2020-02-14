@@ -1064,6 +1064,18 @@ namespace Team3
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start($"{Application.StartupPath}/barcodeprint/WinReport1.exe");
+            }catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+            
+        }
     }
 }
 
