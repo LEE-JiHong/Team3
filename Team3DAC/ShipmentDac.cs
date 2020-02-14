@@ -33,7 +33,7 @@ namespace Team3DAC
         /// </summary>
         /// <param name="VO"></param>
         /// <returns></returns>
-        public bool TransferProcessing(ShipmentVO VO)
+        public bool TransferProcessing(List<ShipmentVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -42,21 +42,21 @@ namespace Team3DAC
                 cmd.CommandText = "TransferProcessing";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@plan_id", VO.plan_id);
-                cmd.Parameters.AddWithValue("@factory_name", VO.factory_name);
-                cmd.Parameters.AddWithValue("@product_id", VO.product_id);
-                cmd.Parameters.AddWithValue("@w_count_present", VO.w_count_present);
-                cmd.Parameters.AddWithValue("@wh_uadmin", VO.uadmin);//TODO : admin -> 실제 수정자
-                if(VO.wh_comment == null)
-                {
-                    cmd.Parameters.AddWithValue("@wh_comment", "");
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@wh_comment", VO.wh_comment);
-                }
-                cmd.Parameters.AddWithValue("@wh_category", VO.category);
-                cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToString("yyyy-MM-dd"));
+                //cmd.Parameters.AddWithValue("@plan_id", VO.plan_id);
+                //cmd.Parameters.AddWithValue("@factory_name", VO.factory_name);
+                //cmd.Parameters.AddWithValue("@product_id", VO.product_id);
+                //cmd.Parameters.AddWithValue("@w_count_present", VO.w_count_present);
+                //cmd.Parameters.AddWithValue("@wh_uadmin", VO.uadmin);//TODO : admin -> 실제 수정자
+                //if(VO.wh_comment == null)
+                //{
+                //    cmd.Parameters.AddWithValue("@wh_comment", "");
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@wh_comment", VO.wh_comment);
+                //}
+                //cmd.Parameters.AddWithValue("@wh_category", VO.category);
+                //cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToString("yyyy-MM-dd"));
                 
 
                 

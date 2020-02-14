@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -124,16 +125,16 @@ namespace Team3.DevForm.NewFolder1
 
 
         }
-        private void HeaderCheckbox_Click(object sender, EventArgs e)
-        {
-            dgvStockStatus.EndEdit();
+        //private void HeaderCheckbox_Click(object sender, EventArgs e)
+        //{
+        //    dgvStockStatus.EndEdit();
 
-            foreach (DataGridViewRow row in dgvStockStatus.Rows)
-            {
-                DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
-                chkBox.Value = headerCheckBox.Checked;
-            }
-        }
+        //    foreach (DataGridViewRow row in dgvStockStatus.Rows)
+        //    {
+        //        DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
+        //        chkBox.Value = headerCheckBox.Checked;
+        //    }
+        //}
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
@@ -186,48 +187,106 @@ namespace Team3.DevForm.NewFolder1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            ShipmentVO _shipvo = new ShipmentVO();
-            foreach (DataGridViewRow row in this.dgvStockStatus.SelectedRows)
+            List<ShipmentVO> list = new List<ShipmentVO>();
+            foreach (DataGridViewRow row in dgvStockStatus.Rows)
             {
-                _shipvo = row.DataBoundItem as ShipmentVO;
-            }
-            ShipmentService shipment_service = new ShipmentService();
-            int count = dgvStockStatus.SelectedRows.Count;
-            if (MessageBox.Show($"선택하신 {count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
-            {
-                ShipmentVO vo = new ShipmentVO();
-                vo.plan_id = _shipvo.plan_id;
-
-                for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+                bool isCellChecked = Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
+                if (isCellChecked)
                 {
-                    if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
+                    ShipmentVO vo = new ShipmentVO();
+
+                   // vo.plan_id = _shipvo.plan_id;
+
+                    if (row.Cells["combo"].Value == null)
                     {
                         continue;
                     }
                     else
                     {
-                        //MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
-                        vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
+                        vo.factory_name = row.Cells["combo"].Value.ToString();
                     }
-                    //vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
-                }
-                vo.w_count_present = _shipvo.transfer_count;
-                vo.uadmin = 1002;
-                vo.wh_comment = _shipvo.wh_comment;
-                vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
-                vo.product_id = _shipvo.product_id;
-                vo.category = "P_ORDER_MOVE";
-                bool bResult = shipment_service.TransferProcessing(vo);
-                if (bResult)        //이동처리 성공시
-                {
-                    SetBottomStatusLabel($"선택하신 {count}건의 이동처리가 완료되었습니다.");
-                }
-                else            //이동처리 실패시
-                {
-                    MessageBox.Show("등록실패 , 다시시도 하세요");
-                    return;
+
+                    //vo.w_count_present = row.transfer_count;
+                    //vo.uadmin = 1002;
+                    //vo.wh_comment = _shipvo.wh_comment;
+                    //vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
+                    //vo.product_id = _shipvo.product_id;
+                    //vo.category = "P_ORDER_MOVE";
+
+                    list.Add(vo);
                 }
             }
+
+            try
+            {
+                ShipmentService shipment_service = new ShipmentService();
+                if (MessageBox.Show($"선택하신 {list.Count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
+                {
+                    bool bResult = shipment_service.TransferProcessing(list);
+                    if (bResult)        //이동처리 성공시
+                    {
+                        SetBottomStatusLabel($"선택하신 {list.Count}건의 이동처리가 완료되었습니다.");
+                    }
+                    else            //이동처리 실패시
+                    {
+                        MessageBox.Show("등록실패 , 다시시도 하세요");
+                        return;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+                
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+
+
+            //ShipmentVO _shipvo = new ShipmentVO();
+            //foreach (DataGridViewRow row in this.dgvStockStatus.SelectedRows)
+            //{
+            //    _shipvo = row.DataBoundItem as ShipmentVO;
+            //}
+            //ShipmentService shipment_service = new ShipmentService();
+            //int count = dgvStockStatus.SelectedRows.Count;
+            //if (MessageBox.Show($"선택하신 {count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
+            //{
+            //    ShipmentVO vo = new ShipmentVO();
+            //    vo.plan_id = _shipvo.plan_id;
+
+            //    for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+            //    {
+            //        if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
+            //        {
+            //            continue;
+            //        }
+            //        else
+            //        {
+            //            //MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
+            //            vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
+            //        }
+            //        //vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
+            //    }
+            //    vo.w_count_present = _shipvo.transfer_count;
+            //    vo.uadmin = 1002;
+            //    vo.wh_comment = _shipvo.wh_comment;
+            //    vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
+            //    vo.product_id = _shipvo.product_id;
+            //    vo.category = "P_ORDER_MOVE";
+            //    bool bResult = shipment_service.TransferProcessing(vo);
+            //    if (bResult)        //이동처리 성공시
+            //    {
+            //        SetBottomStatusLabel($"선택하신 {count}건의 이동처리가 완료되었습니다.");
+            //    }
+            //    else            //이동처리 실패시
+            //    {
+            //        MessageBox.Show("등록실패 , 다시시도 하세요");
+            //        return;
+            //    }
+            //}
         }
     }
 }
