@@ -128,5 +128,30 @@ namespace Team3DAC
                 return dataTable;
             }
         }
+
+        public DataTable GetInOutHistory()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                StringBuilder sql = new StringBuilder();
+                    
+                sql.Append($"select wh_id, pro_id, w_id, product_id, order_id, wh_product_count, wh_uadmin, wh_udate, wh_comment, wh_category from TBL_WAREHOUSE_HIS");
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql.ToString();
+                cmd.CommandType = CommandType.Text;
+
+                DataTable dataTable = new DataTable();
+
+                cmd.Connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dataTable);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dataTable;
+            }
+        }
     }
 }
