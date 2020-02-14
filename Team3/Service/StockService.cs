@@ -35,5 +35,11 @@ namespace Team3
             StockDAC dac = new StockDAC();
             return dac.GetFactory();
         }
+
+        public DataTable GetInOutHistory()
+        {
+            StockDAC dac = new StockDAC();
+            return dac.GetInOutHistory();
+        }
     }
 }
