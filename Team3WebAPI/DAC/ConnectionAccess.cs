@@ -19,7 +19,7 @@ namespace Team3WebAPI
                 string connStr = string.Empty;
 
                 XmlDocument configXml = new XmlDocument();
-                configXml.Load(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/DAC/DAC.xml");
+               configXml.Load(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/DAC/DAC.xml");
                 XmlNodeList addNodes = configXml.SelectNodes("configuration/settings/add");
                 foreach(XmlNode xmlNode in addNodes)
                 {
