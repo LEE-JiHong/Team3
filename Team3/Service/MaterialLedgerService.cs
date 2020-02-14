@@ -29,5 +29,11 @@ namespace Team3
             MaterialLedgerDAC dac = new MaterialLedgerDAC();
             return dac.AddMaterialQauntity(list);
         }
+
+        public DataTable GetMaterialInList()
+        {
+            MaterialLedgerDAC dac = new MaterialLedgerDAC();
+            return dac.GetMaterialInList();
+        }
     }
 }

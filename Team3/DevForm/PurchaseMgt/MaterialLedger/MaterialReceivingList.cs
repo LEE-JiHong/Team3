@@ -24,7 +24,9 @@ namespace Team3
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             //조회 버튼
-
+            MaterialLedgerService service = new MaterialLedgerService();
+            DataTable dt = service.GetMaterialInList();
+            dataGridView1.DataSource = dt;
         }
 
     }
