@@ -1,4 +1,5 @@
-﻿
+﻿@model Team3WebAPI.HomeVO
+
 @{
     ViewBag.Title = "Main";
 }
@@ -26,7 +27,7 @@
                     <span class="info-box-icon bg-aqua"><i class="fa fa-battery-3"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">당월 작업 강도</span>
-                        <span class="info-box-number">90<small>%</small></span>
+                        <span class="info-box-number">@Model.WorkRate.workrate<small>%(</small><small>@Model.WorkRate.workdate</small><small>/</small><small>@Model.WorkRate.totaldate</small><small>)</small> </span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -39,7 +40,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">거래처 수</span>
-                        <span class="info-box-number">41,410</span>
+                        <span class="info-box-number">@Model.CompanyCount </span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -53,8 +54,17 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-green"><i class="fa fa-truck"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">매출마감 건수</span>
-                        <span class="info-box-number">760</span>
+                        <span class="info-box-text">전월 매출대비 </span>
+                        <span class="info-box-number">@Model.SalesPrice </span>
+                        @if (Model.SalesRateBool==true)
+                        {
+                            <span class="info-box-number" style="color:blue">@Model.SalesRateToView <i class="fa fa-sort-up" style="color:blue"></i></span>
+                        }
+                        else
+                        {
+                            <span class="info-box-number" style="color:red">@Model.SalesRateToView <i class="fa fa-sort-desc" style="color:red"></i></span>
+                        }
+
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -67,7 +77,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">신입 채용 건수</span>
-                        <span class="info-box-number">2,000</span>
+                        <span class="info-box-number">@Model.Userlist.Count members </span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -99,38 +109,39 @@
                                     <div class="embed-responsive embed-responsive-16by9">
 
                                         <div class="video-container" style="text-align: center; margin-top: 25px;width:auto;height:auto;">
-                                            <object type="text/html" data="//www.youtube.com/embed/OUdvbElk9z8" ></object>
+                                            <object type="text/html" data="//www.youtube.com/embed/OUdvbElk9z8"></object>
 
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td style="width:auto">
-                                <div class="box-body" >
-                                    <table style="width:500px" >
+                                <div class="box-body">
+                                    <table style="width:500px">
                                         <tr>
                                             <th colspan="3"><p class="box-title"> AI 활용 응용SW 개발자 양성과정</p></th>
-                                            
+
                                         </tr>
                                         <tr>
-                                            <td rowspan="2" >
-                                                <img alt="" src="~/dist/img/study.PNG" style="height:120%;width:300px"/>
+                                            <td rowspan="2">
+                                                <img alt="" src="~/dist/img/study.PNG" style="height:120%;width:300px" />
                                             </td>
                                             <td style="margin-bottom:0px;padding-bottom:0px">
                                                 <img alt="" src="~/dist/img/teacher.PNG" style="height:120px;width:300px;" />
-                                            </td>                                 
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
                                                 <img alt="" src="~/dist/img/Manager.PNG" style="height:120px;width:300px;margin-top:0px" />
                                             </td>
-                                            
+
                                         </tr>
-                           
+
                                     </table>
                                 </div>
 
                             </td>
+
                         </tr>
                     </table>
                 </div>
@@ -140,7 +151,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <p class="text-center">
                                     <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
                                 </p>
@@ -152,7 +163,7 @@
                                 <!-- /.chart-responsive -->
                             </div>
                             <!-- /.col -->
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <p class="text-center">
                                     <strong>Goal Completion</strong>
                                 </p>
@@ -247,40 +258,43 @@
         </div>
         <!-- /.row -->
         <!-- Main row -->
-        <div class="row">
-            <!-- Left col -->
-            <div class="col-md-8">
-                <!-- MAP & BOX PANE -->
-                <!-- /.box -->
-                <div class="row">
+        <!-- Left col -->
+        <div class="col-md-12">
+            <!-- MAP & BOX PANE -->
+            <!-- /.box -->
+            <div class="row">
 
-                    <!-- /.col -->
+                <!-- /.col -->
 
-                    <div class="col-md-6" style="width:auto">
-                        <!-- USERS LIST -->
-                        <div class="box box-danger">
-                            <div class="box-header with-border" style="width:auto">
-                                <h3 class="box-title">Latest Members</h3>
+                <div class="col-md-6">
+                    <!-- USERS LIST -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border" style="width:auto">
 
-                                <div class="box-tools pull-right">
-                                    <span class="label label-danger">8 New Members</span>
-                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
+                            <h3 class="box-title">Latest Members</h3>
+
+                            <div class="box-tools pull-right">
+                                <span class="label label-danger">@Model.Userlist.Count members </span>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>
                             </div>
-                            <!-- /.box-header -->
-                            <div class="box-body no-padding">
-                                <ul class="users-list clearfix">
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <ul class="users-list clearfix">
+                                @foreach (var item in Model.Userlist)
+                                {
                                     <li>
-                                        <img src="/dist/img/user1-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                                        <span class="users-list-date">Today</span>
+                                        <img src="/dist/img/@Html.DisplayFor(modelitem=>item.user_pic)" alt="User Image" style="width:250px;height:200px">
+                                        <a class="users-list-name" href="#">@Html.DisplayFor(modelitem =>item.user_name)</a>
+                                        <span class="users-list-date">@Html.DisplayFor(modelitem => item.user_cdate)</span>
                                     </li>
-                                    <li>
+                                }
+                                @*<li>
                                         <img src="/dist/img/user8-128x128.jpg" alt="User Image">
                                         <a class="users-list-name" href="#">Norman</a>
                                         <span class="users-list-date">Yesterday</span>
@@ -314,90 +328,91 @@
                                         <img src="/dist/img/user3-128x128.jpg" alt="User Image">
                                         <a class="users-list-name" href="#">Nadia</a>
                                         <span class="users-list-date">15 Jan</span>
-                                    </li>
-                                </ul>
-                                <!-- /.users-list -->
-                            </div>
-                            <!-- /.box-body -->
-                            <!-- /.box-footer -->
+                                    </li>*@
+                            </ul>
+                            <!-- /.users-list -->
                         </div>
-                        <!--/.box -->
+                        <!-- /.box-body -->
+                        <!-- /.box-footer -->
                     </div>
-                    <!-- /.col -->
+                    <!--/.box -->
                 </div>
-                <!-- /.row -->
-                <!-- TABLE: LATEST ORDERS -->
-                <!-- /.box -->
-            </div>
-            <!-- /.col -->
+                <!-- /.col -->
 
-            <div class="col-md-4">
-                <!-- Info Boxes Style 2 -->
-                <!-- 한개의 박스 -->
+                <div class="col-md-6">
+                    <!-- Info Boxes Style 2 -->
+                    <!-- 한개의 박스 -->
 
-                <div class="box box-default">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Sales To Customer</h3>
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Sales To Customer</h3>
 
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="chart-responsive">
-                                    <canvas id="pieChart" height="150"></canvas>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="chart-responsive">
+                                        <canvas id="pieChart" height="150"></canvas>
+                                    </div>
+                                    <!-- ./chart-responsive -->
                                 </div>
-                                <!-- ./chart-responsive -->
+                                <!-- /.col -->
+                                <div class="col-md-4">
+                                    <ul class="chart-legend clearfix">
+                                        <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
+                                        <li><i class="fa fa-circle-o text-green"></i> IE</li>
+                                        <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
+                                        <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
+                                        <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
+                                        <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                                    </ul>
+                                </div>
+                                <!-- /.col -->
                             </div>
-                            <!-- /.col -->
-                            <div class="col-md-4">
-                                <ul class="chart-legend clearfix">
-                                    <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
-                                    <li><i class="fa fa-circle-o text-green"></i> IE</li>
-                                    <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
-                                    <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
-                                    <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-                                    <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
-                                </ul>
-                            </div>
-                            <!-- /.col -->
+                            <!-- /.row -->
                         </div>
-                        <!-- /.row -->
+                        <!-- /.box-body -->
+                        <div class="box-footer no-padding">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="#">
+                                        United States of America
+                                        <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        China
+                                        <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.footer -->
                     </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer no-padding">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li>
-                                <a href="#">
-                                    United States of America
-                                    <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    China
-                                    <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.footer -->
+                    <!-- /.box -->
+                    <!-- PRODUCT LIST -->
+                    <!-- /.box -->
                 </div>
-                <!-- /.box -->
-                <!-- PRODUCT LIST -->
-                <!-- /.box -->
+
+
             </div>
-            <!-- /.col -->
+            <!-- /.row -->
+            <!-- TABLE: LATEST ORDERS -->
+            <!-- /.box -->
         </div>
+        <!-- /.col -->
+        <!-- /.col -->
         <!-- /.row -->
     </section>
     <!-- /.content -->
