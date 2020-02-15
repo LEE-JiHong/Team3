@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Team3WebAPI;
 
 namespace Team3WebAPI.Controllers
 {
@@ -11,7 +12,17 @@ namespace Team3WebAPI.Controllers
         // GET: Work
         public ActionResult Index()
         {
-            return View();
+            WorkVO workvo = new WorkVO();
+            
+            
+            WorkDac wdac = new WorkDac();
+            workvo.WorkRateList = wdac.GetWorkRatePlan();
+
+
+
+
+
+            return View(workvo);
         }
     }
 }

@@ -39,8 +39,22 @@
                     <span class="info-box-icon bg-red"><i class="ion ion-ios-people-outline"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">거래처 수</span>
-                        <span class="info-box-number">@Model.CompanyCount </span>
+                        <span class="info-box-text">
+                            거래처 수
+                            <span class="info-box-number">
+
+
+                                @if (Model.CompanyData.sum - Model.CompanyCount[0].sum > 0)
+                                {
+                                    <small class="info-box-number" style="color:red">@Model.CompanyData.month <i class="fa fa-sort-up" style="color:red"></i></small>
+                                }
+                                else
+                                {
+                                    <small class="info-box-number" style="color:blue">@Model.CompanyData.month <i class="fa fa-sort-desc" style="color:blue"></i></small>
+                                }
+                                @Model.CompanyData.sum
+                            </span>
+                        </span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -54,16 +68,21 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-green"><i class="fa fa-truck"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">전월 매출대비 </span>
+                        <span class="info-box-text">
+                            전월 매출대비
+
+                            @if (Model.SalesRateBool == true)
+                            {
+                                <small class="info-box-number" style="color:red">@Model.SalesRateToView <i class="fa fa-sort-up" style="color:red"></i></small>
+                            }
+                            else
+                            {
+                                <small class="info-box-number" style="color:blue">@Model.SalesRateToView <i class="fa fa-sort-desc" style="color:blue"></i></small>
+                            }
+
+                        </span>
                         <span class="info-box-number">@Model.SalesPrice </span>
-                        @if (Model.SalesRateBool==true)
-                        {
-                            <span class="info-box-number" style="color:blue">@Model.SalesRateToView <i class="fa fa-sort-up" style="color:blue"></i></span>
-                        }
-                        else
-                        {
-                            <span class="info-box-number" style="color:red">@Model.SalesRateToView <i class="fa fa-sort-desc" style="color:red"></i></span>
-                        }
+
 
                     </div>
                     <!-- /.info-box-content -->
@@ -290,7 +309,7 @@
                                 {
                                     <li>
                                         <img src="/dist/img/@Html.DisplayFor(modelitem=>item.user_pic)" alt="User Image" style="width:250px;height:200px">
-                                        <a class="users-list-name" href="#">@Html.DisplayFor(modelitem =>item.user_name)</a>
+                                        <a class="users-list-name" href="#">@Html.DisplayFor(modelitem => item.user_name)</a>
                                         <span class="users-list-date">@Html.DisplayFor(modelitem => item.user_cdate)</span>
                                     </li>
                                 }
@@ -342,10 +361,10 @@
                 <div class="col-md-6">
                     <!-- Info Boxes Style 2 -->
                     <!-- 한개의 박스 -->
-
-                    <div class="box box-default">
+                    <!-- PRODUCT LIST -->
+                    <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Sales To Customer</h3>
+                            <h3 class="box-title">Recently Order Products</h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -356,64 +375,46 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="chart-responsive">
-                                        <canvas id="pieChart" height="150"></canvas>
-                                    </div>
-                                    <!-- ./chart-responsive -->
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-md-4">
-                                    <ul class="chart-legend clearfix">
-                                        <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
-                                        <li><i class="fa fa-circle-o text-green"></i> IE</li>
-                                        <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
-                                        <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
-                                        <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-                                        <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
-                                    </ul>
-                                </div>
-                                <!-- /.col -->
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer no-padding">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li>
-                                    <a href="#">
-                                        United States of America
-                                        <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        China
-                                        <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span>
-                                    </a>
-                                </li>
+                            <ul class="products-list product-list-in-box">
+
+                                @foreach (var item in Model.Orderlist)
+                                {
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="~/dist/img/@item.company_pic.Trim()" alt="Product Image">
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="product-title" >
+                                                @item.company_code
+                                                <span class="label label-info pull-right">@item.so_pcount (EA)</span>
+                                            </a>
+                                            <span style="padding-left:100px">@item.product_name</span>
+                                            <span class="product-description">
+                                                @item.so_edate
+                                            </span>
+                                        </div>
+                                    </li>
+                                }
+
+
+
+                               
+                                <!-- /.item -->
                             </ul>
                         </div>
-                        <!-- /.footer -->
+                        <!-- /.box-body -->
+                        <!-- /.box -->
                     </div>
-                    <!-- /.box -->
-                    <!-- PRODUCT LIST -->
-                    <!-- /.box -->
+
+
                 </div>
-
-
+                <!-- /.row -->
+                <!-- TABLE: LATEST ORDERS -->
+                <!-- /.box -->
             </div>
+            <!-- /.col -->
+            <!-- /.col -->
             <!-- /.row -->
-            <!-- TABLE: LATEST ORDERS -->
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <!-- /.row -->
     </section>
     <!-- /.content -->
 </div>

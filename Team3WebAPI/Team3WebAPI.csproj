@@ -144,6 +144,7 @@
     <Content Include="admin-lte\img\avatar2.png" />
     <Content Include="admin-lte\img\avatar3.png" />
     <Content Include="admin-lte\img\avatar5.png" />
+    <Content Include="admin-lte\img\Benz.jpg" />
     <Content Include="admin-lte\img\boxed-bg.jpg" />
     <Content Include="admin-lte\img\boxed-bg.png" />
     <Content Include="admin-lte\img\credit\american-express.png" />
@@ -155,6 +156,8 @@
     <Content Include="admin-lte\img\credit\visa.png" />
     <Content Include="admin-lte\img\default-50x50.gif" />
     <Content Include="admin-lte\img\icons.png" />
+    <Content Include="admin-lte\img\Kia.jpg" />
+    <Content Include="admin-lte\img\Mobis.jpg" />
     <Content Include="admin-lte\img\photo1.png" />
     <Content Include="admin-lte\img\photo2.png" />
     <Content Include="admin-lte\img\photo3.jpg" />
@@ -6737,6 +6740,7 @@
     <Content Include="dist\img\avatar2.png" />
     <Content Include="dist\img\avatar3.png" />
     <Content Include="dist\img\avatar5.png" />
+    <Content Include="dist\img\Benz.jpg" />
     <Content Include="dist\img\bgg2.png" />
     <Content Include="dist\img\boxed-bg.jpg" />
     <Content Include="dist\img\boxed-bg.png" />
@@ -6750,7 +6754,9 @@
     <Content Include="dist\img\default-50x50.gif" />
     <Content Include="dist\img\hong.jpg" />
     <Content Include="dist\img\icons.png" />
+    <Content Include="dist\img\Kia.jpg" />
     <Content Include="dist\img\Manager.PNG" />
+    <Content Include="dist\img\Mobis.jpg" />
     <Content Include="dist\img\noimage.jpg" />
     <Content Include="dist\img\photo1.png" />
     <Content Include="dist\img\photo2.png" />
@@ -7394,29 +7400,19 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\BOMController.cs" />
-    <Compile Include="Controllers\CommonCodeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderPageController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\PriceController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="DAC\HomeDac.cs" />
     <Compile Include="DAC\ConnectionAccess.cs" />
-    <Compile Include="DAC\DemandDac.cs" />
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\OrderDac.cs" />
-    <Compile Include="DAC\PriceDac.cs" />
-    <Compile Include="DAC\ProductDac.cs" />
-    <Compile Include="DAC\PurchaseDac.cs" />
-    <Compile Include="DAC\ResourceDac.cs" />
-    <Compile Include="DAC\ShiftDac.cs" />
+    <Compile Include="DAC\WorkDac.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomerVO.cs" />
+    <Compile Include="Models\WorkVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

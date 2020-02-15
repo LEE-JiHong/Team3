@@ -197,21 +197,23 @@ namespace Team3DAC
 
                 sql.Append($"SELECT distinct w_id, w.plan_id, product_codename, product_name, factory_name, (w.w_count_present-w.w_count_past) as '입고량', order_serial, order_pdate FROM TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id inner join TBL_ORDER o on o.plan_id = w.plan_id inner join TBL_PRODUCT p on p.product_id = w.product_id inner join TBL_COMPANY c on c.company_code = p.product_demand_com WHERE f.factory_type = 'FAC200'");
 
-                @"select * 
-from TBL_WAREHOUSE_HIS wh
---inner
-join TBL_WAREHOUSE w on w.w_id = wh.wh_id
---inner
-join TBL_FACTORY f on w.factory_id = f.factory_id
---inner
-join TBL_PRODUCT p on p.product_id = w.product_id
---inner
-join TBL_COMPANY c on c.company_code = p.product_demand_com
--- inner
-join TBL_ORDER o on o.plan_id = w.plan_id
-WHERE--f.factory_type = 'FAC200'
-wh_category = 'P_ORDER_IN'
-ORDER BY  wh_udate desc"
+
+                //이지홍 
+//                @"select * 
+//from TBL_WAREHOUSE_HIS wh
+//--inner
+//join TBL_WAREHOUSE w on w.w_id = wh.wh_id
+//--inner
+//join TBL_FACTORY f on w.factory_id = f.factory_id
+//--inner
+//join TBL_PRODUCT p on p.product_id = w.product_id
+//--inner
+//join TBL_COMPANY c on c.company_code = p.product_demand_com
+//-- inner
+//join TBL_ORDER o on o.plan_id = w.plan_id
+//WHERE--f.factory_type = 'FAC200'
+//wh_category = 'P_ORDER_IN'
+//ORDER BY  wh_udate desc";
 
                 //if (vo.company_name != null)
                 //{

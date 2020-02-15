@@ -11,14 +11,30 @@ namespace Team3WebAPI
         private List<UserVO> userlist;
         private WorkRateVO workrate;
         private List<SalesVO> salesrate;
+        private List<CompanyVO> companylist;
+        private CompanyVO companyData;
+        private List<WorkOrderVO> orderlist;
         public List<UserVO> Userlist
         {
             get {return userlist; } set { userlist = value; }
         }
 
-        public string CompanyCount
+        public List<WorkOrderVO> Orderlist
         {
-            get;set;
+            get { return orderlist; }
+            set { orderlist = value; }
+        }
+
+        public CompanyVO CompanyData
+        {
+            get { return companyData; }
+            set { companyData = value; }
+        }
+
+        public List<CompanyVO> CompanyCount
+        {
+            get { return companylist; }
+            set { companylist = value; }
         }
 
         public string SalesPrice
@@ -72,13 +88,28 @@ namespace Team3WebAPI
         public int month { get; set; }
         public decimal price { get; set; }
     }
-
+    public class CompanyVO
+    {
+        public int month { get; set; }
+        public int sum { get; set; }
+    }
 
     public class WorkRateVO
     {
         public string totaldate { get; set; }
         public int workdate { get; set; }
         public string workrate { get; set; }
+    }
+
+    public class WorkOrderVO
+    {
+        public string so_edate { get; set; }
+        public int so_pcount { get; set; }
+        public string company_code { get; set; }
+
+        public string company_pic { get; set; }
+
+        public string product_name { get; set; }
     }
 
 

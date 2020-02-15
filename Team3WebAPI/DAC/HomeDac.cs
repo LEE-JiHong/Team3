@@ -30,18 +30,38 @@ namespace Team3WebAPI
             }
         }
 
-        public string GetCompanyCount()
+        public List<CompanyVO> GetCompanyCount()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "select count(*) from TBL_COMPANY";
+                string sql = "select month(company_udate) month,count(company_id) sum from TBL_COMPANY group by Month(company_udate) having Month(company_udate) between(SELECT Month(DATEADD(month, -1, getdate()))) and Month(getdate())";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection.Open();
-                string result = cmd.ExecuteScalar().ToString();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(reader);
+                reader.Close();
                 cmd.Connection.Close();
-                return result;
+                return list;
+
+            }
+        }
+
+        public List<WorkOrderVO> GetLastestOrderList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select top 5 so_edate,so.company_code,so_pcount,com.company_pic,so.product_name from TBL_SO_MASTER so inner join TBL_COMPANY com on so.company_code = com.company_code where so_edate> getdate() group by plan_id, so_edate,so.company_code,so_pcount,com.company_pic,product_name";
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
 
             }
         }
