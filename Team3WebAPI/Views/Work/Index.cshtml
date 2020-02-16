@@ -12,8 +12,8 @@
 
     <section class="content">
         <div class="row">
-            <div class="col-md-6">
-                <div class="box">
+            <div class="col-md-6 height-control" >
+                <div class="box" style="height:auto">
                     <div class="box-header with-border">
                         <h3 class="box-title">생산 현황</h3>
                     </div>
@@ -82,37 +82,19 @@
                                 <th>Progress</th>
                                 <th style="width: 40px">Label</th>
                             </tr>
-                            <tr>
-                                <td>1.</td>
-                                <td>샤프트압입공정</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-red">55%</span></td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>리테이너압입공정/td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-yellow">70%</span></td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>최종조립1반</td>
-                                <td>
-                                    <div class="progress progress-xs progress-striped active">
-                                        <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-light-blue">30%</span></td>
-                            </tr>
-
+                            @foreach (var item in Model.TodayWorkList)
+                            {
+                                <tr>
+                                    <td>@item.row</td>
+                                    <td>@item.bor_comment</td>
+                                    <td>
+                                        <div class="progress progress-xs">
+                                            <div class="progress-bar progress-bar-danger" style="width:@item.rate%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-red">@item.rate%</span></td>
+                                </tr>
+                            }
                         </table>
                     </div>
                     <!-- /.box-body -->
@@ -158,46 +140,21 @@
                                 <th>Progress</th>
                                 <th style="width: 40px">Label</th>
                             </tr>
-                            <tr>
-                                <td>1.</td>
-                                <td>Update software</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-red">55%</span></td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>Clean database</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-yellow">70%</span></td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>Cron job running</td>
-                                <td>
-                                    <div class="progress progress-xs progress-striped active">
-                                        <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-light-blue">30%</span></td>
-                            </tr>
-                            <tr>
-                                <td>4.</td>
-                                <td>Fix and squish bugs</td>
-                                <td>
-                                    <div class="progress progress-xs progress-striped active">
-                                        <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-green">90%</span></td>
-                            </tr>
+                            @foreach (var item in Model.UnWorkingList)
+                            {
+                                <tr>
+                                    <td>@item.row</td>
+                                    <td>@item.w_comment</td>
+                                    <td>
+                                        <div class="progress progress-xs">
+                                            <div class="progress-bar progress-bar-danger" style="width:@item.rate%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-red">@item.rate%</span></td>
+                                </tr>
+                            }
+
+                            
                         </table>
                     </div>
                     <!-- /.box-body -->
@@ -212,7 +169,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">라인 비가동 현황</h3>
+                        <h3 class="box-title">금일 라인 비가동 현황</h3>
 
                         <div class="box-tools">
                             <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -228,40 +185,24 @@
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover">
                             <tr>
-                                <th>ID</th>
-                                <th>User</th>
+                                <th style="text-align:center">Machine ID</th>
+                                <th>Machine Name</th>
                                 <th>Date</th>
-                                <th>Status</th>
+                                <th style="text-align:center">Stop Time(Min)</th>
                                 <th>Reason</th>
                             </tr>
-                            <tr>
-                                <td>183</td>
-                                <td>John Doe</td>
-                                <td>11-7-2014</td>
-                                <td><span class="label label-success">Approved</span></td>
-                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            </tr>
-                            <tr>
-                                <td>219</td>
-                                <td>Alexander Pierce</td>
-                                <td>11-7-2014</td>
-                                <td><span class="label label-warning">Pending</span></td>
-                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            </tr>
-                            <tr>
-                                <td>657</td>
-                                <td>Bob Doe</td>
-                                <td>11-7-2014</td>
-                                <td><span class="label label-primary">Approved</span></td>
-                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            </tr>
-                            <tr>
-                                <td>175</td>
-                                <td>Mike Doe</td>
-                                <td>11-7-2014</td>
-                                <td><span class="label label-danger">Denied</span></td>
-                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            </tr>
+                            @foreach (var item in Model.TodayUnworkData)
+                            {
+                                <tr>
+                                    <td style="text-align:center">@item.m_id</td>
+                                    <td>@item.m_name</td>
+                                    <td>@item.w_edate</td>
+                                    <td><p style="text-align:center">@item.min</p></td>
+                                    <td>@item.w_comment</td>
+                                </tr>
+                            }
+
+                           
                         </table>
                     </div>
                     <!-- /.box-body -->
