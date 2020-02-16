@@ -219,8 +219,8 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate, so_ocount, so_ccount) " +
-                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate, 0, 0)";
+                cmd.CommandText = "insert into TBL_SO_MASTER(plan_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate, so_ocount, so_ccount, so_comment) " +
+                    "values(@plan_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate, 0, 0, @so_comment)";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@plan_id", VO.plan_id);
@@ -231,6 +231,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@so_pcount", VO.so_pcount);
                 cmd.Parameters.AddWithValue("@so_edate", VO.so_edate);
                 cmd.Parameters.AddWithValue("@so_sdate", VO.so_sdate);
+                cmd.Parameters.AddWithValue("@so_comment", VO.so_comment);
 
                 cmd.Connection.Open();
                 var successRow = cmd.ExecuteNonQuery();

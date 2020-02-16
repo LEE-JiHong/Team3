@@ -168,17 +168,24 @@ namespace Team3
                 return;
             }
 
-            OrderService service = new OrderService();
-            bool result = service.AddProductionPlan(list);
-
-            if (result)
+            if (MessageBox.Show("생산계획을 생성하시겠습니까?") == DialogResult.OK)
             {
-                MessageBox.Show("성공적으로 생산계획을 생성하였습니다.");
-                this.Close();
+                OrderService service = new OrderService();
+                bool result = service.AddProductionPlan(list);
+
+                if (result)
+                {
+                    MessageBox.Show("성공적으로 생산계획을 생성하였습니다.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("생산계획 생성 실패하였습니다. 다시 시도하여 주십시오.");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("생산계획 생성 실패하였습니다. 다시 시도하여 주십시오.");
                 return;
             }
         }
@@ -203,26 +210,30 @@ namespace Team3
                 }
                 else
                 {
-                    if (Convert.ToInt32(lblCount.Text) == 0)
-                    {
-                        dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
-                        return;
-                    }
-                    else
-                    {
-                        TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
 
-                        if (TotalCount < 0)
-                        {
-                            MessageBox.Show("계획수량을 초과하였습니다. 다시 입력하여 주십시오.");
-                            dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
-                            return;
-                        }
-                        else
-                        {
-                            lblCount.Text = TotalCount.ToString();
-                        }   
-                    }
+
+                    //if (Convert.ToInt32(lblCount.Text) == 0)
+                    //{
+                    //    dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                    //    return;
+                    //}
+                    //else
+                    //{
+                    //    TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+
+                    //    if (TotalCount < 0)
+                    //    {
+                    //        MessageBox.Show("계획수량을 초과하였습니다. 다시 입력하여 주십시오.");
+
+                    //        TotalCount += Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    //        dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                    //        return;
+                    //    }
+                    //    else
+                    //    {
+                    //        lblCount.Text = TotalCount.ToString();
+                    //    }
+                    //}
                 }
 
             }
