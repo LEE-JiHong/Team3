@@ -67,35 +67,13 @@ namespace Team3.DevForm.NewFolder1
             //headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
             //dgvStockStatus.Controls.Add(headerCheckBox);
 
-            //TODO 
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "출고수량", "so_ocount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "취소수량", "so_ccount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "잔여수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "납기일", "so_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업로드날짜", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "PlanID", "plan_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "고객사코드", "company_code", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업체유형", "company_type", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //TODO
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "납기일", "so_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "잔여수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고", "from_wh", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고코드", "from_wh_value", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품번", "product_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
-
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고", "to_wh", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
-
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
-
-
-
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", true, 130);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130);
-
-
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleRight);
             #region DGV콤보박스
 
 
@@ -118,8 +96,24 @@ namespace Team3.DevForm.NewFolder1
             dgvStockStatus.Rows.Add();
             dgvStockStatus.AllowUserToAddRows = false;
             #endregion
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", true, 130);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130);
 
-            //dgvStockStatus.AutoGenerateColumns = false;
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업로드날짜", "so_sdate", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "PlanID", "plan_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "고객사코드", "company_code", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업체유형", "company_type", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고코드", "from_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품번", "product_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "출고수량", "so_ocount", false, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "취소수량", "so_ccount", false, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고", "to_wh", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
+
+            dgvStockStatus.AutoGenerateColumns = false;
 
             dgvStockStatus.DataSource = shipment_list;
 
@@ -162,26 +156,32 @@ namespace Team3.DevForm.NewFolder1
                 Clipboard.SetDataObject(dataObj);
         }
 
-     
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShipmentVO vo = new ShipmentVO();
-            for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+            #region
+            //ShipmentVO vo = new ShipmentVO();
+            //for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
+            //{
+            //    //MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
+            //    //MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
+
+            //    if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
+            //    }
+            //    //MessageBox.Show(dgvStockStatus.SelectedRows.Count.ToString()); 
+
+            //}
+            #endregion
+            foreach (DataGridViewRow row in dgvStockStatus.Rows)
             {
-                //MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
-                //MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
-
-                if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
-                {
-                    continue;
-                }
-                else
-                {
-                    MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
-                }
-                //MessageBox.Show(dgvStockStatus.SelectedRows.Count.ToString()); 
-
+                MessageBox.Show(row.Cells["so_id"].Value.ToString());
             }
         }
 
@@ -195,7 +195,7 @@ namespace Team3.DevForm.NewFolder1
                 {
                     ShipmentVO vo = new ShipmentVO();
 
-                   // vo.plan_id = _shipvo.plan_id;
+                    vo.plan_id = row.Cells[12].Value.ToString();
 
                     if (row.Cells["combo"].Value == null)
                     {
@@ -206,12 +206,20 @@ namespace Team3.DevForm.NewFolder1
                         vo.factory_name = row.Cells["combo"].Value.ToString();
                     }
 
-                    //vo.w_count_present = row.transfer_count;
-                    //vo.uadmin = 1002;
-                    //vo.wh_comment = _shipvo.wh_comment;
-                    //vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
-                    //vo.product_id = _shipvo.product_id;
-                    //vo.category = "P_ORDER_MOVE";
+                    vo.w_count_present = Convert.ToInt32( row.Cells[9].Value);
+                    vo.uadmin = 1002;
+                    //if (row.Cells[8].Value.ToString() ==null)
+                    //{
+                    //    vo.wh_comment = "";
+                    //}
+                    //else
+                    //{
+                    //    vo.wh_comment = row.Cells[8].Value.ToString();
+                    //}
+                    vo.wh_comment=  (row.Cells[8].Value == null) ? "" : row.Cells[8].Value.ToString();
+                    vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
+                    vo.product_id = Convert.ToInt32(row.Cells[16].Value);
+                    vo.category = "P_ORDER_MOVE";
 
                     list.Add(vo);
                 }
@@ -237,7 +245,7 @@ namespace Team3.DevForm.NewFolder1
                 {
                     return;
                 }
-                
+
             }
             catch (Exception err)
             {

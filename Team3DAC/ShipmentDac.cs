@@ -37,38 +37,53 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "TransferProcessing";
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                //cmd.Parameters.AddWithValue("@plan_id", VO.plan_id);
-                //cmd.Parameters.AddWithValue("@factory_name", VO.factory_name);
-                //cmd.Parameters.AddWithValue("@product_id", VO.product_id);
-                //cmd.Parameters.AddWithValue("@w_count_present", VO.w_count_present);
-                //cmd.Parameters.AddWithValue("@wh_uadmin", VO.uadmin);//TODO : admin -> 실제 수정자
-                //if(VO.wh_comment == null)
-                //{
-                //    cmd.Parameters.AddWithValue("@wh_comment", "");
-                //}
-                //else
-                //{
-                //    cmd.Parameters.AddWithValue("@wh_comment", VO.wh_comment);
-                //}
-                //cmd.Parameters.AddWithValue("@wh_category", VO.category);
-                //cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToString("yyyy-MM-dd"));
-                
-
-                
-
                 cmd.Connection.Open();
-                var successRow = cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-                return successRow > 0;
+                SqlTransaction tran = cmd.Connection.BeginTransaction();
+
+                try
+                {
+                    cmd.Transaction = tran;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "TransferProcessing";
+                    //int num = 1;
+
+                    foreach (var item in list)
+                    {
+                        cmd.Parameters.Clear();
+
+                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
+                        cmd.Parameters.AddWithValue("@factory_name", item.factory_name);
+                        cmd.Parameters.AddWithValue("@product_id", item.product_id);
+                        cmd.Parameters.AddWithValue("@w_count_present", item.w_count_present);
+                        cmd.Parameters.AddWithValue("@wh_uadmin", item.uadmin);//TODO : admin -> 실제 수정자
+                        if (item.wh_comment == null)
+                        {
+                            cmd.Parameters.AddWithValue("@wh_comment", "");
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@wh_comment", item.wh_comment);
+                        }
+                        cmd.Parameters.AddWithValue("@wh_category", item.category);
+                        cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    tran.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
             }
-
         }
-
-
     }
 }
+

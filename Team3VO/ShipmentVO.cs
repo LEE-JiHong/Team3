@@ -14,12 +14,9 @@ namespace Team3VO
         public int so_pcount { get; set; }
         public int w_count_present { get; set; }
         public int product_id { get; set; }
-
-
         public string so_edate { get; set; }
         public string so_sdate { get; set; }
-       
-        public string plan_id { get; set; }
+       public string plan_id { get; set; }
         public string company_code { get; set; }
         public string company_type { get; set; }
         public string product_name { get; set; }

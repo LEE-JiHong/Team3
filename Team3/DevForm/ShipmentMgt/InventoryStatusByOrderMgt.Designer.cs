@@ -45,7 +45,6 @@
             this.cboFromFac = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvStockStatus = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -104,14 +103,8 @@
             // 
             // basepanel
             // 
-            this.basepanel.Controls.Add(this.button1);
             this.basepanel.Size = new System.Drawing.Size(1024, 592);
             this.basepanel.Tag = "고객주문별재고현황";
-            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
-            this.basepanel.Controls.SetChildIndex(this.label1, 0);
-            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
-            this.basepanel.Controls.SetChildIndex(this.button1, 0);
             // 
             // imageList1
             // 
@@ -318,16 +311,6 @@
             this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
             this.dgvStockStatus.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(272, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // InventoryStatusByOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -367,6 +350,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DataGridView dgvStockStatus;
-        private System.Windows.Forms.Button button1;
     }
 }
