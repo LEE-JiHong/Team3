@@ -7542,6 +7542,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomerVO.cs" />
+    <Compile Include="Models\OrderPageVO.cs" />
     <Compile Include="Models\WorkVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

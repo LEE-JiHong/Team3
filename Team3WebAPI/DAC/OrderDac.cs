@@ -21,59 +21,77 @@ namespace Team3WebAPI
         /// </summary>
         /// <param name="VO"></param>
         /// <returns></returns>
-        public bool AddSOMaster(List<SOMasterVO> list)
+       
+
+        public List<LastestOrderVO> GetLastestOrderList()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
+                string sql = "SELECT TOP 5 wh_udate,order_id,wh_comment,wh_product_count  FROM TBL_WAREHOUSE_HIS WHERE wh_category ='P_ORDER_IN' ORDER BY wh_udate DESC";
+
                 cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
                 cmd.Connection.Open();
-                SqlTransaction tran = cmd.Connection.BeginTransaction();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<LastestOrderVO> list = Helper.DataReaderMapToList<LastestOrderVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
+            }
+        }
 
-                try
-                {
-                    cmd.Transaction = tran;
-                    cmd.CommandType = CommandType.Text;
+        public List<SalesChartVO> GetYearSalesCompanyList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "SELECT  sum(s_TotalPrice) totalprice,s_company  FROM TBL_SALES_COMPLETE where CONVERT(CHAR(7), s_date,23) between CONVERT(CHAR(7),(select DATEADD(YYYY, -1, getdate())),23)  AND CONVERT(CHAR(7),(select DATEADD(YYYY, 0, getdate())),23) GROUP BY s_company order by totalprice desc";
 
-                    foreach (SOMasterVO item in list)
-                    {
-                        cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@company_code", item.company_code);
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesChartVO> list = Helper.DataReaderMapToList<SalesChartVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
+            }
+        }
 
-                        cmd.CommandText = @"select company_type from TBL_COMPANY where company_code = @company_code";
+        public List<SalesChartVO> GetYearSalesChartList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "SELECT CONVERT(CHAR(7), s_date,23) s_month,SUM(S_COUNT) s_count,SUM(s_TotalPrice) totalprice,s_company FROM TBL_SALES_COMPLETE where CONVERT(CHAR(7), s_date,23) between CONVERT(CHAR(7),(select DATEADD(YYYY, -1, getdate())),23)  AND CONVERT(CHAR(7),(select DATEADD(YYYY, 0, getdate())),23)  GROUP BY CONVERT(CHAR(7), s_date, 23), s_company order by s_month";
 
-                        SqlDataReader reader = cmd.ExecuteReader();
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesChartVO> list = Helper.DataReaderMapToList<SalesChartVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
+            }
+        }
 
-                        if (reader.Read())
-                        {
-                            item.company_type = reader["company_type"].ToString();
-                        }
-                        reader.Close();
+        public List<LastestOrderDataVO> GetLastestOrderDataList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select top 5 order_id,plan_id,p.product_name,order_count,order_state,order_sdate from TBL_ORDER o inner join TBL_PRODUCT p  on o.product_id = p.product_id order by order_sdate desc";
 
-                        cmd.CommandText = @"insert into TBL_SO_MASTER(plan_id, so_od_id, so_wo_id, company_code, company_type, product_name, so_pcount, so_edate, so_sdate) " +
-                    "values(@plan_id, @so_od_id, @so_wo_id, @company_code, @company_type, @product_name, @so_pcount, @so_edate, @so_sdate)";
-
-                        cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
-                    //  cmd.Parameters.AddWithValue("@so_od_id", item.so_od_id);
-                        cmd.Parameters.AddWithValue("@so_wo_id", item.so_wo_id);
-                        cmd.Parameters.AddWithValue("@company_type", item.company_type);
-                        cmd.Parameters.AddWithValue("@product_name", item.product_name);
-                        cmd.Parameters.AddWithValue("@so_pcount", item.so_pcount);
-                        cmd.Parameters.AddWithValue("@so_edate", item.so_edate);
-                        cmd.Parameters.AddWithValue("@so_sdate", item.so_sdate);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    tran.Commit();
-                    cmd.Connection.Close();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine(ex.Message);
-                    tran.Rollback();
-                    cmd.Connection.Close();
-                    return false;
-                }
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<LastestOrderDataVO> list = Helper.DataReaderMapToList<LastestOrderDataVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
             }
         }
     }
