@@ -174,11 +174,18 @@ namespace Team3
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //엑셀 버튼
-            using (frmWaitForm frm = new frmWaitForm(ExcelDown))
-            {
-                frm.ShowDialog(this);
-            }
+            ////엑셀 버튼
+            //using (frmWaitForm frm = new frmWaitForm(ExcelDown))
+            //{
+            //    frm.ShowDialog(this);
+            //}
+
+            LoadingForm f = new LoadingForm();
+
+            f.Function = (() => { ExcelDown(); });
+
+            f.ShowDialog();
+
         }
 
         private void ExcelDown()

@@ -35,5 +35,11 @@ namespace Team3
             MaterialLedgerDAC dac = new MaterialLedgerDAC();
             return dac.GetMaterialInList();
         }
+
+        public bool CancelMaterial(List<MaterialReceivingVO> list)
+        {
+            MaterialLedgerDAC dac = new MaterialLedgerDAC();
+            return dac.CancelMaterial(list);
+        }
     }
 }
