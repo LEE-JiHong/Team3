@@ -460,6 +460,12 @@
     </Compile>
     <Compile Include="Utility\ComboUtil.cs" />
     <Compile Include="Utility\GridViewUtil.cs" />
+    <Compile Include="Utility\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkOrder\Business_showings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -683,6 +689,9 @@
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Utility\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WorkOrder\Business_showings.resx">
       <DependentUpon>Business_showings.cs</DependentUpon>
     </EmbeddedResource>
@@ -720,6 +729,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Icon\Home\Print_32x32.png" />
     <None Include="Resources\grid %281%29.png" />
     <None Include="Resources\menu.png" />
