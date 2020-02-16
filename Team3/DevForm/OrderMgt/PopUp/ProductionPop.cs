@@ -208,8 +208,8 @@ namespace Team3
                     dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
                     return;
                 }
-                else
-                {
+                //else
+                //{
 
 
                     //if (Convert.ToInt32(lblCount.Text) == 0)
@@ -234,7 +234,7 @@ namespace Team3
                     //        lblCount.Text = TotalCount.ToString();
                     //    }
                     //}
-                }
+                //}
 
             }
             catch (Exception err)
