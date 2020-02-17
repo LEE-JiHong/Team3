@@ -184,6 +184,10 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(601, 7);
             // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(688, 521);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -517,6 +521,7 @@
             // 
             // txtUdate
             // 
+            this.txtUdate.Enabled = false;
             this.txtUdate.Location = new System.Drawing.Point(309, 137);
             this.txtUdate.Name = "txtUdate";
             this.txtUdate.Size = new System.Drawing.Size(100, 21);
@@ -720,6 +725,7 @@
             // 
             // txtUadmin
             // 
+            this.txtUadmin.Enabled = false;
             this.txtUadmin.Location = new System.Drawing.Point(102, 138);
             this.txtUadmin.Name = "txtUadmin";
             this.txtUadmin.Size = new System.Drawing.Size(100, 21);

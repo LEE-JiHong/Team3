@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
+using log4net.Core;
 
 namespace Team3
 {
@@ -49,7 +50,7 @@ namespace Team3
 
         private void SalesMasterDialog_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Now;
+
         }
 
         //엑셀 업로드 버튼
@@ -63,27 +64,29 @@ namespace Team3
             var fileContent = string.Empty;
             var filePath = string.Empty;
 
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "엑셀 파일 (*.xls)|*.xls|엑셀 파일 (*.xlsx)|*.xlsx|모든 파일 (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
+                    openFileDialog.InitialDirectory = "c:\\";
+                    openFileDialog.Filter = "엑셀 파일 (*.xls)|*.xls|엑셀 파일 (*.xlsx)|*.xlsx|모든 파일 (*.*)|*.*";
+                    openFileDialog.FilterIndex = 2;
+                    openFileDialog.RestoreDirectory = true;
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                    
+
                     //filePath = openFileDialog.FileName;
 
                     txtFilePath.Text = openFileDialog.FileName;
 
-                    FilePath = txtFilePath.Text;
+                        FilePath = txtFilePath.Text;
 
                     var fileStream = openFileDialog.OpenFile();
 
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        fileContent = reader.ReadToEnd();
-                    }
+                        using (StreamReader reader = new StreamReader(fileStream))
+                        {
+                            fileContent = reader.ReadToEnd();
+                        }
 
                     try
                     {
@@ -144,8 +147,10 @@ namespace Team3
                         //dataGridView1.DataSource = dt;
 
                     }
-                    catch
+                    catch (Exception err)
                     {
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                        return;
                     }
                     finally
                     {
@@ -155,9 +160,10 @@ namespace Team3
                         ReleaseExcelObject(xlApp);
                     }
 
-                    //계획기준버전
-                    txtPlanVersion.Text = dateTimePicker1.Value.ToShortDateString().Replace("-","") + "_P";
-                    PlanVersion = txtPlanVersion.Text;
+                        //계획기준버전
+                        txtPlanVersion.Text = dateTimePicker1.Value.ToShortDateString().Replace("-", "") + "_P";
+                        PlanVersion = txtPlanVersion.Text;
+                    
                 }
             }
         }

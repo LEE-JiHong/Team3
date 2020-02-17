@@ -64,8 +64,10 @@ namespace Team3VO
         public string category { get; set; }
         public string udate { get; set; }
         public int transfer_count { get; set; }
-        public string company_name { get; set; }
 
+
+        public string company_name { get; set; }
+        public string s_date { get; set; }
         public int incount { get; set; }
         public int w_id { get; set; }
     }
