@@ -393,6 +393,12 @@
       <DependentUpon>frmWaitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoggingUtility.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,7 @@
     <Compile Include="Service\BomService.cs" />
     <Compile Include="Service\CommonCodeService.cs" />
     <Compile Include="Service\GatheringService.cs" />
+    <Compile Include="Service\UserSerivce.cs" />
     <Compile Include="Service\StockService.cs" />
     <Compile Include="Service\SupplierService.cs" />
     <Compile Include="Service\OrderService.cs" />
@@ -642,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmWaitForm.resx">
       <DependentUpon>frmWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
