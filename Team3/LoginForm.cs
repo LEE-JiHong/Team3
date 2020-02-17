@@ -85,5 +85,20 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int borderWidth = 1;
+            Color borderColor = Color.FromArgb(147, 166, 185);
+
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+             borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
+
+            ButtonBorderStyle.Solid, borderColor, borderWidth,
+             ButtonBorderStyle.Solid,
+
+            borderColor, borderWidth, ButtonBorderStyle.Solid);
+        }
     }
 }
