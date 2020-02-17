@@ -309,6 +309,7 @@
             // 
             // txtModifyDate
             // 
+            this.txtModifyDate.Enabled = false;
             this.txtModifyDate.Location = new System.Drawing.Point(92, 106);
             this.txtModifyDate.Name = "txtModifyDate";
             this.txtModifyDate.Size = new System.Drawing.Size(177, 21);
@@ -333,6 +334,7 @@
             // 
             // txtModifier
             // 
+            this.txtModifier.Enabled = false;
             this.txtModifier.Location = new System.Drawing.Point(387, 106);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(177, 21);

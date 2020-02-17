@@ -14,12 +14,22 @@ namespace Team3
         public List<ShipmentVO> GetInventoryStatusByOrder()
         {
             ShipmentDac dac = new ShipmentDac();
-            return dac.GetInventoryStatusByOrder();
+            return dac.GetInventoryStatusByOrder(); 
+        }
+        public List<ShipmentOutVO> GetClientOrder()
+        {
+            ShipmentDac dac = new ShipmentDac();
+            return dac.GetClientOrder(); 
         }
         public bool TransferProcessing(List<ShipmentVO> list)
         {
             ShipmentDac dac = new ShipmentDac();
             return dac.TransferProcessing(list);
+        }
+        public bool EndProcessing(List<ShipmentOutVO> list)
+        {
+            ShipmentDac dac = new ShipmentDac();
+            return dac.EndProcessing(list);
         }
     }
 }
