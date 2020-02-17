@@ -11,11 +11,31 @@ namespace Team3DAC
 {
     public class ShipmentDac : ConnectionAccess
     {
+        /// <summary>
+        /// 고객별 주문현황
+        /// </summary>
+        /// <returns></returns>
         public List<ShipmentVO> GetInventoryStatusByOrder()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 string sql = "GetInventoryStatusByOrder";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+        public List<ShipmentVO> GetClientOrder()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "GetClientOrder";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
@@ -85,6 +105,11 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// 마감개수 처리만큼 마감처리
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public bool EndProcessing(List<ShipmentOutVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
