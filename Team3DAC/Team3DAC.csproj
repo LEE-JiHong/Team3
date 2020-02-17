@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BomDac.cs" />
+    <Compile Include="UserDac.cs" />
     <Compile Include="DemandDac.cs" />
     <Compile Include="GatheringDAC.cs" />
     <Compile Include="StockDAC.cs" />
