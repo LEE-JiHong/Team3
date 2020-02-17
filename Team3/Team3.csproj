@@ -724,6 +724,7 @@
     <Content Include="Resources\loading.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Refresh_16x16.png" />
     <None Include="Icon\Home\Print_32x32.png" />
     <None Include="Resources\grid %281%29.png" />
     <None Include="Resources\menu.png" />

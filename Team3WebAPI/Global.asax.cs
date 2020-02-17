@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +14,7 @@ namespace Team3WebAPI
     {
         void Application_Start(object sender, EventArgs e)
         {
+           
             // 응용 프로그램 시작 시 실행되는 코드
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

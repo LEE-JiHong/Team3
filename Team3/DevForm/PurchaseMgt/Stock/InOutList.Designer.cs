@@ -34,7 +34,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -150,7 +150,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -158,21 +158,21 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(133, 29);
             this.flowLayoutPanel1.TabIndex = 70;
             // 
-            // button4
+            // btnExcel
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(72, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(58, 23);
-            this.button4.TabIndex = 69;
-            this.button4.Text = "엑셀";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(72, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(58, 23);
+            this.btnExcel.TabIndex = 69;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -291,6 +291,6 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnExcel;
     }
 }
