@@ -18,13 +18,18 @@ namespace Team3WebAPI.Controllers
             OrderDac odac1 = new OrderDac();
             orderpageVo.LastestOrderList = odac1.GetLastestOrderDataList();
             OrderDac odac2 = new OrderDac();
-            orderpageVo.YearSalesChartList = odac2.GetYearSalesChartList();
-
+            List<SalesChartVO> ylist = odac2.GetYearSalesChartList();
+            orderpageVo.YearSalesChartList= odac2.GetYearSalesChartList();
 
             OrderDac odac3 = new OrderDac();
             orderpageVo.YearSalesCompanyList = odac3.GetYearSalesCompanyList();
+            ViewBag.SumTotalPrice = orderpageVo.YearSalesCompanyList.Sum(p => p.totalprice);
+
+
             string labels = string.Empty;
             List<List<SalesChartVO>> list = new List<List<SalesChartVO>>();
+
+
             foreach (var item in orderpageVo.YearSalesCompanyList)
             {
                 labels += item.s_month + ",";
@@ -35,11 +40,17 @@ namespace Team3WebAPI.Controllers
 
             }
 
+            foreach (var item in list)
+            {
+                foreach(var sitem in item)
+                sitem.s_month = sitem.s_month.Substring(5, 2);
+            }
 
-            string[] month = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+            orderpageVo.YearSalesChartList= ylist;
+            string[] month = new string[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
             int imon = DateTime.Now.Month;
             string months = string.Empty;
-            for (int i = imon-1; i < imon + 12; i++)
+            for (int i = imon-1; i < imon + 11; i++)
             {
                 if (i >= 12)
                 {
@@ -54,20 +65,42 @@ namespace Team3WebAPI.Controllers
                     }
                 }
             }
-            string data = string.Empty;
+            string data ="[";
             foreach(var sitem in orderpageVo.YearSalesChartList)
             {
-                data += sitem.totalprice+",";
+                data += sitem.totalprice + ",";
             }
+            
 
-            orderpageVo.TotalyearSalesCompanyList = list;
 
-            ViewBag.Labels = labels.TrimEnd(',');
-            ViewBag.Label1 = "labels1";
-            ViewBag.data1 = data.TrimEnd(',');
-            ViewBag.Label2 = "labels2";
+            //ViewBag.Labels = months.TrimEnd(',');
+            ViewBag.Labels = months.TrimEnd(',');
+            string[] testmonth = months.TrimEnd(',').Split(',');
+            ViewBag.Label1 = testmonth[0];           
+            ViewBag.Label2 = testmonth[1];
+            ViewBag.Label3 = testmonth[2];
+            ViewBag.Label4 = testmonth[3];
+            ViewBag.Label5 = testmonth[4];
+            ViewBag.Label6 = testmonth[5];
+            ViewBag.Label7 = testmonth[6];
+            ViewBag.Label8 = testmonth[7];
+            ViewBag.Label9 = testmonth[8];
+            ViewBag.Label10 = testmonth[9];
+            ViewBag.Label11 = testmonth[10];
+            ViewBag.Label12 = testmonth[11];
+            ViewBag.data1 = data.TrimEnd(',')+"]";
 
-            ViewBag.Label3 = "label3";
+
+
+            OrderDac odac4 = new OrderDac();
+            orderpageVo.OrderCostList = odac4.GetOrderCostList();
+            if(orderpageVo.OrderCostList[1].totalprice < orderpageVo.OrderCostList[0].totalprice)
+            {
+                ViewBag.OrderRate =100 - @Convert.ToInt32((orderpageVo.OrderCostList[1].totalprice / orderpageVo.OrderCostList[0].totalprice) * 100);
+            }    
+            
+            
+
 
             return View(orderpageVo);
         }

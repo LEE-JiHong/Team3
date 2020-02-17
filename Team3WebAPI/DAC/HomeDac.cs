@@ -70,7 +70,7 @@ namespace Team3WebAPI
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "select Month(s_date) month,sum(s_TotalPrice) price from TBL_SALES_COMPLETE group by Month(s_date) having Month(s_date) between(SELECT Month(DATEADD(month, -1, getdate()))) and Month(getdate())";
+                string sql = "select Month(s_date) month,sum(s_TotalPrice) price from TBL_SALES_COMPLETE where year(s_date) = year(getdate()) group by Month(s_date) having Month(s_date) between (SELECT Month(DATEADD(month, -1, getdate()))) and  (SELECT Month(getdate()))";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
                 cmd.CommandType = CommandType.Text;

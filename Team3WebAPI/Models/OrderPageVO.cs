@@ -12,12 +12,18 @@ namespace Team3WebAPI
         List<SalesChartVO> yearSalesChartList;
         List<SalesChartVO> yearSalesCompanyList;
         List<List<SalesChartVO>> totalyearSalesCompanyList;
+        List<SalesChartVO> orderCostList;
         public List<LastestOrderVO> LastestList
         {
             get { return lastestList; }
             set { lastestList = value; }
         }
 
+        public List<SalesChartVO> OrderCostList
+        {
+            get { return orderCostList; }
+            set { orderCostList = value; }
+        }
         public List<LastestOrderDataVO> LastestOrderList
         {
             get { return lastestOrderList; }
@@ -74,7 +80,11 @@ namespace Team3WebAPI
         public decimal totalprice { get; set; }
         public string s_company { get; set; }
 
+        public decimal sumtotalprice { get; set; }
+
     }
+
+
 
 
 }

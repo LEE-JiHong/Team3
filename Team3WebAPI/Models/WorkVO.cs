@@ -12,6 +12,7 @@ namespace Team3WebAPI
         List<TodayWorkRateVO> todayWorkList;
         List<UnWorkingTimeRank> unWorkingList;
         List<TodayUnWorkingVO> todayUnworkData;
+        List<WorkChartVO> chartRankData;
         public List<WorkRatePlanVO> WorkRateList
         {
             get { return workRateList; }
@@ -33,7 +34,11 @@ namespace Team3WebAPI
             get { return todayUnworkData; }
             set { todayUnworkData = value; }
         }
-
+        public List<WorkChartVO> ChartRankData
+        {
+            get { return chartRankData; }
+            set { chartRankData = value; }
+        }
 
 
     }
@@ -45,6 +50,14 @@ namespace Team3WebAPI
         public int pro_count { get; set; }
         public string rate { get; set; }
       
+    }
+
+
+    public class WorkChartVO
+    {
+        public string user_name { get; set; }
+        public int time { get; set; }
+
     }
 
     public class UnWorkingTimeRank
