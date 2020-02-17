@@ -49,7 +49,7 @@ namespace Team3
 
         private void SalesMasterDialog_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Now;
+
         }
 
         //엑셀 업로드 버튼
