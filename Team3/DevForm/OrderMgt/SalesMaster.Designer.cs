@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpRegLastDate = new System.Windows.Forms.DateTimePicker();
             this.dtpRegFirstDate = new System.Windows.Forms.DateTimePicker();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,8 +94,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(685, 121);
-            this.panel3.Size = new System.Drawing.Size(303, 29);
+            this.panel3.Location = new System.Drawing.Point(601, 121);
+            this.panel3.Size = new System.Drawing.Size(387, 29);
             // 
             // TopMenu
             // 
@@ -200,7 +201,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(123, 3);
+            this.btnRegister.Location = new System.Drawing.Point(120, 3);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(52, 23);
             this.btnRegister.TabIndex = 39;
@@ -216,7 +217,7 @@
             this.btnDemandPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDemandPlan.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnDemandPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDemandPlan.Location = new System.Drawing.Point(17, 3);
+            this.btnDemandPlan.Location = new System.Drawing.Point(14, 3);
             this.btnDemandPlan.Name = "btnDemandPlan";
             this.btnDemandPlan.Size = new System.Drawing.Size(100, 23);
             this.btnDemandPlan.TabIndex = 40;
@@ -232,7 +233,7 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(243, 3);
+            this.btnExcel.Location = new System.Drawing.Point(240, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(57, 23);
             this.btnExcel.TabIndex = 43;
@@ -243,6 +244,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnEdit);
             this.flowLayoutPanel1.Controls.Add(this.btnRegister);
@@ -253,7 +255,7 @@
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(303, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(387, 29);
             this.flowLayoutPanel1.TabIndex = 15;
             // 
             // btnEdit
@@ -263,7 +265,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(181, 3);
+            this.btnEdit.Location = new System.Drawing.Point(178, 3);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(56, 23);
             this.btnEdit.TabIndex = 44;
@@ -344,6 +346,21 @@
             this.dtpRegFirstDate.Size = new System.Drawing.Size(94, 22);
             this.dtpRegFirstDate.TabIndex = 72;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(303, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(81, 23);
+            this.btnRefresh.TabIndex = 45;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            // 
             // SalesMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -387,5 +404,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpRegLastDate;
         private System.Windows.Forms.DateTimePicker dtpRegFirstDate;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
