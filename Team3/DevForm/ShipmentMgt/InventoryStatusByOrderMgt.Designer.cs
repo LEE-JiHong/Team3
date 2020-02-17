@@ -39,7 +39,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnFormDownload = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cboFromFac = new System.Windows.Forms.ComboBox();
@@ -196,7 +196,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnFormDownload);
-            this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
+            this.flowLayoutPanel1.Controls.Add(this.btnTransfer);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -240,23 +240,23 @@
             this.btnFormDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFormDownload.UseVisualStyleBackColor = false;
             // 
-            // btnUpdate
+            // btnTransfer
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUpdate.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(27, 3);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(76, 23);
-            this.btnUpdate.TabIndex = 37;
-            this.btnUpdate.Text = "이동처리";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnTransfer.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransfer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTransfer.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.btnTransfer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTransfer.Location = new System.Drawing.Point(27, 3);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(76, 23);
+            this.btnTransfer.TabIndex = 37;
+            this.btnTransfer.Text = "이동처리";
+            this.btnTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTransfer.UseVisualStyleBackColor = false;
+            this.btnTransfer.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dtpToDate
             // 
@@ -345,7 +345,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnFormDownload;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.ComboBox cboFromFac;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;

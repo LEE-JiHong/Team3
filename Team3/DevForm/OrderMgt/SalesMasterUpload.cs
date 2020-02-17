@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,29 +49,36 @@ namespace Team3
         {
             SalesMasterDialog frm = new SalesMasterDialog();
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                versionName = frm.PlanVersion;
-
-                OrderService service = new OrderService();
-
-                int resultNum = service.GetPlanIDINSOMaster(versionName);
-
-                if (resultNum > 0)
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    versionName = frm.PlanVersion;
+
+                    OrderService service = new OrderService();
+
+                    int resultNum = service.GetPlanIDINSOMaster(versionName);
+
+                    if (resultNum > 0)
+                    {
+                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        {
+                            dataGridView1.Columns.Clear();
+                            dataGridView1.DataSource = frm.Data;
+                            SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
+                        }
+                    }
+                    else
                     {
                         dataGridView1.Columns.Clear();
                         dataGridView1.DataSource = frm.Data;
                         SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
                     }
                 }
-                else
-                {
-                    dataGridView1.Columns.Clear();
-                    dataGridView1.DataSource = frm.Data;
-                    SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
-                }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 

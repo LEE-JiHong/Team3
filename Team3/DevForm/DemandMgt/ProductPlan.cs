@@ -26,12 +26,10 @@ namespace Team3
         {
 
             DataTable dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
-           
-            
 
-            dataGridView1.DataSource = null;
-            dataGridView1.Columns.Clear();
 
+
+        
             InitComboBox();
 
                 DateTime today = DateTime.Now;
@@ -42,7 +40,8 @@ namespace Team3
                 dateTimePicker2.Value = today.AddDays(20);
             //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
             //  dataGridView1.DataSource = dt;
-        
+            btnSearch.PerformClick();
+
         }
 
         private void InitComboBox()

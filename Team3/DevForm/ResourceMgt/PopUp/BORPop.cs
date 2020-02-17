@@ -107,6 +107,7 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             int su = Convert.ToInt32(txtReadyTime.Text);
             if (su > 36)
             {
@@ -174,13 +175,16 @@ namespace Team3
                 }
 
             }
+            catch (NullReferenceException err)
+            {
+                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
             catch (Exception err)
             {
                 string str = err.Message;
             }
         }
-
-   
 
         private void txtTactTime_KeyPress(object sender, KeyPressEventArgs e)
         {

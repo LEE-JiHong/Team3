@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(10, 10);
+            this.panel1.Size = new System.Drawing.Size(127, 10);
             this.panel1.Visible = false;
             // 
             // label1
@@ -174,7 +174,7 @@
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(-140, 13);
+            this.comboBox2.Location = new System.Drawing.Point(-82, 13);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(74, 24);
             this.comboBox2.TabIndex = 4;
@@ -182,7 +182,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(-60, 14);
+            this.textBox1.Location = new System.Drawing.Point(-2, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(119, 22);
             this.textBox1.TabIndex = 5;
@@ -209,7 +209,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-140, 56);
+            this.label5.Location = new System.Drawing.Point(-82, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 16);
             this.label5.TabIndex = 6;
@@ -219,7 +219,7 @@
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(-60, 53);
+            this.comboBox3.Location = new System.Drawing.Point(-2, 53);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(119, 24);
             this.comboBox3.TabIndex = 4;
@@ -228,7 +228,7 @@
             // 
             this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(-326, 17);
+            this.comboBox4.Location = new System.Drawing.Point(-209, 17);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(153, 24);
             this.comboBox4.TabIndex = 4;
@@ -237,7 +237,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-408, 20);
+            this.label6.Location = new System.Drawing.Point(-291, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 6;
@@ -247,7 +247,7 @@
             // 
             this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(-326, 54);
+            this.comboBox5.Location = new System.Drawing.Point(-209, 54);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(153, 24);
             this.comboBox5.TabIndex = 4;
@@ -256,7 +256,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(-408, 57);
+            this.label7.Location = new System.Drawing.Point(-291, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 16);
             this.label7.TabIndex = 6;
@@ -334,6 +334,7 @@
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 
@@ -357,7 +358,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-58, 83);
+            this.button1.Location = new System.Drawing.Point(59, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 30);
             this.button1.TabIndex = 79;

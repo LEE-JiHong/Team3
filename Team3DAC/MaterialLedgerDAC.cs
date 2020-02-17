@@ -128,8 +128,8 @@ namespace Team3DAC
 
                         if (result > 0)
                         {
-                            cmd.Parameters.AddWithValue("@w_id", result);
-                            cmd.CommandText = @"update TBL_WAREHOUSE set w_count_present = w_count_present + @order_count, w_count_past = w_count_present where w_id = @w_id";
+                            cmd.Parameters.AddWithValue("@w_id1", result);
+                            cmd.CommandText = @"update TBL_WAREHOUSE set w_count_present = w_count_present + @order_count, w_count_past = w_count_present where w_id = @w_id1";
                         }
                         else
                         {
@@ -157,7 +157,7 @@ namespace Team3DAC
                         }
 
                         cmd.Parameters.AddWithValue("@wh_comment", item.product_name + " 입고");
-                        cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToShortDateString());
+                        //cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToShortDateString());
 
                         cmd.CommandText = @"select w_id from TBL_WAREHOUSE where plan_id = @plan_id and factory_id = @factory_id and product_id = @product_id";
 
@@ -165,7 +165,7 @@ namespace Team3DAC
 
                         cmd.Parameters.AddWithValue("@w_id", w_id);
 
-                        cmd.CommandText = "insert into TBL_WAREHOUSE_HIS(w_id, product_id, order_id, wh_product_count, wh_udate, wh_comment, wh_category) values (@w_id, @product_id, @order_serial, @order_count, @wh_udate, @wh_comment, 'P_ORDER_IN')";
+                        cmd.CommandText = "insert into TBL_WAREHOUSE_HIS(w_id, product_id, order_id, wh_product_count, wh_udate, wh_comment, wh_category) values (@w_id, @product_id, @order_serial, @order_count, @order_pdate, @wh_comment, 'P_ORDER_IN')";
 
                         cmd.ExecuteNonQuery();
                     }

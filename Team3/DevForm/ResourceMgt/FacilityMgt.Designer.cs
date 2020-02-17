@@ -183,7 +183,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(310, 217);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -197,7 +197,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(687, 520);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.TabIndex = 21;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // button5
@@ -381,17 +381,21 @@
             // 
             // txtCode
             // 
+            this.txtCode.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtCode.Location = new System.Drawing.Point(106, 337);
             this.txtCode.Name = "txtCode";
+            this.txtCode.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(176, 22);
-            this.txtCode.TabIndex = 32;
+            this.txtCode.TabIndex = 0;
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtName.Location = new System.Drawing.Point(106, 364);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(176, 22);
             this.txtName.TabIndex = 34;
             // 
@@ -408,9 +412,11 @@
             // 
             // txtAdmin
             // 
+            this.txtAdmin.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtAdmin.Location = new System.Drawing.Point(106, 391);
             this.txtAdmin.Name = "txtAdmin";
+            this.txtAdmin.ReadOnly = true;
             this.txtAdmin.Size = new System.Drawing.Size(176, 22);
             this.txtAdmin.TabIndex = 36;
             // 
@@ -427,9 +433,11 @@
             // 
             // txtDate
             // 
+            this.txtDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtDate.Location = new System.Drawing.Point(106, 418);
             this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(176, 22);
             this.txtDate.TabIndex = 38;
             // 
@@ -446,10 +454,12 @@
             // 
             // txtComment
             // 
+            this.txtComment.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtComment.Location = new System.Drawing.Point(30, 464);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
+            this.txtComment.ReadOnly = true;
             this.txtComment.Size = new System.Drawing.Size(252, 78);
             this.txtComment.TabIndex = 40;
             // 

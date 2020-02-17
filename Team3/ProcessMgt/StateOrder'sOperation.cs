@@ -216,5 +216,10 @@ namespace Team3
             }
         
     }
+
+        private void cboWH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            radioButton6.Checked = true;
+        }
     }
 }

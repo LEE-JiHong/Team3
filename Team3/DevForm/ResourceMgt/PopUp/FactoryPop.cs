@@ -131,6 +131,7 @@ namespace Team3
         {
             try
             {
+               
                 //if (cboCompany.SelectedIndex == 0)
                 //{
                 //    MessageBox.Show("업체를 선택해주세요");
@@ -201,6 +202,10 @@ namespace Team3
                 }
 
             }
+            catch (NullReferenceException err)
+            {
+                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요","입력확인",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+            }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
@@ -242,6 +247,7 @@ namespace Team3
             else if (cboFactoryGrade.SelectedIndex == 1)
             {
                 cboParent.Text = "";
+                cboParent.DataSource = null;
 
             }
 

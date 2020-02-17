@@ -56,5 +56,15 @@ namespace Team3.Service
             ProcessDac dac = new ProcessDac();
             return dac.WorkRecode();
         }
+        public bool FinishRecode(List<DMRVO> lst, List<WorkRecode_VO> w_lst)
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.FinishRecode(lst, w_lst);
+        }
+        public List<WorkRecode_VO> GetWork()
+        {
+            ProcessDac dac = new ProcessDac();
+            return dac.GetWork();
+        }
     }
 }

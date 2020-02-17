@@ -34,12 +34,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblWHing = new System.Windows.Forms.Label();
-            this.lblStandard = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblWH = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
-            this.txtStandard = new System.Windows.Forms.TextBox();
             this.cboSupplyCompany = new System.Windows.Forms.ComboBox();
             this.cboInSector = new System.Windows.Forms.ComboBox();
             this.cboAdmin = new System.Windows.Forms.ComboBox();
@@ -108,13 +106,7 @@
             // 
             // TopMenu
             // 
-            this.TopMenu.Controls.Add(this.txtStandard);
-            this.TopMenu.Controls.Add(this.lblStandard);
             this.TopMenu.Size = new System.Drawing.Size(1155, 60);
-            this.TopMenu.Controls.SetChildIndex(this.lblStandard, 0);
-            this.TopMenu.Controls.SetChildIndex(this.txtStandard, 0);
-            this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
-            this.TopMenu.Controls.SetChildIndex(this.layoutButton, 0);
             // 
             // layoutButton
             // 
@@ -193,19 +185,6 @@
             this.lblWHing.TabIndex = 4;
             this.lblWHing.Text = "입고창고";
             // 
-            // lblStandard
-            // 
-            this.lblStandard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblStandard.AutoSize = true;
-            this.lblStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStandard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStandard.Location = new System.Drawing.Point(322, 15);
-            this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(31, 15);
-            this.lblStandard.TabIndex = 3;
-            this.lblStandard.Text = "규격";
-            this.lblStandard.Visible = false;
-            // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -248,15 +227,6 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(225, 22);
             this.txtProduct.TabIndex = 9;
-            // 
-            // txtStandard
-            // 
-            this.txtStandard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtStandard.Location = new System.Drawing.Point(404, 12);
-            this.txtStandard.Name = "txtStandard";
-            this.txtStandard.Size = new System.Drawing.Size(230, 21);
-            this.txtStandard.TabIndex = 10;
-            this.txtStandard.Visible = false;
             // 
             // cboSupplyCompany
             // 
@@ -487,7 +457,6 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
-            this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -504,14 +473,12 @@
         private System.Windows.Forms.ComboBox cboAdmin;
         private System.Windows.Forms.ComboBox cboInSector;
         private System.Windows.Forms.ComboBox cboSupplyCompany;
-        private System.Windows.Forms.TextBox txtStandard;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblWH;
         private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblWHing;
-        private System.Windows.Forms.Label lblStandard;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDeliveryCompany;
         private System.Windows.Forms.Label lblProduct;

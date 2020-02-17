@@ -110,6 +110,11 @@ namespace Team3
         {
             try
             {
+                if(txtCodeCompany.Text==""||txtNameCompany.Text==""||cboCompanyType.SelectedIndex==0)
+                {
+                    MessageBox.Show("필수항목이 입력되지 않았습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    return;
+                }
                 CompanyVO VO = new CompanyVO();
 
                 VO.company_code = txtCodeCompany.Text;
@@ -164,7 +169,12 @@ namespace Team3
                     }
                 }
             }
-            catch(Exception err)
+            catch (NullReferenceException err)
+            {
+                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception err)
             {
                 string str = err.Message;
             }

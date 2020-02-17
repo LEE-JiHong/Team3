@@ -180,13 +180,17 @@ namespace Team3
             common_service = new CommonCodeService();
             bom_service = new BomService();
             codelist = common_service.GetCommonCodeAll();
+
             #region 사용여부cbo
             List<CommonVO> _cboUseFlag = (from item in codelist
                                           where item.common_type == "user_flag"
                                           select item).ToList();
             ComboUtil.ComboBinding(cboIsUsed, _cboUseFlag, "common_value", "common_name", "선택");
 
-            ComboUtil.ComboBinding(cboRequiredPlan, _cboUseFlag, "common_value", "common_name");
+            List<CommonVO> _cboRequiredPlan = (from item in codelist
+                                          where item.common_type == "user_flag"
+                                          select item).ToList();
+            ComboUtil.ComboBinding(cboRequiredPlan, _cboRequiredPlan, "common_value", "common_name");
             #endregion
 
             #region 품목cbo
