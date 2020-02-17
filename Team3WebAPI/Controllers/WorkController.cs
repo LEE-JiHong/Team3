@@ -24,9 +24,11 @@ namespace Team3WebAPI.Controllers
 
             WorkDac wdac2 = new WorkDac();
             List<UnWorkingTimeRank> unlist = wdac2.GetUnWorkingTimeData();
+            int sum = 0;
+            sum =unlist.Sum(p => p.total);
             foreach(var item in unlist)
             {
-                item.rate =(int)((item.w_time*1.0 /item.total*1.0)*100);
+                item.rate =(int)((item.total* 1.0 / sum * 1.0)*100);
             }
             workvo.UnWorkingList = unlist;
 

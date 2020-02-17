@@ -84,16 +84,30 @@
                             </tr>
                             @foreach (var item in Model.TodayWorkList)
                             {
-                                <tr>
-                                    <td>@item.row</td>
-                                    <td>@item.bor_comment</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width:@item.rate%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-red">@item.rate%</span></td>
-                                </tr>
+                        <tr>
+                            <td>@item.row</td>
+                            <td>@item.bor_comment</td>
+
+                            @if (Convert.ToDouble(item.rate) > 50)
+                            {
+                                <td>
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-info" style="width:@item.rate%"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-aqua">@item.rate%</span></td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-danger" style="width:@item.rate%"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-red">@item.rate%</span></td>
+                            }
+
+                        </tr>
                             }
                         </table>
                     </div>
