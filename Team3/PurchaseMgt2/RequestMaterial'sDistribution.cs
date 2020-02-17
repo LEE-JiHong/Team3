@@ -78,10 +78,10 @@ namespace Team3
             dataGridView2.DataSource = null;
             dataGridView2.Columns.Clear();
             ndt = null;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
                
-            }
+            //}
          
 
 
@@ -193,20 +193,20 @@ namespace Team3
 
             DataTable table = new DataTable();
             dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "계획일", "pro_date", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청일", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "설비코드", "m_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "설비명", "m_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상태", "pro_state", true, 100, DataGridViewContentAlignment.MiddleLeft);//ff
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상태", "common_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "계획일", "pro_date", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청일", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "설비코드", "m_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "설비명", "m_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상태", "pro_state", true, 100, DataGridViewContentAlignment.MiddleLeft);//ff
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상태", "common_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
 
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "소진창고", "m_use_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "양품창고", "m_ok_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "불량창고", "m_ng_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "상품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "소진창고", "m_use_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "양품창고", "m_ok_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "불량창고", "m_ng_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
             DataView dv = dt.DefaultView;
             dv.RowFilter = "pro_state = 'COMMAND' ";
             if (dv.Count > 0)
@@ -237,6 +237,5 @@ namespace Team3
                 string st = err.Message;
             }
         }
-
     }
 }

@@ -168,11 +168,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(807, 31);
+            this.label3.Location = new System.Drawing.Point(780, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
+            this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 29;
-            this.label3.Text = "창고";
+            this.label3.Text = "소진 창고";
             // 
             // textBox1
             // 
@@ -191,6 +191,7 @@
             this.cboWH.Name = "cboWH";
             this.cboWH.Size = new System.Drawing.Size(148, 24);
             this.cboWH.TabIndex = 27;
+            this.cboWH.SelectedIndexChanged += new System.EventHandler(this.cboWH_SelectedIndexChanged);
             // 
             // cboStatus
             // 
@@ -209,6 +210,7 @@
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Size = new System.Drawing.Size(219, 24);
             this.cboMachine.TabIndex = 25;
+            this.cboMachine.SelectedIndexChanged += new System.EventHandler(this.cboWH_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -306,6 +308,7 @@
             this.button2.Text = "자재차감조회";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             // 
             // btnEX
             // 

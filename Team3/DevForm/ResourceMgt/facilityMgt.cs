@@ -38,7 +38,7 @@ namespace Team3
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "ID", "m_id", false, 60);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비ID", "mgrade_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비군코드", "mgrade_code", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비군코드", "mgrade_code", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비코드", "m_code", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "설비명", "m_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "소진창고", "m_use_sector", true);
@@ -57,6 +57,8 @@ namespace Team3
 
             R_service = new ResourceService();
             LoadData();
+            dataGridView1.ClearSelection();
+            dataGridView2.ClearSelection();
         }
 
         private void LoadData()
@@ -94,6 +96,11 @@ namespace Team3
                 LoadData();
                 SetBottomStatusLabel("설비군 수정 성공");
             }
+            txtCode.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtAdmin.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtDate.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -137,7 +144,7 @@ namespace Team3
                     VO.m_name = rows.Cells[4].Value.ToString();
                     VO.m_use_sector = rows.Cells[5].Value.ToString();
                     VO.m_ok_sector = rows.Cells[6].Value.ToString();
-                   
+
                     if (rows.Cells[7].Value == null)
                     { VO.m_ng_sector = ""; }
                     else
@@ -184,7 +191,7 @@ namespace Team3
         {
             try
             {
-                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[0].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[1].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
                     bool bResult = R_service.DeleteMachineGr(Convert.ToInt32(lblID1.Text));

@@ -58,5 +58,15 @@ namespace Team3VO
         public int ok_cnt { get; set; }
         public int ng_cnt { get; set; }
         public string m_name { get; set; }
+        public string m_use_sector { get; set; }
+        public string m_ok_sector { get; set; }
+        public string plan_id { get; set; }
+        public int m_use_sector_id { get; set; }
+        public int m_ok_sector_id { get; set; }
+        public string req_date { get; set; }// 요청일
+        public string reason { get; set; }//사유
+        public int w_id { get; set; }
+        public string order_id { get; set; }
+        public int m_id { get; set; }
     }
 }

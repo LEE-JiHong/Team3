@@ -152,7 +152,7 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                StringBuilder sb = new StringBuilder();
+
                 try
                 {
                     cmd.Connection = new SqlConnection(this.ConnectionString);
@@ -160,9 +160,9 @@ namespace Team3DAC
                     SqlTransaction tran = cmd.Connection.BeginTransaction();
                     string sql_1 = @"update TBL_WAREHOUSE set w_count_present = w_count_present - @req_count  
                                         where plan_id = @plan_id  and factory_id = @req_factory_id  and product_id = @product_id; 
-                                     insert into TBL_WAREHOUSE_HIS(w_id, product_id, wh_product_count, order_id,wh_udate, wh_comment, wh_category) 
-                                                                            values(@w_id, @product_id, @req_count,@order_id,     @req_date,    @reason, 'P_MOVE_ITEM')";
-;
+                                     insert into TBL_WAREHOUSE_HIS(w_id,  product_id, wh_product_count,   wh_udate, wh_comment, wh_category) 
+                                                                            values(@w_id, @product_id, @req_count,     @req_date,    @reason, 'P_MOVE_ITEM')";
+                    ;
 
                     cmd.Transaction = tran;
                     cmd.CommandText = sql_1;
@@ -177,11 +177,11 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
                         cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
                         cmd.Parameters.AddWithValue("@reason", lst[i].reason);
-                        cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
+                        //       cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
 
                         cmd.ExecuteNonQuery();
                     }
-                    
+
                     sql_1 = "FrodMove";
                     cmd.CommandText = sql_1;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -195,7 +195,7 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
                         cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
                         cmd.Parameters.AddWithValue("@reason", lst[i].reason);
-                        cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
+                        //     cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -203,7 +203,7 @@ namespace Team3DAC
                     cmd.Connection.Close();
 
                     return true;
-                  
+
                 }
                 catch (Exception err)
                 {
@@ -222,7 +222,7 @@ namespace Team3DAC
                 cmd.Connection.Open();
                 cmd.CommandText = "WorkRecode";
                 cmd.CommandType = CommandType.StoredProcedure;
-               
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WorkRecode_VO> list = Helper.DataReaderMapToList<WorkRecode_VO>(reader);
                 cmd.Connection.Close();
@@ -231,65 +231,121 @@ namespace Team3DAC
 
             }
         }
+        public bool FinishRecode(List<DMRVO> lst, List<WorkRecode_VO> w_lst)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                StringBuilder sb = new StringBuilder();
+                try
+                {
+                    cmd.Connection = new SqlConnection(this.ConnectionString);
+                    cmd.Connection.Open();
+                    SqlTransaction tran = cmd.Connection.BeginTransaction();
+                    string sql_1 = @"update TBL_PRODUCTION_PLAN set pro_state='FINISH'  where pro_id=(select pro_id from TBL_PRODUCTION_PLAN where pro_state='COMPLETE');
+                                        update TBL_WAREHOUSE set w_count_present = w_count_present - @req_count  
+                                        where plan_id = @plan_id  and factory_id = @req_factory_id  and product_id = @product_id;
+                                        insert into tbl_warehouse_his(w_id,pro_id, product_id, wh_product_count, wh_udate, wh_comment, wh_category)
+                                        values(@w_id,@pro_id, @product_id, @req_count, @req_date, @reason, 'P_PRODUCTION')";
 
+
+                    cmd.Transaction = tran;
+                    cmd.CommandText = sql_1;
+                    //뺴는작업
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@req_count", lst[i].plan_count);
+                        cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
+                        cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
+                        cmd.Parameters.AddWithValue("@req_factory_id", w_lst[0].m_use_sector_id);
+                        cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
+                        cmd.Parameters.AddWithValue("@pro_id", lst[i].pro_id);
+                        cmd.Parameters.AddWithValue("@req_date", DateTime.Now.ToShortDateString());
+
+                        if (lst[i].reason == null)
+                        {
+                            SqlParameter reason = new SqlParameter("@reason", SqlDbType.VarChar);
+                            reason.Value = DBNull.Value;
+                            cmd.Parameters.Add(reason);
+                        }
+                        else
+                            cmd.Parameters.AddWithValue("@reason", "생산실적등록");
+                        cmd.ExecuteNonQuery();
+                    }
+                    cmd.Parameters.Clear();
+                    sql_1 = "FrodMove2 ";
+                    cmd.CommandText = sql_1;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@factory_id", lst[0].factory_id);
+                    cmd.Parameters.AddWithValue("@plan_id", w_lst[0].plan_id);
+                    cmd.Parameters.AddWithValue("@product_id", w_lst[0].product_id);
+                    cmd.Parameters.AddWithValue("@pro_id", w_lst[0].pro_id);
+                    cmd.Parameters.AddWithValue("@req_count", w_lst[0].pro_count);
+                    cmd.Parameters.AddWithValue("@req_date", DateTime.Now.ToShortDateString());
+                    if (w_lst[0].reason == null)
+                    {
+                        SqlParameter reason = new SqlParameter("@reason", SqlDbType.VarChar);
+                        reason.Value = DBNull.Value;
+                        cmd.Parameters.Add(reason);
+                    }
+                    else
+                        cmd.Parameters.AddWithValue("@reason", "생산실적등록");
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+                    cmd.CommandText = "InsertRecode";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@worknum", w_lst[0].worknum);  
+                    cmd.Parameters.AddWithValue("@pro_id", w_lst[0].pro_id);
+                    cmd.Parameters.AddWithValue("@pro_date", w_lst[0].pro_date);
+                    cmd.Parameters.AddWithValue("@pd_stime", w_lst[0].pd_stime);
+                    cmd.Parameters.AddWithValue("@pd_etime", w_lst[0].pd_etime);
+                    cmd.Parameters.AddWithValue("@product_id", w_lst[0].product_id);
+                    cmd.Parameters.AddWithValue("@product_name", w_lst[0].product_name);
+                    cmd.Parameters.AddWithValue("@pro_state", w_lst[0].pro_state);
+                    cmd.Parameters.AddWithValue("@common_name", w_lst[0].common_name);
+                    cmd.Parameters.AddWithValue("@worktime", w_lst[0].worktime);
+                    cmd.Parameters.AddWithValue("@pro_count", w_lst[0].pro_count);
+                    cmd.Parameters.AddWithValue("@ok_cnt", w_lst[0].ok_cnt);
+                    cmd.Parameters.AddWithValue("@ng_cnt", w_lst[0].ng_cnt);
+                    cmd.Parameters.AddWithValue("@m_name", w_lst[0].m_name);
+                    cmd.Parameters.AddWithValue("@m_id", w_lst[0].m_id);
+                    cmd.ExecuteNonQuery();
+
+                    tran.Commit();
+                    cmd.Connection.Close();
+                    return true;
+
+                }
+                catch (Exception err)
+                {
+                    string st = err.Message;
+                    return false;
+                }
+            }
+        }
+        public List<WorkRecode_VO> GetWork()
+        {
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandText = @"select pro_date, worknum,w.product_name ,w.product_id,p.product_name, m_name, pd_stime,pd_etime,ok_cnt,ng_cnt, c.common_name as pro_state
+                                                from TBL_WORK_RECODE w inner join TBL_PRODUCT p on w.product_id = p.product_id  inner
+                                                join TBL_COMMON_CODE c on w.pro_state = c.common_value  ";
+              
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkRecode_VO> list = Helper.DataReaderMapToList<WorkRecode_VO>(reader);
+                cmd.Connection.Close();
+                return list;
+
+
+            }
+        }
     }
 }
-//        public DataTable AAA(string id, string date)
-//        {
-//        //    using (SqlCommand cmd = new SqlCommand())
-//        //    {
-//        //        StringBuilder sb = new StringBuilder();
-//        //        try
-//        //        {
-//        //            cmd.Connection = new SqlConnection(this.ConnectionString);
-//        //            cmd.Connection.Open();
-//        //            //SqlTransaction tran = cmd.Connection.BeginTransaction();
-//        //            string sql_1 = @"select p.product_id from TBL_PRODUCTION_PLAN pp 
-//        //                                        inner join TBL_DEMAND_PLAN dp on pp.d_id = dp.d_id
-//        //                                        inner join TBL_SO_MASTER so on dp.so_id = so.so_id
-//        //                                        inner join TBL_PRODUCT p on p.product_codename = so.product_name
-//        //                                        where pp.plan_id = @id and pp.pro_date =@Date ";
-//        //            //cmd.Transaction = tran;
-//        //            cmd.CommandText = sql_1;
-
-//        //            cmd.Parameters.AddWithValue("@id", id);
-//        //            cmd.Parameters.AddWithValue("@Date", date);
-//        //            SqlDataReader reader = cmd.ExecuteReader();//id
-
-
-//        //            string tID = string.Empty;
-//        //            reader.Read();
-
-//        //            tID = reader[0].ToString(); //id
-//        //            cmd.Parameters.Clear();
-//        //            cmd.Dispose();
-//        //            reader.Close();
-
-//        //            cmd.CommandText = "GetSemiManFromBOM";
-//        //            cmd.CommandType = CommandType.StoredProcedure;
-//        //            cmd.Parameters.AddWithValue("@parentid", tID);
-
-
-//        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
-//        //            DataTable dt = new DataTable();
-//        //            da.Fill(dt);
-//        //            List<int> productID = new List<int>();
-//        //            for (int i = 0; dt.Rows.Count > i; i++)
-//        //            {
-//        //               productID.Add(Convert.ToInt32(dt.Rows[i][0].ToString()));
-//        //            }
-//        //           //string sql_2 =@"select from "
-
-//        //            cmd.Dispose();
-//        //            return dt;
-//        //        }
-
-//        //        catch (Exception err)
-//        //        {
-//        //            string st = err.Message;
-//                  return null;
-//        //        }
-//            }
-//        }
-//    }
-//}
