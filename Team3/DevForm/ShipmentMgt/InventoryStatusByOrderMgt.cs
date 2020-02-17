@@ -20,7 +20,6 @@ namespace Team3.DevForm.NewFolder1
         public InventoryStatusByOrder()
         {
             InitializeComponent();
-
         }
 
         private void InventoryStatusByOrder_Load(object sender, EventArgs e)
@@ -42,7 +41,7 @@ namespace Team3.DevForm.NewFolder1
                                             select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
-            
+
             ShipmentService service_shipment = new ShipmentService();
             shipment_list = service_shipment.GetInventoryStatusByOrder();
 
@@ -53,13 +52,7 @@ namespace Team3.DevForm.NewFolder1
             chk.Width = 30;
             dgvStockStatus.Columns.Add(chk);
 
-            //Point headerLocation = dgvStockStatus.GetCellDisplayRectangle(0, -1, true).Location;
-
-            //headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            //headerCheckBox.BackColor = Color.White;
-            //headerCheckBox.Size = new Size(18, 18);
-            //headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
-            //dgvStockStatus.Controls.Add(headerCheckBox);
+        
 
             //TODO
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
@@ -90,7 +83,7 @@ namespace Team3.DevForm.NewFolder1
             dgvStockStatus.Rows.Add();
             dgvStockStatus.AllowUserToAddRows = false;
             #endregion
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", true, 130);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", false, 130);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -113,17 +106,7 @@ namespace Team3.DevForm.NewFolder1
 
 
         }
-        //private void HeaderCheckbox_Click(object sender, EventArgs e)
-        //{
-        //    dgvStockStatus.EndEdit();
-
-        //    foreach (DataGridViewRow row in dgvStockStatus.Rows)
-        //    {
-        //        DataGridViewCheckBoxCell chkBox = row.Cells["chk"] as DataGridViewCheckBoxCell;
-        //        chkBox.Value = headerCheckBox.Checked;
-        //    }
-        //}
-
+       
         private void btnExcel_Click(object sender, EventArgs e)
         {
             copyAlltoClipboard();
@@ -154,25 +137,6 @@ namespace Team3.DevForm.NewFolder1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            #region
-            //ShipmentVO vo = new ShipmentVO();
-            //for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
-            //{
-            //    //MessageBox.Show(dgvStockStatus.Rows[i].Cells[1].Value.ToString()); 
-            //    //MessageBox.Show(dgvStockStatus.Rows[i].Cells[2].Value.ToString()); 
-
-            //    if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
-            //    {
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
-            //    }
-            //    //MessageBox.Show(dgvStockStatus.SelectedRows.Count.ToString()); 
-
-            //}
-            #endregion
             foreach (DataGridViewRow row in dgvStockStatus.Rows)
             {
                 MessageBox.Show(row.Cells["so_id"].Value.ToString());
@@ -200,17 +164,8 @@ namespace Team3.DevForm.NewFolder1
                         vo.factory_name = row.Cells["combo"].Value.ToString();
                     }
 
-                    vo.w_count_present = Convert.ToInt32( row.Cells[9].Value);
+                    vo.w_count_present = Convert.ToInt32(row.Cells[9].Value);
                     vo.uadmin = 1002;
-                    //if (row.Cells[8].Value.ToString() ==null)
-                    //{
-                    //    vo.wh_comment = "";
-                    //}
-                    //else
-                    //{
-                    //    vo.wh_comment = row.Cells[8].Value.ToString();
-                    //}
-                    vo.wh_comment=  (row.Cells[8].Value == null) ? "" : row.Cells[8].Value.ToString();
                     vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
                     vo.product_id = Convert.ToInt32(row.Cells[16].Value);
                     vo.category = "P_ORDER_MOVE";
@@ -245,50 +200,6 @@ namespace Team3.DevForm.NewFolder1
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
-
-
-            //ShipmentVO _shipvo = new ShipmentVO();
-            //foreach (DataGridViewRow row in this.dgvStockStatus.SelectedRows)
-            //{
-            //    _shipvo = row.DataBoundItem as ShipmentVO;
-            //}
-            //ShipmentService shipment_service = new ShipmentService();
-            //int count = dgvStockStatus.SelectedRows.Count;
-            //if (MessageBox.Show($"선택하신 {count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
-            //{
-            //    ShipmentVO vo = new ShipmentVO();
-            //    vo.plan_id = _shipvo.plan_id;
-
-            //    for (int i = 0; i < dgvStockStatus.Rows.Count; i++)
-            //    {
-            //        if (dgvStockStatus.Rows[i].Cells["combo"].Value == null)
-            //        {
-            //            continue;
-            //        }
-            //        else
-            //        {
-            //            //MessageBox.Show(dgvStockStatus.Rows[i].Cells["combo"].Value.ToString());
-            //            vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
-            //        }
-            //        //vo.factory_name = dgvStockStatus.SelectedRows[i].Cells["combo"].Value.ToString();
-            //    }
-            //    vo.w_count_present = _shipvo.transfer_count;
-            //    vo.uadmin = 1002;
-            //    vo.wh_comment = _shipvo.wh_comment;
-            //    vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
-            //    vo.product_id = _shipvo.product_id;
-            //    vo.category = "P_ORDER_MOVE";
-            //    bool bResult = shipment_service.TransferProcessing(vo);
-            //    if (bResult)        //이동처리 성공시
-            //    {
-            //        SetBottomStatusLabel($"선택하신 {count}건의 이동처리가 완료되었습니다.");
-            //    }
-            //    else            //이동처리 실패시
-            //    {
-            //        MessageBox.Show("등록실패 , 다시시도 하세요");
-            //        return;
-            //    }
-            //}
         }
     }
 }

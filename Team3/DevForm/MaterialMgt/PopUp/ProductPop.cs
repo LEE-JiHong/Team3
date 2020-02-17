@@ -139,7 +139,7 @@ namespace Team3
             #region 입고창고cbo
             f_list = resource_service.GetFactoryAll();
             List<FactoryDB_VO> _cboInSector = (from item in f_list
-                                               where item.facility_value == "FAC200"
+                                               where item.facility_value == "FAC200" || item.facility_value=="FAC400"
                                                select item).ToList();
             ComboUtil.ComboBinding(cboInSector, _cboInSector, "factory_code", "factory_name", "선택");
             #endregion

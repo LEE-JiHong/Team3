@@ -108,6 +108,10 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(511, 7);
             // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(598, 439);
+            // 
             // lblTopProd
             // 
             this.lblTopProd.AutoSize = true;
@@ -285,6 +289,7 @@
             // 
             // txtModifier
             // 
+            this.txtModifier.Enabled = false;
             this.txtModifier.Location = new System.Drawing.Point(92, 102);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(168, 21);
@@ -292,6 +297,7 @@
             // 
             // txtModifyDate
             // 
+            this.txtModifyDate.Enabled = false;
             this.txtModifyDate.Location = new System.Drawing.Point(361, 102);
             this.txtModifyDate.Name = "txtModifyDate";
             this.txtModifyDate.Size = new System.Drawing.Size(168, 21);
@@ -331,6 +337,7 @@
             this.Name = "BomPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.BomPop_Load);
+            this.Controls.SetChildIndex(this.linePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);

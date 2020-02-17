@@ -31,18 +31,57 @@ namespace Team3DAC
                 return list;
             }
         }
-        public List<ShipmentVO> GetClientOrder()
+        public List<ShipmentOutVO> GetClientOrder()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "GetClientOrder";
+                //string sql = "SELECT s.plan_id , c.company_name, c.company_code ,s.product_name as product_codename" +
+                //    ", p.product_name, s.so_pcount" +
+                //    ", w.w_count_present as w_count_present " +
+                //    "FROM TBL_SO_MASTER s inner join TBL_COMPANY c " +
+                //    "on s.company_code = c.company_code inner join TBL_PRODUCT p " +
+                //    "on s.product_name = p.product_codename inner join TBL_WAREHOUSE w " +
+                //    "on w.plan_id = s.plan_id inner join TBL_FACTORY f " +
+                //    "on f.factory_id = w.factory_id " +
+                //    "WHERE f.factory_code = 'FAC700'";
+                string sql=@"SELECT	s.plan_id								--고객주문번호
+        , c.company_name--고객사
+		,c.company_code--고객사코드
+		,s.product_name as product_codename     --품목
+		,p.product_name--품목
+		,s.so_pcount--발주수량
+		,SUM(w.w_count_present) as w_count_present
+		,sc.s_date
+FROM TBL_SO_MASTER s inner join TBL_COMPANY c
 
+                    on s.company_code = c.company_code
+
+                    inner join TBL_PRODUCT p
+
+                    on s.product_name = p.product_codename
+
+                    inner join TBL_WAREHOUSE w
+
+                    on w.plan_id = w.plan_id and w.factory_id = 6
+
+                    inner join TBL_SALES_COMPLETE sc
+
+                    on s.so_id = sc.so_id
+
+GROUP BY s.plan_id
+		,c.company_name
+		,c.company_code
+		,s.product_name
+		,p.product_name
+		,s.so_pcount
+		,sc.s_date
+";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
-                cmd.CommandType = CommandType.StoredProcedure;
+             
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(reader);
+                List<ShipmentOutVO> list = Helper.DataReaderMapToList<ShipmentOutVO>(reader);
                 cmd.Connection.Close();
                 return list;
             }
@@ -77,14 +116,14 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@product_id", item.product_id);
                         cmd.Parameters.AddWithValue("@w_count_present", item.w_count_present);
                         cmd.Parameters.AddWithValue("@wh_uadmin", item.uadmin);//TODO : admin -> 실제 수정자
-                        if (item.wh_comment == null)
-                        {
-                            cmd.Parameters.AddWithValue("@wh_comment", "");
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@wh_comment", item.wh_comment);
-                        }
+                        //if (item.wh_comment == null)
+                        //{
+                        //    cmd.Parameters.AddWithValue("@wh_comment", "");
+                        //}
+                        //else
+                        //{
+                        //    cmd.Parameters.AddWithValue("@wh_comment", item.wh_comment);
+                        //}
                         cmd.Parameters.AddWithValue("@wh_category", item.category);
                         cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToString("yyyy-MM-dd"));
 
