@@ -40,12 +40,39 @@ namespace Team3
 
             try
             {
+                //datagridview
+                SetDataGrid();
+
                 CompanyList = service.GetCompanyAll("cooperative");
                 ComboUtil.ComboBinding(cboCompany, CompanyList, "company_code", "company_name", "선택");
 
-                DestinationList = new List<CompanyVO>();
-                DestinationList = service.GetCompanyAll("cooperative");
-                ComboUtil.ComboBinding(cboDestination, DestinationList, "company_code", "company_name", "선택");
+                //DestinationList = new List<CompanyVO>();
+                //DestinationList = service.GetCompanyAll("cooperative");
+                //ComboUtil.ComboBinding(cboDestination, DestinationList, "company_code", "company_name", "선택");
+                //조회 버튼
+                WhereSoVO vo = new WhereSoVO();
+                vo.startDate = dtpStartDate.Value.ToShortDateString();
+                vo.endDate = dtpEndDate.Value.ToShortDateString();
+
+                vo.RegStartDate = dtpRegFirstDate.Value.ToShortDateString();
+                vo.RegEndDate = dtpRegLastDate.Value.ToShortDateString();
+
+                if (cboCompany.Text != "선택")
+                {
+                    vo.CompanyName = cboCompany.Text;
+                }
+
+                try
+                {
+                    List<SOMasterVO> list = service.GetSOMasterAll(vo);
+                    dataGridView1.DataSource = list;
+                    SetBottomStatusLabel("조회가 완료되었습니다.");
+                }
+                catch (Exception err)
+                {
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                    SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
+                }
 
             }
             catch (Exception err)
@@ -53,8 +80,6 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
 
-            //datagridview
-            SetDataGrid();
         }
 
         private void SetDataGrid()
@@ -64,26 +89,26 @@ namespace Team3
             GridViewUtil.SetDataGridView(dataGridView1);
             dataGridView1.AutoGenerateColumns = false;
 
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "고객WO", "so_wo_id", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "고객WO", "so_wo_id", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "고객사코드", "company_code", true, 130);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "고객사명", "company_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "도착지코드", "company_code", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "도착지명", "company_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "고객사명", "company_name", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "도착지코드", "company_code", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "도착지명", "company_name", true, 150);
             //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "고객주문유형", "", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "등록일", "so_sdate", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "생산납기일", "so_edate", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "주문수량", "so_pcount", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출고수량", "so_ocount", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소수량", "so_ccount", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "등록일", "so_sdate", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "생산납기일", "so_edate", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "주문수량", "so_pcount", true, 150, DataGridViewContentAlignment.MiddleRight, true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출고수량", "so_ocount", true, 150, DataGridViewContentAlignment.MiddleRight, true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소수량", "so_ccount", true, 150, DataGridViewContentAlignment.MiddleRight, true);
             //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주구분", "", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "so_comment", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "so_uadmin", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정일", "so_udate", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "so_id", "so_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "plan_id", "plan_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "company_type", "company_type", false);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "so_comment", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "so_uadmin", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정일", "so_udate", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "so_id", "so_id", false, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "plan_id", "plan_id", false, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "company_type", "company_type", false, 150);
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -122,15 +147,8 @@ namespace Team3
                 foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
                 {
                     vo = row.DataBoundItem as SOMasterVO;
-                    //if (vo != null)
-                    //{
-                    //    MessageBox.Show("데이터를 선택하여주십시오.");
-                    //}
+                    
                 }
-                //for (int i = 0; i <= dataGridView1.Rows.Count; i++)
-                //{
-                //    vo = (SOMasterVO)dataGridView1.SelectedRows[i].DataBoundItem;
-                //}
 
                 //수정버튼
                 SODialog frm = new SODialog(SODialog.EditMode.Update, vo);
@@ -244,7 +262,48 @@ namespace Team3
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                LoggingUtility.GetLoggingUtility(ex.Message, Level.Error);
+                SetBottomStatusLabel("다운로드에 실패하였습니다.");
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            //새로고침 버튼
+            //납기일 초기화
+            dtpStartDate.Value = DateTime.Now;
+            dtpEndDate.Value = DateTime.Now.AddMonths(+1).AddDays(-1);
+
+            //등록일 초기화
+            dtpRegFirstDate.Value = DateTime.Now.AddMonths(-1);
+            dtpRegLastDate.Value = DateTime.Now;
+
+            cboCompany.SelectedIndex = 0;
+
+            OrderService service = new OrderService();
+
+            WhereSoVO vo = new WhereSoVO();
+            vo.startDate = dtpStartDate.Value.ToShortDateString();
+            vo.endDate = dtpEndDate.Value.ToShortDateString();
+
+            vo.RegStartDate = dtpRegFirstDate.Value.ToShortDateString();
+            vo.RegEndDate = dtpRegLastDate.Value.ToShortDateString();
+
+            if (cboCompany.Text != "선택")
+            {
+                vo.CompanyName = cboCompany.Text;
+            }
+
+            try
+            {
+                List<SOMasterVO> list = service.GetSOMasterAll(vo);
+                dataGridView1.DataSource = list;
+                SetBottomStatusLabel("조회가 완료되었습니다.");
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
             }
         }
     }
