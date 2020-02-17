@@ -135,7 +135,7 @@ namespace Team3DAC
             {
                 StringBuilder sql = new StringBuilder();
                     
-                sql.Append($"select wh_id, pro_id, w_id, product_id, order_id, wh_product_count, wh_uadmin, wh_udate, wh_comment, wh_category from TBL_WAREHOUSE_HIS");
+                sql.Append($"select wh_id, factory_name, product_codename, c1.common_name as product_type,product_name, order_id, wh_product_count,pp.price_present, (wh_product_count * pp.price_present) as totalprice, wh_udate, wh_comment, c.common_name as wh_category from TBL_WAREHOUSE_HIS h inner join TBL_PRODUCT p on h.product_id = p.product_id inner join TBL_P_PRICE pp on pp.product_id = p.product_id inner join TBL_COMMON_CODE c on c.common_value = h.wh_category inner join TBL_WAREHOUSE w on w.w_id = h.w_id inner join TBL_FACTORY f on f.factory_id = w.factory_id inner join TBL_COMMON_CODE c1 on c1.common_value = p.product_type where pp.price_edate = '9999-12-31' order by wh_udate desc");
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql.ToString();
