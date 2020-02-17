@@ -44,6 +44,12 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void ShipmentClosingMgt_Load(object sender, EventArgs e)
         {
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.HeaderText = "선택";
+
+            chk.Name = "chk";
+            chk.Width = 30;
+            dgvClientOrder.Columns.Add(chk);
 
         }
     }

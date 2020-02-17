@@ -304,6 +304,7 @@
             this.dgvStockStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvStockStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStockStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStockStatus.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.dgvStockStatus.Location = new System.Drawing.Point(0, 0);
             this.dgvStockStatus.Name = "dgvStockStatus";
             this.dgvStockStatus.RowTemplate.Height = 23;

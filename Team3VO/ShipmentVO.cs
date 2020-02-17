@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Team3VO
 {
+    /// <summary>
+    /// 이동수량VO
+    /// </summary>
     public class ShipmentVO
     {
         public int so_id { get; set; }
@@ -33,7 +36,9 @@ namespace Team3VO
         public int transfer_count { get; set; }
 
     }
-
+    /// <summary>
+    /// 마감처리VO
+    /// </summary>
     public class ShipmentOutVO
     {
         public int so_id { get; set; }

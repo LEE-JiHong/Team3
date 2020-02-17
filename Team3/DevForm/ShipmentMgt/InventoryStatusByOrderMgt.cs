@@ -42,15 +42,9 @@ namespace Team3.DevForm.NewFolder1
                                             select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
-
-
-
-
-
-            DataTable dt = new DataTable();
+            
             ShipmentService service_shipment = new ShipmentService();
             shipment_list = service_shipment.GetInventoryStatusByOrder();
-
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
