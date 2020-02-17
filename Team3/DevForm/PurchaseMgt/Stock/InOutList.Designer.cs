@@ -31,21 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InOutList));
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cboFactory = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -68,19 +62,13 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.comboBox4);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.cboFactory);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.comboBox7);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dtpEndDate);
             this.panel1.Controls.Add(this.dtpStartDate);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Size = new System.Drawing.Size(942, 116);
             // 
@@ -141,16 +129,6 @@
             this.label13.TabIndex = 54;
             this.label13.Text = "품목";
             // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(333, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 16);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "카테고리";
-            // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -161,15 +139,6 @@
             this.label9.TabIndex = 52;
             this.label9.Text = "창고";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "입출고유형";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -178,15 +147,6 @@
             this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 50;
             this.label3.Text = "입출고일";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "관리등급";
             // 
             // flowLayoutPanel1
             // 
@@ -250,22 +210,6 @@
             this.dtpStartDate.Size = new System.Drawing.Size(89, 22);
             this.dtpStartDate.TabIndex = 80;
             // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(96, 43);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(206, 24);
-            this.comboBox7.TabIndex = 83;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 24);
-            this.comboBox1.TabIndex = 84;
-            // 
             // cboFactory
             // 
             this.cboFactory.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -274,15 +218,6 @@
             this.cboFactory.Name = "cboFactory";
             this.cboFactory.Size = new System.Drawing.Size(206, 24);
             this.cboFactory.TabIndex = 85;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(402, 43);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(206, 24);
-            this.comboBox3.TabIndex = 86;
             // 
             // textBox1
             // 
@@ -345,19 +280,13 @@
         #endregion
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox cboFactory;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox1;
