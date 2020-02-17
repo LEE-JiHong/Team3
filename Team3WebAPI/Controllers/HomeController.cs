@@ -38,9 +38,10 @@ namespace Team3WebAPI.Controllers
             homevo.SalseRate = hdac3.GetSalesRate();
 
             homevo.SalesPrice = string.Format("{0:c}", Convert.ToInt32(homevo.SalseRate[1].price));
-            homevo.SalesRateToView = ((homevo.SalseRate[1].price  / homevo.SalseRate[0].price ) * 100).ToString()+"%";
+            homevo.SalesRateToView = ((homevo.SalseRate[1].price  / homevo.SalseRate[0].price ) * 100).ToString("#.0")+"%";
             
-            
+
+
             if((homevo.SalseRate[1].price / homevo.SalseRate[0].price) * 100>100)
             {
                 homevo.SalesRateBool = true;

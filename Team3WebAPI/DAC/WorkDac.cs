@@ -34,7 +34,24 @@ namespace Team3WebAPI
             }
         }
 
-        public List<TodayUnWorkingVO> GetTodayUnWorkingTimeData()
+        public List<WorkChartVO> GetWorkTimeRank()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select pd.worker_id,u.user_name,sum(worktime) time from (select * from TBL_PRODUCTION_PLAN where year(pro_date)=year(getdate())) pp inner join TBL_PRODUCTION_PLAN_DETAIL pd on pp.pro_id = pd.pro_id inner join TBL_USER u on pd.worker_id = u.user_id group by pd.worker_id,u.user_name order by time desc";
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkChartVO> list = Helper.DataReaderMapToList<WorkChartVO>(reader);
+
+                cmd.Connection.Close();
+                return list;
+
+            }
+        }
+            public List<TodayUnWorkingVO> GetTodayUnWorkingTimeData()
         {
             using (SqlCommand cmd = new SqlCommand())
             {

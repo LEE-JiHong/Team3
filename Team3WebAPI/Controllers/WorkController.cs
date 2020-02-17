@@ -35,8 +35,20 @@ namespace Team3WebAPI.Controllers
 
             WorkDac wdac3 = new WorkDac();
             workvo.TodayUnworkData = wdac3.GetTodayUnWorkingTimeData();
-            
 
+            WorkDac wdac4 = new WorkDac();
+            workvo.ChartRankData = wdac4.GetWorkTimeRank();
+            string data = "[";
+            string name = string.Empty;
+            foreach (var item in workvo.ChartRankData)
+            { 
+                name += item.user_name + ",";
+                data += item.time+",";
+            }
+            data = data.TrimEnd(',') + "]";
+
+            ViewBag.Data = data;
+            ViewBag.Name = name;
             return View(workvo);
         }
     }

@@ -63,7 +63,7 @@ namespace Team3WebAPI
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "SELECT CONVERT(CHAR(7), s_date,23) s_month,SUM(S_COUNT) s_count,SUM(s_TotalPrice) totalprice,s_company FROM TBL_SALES_COMPLETE where CONVERT(CHAR(7), s_date,23) between CONVERT(CHAR(7),(select DATEADD(YYYY, -1, getdate())),23)  AND CONVERT(CHAR(7),(select DATEADD(YYYY, 0, getdate())),23)  GROUP BY CONVERT(CHAR(7), s_date, 23), s_company order by s_month";
+                string sql = "SELECT CONVERT(CHAR(7), s_date,23) s_month,SUM(S_COUNT) s_count,SUM(s_TotalPrice) totalprice FROM TBL_SALES_COMPLETE where CONVERT(CHAR(7), s_date,23) between CONVERT(CHAR(7),(select DATEADD(YYYY, -1, getdate())),23)  AND CONVERT(CHAR(7),(select DATEADD(MM, -1, getdate())),23)  GROUP BY CONVERT(CHAR(7), s_date, 23) order by s_month";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
@@ -89,6 +89,24 @@ namespace Team3WebAPI
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<LastestOrderDataVO> list = Helper.DataReaderMapToList<LastestOrderDataVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public List<SalesChartVO> GetOrderCostList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "SELECT convert(nvarchar,month(order_sdate)) s_month ,sum(o.order_count* p.price_present) totalprice FROM TBL_ORDER o inner join  TBL_P_PRICE p on o.product_id = p.product_id WHERE YEAR(order_sdate) = YEAR(GETDATE()) group by month(order_sdate) having month(order_sdate) between month(DATEADD(MONTH,-1,GETDATE())) and month(getdate())";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesChartVO> list = Helper.DataReaderMapToList<SalesChartVO>(reader);
                 reader.Close();
                 cmd.Connection.Close();
                 return list;
