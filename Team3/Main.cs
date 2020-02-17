@@ -844,16 +844,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            else
-            {
-                ISIMgt frm = new ISIMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
+            
         }
 
         private void treeView6_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
