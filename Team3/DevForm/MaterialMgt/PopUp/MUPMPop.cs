@@ -128,7 +128,7 @@ namespace Team3
                 txtCurrentPrice.Text = vo.price_past.ToString();
                 dtpStartDate.Value = Convert.ToDateTime( vo.price_sdate);
                 txtEndDate.Text = vo.price_edate;
-                txtModifyDate.Text = vo.price_udate;
+                txtModifyDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 txtNote.Text = vo.price_comment;
 
 
@@ -199,7 +199,13 @@ namespace Team3
                     }
                     else
                     {
-                        txtBeforePrice.Text = "";
+                        txtBeforePrice.Text = string.Empty;
+                        cboCompany.SelectedIndex = 0;
+                        txtEndDate.Text = string.Empty;
+                        txtNote.Text = string.Empty;
+                        txtModifyDate.Text = string.Empty;
+                        txtModifier.Text = string.Empty;
+                        cboIsUsed.SelectedIndex = 0;
                     }
 
                 }

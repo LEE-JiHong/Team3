@@ -52,6 +52,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
@@ -84,12 +85,10 @@
             this.panel1.Controls.Add(this.cboOrderType);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblDeliveryCompany);
-            this.panel1.Controls.Add(this.cboDestination);
             this.panel1.Controls.Add(this.cboOrderStatus);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.lblWH);
             this.panel1.Controls.Add(this.lblCompany);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblWHing);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Size = new System.Drawing.Size(1090, 124);
@@ -106,12 +105,18 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(886, 144);
-            this.panel3.Size = new System.Drawing.Size(217, 29);
+            this.panel3.Location = new System.Drawing.Point(854, 144);
+            this.panel3.Size = new System.Drawing.Size(249, 29);
             // 
             // TopMenu
             // 
+            this.TopMenu.Controls.Add(this.cboDestination);
+            this.TopMenu.Controls.Add(this.label5);
             this.TopMenu.Size = new System.Drawing.Size(1115, 60);
+            this.TopMenu.Controls.SetChildIndex(this.label5, 0);
+            this.TopMenu.Controls.SetChildIndex(this.cboDestination, 0);
+            this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
+            this.TopMenu.Controls.SetChildIndex(this.layoutButton, 0);
             // 
             // layoutButton
             // 
@@ -134,6 +139,7 @@
             // 
             // dgvClientOrder
             // 
+            this.dgvClientOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvClientOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientOrder.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -216,20 +222,20 @@
             // 
             // cboOrderType
             // 
-            this.cboOrderType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboOrderType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboOrderType.FormattingEnabled = true;
-            this.cboOrderType.Location = new System.Drawing.Point(800, 85);
+            this.cboOrderType.Location = new System.Drawing.Point(465, 85);
             this.cboOrderType.Name = "cboOrderType";
-            this.cboOrderType.Size = new System.Drawing.Size(209, 24);
+            this.cboOrderType.Size = new System.Drawing.Size(229, 24);
             this.cboOrderType.TabIndex = 115;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(702, 88);
+            this.label6.Location = new System.Drawing.Point(367, 88);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 107;
@@ -250,10 +256,11 @@
             // 
             this.cboDestination.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboDestination.FormattingEnabled = true;
-            this.cboDestination.Location = new System.Drawing.Point(464, 85);
+            this.cboDestination.Location = new System.Drawing.Point(433, 22);
             this.cboDestination.Name = "cboDestination";
-            this.cboDestination.Size = new System.Drawing.Size(230, 24);
+            this.cboDestination.Size = new System.Drawing.Size(230, 20);
             this.cboDestination.TabIndex = 118;
+            this.cboDestination.Visible = false;
             // 
             // cboOrderStatus
             // 
@@ -306,11 +313,12 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(367, 88);
+            this.label5.Location = new System.Drawing.Point(336, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 110;
             this.label5.Text = "도착지";
+            this.label5.Visible = false;
             // 
             // lblWHing
             // 
@@ -339,11 +347,12 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(217, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -355,7 +364,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(158, 3);
+            this.btnExcel.Location = new System.Drawing.Point(190, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(56, 23);
             this.btnExcel.TabIndex = 42;
@@ -373,13 +382,30 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(77, 3);
+            this.button1.Location = new System.Drawing.Point(109, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 43;
             this.button1.Text = "마감취소";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(39, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(64, 23);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "리포트";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // btnSelect
             // 
@@ -398,6 +424,7 @@
             this.btnSelect.Text = "조회";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // txtProduct
             // 
@@ -418,6 +445,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
+            this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientOrder)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -453,5 +481,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button button2;
     }
 }

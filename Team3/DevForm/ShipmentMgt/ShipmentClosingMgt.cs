@@ -14,6 +14,7 @@ namespace Team3.DevForm.ShipmentMgt
     public partial class ShipmentClosingMgt : Team3.VerticalGridBaseForm
     {
         ShipmentService shipment_service;
+        int price_present = 0;
         public ShipmentClosingMgt()
         {
             InitializeComponent();
@@ -47,9 +48,14 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void ShipmentClosingMgt_Load(object sender, EventArgs e)
         {
+            SetDGV();
+        }
+
+        private void SetDGV()
+        {
             shipment_service = new ShipmentService();
             List<ShipmentOutVO> shipmentlist = shipment_service.GetClientOrder();
-           
+
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
 
@@ -59,29 +65,34 @@ namespace Team3.DevForm.ShipmentMgt
 
 
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "plan_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사코드", "company_code", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사", "company_name", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "주문수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            //GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "주문가능수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "취소수량", "so_ccount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감수량", "incount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감확정수량", "incount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출확정금액", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight);
+            
+            //TODO 쿼리수정
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "주문가능수량", "orderable_count", false, 100, DataGridViewContentAlignment.MiddleRight);
+
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감수량", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvClientOrder, "매출확정수량", "s_count", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출확정금액", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일자", "s_date", true, 100, DataGridViewContentAlignment.MiddleRight);
 
-
-
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품번", "product_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "so_id", "so_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "취소수량", "so_ccount", false, 100, DataGridViewContentAlignment.MiddleRight);
+
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "To창고이름", "w_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "납기일", "so_edate", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "From창고", "from_wh", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "From창고재고", "w_count_present", false, 100, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvClientOrder, "비고", "wh_comment", false, 130);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvClientOrder, "이동수량", "transfer_count", false, 130);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "so_id", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
+
+
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "업로드날짜", "so_sdate", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사코드", "company_code", false, 100, DataGridViewContentAlignment.MiddleCenter);
+
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "업체유형", "company_type", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "From창고코드", "from_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "출고수량", "so_ocount", false, 100, DataGridViewContentAlignment.MiddleRight);
@@ -93,7 +104,7 @@ namespace Team3.DevForm.ShipmentMgt
             dgvClientOrder.AutoGenerateColumns = false;
             dgvClientOrder.DataSource = shipmentlist;
         }
-        
+
         /// <summary>
         /// 마감처리
         /// </summary>
@@ -109,19 +120,21 @@ namespace Team3.DevForm.ShipmentMgt
                 {
                     ShipmentOutVO vo = new ShipmentOutVO();
 
-                    vo.plan_id = row.Cells[0].Value.ToString();
-                    vo.company_name = row.Cells[1].Value.ToString();
-                    vo.product_codename = row.Cells[2].Value.ToString();
-                    vo.product_name = row.Cells[3].Value.ToString();
-                    //vo.s_date = row.Cells[11].Value.ToString();          >>CellLeave이벤트
-                    vo.so_pcount = Convert.ToInt32(row.Cells[4].Value);
-
-                    vo.w_count_present = Convert.ToInt32(row.Cells[9].Value);
-                    vo.uadmin = 1002;
-                    vo.wh_comment = (row.Cells[8].Value == null) ? "" : row.Cells[8].Value.ToString();
-                    vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
-                    vo.product_id = Convert.ToInt32(row.Cells[16].Value);
-                    vo.category = "P_SALES_COMPLETE";
+                    vo.so_id = Convert.ToInt32(row.Cells[12].Value);
+                    vo.product_id = Convert.ToInt32(row.Cells[11].Value);
+                    vo.plan_id = row.Cells[1].Value.ToString();
+                    //vo.product_codename = row.Cells[3].Value.ToString();
+                    vo.s_count = Convert.ToInt32(row.Cells[8].Value); 
+                    vo.company_code= row.Cells[2].Value.ToString();
+                    vo.s_date = row.Cells[10].Value.ToString();
+                    vo.s_totalprice = Convert.ToDecimal(row.Cells[9].Value);
+                    //vo.so_pcount = Convert.ToInt32(row.Cells[4].Value);
+                    //vo.w_count_present = Convert.ToInt32(row.Cells[9].Value);
+                    //vo.uadmin = 1002;
+                    //vo.wh_comment = (row.Cells[8].Value == null) ? "" : row.Cells[8].Value.ToString();
+                    //vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
+                    
+                    //vo.category = "P_SALES_COMPLETE";
 
                     list.Add(vo);
                 }
@@ -159,7 +172,25 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void dgvClientOrder_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
+            
+            
+        }
 
+        private void dgvClientOrder_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            shipment_service = new ShipmentService();
+            price_present = shipment_service.GetPresentPrice(Convert.ToInt32(dgvClientOrder[11,dgvClientOrder.CurrentRow.Index].Value));
+        }
+
+        private void dgvClientOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                dgvClientOrder[9, dgvClientOrder.CurrentRow.Index].Value =
+                    Convert.ToDecimal(dgvClientOrder[8, dgvClientOrder.CurrentRow.Index].Value) * price_present;
+
+                dgvClientOrder[10, dgvClientOrder.CurrentRow.Index].Value = DateTime.Now.ToString("yyyy-MM-dd");
+            }
         }
     }
 }

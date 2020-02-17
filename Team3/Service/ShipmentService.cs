@@ -31,5 +31,10 @@ namespace Team3
             ShipmentDac dac = new ShipmentDac();
             return dac.EndProcessing(list);
         }
+        public int GetPresentPrice(int product_id)
+        {
+            ShipmentDac dac = new ShipmentDac();
+            return dac.GetPresentPrice(product_id);
+        }
     }
 }

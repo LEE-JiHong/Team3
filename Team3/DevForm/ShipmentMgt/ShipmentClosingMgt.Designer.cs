@@ -132,6 +132,8 @@
             this.dgvClientOrder.Size = new System.Drawing.Size(1188, 415);
             this.dgvClientOrder.TabIndex = 0;
             this.dgvClientOrder.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientOrder_CellLeave);
+            this.dgvClientOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientOrder_CellValueChanged);
+            this.dgvClientOrder.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvClientOrder_DataBindingComplete);
             // 
             // txtOrderNum
             // 

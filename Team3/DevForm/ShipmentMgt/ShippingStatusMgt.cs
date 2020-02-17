@@ -5,12 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Team3VO;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3.DevForm.ShipmentMgt
 {
     public partial class ShippingStatusMgt : Team3.VerticalGridBaseForm
     {
+        ShipmentService shipment_service;
+        List<ShipmentOutVO> shipment_list;
         public ShippingStatusMgt()
         {
             InitializeComponent();
@@ -42,6 +45,21 @@ namespace Team3.DevForm.ShipmentMgt
                 Clipboard.SetDataObject(dataObj);
         }
 
+        private void ShippingStatusMgt_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+          
+
+
+
+
+
+
+
+        }
     }
 }

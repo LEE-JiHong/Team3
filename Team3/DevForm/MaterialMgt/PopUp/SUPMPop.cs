@@ -126,6 +126,11 @@ namespace Team3
         {
             if (edit == EditMode.Update)
             {
+
+                txtModifyDate.Enabled = false;
+                txtEndDate.Enabled = false;
+
+
                 cboCompany.SelectedValue = vo.company_id;
                 cboProduct.SelectedValue = vo.product_id;
                 cboIsUsed.SelectedValue = vo.price_yn;
@@ -133,12 +138,11 @@ namespace Team3
                 txtCurrentPrice.Text = vo.price_present.ToString();
                 dtpStartDate.Value = Convert.ToDateTime(vo.price_sdate);
                 txtEndDate.Text = vo.price_edate;
-                txtModifyDate.Text = vo.price_udate;
+                txtModifyDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 //txt수정자
                 txtNote.Text = vo.price_comment;
 
-                txtModifyDate.Enabled = false;
-                txtEndDate.Enabled = false;
+               
             }
         }
 
@@ -198,7 +202,13 @@ namespace Team3
                     }
                     else
                     {
-                        txtBeforePrice.Text = "";
+                        txtBeforePrice.Text = string.Empty;
+                        cboCompany.SelectedIndex = 0;
+                        txtEndDate.Text = string.Empty;
+                        txtNote.Text = string.Empty;
+                        txtModifyDate.Text = string.Empty;
+                        txtModifier.Text = string.Empty;
+                        cboIsUsed.SelectedIndex = 0;
                     }
 
                 }
