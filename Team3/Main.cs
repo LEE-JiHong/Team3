@@ -1026,26 +1026,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            else if (e.Node.Text == "제품출하")
-            {
-                ProductForwardingMgt frm = new ProductForwardingMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
-            else if (e.Node.Text == "출하현황")
-            {
-                ShippingStatusMgt frm = new ShippingStatusMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
+            
             else if (e.Node.Text == "매출마감")
             {
                 ShipmentClosingMgt frm = new ShipmentClosingMgt();

@@ -126,12 +126,12 @@
             this.dgvClientOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvClientOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvClientOrder.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.dgvClientOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvClientOrder.Name = "dgvClientOrder";
             this.dgvClientOrder.RowTemplate.Height = 23;
             this.dgvClientOrder.Size = new System.Drawing.Size(1188, 415);
             this.dgvClientOrder.TabIndex = 0;
-            this.dgvClientOrder.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientOrder_CellLeave);
             this.dgvClientOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientOrder_CellValueChanged);
             this.dgvClientOrder.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvClientOrder_DataBindingComplete);
             // 
@@ -347,6 +347,7 @@
             this.ClientSize = new System.Drawing.Size(1212, 699);
             this.Name = "ShipmentClosingMgt";
             this.Tag = "매출마감";
+            this.Text = "매출마감";
             this.Load += new System.EventHandler(this.ShipmentClosingMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

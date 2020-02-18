@@ -36,5 +36,10 @@ namespace Team3
             ShipmentDac dac = new ShipmentDac();
             return dac.GetPresentPrice(product_id);
         }
+        public DataTable GetSalesCompleteStatus()
+        {
+            ShipmentDac dac = new ShipmentDac();
+            return dac.GetSalesCompleteStatus();
+        }
     }
 }
