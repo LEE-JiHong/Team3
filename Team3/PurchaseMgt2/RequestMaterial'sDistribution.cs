@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Team3.Service;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Team3
 {
@@ -22,11 +25,14 @@ namespace Team3
         DataTable dt;
         private void DMRMgt_Load(object sender, EventArgs e)
         {
+             dataGridView1.RowHeadersVisible = false;
 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             checkBoxColumn.Name = "ck";
             checkBoxColumn.HeaderText = "선택";
+            checkBoxColumn.MinimumWidth= 50;
             dataGridView1.Columns.Add(checkBoxColumn);
 
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "pro_id", "pro_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
@@ -63,11 +69,8 @@ namespace Team3
                 dataGridView1.DataSource = table;
 
             }
-
             GridViewUtil.SetDataGridView(dataGridView1);
         }
-
-
 
 
         ProcessService P_service = new ProcessService();
@@ -180,44 +183,35 @@ namespace Team3
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex > 0) return;
 
             try
             {
+                int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                bool bresult = !Convert.ToBoolean(dataGridView1.CurrentRow.Cells[0].EditedFormattedValue);
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-
-                    dataGridView1.Rows[i].Cells[0].Value = false;
-                }
-                int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
-                string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-
-                bool bresult = false;
-
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-
                     if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) == p_id)
                     {
-                        //dataGridView1.Rows[i].Cells[0].Value = !bresult;
-
-                        bresult = Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value);
-                        dataGridView1.Rows[i].Cells[0].Value = !bresult;
+                        dataGridView1.Rows[i].Cells[0].Value = bresult;
                     }
-
+                    else
+                    {
+                        if (bresult)
+                        { dataGridView1.Rows[i].Cells[0].Value = !bresult; }
+                    }
                 }
-
             }
             catch (Exception err)
             {
-
                 string st = err.Message;
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+             
             dataGridView2.Columns.Clear();
             DataTable table = new DataTable();
             dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
@@ -264,6 +258,79 @@ namespace Team3
             {
                 string st = err.Message;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExcelEX(dataGridView1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void ExcelEX(DataGridView grid)
+        {
+            Excel.Application excel = new Excel.Application
+            {
+                Visible = true
+            };
+
+            string filename = "test" + ".xlsx"; // ++ 파일명 변경 
+
+            string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+            //byte[] temp = Properties.Resources.order;
+
+            //System.IO.File.WriteAllBytes(tempPath, temp);
+
+            Excel._Workbook workbook;
+
+            workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+
+            Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+            int StartCol = 1;
+            int StartRow = 1;
+            int j = 0, i = 0;
+
+            //Write Headers
+            for (j = 0; j < grid.Columns.Count; j++)
+            {
+                Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                myRange.Value2 = grid.Columns[j].HeaderText;
+            }
+
+            StartRow++;
+
+            //Write datagridview content
+            for (i = 0; i < grid.Rows.Count; i++)
+            {
+                for (j = 0; j < grid.Columns.Count; j++)
+                {
+                    try
+                    {
+                        Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                        myRange.Value2 = grid[j, i].Value == null ? "" : grid[j, i].Value;
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                    }
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ExcelEX(dataGridView2);
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

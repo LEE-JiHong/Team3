@@ -44,8 +44,9 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEX = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -102,8 +103,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(927, 137);
-            this.panel3.Size = new System.Drawing.Size(186, 38);
+            this.panel3.Location = new System.Drawing.Point(927, 142);
+            this.panel3.Size = new System.Drawing.Size(186, 33);
             // 
             // TopMenu
             // 
@@ -293,13 +294,50 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnEX);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(186, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(186, 33);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(103, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 53;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnEX
+            // 
+            this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEX.Location = new System.Drawing.Point(42, 1);
+            this.btnEX.Margin = new System.Windows.Forms.Padding(1);
+            this.btnEX.Name = "btnEX";
+            this.btnEX.Size = new System.Drawing.Size(59, 26);
+            this.btnEX.TabIndex = 51;
+            this.btnEX.Text = "엑셀";
+            this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEX.UseVisualStyleBackColor = false;
+            this.btnEX.Click += new System.EventHandler(this.btnEX_Click);
             // 
             // button2
             // 
@@ -316,23 +354,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
-            // 
-            // btnEX
-            // 
-            this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
-            this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEX.Location = new System.Drawing.Point(125, 3);
-            this.btnEX.Name = "btnEX";
-            this.btnEX.Size = new System.Drawing.Size(58, 32);
-            this.btnEX.TabIndex = 51;
-            this.btnEX.Text = "엑셀";
-            this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEX.UseVisualStyleBackColor = false;
-            this.btnEX.Click += new System.EventHandler(this.btnEX_Click);
             // 
             // btnSearch
             // 
@@ -496,5 +517,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

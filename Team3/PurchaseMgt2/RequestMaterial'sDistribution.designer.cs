@@ -64,12 +64,14 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(12, 287);
             this.panel3.Size = new System.Drawing.Size(1105, 153);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(12, 123);
             this.panel2.Size = new System.Drawing.Size(1106, 126);
             // 
@@ -168,6 +170,7 @@
             this.button5.Text = "엑셀";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -195,6 +198,7 @@
             this.button6.Text = "엑셀";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnSave
             // 

@@ -47,6 +47,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,8 +91,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(686, 130);
-            this.panel3.Size = new System.Drawing.Size(436, 29);
+            this.panel3.Location = new System.Drawing.Point(554, 130);
+            this.panel3.Size = new System.Drawing.Size(568, 29);
             // 
             // TopMenu
             // 
@@ -205,6 +206,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button9);
@@ -214,7 +216,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button3
@@ -224,7 +226,8 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::Team3.Properties.Resources.Copy_16x16;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(376, 3);
+            this.button3.Location = new System.Drawing.Point(426, 1);
+            this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(57, 23);
             this.button3.TabIndex = 53;
@@ -240,7 +243,8 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(313, 3);
+            this.button2.Location = new System.Drawing.Point(367, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(57, 23);
             this.button2.TabIndex = 52;
@@ -256,7 +260,8 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(180, 3);
+            this.button9.Location = new System.Drawing.Point(238, 1);
+            this.button9.Margin = new System.Windows.Forms.Padding(1);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(127, 23);
             this.button9.TabIndex = 48;
@@ -272,7 +277,8 @@
             this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWork.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnWork.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWork.Location = new System.Drawing.Point(73, 3);
+            this.btnWork.Location = new System.Drawing.Point(135, 1);
+            this.btnWork.Margin = new System.Windows.Forms.Padding(1);
             this.btnWork.Name = "btnWork";
             this.btnWork.Size = new System.Drawing.Size(101, 23);
             this.btnWork.TabIndex = 51;
@@ -288,7 +294,8 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(10, 3);
+            this.button5.Location = new System.Drawing.Point(76, 1);
+            this.button5.Margin = new System.Windows.Forms.Padding(1);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(57, 23);
             this.button5.TabIndex = 50;
@@ -346,6 +353,24 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "계획시작일";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(485, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 23);
+            this.btnRefresh.TabIndex = 54;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // GOO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -387,5 +412,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

@@ -38,6 +38,7 @@
             this.btnG_Update = new System.Windows.Forms.Button();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEX = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -102,8 +103,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Location = new System.Drawing.Point(736, 12);
-            this.panel1.Size = new System.Drawing.Size(289, 29);
+            this.panel1.Location = new System.Drawing.Point(674, 12);
+            this.panel1.Size = new System.Drawing.Size(351, 29);
             // 
             // TopMenu
             // 
@@ -284,6 +285,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel2.Controls.Add(this.btnDelete);
             this.flowLayoutPanel2.Controls.Add(this.btnEX);
             this.flowLayoutPanel2.Controls.Add(this.btnUpdate);
@@ -292,8 +294,26 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(289, 29);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(351, 29);
             this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(268, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 52;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDelete
             // 
@@ -304,7 +324,7 @@
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDelete.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(226, 1);
+            this.btnDelete.Location = new System.Drawing.Point(204, 1);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(62, 26);
@@ -323,7 +343,7 @@
             this.btnEX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEX.Location = new System.Drawing.Point(162, 1);
+            this.btnEX.Location = new System.Drawing.Point(140, 1);
             this.btnEX.Margin = new System.Windows.Forms.Padding(1);
             this.btnEX.Name = "btnEX";
             this.btnEX.Size = new System.Drawing.Size(62, 26);
@@ -342,7 +362,7 @@
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(98, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(76, 1);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(62, 26);
@@ -361,7 +381,7 @@
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(34, 1);
+            this.btnAdd.Location = new System.Drawing.Point(12, 1);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(62, 26);
@@ -575,5 +595,6 @@
         private System.Windows.Forms.Label lblID1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

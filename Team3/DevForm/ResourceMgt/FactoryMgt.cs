@@ -136,7 +136,7 @@ namespace Team3
           
         }
 
-        private void ExcelLoad()
+        public void ExcelLoad()
         {
             try
             {
@@ -230,6 +230,13 @@ namespace Team3
                 SetBottomStatusLabel("검색 결과가 없습니다");
             }
             dataGridView1.CurrentCell = null;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtSearchFacility.Text = "";
+            cboSearchFacilityGroup.SelectedIndex = 0;
+            LoadData();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Team3
     //State of Order's Operation 작업 지시 현황
     public partial class SOO : Team3.VerticalGridBaseForm
     {
-
+        DateTime today = DateTime.Now;
         public SOO()
         {
             InitializeComponent();
@@ -46,12 +46,12 @@ namespace Team3
 
                 ComboUtil.ComboBinding(cboMachine, R_service.GetMachineAll(), "m_id", "m_name", "미선택");
             }
-            DateTime today = DateTime.Now;
+
             dateTimePicker1.Value = today.AddDays(-10);
             dateTimePicker2.Value = today.AddDays(20);
 
 
-           dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
+            dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
 
 
             GridViewUtil.SetDataGridView(dataGridView1);
@@ -75,7 +75,7 @@ namespace Team3
         }
 
         DataTable table = new DataTable();
-         
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
@@ -214,12 +214,29 @@ namespace Team3
             {
                 MessageBox.Show(ex.ToString());
             }
-        
-    }
+
+        }
 
         private void cboWH_SelectedIndexChanged(object sender, EventArgs e)
         {
             radioButton6.Checked = true;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+            foreach (Control con in panel1.Controls)
+            {
+                if (con is ComboBox cb)
+                {
+                    cb.SelectedIndex = 0;
+
+                }
+            }
+            dateTimePicker1.Value = today.AddDays(-10);
+            dateTimePicker2.Value = today.AddDays(20);
+            dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
+            dataGridView1.DataSource = dt;
         }
     }
 }

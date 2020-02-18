@@ -43,6 +43,7 @@
             this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.cboMachine = new System.Windows.Forms.ComboBox();
             this.txtProduct = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -87,8 +88,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(756, 116);
-            this.panel3.Size = new System.Drawing.Size(144, 32);
+            this.panel3.Location = new System.Drawing.Point(704, 116);
+            this.panel3.Size = new System.Drawing.Size(196, 32);
             // 
             // TopMenu
             // 
@@ -168,12 +169,13 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnEX);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(144, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 32);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnEX
@@ -181,10 +183,11 @@
             this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEX.Location = new System.Drawing.Point(76, 3);
+            this.btnEX.Location = new System.Drawing.Point(46, 1);
+            this.btnEX.Margin = new System.Windows.Forms.Padding(1);
             this.btnEX.Name = "btnEX";
             this.btnEX.Size = new System.Drawing.Size(65, 26);
             this.btnEX.TabIndex = 4;
@@ -270,6 +273,24 @@
             this.txtProduct.Size = new System.Drawing.Size(215, 26);
             this.txtProduct.TabIndex = 100;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(113, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 54;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ProductPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -306,5 +327,6 @@
         private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.ComboBox cboPlanID;
         private System.Windows.Forms.TextBox txtProduct;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
