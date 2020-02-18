@@ -105,8 +105,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(854, 144);
-            this.panel3.Size = new System.Drawing.Size(249, 29);
+            this.panel3.Location = new System.Drawing.Point(790, 144);
+            this.panel3.Size = new System.Drawing.Size(313, 29);
             // 
             // TopMenu
             // 
@@ -352,7 +352,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -364,7 +364,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(190, 3);
+            this.btnExcel.Location = new System.Drawing.Point(254, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(56, 23);
             this.btnExcel.TabIndex = 42;
@@ -382,7 +382,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(109, 3);
+            this.button1.Location = new System.Drawing.Point(173, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 43;
@@ -399,7 +399,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(39, 3);
+            this.button2.Location = new System.Drawing.Point(103, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 23);
             this.button2.TabIndex = 44;

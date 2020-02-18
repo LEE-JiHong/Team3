@@ -102,34 +102,36 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dt == null)
+            {
+                MessageBox.Show("조회를 먼저 해야합니다.");
+                return;
+            }
+            else
+            {
+                shipment_service = new ShipmentService();
+                shipment_service.GetSalesCompleteStatus();
+                SalesComplete ds = new SalesComplete();
 
-            shipment_service = new ShipmentService();
+
+                Report_SalesComplete rpt = new Report_SalesComplete();
 
 
+                dt.TableName = "salescomplete";
+                ds.Tables.Add(dt);
+                rpt.DataSource = ds.Tables["salescomplete"];
 
+                WinReport_SC frm = new WinReport_SC(rpt);
+                frm.documentViewer1.DocumentSource = rpt;
 
+                //??
+                frm.documentViewer1.PrintingSystem.ExecCommand(
+                    DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
+                    , new object[] { true });
 
-
-
-            shipment_service.GetSalesCompleteStatus();
-            SalesComplete ds = new SalesComplete();
-
-
-            Report_SalesComplete rpt = new Report_SalesComplete();
-
-            //rpt.DataSource = dt;
-            dt.TableName = "salescomplete";
-            ds.Tables.Add(dt);
-            rpt.DataSource = ds.Tables["salescomplete"];
-
-            WinReport_SC frm = new WinReport_SC();
-            frm.documentViewer1.DocumentSource = rpt;
-            
-            frm.documentViewer1.PrintingSystem.ExecCommand(
-                DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
-                , new object[] { true });
-
-            frm.ShowDialog();
+                frm.ShowDialog();
+            }
+           
         }
     }
 }
