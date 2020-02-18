@@ -1,13 +1,16 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Team3.Service;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
@@ -218,6 +221,77 @@ namespace Team3
                 string st = err.Message;
             }
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoadingForm f = new LoadingForm();
+
+            f.Function = (() => { ExcelDown(); });
+
+            f.ShowDialog();
+
+        }
+
+        private void ExcelDown()
+        {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
+
+                string filename = "test" + ".xlsx";
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.order;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);//tempPath
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dataGridView1.Columns.Count - 3; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (j = 0; j < dataGridView1.Columns.Count - 3; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                        }
+                        catch
+                        {
+                            ;
+                        }
+                    }
+                }
+
+                SetBottomStatusLabel("다운로드가 완료되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                LoggingUtility.GetLoggingUtility(ex.Message, Level.Error);
+                SetBottomStatusLabel("다운로드에 실패하였습니다.");
+            }
         }
     }
 }
