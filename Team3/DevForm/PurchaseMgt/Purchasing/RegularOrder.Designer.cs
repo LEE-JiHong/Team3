@@ -247,6 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(982, 724);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "RegularOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "정규발주";

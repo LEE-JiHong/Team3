@@ -223,6 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1264, 692);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "OrderDialog";
             this.Load += new System.EventHandler(this.OrderDialog_Load);
             this.panel6.ResumeLayout(false);

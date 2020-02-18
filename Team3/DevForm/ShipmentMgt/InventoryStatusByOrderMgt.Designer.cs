@@ -38,7 +38,6 @@
             this.lblStandardDate = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.btnFormDownload = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,8 +85,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(757, 136);
-            this.panel3.Size = new System.Drawing.Size(255, 29);
+            this.panel3.Location = new System.Drawing.Point(856, 136);
+            this.panel3.Size = new System.Drawing.Size(156, 29);
             // 
             // TopMenu
             // 
@@ -195,14 +194,13 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
-            this.flowLayoutPanel1.Controls.Add(this.btnFormDownload);
             this.flowLayoutPanel1.Controls.Add(this.btnTransfer);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(255, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(156, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -214,7 +212,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(196, 3);
+            this.btnExcel.Location = new System.Drawing.Point(97, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(56, 23);
             this.btnExcel.TabIndex = 38;
@@ -222,23 +220,6 @@
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // btnFormDownload
-            // 
-            this.btnFormDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnFormDownload.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFormDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFormDownload.Image = global::Team3.Properties.Resources.Open2_16x16;
-            this.btnFormDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormDownload.Location = new System.Drawing.Point(109, 3);
-            this.btnFormDownload.Name = "btnFormDownload";
-            this.btnFormDownload.Size = new System.Drawing.Size(81, 23);
-            this.btnFormDownload.TabIndex = 39;
-            this.btnFormDownload.Text = "상세조회";
-            this.btnFormDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFormDownload.UseVisualStyleBackColor = false;
             // 
             // btnTransfer
             // 
@@ -249,7 +230,7 @@
             this.btnTransfer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTransfer.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnTransfer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTransfer.Location = new System.Drawing.Point(27, 3);
+            this.btnTransfer.Location = new System.Drawing.Point(15, 3);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(76, 23);
             this.btnTransfer.TabIndex = 37;
@@ -318,7 +299,7 @@
             this.ClientSize = new System.Drawing.Size(1024, 674);
             this.Name = "InventoryStatusByOrder";
             this.Tag = "고객주문별재고현황";
-            this.Text = "9";
+            this.Text = "고객주문별재고현황";
             this.Load += new System.EventHandler(this.InventoryStatusByOrder_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -344,7 +325,6 @@
         private System.Windows.Forms.Label lblStandardDate;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button btnFormDownload;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.ComboBox cboFromFac;
         private System.Windows.Forms.Label label5;

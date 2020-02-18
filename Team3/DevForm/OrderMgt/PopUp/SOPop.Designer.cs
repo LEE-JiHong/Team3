@@ -274,6 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(628, 466);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "SODialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.SODialog_Load);
