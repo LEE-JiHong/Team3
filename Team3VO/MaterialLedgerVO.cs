@@ -38,6 +38,7 @@ namespace Team3VO
         public int factory_id { get; set; }
         public string factory_name { get; set; }
         public string product_name { get; set; }
+        public string product_type { get; set; }
         public string order_serial { get; set; }
     }
 }

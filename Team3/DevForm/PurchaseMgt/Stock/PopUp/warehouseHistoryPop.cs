@@ -22,6 +22,8 @@ namespace Team3
 
         private void warehouseHistoryPop_Load(object sender, EventArgs e)
         {
+            SetDataGrid();
+
             try
             {
                 StockService service = new StockService();
@@ -32,6 +34,25 @@ namespace Team3
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
+        }
+
+        private void SetDataGrid()
+        {
+            dataGridView1.Columns.Clear();
+
+            GridViewUtil.SetDataGridView(dataGridView1);
+            dataGridView1.AutoGenerateColumns = false;
+
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "HISTORY 번호", "wh_id", false, 110);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "창고번호", "w_id", false, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "제품번호", "product_id", false, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "Plan ID", "plan_id", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수량", "wh_product_count", true, 150);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "수정일", "wh_udate", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "잔량", "wh_comment", false, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "카테고리", "common_name", true, 150);
         }
     }
 }

@@ -42,10 +42,10 @@ namespace Team3
             return dac.GetInFactory();
         }
 
-        public DataTable GetInOutHistory()
+        public DataTable GetInOutHistory(MaterialSearchVO vo)
         {
             StockDAC dac = new StockDAC();
-            return dac.GetInOutHistory();
+            return dac.GetInOutHistory(vo);
         }
     }
 }

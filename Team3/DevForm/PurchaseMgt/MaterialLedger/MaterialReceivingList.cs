@@ -42,39 +42,6 @@ namespace Team3
             SetLoad();
 
             SetDataGrid();
-            try
-            {
-                MaterialSearchVO vo = new MaterialSearchVO();
-                vo.startDate = dtpStartDate.Value.ToShortDateString();
-                vo.endDate = dtpEndDate.Value.ToShortDateString();
-
-                if (cboCompany.Text != "선택")
-                {
-                    vo.company_name = cboCompany.Text;
-                }
-                if (cboFactory.Text != "선택")
-                {
-                    vo.factory_name = cboFactory.Text;
-                }
-                if (txtOrderSerial.Text != "")
-                {
-                    vo.order_serial = txtOrderSerial.Text;
-                }
-                if (txtProduct.Text != "")
-                {
-                    vo.product_name = txtProduct.Text;
-                }
-
-                //조회 버튼
-                MaterialLedgerService service = new MaterialLedgerService();
-                DataTable dt = service.GetMaterialInList(vo);
-                SetDataGrid();
-                dataGridView1.DataSource = dt;
-            }
-            catch (Exception err)
-            {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
-            }
         }
 
         private void SetLoad()
@@ -260,39 +227,7 @@ namespace Team3
         {
             //새로고침 버튼
             SetLoad();
-            try
-            {
-                MaterialSearchVO vo = new MaterialSearchVO();
-                vo.startDate = dtpStartDate.Value.ToShortDateString();
-                vo.endDate = dtpEndDate.Value.ToShortDateString();
 
-                if (cboCompany.Text != "선택")
-                {
-                    vo.company_name = cboCompany.Text;
-                }
-                if (cboFactory.Text != "선택")
-                {
-                    vo.factory_name = cboFactory.Text;
-                }
-                if (txtOrderSerial.Text != "")
-                {
-                    vo.order_serial = txtOrderSerial.Text;
-                }
-                if (txtProduct.Text != "")
-                {
-                    vo.product_name = txtProduct.Text;
-                }
-
-                //조회 버튼
-                MaterialLedgerService service = new MaterialLedgerService();
-                DataTable dt = service.GetMaterialInList(vo);
-                SetDataGrid();
-                dataGridView1.DataSource = dt;
-            }
-            catch (Exception err)
-            {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
-            }
         }
     }
 }
