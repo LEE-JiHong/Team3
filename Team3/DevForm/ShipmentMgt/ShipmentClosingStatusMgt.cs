@@ -91,7 +91,7 @@ namespace Team3.DevForm.ShipmentMgt
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "주문수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감수량", "s_count", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출액", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight,true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출액", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일", "s_date", true, 100, DataGridViewContentAlignment.MiddleCenter);
 
 
@@ -102,37 +102,34 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
+            shipment_service = new ShipmentService();
+
+
+
+
+
+
+
             shipment_service.GetSalesCompleteStatus();
-
-
-
-
             SalesComplete ds = new SalesComplete();
+
+
             Report_SalesComplete rpt = new Report_SalesComplete();
+
+            //rpt.DataSource = dt;
+            dt.TableName = "salescomplete";
+            ds.Tables.Add(dt);
+            rpt.DataSource = ds.Tables["salescomplete"];
+
+            WinReport_SC frm = new WinReport_SC();
+            frm.documentViewer1.DocumentSource = rpt;
             
-            rpt.DataSource = dt;
+            frm.documentViewer1.PrintingSystem.ExecCommand(
+                DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
+                , new object[] { true });
 
-
-
-           
-            
-            
-            
-            //ReportPreview frm = new ReportPreview(rpt);
-
-            //Form2 frm = new Form2();
-            //frm.documentViewer1.DocumentSource = rpt;
-            //frm.ShowDialog();
-
-
-
-
-
-
-
-
-
+            frm.ShowDialog();
         }
     }
 }

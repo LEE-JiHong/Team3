@@ -4,5 +4,8 @@
 
     partial class SalesComplete
     {
+        partial class DataTable1DataTable
+        {
+        }
     }
 }

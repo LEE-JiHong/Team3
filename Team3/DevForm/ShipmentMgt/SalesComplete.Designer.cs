@@ -295,6 +295,8 @@ namespace Team3.DevForm.ShipmentMgt {
             
             private global::System.Data.DataColumn columnproduct_id;
             
+            private global::System.Data.DataColumn columnproduct_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable1DataTable() {
@@ -394,6 +396,14 @@ namespace Team3.DevForm.ShipmentMgt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn product_nameColumn {
+                get {
+                    return this.columnproduct_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace Team3.DevForm.ShipmentMgt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string plan_id, string company_name, string s_date, string s_count, string s_company, string s_id, string s_TotalPrice, string product_id) {
+            public DataTable1Row AddDataTable1Row(string plan_id, string company_name, string s_date, string s_count, string s_company, string s_id, string s_TotalPrice, string product_id, string product_name) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         plan_id,
@@ -439,7 +449,8 @@ namespace Team3.DevForm.ShipmentMgt {
                         s_company,
                         s_id,
                         s_TotalPrice,
-                        product_id};
+                        product_id,
+                        product_name};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -477,6 +488,7 @@ namespace Team3.DevForm.ShipmentMgt {
                 this.columns_id = base.Columns["s_id"];
                 this.columns_TotalPrice = base.Columns["s_TotalPrice"];
                 this.columnproduct_id = base.Columns["product_id"];
+                this.columnproduct_name = base.Columns["product_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,6 +510,8 @@ namespace Team3.DevForm.ShipmentMgt {
                 base.Columns.Add(this.columns_TotalPrice);
                 this.columnproduct_id = new global::System.Data.DataColumn("product_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproduct_id);
+                this.columnproduct_name = new global::System.Data.DataColumn("product_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproduct_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("DataTable1Key1", new global::System.Data.DataColumn[] {
                                 this.columns_id}, true));
                 this.columns_id.AllowDBNull = false;
@@ -767,6 +781,22 @@ namespace Team3.DevForm.ShipmentMgt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string product_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.product_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'DataTable1\' 테이블의 \'product_name\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.product_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isplan_idNull() {
                 return this.IsNull(this.tableDataTable1.plan_idColumn);
             }
@@ -847,6 +877,18 @@ namespace Team3.DevForm.ShipmentMgt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setproduct_idNull() {
                 this[this.tableDataTable1.product_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isproduct_nameNull() {
+                return this.IsNull(this.tableDataTable1.product_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setproduct_nameNull() {
+                this[this.tableDataTable1.product_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
