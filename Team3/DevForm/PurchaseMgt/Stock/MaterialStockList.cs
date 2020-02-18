@@ -41,6 +41,37 @@ namespace Team3
             SetLoad();
 
             SetDataGrid();
+            //조회버튼
+            try
+            {
+                MaterialStockVO vo = new MaterialStockVO();
+
+                if (txtProductCode.Text != "")
+                {
+                    vo.product_codename = txtProductCode.Text;
+                }
+
+                if (cboProductType.Text != "선택")
+                {
+                    vo.product_type = cboProductType.Text;
+                }
+
+                if (cboFactory.Text != "선택")
+                {
+                    vo.factory_code = cboFactory.SelectedValue.ToString();
+                }
+
+                DataTable dt = service.GetMaterialStockList(vo);
+                SetDataGrid();
+                dataGridView1.DataSource = dt;
+                SetRowNumber();
+
+                //dataGridView1.Columns[6].DefaultCellStyle.BackColor = Color.Red;
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
 
         private void SetLoad()
@@ -130,6 +161,38 @@ namespace Team3
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             SetLoad();
+            //조회버튼
+            try
+            {
+                MaterialStockVO vo = new MaterialStockVO();
+
+                if (txtProductCode.Text != "")
+                {
+                    vo.product_codename = txtProductCode.Text;
+                }
+
+                if (cboProductType.Text != "선택")
+                {
+                    vo.product_type = cboProductType.Text;
+                }
+
+                if (cboFactory.Text != "선택")
+                {
+                    vo.factory_code = cboFactory.SelectedValue.ToString();
+                }
+
+                StockService service = new StockService();
+                DataTable dt = service.GetMaterialStockList(vo);
+                SetDataGrid();
+                dataGridView1.DataSource = dt;
+                SetRowNumber();
+
+                //dataGridView1.Columns[6].DefaultCellStyle.BackColor = Color.Red;
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
     }
 }

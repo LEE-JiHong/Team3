@@ -254,12 +254,6 @@
     <Compile Include="DevForm\PurchaseMgt\Purchasing\OrderList.Designer.cs">
       <DependentUpon>OrderList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\RegularOrder2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\RegularOrder2.Designer.cs">
-      <DependentUpon>RegularOrder2.cs</DependentUpon>
-    </Compile>
     <Compile Include="DevForm\PurchaseMgt\Stock\InOutList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -580,9 +574,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder2.resx">
-      <DependentUpon>RegularOrder2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\InOutList.resx">
       <DependentUpon>InOutList.cs</DependentUpon>

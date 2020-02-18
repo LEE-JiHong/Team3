@@ -170,7 +170,7 @@ namespace Team3DAC
 
                 if (vo.product_type != null)
                 {
-                    sql.Append($" and product_type = @product_type");
+                    sql.Append($" and c1.common_name = @product_type");
                     cmd.Parameters.AddWithValue("@product_type", vo.product_type);
                 }
 
