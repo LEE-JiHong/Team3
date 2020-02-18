@@ -99,5 +99,40 @@ namespace Team3.DevForm.ShipmentMgt
             dgvClientOrder.AutoGenerateColumns = false;
             dgvClientOrder.DataSource = dt;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            shipment_service.GetSalesCompleteStatus();
+
+
+
+
+            SalesComplete ds = new SalesComplete();
+            Report_SalesComplete rpt = new Report_SalesComplete();
+            
+            rpt.DataSource = dt;
+
+
+
+           
+            
+            
+            
+            //ReportPreview frm = new ReportPreview(rpt);
+
+            //Form2 frm = new Form2();
+            //frm.documentViewer1.DocumentSource = rpt;
+            //frm.ShowDialog();
+
+
+
+
+
+
+
+
+
+        }
     }
 }

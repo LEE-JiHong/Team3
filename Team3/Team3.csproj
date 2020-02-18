@@ -379,6 +379,14 @@
     <Compile Include="DevForm\ShipmentMgt\Report_SalesComplete.Designer.cs">
       <DependentUpon>Report_SalesComplete.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForm\ShipmentMgt\SalesComplete.cs">
+      <DependentUpon>SalesComplete.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DevForm\ShipmentMgt\SalesComplete.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesComplete.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DevForm\ShipmentMgt\ShipmentClosingMgt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -704,6 +712,17 @@
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
+    </None>
+    <None Include="DevForm\ShipmentMgt\SalesComplete.xsc">
+      <DependentUpon>SalesComplete.xsd</DependentUpon>
+    </None>
+    <None Include="DevForm\ShipmentMgt\SalesComplete.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalesComplete.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DevForm\ShipmentMgt\SalesComplete.xss">
+      <DependentUpon>SalesComplete.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
