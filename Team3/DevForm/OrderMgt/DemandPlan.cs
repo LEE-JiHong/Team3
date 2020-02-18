@@ -158,6 +158,10 @@ namespace Team3
                 dt.Columns[4].ColumnName = "고객주문번호";
                 dt.Columns[5].ColumnName = "품목";
 
+                dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
 
                 //foreach (DataColumn dc in dt.Columns)
                 //{

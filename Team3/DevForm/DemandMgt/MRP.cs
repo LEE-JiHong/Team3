@@ -36,6 +36,11 @@ namespace Team3
 
             //string planID = cboPlanID.Text;
 
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
             dtpStartDate.Value = DateTime.Now;
             dtpEndDate.Value = DateTime.Now.AddMonths(+1).AddDays(-1);
 
