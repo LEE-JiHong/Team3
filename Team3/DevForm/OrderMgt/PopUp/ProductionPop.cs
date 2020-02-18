@@ -168,7 +168,7 @@ namespace Team3
                 return;
             }
 
-            if (MessageBox.Show("생산계획을 생성하시겠습니까?") == DialogResult.OK)
+            if (MessageBox.Show("생산계획을 생성하시겠습니까?", "생산계힉생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 OrderService service = new OrderService();
                 bool result = service.AddProductionPlan(list);

@@ -97,6 +97,7 @@
             // 
             // linePanel
             // 
+            this.linePanel.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.linePanel.Size = new System.Drawing.Size(628, 466);
             // 
             // label2

@@ -47,21 +47,24 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Size = new System.Drawing.Size(875, 660);
+            this.panel2.Location = new System.Drawing.Point(13, 43);
+            this.panel2.Size = new System.Drawing.Size(875, 657);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(557, 6);
-            this.panel3.Size = new System.Drawing.Size(332, 29);
+            this.panel3.Location = new System.Drawing.Point(516, 6);
+            this.panel3.Size = new System.Drawing.Size(373, 36);
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Size = new System.Drawing.Size(168, 19);
+            this.label1.Location = new System.Drawing.Point(15, 9);
+            this.label1.Size = new System.Drawing.Size(199, 28);
             this.label1.Text = "영업마스터업로드(PO)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -97,7 +100,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(875, 660);
+            this.dataGridView1.Size = new System.Drawing.Size(875, 657);
             this.dataGridView1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -107,10 +110,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCreatePO);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(332, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(373, 36);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnAddExcel
@@ -122,9 +125,9 @@
             this.btnAddExcel.ForeColor = System.Drawing.Color.Black;
             this.btnAddExcel.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExcel.Location = new System.Drawing.Point(241, 3);
+            this.btnAddExcel.Location = new System.Drawing.Point(278, 3);
             this.btnAddExcel.Name = "btnAddExcel";
-            this.btnAddExcel.Size = new System.Drawing.Size(88, 23);
+            this.btnAddExcel.Size = new System.Drawing.Size(92, 26);
             this.btnAddExcel.TabIndex = 20;
             this.btnAddExcel.Text = "Excel등록";
             this.btnAddExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,9 +143,9 @@
             this.btnDownload.ForeColor = System.Drawing.Color.Black;
             this.btnDownload.Image = global::Team3.Properties.Resources.LoadFrom_16x16;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(129, 3);
+            this.btnDownload.Location = new System.Drawing.Point(164, 3);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(106, 23);
+            this.btnDownload.Size = new System.Drawing.Size(108, 26);
             this.btnDownload.TabIndex = 22;
             this.btnDownload.Text = "양식 다운로드";
             this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -158,9 +161,9 @@
             this.btnCreatePO.ForeColor = System.Drawing.Color.Black;
             this.btnCreatePO.Image = global::Team3.Properties.Resources.ModelEditor_GenerateContent;
             this.btnCreatePO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreatePO.Location = new System.Drawing.Point(10, 3);
+            this.btnCreatePO.Location = new System.Drawing.Point(43, 3);
             this.btnCreatePO.Name = "btnCreatePO";
-            this.btnCreatePO.Size = new System.Drawing.Size(113, 23);
+            this.btnCreatePO.Size = new System.Drawing.Size(115, 26);
             this.btnCreatePO.TabIndex = 21;
             this.btnCreatePO.Text = "영업마스터생성";
             this.btnCreatePO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -177,6 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(900, 796);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "SalesMasterUpload";
             this.Tag = "영업마스터업로드(PO)";
             this.Text = "영업마스터업로드(PO)";
