@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -270,12 +273,6 @@
     </Compile>
     <Compile Include="DevForm\PurchaseMgt\Purchasing\OrderList.Designer.cs">
       <DependentUpon>OrderList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\RegularOrder2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\PurchaseMgt\Purchasing\RegularOrder2.Designer.cs">
-      <DependentUpon>RegularOrder2.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\PurchaseMgt\Stock\InOutList.cs">
       <SubType>Form</SubType>
@@ -600,9 +597,6 @@
     <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\PurchaseMgt\Purchasing\RegularOrder2.resx">
-      <DependentUpon>RegularOrder2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DevForm\PurchaseMgt\Stock\InOutList.resx">
       <DependentUpon>InOutList.cs</DependentUpon>
     </EmbeddedResource>
@@ -749,6 +743,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo.ico" />
     <Content Include="Resources\loading.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

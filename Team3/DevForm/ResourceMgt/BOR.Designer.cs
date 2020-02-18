@@ -37,6 +37,7 @@
             this.cboProcess = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEX = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -75,10 +76,11 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 111);
-            this.label1.Size = new System.Drawing.Size(60, 18);
+            this.label1.Location = new System.Drawing.Point(12, 101);
+            this.label1.Size = new System.Drawing.Size(71, 28);
             this.label1.Text = "BOR";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -114,32 +116,32 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(29, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 16);
+            this.label2.Size = new System.Drawing.Size(33, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "품목";
             // 
             // txtItem
             // 
-            this.txtItem.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtItem.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtItem.Location = new System.Drawing.Point(64, 29);
+            this.txtItem.Location = new System.Drawing.Point(68, 29);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(201, 22);
+            this.txtItem.Size = new System.Drawing.Size(201, 26);
             this.txtItem.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(278, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "공정";
             // 
@@ -147,31 +149,31 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(548, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 16);
+            this.label4.Size = new System.Drawing.Size(33, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "설비";
             // 
             // txtFacility
             // 
             this.txtFacility.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFacility.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFacility.Location = new System.Drawing.Point(583, 29);
+            this.txtFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtFacility.Location = new System.Drawing.Point(587, 29);
             this.txtFacility.Name = "txtFacility";
-            this.txtFacility.Size = new System.Drawing.Size(201, 22);
+            this.txtFacility.Size = new System.Drawing.Size(201, 26);
             this.txtFacility.TabIndex = 2;
             // 
             // cboProcess
             // 
             this.cboProcess.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboProcess.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(315, 28);
+            this.cboProcess.Location = new System.Drawing.Point(317, 28);
             this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(201, 23);
+            this.cboProcess.Size = new System.Drawing.Size(201, 28);
             this.cboProcess.TabIndex = 1;
             // 
             // dataGridView1
@@ -190,6 +192,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnEX);
             this.flowLayoutPanel1.Controls.Add(this.btnDel);
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
@@ -201,15 +204,33 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(593, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(510, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 54;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // btnEX
             // 
             this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEX.Location = new System.Drawing.Point(534, 1);
+            this.btnEX.Location = new System.Drawing.Point(450, 1);
             this.btnEX.Margin = new System.Windows.Forms.Padding(1);
             this.btnEX.Name = "btnEX";
             this.btnEX.Size = new System.Drawing.Size(58, 26);
@@ -224,10 +245,10 @@
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(474, 1);
+            this.btnDel.Location = new System.Drawing.Point(390, 1);
             this.btnDel.Margin = new System.Windows.Forms.Padding(1);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(58, 26);
@@ -242,10 +263,10 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(414, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(330, 1);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(58, 26);
@@ -260,10 +281,10 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(354, 1);
+            this.btnAdd.Location = new System.Drawing.Point(270, 1);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(58, 26);
@@ -279,13 +300,13 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(830, 44);
+            this.btnSearch.Location = new System.Drawing.Point(833, 50);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(65, 30);
+            this.btnSearch.Size = new System.Drawing.Size(73, 30);
             this.btnSearch.TabIndex = 72;
             this.btnSearch.Text = "조회";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,6 +320,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 73;
+            this.lblID.Visible = false;
             // 
             // lblRoute
             // 
@@ -347,5 +369,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblRoute;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

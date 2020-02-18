@@ -25,6 +25,7 @@ namespace Team3
         }
         private void FactoryMgt_Load(object sender, EventArgs e)
         {
+            
             this.ImeMode = ImeMode.Hangul;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "factory_id",false ,60);
@@ -135,7 +136,7 @@ namespace Team3
           
         }
 
-        private void ExcelLoad()
+        public void ExcelLoad()
         {
             try
             {
@@ -229,6 +230,13 @@ namespace Team3
                 SetBottomStatusLabel("검색 결과가 없습니다");
             }
             dataGridView1.CurrentCell = null;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtSearchFacility.Text = "";
+            cboSearchFacilityGroup.SelectedIndex = 0;
+            LoadData();
         }
     }
 }

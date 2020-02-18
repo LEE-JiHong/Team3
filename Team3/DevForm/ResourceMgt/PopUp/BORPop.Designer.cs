@@ -107,6 +107,10 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(516, 7);
             // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(605, 440);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -276,6 +280,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 15);
             this.lblID.TabIndex = 4;
+            this.lblID.Visible = false;
             // 
             // lblRoute
             // 

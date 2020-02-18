@@ -38,6 +38,7 @@
             this.btnG_Update = new System.Windows.Forms.Button();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEX = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.panel3.Location = new System.Drawing.Point(338, 43);
             this.panel3.Size = new System.Drawing.Size(687, 520);
             // 
@@ -78,15 +80,17 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.panel2.Location = new System.Drawing.Point(8, 43);
             this.panel2.Size = new System.Drawing.Size(310, 217);
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.Location = new System.Drawing.Point(8, 15);
+            this.label1.Size = new System.Drawing.Size(81, 26);
             this.label1.Text = "설비군";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -99,8 +103,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Location = new System.Drawing.Point(768, 12);
-            this.panel1.Size = new System.Drawing.Size(257, 29);
+            this.panel1.Location = new System.Drawing.Point(674, 12);
+            this.panel1.Size = new System.Drawing.Size(351, 29);
             // 
             // TopMenu
             // 
@@ -163,13 +167,13 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(335, 21);
+            this.label2.Location = new System.Drawing.Point(345, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 23;
             this.label2.Text = "설비";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -227,14 +231,14 @@
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(132, 1);
+            this.btnDel.Location = new System.Drawing.Point(128, 1);
             this.btnDel.Margin = new System.Windows.Forms.Padding(1);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(57, 23);
+            this.btnDel.Size = new System.Drawing.Size(61, 27);
             this.btnDel.TabIndex = 50;
             this.btnDel.Text = "삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,14 +250,14 @@
             this.btnG_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnG_Update.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnG_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnG_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnG_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnG_Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnG_Update.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnG_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnG_Update.Location = new System.Drawing.Point(78, 1);
+            this.btnG_Update.Location = new System.Drawing.Point(70, 1);
             this.btnG_Update.Margin = new System.Windows.Forms.Padding(1);
             this.btnG_Update.Name = "btnG_Update";
-            this.btnG_Update.Size = new System.Drawing.Size(52, 23);
+            this.btnG_Update.Size = new System.Drawing.Size(56, 27);
             this.btnG_Update.TabIndex = 79;
             this.btnG_Update.Text = "수정";
             this.btnG_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -265,14 +269,14 @@
             this.btnAddGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnAddGroup.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddGroup.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAddGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddGroup.Location = new System.Drawing.Point(24, 1);
+            this.btnAddGroup.Location = new System.Drawing.Point(12, 1);
             this.btnAddGroup.Margin = new System.Windows.Forms.Padding(1);
             this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(52, 23);
+            this.btnAddGroup.Size = new System.Drawing.Size(56, 27);
             this.btnAddGroup.TabIndex = 48;
             this.btnAddGroup.Text = "등록";
             this.btnAddGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -281,6 +285,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel2.Controls.Add(this.btnDelete);
             this.flowLayoutPanel2.Controls.Add(this.btnEX);
             this.flowLayoutPanel2.Controls.Add(this.btnUpdate);
@@ -289,22 +294,40 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(257, 29);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(351, 29);
             this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(268, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 52;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDelete.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(198, 1);
+            this.btnDelete.Location = new System.Drawing.Point(204, 1);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(58, 26);
+            this.btnDelete.Size = new System.Drawing.Size(62, 26);
             this.btnDelete.TabIndex = 50;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -316,14 +339,14 @@
             this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEX.Location = new System.Drawing.Point(138, 1);
+            this.btnEX.Location = new System.Drawing.Point(140, 1);
             this.btnEX.Margin = new System.Windows.Forms.Padding(1);
             this.btnEX.Name = "btnEX";
-            this.btnEX.Size = new System.Drawing.Size(58, 26);
+            this.btnEX.Size = new System.Drawing.Size(62, 26);
             this.btnEX.TabIndex = 49;
             this.btnEX.Text = "엑셀";
             this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -335,14 +358,14 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(78, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(76, 1);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(58, 26);
+            this.btnUpdate.Size = new System.Drawing.Size(62, 26);
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -354,14 +377,14 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(18, 1);
+            this.btnAdd.Location = new System.Drawing.Point(12, 1);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(58, 26);
+            this.btnAdd.Size = new System.Drawing.Size(62, 26);
             this.btnAdd.TabIndex = 48;
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -572,5 +595,6 @@
         private System.Windows.Forms.Label lblID1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

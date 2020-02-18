@@ -25,6 +25,10 @@ namespace Team3
 
         private void facilityMgt_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "mgrade_id", false, 60);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비군 코드", "mgrade_code", true);
@@ -98,8 +102,8 @@ namespace Team3
             }
             txtCode.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtAdmin.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtDate.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtAdmin.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtDate.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
 
@@ -318,6 +322,21 @@ namespace Team3
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID2.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+            LoadData();
+            foreach (Control ctrl in basepanel.Controls)
+            {
+                if (typeof(TextBox) == ctrl.GetType())
+                {
+                    ctrl.Text = "";
+                }
+            }
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
         }
     }
 }

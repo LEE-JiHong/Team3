@@ -129,8 +129,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목형태", "product_type", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주시리얼", "order_id", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수량", "wh_product_count", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "단가", "price_present", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "금액", "totalprice", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "단가", "price_present", true, 150, DataGridViewContentAlignment.MiddleRight, true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "금액", "totalprice", true, 150, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "wh_comment", true, 150);
 
             GridViewUtil.SetDoNotSort(dataGridView1);

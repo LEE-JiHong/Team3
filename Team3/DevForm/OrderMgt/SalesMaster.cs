@@ -104,8 +104,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소수량", "so_ccount", true, 150, DataGridViewContentAlignment.MiddleRight, true);
             //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주구분", "", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "so_comment", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "so_uadmin", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정일", "so_udate", true, 150);
+            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정자", "so_uadmin", true, 150);
+            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수정일", "so_udate", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "so_id", "so_id", false, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "plan_id", "plan_id", false, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "company_type", "company_type", false, 150);

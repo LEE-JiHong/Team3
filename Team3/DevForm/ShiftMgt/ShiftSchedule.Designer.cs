@@ -43,6 +43,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dataGridView1);
             // 
             // panel1
@@ -255,6 +257,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(47, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(224, 85);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "미사용";
+            // 
             // ShiftSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -291,5 +304,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
     }
 }

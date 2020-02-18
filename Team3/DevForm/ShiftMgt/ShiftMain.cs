@@ -7,7 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using Team3VO;
 using System.Linq;
-
+using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace Team3
 {
@@ -138,7 +139,7 @@ namespace Team3
             else if (cboShift.Text != "전체")
             {
                 table = dt.AsEnumerable().Where(Row => Row.Field<string>("common_name") == cboShift.Text).CopyToDataTable();
-                
+
                 dataGridView1.DataSource = table;
 
             }
@@ -159,7 +160,7 @@ namespace Team3
                 }
 
             }
-            if(cboShift.Text != "전체" &&cboMachine.Text != "미선택")
+            if (cboShift.Text != "전체" && cboMachine.Text != "미선택")
             {
                 DataView dv = dt.DefaultView;
                 dv.RowFilter = "common_name = '" + cboShift.Text + "' and m_name = '" + cboMachine.Text + "'";
@@ -168,6 +169,74 @@ namespace Team3
                     table = dv.ToTable();
                     dataGridView1.DataSource = table;
                 }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            using (frmWaitForm frm = new frmWaitForm(ExcelLoad))
+            {
+                frm.ShowDialog(this);
+            }
+
+        }
+
+        public void ExcelLoad()
+        {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
+
+                string filename = this.Tag.ToString() + ".xlsx"; // ++ 파일명 변경 
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show(err.Message);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

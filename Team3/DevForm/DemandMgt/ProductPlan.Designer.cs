@@ -43,6 +43,7 @@
             this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.cboMachine = new System.Windows.Forms.ComboBox();
             this.txtProduct = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,22 +72,24 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Size = new System.Drawing.Size(890, 101);
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(15, 131);
-            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.Location = new System.Drawing.Point(12, 122);
+            this.label1.Size = new System.Drawing.Size(100, 26);
             this.label1.Text = "생산계획";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(759, 118);
-            this.panel3.Size = new System.Drawing.Size(144, 29);
+            this.panel3.Location = new System.Drawing.Point(704, 116);
+            this.panel3.Size = new System.Drawing.Size(196, 32);
             // 
             // TopMenu
             // 
@@ -115,9 +118,10 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(616, 24);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(633, 23);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 16);
+            this.label12.Size = new System.Drawing.Size(33, 20);
             this.label12.TabIndex = 54;
             this.label12.Text = "품목";
             // 
@@ -125,27 +129,30 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(332, 25);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(320, 24);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 16);
+            this.label8.Size = new System.Drawing.Size(44, 20);
             this.label8.TabIndex = 53;
             this.label8.Text = "Date";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 16);
+            this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 52;
             this.label2.Text = "PlanID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 51;
             this.label3.Text = "설비";
             // 
@@ -162,12 +169,13 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnEX);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(144, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 32);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnEX
@@ -175,11 +183,13 @@
             this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEX.Location = new System.Drawing.Point(81, 3);
+            this.btnEX.Location = new System.Drawing.Point(46, 1);
+            this.btnEX.Margin = new System.Windows.Forms.Padding(1);
             this.btnEX.Name = "btnEX";
-            this.btnEX.Size = new System.Drawing.Size(60, 23);
+            this.btnEX.Size = new System.Drawing.Size(65, 26);
             this.btnEX.TabIndex = 4;
             this.btnEX.Text = "엑셀";
             this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,7 +206,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(813, 59);
+            this.btnSearch.Location = new System.Drawing.Point(822, 68);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(65, 30);
             this.btnSearch.TabIndex = 94;
@@ -209,53 +219,77 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(484, 26);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(484, 28);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 16);
+            this.label10.Size = new System.Drawing.Size(18, 20);
             this.label10.TabIndex = 97;
             this.label10.Text = "~";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(505, 22);
+            this.dateTimePicker2.Location = new System.Drawing.Point(505, 21);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(90, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(105, 26);
             this.dateTimePicker2.TabIndex = 96;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(389, 22);
+            this.dateTimePicker1.Location = new System.Drawing.Point(370, 21);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(89, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 26);
             this.dateTimePicker1.TabIndex = 95;
             // 
             // cboPlanID
             // 
+            this.cboPlanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPlanID.FormattingEnabled = true;
             this.cboPlanID.Location = new System.Drawing.Point(95, 20);
             this.cboPlanID.Name = "cboPlanID";
-            this.cboPlanID.Size = new System.Drawing.Size(205, 24);
+            this.cboPlanID.Size = new System.Drawing.Size(205, 28);
             this.cboPlanID.TabIndex = 98;
             // 
             // cboMachine
             // 
+            this.cboMachine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(95, 56);
             this.cboMachine.Name = "cboMachine";
-            this.cboMachine.Size = new System.Drawing.Size(205, 24);
+            this.cboMachine.Size = new System.Drawing.Size(205, 28);
             this.cboMachine.TabIndex = 99;
             // 
             // txtProduct
             // 
             this.txtProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.Location = new System.Drawing.Point(672, 21);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(206, 22);
+            this.txtProduct.Size = new System.Drawing.Size(215, 26);
             this.txtProduct.TabIndex = 100;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(113, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 54;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ProductPlan
             // 
@@ -293,5 +327,6 @@
         private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.ComboBox cboPlanID;
         private System.Windows.Forms.TextBox txtProduct;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

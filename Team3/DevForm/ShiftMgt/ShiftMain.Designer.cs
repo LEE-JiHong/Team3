@@ -53,6 +53,8 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(12, 144);
+            this.panel2.Size = new System.Drawing.Size(870, 301);
             // 
             // panel1
             // 
@@ -62,12 +64,15 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cboShift);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Size = new System.Drawing.Size(870, 90);
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.Location = new System.Drawing.Point(15, 114);
+            this.label1.Size = new System.Drawing.Size(97, 27);
             this.label1.Tag = "Shift관리";
             this.label1.Text = "Shift관리";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -75,6 +80,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Location = new System.Drawing.Point(297, 110);
+            this.panel3.Size = new System.Drawing.Size(586, 31);
             // 
             // layoutButton
             // 
@@ -94,35 +101,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 43);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 16);
+            this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Shift";
             // 
             // cboShift
             // 
+            this.cboShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboShift.FormattingEnabled = true;
-            this.cboShift.Location = new System.Drawing.Point(66, 40);
+            this.cboShift.Location = new System.Drawing.Point(83, 30);
             this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(201, 24);
+            this.cboShift.Size = new System.Drawing.Size(201, 28);
             this.cboShift.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(337, 43);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(354, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "설비";
             // 
             // cboMachine
             // 
+            this.cboMachine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMachine.FormattingEnabled = true;
-            this.cboMachine.Location = new System.Drawing.Point(392, 40);
+            this.cboMachine.Location = new System.Drawing.Point(393, 30);
             this.cboMachine.Name = "cboMachine";
-            this.cboMachine.Size = new System.Drawing.Size(201, 24);
+            this.cboMachine.Size = new System.Drawing.Size(201, 28);
             this.cboMachine.TabIndex = 1;
             // 
             // btnSearch
@@ -131,13 +142,13 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(802, 83);
+            this.btnSearch.Location = new System.Drawing.Point(795, 57);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(65, 30);
+            this.btnSearch.Size = new System.Drawing.Size(72, 30);
             this.btnSearch.TabIndex = 72;
             this.btnSearch.Text = "조회";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,7 +167,7 @@
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 31);
             this.flowLayoutPanel1.TabIndex = 16;
             // 
             // button6
@@ -164,26 +175,31 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(526, 3);
+            this.button6.Location = new System.Drawing.Point(520, 1);
+            this.button6.Margin = new System.Windows.Forms.Padding(1);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
+            this.button6.Size = new System.Drawing.Size(65, 28);
             this.button6.TabIndex = 43;
             this.button6.Text = "엑셀";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnDel
             // 
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(463, 3);
+            this.btnDel.Location = new System.Drawing.Point(453, 1);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(1);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(57, 23);
+            this.btnDel.Size = new System.Drawing.Size(65, 28);
             this.btnDel.TabIndex = 44;
             this.btnDel.Text = "삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -195,11 +211,13 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(405, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(391, 1);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(52, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(60, 28);
             this.btnUpdate.TabIndex = 52;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,11 +229,13 @@
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.Location = new System.Drawing.Point(347, 3);
+            this.btnInsert.Location = new System.Drawing.Point(329, 1);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(1);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(52, 23);
+            this.btnInsert.Size = new System.Drawing.Size(60, 28);
             this.btnInsert.TabIndex = 39;
             this.btnInsert.Text = "등록";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -231,7 +251,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(870, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(870, 301);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 

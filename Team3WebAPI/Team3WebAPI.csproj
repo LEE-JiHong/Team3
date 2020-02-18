@@ -7455,6 +7455,10 @@
     <Content Include="Content\icons\dxiconsmaterial.ttf" />
     <Content Include="Content\icons\dxiconsmaterial.woff" />
     <Content Include="Content\icons\dxiconsmaterial.woff2" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\gudifinalteam3 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\gudifinalteam3 - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\gudifinalteam3 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\aspnet\dx.aspnet.data.js" />
     <Content Include="Scripts\aspnet\dx.aspnet.mvc.js" />

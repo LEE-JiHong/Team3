@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Team3.Service;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Team3
 {
@@ -22,20 +25,23 @@ namespace Team3
         DataTable dt;
         private void DMRMgt_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowHeadersVisible = false;
 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             checkBoxColumn.Name = "ck";
             checkBoxColumn.HeaderText = "선택";
+            checkBoxColumn.MinimumWidth = 50;
             dataGridView1.Columns.Add(checkBoxColumn);
 
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "", "pro_date", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, " ", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "pro_id", "pro_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "플랜id", "plan_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "계획시작일자", "pro_date", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, " ", "so_sdate", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "설비코드", "m_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "설비명", "m_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상태", "pro_state", true, 100, DataGridViewContentAlignment.MiddleLeft);//ff
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상태", "pro_state", false, 100, DataGridViewContentAlignment.MiddleLeft);//ff
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상태", "common_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상품코드", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "상품명", "producct_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
@@ -43,6 +49,9 @@ namespace Team3
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "양품창고", "m_ok_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "불량창고", "m_ng_sector", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "계획수량", "pro_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "", "pro_pcount", false, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "", "pro_mcount", false, 100, DataGridViewContentAlignment.MiddleLeft);
+
 
 
             DateTime today = DateTime.Now;
@@ -60,11 +69,8 @@ namespace Team3
                 dataGridView1.DataSource = table;
 
             }
-
             GridViewUtil.SetDataGridView(dataGridView1);
         }
-
-
 
 
         ProcessService P_service = new ProcessService();
@@ -77,12 +83,13 @@ namespace Team3
         {
             dataGridView2.DataSource = null;
             dataGridView2.Columns.Clear();
+            dataGridView2.DataSource = null;
             ndt = null;
             //for (int i = 0; i < dataGridView1.Rows.Count; i++)
             //{
-               
+
             //}
-         
+
 
 
             List<DMRVO> lst = new List<DMRVO>();
@@ -110,6 +117,28 @@ namespace Team3
                     lst[i].req_date = DateTime.Now.ToShortDateString();
                 }
                 //  lst = P_service.GetDMRMgt(vo);
+                //dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "pro_id", "pro_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "플랜id", "plan_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "product_id", "product_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "제품코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "제품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "", "factory_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "창고명", "factory_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//ff
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "계획수량", "pro_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "소요량", "bom_use_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "소요수량", "plan_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "현재재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이전재고", "w_count_past", false, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고id", "req_factory_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고", "req_factory", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청량", "req_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청일", "req_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "사유", "reason", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "w_id", "w_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
+                GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "", "order_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
                 dataGridView2.DataSource = lst;
                 //int k = lst.Count;
                 //lst = lst.Distinct().ToList(); //중복제거
@@ -154,48 +183,41 @@ namespace Team3
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex > 0) return;
 
             try
             {
-                //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                //{
-                //    dataGridView1.Rows[i].Cells[0].Value = false;
-                //}
-                int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
-                string proDate = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-
-                bool bresult = false;
+                int p_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                bool bresult = !Convert.ToBoolean(dataGridView1.CurrentRow.Cells[0].EditedFormattedValue);
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-
                     if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) == p_id)
                     {
-                        //dataGridView1.Rows[i].Cells[0].Value = !bresult;
-
-                        bresult = Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value);
-                        dataGridView1.Rows[i].Cells[0].Value = !bresult;
+                        dataGridView1.Rows[i].Cells[0].Value = bresult;
                     }
-
+                    else
+                    {
+                        if (bresult)
+                        { dataGridView1.Rows[i].Cells[0].Value = !bresult; }
+                    }
                 }
-
             }
             catch (Exception err)
             {
-
                 string st = err.Message;
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
-
+           
+            dataGridView2.Columns.Clear();
             DataTable table = new DataTable();
             dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
             //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "pro_id", "pro_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
             //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "플랜id", "plan_id", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
-            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "계획일", "pro_date", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
+            //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "계획일", "pr", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
             //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청일", "so_sdate", true, 100, DataGridViewContentAlignment.MiddleLeft);//f
             //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "설비코드", "m_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
             //GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "설비명", "m_name", true, 100, DataGridViewContentAlignment.MiddleLeft);//
@@ -220,6 +242,7 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 List<DMRVO> n_dt = (List<DMRVO>)dataGridView2.DataSource;
@@ -236,6 +259,79 @@ namespace Team3
             {
                 string st = err.Message;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExcelEX(dataGridView1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void ExcelEX(DataGridView grid)
+        {
+            Excel.Application excel = new Excel.Application
+            {
+                Visible = true
+            };
+
+            string filename = "test" + ".xlsx"; // ++ 파일명 변경 
+
+            string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+            //byte[] temp = Properties.Resources.order;
+
+            //System.IO.File.WriteAllBytes(tempPath, temp);
+
+            Excel._Workbook workbook;
+
+            workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+
+            Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+            int StartCol = 1;
+            int StartRow = 1;
+            int j = 0, i = 0;
+
+            //Write Headers
+            for (j = 0; j < grid.Columns.Count; j++)
+            {
+                Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                myRange.Value2 = grid.Columns[j].HeaderText;
+            }
+
+            StartRow++;
+
+            //Write datagridview content
+            for (i = 0; i < grid.Rows.Count; i++)
+            {
+                for (j = 0; j < grid.Columns.Count; j++)
+                {
+                    try
+                    {
+                        Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                        myRange.Value2 = grid[j, i].Value == null ? "" : grid[j, i].Value;
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                    }
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ExcelEX(dataGridView2);
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
