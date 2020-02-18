@@ -220,36 +220,40 @@ namespace Team3
         private void DgvOrdering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //수량 입력하면 체크박스 true
-            if (dgvOrdering.Rows[e.RowIndex].Cells[7].Value != null)
+            if (dgvOrdering.Rows[e.RowIndex].Cells[8].Value != null)
             {
                 dgvOrdering.Rows[e.RowIndex].Cells["chk"].Value = true;
+            }
+            else
+            {
+                dgvOrdering.Rows[e.RowIndex].Cells["chk"].Value = false;
             }
         }
 
         private void dgvCompany_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            bool isCellChecked = Convert.ToBoolean(dgvCompany.Rows[e.RowIndex].Cells["chk"].EditedFormattedValue);
-            if (isCellChecked)
-            {
-                for (int i = 0; i < dgvOrdering.Rows.Count; i++)
-                {
-                    if (dgvCompany.Rows[e.RowIndex].Cells[1].Value.ToString() == dgvOrdering.Rows[i].Cells[2].Value.ToString())
-                    {
-                        dgvOrdering.Rows[i].Cells["chk"].Value = true;
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < dgvOrdering.Rows.Count; i++)
-                {
-                    if (dgvCompany.Rows[e.RowIndex].Cells[1].Value.ToString() == dgvOrdering.Rows[i].Cells[2].Value.ToString())
-                    {
-                        dgvOrdering.Rows[i].Cells["chk"].Value = false;
-                        //dgvOrdering.Rows[e.RowIndex].Cells[7].Value = null;
-                    }
-                }
-            }
+            //bool isCellChecked = Convert.ToBoolean(dgvCompany.Rows[e.RowIndex].Cells["chk"].EditedFormattedValue);
+            //if (isCellChecked)
+            //{
+            //    for (int i = 0; i < dgvOrdering.Rows.Count; i++)
+            //    {
+            //        if (dgvCompany.Rows[e.RowIndex].Cells[1].Value.ToString() == dgvOrdering.Rows[i].Cells[2].Value.ToString())
+            //        {
+            //            dgvOrdering.Rows[i].Cells["chk"].Value = true;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < dgvOrdering.Rows.Count; i++)
+            //    {
+            //        if (dgvCompany.Rows[e.RowIndex].Cells[1].Value.ToString() == dgvOrdering.Rows[i].Cells[2].Value.ToString())
+            //        {
+            //            dgvOrdering.Rows[i].Cells["chk"].Value = false;
+            //            //dgvOrdering.Rows[e.RowIndex].Cells[7].Value = null;
+            //        }
+            //    }
+            //}
         }
     }
 }

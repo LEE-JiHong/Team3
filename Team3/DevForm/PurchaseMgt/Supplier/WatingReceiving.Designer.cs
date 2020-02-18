@@ -95,7 +95,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(9, 372);
+            this.label2.Location = new System.Drawing.Point(9, 493);
             this.label2.Size = new System.Drawing.Size(125, 19);
             this.label2.Text = "자재입고처리";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -362,6 +362,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1021, 666);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1037, 705);
             this.Name = "WatingReceiving";

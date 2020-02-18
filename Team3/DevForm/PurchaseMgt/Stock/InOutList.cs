@@ -26,7 +26,7 @@ namespace Team3
                 //창고 콤보박스 바인딩
                 StockService service = new StockService();
                 List<FactoryComboVO> fList = new List<FactoryComboVO>();
-                fList = service.GetInFactory();
+                fList = service.GetFactory();
                 ComboUtil.ComboBinding(cboFactory, fList, "factory_code", "factory_name", "선택");
 
                 //품목유형 콤보박스 바인딩
@@ -129,8 +129,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목형태", "product_type", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주시리얼", "order_id", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "수량", "wh_product_count", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "단가", "price_present", true, 150);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "금액", "totalprice", true, 150);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "단가", "price_present", true, 150, DataGridViewContentAlignment.MiddleRight, true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "금액", "totalprice", true, 150, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "wh_comment", true, 150);
 
             GridViewUtil.SetDoNotSort(dataGridView1);

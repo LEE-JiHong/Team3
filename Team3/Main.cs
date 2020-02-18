@@ -350,6 +350,20 @@ namespace Team3
                     MUPMMgt MUPMMgt = new MUPMMgt();
                     MadeTabMenu(MUPMMgt);
                     break;
+
+                //출하관리
+                case "고객주문별재고현황":
+                    InventoryStatusByOrder InventoryStatusByOrder = new InventoryStatusByOrder();
+                    MadeTabMenu(InventoryStatusByOrder);
+                    break;
+                case "매출마감":
+                    ShipmentClosingMgt ShipmentClosingMgt = new ShipmentClosingMgt();
+                    MadeTabMenu(ShipmentClosingMgt);
+                    break;
+                case "매출마감현황 ":
+                    ShipmentClosingStatusMgt ShipmentClosingStatusMgt = new ShipmentClosingStatusMgt();
+                    MadeTabMenu(ShipmentClosingStatusMgt);
+                    break;
             }
         }
 
@@ -513,6 +527,23 @@ namespace Team3
                     MUPMMgt MUPMMgt = new MUPMMgt();
                     MUPMMgt = (MUPMMgt)InitForm(MUPMMgt);
                     MUPMMgt.SubWindowState = WinState.independ;
+                    break;
+
+                //출하관리
+                case "고객주문별재고현황":
+                    InventoryStatusByOrder InventoryStatusByOrder = new InventoryStatusByOrder();
+                    InventoryStatusByOrder = (InventoryStatusByOrder)InitForm(InventoryStatusByOrder);
+                    InventoryStatusByOrder.SubWindowState = WinState.independ;
+                    break;
+                case "매출마감":
+                    ShipmentClosingMgt ShipmentClosingMgt = new ShipmentClosingMgt();
+                    ShipmentClosingMgt = (ShipmentClosingMgt)InitForm(ShipmentClosingMgt);
+                    ShipmentClosingMgt.SubWindowState = WinState.independ;
+                    break;
+                case "매출마감현황":
+                    ShipmentClosingStatusMgt ShipmentClosingStatusMgt = new ShipmentClosingStatusMgt();
+                    ShipmentClosingStatusMgt = (ShipmentClosingStatusMgt)InitForm(ShipmentClosingStatusMgt);
+                    ShipmentClosingStatusMgt.SubWindowState = WinState.independ;
                     break;
             }
 
@@ -907,7 +938,7 @@ namespace Team3
 
         private void Button17_Click(object sender, EventArgs e)
         {
-            Process.Start("Chrome.exe", "https://localhost:44387/");
+            Process.Start("Chrome.exe", "http://gudifinalteam3.azurewebsites.net/"); 
         }
 
         private void TreeView4_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -995,26 +1026,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            else if (e.Node.Text == "제품출하")
-            {
-                ProductForwardingMgt frm = new ProductForwardingMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
-            else if (e.Node.Text == "출하현황")
-            {
-                ShippingStatusMgt frm = new ShippingStatusMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
+            
             else if (e.Node.Text == "매출마감")
             {
                 ShipmentClosingMgt frm = new ShipmentClosingMgt();
