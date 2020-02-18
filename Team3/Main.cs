@@ -907,7 +907,7 @@ namespace Team3
 
         private void Button17_Click(object sender, EventArgs e)
         {
-            Process.Start("Chrome.exe", "https://localhost:44387/");
+            Process.Start("Chrome.exe", "http://gudifinalteam3.azurewebsites.net/"); 
         }
 
         private void TreeView4_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
