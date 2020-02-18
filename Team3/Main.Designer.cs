@@ -310,6 +310,7 @@
             this.button16.Text = "정보";
             this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Visible = false;
             // 
             // button17
             // 
