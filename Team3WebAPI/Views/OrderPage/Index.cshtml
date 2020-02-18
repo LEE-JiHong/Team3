@@ -22,61 +22,8 @@
     <section class="content">
         <!-- Info boxes -->
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="fa fa-laptop"></i></span>
 
-                    <div class="info-box-content">
-                        <span class="info-box-text">발주 대기 건수</span>
-                        <span class="info-box-number">90<small>%</small></span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-cc-visa"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">발주 상태 건수</span>
-                        <span class="info-box-number">41,410</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <!-- fix for small devices only -->
-            <div class="clearfix visible-sm-block"></div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="fa fa-dropbox"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">입고 대기 건수</span>
-                        <span class="info-box-number">760</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="fa fa-truck"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">마감 대기 건수</span>
-                        <span class="info-box-number">2,000</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
+          
         </div>
         <!-- /.row -->
 
@@ -172,28 +119,52 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                    <h5 class="description-header">$10,390.90</h5>
-                                    <span class="description-text">TOTAL COST</span>
-                                </div>
+                                @if (ViewBag.SalesList[1].price < ViewBag.SalesList[0].price)
+                                {
+                                    <div class="description-block border-right">
+                                        <span class="description-percentage text-blue"><i class="fa fa-caret-down"></i>@(100-(ViewBag.SalesList[1].price/ViewBag.SalesList[0].price)*100)%</span>
+                                        <h5 class="description-header">@String.Format("{0:c}", ViewBag.SalesPrice)</h5>
+                                        <span class="description-text">Sales COST</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="description-block border-right">
+                                        <span class="description-percentage text-red"><i class="fa fa-caret-up"></i>@((ViewBag.SalesList[1].price / ViewBag.SalesList[0].price) * 100)%</span>
+                                        <h5 class="description-header">@String.Format("{0:c}", ViewBag.SalesPrice)</h5>
+                                        <span class="description-text">Sales COST</span>
+                                    </div>
+                                }
+
                                 <!-- /.description-block -->
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                    <h5 class="description-header">$24,813.53</h5>
-                                    <span class="description-text">TOTAL PROFIT</span>
-                                </div>
+                                @if (ViewBag.CostList[1].price < ViewBag.CostList[0].price)
+                                {
+                                    <div class="description-block border-right">
+                                        <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>@((ViewBag.CostList[1].price / ViewBag.CostList[0].price) * 100)%</span>
+                                        <h5 class="description-header">@String.Format("{0:c}", ViewBag.WorkCostPrice)</h5>
+                                        <span class="description-text">Employee Cost</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="description-block border-right">
+                                        <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> @((ViewBag.CostList[1].price / ViewBag.CostList[0].price) * 100)%</span>
+                                        <h5 class="description-header">@String.Format("{0:c}", ViewBag.WorkCostPrice)</h5>
+                                        <span class="description-text">Employee Cost</span>
+                                    </div>
+                                }
+
                                 <!-- /.description-block -->
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block">
-                                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                    <h5 class="description-header">1200</h5>
-                                    <span class="description-text">GOAL COMPLETIONS</span>
+                                   
+                                    <h5 class="description-header">@ViewBag.MonthProfit</h5>
+                                    <span class="description-text">Monthly Profit</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>

@@ -59,6 +59,24 @@ namespace Team3WebAPI
             }
         }
 
+        public List<SalesVO> GetWorkCostList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = "select month(pro_date) month, convert(decimal,sum(worktime) * (select common_value from TBL_COMMON_CODE  where common_type='Employee_Cost')) price from(select * from TBL_PRODUCTION_PLAN where month(pro_date) between dateadd(MM, -1, month(getdate())) and month(getdate()) and year(pro_date) = year(getdate())) pp inner join TBL_PRODUCTION_PLAN_DETAIL pd on pp.pro_id = pd.pro_id group by month(pro_date)";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesVO> list = Helper.DataReaderMapToList<SalesVO>(reader);
+                reader.Close();
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
         public List<SalesChartVO> GetYearSalesChartList()
         {
             using (SqlCommand cmd = new SqlCommand())

@@ -26,6 +26,22 @@ namespace Team3WebAPI.Controllers
             ViewBag.SumTotalPrice = orderpageVo.YearSalesCompanyList.Sum(p => p.totalprice);
 
 
+            HomeDac hdac3 = new HomeDac();
+            List<SalesVO> salesList = hdac3.GetSalesRate();
+
+            ViewBag.SalesPrice = string.Format("{0:c}", Convert.ToInt32(salesList[1].price));
+            ViewBag.SalesList = salesList;
+            ViewBag.SalesRateToView = ((salesList[1].price / salesList[0].price) * 100).ToString("#.0") + "%";
+
+
+            OrderDac odac4 = new OrderDac();
+            List<SalesVO> costList = odac4.GetWorkCostList();
+            ViewBag.WorkCostPrice = string.Format("{0:c}", Convert.ToInt32(costList[1].price));
+            ViewBag.CostList = costList;
+            ViewBag.SalesRateToView = ((salesList[1].price / salesList[0].price) * 100).ToString("#.0") + "%";
+
+
+
             string labels = string.Empty;
             List<List<SalesChartVO>> list = new List<List<SalesChartVO>>();
 
@@ -92,15 +108,15 @@ namespace Team3WebAPI.Controllers
 
 
 
-            OrderDac odac4 = new OrderDac();
-            orderpageVo.OrderCostList = odac4.GetOrderCostList();
+            OrderDac odac5 = new OrderDac();
+            orderpageVo.OrderCostList = odac5.GetOrderCostList();
             if(orderpageVo.OrderCostList[1].totalprice < orderpageVo.OrderCostList[0].totalprice)
             {
                 ViewBag.OrderRate =100 - @Convert.ToInt32((orderpageVo.OrderCostList[1].totalprice / orderpageVo.OrderCostList[0].totalprice) * 100);
-            }    
-            
-            
+            }
 
+
+             ViewBag.MonthProfit= string.Format("{0:c}", salesList[1].price - orderpageVo.OrderCostList[1].totalprice - costList[1].price);
 
             return View(orderpageVo);
         }
