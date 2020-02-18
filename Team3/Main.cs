@@ -207,7 +207,7 @@ namespace Team3
             InitLeftTab();
         }
 
-        private void CloseTab(object sender, EventArgs e)
+        public void CloseTab(object sender, EventArgs e)
         {
             if (MainTab.SelectedTab.Tag.ToString() != "메인화면")
             {
@@ -215,6 +215,14 @@ namespace Team3
                 MainTab.SelectedTab = MainTab.TabPages[MainTab.Controls.Count - 1];
             }
         }
+
+        public void CloseandOpenTab(string formName)
+        {
+            TabPage t1 = MainTab.SelectedTab;
+            MainTab.TabPages.Remove(t1);
+            GetForm(formName);
+        }
+
         public void GetForm(string name)
         {
             switch (name)

@@ -163,12 +163,17 @@ namespace Team3
                 dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
                 dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
 
+                
+
                 //foreach (DataColumn dc in dt.Columns)
                 //{
                 //    dc.ColumnName = "dd";
                 //}
 
+                
+
                 dataGridView1.DataSource = dt;
+                dataGridView1.Columns[4].Width = 150;
             }
             catch (Exception err)
             {

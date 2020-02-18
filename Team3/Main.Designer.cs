@@ -981,7 +981,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabControl MainTab;
         private System.Windows.Forms.Panel LeftMenuTab;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
@@ -1026,6 +1025,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TreeView treeView8;
+        public System.Windows.Forms.TabControl MainTab;
     }
 }
 

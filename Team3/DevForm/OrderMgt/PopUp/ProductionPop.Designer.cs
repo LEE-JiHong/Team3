@@ -39,6 +39,7 @@
             this.lblCount = new System.Windows.Forms.Label();
             this.lblUPH = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ChooseNum = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ChooseNum);
             this.panel2.Controls.Add(this.lblUPH);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblCount);
@@ -213,6 +215,15 @@
             this.label4.TabIndex = 77;
             this.label4.Text = "일 최대 생산량";
             // 
+            // ChooseNum
+            // 
+            this.ChooseNum.AutoSize = true;
+            this.ChooseNum.Location = new System.Drawing.Point(176, 76);
+            this.ChooseNum.Name = "ChooseNum";
+            this.ChooseNum.Size = new System.Drawing.Size(14, 15);
+            this.ChooseNum.TabIndex = 79;
+            this.ChooseNum.Text = "0";
+            // 
             // ProductionPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -245,5 +256,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUPH;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label ChooseNum;
     }
 }
