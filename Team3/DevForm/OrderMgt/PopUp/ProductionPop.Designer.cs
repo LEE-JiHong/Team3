@@ -217,6 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(551, 541);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Name = "ProductionPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.DemandPop_Load);
