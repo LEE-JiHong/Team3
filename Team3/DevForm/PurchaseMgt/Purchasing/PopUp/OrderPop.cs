@@ -15,7 +15,6 @@ namespace Team3
     {
         string planID;
         //int companyName;
-        List<CompanyVO> Companylist;
         CheckBox headerCheckBox1 = new CheckBox();
         CheckBox headerCheckBox2 = new CheckBox();
 
@@ -88,13 +87,13 @@ namespace Team3
             GridViewUtil.SetDataGridView(dgvCompany);
             dgvCompany.AutoGenerateColumns = false;
 
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "선택";
-            chk.Name = "chk";
-            chk.Width = 40;
-            dgvCompany.Columns.Add(chk);
+            //DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            //chk.HeaderText = "선택";
+            //chk.Name = "chk";
+            //chk.Width = 40;
+            //dgvCompany.Columns.Add(chk);
 
-            Point headerLocation = dgvCompany.GetCellDisplayRectangle(0, -1, true).Location;
+            //Point headerLocation = dgvCompany.GetCellDisplayRectangle(0, -1, true).Location;
 
             //headerCheckBox2.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
             //headerCheckBox2.BackColor = Color.White;
@@ -153,9 +152,9 @@ namespace Team3
 
                     for (int i = 0; i < dgvCompany.Rows.Count; i++)
                     {
-                        if (dgvCompany.Rows[i].Cells[1].Value.ToString() == row.Cells[2].Value.ToString())
+                        if (dgvCompany.Rows[i].Cells[0].Value.ToString() == row.Cells[2].Value.ToString())
                         {
-                            vo.order_id = dgvCompany.Rows[i].Cells[2].Value.ToString();
+                            vo.order_id = dgvCompany.Rows[i].Cells[1].Value.ToString();
                         }
                     }
 
@@ -173,12 +172,12 @@ namespace Team3
                 int num = 1;
                 for (int c = 0; c < list.Count; c++)
                 {
-                    if (dgvCompany.Rows[i].Cells[2].Value.ToString() == list[c].order_id)
+                    if (dgvCompany.Rows[i].Cells[1].Value.ToString() == list[c].order_id)
                     {
-                        if (!orders.Contains(Convert.ToInt32(dgvCompany.Rows[i].Cells[2].Value)))
+                        if (!orders.Contains(Convert.ToInt32(dgvCompany.Rows[i].Cells[1].Value)))
                         {
                             list[c].order_id += "-" + string.Format("{0:D4}", num);
-                            orders.Add(Convert.ToInt32(dgvCompany.Rows[i].Cells[2].Value));
+                            orders.Add(Convert.ToInt32(dgvCompany.Rows[i].Cells[1].Value));
                         }
                         else
                         {
@@ -189,27 +188,33 @@ namespace Team3
                 }
             }
 
-            try
+            if (MessageBox.Show("발주하시겠습니까?", "발주신청", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                PurchasingService service = new PurchasingService();
-                bool result = service.InsertOrder(list);
+                try
+                {
+                    PurchasingService service = new PurchasingService();
+                    bool result = service.InsertOrder(list);
 
-                if (result)
-                {
-                    MessageBox.Show("성공적으로 발주완료하였습니다.");
-                    this.Close();
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 발주 완료하였습니다.");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.");
+                        return;
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.");
-                    return;
+                    MessageBox.Show(err.Message);
                 }
             }
-            catch(Exception err)
+            else
             {
-                MessageBox.Show(err.Message);
+                return;
             }
-
         }
 
         private void DgvOrdering_CellValueChanged(object sender, DataGridViewCellEventArgs e)

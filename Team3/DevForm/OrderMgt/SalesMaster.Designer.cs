@@ -354,6 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(999, 580);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.MinimumSize = new System.Drawing.Size(1015, 575);
             this.Name = "SalesMaster";
             this.Tag = "영업마스터";

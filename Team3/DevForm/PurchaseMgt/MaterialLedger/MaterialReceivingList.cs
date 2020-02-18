@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Team3VO;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Team3
 {
@@ -19,15 +21,42 @@ namespace Team3
 
         private void MaterialReceivingList_Load(object sender, EventArgs e)
         {
+            try
+            {
+                //발주업체 콤보박스 바인딩
+                OrderService service = new OrderService();
+                List<CompanyVO> CompanyList = new List<CompanyVO>();
+                CompanyList = service.GetCompanyAll("customer");
+                ComboUtil.ComboBinding(cboCompany, CompanyList, "company_code", "company_name", "선택");
+
+                StockService sService = new StockService();
+                List<FactoryComboVO> fList = new List<FactoryComboVO>();
+                fList = sService.GetInFactory();
+                ComboUtil.ComboBinding(cboFactory, fList, "factory_code", "factory_name", "선택");
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+
+            SetLoad();
+
+            SetDataGrid();
+        }
+
+        private void SetLoad()
+        {
             dtpStartDate.Value = DateTime.Now.AddMonths(-1);
             dtpEndDate.Value = DateTime.Now;
-            SetDataGrid();
+            cboCompany.SelectedIndex = 0;
+            cboFactory.SelectedIndex = 0;
+            txtOrderSerial.Text = "";
+            txtProduct.Text = "";
         }
 
         private void SetDataGrid()
         {
             dataGridView1.Columns.Clear();
-
 
             GridViewUtil.SetDataGridView(dataGridView1);
             dataGridView1.AutoGenerateColumns = false;
@@ -51,11 +80,39 @@ namespace Team3
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            //조회 버튼
-            MaterialLedgerService service = new MaterialLedgerService();
-            DataTable dt = service.GetMaterialInList();
-            SetDataGrid();
-            dataGridView1.DataSource = dt;
+            try
+            {
+                MaterialSearchVO vo = new MaterialSearchVO();
+                vo.startDate = dtpStartDate.Value.ToShortDateString();
+                vo.endDate = dtpEndDate.Value.ToShortDateString();
+
+                if (cboCompany.Text != "선택")
+                {
+                    vo.company_name = cboCompany.Text;
+                }
+                if (cboFactory.Text != "선택")
+                {
+                    vo.factory_name = cboFactory.Text;
+                }
+                if (txtOrderSerial.Text != "")
+                {
+                    vo.order_serial = txtOrderSerial.Text;
+                }
+                if (txtProduct.Text != "")
+                {
+                    vo.product_name = txtProduct.Text;
+                }
+
+                //조회 버튼
+                MaterialLedgerService service = new MaterialLedgerService();
+                DataTable dt = service.GetMaterialInList(vo);
+                SetDataGrid();
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -77,29 +134,100 @@ namespace Team3
                 }
             }
 
-            //발주취소 버튼 (발주번호, PlanID 값)
             MaterialLedgerService service = new MaterialLedgerService();
 
+            if (MessageBox.Show("입고 취소하시겠습니까?", "입고취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    bool result = service.CancelMaterial(list);
+
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 입고취소가 완료되었습니다.");
+                        SetBottomStatusLabel("성공적으로 입고취소가 완료되었습니다.");
+                        btnSearch.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("입고취소 실패하였습니다. 다시 시도하여 주십시오.");
+                        SetBottomStatusLabel("입고취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    }
+                }
+                catch (Exception err)
+                {
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
             try
             {
-                bool result = service.CancelMaterial(list);
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
 
-                if (result)
+                string filename = "test" + ".xlsx";
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.order;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);//tempPath
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dataGridView1.Columns.Count; j++)
                 {
-                    MessageBox.Show("성공적으로 입고취소가 완료되었습니다.");
-                    SetBottomStatusLabel("성공적으로 입고취소가 완료되었습니다.");
-                    btnSearch.PerformClick();
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
                 }
-                else
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    MessageBox.Show("입고취소 실패하였습니다. 다시 시도하여 주십시오.");
-                    SetBottomStatusLabel("입고취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    for (j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                        }
+                        catch
+                        {
+                            ;
+                        }
+                    }
                 }
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            //새로고침 버튼
+            SetLoad();
+
         }
     }
 }

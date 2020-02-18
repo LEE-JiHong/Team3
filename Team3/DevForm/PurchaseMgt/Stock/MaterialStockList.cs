@@ -19,7 +19,7 @@ namespace Team3
 
         private void MaterialStockList_Load(object sender, EventArgs e)
         {
-            
+
             StockService service = new StockService();
             try
             {
@@ -38,7 +38,16 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
 
+            SetLoad();
+
             SetDataGrid();
+        }
+
+        private void SetLoad()
+        {
+            txtProductCode.Text = "";
+            cboFactory.SelectedIndex = 0;
+            cboProductType.SelectedIndex = 0;
         }
 
         private void SetDataGrid()
@@ -98,6 +107,10 @@ namespace Team3
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                return;
+            }
             StockVO vo = new StockVO();
             vo.product_codename = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             vo.factory_code = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
@@ -112,6 +125,11 @@ namespace Team3
             {
                 dataGridView1.Rows[count].Cells[0].Value = string.Format((count + 1).ToString(), "0");
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            SetLoad();
         }
     }
 }

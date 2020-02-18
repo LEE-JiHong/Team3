@@ -89,44 +89,51 @@ namespace Team3
             
             OrderService service = new OrderService();
 
-            try
+            if (MessageBox.Show("수요계획을 생성하시겠습니까?", "수요계획생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int resultRow = service.SearchPlanIDInDemand(cbOrderGubun.Text);
-                if (resultRow > 0)
+                try
                 {
-                    MessageBox.Show("이미 생성된 수요계획이 있습니다.");
-                    return;
-                }
-                else
-                {
-                    List<DemandPlanVO> list = new List<DemandPlanVO>();
-
-                    for (int i = 0; i < somasterList.Count; i++)
+                    int resultRow = service.SearchPlanIDInDemand(cbOrderGubun.Text);
+                    if (resultRow > 0)
                     {
-                        DemandPlanVO vo = new DemandPlanVO();
-                        vo.plan_id = cbOrderGubun.Text;
-                        vo.d_count = somasterList[i].so_pcount;
-                        vo.d_date = somasterList[i].so_edate;
-                        vo.so_id = somasterList[i].so_id;
-                        list.Add(vo);
-                    }
-
-                    bool result = service.AddDemandPlan(list);
-
-                    if (result)
-                    {
-                        MessageBox.Show("성공적으로 수요계획을 생성하였습니다.");
-                        this.Close();
+                        MessageBox.Show("이미 생성된 수요계획이 있습니다.");
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("수요계획 생성에 실패하였습니다.");
+                        List<DemandPlanVO> list = new List<DemandPlanVO>();
+
+                        for (int i = 0; i < somasterList.Count; i++)
+                        {
+                            DemandPlanVO vo = new DemandPlanVO();
+                            vo.plan_id = cbOrderGubun.Text;
+                            vo.d_count = somasterList[i].so_pcount;
+                            vo.d_date = somasterList[i].so_edate;
+                            vo.so_id = somasterList[i].so_id;
+                            list.Add(vo);
+                        }
+
+                        bool result = service.AddDemandPlan(list);
+
+                        if (result)
+                        {
+                            MessageBox.Show("성공적으로 수요계획을 생성하였습니다.");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("수요계획 생성에 실패하였습니다.");
+                        }
                     }
                 }
+                catch (Exception err)
+                {
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                }
             }
-            catch (Exception err)
+            else
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                return;
             }
         }
     }

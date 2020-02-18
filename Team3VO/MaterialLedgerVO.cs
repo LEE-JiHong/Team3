@@ -26,4 +26,19 @@ namespace Team3VO
         public string wh_comment { get; set; }
         public string wh_udate { get; set; }
     }
+
+    /// <summary>
+    /// 자재입고 조건검색 vo
+    /// </summary>
+    public class MaterialSearchVO
+    { 
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+        public string company_name { get; set; }
+        public int factory_id { get; set; }
+        public string factory_name { get; set; }
+        public string product_name { get; set; }
+        public string product_type { get; set; }
+        public string order_serial { get; set; }
+    }
 }

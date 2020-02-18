@@ -111,7 +111,7 @@ namespace Team3DAC
                         item.order_serial = DateTime.Now.ToShortDateString().Replace("-", "") + string.Format("{0:D4}", resultNum);
                        // num++;
 
-                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate, order_qcount) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate, @order_qcount)";
+                        cmd.CommandText = @"insert into TBL_ORDER (order_id, product_id, order_count, plan_id, order_serial, order_state, order_udate, order_pdate, order_qcount, order_sdate) values (@order_id, @product_id, @order_count, @plan_id, @order_serial, 'O_COMPLETE', @order_udate, @order_pdate, @order_qcount, @order_sdate)";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
@@ -120,6 +120,7 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
                         cmd.Parameters.AddWithValue("@order_pdate", item.order_pdate);
                         cmd.Parameters.AddWithValue("@order_qcount", item.order_count);
+                        cmd.Parameters.AddWithValue("@order_sdate", DateTime.Now.ToShortDateString());
 
                         cmd.ExecuteNonQuery();
                     }

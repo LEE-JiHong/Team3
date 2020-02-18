@@ -20,6 +20,7 @@ namespace Team3
 
         private void DemandPlan_Load(object sender, EventArgs e)
         {
+            //GridViewUtil.SetDataGridView(dataGridView1);
             OrderService service = new OrderService();
 
             try
@@ -141,7 +142,8 @@ namespace Team3
             //조회 버튼
             try
             {
-                
+                dataGridView1.Columns.Clear();
+
                 string startDate = dtpStartDate.Value.ToShortDateString();
                 string endDate = dtpEndDate.Value.ToShortDateString();
                 string planID = cboPlanID.Text;
@@ -156,6 +158,10 @@ namespace Team3
                 dt.Columns[4].ColumnName = "고객주문번호";
                 dt.Columns[5].ColumnName = "품목";
 
+                dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
 
                 //foreach (DataColumn dc in dt.Columns)
                 //{
@@ -163,7 +169,6 @@ namespace Team3
                 //}
 
                 dataGridView1.DataSource = dt;
-                //GridViewUtil.SetDataGridView(dataGridView1);
             }
             catch (Exception err)
             {

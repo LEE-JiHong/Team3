@@ -59,33 +59,33 @@ namespace Team3
             dataGridView1.AutoGenerateColumns = false;
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "";
+            chk.HeaderText = "선택";
             chk.Name = "chk";
-            chk.Width = 30;
+            chk.Width = 45;
             dataGridView1.Columns.Add(chk);
 
-            Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
+            //Point headerLocation = dataGridView1.GetCellDisplayRectangle(0, -1, true).Location;
 
-            headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
-            headerCheckBox.BackColor = Color.White;
-            headerCheckBox.Size = new Size(18, 18);
-            headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
-            dataGridView1.Controls.Add(headerCheckBox);
+            //headerCheckBox.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
+            //headerCheckBox.BackColor = Color.White;
+            //headerCheckBox.Size = new Size(18, 18);
+            //headerCheckBox.Click += new EventHandler(HeaderCheckbox_Click);
+            //dataGridView1.Controls.Add(headerCheckBox);
 
             //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주번호", "order_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "PlanID", "plan_id", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납품업체", "company_name", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "주문상태", "common_name", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납기일", "order_pdate", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주량", "order_count", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "입고량", "", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출발량", "company_order_code", true, 78);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "취소량", "", true, 78);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소가능량", "order_count", true, 100);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주일", "order_ddate", true, 78);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납품업체", "company_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "주문상태", "common_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납기일", "order_pdate", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주량", "order_count", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "입고량", "", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출발량", "company_order_code", true);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "취소량", "", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소가능량", "order_count", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주일", "order_ddate", true);
         }
 
         private void SetRowNumber()
@@ -127,25 +127,32 @@ namespace Team3
             //발주취소 버튼 (발주번호, PlanID 값)
             PurchasingService service = new PurchasingService();
 
-            try
+            if (MessageBox.Show("발주 취소하시겠습니까?", "발주취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                bool result = service.UpdateOrder(list);
+                try
+                {
+                    bool result = service.UpdateOrder(list);
 
-                if (result)
-                {
-                    MessageBox.Show("성공적으로 발주취소가 완료되었습니다.");
-                    SetBottomStatusLabel("성공적으로 발주취소가 완료되었습니다.");
-                    btnSearch.PerformClick();
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 발주취소가 완료되었습니다.");
+                        SetBottomStatusLabel("성공적으로 발주취소가 완료되었습니다.");
+                        btnSearch.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                        SetBottomStatusLabel("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
-                    SetBottomStatusLabel("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
-            catch(Exception err)
+            else
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                return;
             }
         }
 

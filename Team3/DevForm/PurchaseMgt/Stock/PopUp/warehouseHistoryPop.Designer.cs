@@ -37,7 +37,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(162, 481);
+            this.panel3.Location = new System.Drawing.Point(368, 481);
             this.panel3.Size = new System.Drawing.Size(198, 50);
             // 
             // btnCancel
@@ -55,16 +55,26 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.Size = new System.Drawing.Size(128, 19);
             this.label1.Text = "창고재고이력조회";
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(994, 36);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Size = new System.Drawing.Size(993, 392);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Location = new System.Drawing.Point(955, 7);
+            // 
+            // linePanel
+            // 
+            this.linePanel.Size = new System.Drawing.Size(1040, 533);
             // 
             // dataGridView1
             // 
@@ -75,13 +85,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(991, 390);
             this.dataGridView1.TabIndex = 4;
             // 
             // warehouseHistoryPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(628, 533);
+            this.ClientSize = new System.Drawing.Size(1040, 533);
             this.Name = "warehouseHistoryPop";
             this.Load += new System.EventHandler(this.warehouseHistoryPop_Load);
             this.panel3.ResumeLayout(false);
