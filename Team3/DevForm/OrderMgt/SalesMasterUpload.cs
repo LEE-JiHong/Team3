@@ -61,7 +61,7 @@ namespace Team3
 
                     if (resultNum > 0)
                     {
-                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             dataGridView1.Columns.Clear();
                             dataGridView1.DataSource = frm.Data;
@@ -139,37 +139,50 @@ namespace Team3
             }
             else
             {
-                List<SOMasterVO> list = new List<SOMasterVO>();
-
-                for (int i = 0; i<dataGridView1.Rows.Count; i++)
+                if (MessageBox.Show("영업마스터를 생성하시겠습니까?", "영업마스터생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SOMasterVO vo = new SOMasterVO();
-                    vo.plan_id = versionName;
-                    vo.so_wo_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    vo.so_pcount = Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value);
-                    vo.company_code = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                    vo.so_edate = dataGridView1.Rows[i].Cells[8].Value.ToString();
-                    vo.so_sdate = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    vo.product_name = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                    list.Add(vo);
-                }
+                    try
+                    {
+                        List<SOMasterVO> list = new List<SOMasterVO>();
 
-                //DB
-                OrderService service = new OrderService();
-                bool result = service.AddSOMaster(list);
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            SOMasterVO vo = new SOMasterVO();
+                            vo.plan_id = versionName;
+                            vo.so_wo_id = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                            vo.so_pcount = Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value);
+                            vo.company_code = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                            vo.so_edate = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                            vo.so_sdate = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                            vo.product_name = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                            list.Add(vo);
+                        }
 
-                if (result)
-                {
-                    Form fc = Application.OpenForms["Main"];
-                    Main frm = (Main)fc;
+                        //DB
+                        OrderService service = new OrderService();
+                        bool result = service.AddSOMaster(list);
 
-                    frm.GetForm("영업마스터");
-                    this.Close();
+                        if (result)
+                        {
+
+                            Form fc = Application.OpenForms["Main"];
+                            Main frm = (Main)fc;
+                            frm.CloseandOpenTab("영업마스터");
+                        }
+                        else
+                        {
+                            MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
+                            SetBottomStatusLabel("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
+                            return;
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
-                    SetBottomStatusLabel("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
                     return;
                 }
             }

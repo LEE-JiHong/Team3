@@ -165,6 +165,7 @@ namespace Team3
             if (soQty > totalQty)
             {
                 MessageBox.Show("수량이 계획수량보다 적습니다.");
+                ChooseNum.Text = totalQty.ToString();
                 return;
             }
 
