@@ -188,27 +188,33 @@ namespace Team3
                 }
             }
 
-            try
+            if (MessageBox.Show("발주하시겠습니까?", "발주신청", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                PurchasingService service = new PurchasingService();
-                bool result = service.InsertOrder(list);
+                try
+                {
+                    PurchasingService service = new PurchasingService();
+                    bool result = service.InsertOrder(list);
 
-                if (result)
-                {
-                    MessageBox.Show("성공적으로 발주완료하였습니다.");
-                    this.Close();
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 발주 완료하였습니다.");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.");
+                        return;
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.");
-                    return;
+                    MessageBox.Show(err.Message);
                 }
             }
-            catch(Exception err)
+            else
             {
-                MessageBox.Show(err.Message);
+                return;
             }
-
         }
 
         private void DgvOrdering_CellValueChanged(object sender, DataGridViewCellEventArgs e)

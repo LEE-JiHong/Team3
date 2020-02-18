@@ -127,25 +127,32 @@ namespace Team3
             //발주취소 버튼 (발주번호, PlanID 값)
             PurchasingService service = new PurchasingService();
 
-            try
+            if (MessageBox.Show("발주 취소하시겠습니까?", "발주취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                bool result = service.UpdateOrder(list);
+                try
+                {
+                    bool result = service.UpdateOrder(list);
 
-                if (result)
-                {
-                    MessageBox.Show("성공적으로 발주취소가 완료되었습니다.");
-                    SetBottomStatusLabel("성공적으로 발주취소가 완료되었습니다.");
-                    btnSearch.PerformClick();
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 발주취소가 완료되었습니다.");
+                        SetBottomStatusLabel("성공적으로 발주취소가 완료되었습니다.");
+                        btnSearch.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                        SetBottomStatusLabel("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
-                    SetBottomStatusLabel("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
-            catch(Exception err)
+            else
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                return;
             }
         }
 

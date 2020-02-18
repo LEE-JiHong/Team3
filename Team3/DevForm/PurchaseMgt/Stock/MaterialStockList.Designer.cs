@@ -40,6 +40,7 @@
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -52,6 +53,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(12, 157);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Size = new System.Drawing.Size(996, 415);
@@ -65,24 +67,26 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Size = new System.Drawing.Size(996, 101);
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(15, 131);
-            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.Text = "자재재고현황";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(783, 122);
+            this.panel3.Location = new System.Drawing.Point(736, 120);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Size = new System.Drawing.Size(225, 29);
+            this.panel3.Size = new System.Drawing.Size(272, 35);
             // 
             // TopMenu
             // 
@@ -115,7 +119,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(354, 19);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 16);
+            this.label13.Size = new System.Drawing.Size(57, 20);
             this.label13.TabIndex = 41;
             this.label13.Text = "품목유형";
             // 
@@ -124,7 +128,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(29, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 16);
+            this.label9.Size = new System.Drawing.Size(33, 20);
             this.label9.TabIndex = 39;
             this.label9.Text = "품목";
             // 
@@ -132,21 +136,22 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(691, 20);
+            this.label4.Location = new System.Drawing.Point(691, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 16);
+            this.label4.Size = new System.Drawing.Size(33, 20);
             this.label4.TabIndex = 38;
             this.label4.Text = "창고";
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnHistory);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(225, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(272, 35);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -154,12 +159,12 @@
             this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(164, 3);
+            this.btnExcel.Location = new System.Drawing.Point(121, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(58, 23);
+            this.btnExcel.Size = new System.Drawing.Size(60, 26);
             this.btnExcel.TabIndex = 70;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,12 +175,12 @@
             this.btnHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistory.Location = new System.Drawing.Point(78, 3);
+            this.btnHistory.Location = new System.Drawing.Point(32, 3);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(80, 23);
+            this.btnHistory.Size = new System.Drawing.Size(83, 26);
             this.btnHistory.TabIndex = 71;
             this.btnHistory.Text = "이력조회";
             this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -204,14 +209,14 @@
             this.cboFactory.FormattingEnabled = true;
             this.cboFactory.Location = new System.Drawing.Point(770, 17);
             this.cboFactory.Name = "cboFactory";
-            this.cboFactory.Size = new System.Drawing.Size(205, 24);
+            this.cboFactory.Size = new System.Drawing.Size(205, 28);
             this.cboFactory.TabIndex = 84;
             // 
             // txtProductCode
             // 
             this.txtProductCode.Location = new System.Drawing.Point(85, 17);
             this.txtProductCode.Name = "txtProductCode";
-            this.txtProductCode.Size = new System.Drawing.Size(206, 22);
+            this.txtProductCode.Size = new System.Drawing.Size(206, 26);
             this.txtProductCode.TabIndex = 88;
             // 
             // cboProductType
@@ -220,7 +225,7 @@
             this.cboProductType.FormattingEnabled = true;
             this.cboProductType.Location = new System.Drawing.Point(428, 16);
             this.cboProductType.Name = "cboProductType";
-            this.cboProductType.Size = new System.Drawing.Size(205, 24);
+            this.cboProductType.Size = new System.Drawing.Size(205, 28);
             this.cboProductType.TabIndex = 90;
             // 
             // btnSearch
@@ -229,18 +234,35 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(910, 55);
+            this.btnSearch.Location = new System.Drawing.Point(907, 55);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(65, 30);
+            this.btnSearch.Size = new System.Drawing.Size(68, 32);
             this.btnSearch.TabIndex = 92;
             this.btnSearch.Text = "조회";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(187, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 72;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // MaterialStockList
             // 
@@ -278,5 +300,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnHistory;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
