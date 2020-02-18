@@ -24,7 +24,10 @@ namespace Team3
       
         private void ProductPlan_Load(object sender, EventArgs e)
         {
-
+            //GridViewUtil.SetDataGridView(dataGridView1);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             DataTable dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
 
 
@@ -41,7 +44,7 @@ namespace Team3
             //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
             //  dataGridView1.DataSource = dt;
             btnSearch.PerformClick();
-
+           
         }
 
         private void InitComboBox()

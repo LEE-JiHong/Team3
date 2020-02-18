@@ -45,11 +45,12 @@ namespace Team3VO
     public class WorkRecode_VO
     {
         public string worknum { get; set; }
-        public int  pro_id { get; set; }
+        public int      pro_id { get; set; }
         public string pro_date { get; set; }
         public string pd_stime { get; set; }
         public string pd_etime { get; set; }
-        public int product_id { get; set; }
+        public int      product_id { get; set; }
+        public string product_codename { get; set; }
         public string product_name { get; set; }
         public string pro_state { get; set; }
         public string common_name { get; set; }
@@ -68,5 +69,6 @@ namespace Team3VO
         public int w_id { get; set; }
         public string order_id { get; set; }
         public int m_id { get; set; }
+        
     }
 }
