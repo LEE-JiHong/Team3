@@ -160,8 +160,8 @@ namespace Team3DAC
                     SqlTransaction tran = cmd.Connection.BeginTransaction();
                     string sql_1 = @"update TBL_WAREHOUSE set w_count_present = w_count_present - @req_count  
                                         where plan_id = @plan_id  and factory_id = @req_factory_id  and product_id = @product_id; 
-                                     insert into TBL_WAREHOUSE_HIS(w_id,  product_id, wh_product_count,   wh_udate, wh_comment, wh_category) 
-                                                                            values(@w_id, @product_id, @req_count,     @req_date,    @reason, 'P_MOVE_ITEM')";
+                                     insert into TBL_WAREHOUSE_HIS(w_id,pro_id,  product_id, wh_product_count,   wh_udate, wh_comment, wh_category) 
+                                                                            values(@w_id,@pro_id, @product_id, @req_count,     @req_date,    @reason, 'P_MOVE_ITEM')";
                     ;
 
                     cmd.Transaction = tran;
@@ -170,6 +170,7 @@ namespace Team3DAC
                     for (int i = 0; i < lst.Count; i++)
                     {
                         cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@pro_id", lst[i].pro_id);
                         cmd.Parameters.AddWithValue("@req_factory_id", lst[i].req_factory_id);
                         cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
                         cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
@@ -334,10 +335,9 @@ namespace Team3DAC
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.Connection.Open();
-                cmd.CommandText = @"select pro_date, worknum,w.product_name ,w.product_id,p.product_name, m_name, pd_stime,pd_etime,ok_cnt,ng_cnt, c.common_name as pro_state
-                                                from TBL_WORK_RECODE w inner join TBL_PRODUCT p on w.product_id = p.product_id  inner
-                                                join TBL_COMMON_CODE c on w.pro_state = c.common_value  ";
-              
+                cmd.CommandText = @"select pro_date, worknum ,worktime,w.product_id,p.product_codename product_codename,p.product_name product_name, m_name, pd_stime,pd_etime,ok_cnt,ng_cnt, c.common_name as pro_state
+                                                from TBL_WORK_RECODE w inner join TBL_PRODUCT p on w.product_id = p.product_id  inner join TBL_COMMON_CODE c on w.pro_state = c.common_value";
+                cmd.CommandType = CommandType.Text;
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WorkRecode_VO> list = Helper.DataReaderMapToList<WorkRecode_VO>(reader);
