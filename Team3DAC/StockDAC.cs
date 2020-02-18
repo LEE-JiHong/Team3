@@ -34,11 +34,36 @@ namespace Team3DAC
             }
         }
 
+        /// <summary>
+        /// 창고목록 가져오기
+        /// </summary>
+        /// <returns></returns>
         public List<FactoryComboVO> GetFactory()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 string sql = $"select factory_name, factory_code from TBL_FACTORY";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FactoryComboVO> list = Helper.DataReaderMapToList<FactoryComboVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// 입고창고목록 가져오기
+        /// </summary>
+        /// <returns></returns>
+        public List<FactoryComboVO> GetInFactory()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string sql = $"select factory_name, factory_code from TBL_FACTORY where factory_type = 'FAC200'";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;

@@ -189,7 +189,7 @@ namespace Team3DAC
         /// </summary>
         /// <param name="vo"></param>
         /// <returns></returns>
-        public DataTable GetMaterialInList()
+        public DataTable GetMaterialInList(MaterialSearchVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -199,14 +199,37 @@ namespace Team3DAC
 
                 //sql.Append($"select order_pdate,product_codename, product_name,company_name,o.order_serial, (order_count-order_qcount) as order_qcount, order_count, factory_name from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id  inner join TBL_COMPANY c on c.company_code = p.product_demand_com inner join TBL_FACTORY f on f.factory_code = p.product_in_sector where order_state = 'P_COMPLETE'");
 
-                sql.Append($"select order_pdate,product_codename, product_name,company_name,o.order_serial, (order_count-order_qcount) as order_qcount, factory_name from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id  inner join TBL_COMPANY c on c.company_code = p.product_demand_com inner join TBL_FACTORY f on f.factory_code = p.product_in_sector");
+                sql.Append($"select order_pdate,product_codename, product_name,company_name,o.order_serial, (order_count-order_qcount) as order_qcount, factory_name from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id  inner join TBL_COMPANY c on c.company_code = p.product_demand_com inner join TBL_FACTORY f on f.factory_code = p.product_in_sector where CONVERT (DATETIME, order_pdate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, order_pdate) <= CONVERT (DATETIME, @endDate)");
+
+                if (vo.company_name != null)
+                {
+                    sql.Append(" and company_name = @company_name");
+                    cmd.Parameters.AddWithValue("@company_name", vo.company_name);
+                }
+
+                if (vo.factory_name != null)
+                {
+                    sql.Append($" and factory_name = @factory_name");
+                    cmd.Parameters.AddWithValue("@factory_name", vo.factory_name);
+                }
+
+                if (vo.order_serial != null)
+                {
+                    sql.Append($" and o.order_serial like '%{vo.order_serial}%'");
+                }
+
+                if (vo.product_name != null)
+                {
+                    sql.Append($" and product_name like '%{vo.product_name}%'");
+                }
+
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql.ToString();
                 cmd.CommandType = CommandType.Text;
 
-                //cmd.Parameters.AddWithValue("@startDate", vo.start_date);
-                //cmd.Parameters.AddWithValue("@endDate", vo.end_date);
+                cmd.Parameters.AddWithValue("@startDate", vo.startDate);
+                cmd.Parameters.AddWithValue("@endDate", vo.endDate);
 
                 DataTable dataTable = new DataTable();
 

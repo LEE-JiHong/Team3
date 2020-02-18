@@ -36,6 +36,12 @@ namespace Team3
             return dac.GetFactory();
         }
 
+        public List<FactoryComboVO> GetInFactory()
+        {
+            StockDAC dac = new StockDAC();
+            return dac.GetInFactory();
+        }
+
         public DataTable GetInOutHistory()
         {
             StockDAC dac = new StockDAC();

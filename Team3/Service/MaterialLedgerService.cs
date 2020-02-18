@@ -30,10 +30,10 @@ namespace Team3
             return dac.AddMaterialQauntity(list);
         }
 
-        public DataTable GetMaterialInList()
+        public DataTable GetMaterialInList(MaterialSearchVO vo)
         {
             MaterialLedgerDAC dac = new MaterialLedgerDAC();
-            return dac.GetMaterialInList();
+            return dac.GetMaterialInList(vo);
         }
 
         public bool CancelMaterial(List<MaterialReceivingVO> list)
