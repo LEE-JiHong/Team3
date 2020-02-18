@@ -84,7 +84,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(778, 90);
+            this.panel3.Location = new System.Drawing.Point(778, 88);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Size = new System.Drawing.Size(232, 37);
             // 
@@ -254,6 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1021, 676);
+            this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1037, 665);
             this.Name = "DemandPlan";

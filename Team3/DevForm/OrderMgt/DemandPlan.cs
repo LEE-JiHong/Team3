@@ -20,7 +20,7 @@ namespace Team3
 
         private void DemandPlan_Load(object sender, EventArgs e)
         {
-            GridViewUtil.SetDataGridView(dataGridView1);
+            //GridViewUtil.SetDataGridView(dataGridView1);
             OrderService service = new OrderService();
 
             try

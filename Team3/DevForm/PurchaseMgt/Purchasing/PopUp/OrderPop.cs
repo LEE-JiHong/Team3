@@ -15,7 +15,6 @@ namespace Team3
     {
         string planID;
         //int companyName;
-        List<CompanyVO> Companylist;
         CheckBox headerCheckBox1 = new CheckBox();
         CheckBox headerCheckBox2 = new CheckBox();
 
@@ -88,13 +87,13 @@ namespace Team3
             GridViewUtil.SetDataGridView(dgvCompany);
             dgvCompany.AutoGenerateColumns = false;
 
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "선택";
-            chk.Name = "chk";
-            chk.Width = 40;
-            dgvCompany.Columns.Add(chk);
+            //DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            //chk.HeaderText = "선택";
+            //chk.Name = "chk";
+            //chk.Width = 40;
+            //dgvCompany.Columns.Add(chk);
 
-            Point headerLocation = dgvCompany.GetCellDisplayRectangle(0, -1, true).Location;
+            //Point headerLocation = dgvCompany.GetCellDisplayRectangle(0, -1, true).Location;
 
             //headerCheckBox2.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
             //headerCheckBox2.BackColor = Color.White;
@@ -153,9 +152,9 @@ namespace Team3
 
                     for (int i = 0; i < dgvCompany.Rows.Count; i++)
                     {
-                        if (dgvCompany.Rows[i].Cells[1].Value.ToString() == row.Cells[2].Value.ToString())
+                        if (dgvCompany.Rows[i].Cells[0].Value.ToString() == row.Cells[2].Value.ToString())
                         {
-                            vo.order_id = dgvCompany.Rows[i].Cells[2].Value.ToString();
+                            vo.order_id = dgvCompany.Rows[i].Cells[1].Value.ToString();
                         }
                     }
 
@@ -173,12 +172,12 @@ namespace Team3
                 int num = 1;
                 for (int c = 0; c < list.Count; c++)
                 {
-                    if (dgvCompany.Rows[i].Cells[2].Value.ToString() == list[c].order_id)
+                    if (dgvCompany.Rows[i].Cells[1].Value.ToString() == list[c].order_id)
                     {
-                        if (!orders.Contains(Convert.ToInt32(dgvCompany.Rows[i].Cells[2].Value)))
+                        if (!orders.Contains(Convert.ToInt32(dgvCompany.Rows[i].Cells[1].Value)))
                         {
                             list[c].order_id += "-" + string.Format("{0:D4}", num);
-                            orders.Add(Convert.ToInt32(dgvCompany.Rows[i].Cells[2].Value));
+                            orders.Add(Convert.ToInt32(dgvCompany.Rows[i].Cells[1].Value));
                         }
                         else
                         {
