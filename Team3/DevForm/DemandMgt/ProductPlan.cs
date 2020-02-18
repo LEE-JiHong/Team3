@@ -33,7 +33,7 @@ namespace Team3
 
             InitComboBox();
 
-             
+
             dataGridView1.AllowUserToAddRows = false;
             //string startDate = today.AddDays(-10).ToString("yyyyMMdd");
             //string endDate = today.AddDays(20).ToString("yyyyMMdd");
@@ -41,7 +41,7 @@ namespace Team3
             dateTimePicker2.Value = today.AddDays(14);
             //DataTable dt = service.GetProductPlan("20200121_P", startDate, endDate);
             //  dataGridView1.DataSource = dt;
-         //   btnSearch.PerformClick();
+            //   btnSearch.PerformClick();
 
         }
 
@@ -193,14 +193,7 @@ namespace Team3
                 }
             }
 
-            foreach (Control con in panel1.Controls)
-            {
-                if (con is ComboBox cb)
-                {
-                    cb.SelectedIndex = 0;
-
-                }
-            }
+            cboMachine.SelectedIndex = 0;
         }
     }
 }

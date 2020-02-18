@@ -25,14 +25,14 @@ namespace Team3
         DataTable dt;
         private void DMRMgt_Load(object sender, EventArgs e)
         {
-             dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersVisible = false;
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             checkBoxColumn.Name = "ck";
             checkBoxColumn.HeaderText = "선택";
-            checkBoxColumn.MinimumWidth= 50;
+            checkBoxColumn.MinimumWidth = 50;
             dataGridView1.Columns.Add(checkBoxColumn);
 
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "pro_id", "pro_id", false, 100, DataGridViewContentAlignment.MiddleLeft);//f
@@ -211,7 +211,7 @@ namespace Team3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-             
+           
             dataGridView2.Columns.Clear();
             DataTable table = new DataTable();
             dt = P_service.GetProductionPlanCheckHis(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
@@ -242,6 +242,7 @@ namespace Team3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 List<DMRVO> n_dt = (List<DMRVO>)dataGridView2.DataSource;
