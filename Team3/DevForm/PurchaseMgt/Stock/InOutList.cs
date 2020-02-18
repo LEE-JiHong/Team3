@@ -26,7 +26,7 @@ namespace Team3
                 //창고 콤보박스 바인딩
                 StockService service = new StockService();
                 List<FactoryComboVO> fList = new List<FactoryComboVO>();
-                fList = service.GetInFactory();
+                fList = service.GetFactory();
                 ComboUtil.ComboBinding(cboFactory, fList, "factory_code", "factory_name", "선택");
 
                 //품목유형 콤보박스 바인딩
