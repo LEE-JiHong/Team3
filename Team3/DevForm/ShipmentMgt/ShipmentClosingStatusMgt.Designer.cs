@@ -439,6 +439,7 @@
             this.ClientSize = new System.Drawing.Size(1115, 668);
             this.Name = "ShipmentClosingStatusMgt";
             this.Tag = "매출마감현황";
+            this.Text = "매출마감현황";
             this.Load += new System.EventHandler(this.ShipmentClosingStatusMgt_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

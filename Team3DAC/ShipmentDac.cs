@@ -38,13 +38,13 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 
-                string sql = @"select so_id,plan_id,c.company_name,s.product_name as product_codename,p.product_name,so_pcount,p.product_id,s.company_code,
-(select w_count_present
+                string sql = @"select so_id,plan_id,c.company_name,s.product_name as product_codename,p.product_name,so_pcount,p.product_id,s.company_code,s.so_ocount,
+(select distinct w.w_count_present
 from TBL_WAREHOUSE w
-inner join TBL_FACTORY f on w.factory_id = f.factory_id
-where f.factory_type='FAC700') as orderable_count
+inner join TBL_WAREHOUSE w1 on w.plan_id = s.plan_id and w.product_id = p.product_id
+inner join TBL_FACTORY f on w.factory_id = f.factory_id and f.factory_type = 'FAC700') as orderable_count
 from TBL_SO_MASTER s inner join TBL_COMPANY c on  s.company_code=c.company_code
-					inner join TBL_PRODUCT p on p.product_codename=s.product_name";
+               inner join TBL_PRODUCT p on p.product_codename=s.product_name";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
 
@@ -176,8 +176,17 @@ from TBL_SO_MASTER s inner join TBL_COMPANY c on  s.company_code=c.company_code
                         cmd.ExecuteNonQuery();
 
                         cmd.Parameters.AddWithValue("@wh_udate", DateTime.Now.ToShortDateString());
-                        
+
+
+                        cmd.CommandText = @"select w_id from TBL_WAREHOUSE w inner join TBL_FACTORY f on f.factory_id = w.factory_id where plan_id = @plan_id and product_id = @product_id and f.factory_type = 'FAC400'";
+                        int w_id_fac400 = Convert.ToInt32(cmd.ExecuteScalar());
+                        cmd.Parameters.AddWithValue("@w_id_fac400", w_id_fac400);
+                        //warehouse_his테이블에 고객사창고에서 매출마감되는 자재차감 이력 등록
+                        cmd.CommandText = "insert into TBL_WAREHOUSE_HIS(w_id, product_id,  wh_product_count, wh_udate, wh_comment, wh_category) values (@w_id_fac400, @product_id, @s_count, @wh_udate, '자재차감', 'P_MOVE_ITEM')";
+                        cmd.ExecuteNonQuery();
+
                         //warehouse_his테이블에 매출마감 이력 등록
+
                         cmd.CommandText = "insert into TBL_WAREHOUSE_HIS(w_id, product_id,  wh_product_count, wh_udate, wh_comment, wh_category) values (@w_id, @product_id, @s_count, @wh_udate, '매출마감', 'P_SALES_COMPLETE')";
                         cmd.ExecuteNonQuery();
                     }
@@ -222,6 +231,40 @@ where price_edate = '9999-12-31' and product_type = 'FP' and pr.product_id = @pr
 
                 cmd.Connection.Close();
                 return price_present;
+
+            }
+        }
+
+        /// <summary>
+        /// 마감현황조회
+        /// </summary>
+        /// <param name="product_id"></param>
+        /// <returns></returns>
+        public DataTable GetSalesCompleteStatus()
+        {
+          
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                DataTable dt = new DataTable();
+                string sql = @"select s.so_id,s_date,s.plan_id,p.product_codename,p.product_name,s_count,s_TotalPrice,s_company,c.company_name,so.so_pcount
+from TBL_SALES_COMPLETE s  inner
+join TBL_PRODUCT p on s.product_id = p.product_id
+inner
+join TBL_SO_MASTER so on s.so_id = so.so_id
+inner
+join TBL_COMPANY c on c.company_code = s.s_company";
+
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.Connection.Open();
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                da.Dispose();
+
+                cmd.Connection.Close();
+                return dt;
 
             }
         }

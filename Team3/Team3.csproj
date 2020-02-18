@@ -33,6 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -356,11 +373,11 @@
     <Compile Include="DevForm\ShiftMgt\ShiftSchedule.Designer.cs">
       <DependentUpon>ShiftSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ShipmentMgt\ProductForwardingMgt.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DevForm\ShipmentMgt\Report_SalesComplete.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DevForm\ShipmentMgt\ProductForwardingMgt.Designer.cs">
-      <DependentUpon>ProductForwardingMgt.cs</DependentUpon>
+    <Compile Include="DevForm\ShipmentMgt\Report_SalesComplete.Designer.cs">
+      <DependentUpon>Report_SalesComplete.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForm\ShipmentMgt\ShipmentClosingMgt.cs">
       <SubType>Form</SubType>
@@ -379,12 +396,6 @@
     </Compile>
     <Compile Include="DevForm\ShipmentMgt\ShipmentClosingStatusMgt.Designer.cs">
       <DependentUpon>ShipmentClosingStatusMgt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DevForm\ShipmentMgt\ShippingStatusMgt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\ShipmentMgt\ShippingStatusMgt.Designer.cs">
-      <DependentUpon>ShippingStatusMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWaitForm.cs">
       <SubType>Form</SubType>
@@ -632,8 +643,8 @@
     <EmbeddedResource Include="DevForm\ShiftMgt\ShiftSchedule.resx">
       <DependentUpon>ShiftSchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ShipmentMgt\ProductForwardingMgt.resx">
-      <DependentUpon>ProductForwardingMgt.cs</DependentUpon>
+    <EmbeddedResource Include="DevForm\ShipmentMgt\Report_SalesComplete.resx">
+      <DependentUpon>Report_SalesComplete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ShipmentMgt\ShipmentClosingMgt.resx">
       <DependentUpon>ShipmentClosingMgt.cs</DependentUpon>
@@ -643,9 +654,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ShipmentMgt\ShipmentClosingStatusMgt.resx">
       <DependentUpon>ShipmentClosingStatusMgt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ShipmentMgt\ShippingStatusMgt.resx">
-      <DependentUpon>ShippingStatusMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWaitForm.resx">
       <DependentUpon>frmWaitForm.cs</DependentUpon>
@@ -662,6 +670,7 @@
     <EmbeddedResource Include="ProcessMgt\StateOrder%27sOperation.resx">
       <DependentUpon>StateOrder%27sOperation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

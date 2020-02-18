@@ -249,6 +249,7 @@
             this.ClientSize = new System.Drawing.Size(1026, 594);
             this.Name = "ShipmentClosingMonthMgt";
             this.Tag = "거래처별월마감";
+            this.Text = "거래처별월마감";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
