@@ -15,6 +15,7 @@ namespace Team3
     {
         int TotalCount;
         int uphCount;
+        List<DayVO> dayList;
 
         List<DemandPlanVO> demandList;
 
@@ -47,7 +48,7 @@ namespace Team3
         private void btnSearch_Click(object sender, EventArgs e)
         {
             TotalCount = 0;
-            
+
             try
             {
                 OrderService service = new OrderService();
@@ -61,7 +62,9 @@ namespace Team3
 
                 string endDate = dt.ToShortDateString();
 
-                List<DayVO> dayList = service.GetDays(startDate, endDate);
+                #region 
+                dayList = service.GetDays(startDate, endDate);          //날짜 리스트 
+                #endregion
 
                 dataGridView1.DataSource = dayList;
 
@@ -107,7 +110,7 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
 
-            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -124,13 +127,13 @@ namespace Team3
             int qty = 0;
             int totalQty = 0;
 
-            int idx = demandList.Count-1;
+            int idx = demandList.Count - 1;
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 ProductionPlanVO vo = new ProductionPlanVO();
                 vo.plan_id = cbOrderGubun.Text;
-                vo.pro_count = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
+                vo.pro_count = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value); 
                 vo.pro_date = dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10);
                 vo.d_id = demandList[idx].d_id;
                 if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value.ToString().Substring(0, 10)) == Convert.ToDateTime(demandList[idx].d_date))
@@ -138,7 +141,7 @@ namespace Team3
                     if (qty < demandList[idx].d_count)
                     {
                         MessageBox.Show($"{demandList[idx].d_date} 이전에 {demandList[idx].d_count}개를 입력해야 합니다.");
-                        
+                        ChooseNum.Text = totalQty.ToString();
                         return;
                     }
                     idx--;
@@ -155,7 +158,7 @@ namespace Team3
                 }
 
                 totalQty += Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                
+
                 if (vo.pro_count > 0)
                 {
                     list.Add(vo);
@@ -197,7 +200,7 @@ namespace Team3
 
             try
             {
-                string planID =  cbOrderGubun.Text;
+                string planID = cbOrderGubun.Text;
 
                 OrderService service = new OrderService();
                 uphCount = service.GetMaxUPHCount(planID);
@@ -213,28 +216,28 @@ namespace Team3
                 //{
 
 
-                    //if (Convert.ToInt32(lblCount.Text) == 0)
-                    //{
-                    //    dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
-                    //    return;
-                    //}
-                    //else
-                    //{
-                    //    TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                //if (Convert.ToInt32(lblCount.Text) == 0)
+                //{
+                //    dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                //    return;
+                //}
+                //else
+                //{
+                //    TotalCount -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
 
-                    //    if (TotalCount < 0)
-                    //    {
-                    //        MessageBox.Show("계획수량을 초과하였습니다. 다시 입력하여 주십시오.");
+                //    if (TotalCount < 0)
+                //    {
+                //        MessageBox.Show("계획수량을 초과하였습니다. 다시 입력하여 주십시오.");
 
-                    //        TotalCount += Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                    //        dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
-                    //        return;
-                    //    }
-                    //    else
-                    //    {
-                    //        lblCount.Text = TotalCount.ToString();
-                    //    }
-                    //}
+                //        TotalCount += Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                //        dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        lblCount.Text = TotalCount.ToString();
+                //    }
+                //}
                 //}
 
             }
