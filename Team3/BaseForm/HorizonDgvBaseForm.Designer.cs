@@ -124,6 +124,7 @@
             this.Name = "HorizonDgvBaseForm";
             this.Text = "HorizonDgvBaseForm";
             this.Load += new System.EventHandler(this.HorizonDgvBaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.HorizonDgvBaseForm_KeyUp);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);

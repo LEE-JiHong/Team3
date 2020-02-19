@@ -130,6 +130,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "nomalBaseForm";
             this.Text = "nomalBaseForm";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nomalBaseForm_KeyUp);
             this.TopMenu.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

@@ -9,6 +9,7 @@ using Team3VO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 using System.Linq;
+using log4net.Core;
 
 namespace Team3
 {
@@ -42,7 +43,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이메일", "company_email", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "전화번호", "company_phone", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "팩스", "company_fax", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "company_uadmin", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "company_uadmin", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정시간", "company_udate", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "업체정보", "company_comment", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "company_yn", true);
@@ -71,28 +72,42 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Input);
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
+                CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Input);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
 
-                LoadData();
-                MessageBox.Show("신규 거래처 등록 성공");
-                SetBottomStatusLabel("신규 거래처 등록 성공");
+                    LoadData();
+                    MessageBox.Show("신규 거래처 등록 성공");
+                    SetBottomStatusLabel("신규 거래처 등록 성공");
+                }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (lblID.Text == "")
+            try
             {
-                MessageBox.Show("변경할 업체를 선택해주세요");
-                return;
+                if (lblID.Text == "")
+                {
+                    MessageBox.Show("변경할 업체를 선택해주세요");
+                    return;
+                }
+                CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Update, lblID.Text);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                    MessageBox.Show("거래처 정보 수정 성공");
+                    SetBottomStatusLabel("거래처 정보 수정 성공");
+                }
             }
-            CompanyPop frm = new CompanyPop(CompanyPop.EditMode.Update, lblID.Text);
-            if (frm.ShowDialog() == DialogResult.OK)
+            catch (Exception err)
             {
-                LoadData();
-                MessageBox.Show("거래처 정보 수정 성공");
-                SetBottomStatusLabel("거래처 정보 수정 성공");
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
         private void BtnExport_Click(object sender, EventArgs e)
@@ -147,9 +162,9 @@ namespace Team3
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                MessageBox.Show(ex.ToString());
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
@@ -173,6 +188,7 @@ namespace Team3
                     {
                         MessageBox.Show("삭제완료");
                         SetBottomStatusLabel("거래처 삭제완료");
+                        LoadData();
                     }
                     else if (!bResult)
                     {
@@ -184,7 +200,7 @@ namespace Team3
             }
             catch (Exception err)
             {
-                string str = err.Message;
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
@@ -286,6 +302,14 @@ namespace Team3
                 dataGridView2.DataSource = lst;
             }
 
+            if(dataGridView2.Rows.Count<=0)
+            {
+                SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
+            }
+            else
+            {
+                SetBottomStatusLabel("조회가 완료되었습니다.");
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

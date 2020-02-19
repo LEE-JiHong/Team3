@@ -52,6 +52,7 @@ namespace Team3
 
         private void nomalBaseForm_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             if (this.Tag != null)
                 SetBottomStatusLabel("Welcome! " + this.Tag.ToString() + " 페이지입니다.");
         }
@@ -69,6 +70,16 @@ namespace Team3
           
             frm.GetForm(this.Tag.ToString());
             this.Close();
+        }
+
+        private void nomalBaseForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            Form frm = (Form)sender;
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(frm.ActiveControl, true, true, true, true);
+            }
+
         }
     }
 

@@ -195,7 +195,8 @@ namespace Team3
             }
             catch (NullReferenceException err)
             {
-                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.DialogResult = DialogResult.None;
                 return;
             }
             catch (Exception err)
