@@ -1,4 +1,5 @@
-﻿using log4net.Core;
+﻿using DevExpress.XtraReports.UI;
+using log4net.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,12 +35,7 @@ namespace Team3.DevForm.ShipmentMgt
             ComboUtil.ComboBinding(cboCustomer, company_list, "company_code", "company_name", "선택");
             #endregion
 
-            #region 고객창고cbo
-            List<FactoryDB_VO> _cboOutSector = (from item in f_list
-                                                where item.facility_value == "FAC700"
-                                                select item).ToList();
-            ComboUtil.ComboBinding(cboCustomerWH, _cboOutSector, "factory_code", "factory_name", "선택");
-            #endregion
+          
 
             //날짜 setting
             dtpFromDate.Value = DateTime.Now.AddMonths(-1);
@@ -165,15 +161,21 @@ namespace Team3.DevForm.ShipmentMgt
                     ds.Tables.Add(dt);
                     rpt.DataSource = ds.Tables["salescomplete"];
 
-                    WinReport_SC frm = new WinReport_SC(rpt);
-                    frm.documentViewer1.DocumentSource = rpt;
 
-                    //??
-                    frm.documentViewer1.PrintingSystem.ExecCommand(
-                        DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
-                        , new object[] { true });
+                    using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+                    {
+                        printTool.ShowRibbonPreviewDialog();
+                    }
 
-                    frm.ShowDialog();
+                    //WinReport_SC frm = new WinReport_SC(rpt);
+                    //frm.documentViewer1.DocumentSource = rpt;
+
+                    ////??
+                    //frm.documentViewer1.PrintingSystem.ExecCommand(
+                    //    DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
+                    //    , new object[] { true });
+
+                    //frm.ShowDialog();
                 }
                 catch (Exception err)
                 {

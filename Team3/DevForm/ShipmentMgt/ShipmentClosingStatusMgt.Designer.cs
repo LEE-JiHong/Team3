@@ -35,10 +35,8 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.lblStandardDate = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
-            this.cboCustomerWH = new System.Windows.Forms.ComboBox();
             this.cboDestination = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblCompany = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblWHing = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -72,9 +70,7 @@
             this.panel1.Controls.Add(this.dtpToDate);
             this.panel1.Controls.Add(this.lblStandardDate);
             this.panel1.Controls.Add(this.cboCustomer);
-            this.panel1.Controls.Add(this.cboCustomerWH);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.lblCompany);
             this.panel1.Controls.Add(this.lblWHing);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Size = new System.Drawing.Size(1090, 124);
@@ -93,8 +89,8 @@
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(790, 140);
-            this.panel3.Size = new System.Drawing.Size(313, 33);
+            this.panel3.Location = new System.Drawing.Point(857, 140);
+            this.panel3.Size = new System.Drawing.Size(246, 33);
             // 
             // TopMenu
             // 
@@ -186,17 +182,6 @@
             this.cboCustomer.Size = new System.Drawing.Size(230, 28);
             this.cboCustomer.TabIndex = 120;
             // 
-            // cboCustomerWH
-            // 
-            this.cboCustomerWH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboCustomerWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCustomerWH.FormattingEnabled = true;
-            this.cboCustomerWH.Location = new System.Drawing.Point(563, 70);
-            this.cboCustomerWH.Name = "cboCustomerWH";
-            this.cboCustomerWH.Size = new System.Drawing.Size(230, 28);
-            this.cboCustomerWH.TabIndex = 119;
-            this.cboCustomerWH.Visible = false;
-            // 
             // cboDestination
             // 
             this.cboDestination.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -218,19 +203,6 @@
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 113;
             this.label8.Text = "고객사";
-            // 
-            // lblCompany
-            // 
-            this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCompany.AutoSize = true;
-            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompany.Location = new System.Drawing.Point(462, 75);
-            this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(57, 20);
-            this.lblCompany.TabIndex = 111;
-            this.lblCompany.Text = "고객창고";
-            this.lblCompany.Visible = false;
             // 
             // label5
             // 
@@ -266,7 +238,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(246, 33);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -278,7 +250,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(254, 3);
+            this.btnExcel.Location = new System.Drawing.Point(187, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(56, 26);
             this.btnExcel.TabIndex = 42;
@@ -296,7 +268,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(173, 3);
+            this.button1.Location = new System.Drawing.Point(106, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 43;
@@ -313,7 +285,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(103, 3);
+            this.button2.Location = new System.Drawing.Point(36, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 26);
             this.button2.TabIndex = 44;
@@ -355,6 +327,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1115, 668);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.KeyPreview = true;
             this.Name = "ShipmentClosingStatusMgt";
             this.Tag = "매출마감현황";
             this.Text = "매출마감현황";
@@ -381,10 +354,8 @@
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Label lblStandardDate;
         private System.Windows.Forms.ComboBox cboCustomer;
-        private System.Windows.Forms.ComboBox cboCustomerWH;
         private System.Windows.Forms.ComboBox cboDestination;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblWHing;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
