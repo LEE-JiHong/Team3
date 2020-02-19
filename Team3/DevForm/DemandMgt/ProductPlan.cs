@@ -26,9 +26,13 @@ namespace Team3
 
         private void ProductPlan_Load(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
             //GridViewUtil.SetDataGridView(dataGridView1);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             DataTable dt = service.GetProductPlan(cboPlanID.Text, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
 

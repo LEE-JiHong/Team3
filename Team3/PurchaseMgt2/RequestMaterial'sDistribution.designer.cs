@@ -179,12 +179,13 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(213, 3);
+            this.button5.Location = new System.Drawing.Point(215, 1);
+            this.button5.Margin = new System.Windows.Forms.Padding(1);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 23);
+            this.button5.Size = new System.Drawing.Size(57, 26);
             this.button5.TabIndex = 52;
             this.button5.Text = "엑셀";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -207,9 +208,10 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(137, 3);
+            this.button6.Location = new System.Drawing.Point(139, 1);
+            this.button6.Margin = new System.Windows.Forms.Padding(1);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
+            this.button6.Size = new System.Drawing.Size(57, 26);
             this.button6.TabIndex = 52;
             this.button6.Text = "엑셀";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -223,9 +225,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Image = global::Team3.Properties.Resources.Save_16x16;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(72, 3);
+            this.btnSave.Location = new System.Drawing.Point(78, 1);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(1);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(59, 23);
+            this.btnSave.Size = new System.Drawing.Size(59, 26);
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "저장";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -239,9 +242,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::Team3.Properties.Resources.plus;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(9, 3);
+            this.btnAdd.Location = new System.Drawing.Point(19, 1);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(57, 23);
+            this.btnAdd.Size = new System.Drawing.Size(57, 26);
             this.btnAdd.TabIndex = 53;
             this.btnAdd.Text = "추가";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -381,6 +385,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1129, 536);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.KeyPreview = true;
             this.Name = "DMRMgt";
             this.Tag = "자재불출요청";
             this.Text = "자재불출요청";

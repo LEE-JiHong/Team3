@@ -103,6 +103,7 @@
             // 
             // panel4
             // 
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.panel4.Location = new System.Drawing.Point(146, 6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 29);
@@ -111,6 +112,7 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.panel1.Location = new System.Drawing.Point(682, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 29);
