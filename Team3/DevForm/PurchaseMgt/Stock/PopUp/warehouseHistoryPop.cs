@@ -54,5 +54,10 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "잔량", "wh_comment", false, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "카테고리", "common_name", true, 150);
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

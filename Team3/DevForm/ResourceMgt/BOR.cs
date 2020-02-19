@@ -47,6 +47,7 @@ namespace Team3
                 ComboUtil.ComboBinding<CommonVO>(cboProcess, mCode, "common_value", "common_name", "미선택");
             }
 
+
         }
 
         private void LoadData()
@@ -107,6 +108,13 @@ namespace Team3
 
         private void btnEX_Click(object sender, EventArgs e)
         {
+            using (frmWaitForm frm = new frmWaitForm(ExcelLoad))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+        public void ExcelLoad()
+        {
             try
             {
                 Excel.Application excel = new Excel.Application
@@ -162,113 +170,114 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
+    
 
-        private void btnDel_Click(object sender, EventArgs e)
+    private void btnDel_Click(object sender, EventArgs e)
+    {
+        ResourceService R_service = new ResourceService();
+        try
         {
-            ResourceService R_service = new ResourceService();
-            try
+            DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[2].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dr == DialogResult.OK)
             {
-                DialogResult dr = MessageBox.Show(dataGridView1.CurrentRow.Cells[2].Value.ToString() + " 를(을) 삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                if (dr == DialogResult.OK)
+                R_service = new ResourceService();
+                bool bResult = R_service.DeleteBOR(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+
+                if (bResult)
                 {
-                    R_service = new ResourceService();
-                    bool bResult = R_service.DeleteBOR(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    LoadData();
+                    SetBottomStatusLabel("삭제완료");
+                    MessageBox.Show("삭제완료");
 
-                    if (bResult)
-                    {
-                        LoadData();
-                        SetBottomStatusLabel("삭제완료");
-                        MessageBox.Show("삭제완료");
-
-                    }
-                    else if (!bResult)
-                    {
-                        SetBottomStatusLabel("삭제실패");
-                        MessageBox.Show("삭제 실패");
-                        return;
-                    }
+                }
+                else if (!bResult)
+                {
+                    SetBottomStatusLabel("삭제실패");
+                    MessageBox.Show("삭제 실패");
+                    return;
                 }
             }
-            catch (Exception err)
+        }
+        catch (Exception err)
+        {
+            string str = err.Message;
+            LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+        }
+    }
+
+    private void btnSearch_Click(object sender, EventArgs e)
+    {
+
+        dataGridView1.Columns.Clear();
+        BORDB_VO vo = new BORDB_VO();
+        vo.product_name = txtItem.Text;
+        if (cboProcess.Text == "미선택")
+        {
+            vo.common_name = "";
+        }
+        else
+            vo.common_name = cboProcess.Text;
+        vo.m_name = txtFacility.Text;
+
+        List<BORDB_VO> list = service.BOR_Search(vo);
+        if (list == null)
+        {
+
+            return;
+        }
+        else
+        {
+            dataGridView1.DataSource = null;
+            dgvColumnSet();
+            dataGridView1.DataSource = list;
+        }
+
+        if (dataGridView1.Rows.Count <= 0)
+        {
+            SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
+        }
+        else
+        {
+            SetBottomStatusLabel("조회가 완료되었습니다.");
+        }
+    }
+
+    private void dgvColumnSet()
+    {
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "bor_id", false);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bom_id", "bom_id", false);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "common_type", false);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정명", "common_name", true);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_code", true);
+
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "Tack Time", "bor_tacktime", true);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정선행시간", "bor_readytime", true);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "bor_yn", false);
+        GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "bor_comment", true);
+    }
+
+    private void btnRefresh_Click(object sender, EventArgs e)
+    {
+        LoadData();
+        foreach (Control ctrl in panel1.Controls)
+        {
+            if (typeof(TextBox) == ctrl.GetType())
             {
-                string str = err.Message;
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                ctrl.Text = "";
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        foreach (Control con in panel1.Controls)
         {
-
-            dataGridView1.Columns.Clear();
-            BORDB_VO vo = new BORDB_VO();
-            vo.product_name = txtItem.Text;
-            if (cboProcess.Text == "미선택")
+            if (con is ComboBox cb)
             {
-                vo.common_name = "";
-            }
-            else
-                vo.common_name = cboProcess.Text;
-            vo.m_name = txtFacility.Text;
+                cb.SelectedIndex = 0;
 
-            List<BORDB_VO> list = service.BOR_Search(vo);
-            if (list == null)
-            {
-
-                return;
-            }
-            else
-            {
-                dataGridView1.DataSource = null;
-                dgvColumnSet();
-                dataGridView1.DataSource = list;
-            }
-
-            if (dataGridView1.Rows.Count <= 0)
-            {
-                SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
-            }
-            else
-            {
-                SetBottomStatusLabel("조회가 완료되었습니다.");
-            }
-        }
-
-        private void dgvColumnSet()
-        {
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "ID", "bor_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "bom_id", "bom_id", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정", "common_type", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정명", "common_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비", "m_code", true);
-
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "설비명", "m_name", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "Tack Time", "bor_tacktime", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "공정선행시간", "bor_readytime", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "사용유무", "bor_yn", false);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "비고", "bor_comment", true);
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            LoadData();
-            foreach (Control ctrl in panel1.Controls)
-            {
-                if (typeof(TextBox) == ctrl.GetType())
-                {
-                    ctrl.Text = "";
-                }
-            }
-
-            foreach (Control con in panel1.Controls)
-            {
-                if (con is ComboBox cb)
-                {
-                    cb.SelectedIndex = 0;
-
-                }
             }
         }
     }
+}
 }

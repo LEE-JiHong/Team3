@@ -112,6 +112,13 @@ namespace Team3
         }
         private void BtnExport_Click(object sender, EventArgs e)
         {
+            using (frmWaitForm frm = new frmWaitForm(ExcelLoad))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+        public void ExcelLoad()
+        {
             try
             {
                 Excel.Application excel = new Excel.Application
@@ -162,6 +169,7 @@ namespace Team3
                     }
                 }
             }
+
             catch (Exception err)
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
@@ -302,7 +310,7 @@ namespace Team3
                 dataGridView2.DataSource = lst;
             }
 
-            if(dataGridView2.Rows.Count<=0)
+            if (dataGridView2.Rows.Count <= 0)
             {
                 SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
             }

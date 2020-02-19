@@ -54,6 +54,9 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnEX = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -130,6 +135,7 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.panel5);
             this.basepanel.Controls.Add(this.label8);
             this.basepanel.Controls.Add(this.panel4);
             this.basepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -140,6 +146,7 @@
             this.basepanel.Controls.SetChildIndex(this.label1, 0);
             this.basepanel.Controls.SetChildIndex(this.panel3, 0);
             this.basepanel.Controls.SetChildIndex(this.label8, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel5, 0);
             // 
             // imageList1
             // 
@@ -417,10 +424,45 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "실적등록";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Location = new System.Drawing.Point(671, 117);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(338, 30);
+            this.panel5.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnEX);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(338, 30);
+            this.panel6.TabIndex = 0;
+            // 
+            // btnEX
+            // 
+            this.btnEX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEX.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEX.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
+            this.btnEX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEX.Location = new System.Drawing.Point(278, 6);
+            this.btnEX.Margin = new System.Windows.Forms.Padding(1);
+            this.btnEX.Name = "btnEX";
+            this.btnEX.Size = new System.Drawing.Size(57, 23);
+            this.btnEX.TabIndex = 51;
+            this.btnEX.Text = "엑셀";
+            this.btnEX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEX.UseVisualStyleBackColor = false;
+            this.btnEX.Click += new System.EventHandler(this.btnEX_Click);
+            // 
             // Business_showings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1021, 666);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1037, 500);
             this.Name = "Business_showings";
@@ -437,6 +479,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +512,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnEX;
     }
 }

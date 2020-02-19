@@ -12,11 +12,18 @@ namespace Team3
 {
     public partial class frmWaitForm : Form
     {
+        private object v;
+
         public Action Worker { get; set; }
         public frmWaitForm(Action worker)
         {
             InitializeComponent();
             Worker = worker;
+        }
+
+        public frmWaitForm(object v)
+        {
+            this.v = v;
         }
 
         private void frmWaitForm_Load(object sender, EventArgs e)

@@ -72,9 +72,9 @@
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(15, 114);
-            this.label1.Size = new System.Drawing.Size(97, 27);
+            this.label1.Size = new System.Drawing.Size(105, 27);
             this.label1.Tag = "Shift관리";
-            this.label1.Text = "Shift관리";
+            this.label1.Text = "Shift 관리";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
@@ -267,6 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(894, 536);
+            this.KeyPreview = true;
             this.Name = "ShiftMain";
             this.Tag = "Shift기준정보";
             this.Text = "Shift기준정보";

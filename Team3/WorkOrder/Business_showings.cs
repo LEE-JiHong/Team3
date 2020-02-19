@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Team3.Service;
 using Team3VO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace Team3
 {
     public partial class Business_showings : Team3.VerticalGridBaseForm
@@ -73,7 +76,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "m_id", "m_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "소진창고", "m_use_sector_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "양품창고", "m_ok_sector_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
-
+            GridViewUtil.SetDataGridView(dataGridView2);
             ProcessService P_service = new ProcessService();
             List<WorkRecode_VO> W_lst = P_service.WorkRecode();
             dataGridView1.DataSource = W_lst;
@@ -117,6 +120,77 @@ namespace Team3
             catch (Exception err)
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+        }
+
+        private void btnEX_Click(object sender, EventArgs e)
+        {
+
+            using (frmWaitForm frm = new frmWaitForm(ExcelDown))
+            {
+                frm.ShowDialog(this);
+            }
+
+        }
+
+        private void ExcelDown()
+        {
+            try
+            {
+                Excel.Application excel = new Excel.Application
+                {
+                    Visible = true
+                };
+
+                string filename = "test" + ".xlsx";
+
+                string tempPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                //byte[] temp = Properties.Resources.order;
+
+                //System.IO.File.WriteAllBytes(tempPath, temp);
+
+                Excel._Workbook workbook;
+
+                workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);//tempPath
+
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < dataGridView1.Columns.Count - 3; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                }
+
+                StartRow++;
+
+                //Write datagridview content
+                for (i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (j = 0; j < dataGridView1.Columns.Count - 3; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show(err.Message);
+                        }
+                    }
+                }
+
+                SetBottomStatusLabel("다운로드가 완료되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                LoggingUtility.GetLoggingUtility(ex.Message, Level.Error);
+                SetBottomStatusLabel("다운로드에 실패하였습니다.");
             }
         }
     }

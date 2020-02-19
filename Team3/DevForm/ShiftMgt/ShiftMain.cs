@@ -50,6 +50,8 @@ namespace Team3
                               where shift.common_type == "shift_code"
                               select shift).ToList();
             ComboUtil.ComboBinding(cboShift, shift_code, "common_value", "common_name", "전체");
+
+            GridViewUtil.SetDataGridView(dataGridView1);
         }
 
         private void LoadData()

@@ -223,11 +223,11 @@ namespace Team3
 
         private void button5_Click(object sender, EventArgs e)
         {
-            LoadingForm f = new LoadingForm();
 
-            f.Function = (() => { ExcelDown(); });
-
-            f.ShowDialog();
+            using (frmWaitForm frm = new frmWaitForm(ExcelDown))
+            {
+                frm.ShowDialog(this);
+            }
 
         }
 
@@ -276,9 +276,9 @@ namespace Team3
                             Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
                             myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
                         }
-                        catch
+                        catch(Exception err)
                         {
-                            ;
+                            MessageBox.Show(err.Message);
                         }
                     }
                 }

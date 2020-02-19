@@ -52,6 +52,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.Size = new System.Drawing.Size(71, 25);
             this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
