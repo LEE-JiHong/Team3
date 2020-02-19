@@ -133,12 +133,10 @@ namespace Team3
                 }
                 //if (bResult)
                 LoadData();
-
             }
-
             catch (Exception err)
             {
-                string st = err.Message;
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
 
         }

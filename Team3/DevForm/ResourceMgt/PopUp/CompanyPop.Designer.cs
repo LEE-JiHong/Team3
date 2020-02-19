@@ -64,6 +64,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.linePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -101,8 +102,6 @@
             this.panel2.Controls.Add(this.txtComment);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txtAdmin);
-            this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.txtOrder_code);
             this.panel2.Controls.Add(this.txtFax);
@@ -133,6 +132,12 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(727, 7);
+            // 
+            // linePanel
+            // 
+            this.linePanel.Controls.Add(this.txtAdmin);
+            this.linePanel.Controls.Add(this.label21);
+            this.linePanel.Size = new System.Drawing.Size(808, 451);
             // 
             // label2
             // 
@@ -211,7 +216,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(265, 157);
+            this.label8.Location = new System.Drawing.Point(45, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 15);
             this.label8.TabIndex = 0;
@@ -344,19 +349,21 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(45, 157);
+            this.label21.Location = new System.Drawing.Point(58, 415);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 15);
             this.label21.TabIndex = 0;
             this.label21.Text = "수정자";
+            this.label21.Visible = false;
             // 
             // txtAdmin
             // 
             this.txtAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtAdmin.Location = new System.Drawing.Point(103, 154);
+            this.txtAdmin.Location = new System.Drawing.Point(116, 412);
             this.txtAdmin.Name = "txtAdmin";
             this.txtAdmin.Size = new System.Drawing.Size(130, 21);
             this.txtAdmin.TabIndex = 12;
+            this.txtAdmin.Visible = false;
             // 
             // label15
             // 
@@ -389,7 +396,7 @@
             // txtUdate
             // 
             this.txtUdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtUdate.Location = new System.Drawing.Point(362, 154);
+            this.txtUdate.Location = new System.Drawing.Point(103, 155);
             this.txtUdate.Name = "txtUdate";
             this.txtUdate.ReadOnly = true;
             this.txtUdate.Size = new System.Drawing.Size(130, 21);
@@ -427,7 +434,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(528, 160);
+            this.label5.Location = new System.Drawing.Point(265, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 15);
             this.label5.TabIndex = 0;
@@ -436,7 +443,7 @@
             // txtOrder_code
             // 
             this.txtOrder_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtOrder_code.Location = new System.Drawing.Point(589, 157);
+            this.txtOrder_code.Location = new System.Drawing.Point(361, 155);
             this.txtOrder_code.Name = "txtOrder_code";
             this.txtOrder_code.ReadOnly = true;
             this.txtOrder_code.Size = new System.Drawing.Size(130, 21);
@@ -450,6 +457,7 @@
             this.Controls.Add(this.lblID);
             this.Name = "CompanyPop";
             this.Load += new System.EventHandler(this.CompanyPop_Load);
+            this.Controls.SetChildIndex(this.linePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
@@ -458,6 +466,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.linePanel.ResumeLayout(false);
+            this.linePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

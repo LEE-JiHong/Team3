@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Team3VO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
-
+using log4net.Core;
 
 namespace Team3
 {
@@ -29,7 +29,7 @@ namespace Team3
             this.ImeMode = ImeMode.Hangul;
             GridViewUtil.SetDataGridView(dataGridView1);
             dgvColumnSet();
-            
+
 
 
             LoadData();
@@ -58,34 +58,47 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            BORPop frm = new BORPop(BORPop.EditMode.Input);
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                LoadData();
-                SetBottomStatusLabel("등록 성공");
-                MessageBox.Show("등록 성공");
+                BORPop frm = new BORPop(BORPop.EditMode.Input);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                    SetBottomStatusLabel("등록 성공");
+                    MessageBox.Show("등록 성공");
+                }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (lblID.Text != "")
+            try
             {
-                BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text, lblRoute.Text);
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (lblID.Text != "")
                 {
-                    LoadData();
-                    SetBottomStatusLabel("수정 성공");
-                    MessageBox.Show("수정 성공");
+                    BORPop frm = new BORPop(BORPop.EditMode.Update, lblID.Text, lblRoute.Text);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadData();
+                        SetBottomStatusLabel("수정 성공");
+                        MessageBox.Show("수정 성공");
+                    }
+                }
+                else
+                {
+                    SetBottomStatusLabel("선택된 BOR이 없습니다");
+                    MessageBox.Show("선택된 BOR이 없습니다.");
                 }
             }
-            else
+            catch (Exception err)
             {
-                SetBottomStatusLabel("선택된 BOR이 없습니다");
-                MessageBox.Show("선택된 BOR이 없습니다.");
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -144,9 +157,9 @@ namespace Team3
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                MessageBox.Show(ex.ToString());
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
@@ -179,6 +192,7 @@ namespace Team3
             catch (Exception err)
             {
                 string str = err.Message;
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
@@ -207,6 +221,15 @@ namespace Team3
                 dataGridView1.DataSource = null;
                 dgvColumnSet();
                 dataGridView1.DataSource = list;
+            }
+
+            if (dataGridView1.Rows.Count <= 0)
+            {
+                SetBottomStatusLabel("조회에 실패하였습니다. 다시 시도하여 주십시오.");
+            }
+            else
+            {
+                SetBottomStatusLabel("조회가 완료되었습니다.");
             }
         }
 

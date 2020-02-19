@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Team3VO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
+using log4net.Core;
 
 namespace Team3
 {
@@ -52,7 +53,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "특이사항", "m_check", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "비고", "m_comment", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "사용유무", "m_yn", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "m_uadmin", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정자", "m_uadmin", false);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "수정시간", "m_udate", true);
             GridViewUtil.SetDataGridView(dataGridView2);
 
@@ -76,119 +77,152 @@ namespace Team3
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            FacilitiesPop group = new FacilitiesPop(FacilitiesPop.EditMode.Input);
-            if (group.ShowDialog() == DialogResult.OK)
+            try
             {
-                LoadData();
-                SetBottomStatusLabel("신규 설비군 등록 성공");
+                FacilitiesPop group = new FacilitiesPop(FacilitiesPop.EditMode.Input);
+                if (group.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                    SetBottomStatusLabel("신규 설비군 등록 성공");
+                }
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
         private void btnG_Update_Click(object sender, EventArgs e)
         {
-            MachineGradeVO VO = new MachineGradeVO();
-            VO.mgrade_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            VO.mgrade_code = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            VO.mgrade_name = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            VO.mgrade_yn = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            VO.mgrade_uadmin = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            VO.mgrade_udate = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            VO.mgrade_comment = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            FacilitiesPop frm = new FacilitiesPop(FacilitiesPop.EditMode.Update, VO);
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                LoadData();
-                SetBottomStatusLabel("설비군 수정 성공");
-            }
-            txtCode.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtAdmin.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtDate.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (lblID1.Text != "")
-            {
-                FacilitieInfoPop frm = new FacilitieInfoPop
-                    (FacilitieInfoPop.EditMode.Input, dataGridView1.CurrentRow.Cells[1].Value.ToString(), lblID1.Text);
+                MachineGradeVO VO = new MachineGradeVO();
+                VO.mgrade_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                VO.mgrade_code = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                VO.mgrade_name = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                VO.mgrade_yn = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                VO.mgrade_uadmin = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                VO.mgrade_udate = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                VO.mgrade_comment = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                FacilitiesPop frm = new FacilitiesPop(FacilitiesPop.EditMode.Update, VO);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadData();
-                    SetBottomStatusLabel("신규 설비 등록 성공");
+                    SetBottomStatusLabel("설비군 수정 성공");
                 }
-
+                txtCode.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txtAdmin.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txtDate.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             }
-            else if (lblID1.Text == "")
-                MessageBox.Show("설비군을 선택해주세요");
-            SetBottomStatusLabel("선택된 설비군이 없습니다");
-
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (lblID2.Text == "")
+            try
             {
-
-                SetBottomStatusLabel("선택된 설비가 없습니다");
-                MessageBox.Show("변경할 설비를 선택해주세요");
-                return;
-            }
-            else
-            {
-                if (dataGridView2.Rows.Count > 0)
+                if (lblID1.Text != "")
                 {
-                    DataGridViewRow rows = dataGridView2.CurrentRow;
-                    MachineVO VO = new MachineVO();
-                    VO.m_id = Convert.ToInt32(rows.Cells[0].Value.ToString());
-                    VO.mgrade_code = rows.Cells[2].Value.ToString();
-                    VO.mgrade_id = Convert.ToInt32(rows.Cells[1].Value);
-                    VO.m_code = rows.Cells[3].Value.ToString();
-                    VO.m_name = rows.Cells[4].Value.ToString();
-                    VO.m_use_sector = rows.Cells[5].Value.ToString();
-                    VO.m_ok_sector = rows.Cells[6].Value.ToString();
+                    FacilitieInfoPop frm = new FacilitieInfoPop
+                        (FacilitieInfoPop.EditMode.Input, dataGridView1.CurrentRow.Cells[1].Value.ToString(), lblID1.Text);
 
-                    if (rows.Cells[7].Value == null)
-                    { VO.m_ng_sector = ""; }
-                    else
-                        VO.m_ng_sector = rows.Cells[7].Value.ToString();
-
-                    VO.m_yn = rows.Cells[11].Value.ToString();
-                    VO.m_os_yn = rows.Cells[8].Value.ToString();
-                    VO.m_uadmin = rows.Cells[12].Value.ToString();
-                    VO.m_udate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
-
-                    if (rows.Cells[9].Value == null)
-                        VO.m_check = "";
-                    else
-                        VO.m_check = rows.Cells[9].Value.ToString();
-                    VO.m_comment = rows.Cells[10].Value.ToString();
-
-                    FacilitieInfoPop frm = new FacilitieInfoPop(FacilitieInfoPop.EditMode.Update, VO);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadData();
-                        SetBottomStatusLabel("설비 정보 수정 성공");
-                        MessageBox.Show("설비 정보 수정 성공");
+                        SetBottomStatusLabel("신규 설비 등록 성공");
+                    }
+
+                }
+                else if (lblID1.Text == "")
+                    MessageBox.Show("설비군을 선택해주세요");
+                SetBottomStatusLabel("선택된 설비군이 없습니다");
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblID2.Text == "")
+                {
+
+                    SetBottomStatusLabel("선택된 설비가 없습니다");
+                    MessageBox.Show("변경할 설비를 선택해주세요");
+                    return;
+                }
+                else
+                {
+                    if (dataGridView2.Rows.Count > 0)
+                    {
+                        DataGridViewRow rows = dataGridView2.CurrentRow;
+                        MachineVO VO = new MachineVO();
+                        VO.m_id = Convert.ToInt32(rows.Cells[0].Value.ToString());
+                        VO.mgrade_code = rows.Cells[2].Value.ToString();
+                        VO.mgrade_id = Convert.ToInt32(rows.Cells[1].Value);
+                        VO.m_code = rows.Cells[3].Value.ToString();
+                        VO.m_name = rows.Cells[4].Value.ToString();
+                        VO.m_use_sector = rows.Cells[5].Value.ToString();
+                        VO.m_ok_sector = rows.Cells[6].Value.ToString();
+
+                        if (rows.Cells[7].Value == null)
+                        { VO.m_ng_sector = ""; }
+                        else
+                            VO.m_ng_sector = rows.Cells[7].Value.ToString();
+
+                        VO.m_yn = rows.Cells[11].Value.ToString();
+                        VO.m_os_yn = rows.Cells[8].Value.ToString();
+                        VO.m_uadmin = rows.Cells[12].Value.ToString();
+                        VO.m_udate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", today);
+
+                        if (rows.Cells[9].Value == null)
+                            VO.m_check = "";
+                        else
+                            VO.m_check = rows.Cells[9].Value.ToString();
+                        VO.m_comment = rows.Cells[10].Value.ToString();
+
+                        FacilitieInfoPop frm = new FacilitieInfoPop(FacilitieInfoPop.EditMode.Update, VO);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadData();
+                            SetBottomStatusLabel("설비 정보 수정 성공");
+                            MessageBox.Show("설비 정보 수정 성공");
+                        }
                     }
                 }
             }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            lblID1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtCode.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "Y")
-                radioButton1.Checked = true;
-            else if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "N")
-                radioButton2.Checked = true;
-            txtAdmin.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtDate.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-
+            try
+            {
+                lblID1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtCode.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "Y")
+                    radioButton1.Checked = true;
+                else if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "N")
+                    radioButton2.Checked = true;
+                txtAdmin.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txtDate.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                txtComment.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -215,7 +249,7 @@ namespace Team3
             }
             catch (Exception err)
             {
-                string sr = err.Message;
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
@@ -257,7 +291,7 @@ namespace Team3
             }
             catch (Exception err)
             {
-                string str = err.Message;
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 
@@ -313,9 +347,9 @@ namespace Team3
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                MessageBox.Show(ex.ToString());
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 

@@ -57,6 +57,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.linePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -106,9 +107,7 @@
             this.panel2.Controls.Add(this.txtCodeFacility);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.txtModifier);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtMgrade_code);
@@ -120,6 +119,12 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(716, 6);
+            // 
+            // linePanel
+            // 
+            this.linePanel.Controls.Add(this.txtModifier);
+            this.linePanel.Controls.Add(this.label5);
+            this.linePanel.Size = new System.Drawing.Size(796, 455);
             // 
             // label2
             // 
@@ -158,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(22, 97);
+            this.label4.Location = new System.Drawing.Point(22, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 0;
@@ -168,19 +173,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(503, 98);
+            this.label5.Location = new System.Drawing.Point(456, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "수정자";
+            this.label5.Visible = false;
             // 
             // txtModifier
             // 
             this.txtModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtModifier.Location = new System.Drawing.Point(564, 95);
+            this.txtModifier.Location = new System.Drawing.Point(517, 57);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(150, 21);
             this.txtModifier.TabIndex = 8;
+            this.txtModifier.Visible = false;
             // 
             // label6
             // 
@@ -216,7 +223,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(503, 134);
+            this.label9.Location = new System.Drawing.Point(503, 98);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 15);
             this.label9.TabIndex = 0;
@@ -225,7 +232,7 @@
             // txtModifyTime
             // 
             this.txtModifyTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtModifyTime.Location = new System.Drawing.Point(564, 131);
+            this.txtModifyTime.Location = new System.Drawing.Point(564, 95);
             this.txtModifyTime.Name = "txtModifyTime";
             this.txtModifyTime.ReadOnly = true;
             this.txtModifyTime.Size = new System.Drawing.Size(150, 21);
@@ -293,7 +300,7 @@
             // 
             this.cboIsUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(95, 93);
+            this.cboIsUsed.Location = new System.Drawing.Point(95, 94);
             this.cboIsUsed.Name = "cboIsUsed";
             this.cboIsUsed.Size = new System.Drawing.Size(150, 23);
             this.cboIsUsed.TabIndex = 6;
@@ -380,6 +387,7 @@
             this.Controls.Add(this.lblID);
             this.Name = "FacilitieInfoPop";
             this.Load += new System.EventHandler(this.FacilitieInfoPop_Load);
+            this.Controls.SetChildIndex(this.linePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
@@ -388,6 +396,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.linePanel.ResumeLayout(false);
+            this.linePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
