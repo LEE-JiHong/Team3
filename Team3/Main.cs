@@ -1055,16 +1055,7 @@ namespace Team3
 
                 MadeTabMenu(frm);
             }
-            else if (e.Node.Text == "거래처별월마감")
-            {
-                ShipmentClosingMonthMgt frm = new ShipmentClosingMonthMgt();
-                if (ExsistTap(e.Node.Text))
-                {
-                    return;
-                }
-
-                MadeTabMenu(frm);
-            }
+           
         }
 
         private void btnSet_Click(object sender, EventArgs e)

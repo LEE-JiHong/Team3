@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,8 +28,6 @@ namespace Team3.DevForm.ShipmentMgt
             ResourceService resource_service = new ResourceService();
             f_list = resource_service.GetFactoryAll();
 
-
-
             #region 고객사cbo
             List<CompanyVO> company_list = new List<CompanyVO>();
             OrderService order_service = new OrderService();
@@ -35,14 +35,11 @@ namespace Team3.DevForm.ShipmentMgt
             ComboUtil.ComboBinding(cboCustomer, company_list, "company_code", "company_name", "선택");
             #endregion
 
-            #region 고객창고cbo
-            List<FactoryDB_VO> _cboOutSector = (from item in f_list
-                                                where item.facility_value == "FAC700"
-                                                select item).ToList();
-            ComboUtil.ComboBinding(cboCustomerWH, _cboOutSector, "factory_code", "factory_name", "선택");
-            #endregion
+          
 
-
+            //날짜 setting
+            dtpFromDate.Value = DateTime.Now.AddMonths(-1);
+            dtpToDate.Value = DateTime.Now;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -73,16 +70,44 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            SetDGV();
+            
+            //조회 버튼
+            try
+            {
+                ShipmentClosingVO vo = new ShipmentClosingVO();
+                vo.start_date = dtpFromDate.Value.ToShortDateString();
+                vo.end_date = dtpToDate.Value.ToShortDateString();
 
+                if (cboCustomer.Text != "선택")
+                {
+                    vo.company_code = cboCustomer.SelectedValue.ToString();
+                }
+
+                if (txtProduct.Text != "")
+                {
+                    vo.product_name = txtProduct.Text.Trim();
+                }
+
+                SetDGV();
+
+                dt = new DataTable();
+                shipment_service = new ShipmentService();
+                dt = shipment_service.GetSalesCompleteStatus(vo);
+                dgvClientOrder.DataSource = dt;
+                
+                SetBottomStatusLabel($"{dt.Rows.Count}건이 조회되었습니다.");
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
         }
 
         private void SetDGV()
         {
-            dt = new DataTable();
-            shipment_service = new ShipmentService();
-            dt = shipment_service.GetSalesCompleteStatus();
+            dgvClientOrder.Columns.Clear();
 
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "so_wo_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "plan_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사코드", "s_company", true, 100, DataGridViewContentAlignment.MiddleLeft);
@@ -94,10 +119,9 @@ namespace Team3.DevForm.ShipmentMgt
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출액", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일", "s_date", true, 100, DataGridViewContentAlignment.MiddleCenter);
 
-
+            GridViewUtil.SetDataGridView(dgvClientOrder);
 
             dgvClientOrder.AutoGenerateColumns = false;
-            dgvClientOrder.DataSource = dt;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,27 +133,54 @@ namespace Team3.DevForm.ShipmentMgt
             }
             else
             {
-                shipment_service = new ShipmentService();
-                shipment_service.GetSalesCompleteStatus();
-                SalesComplete ds = new SalesComplete();
+                try
+                {
+                    ShipmentClosingVO vo = new ShipmentClosingVO();
+                    vo.start_date = dtpFromDate.Value.ToShortDateString();
+                    vo.end_date = dtpToDate.Value.ToShortDateString();
+
+                    if (cboCustomer.Text != "선택")
+                    {
+                        vo.company_code = cboCustomer.SelectedValue.ToString();
+                    }
+
+                    if (txtProduct.Text != "")
+                    {
+                        vo.product_name = txtProduct.Text.Trim();
+                    }
+
+                    shipment_service = new ShipmentService();
+                    shipment_service.GetSalesCompleteStatus(vo);
+                    SalesComplete ds = new SalesComplete();
 
 
-                Report_SalesComplete rpt = new Report_SalesComplete();
+                    Report_SalesComplete rpt = new Report_SalesComplete();
 
 
-                dt.TableName = "salescomplete";
-                ds.Tables.Add(dt);
-                rpt.DataSource = ds.Tables["salescomplete"];
+                    dt.TableName = "salescomplete";
+                    ds.Tables.Add(dt);
+                    rpt.DataSource = ds.Tables["salescomplete"];
 
-                WinReport_SC frm = new WinReport_SC(rpt);
-                frm.documentViewer1.DocumentSource = rpt;
 
-                //??
-                frm.documentViewer1.PrintingSystem.ExecCommand(
-                    DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
-                    , new object[] { true });
+                    using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+                    {
+                        printTool.ShowRibbonPreviewDialog();
+                    }
 
-                frm.ShowDialog();
+                    //WinReport_SC frm = new WinReport_SC(rpt);
+                    //frm.documentViewer1.DocumentSource = rpt;
+
+                    ////??
+                    //frm.documentViewer1.PrintingSystem.ExecCommand(
+                    //    DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
+                    //    , new object[] { true });
+
+                    //frm.ShowDialog();
+                }
+                catch (Exception err)
+                {
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                }
             }
            
         }

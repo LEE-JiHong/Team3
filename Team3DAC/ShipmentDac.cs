@@ -15,15 +15,33 @@ namespace Team3DAC
         /// 고객별 주문현황
         /// </summary>
         /// <returns></returns>
-        public List<ShipmentVO> GetInventoryStatusByOrder()
+        public List<ShipmentVO> GetInventoryStatusByOrder(InventoryOrderMgtVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "GetInventoryStatusByOrder";
+                StringBuilder sql = new StringBuilder();
+                sql.Append("select so_id,s.plan_id,company_code,company_type,p.product_name,p.product_id, s.product_name as product_codename,so_ocount,so_ccount,so_edate,so_sdate,(select distinct factory_name from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=5) as from_wh,(select distinct factory_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=5) as from_wh_value, w.w_count_present ,so_pcount- so_ccount as so_pcount from TBL_SO_MASTER s inner join TBL_PRODUCT p on s.product_name = p.product_codename inner join TBL_WAREHOUSE w on s.plan_id = w.plan_id  inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=( select factory_id  from TBL_FACTORY where factory_type='FAC400') and CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate)");
+
+                if (vo.fromFactory != null)
+                {
+                    sql.Append(" and f.factory_code = @from_wh");
+                    cmd.Parameters.AddWithValue("@from_wh", vo.fromFactory);
+                }
+
+                if (vo.product_name != null)
+                {
+                    sql.Append($" and p.product_name like '%{vo.product_name}%'");
+                    // cmd.Parameters.AddWithValue("@order_id", vo.order_id);
+                }
+
+                cmd.Parameters.AddWithValue("@startDate", vo.start_date);
+                cmd.Parameters.AddWithValue("@endDate", vo.end_date);
+
+                //string sql = "GetInventoryStatusByOrder";
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = sql;
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = sql.ToString();
+                cmd.CommandType = CommandType.Text;
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(reader);
@@ -240,23 +258,41 @@ where price_edate = '9999-12-31' and product_type = 'FP' and pr.product_id = @pr
         /// </summary>
         /// <param name="product_id"></param>
         /// <returns></returns>
-        public DataTable GetSalesCompleteStatus()
+        public DataTable GetSalesCompleteStatus(ShipmentClosingVO vo)
         {
           
             using (SqlCommand cmd = new SqlCommand())
             {
                 DataTable dt = new DataTable();
-                string sql = @"select s.so_id,s_date,s.plan_id,p.product_codename,p.product_name,s_count,s_TotalPrice,s_company,c.company_name,so.so_pcount
+
+                StringBuilder sql = new StringBuilder();
+
+                sql.Append(@"select so_wo_id,s.so_id,s_date,s.plan_id,p.product_codename,p.product_name,s_count,s_TotalPrice,s_company,c.company_name,so.so_pcount
 from TBL_SALES_COMPLETE s  inner
 join TBL_PRODUCT p on s.product_id = p.product_id
 inner
 join TBL_SO_MASTER so on s.so_id = so.so_id
 inner
-join TBL_COMPANY c on c.company_code = s.s_company";
+join TBL_COMPANY c on c.company_code = s.s_company and CONVERT (DATETIME, s_date) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, s_date) <= CONVERT (DATETIME, @endDate)");
+
+                if (vo.company_code != null)
+                {
+                    sql.Append(" and c.company_code = @company_code");
+                    cmd.Parameters.AddWithValue("@company_code", vo.company_code);
+                }
+
+                if (vo.product_name != null)
+                {
+                    sql.Append($" and p.product_name like '%{vo.product_name}%'");
+                    // cmd.Parameters.AddWithValue("@order_id", vo.order_id);
+                }
+
+                cmd.Parameters.AddWithValue("@startDate", vo.start_date);
+                cmd.Parameters.AddWithValue("@endDate", vo.end_date);
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.Connection.Open();
-                cmd.CommandText = sql;
+                cmd.CommandText = sql.ToString();
                 cmd.CommandType = CommandType.Text;
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
