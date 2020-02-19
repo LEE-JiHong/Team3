@@ -7,6 +7,28 @@ using System.Threading.Tasks;
 namespace Team3VO
 {
     /// <summary>
+    /// 고객 주문별 재고현황 조건검색 VO
+    /// </summary>
+    public class InventoryOrderMgtVO
+    { 
+        public string start_date { get; set; }
+        public string end_date { get; set; }
+        public string fromFactory { get; set; }
+        public string toFactory { get; set; }
+        public string product_name { get; set; }
+    }
+    /// <summary>
+    /// 매출마감 현황 조건검색 vo
+    /// </summary>
+    public class ShipmentClosingVO
+    {
+        public string start_date { get; set; }
+        public string end_date { get; set; }
+        public string company_code { get; set; }
+        public string product_name { get; set; }
+    }
+
+    /// <summary>
     /// 이동수량VO
     /// </summary>
     public class ShipmentVO

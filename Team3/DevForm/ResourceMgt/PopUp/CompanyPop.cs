@@ -63,7 +63,7 @@ namespace Team3
                              where item.common_type == "vendor_type"
                              select item).ToList();
 
-                ComboUtil.ComboBinding<CommonVO>(cboCompanyType, mCode, "common_value", "common_name");
+                ComboUtil.ComboBinding<CommonVO>(cboCompanyType, mCode, "common_value", "common_name","미선택");
             }
             {
                 //사용유무
@@ -113,6 +113,7 @@ namespace Team3
                 if(txtCodeCompany.Text==""||txtNameCompany.Text==""||cboCompanyType.SelectedIndex==0)
                 {
                     MessageBox.Show("필수항목이 입력되지 않았습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    this.DialogResult = DialogResult.None;
                     return;
                 }
                 CompanyVO VO = new CompanyVO();
@@ -171,7 +172,8 @@ namespace Team3
             }
             catch (NullReferenceException err)
             {
-                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.DialogResult = DialogResult.None;
                 return;
             }
             catch (Exception err)

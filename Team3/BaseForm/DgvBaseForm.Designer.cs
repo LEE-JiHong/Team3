@@ -93,6 +93,7 @@
             this.Name = "DgvBaseForm";
             this.Text = "DgvBaseForm";
             this.Load += new System.EventHandler(this.DgvBaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DgvBaseForm_KeyUp);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblGrid1Name = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            //this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +64,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
-            //this.panel2.Controls.Add(this.linePanel);
             this.panel2.Size = new System.Drawing.Size(1019, 427);
             // 
             // button1
@@ -74,18 +71,9 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(979, 7);
             // 
-            // panel4
+            // linePanel
             // 
-            //this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            //| System.Windows.Forms.AnchorStyles.Right)));
-            //this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.panel4.Controls.Add(this.panel6);
-            //this.panel4.Controls.Add(this.panel7);
-            //this.panel4.Controls.Add(this.lblGrid1Name);
-            //this.panel4.Location = new System.Drawing.Point(21, 20);
-            //this.panel4.Name = "panel4";
-            //this.panel4.Size = new System.Drawing.Size(974, 140);
-            //this.panel4.TabIndex = 0;
+            this.linePanel.Size = new System.Drawing.Size(1066, 568);
             // 
             // panel6
             // 
@@ -162,10 +150,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1066, 568);
             this.Name = "Dialog2DgvBaseForm";
+            this.Load += new System.EventHandler(this.Dialog2DgvBaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Dialog2DgvBaseForm_KeyUp);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.linePanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 

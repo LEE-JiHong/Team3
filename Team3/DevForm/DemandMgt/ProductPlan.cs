@@ -9,6 +9,7 @@ using System.Linq;
 using Team3VO;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using log4net.Core;
 
 namespace Team3
 {
@@ -172,9 +173,9 @@ namespace Team3
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                MessageBox.Show(ex.ToString());
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 

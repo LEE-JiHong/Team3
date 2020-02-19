@@ -108,7 +108,13 @@
             // 
             // TopMenu
             // 
+            this.TopMenu.Controls.Add(this.txtAdmin);
+            this.TopMenu.Controls.Add(this.label5);
             this.TopMenu.Size = new System.Drawing.Size(1037, 60);
+            this.TopMenu.Controls.SetChildIndex(this.label5, 0);
+            this.TopMenu.Controls.SetChildIndex(this.txtAdmin, 0);
+            this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
+            this.TopMenu.Controls.SetChildIndex(this.layoutButton, 0);
             // 
             // layoutButton
             // 
@@ -128,8 +134,6 @@
             this.basepanel.Controls.Add(this.label7);
             this.basepanel.Controls.Add(this.txtDate);
             this.basepanel.Controls.Add(this.label6);
-            this.basepanel.Controls.Add(this.txtAdmin);
-            this.basepanel.Controls.Add(this.label5);
             this.basepanel.Controls.Add(this.txtName);
             this.basepanel.Controls.Add(this.label4);
             this.basepanel.Controls.Add(this.txtCode);
@@ -143,8 +147,6 @@
             this.basepanel.Controls.SetChildIndex(this.txtCode, 0);
             this.basepanel.Controls.SetChildIndex(this.label4, 0);
             this.basepanel.Controls.SetChildIndex(this.txtName, 0);
-            this.basepanel.Controls.SetChildIndex(this.label5, 0);
-            this.basepanel.Controls.SetChildIndex(this.txtAdmin, 0);
             this.basepanel.Controls.SetChildIndex(this.label6, 0);
             this.basepanel.Controls.SetChildIndex(this.txtDate, 0);
             this.basepanel.Controls.SetChildIndex(this.label7, 0);
@@ -437,28 +439,30 @@
             // 
             this.txtAdmin.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtAdmin.Location = new System.Drawing.Point(106, 391);
+            this.txtAdmin.Location = new System.Drawing.Point(328, 22);
             this.txtAdmin.Name = "txtAdmin";
             this.txtAdmin.ReadOnly = true;
             this.txtAdmin.Size = new System.Drawing.Size(176, 22);
             this.txtAdmin.TabIndex = 36;
+            this.txtAdmin.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(30, 394);
+            this.label5.Location = new System.Drawing.Point(252, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 35;
             this.label5.Text = "수정자";
+            this.label5.Visible = false;
             // 
             // txtDate
             // 
             this.txtDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtDate.Location = new System.Drawing.Point(106, 418);
+            this.txtDate.Location = new System.Drawing.Point(106, 392);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(176, 22);
@@ -469,7 +473,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(30, 421);
+            this.label6.Location = new System.Drawing.Point(30, 395);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 37;
@@ -479,7 +483,7 @@
             // 
             this.txtComment.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtComment.Location = new System.Drawing.Point(30, 464);
+            this.txtComment.Location = new System.Drawing.Point(33, 444);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.ReadOnly = true;
@@ -491,7 +495,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(27, 445);
+            this.label7.Location = new System.Drawing.Point(30, 425);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 16);
             this.label7.TabIndex = 39;
@@ -556,6 +560,7 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
+            this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
             this.basepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
