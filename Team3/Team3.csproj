@@ -390,12 +390,6 @@
     <Compile Include="DevForm\ShipmentMgt\ShipmentClosingMgt.Designer.cs">
       <DependentUpon>ShipmentClosingMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevForm\ShipmentMgt\ShipmentClosingMonthMgt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevForm\ShipmentMgt\ShipmentClosingMonthMgt.Designer.cs">
-      <DependentUpon>ShipmentClosingMonthMgt.cs</DependentUpon>
-    </Compile>
     <Compile Include="DevForm\ShipmentMgt\ShipmentClosingStatusMgt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -656,9 +650,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ShipmentMgt\ShipmentClosingMgt.resx">
       <DependentUpon>ShipmentClosingMgt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DevForm\ShipmentMgt\ShipmentClosingMonthMgt.resx">
-      <DependentUpon>ShipmentClosingMonthMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForm\ShipmentMgt\ShipmentClosingStatusMgt.resx">
       <DependentUpon>ShipmentClosingStatusMgt.cs</DependentUpon>

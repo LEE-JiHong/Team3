@@ -93,8 +93,8 @@
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(790, 143);
-            this.panel3.Size = new System.Drawing.Size(313, 30);
+            this.panel3.Location = new System.Drawing.Point(790, 140);
+            this.panel3.Size = new System.Drawing.Size(313, 33);
             // 
             // TopMenu
             // 
@@ -266,7 +266,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 33);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
