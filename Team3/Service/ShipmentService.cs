@@ -11,10 +11,10 @@ namespace Team3
 {
     class ShipmentService : ConnectionAccess
     {
-        public List<ShipmentVO> GetInventoryStatusByOrder()
+        public List<ShipmentVO> GetInventoryStatusByOrder(InventoryOrderMgtVO vo)
         {
             ShipmentDac dac = new ShipmentDac();
-            return dac.GetInventoryStatusByOrder(); 
+            return dac.GetInventoryStatusByOrder(vo); 
         }
         public List<ShipmentOutVO> GetClientOrder()
         {
@@ -36,10 +36,10 @@ namespace Team3
             ShipmentDac dac = new ShipmentDac();
             return dac.GetPresentPrice(product_id);
         }
-        public DataTable GetSalesCompleteStatus()
+        public DataTable GetSalesCompleteStatus(ShipmentClosingVO vo)
         {
             ShipmentDac dac = new ShipmentDac();
-            return dac.GetSalesCompleteStatus();
+            return dac.GetSalesCompleteStatus(vo);
         }
     }
 }

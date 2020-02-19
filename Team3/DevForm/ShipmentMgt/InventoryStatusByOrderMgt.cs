@@ -42,8 +42,7 @@ namespace Team3.DevForm.NewFolder1
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
 
-            ShipmentService service_shipment = new ShipmentService();
-            shipment_list = service_shipment.GetInventoryStatusByOrder();
+            
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
@@ -195,6 +194,38 @@ namespace Team3.DevForm.NewFolder1
                     return;
                 }
 
+            }
+            catch (Exception err)
+            {
+                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+            }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            //조회 버튼
+            try
+            {
+                InventoryOrderMgtVO vo = new InventoryOrderMgtVO();
+                vo.start_date = dtpFromDate.Value.ToShortDateString();
+                vo.end_date = dtpToDate.Value.ToShortDateString();
+
+                if (cboFromFac.Text != "선택")
+                {
+                    vo.fromFactory = cboFromFac.SelectedValue.ToString();
+                }
+
+                if (txtProduct.Text != "")
+                {
+                    vo.product_name = txtProduct.Text.Trim();
+                }
+
+                ShipmentService service_shipment = new ShipmentService();
+                shipment_list = service_shipment.GetInventoryStatusByOrder(vo);
+
+                dgvStockStatus.DataSource = shipment_list;
+
+                SetBottomStatusLabel($"{shipment_list.Count}건이 조회되었습니다.");
             }
             catch (Exception err)
             {
