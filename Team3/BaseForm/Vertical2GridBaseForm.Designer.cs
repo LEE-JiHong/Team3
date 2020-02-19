@@ -40,12 +40,6 @@
             this.basepanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.Images.SetKeyName(0, "close.png");
-            this.imageList1.Images.SetKeyName(1, "layout.png");
-            // 
             // TopMenu
             // 
             this.TopMenu.Size = new System.Drawing.Size(894, 60);
@@ -68,6 +62,12 @@
             this.basepanel.Controls.Add(this.panel2);
             this.basepanel.Controls.Add(this.panel1);
             this.basepanel.Size = new System.Drawing.Size(894, 463);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "close.png");
+            this.imageList1.Images.SetKeyName(1, "layout.png");
             // 
             // panel3
             // 
@@ -148,6 +148,7 @@
             this.MinimumSize = new System.Drawing.Size(910, 575);
             this.Name = "Vertical2GridBaseForm";
             this.Load += new System.EventHandler(this.Vertical2GridBaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Vertical2GridBaseForm_KeyUp);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -70,7 +69,6 @@
             // 
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
-//            this.panel2.Controls.Add(this.panel4);
             this.panel2.Size = new System.Drawing.Size(722, 416);
             // 
             // button1
@@ -78,15 +76,9 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(682, 7);
             // 
-            // panel4
+            // linePanel
             // 
-            //this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            //| System.Windows.Forms.AnchorStyles.Right)));
-            //this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.panel4.Location = new System.Drawing.Point(12, 22);
-            //this.panel4.Name = "panel4";
-            //this.panel4.Size = new System.Drawing.Size(699, 87);
-            //this.panel4.TabIndex = 0;
+            this.linePanel.Size = new System.Drawing.Size(769, 557);
             // 
             // panel5
             // 
@@ -176,6 +168,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(769, 557);
             this.Name = "DialogDgvBaseForm";
+            this.Load += new System.EventHandler(this.DialogDgvBaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DialogDgvBaseForm_KeyUp);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

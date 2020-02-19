@@ -59,6 +59,7 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(200, 420);
+            this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -104,6 +105,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.panel2.Size = new System.Drawing.Size(557, 331);
+            this.panel2.TabIndex = 0;
             // 
             // button1
             // 

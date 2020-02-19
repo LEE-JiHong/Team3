@@ -15,6 +15,7 @@ namespace Team3
         public DialogForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void DialogForm_Load(object sender, EventArgs e)
@@ -66,6 +67,11 @@ namespace Team3
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DialogForm_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
 
         //public IEnumerable<Control> GetAll(Control control, Type type)

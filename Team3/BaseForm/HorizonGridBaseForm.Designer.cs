@@ -137,6 +137,7 @@
             this.Name = "HorizonGridBaseForm";
             this.Text = "HorizonGridBaseForm";
             this.Load += new System.EventHandler(this.HorizonGridBaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.HorizonGridBaseForm_KeyUp);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -131,13 +131,7 @@ namespace Team3
         {
             try
             {
-               
-                //if (cboCompany.SelectedIndex == 0)
-                //{
-                //    MessageBox.Show("업체를 선택해주세요");
-                //    this.DialogResult = DialogResult.None;
-                //    return;
-                //}
+ 
                 bool bResult = false;
                 FactoryVO VO = new FactoryVO();
                 if (cboFactoryGrade.Text != "")
@@ -204,7 +198,8 @@ namespace Team3
             }
             catch (NullReferenceException err)
             {
-                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요","입력확인",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+                MessageBox.Show("입력되지 않은값이 있습니다, 다시 확인해주세요", "입력확인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         this.DialogResult = DialogResult.None;
             }
             catch (Exception err)
             {
@@ -251,6 +246,29 @@ namespace Team3
 
             }
 
+        }
+
+
+        
+
+        public bool NextFocus(object sender, KeyEventArgs e)
+        {
+            //e.Handled = true : 글 안씀 false : 글씀
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+                return true;
+            }
+            return false;
+            //e.Handled = NextFocus(sender, e);
+        }
+
+        private void FactoryPop_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyData == Keys.Enter))
+            {
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
         }
     }
 }

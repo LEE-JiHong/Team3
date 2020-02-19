@@ -13,6 +13,22 @@ namespace Team3
         public Dialog2DgvBaseForm()
         {
             InitializeComponent();
+
+        }
+
+        private void Dialog2DgvBaseForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            Form frm = (Form)sender;
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(frm.ActiveControl, true, true, true, true);
+            }
+
+        }
+
+        private void Dialog2DgvBaseForm_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
         }
     }
 }
