@@ -64,7 +64,8 @@
             this.panel1.Controls.Add(this.lblProduct);
             this.panel1.Controls.Add(this.lblUse);
             this.panel1.Controls.Add(this.lblStandardDate);
-            this.panel1.Size = new System.Drawing.Size(1178, 77);
+            this.panel1.Location = new System.Drawing.Point(13, 23);
+            this.panel1.Size = new System.Drawing.Size(1216, 60);
             // 
             // panel2
             // 
@@ -80,7 +81,7 @@
             this.panel3.Controls.Add(this.dgvBomDetail);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(862, 126);
-            this.panel3.Size = new System.Drawing.Size(329, 313);
+            this.panel3.Size = new System.Drawing.Size(367, 313);
             // 
             // label1
             // 
@@ -95,7 +96,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(2679, 99);
+            this.panel5.Location = new System.Drawing.Point(2979, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -103,12 +104,12 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(852, 95);
+            this.panel4.Location = new System.Drawing.Point(890, 95);
             this.panel4.Size = new System.Drawing.Size(339, 31);
             // 
             // TopMenu
             // 
-            this.TopMenu.Size = new System.Drawing.Size(1202, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1240, 60);
             // 
             // layoutButton
             // 
@@ -120,7 +121,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1202, 454);
+            this.basepanel.Size = new System.Drawing.Size(1240, 454);
             // 
             // imageList1
             // 
@@ -150,11 +151,11 @@
             // lblStandardDate
             // 
             this.lblStandardDate.AutoSize = true;
-            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandardDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStandardDate.Location = new System.Drawing.Point(31, 11);
+            this.lblStandardDate.Location = new System.Drawing.Point(29, 20);
             this.lblStandardDate.Name = "lblStandardDate";
-            this.lblStandardDate.Size = new System.Drawing.Size(52, 16);
+            this.lblStandardDate.Size = new System.Drawing.Size(57, 20);
             this.lblStandardDate.TabIndex = 19;
             this.lblStandardDate.Text = "기준일자";
             // 
@@ -162,11 +163,11 @@
             // 
             this.lblUse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUse.AutoSize = true;
-            this.lblUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUse.Location = new System.Drawing.Point(862, 11);
+            this.lblUse.Location = new System.Drawing.Point(806, 20);
             this.lblUse.Name = "lblUse";
-            this.lblUse.Size = new System.Drawing.Size(52, 16);
+            this.lblUse.Size = new System.Drawing.Size(57, 20);
             this.lblUse.TabIndex = 20;
             this.lblUse.Text = "사용유무";
             // 
@@ -174,39 +175,42 @@
             // 
             this.lblProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblProduct.Location = new System.Drawing.Point(457, 12);
+            this.lblProduct.Location = new System.Drawing.Point(443, 21);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(30, 16);
+            this.lblProduct.Size = new System.Drawing.Size(33, 20);
             this.lblProduct.TabIndex = 22;
             this.lblProduct.Text = "품목";
             // 
             // txtStandardDate
             // 
+            this.txtStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStandardDate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtStandardDate.Location = new System.Drawing.Point(149, 8);
+            this.txtStandardDate.Location = new System.Drawing.Point(147, 17);
             this.txtStandardDate.Name = "txtStandardDate";
-            this.txtStandardDate.Size = new System.Drawing.Size(216, 22);
+            this.txtStandardDate.Size = new System.Drawing.Size(216, 26);
             this.txtStandardDate.TabIndex = 28;
             // 
             // txtProduct
             // 
             this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtProduct.Location = new System.Drawing.Point(508, 8);
+            this.txtProduct.Location = new System.Drawing.Point(494, 17);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(221, 22);
+            this.txtProduct.Size = new System.Drawing.Size(221, 26);
             this.txtProduct.TabIndex = 29;
             this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // cboIsUsed
             // 
             this.cboIsUsed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboIsUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(945, 8);
+            this.cboIsUsed.Location = new System.Drawing.Point(889, 17);
             this.cboIsUsed.Name = "cboIsUsed";
-            this.cboIsUsed.Size = new System.Drawing.Size(216, 24);
+            this.cboIsUsed.Size = new System.Drawing.Size(216, 28);
             this.cboIsUsed.TabIndex = 30;
             // 
             // btnSelect
@@ -219,7 +223,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1110, 42);
+            this.btnSelect.Location = new System.Drawing.Point(1148, 16);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 78;
@@ -340,14 +344,14 @@
             this.dgvBomDetail.ReadOnly = true;
             this.dgvBomDetail.RowTemplate.Height = 23;
             this.dgvBomDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBomDetail.Size = new System.Drawing.Size(329, 313);
+            this.dgvBomDetail.Size = new System.Drawing.Size(367, 313);
             this.dgvBomDetail.TabIndex = 2;
             this.dgvBomDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBomDetail_CellDoubleClick);
             // 
             // BomMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1202, 536);
+            this.ClientSize = new System.Drawing.Size(1240, 536);
             this.KeyPreview = true;
             this.Name = "BomMgt";
             this.Tag = "BOM";
