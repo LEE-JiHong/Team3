@@ -262,6 +262,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 73;
+            this.lblID.Visible = false;
             // 
             // ShiftMain
             // 

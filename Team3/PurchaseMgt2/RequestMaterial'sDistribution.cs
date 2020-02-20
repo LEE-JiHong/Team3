@@ -141,7 +141,9 @@ namespace Team3
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "w_id", "w_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "", "order_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
+                     
                     dataGridView2.DataSource = lst;
+
                 }
 
 

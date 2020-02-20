@@ -62,17 +62,22 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(309, 405);
+            this.panel3.Location = new System.Drawing.Point(298, 405);
+            this.panel3.Size = new System.Drawing.Size(211, 46);
             this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.Location = new System.Drawing.Point(109, 8);
+            this.btnCancel.Size = new System.Drawing.Size(85, 25);
             this.btnCancel.TabIndex = 14;
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Location = new System.Drawing.Point(17, 8);
+            this.btnSave.Size = new System.Drawing.Size(84, 25);
             this.btnSave.TabIndex = 11;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

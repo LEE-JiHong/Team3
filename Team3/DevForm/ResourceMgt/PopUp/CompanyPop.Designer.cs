@@ -70,16 +70,19 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(315, 401);
+            this.panel3.Size = new System.Drawing.Size(200, 46);
             this.panel3.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.Location = new System.Drawing.Point(109, 8);
             this.btnCancel.TabIndex = 21;
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Location = new System.Drawing.Point(17, 8);
             this.btnSave.TabIndex = 20;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

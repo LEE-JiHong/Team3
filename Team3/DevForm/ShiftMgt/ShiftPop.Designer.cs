@@ -299,6 +299,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 15);
             this.lblID.TabIndex = 10;
+            this.lblID.Visible = false;
             // 
             // ShiftPop
             // 
