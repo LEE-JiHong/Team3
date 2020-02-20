@@ -118,7 +118,7 @@ from TBL_SO_MASTER s inner join TBL_COMPANY c on  s.company_code=c.company_code
                         cmd.Parameters.AddWithValue("@factory_name", item.factory_name);
                         cmd.Parameters.AddWithValue("@product_id", item.product_id);
                         cmd.Parameters.AddWithValue("@w_count_present", item.w_count_present);
-                        cmd.Parameters.AddWithValue("@wh_uadmin", item.uadmin);//TODO : admin -> 실제 수정자
+                        //cmd.Parameters.AddWithValue("@wh_uadmin", item.uadmin);//TODO : admin -> 실제 수정자
                         //if (item.wh_comment == null)
                         //{
                         //    cmd.Parameters.AddWithValue("@wh_comment", "");

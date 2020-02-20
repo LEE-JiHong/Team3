@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace Team3
             {
                 this.Text = "품목 수정";
                 this.edit = EditMode.Update;
-                this.vo = vo;             
+                this.vo = vo;
 
             }
         }
@@ -65,7 +66,7 @@ namespace Team3
                 IsNullCbo(vo.product_ordertype_value, cboOrderType);
                 IsNullCbo(vo.product_type_value, cboProductType);
                 IsNullCbo(vo.product_meastypevalue, cboMeasType);
-                
+
 
                 txtProductName.Text = vo.product_name;
                 txtProduct.Text = vo.product_codename;
@@ -78,7 +79,7 @@ namespace Team3
                 txtProductUsl.Text = vo.product_usl;
                 txtProductCode.Text = vo.product_code;
                 txtComment.Text = vo.product_comment;
-               
+
                 txtUnitAmount.Text = vo.product_unit_count;
                 txtSafetyAmount.Text = vo.product_safety_count.ToString();
             }
@@ -87,7 +88,7 @@ namespace Team3
 
         private void IsNullCbo(string vo, ComboBox cbo)
         {
-            if (vo == null || vo =="")
+            if (vo == null || vo == "")
             {
                 cbo.SelectedIndex = 0;
             }
@@ -127,8 +128,8 @@ namespace Team3
             ComboUtil.ComboBinding(cboProductType, _commonlist, "common_value", "common_name", "선택");
 
             List<CommonVO> _commonmeastype = (from item in codelist
-                                       where item.common_type == "meastype"
-                                       select item).ToList();
+                                              where item.common_type == "meastype"
+                                              select item).ToList();
             ComboUtil.ComboBinding(cboMeasType, _commonmeastype, "common_value", "common_name", "선택");
 
             #region 담당자cbo
@@ -139,7 +140,7 @@ namespace Team3
             #region 입고창고cbo
             f_list = resource_service.GetFactoryAll();
             List<FactoryDB_VO> _cboInSector = (from item in f_list
-                                               where item.facility_value == "FAC200" || item.facility_value=="FAC400"
+                                               where item.facility_value == "FAC200" || item.facility_value == "FAC400"
                                                select item).ToList();
             ComboUtil.ComboBinding(cboInSector, _cboInSector, "factory_code", "factory_name", "선택");
             #endregion
@@ -173,9 +174,10 @@ namespace Team3
             List<UserVO> user_vo = new List<UserVO>();
             #endregion
         }
-     
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (edit == EditMode.Insert)
             {
                 if (MessageBox.Show("등록하시겠습니까?", "신규등록", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -199,7 +201,7 @@ namespace Team3
                     vo.product_yn = (cboIsUsed.SelectedValue == null) ? "" : cboIsUsed.SelectedValue.ToString();
                     vo.product_supply_com = (cboSupplyCompany.SelectedValue == null) ? "" : cboSupplyCompany.SelectedValue.ToString();
                     vo.product_demand_com = (cboDemandCompany.SelectedValue == null) ? "" : cboDemandCompany.SelectedValue.ToString();
-                    
+
                     vo.product_udate = txtUdate.Text;
                     vo.product_comment = txtComment.Text;
                     vo.product_itemcode = txtItemCode.Text;
@@ -219,22 +221,31 @@ namespace Team3
                             }
                         }
                     }
-
-
-
-                    bool bResult = product_service.AddProduct(vo);
-                    if (bResult)
+                    try
                     {
-                       
+                        bool bResult = product_service.AddProduct(vo);
+                        if (bResult)
+                        {
 
+                            if (MessageBox.Show("등록되었습니다.", "등록완료", MessageBoxButtons.OK) == DialogResult.OK)
+                            {
+                                this.Close();
+                            }
+                        }
+                     
                     }
-                    else
+                    catch (Exception err)
                     {
-                        MessageBox.Show("등록실패 , 다시시도 하세요");
-                        return;
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                        if(MessageBox.Show("등록에 실패하였습니다.","등록 실패", MessageBoxButtons.OK,MessageBoxIcon.Error) == DialogResult.OK)
+                        {
+                            return;
+                        }
+                        
                     }
                 }
             }
+
 
 
 
@@ -260,31 +271,40 @@ namespace Team3
                     vo.product_yn = (cboIsUsed.SelectedValue == null) ? "" : cboIsUsed.SelectedValue.ToString();
                     vo.product_supply_com = (cboSupplyCompany.SelectedValue == null) ? "" : cboSupplyCompany.SelectedValue.ToString();
                     vo.product_demand_com = (cboDemandCompany.SelectedValue == null) ? "" : cboDemandCompany.SelectedValue.ToString();
-                    
+
                     vo.product_udate = txtUdate.Text;
                     vo.product_comment = txtComment.Text;
                     vo.product_itemcode = txtItemCode.Text;
                     vo.product_code = txtProductCode.Text;
                     vo.product_lsl = txtProductLsl.Text;
                     vo.product_usl = txtProductUsl.Text;
-                    vo.product_meastype = (cboMeasType.SelectedValue==null)?"": cboMeasType.SelectedValue.ToString();
+                    vo.product_meastype = (cboMeasType.SelectedValue == null) ? "" : cboMeasType.SelectedValue.ToString();
                     vo.product_codename = txtProduct.Text;
+                    try
+                    {
 
-                    bool bResult = product_service.UpdateProduct(vo);
-                    if (bResult)
-                    {
-                        MessageBox.Show("수정성공");
-                        this.Close();
+                        bool bResult = product_service.UpdateProduct(vo);
+                        if (bResult)
+                        {
+                            if (MessageBox.Show("수정되었습니다.", "수정완료", MessageBoxButtons.OK) == DialogResult.OK)
+                            {
+                                this.Close();
+                            }
+                            
+                        }
+                        
                     }
-                    else
+                    catch (Exception err)
                     {
-                        MessageBox.Show("수정실패 , 다시시도 하세요");
-                        return;
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                        if (MessageBox.Show("수정에 실패하였습니다.", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                        {
+                            return;
+                        }
+
                     }
                 }
             }
-
-
         }
     }
 }

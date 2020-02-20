@@ -162,6 +162,7 @@
             // 
             // txtEndDate
             // 
+            this.txtEndDate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtEndDate.Location = new System.Drawing.Point(387, 75);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.Size = new System.Drawing.Size(177, 21);
@@ -170,6 +171,7 @@
             // txtModifyDate
             // 
             this.txtModifyDate.Enabled = false;
+            this.txtModifyDate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtModifyDate.Location = new System.Drawing.Point(92, 105);
             this.txtModifyDate.Name = "txtModifyDate";
             this.txtModifyDate.Size = new System.Drawing.Size(177, 21);
@@ -187,6 +189,7 @@
             // 
             // txtBeforePrice
             // 
+            this.txtBeforePrice.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtBeforePrice.Location = new System.Drawing.Point(387, 45);
             this.txtBeforePrice.Name = "txtBeforePrice";
             this.txtBeforePrice.Size = new System.Drawing.Size(177, 21);
@@ -195,6 +198,7 @@
             // 
             // txtNote
             // 
+            this.txtNote.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtNote.Location = new System.Drawing.Point(92, 135);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
@@ -203,6 +207,7 @@
             // 
             // txtCurrentPrice
             // 
+            this.txtCurrentPrice.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtCurrentPrice.Location = new System.Drawing.Point(92, 45);
             this.txtCurrentPrice.Name = "txtCurrentPrice";
             this.txtCurrentPrice.Size = new System.Drawing.Size(177, 21);

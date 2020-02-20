@@ -219,6 +219,7 @@
             // cboParentProduct
             // 
             this.cboParentProduct.FormattingEnabled = true;
+            this.cboParentProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.cboParentProduct.Location = new System.Drawing.Point(92, 12);
             this.cboParentProduct.Name = "cboParentProduct";
             this.cboParentProduct.Size = new System.Drawing.Size(168, 23);
@@ -267,6 +268,7 @@
             // 
             // txtNote
             // 
+            this.txtNote.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtNote.Location = new System.Drawing.Point(92, 131);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
@@ -276,6 +278,7 @@
             // txtModifyDate
             // 
             this.txtModifyDate.Enabled = false;
+            this.txtModifyDate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtModifyDate.Location = new System.Drawing.Point(361, 102);
             this.txtModifyDate.Name = "txtModifyDate";
             this.txtModifyDate.Size = new System.Drawing.Size(168, 21);
@@ -302,6 +305,7 @@
             // 
             // txtUseCount
             // 
+            this.txtUseCount.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtUseCount.Location = new System.Drawing.Point(92, 75);
             this.txtUseCount.Name = "txtUseCount";
             this.txtUseCount.Size = new System.Drawing.Size(168, 21);

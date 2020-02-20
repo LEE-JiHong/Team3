@@ -63,6 +63,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvProductList);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Size = new System.Drawing.Size(1131, 268);
             // 
             // panel1
@@ -88,10 +89,11 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 153);
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Location = new System.Drawing.Point(12, 138);
+            this.label1.Size = new System.Drawing.Size(89, 32);
             this.label1.Text = "품목정보";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -220,6 +222,7 @@
             // 
             // txtProduct
             // 
+            this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProduct.Location = new System.Drawing.Point(113, 10);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(225, 22);
@@ -300,7 +303,6 @@
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductList.Size = new System.Drawing.Size(1131, 268);
             this.dgvProductList.TabIndex = 0;
-            
             this.dgvProductList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.SetDgvNumbering);
             // 
             // flowLayoutPanel1
@@ -375,7 +377,7 @@
             this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -386,7 +388,6 @@
             this.btnSelect.Text = "조회";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
-            
             // 
             // ProductMgt
             // 
@@ -395,6 +396,7 @@
             this.KeyPreview = true;
             this.Name = "ProductMgt";
             this.Tag = "품목관리";
+            this.Text = "품목관리";
             this.Load += new System.EventHandler(this.Materials_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

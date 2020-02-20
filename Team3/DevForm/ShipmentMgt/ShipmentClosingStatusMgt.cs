@@ -126,61 +126,74 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string str = "조회를 먼저 해야합니다.";
             if (dt == null)
             {
-                MessageBox.Show("조회를 먼저 해야합니다.");
+                MessageBox.Show(str, "레포트 생성",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                SetBottomStatusLabel(str);
                 return;
             }
             else
             {
-                try
+                if (MessageBox.Show("레포트를 생성하시겠습니까?","레포트 생성", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    ShipmentClosingVO vo = new ShipmentClosingVO();
-                    vo.start_date = dtpFromDate.Value.ToShortDateString();
-                    vo.end_date = dtpToDate.Value.ToShortDateString();
-
-                    if (cboCustomer.Text != "선택")
+                    try
                     {
-                        vo.company_code = cboCustomer.SelectedValue.ToString();
-                    }
+                        ShipmentClosingVO vo = new ShipmentClosingVO();
+                        vo.start_date = dtpFromDate.Value.ToShortDateString();
+                        vo.end_date = dtpToDate.Value.ToShortDateString();
 
-                    if (txtProduct.Text != "")
+                        if (cboCustomer.Text != "선택")
+                        {
+                            vo.company_code = cboCustomer.SelectedValue.ToString();
+                        }
+
+                        if (txtProduct.Text != "")
+                        {
+                            vo.product_name = txtProduct.Text.Trim();
+                        }
+
+                        shipment_service = new ShipmentService();
+                        shipment_service.GetSalesCompleteStatus(vo);
+                        SalesComplete ds = new SalesComplete();
+
+
+                        Report_SalesComplete rpt = new Report_SalesComplete();
+
+
+                        dt.TableName = "salescomplete";
+                        ds.Tables.Add(dt);
+                        rpt.DataSource = ds.Tables["salescomplete"];
+
+
+                        using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+                        {
+                            printTool.ShowRibbonPreviewDialog();
+                        }
+
+                        //WinReport_SC frm = new WinReport_SC(rpt);
+                        //frm.documentViewer1.DocumentSource = rpt;
+
+                        ////??
+                        //frm.documentViewer1.PrintingSystem.ExecCommand(
+                        //    DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
+                        //    , new object[] { true });
+
+                        //frm.ShowDialog();
+                    }
+                    catch (Exception err)
                     {
-                        vo.product_name = txtProduct.Text.Trim();
+                        string str2 = "레포트를 생성할 수 없습니다.";
+                        SetBottomStatusLabel(str2);
+                        if (MessageBox.Show(str2, "레포트 생성 실패", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                        {
+                            LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                            return;
+                        }
+
                     }
-
-                    shipment_service = new ShipmentService();
-                    shipment_service.GetSalesCompleteStatus(vo);
-                    SalesComplete ds = new SalesComplete();
-
-
-                    Report_SalesComplete rpt = new Report_SalesComplete();
-
-
-                    dt.TableName = "salescomplete";
-                    ds.Tables.Add(dt);
-                    rpt.DataSource = ds.Tables["salescomplete"];
-
-
-                    using (ReportPrintTool printTool = new ReportPrintTool(rpt))
-                    {
-                        printTool.ShowRibbonPreviewDialog();
-                    }
-
-                    //WinReport_SC frm = new WinReport_SC(rpt);
-                    //frm.documentViewer1.DocumentSource = rpt;
-
-                    ////??
-                    //frm.documentViewer1.PrintingSystem.ExecCommand(
-                    //    DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters
-                    //    , new object[] { true });
-
-                    //frm.ShowDialog();
                 }
-                catch (Exception err)
-                {
-                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
-                }
+                
             }
            
         }

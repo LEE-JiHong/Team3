@@ -246,8 +246,7 @@ namespace Team3
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            dgvBom.DataSource = null;
-            dgvBomDetail.DataSource = null;
+         
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -304,6 +303,28 @@ namespace Team3
             {
                 btnSelect.PerformClick();
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvBom.DataSource = null;
+            dgvBomDetail.DataSource = null;
+            foreach (var con in panel1.Controls)
+            {
+                if(con is TextBox txt)
+                {
+                    txt.Text = "";
+                }
+            }
+            foreach(var con in panel1.Controls)
+            {
+                if(con is ComboBox cbo)
+                {
+                    cbo.SelectedIndex = 0;
+                }
+            }
+
+            
         }
     }
 }

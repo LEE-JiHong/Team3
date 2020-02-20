@@ -60,6 +60,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvClientOrder);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(12, 189);
             this.panel2.Size = new System.Drawing.Size(1188, 415);
             // 
@@ -84,10 +85,11 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 164);
-            this.label1.Size = new System.Drawing.Size(80, 19);
+            this.label1.Location = new System.Drawing.Point(12, 160);
+            this.label1.Size = new System.Drawing.Size(86, 23);
             this.label1.Text = "고객주문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -138,6 +140,7 @@
             // txtOrderNum
             // 
             this.txtOrderNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOrderNum.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtOrderNum.Location = new System.Drawing.Point(804, 80);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.Size = new System.Drawing.Size(209, 22);
@@ -146,6 +149,7 @@
             // txtProduct
             // 
             this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProduct.Location = new System.Drawing.Point(468, 80);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(230, 22);
@@ -272,7 +276,7 @@
             this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,9 +308,9 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(101, 3);
+            this.btnExcel.Location = new System.Drawing.Point(99, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(56, 26);
+            this.btnExcel.Size = new System.Drawing.Size(58, 26);
             this.btnExcel.TabIndex = 40;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -321,8 +325,8 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(20, 3);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.Location = new System.Drawing.Point(18, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 41;
