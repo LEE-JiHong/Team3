@@ -132,20 +132,23 @@ namespace Team3
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "소요량", "bom_use_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "소요수량", "plan_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
 
-                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "현재재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "자재창고 재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이전재고", "w_count_past", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고id", "req_factory_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고", "req_factory", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고 재고", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청량", "req_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
-                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청일", "req_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "사유", "reason", true, 100, DataGridViewContentAlignment.MiddleLeft);
-                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
+
+                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청일", "req_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "w_id", "w_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "", "order_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
 
                     dataGridView2.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
                     dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
- 
+                    dataGridView2.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+                    dataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;
+
                     dataGridView2.DataSource = lst;
                                  
                 }
