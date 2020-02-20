@@ -255,6 +255,11 @@ namespace Team3
             //    }
             //}
         }
+
+        private void dgvOrdering_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GridViewUtil.SetDgvTextBoxColor(dgvOrdering, 8);
+        }
     }
 }
 

@@ -173,7 +173,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(345, 17);
+            this.label2.Location = new System.Drawing.Point(344, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 23;
@@ -550,6 +550,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1037, 661);
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1053, 585);
             this.Name = "facilityMgt";
             this.Tag = "설비관리";

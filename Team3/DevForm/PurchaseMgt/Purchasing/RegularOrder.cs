@@ -71,6 +71,11 @@ namespace Team3
                 dt.Columns[4].ColumnMapping = MappingType.Hidden;
                 dt.Columns[5].ColumnMapping = MappingType.Hidden;
 
+                //dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+                //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
                 dataGridView1.DataSource = dt;
 
                 //GridViewUtil.SetDataGridView(dataGridView1);

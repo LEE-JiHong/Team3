@@ -218,5 +218,10 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GridViewUtil.SetDgvTextBoxColor(dataGridView1, 9);
+        }
     }
 }
