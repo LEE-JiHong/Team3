@@ -197,12 +197,12 @@ namespace Team3
 
                     if (result)
                     {
-                        MessageBox.Show("성공적으로 발주 완료하였습니다.", "발주신청", MessageBoxButtons.OK, MessageBoxIcon.Question));
+                        MessageBox.Show("성공적으로 발주 완료하였습니다.", "발주신청", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.", "발주신청", MessageBoxButtons.OK, MessageBoxIcon.Question));
+                        MessageBox.Show("발주 실패하였습니다. 다시 시도하여 주십시오.", "발주신청", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         return;
                     }
                 }
