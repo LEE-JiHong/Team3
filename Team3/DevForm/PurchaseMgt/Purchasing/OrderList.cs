@@ -73,7 +73,7 @@ namespace Team3
             //dataGridView1.Controls.Add(headerCheckBox);
 
             //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주번호", "order_id", true);
+            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주시리얼", "order_serial", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "PlanID", "plan_id", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납품업체", "company_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "주문상태", "common_name", true);

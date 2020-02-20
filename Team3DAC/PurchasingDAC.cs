@@ -149,7 +149,7 @@ namespace Team3DAC
             {
                 StringBuilder sql = new StringBuilder();
 
-                sql.Append("select order_id, c.company_name, cc.common_name, p.product_codename, product_name, o.order_pdate, o.order_count, concat(LEFT(order_serial, 4),'-',SUBSTRING(order_serial, 5,2),'-',SUBSTRING(order_serial, 7,2)) as order_ddate,o.plan_id from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id inner join TBL_COMPANY c on p.product_demand_com = c.company_code inner join TBL_COMMON_CODE cc on o.order_state = cc.common_value where o.order_state = 'O_COMPLETE' and CONVERT (DATETIME, o.order_pdate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, o.order_pdate) <= CONVERT (DATETIME, @endDate)");
+                sql.Append("select order_serial, c.company_name, cc.common_name, p.product_codename, product_name, o.order_pdate, o.order_count, concat(LEFT(order_serial, 4),'-',SUBSTRING(order_serial, 5,2),'-',SUBSTRING(order_serial, 7,2)) as order_ddate,o.plan_id from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id inner join TBL_COMPANY c on p.product_demand_com = c.company_code inner join TBL_COMMON_CODE cc on o.order_state = cc.common_value where o.order_state = 'O_COMPLETE' and CONVERT (DATETIME, o.order_pdate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, o.order_pdate) <= CONVERT (DATETIME, @endDate)");
 
                 if (vo.company_name != null)
                 {
@@ -206,7 +206,7 @@ namespace Team3DAC
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate where order_id = @order_id and plan_id = @plan_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate where order_serial = @order_serial and plan_id = @plan_id";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
