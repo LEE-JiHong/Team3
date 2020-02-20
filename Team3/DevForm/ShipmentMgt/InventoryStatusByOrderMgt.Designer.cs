@@ -70,9 +70,7 @@
             this.panel1.Controls.Add(this.dtpToDate);
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Controls.Add(this.txtProduct);
-            this.panel1.Controls.Add(this.cboToFac);
             this.panel1.Controls.Add(this.dtpFromDate);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblStandardDate);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,7 +94,13 @@
             // 
             // TopMenu
             // 
+            this.TopMenu.Controls.Add(this.cboToFac);
+            this.TopMenu.Controls.Add(this.label4);
             this.TopMenu.Size = new System.Drawing.Size(1024, 60);
+            this.TopMenu.Controls.SetChildIndex(this.label4, 0);
+            this.TopMenu.Controls.SetChildIndex(this.cboToFac, 0);
+            this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
+            this.TopMenu.Controls.SetChildIndex(this.layoutButton, 0);
             // 
             // layoutButton
             // 
@@ -141,7 +145,7 @@
             // 
             this.txtProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProduct.Location = new System.Drawing.Point(745, 25);
+            this.txtProduct.Location = new System.Drawing.Point(745, 48);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(238, 26);
             this.txtProduct.TabIndex = 84;
@@ -151,7 +155,7 @@
             this.cboToFac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboToFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboToFac.FormattingEnabled = true;
-            this.cboToFac.Location = new System.Drawing.Point(612, 69);
+            this.cboToFac.Location = new System.Drawing.Point(604, 19);
             this.cboToFac.Name = "cboToFac";
             this.cboToFac.Size = new System.Drawing.Size(238, 28);
             this.cboToFac.TabIndex = 83;
@@ -161,7 +165,7 @@
             // 
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromDate.Location = new System.Drawing.Point(78, 23);
+            this.dtpFromDate.Location = new System.Drawing.Point(78, 46);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(107, 26);
             this.dtpFromDate.TabIndex = 82;
@@ -172,7 +176,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(555, 74);
+            this.label4.Location = new System.Drawing.Point(547, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 81;
@@ -185,7 +189,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(685, 28);
+            this.label3.Location = new System.Drawing.Point(685, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 80;
@@ -196,7 +200,7 @@
             this.lblStandardDate.AutoSize = true;
             this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandardDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStandardDate.Location = new System.Drawing.Point(18, 24);
+            this.lblStandardDate.Location = new System.Drawing.Point(18, 47);
             this.lblStandardDate.Name = "lblStandardDate";
             this.lblStandardDate.Size = new System.Drawing.Size(45, 20);
             this.lblStandardDate.TabIndex = 79;
@@ -254,7 +258,7 @@
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(207, 24);
+            this.dtpToDate.Location = new System.Drawing.Point(207, 47);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(109, 26);
             this.dtpToDate.TabIndex = 86;
@@ -263,7 +267,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(187, 30);
+            this.label2.Location = new System.Drawing.Point(187, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 20);
             this.label2.TabIndex = 87;
@@ -274,7 +278,7 @@
             this.cboFromFac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFromFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFromFac.FormattingEnabled = true;
-            this.cboFromFac.Location = new System.Drawing.Point(421, 23);
+            this.cboFromFac.Location = new System.Drawing.Point(421, 46);
             this.cboFromFac.Name = "cboFromFac";
             this.cboFromFac.Size = new System.Drawing.Size(238, 28);
             this.cboFromFac.TabIndex = 89;
@@ -285,7 +289,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(345, 28);
+            this.label5.Location = new System.Drawing.Point(345, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 88;
@@ -304,6 +308,7 @@
             this.dgvStockStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
             this.dgvStockStatus.TabIndex = 0;
+            this.dgvStockStatus.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStockStatus_DataBindingComplete);
             // 
             // contextMenuStrip1
             // 
@@ -327,6 +332,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
+            this.TopMenu.PerformLayout();
             this.basepanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockStatus)).EndInit();

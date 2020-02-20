@@ -56,6 +56,8 @@ namespace Team3VO
         public string category { get; set; }
         public string udate { get; set; }
         public int transfer_count { get; set; }
+        public string so_wo_id{ get; set; }
+
 
     }
     /// <summary>

@@ -177,7 +177,15 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@req_count", lst[i].req_count);
                         cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
                         cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
-                        cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        if (lst[i].reason == null)
+                        {
+                            SqlParameter reason = new SqlParameter("@reason", SqlDbType.VarChar);
+                            reason.Value = DBNull.Value;
+                            cmd.Parameters.Add(reason);
+                        }
+                        else
+                            cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        // cmd.Parameters.AddWithValue("@reason", lst[i].reason);
                         //       cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
 
                         cmd.ExecuteNonQuery();
@@ -189,13 +197,21 @@ namespace Team3DAC
                     for (int i = 0; i < lst.Count; i++)
                     {
                         cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@pro_id", lst[i].pro_id);
                         cmd.Parameters.AddWithValue("@factory_id", lst[i].factory_id);
                         cmd.Parameters.AddWithValue("@plan_id", lst[i].plan_id);
                         cmd.Parameters.AddWithValue("@product_id", lst[i].product_id);
                         cmd.Parameters.AddWithValue("@req_count", lst[i].req_count);
                         cmd.Parameters.AddWithValue("@w_id", lst[i].w_id);
                         cmd.Parameters.AddWithValue("@req_date", lst[i].req_date);
-                        cmd.Parameters.AddWithValue("@reason", lst[i].reason);
+                        if (lst[i].reason == null)
+                        {
+                            SqlParameter reason = new SqlParameter("@reason", SqlDbType.VarChar);
+                            reason.Value = DBNull.Value;
+                            cmd.Parameters.Add(reason);
+                        }
+                        else
+                            cmd.Parameters.AddWithValue("@reason", lst[i].reason);
                         //     cmd.Parameters.AddWithValue("@order_id", lst[i].order_id);
 
                         cmd.ExecuteNonQuery();
@@ -298,7 +314,7 @@ namespace Team3DAC
                     cmd.Parameters.Clear();
                     cmd.CommandText = "InsertRecode";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@worknum", w_lst[0].worknum);  
+                    cmd.Parameters.AddWithValue("@worknum", w_lst[0].worknum);
                     cmd.Parameters.AddWithValue("@pro_id", w_lst[0].pro_id);
                     cmd.Parameters.AddWithValue("@pro_date", w_lst[0].pro_date);
                     cmd.Parameters.AddWithValue("@pd_stime", w_lst[0].pd_stime);

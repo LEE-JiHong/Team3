@@ -72,7 +72,8 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.lblWHing);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Size = new System.Drawing.Size(1090, 124);
+            this.panel1.Location = new System.Drawing.Point(13, 5);
+            this.panel1.Size = new System.Drawing.Size(1090, 108);
             // 
             // label1
             // 
@@ -136,7 +137,7 @@
             // 
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromDate.Location = new System.Drawing.Point(123, 18);
+            this.dtpFromDate.Location = new System.Drawing.Point(123, 40);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(104, 26);
             this.dtpFromDate.TabIndex = 124;
@@ -145,7 +146,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 24);
+            this.label2.Location = new System.Drawing.Point(230, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 20);
             this.label2.TabIndex = 123;
@@ -155,7 +156,7 @@
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(251, 18);
+            this.dtpToDate.Location = new System.Drawing.Point(251, 40);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(104, 26);
             this.dtpToDate.TabIndex = 122;
@@ -165,7 +166,7 @@
             this.lblStandardDate.AutoSize = true;
             this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandardDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStandardDate.Location = new System.Drawing.Point(24, 21);
+            this.lblStandardDate.Location = new System.Drawing.Point(24, 43);
             this.lblStandardDate.Name = "lblStandardDate";
             this.lblStandardDate.Size = new System.Drawing.Size(45, 20);
             this.lblStandardDate.TabIndex = 121;
@@ -176,7 +177,7 @@
             this.cboCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(474, 16);
+            this.cboCustomer.Location = new System.Drawing.Point(474, 38);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(230, 28);
             this.cboCustomer.TabIndex = 120;
@@ -197,7 +198,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(386, 21);
+            this.label8.Location = new System.Drawing.Point(386, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 113;
@@ -222,7 +223,7 @@
             this.lblWHing.AutoSize = true;
             this.lblWHing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWHing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWHing.Location = new System.Drawing.Point(760, 21);
+            this.lblWHing.Location = new System.Drawing.Point(760, 43);
             this.lblWHing.Name = "lblWHing";
             this.lblWHing.Size = new System.Drawing.Size(33, 20);
             this.lblWHing.TabIndex = 109;
@@ -285,7 +286,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1022, 88);
+            this.btnSelect.Location = new System.Drawing.Point(1022, 73);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 130;
@@ -298,7 +299,7 @@
             // 
             this.txtProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProduct.Location = new System.Drawing.Point(844, 18);
+            this.txtProduct.Location = new System.Drawing.Point(844, 40);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(232, 26);
             this.txtProduct.TabIndex = 131;

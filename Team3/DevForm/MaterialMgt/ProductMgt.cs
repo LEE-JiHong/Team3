@@ -275,5 +275,10 @@ namespace Team3
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
         }
+
+        private void dgvProductList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+          
+        }
     }
 }

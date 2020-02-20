@@ -160,5 +160,14 @@ bool visibility, int width = 100, DataGridViewContentAlignment textAlign = DataG
                 i.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
+
+        public static void SetDgvTextBoxColor(DataGridView dgv, int cellIdx)
+        {
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                dgv.Rows[i].Cells[cellIdx].Style.BackColor = Color.AliceBlue;
+
+            }
+        }
     }
 }
