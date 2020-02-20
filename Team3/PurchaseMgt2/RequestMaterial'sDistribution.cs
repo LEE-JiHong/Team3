@@ -32,6 +32,7 @@ namespace Team3
                 ComboUtil.ComboBinding<MachineVO>(comboBox1, lst, "m_id", "m_name", "미선택");
             }
             dataGridView1.RowHeadersVisible = false;
+            dataGridView1.ReadOnly = true;
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
@@ -141,12 +142,13 @@ namespace Team3
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "잔량", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "w_id", "w_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "", "order_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
-                     
+
+                    dataGridView2.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+                    dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+ 
                     dataGridView2.DataSource = lst;
-
+                                 
                 }
-
-
                 catch (Exception err)
                 {
                     string st = err.Message;
@@ -157,6 +159,7 @@ namespace Team3
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
+         
 
         public static DataTable ToDataTable<T>(List<T> items)
         {
