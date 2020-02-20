@@ -49,6 +49,7 @@ namespace Team3.DevForm.ShipmentMgt
         private void ShipmentClosingMgt_Load(object sender, EventArgs e)
         {
             SetDGV();
+            
         }
 
         private void SetDGV()
@@ -100,9 +101,11 @@ namespace Team3.DevForm.ShipmentMgt
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
-
+            
             dgvClientOrder.AutoGenerateColumns = false;
             dgvClientOrder.DataSource = shipmentlist;
+            GridViewUtil.SetDataGridView(dgvClientOrder);
+
         }
 
         /// <summary>
@@ -153,10 +156,7 @@ namespace Team3.DevForm.ShipmentMgt
                         SetDGV();
                         SetBottomStatusLabel($"선택하신 {list.Count}건의 마감처리가 완료되었습니다.");
                     }
-
                 }
-             
-
             }
             catch (Exception err)
             {
@@ -165,17 +165,16 @@ namespace Team3.DevForm.ShipmentMgt
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 return;
             }
-
-
         }
-
-
-
         private void dgvClientOrder_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             shipment_service = new ShipmentService();
             price_present = shipment_service.GetPresentPrice(Convert.ToInt32(dgvClientOrder[12, dgvClientOrder.CurrentRow.Index].Value));
+
+            GridViewUtil.SetDgvTextBoxColor(dgvClientOrder,9);
         }
+
+       
 
         private void dgvClientOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -194,6 +193,11 @@ namespace Team3.DevForm.ShipmentMgt
                 }
             }
 
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

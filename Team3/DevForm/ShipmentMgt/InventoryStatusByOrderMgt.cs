@@ -90,7 +90,7 @@ namespace Team3.DevForm.NewFolder1
             dgvStockStatus.AllowUserToAddRows = false;
             #endregion
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", false, 130);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130,DataGridViewContentAlignment.MiddleRight);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업로드날짜", "so_sdate", false, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -234,6 +234,12 @@ namespace Team3.DevForm.NewFolder1
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 SetBottomStatusLabel("다시 검색하세요.");
             }
+        }
+
+        private void dgvStockStatus_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GridViewUtil.SetDgvTextBoxColor(dgvStockStatus,10);
+         
         }
     }
 }
