@@ -28,13 +28,14 @@ namespace Team3DAC
                     ") as from_wh" +
                     ",(select distinct factory_type from TBL_WAREHOUSE w inner join TBL_FACTORY f " +
                     "on w.factory_id = f.factory_id where f.factory_id=5) as from_wh_value" +
-                    ", w.w_count_present,so_pcount- so_ccount as so_pcount from TBL_SO_MASTER s " +
+                    ", w.w_count_present,so_pcount- so_ccount as so_pcount ,s.so_wo_id " +
+                    "from TBL_SO_MASTER s " +
                     "inner join TBL_PRODUCT p on s.product_name = p.product_codename " +
                     "inner join TBL_WAREHOUSE w on s.plan_id = w.plan_id  " +
                     "inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=" +
                     "( select factory_id  from TBL_FACTORY where factory_type='FAC400')" +
-                    " and CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) " +
-                    "and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate)");
+                    " and CONVERT(DATETIME, so_edate) >= CONVERT(DATETIME, @startDate) " +
+                    "and CONVERT(DATETIME, so_edate) <= CONVERT(DATETIME, @endDate)");
 
                 if (vo.fromFactory != null)
                 {

@@ -14,6 +14,7 @@ namespace Team3.DevForm.NewFolder1
 {
     public partial class InventoryStatusByOrder : Team3.VerticalGridBaseForm
     {
+        List<FactoryDB_VO> _cboToFac;
         List<ShipmentVO> shipment_list;
         CheckBox headerCheckBox = new CheckBox();
         DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
@@ -41,13 +42,17 @@ namespace Team3.DevForm.NewFolder1
             #endregion
 
             #region To창고cbo
-            List<FactoryDB_VO> _cboToFac = (from item in f_list
-                                            where item.facility_value == "FAC700"
-                                            select item).ToList();
+            _cboToFac = (from item in f_list
+                         where item.facility_value == "FAC700"
+                         select item).ToList();
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
+            //TODO
+            //SetDGV(_cboToFac);
+        }
 
-
+        private void SetDGV(List<FactoryDB_VO> _cboToFac)
+        {
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
@@ -55,10 +60,7 @@ namespace Team3.DevForm.NewFolder1
             chk.Name = "chk";
             chk.Width = 30;
             dgvStockStatus.Columns.Add(chk);
-
-
-
-            //TODO
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "고객주문번호", "so_wo_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "납기일", "so_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -103,6 +105,7 @@ namespace Team3.DevForm.NewFolder1
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
             //GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
+
 
             dgvStockStatus.AutoGenerateColumns = false;
             dgvStockStatus.DataSource = shipment_list;
@@ -152,7 +155,7 @@ namespace Team3.DevForm.NewFolder1
                 {
                     ShipmentVO vo = new ShipmentVO();
 
-                    vo.plan_id = row.Cells[12].Value.ToString();
+                    vo.plan_id = row.Cells[13].Value.ToString();
 
                     if (row.Cells["combo"].Value == null)
                     {
@@ -163,10 +166,10 @@ namespace Team3.DevForm.NewFolder1
                         vo.factory_name = row.Cells["combo"].Value.ToString();
                     }
 
-                    vo.w_count_present = Convert.ToInt32(row.Cells[9].Value);
+                    vo.w_count_present = Convert.ToInt32(row.Cells[10].Value);
                     //vo.uadmin = 1002;
                     vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
-                    vo.product_id = Convert.ToInt32(row.Cells[16].Value);
+                    vo.product_id = Convert.ToInt32(row.Cells[17].Value);
                     vo.category = "P_ORDER_MOVE";
 
                     list.Add(vo);
@@ -176,8 +179,8 @@ namespace Team3.DevForm.NewFolder1
             try
             {
                 ShipmentService shipment_service = new ShipmentService();
-                if (MessageBox.Show($"선택하신 {list.Count}건을 이동처리 하시겠습니까?","이동 처리"
-                    ,MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show($"선택하신 {list.Count}건을 이동처리 하시겠습니까?", "이동 처리"
+                    , MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     bool bResult = shipment_service.TransferProcessing(list);
                     if (bResult)        //이동처리 성공시
@@ -202,6 +205,8 @@ namespace Team3.DevForm.NewFolder1
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
+            dgvStockStatus.Columns.Clear();
+            dgvStockStatus.DataSource = null;
             //조회 버튼
             try
             {
@@ -221,9 +226,7 @@ namespace Team3.DevForm.NewFolder1
 
                 ShipmentService service_shipment = new ShipmentService();
                 shipment_list = service_shipment.GetInventoryStatusByOrder(vo);
-
-                dgvStockStatus.DataSource = shipment_list;
-
+                SetDGV(_cboToFac);
                 SetBottomStatusLabel($"{shipment_list.Count}건이 조회되었습니다.");
             }
             catch (Exception err)
