@@ -42,7 +42,7 @@ namespace Team3.DevForm.NewFolder1
             ComboUtil.ComboBinding(cboToFac, _cboToFac, "factory_code", "factory_name", "선택");
             #endregion
 
-            
+
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
@@ -51,7 +51,7 @@ namespace Team3.DevForm.NewFolder1
             chk.Width = 30;
             dgvStockStatus.Columns.Add(chk);
 
-        
+
 
             //TODO
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
@@ -105,7 +105,7 @@ namespace Team3.DevForm.NewFolder1
 
 
         }
-       
+
         private void btnExcel_Click(object sender, EventArgs e)
         {
             copyAlltoClipboard();
