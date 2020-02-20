@@ -80,33 +80,33 @@ namespace Team3
             string id = txtID.Text;
             string pwd = txtPwd.Text;
 
-            //if (txtID.Text == "")
-            //{
-            //    MessageBox.Show("아이디를 입력하세요.");
-            //    return;
-            //}
-            //if (txtPwd.Text == "")
-            //{
-            //    MessageBox.Show("비밀번호를 입력하세요.");
-            //    return;
-            //}
+            if (txtID.Text == "")
+            {
+                MessageBox.Show("아이디를 입력하세요.");
+                return;
+            }
+            if (txtPwd.Text == "")
+            {
+                MessageBox.Show("비밀번호를 입력하세요.");
+                return;
+            }
 
             try
             {
-                //UserService service = new UserService();
-                //int result = service.LoginCheck(id, pwd);
+                UserService service = new UserService();
+                int result = service.LoginCheck(id, pwd);
 
-                //if (result > 0)
-                //{
+                if (result > 0)
+                {
                     Main frm = new Main();
                     frm.Show();
                     this.Hide();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("아이디 또는 비밀번호가 틀렸습니다.");
-                //    return;
-                //}
+                }
+                else
+                {
+                    MessageBox.Show("아이디 또는 비밀번호가 틀렸습니다.");
+                    return;
+                }
             }
             catch (Exception err)
             {

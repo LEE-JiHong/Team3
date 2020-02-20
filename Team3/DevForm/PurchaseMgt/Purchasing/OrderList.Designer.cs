@@ -157,6 +157,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(918, 289);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // flowLayoutPanel1
             // 
@@ -305,6 +306,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(942, 536);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.KeyPreview = true;
             this.Name = "OrderList";
             this.Tag = "발주현황";
             this.Text = "발주현황";

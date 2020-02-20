@@ -24,6 +24,7 @@ namespace Team3
 
         private void WatingReceiving_Load(object sender, EventArgs e)
         {
+           
             dtpStartDate.Value = DateTime.Now;
             dtpEndDate.Value = DateTime.Now.AddMonths(+1);
 
@@ -44,6 +45,9 @@ namespace Team3
 
             SetDataGridWatingReceiving();
             SetDataGridResult();
+          
+
+
         }
 
         private void SetDataGridWatingReceiving()
@@ -129,6 +133,9 @@ namespace Team3
                 {
                     vo.order_id = txtOrderID.Text;
                 }
+
+                SetDataGridWatingReceiving();
+                SetDataGridResult();
 
                 SupplierService service = new SupplierService();
                 dt = service.GetAlreadyOrderList(vo);
@@ -223,6 +230,7 @@ namespace Team3
 
         private void btnChoose_Click(object sender, EventArgs e)
         {
+            
             List<DataGridViewRow> dlist = new List<DataGridViewRow>();
             List<WatingReceivingVO> list = new List<WatingReceivingVO>();
 
@@ -257,6 +265,9 @@ namespace Team3
             {
                 dgvWatingReceive.Rows.Remove(row);
             }
+           
+           
+           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -334,6 +345,12 @@ namespace Team3
             {
                 return;
             }
+        }
+
+        private void dgvResult_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GridViewUtil.SetDgvTextBoxColor(dgvResult, 7);
+            GridViewUtil.SetDgvTextBoxColor(dgvResult, 8);
         }
     }
 }

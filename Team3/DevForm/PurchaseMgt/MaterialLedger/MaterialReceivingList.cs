@@ -229,5 +229,10 @@ namespace Team3
             SetLoad();
 
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GridViewUtil.SetDgvTextBoxColor(dataGridView1, 7);
+        }
     }
 }
