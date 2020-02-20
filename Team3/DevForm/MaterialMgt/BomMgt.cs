@@ -45,7 +45,7 @@ namespace Team3
         }
         private void LoadDGV()
         {
-            InitControl();
+        
             BomService service = new BomService();
             BOM_list = service.GetBomAll();
 
@@ -63,7 +63,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "소요계획", "plan_yn", true, 78, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "시작일", "bom_sdate", true, 130, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "종료일", "bom_edate", true, 130, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            //GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정일", "bom_udate", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter); 
             #endregion
@@ -82,11 +82,7 @@ namespace Team3
 
         }
 
-        private void InitControl()
-        {
-            //cboDeployment
-
-        }
+     
         private void ComboBinding()
         {
             common_service = new CommonCodeService();
@@ -175,7 +171,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "소요계획", "plan_yn", true, 78, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "시작일", "bom_sdate", true, 130, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "종료일", "bom_edate", true, 130, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            //GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정일", "bom_udate", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter);
 
@@ -213,7 +209,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "종료일", "bom_edate", true, 130, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "사용여부", "bom_yn", true, 78, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "소요계획", "plan_yn", true, 78, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            //GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "수정일", "bom_udate", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter);
 

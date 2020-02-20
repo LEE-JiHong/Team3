@@ -20,7 +20,21 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append("select so_id,s.plan_id,company_code,company_type,p.product_name,p.product_id, s.product_name as product_codename,so_ocount,so_ccount,so_edate,so_sdate,(select distinct factory_name from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=5) as from_wh,(select distinct factory_type from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=5) as from_wh_value, w.w_count_present ,so_pcount- so_ccount as so_pcount from TBL_SO_MASTER s inner join TBL_PRODUCT p on s.product_name = p.product_codename inner join TBL_WAREHOUSE w on s.plan_id = w.plan_id  inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=( select factory_id  from TBL_FACTORY where factory_type='FAC400') and CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate)");
+                sql.Append("select so_id,s.plan_id,company_code,company_type,p.product_name,p.product_id" +
+                    ", s.product_name as product_codename,so_ocount,so_ccount,so_edate,so_sdate" +
+                    ",(" +
+                    "select distinct factory_name from TBL_WAREHOUSE w inner join TBL_FACTORY f " +
+                    "on w.factory_id = f.factory_id where f.factory_id=5" +
+                    ") as from_wh" +
+                    ",(select distinct factory_type from TBL_WAREHOUSE w inner join TBL_FACTORY f " +
+                    "on w.factory_id = f.factory_id where f.factory_id=5) as from_wh_value" +
+                    ", w.w_count_present,so_pcount- so_ccount as so_pcount from TBL_SO_MASTER s " +
+                    "inner join TBL_PRODUCT p on s.product_name = p.product_codename " +
+                    "inner join TBL_WAREHOUSE w on s.plan_id = w.plan_id  " +
+                    "inner join TBL_FACTORY f on w.factory_id = f.factory_id where f.factory_id=" +
+                    "( select factory_id  from TBL_FACTORY where factory_type='FAC400')" +
+                    " and CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, @startDate) " +
+                    "and CONVERT (DATETIME, so_edate) <= CONVERT (DATETIME, @endDate)");
 
                 if (vo.fromFactory != null)
                 {
@@ -33,6 +47,8 @@ namespace Team3DAC
                     sql.Append($" and p.product_name like '%{vo.product_name}%'");
                     // cmd.Parameters.AddWithValue("@order_id", vo.order_id);
                 }
+
+                sql.Append(" order by so_edate");
 
                 cmd.Parameters.AddWithValue("@startDate", vo.start_date);
                 cmd.Parameters.AddWithValue("@endDate", vo.end_date);
@@ -62,7 +78,7 @@ from TBL_WAREHOUSE w
 inner join TBL_WAREHOUSE w1 on w.plan_id = s.plan_id and w.product_id = p.product_id
 inner join TBL_FACTORY f on w.factory_id = f.factory_id and f.factory_type = 'FAC700') as orderable_count
 from TBL_SO_MASTER s inner join TBL_COMPANY c on  s.company_code=c.company_code
-               inner join TBL_PRODUCT p on p.product_codename=s.product_name";
+               inner join TBL_PRODUCT p on p.product_codename=s.product_name order by plan_id";
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
 

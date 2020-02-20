@@ -61,7 +61,7 @@ namespace Team3
                     vo.price_sdate = dtpStartDate.Value.ToString("yyyy-MM-dd");
                     vo.price_edate = txtEndDate.Text;
                     vo.price_udate = txtModifyDate.Text;
-                    vo.price_uadmin = txtModifier.Text;
+                    //vo.price_uadmin = txtModifier.Text;
                     vo.price_yn = cboIsUsed.SelectedValue.ToString();
                     vo.price_comment = txtNote.Text;
 
@@ -95,7 +95,7 @@ namespace Team3
                     vo.price_sdate = dtpStartDate.Value.ToString("yyyy-MM-dd");
                     vo.price_edate = txtEndDate.Text;
                     vo.price_udate = txtModifyDate.Text;
-                    vo.price_uadmin = txtModifier.Text;
+                   // vo.price_uadmin = txtModifier.Text;
                     vo.price_yn = cboIsUsed.SelectedValue.ToString();
                     vo.price_comment = txtNote.Text;
 
@@ -196,7 +196,7 @@ namespace Team3
                         txtEndDate.Text = p_list[0].price_edate;
                         txtNote.Text = p_list[0].price_comment;
                         txtModifyDate.Text = p_list[0].price_udate;
-                        txtModifier.Text = p_list[0].price_uadmin;
+                        //txtModifier.Text = p_list[0].price_uadmin;
                         cboIsUsed.SelectedValue = p_list[0].price_yn;
 
                     }
@@ -207,7 +207,7 @@ namespace Team3
                         txtEndDate.Text = string.Empty;
                         txtNote.Text = string.Empty;
                         txtModifyDate.Text = string.Empty;
-                        txtModifier.Text = string.Empty;
+                        //txtModifier.Text = string.Empty;
                         cboIsUsed.SelectedIndex = 0;
                     }
 

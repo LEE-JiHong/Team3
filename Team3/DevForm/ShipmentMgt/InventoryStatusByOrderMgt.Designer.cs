@@ -127,7 +127,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(918, 70);
+            this.btnSelect.Location = new System.Drawing.Point(931, 81);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 85;
@@ -240,9 +240,9 @@
             this.btnTransfer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTransfer.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnTransfer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTransfer.Location = new System.Drawing.Point(15, 3);
+            this.btnTransfer.Location = new System.Drawing.Point(14, 3);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(76, 26);
+            this.btnTransfer.Size = new System.Drawing.Size(77, 26);
             this.btnTransfer.TabIndex = 37;
             this.btnTransfer.Text = "이동처리";
             this.btnTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -314,6 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1024, 674);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.KeyPreview = true;
             this.Name = "InventoryStatusByOrder";
             this.Tag = "고객주문별재고현황";
             this.Text = "고객주문별재고현황";
