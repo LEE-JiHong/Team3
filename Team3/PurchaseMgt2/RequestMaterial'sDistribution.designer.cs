@@ -47,6 +47,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +60,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -92,10 +95,11 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(12, 258);
+            this.label2.Location = new System.Drawing.Point(451, 258);
             this.label2.Size = new System.Drawing.Size(87, 26);
             this.label2.Text = "자재불출";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -134,7 +138,16 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.panel6);
             this.basepanel.Size = new System.Drawing.Size(1129, 454);
+            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
+            this.basepanel.Controls.SetChildIndex(this.label1, 0);
+            this.basepanel.Controls.SetChildIndex(this.label2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel4, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel5, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel6, 0);
             // 
             // imageList1
             // 
@@ -381,6 +394,27 @@
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView2_DataBindingComplete);
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Location = new System.Drawing.Point(12, 255);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(201, 28);
+            this.panel6.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Image = global::Team3.Properties.Resources.list_menu;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(3, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "자재불출";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // DMRMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -403,6 +437,7 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,5 +463,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label4;
     }
 }

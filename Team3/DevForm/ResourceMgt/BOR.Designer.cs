@@ -118,7 +118,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(29, 32);
+            this.label2.Location = new System.Drawing.Point(29, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 20);
             this.label2.TabIndex = 0;
@@ -128,7 +128,7 @@
             // 
             this.txtItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtItem.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtItem.Location = new System.Drawing.Point(68, 29);
+            this.txtItem.Location = new System.Drawing.Point(68, 27);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(201, 26);
             this.txtItem.TabIndex = 0;
@@ -139,7 +139,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(278, 32);
+            this.label3.Location = new System.Drawing.Point(301, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 0;
@@ -151,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(548, 32);
+            this.label4.Location = new System.Drawing.Point(568, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 20);
             this.label4.TabIndex = 0;
@@ -161,7 +161,7 @@
             // 
             this.txtFacility.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.txtFacility.Location = new System.Drawing.Point(587, 29);
+            this.txtFacility.Location = new System.Drawing.Point(607, 27);
             this.txtFacility.Name = "txtFacility";
             this.txtFacility.Size = new System.Drawing.Size(201, 26);
             this.txtFacility.TabIndex = 2;
@@ -171,7 +171,7 @@
             this.cboProcess.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(317, 28);
+            this.cboProcess.Location = new System.Drawing.Point(340, 26);
             this.cboProcess.Name = "cboProcess";
             this.cboProcess.Size = new System.Drawing.Size(201, 28);
             this.cboProcess.TabIndex = 1;
