@@ -1074,7 +1074,7 @@ namespace Team3
             SettingForm frm = new SettingForm();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                
             }
         }
 
@@ -1082,8 +1082,11 @@ namespace Team3
         {
             try
             {
-                Process.Start($"{Application.StartupPath}/barcodeprint/WinReport1.exe");
-            }catch(Exception err)
+                BarcodePrinter frm = new BarcodePrinter();
+                frm.ShowDialog();
+      
+            }
+            catch(Exception err)
             {
                 Console.WriteLine(err.Message);
             }
