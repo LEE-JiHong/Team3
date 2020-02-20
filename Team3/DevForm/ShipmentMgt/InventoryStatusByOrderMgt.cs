@@ -105,10 +105,7 @@ namespace Team3.DevForm.NewFolder1
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
 
             dgvStockStatus.AutoGenerateColumns = false;
-
             dgvStockStatus.DataSource = shipment_list;
-
-
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -167,7 +164,7 @@ namespace Team3.DevForm.NewFolder1
                     }
 
                     vo.w_count_present = Convert.ToInt32(row.Cells[9].Value);
-                    vo.uadmin = 1002;
+                    //vo.uadmin = 1002;
                     vo.udate = DateTime.Now.ToString("yyyy-MM-dd");
                     vo.product_id = Convert.ToInt32(row.Cells[16].Value);
                     vo.category = "P_ORDER_MOVE";
@@ -179,28 +176,27 @@ namespace Team3.DevForm.NewFolder1
             try
             {
                 ShipmentService shipment_service = new ShipmentService();
-                if (MessageBox.Show($"선택하신 {list.Count}건을 이동처리 하시겠습니까?") == DialogResult.OK)
+                if (MessageBox.Show($"선택하신 {list.Count}건을 이동처리 하시겠습니까?","이동 처리"
+                    ,MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     bool bResult = shipment_service.TransferProcessing(list);
                     if (bResult)        //이동처리 성공시
                     {
                         SetBottomStatusLabel($"선택하신 {list.Count}건의 이동처리가 완료되었습니다.");
-                    }
-                    else            //이동처리 실패시
-                    {
-                        MessageBox.Show("등록실패 , 다시시도 하세요");
-                        return;
+                        btnSelect.PerformClick();
                     }
                 }
-                else
-                {
-                    return;
-                }
-
             }
             catch (Exception err)
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                //이동처리 실패시
+
+                SetBottomStatusLabel("이동처리를 할 수 없습니다.");
+                {
+                    return;
+                }
+
             }
         }
 
@@ -233,6 +229,7 @@ namespace Team3.DevForm.NewFolder1
             catch (Exception err)
             {
                 LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                SetBottomStatusLabel("다시 검색하세요.");
             }
         }
     }

@@ -59,7 +59,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(213, 392);
+            this.panel3.Location = new System.Drawing.Point(213, 362);
             // 
             // btnCancel
             // 
@@ -100,7 +100,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(583, 303);
+            this.panel2.Size = new System.Drawing.Size(583, 273);
             // 
             // button1
             // 
@@ -108,10 +108,11 @@
             // 
             // linePanel
             // 
-            this.linePanel.Size = new System.Drawing.Size(630, 444);
+            this.linePanel.Size = new System.Drawing.Size(630, 414);
             // 
             // txtBeforePrice
             // 
+            this.txtBeforePrice.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtBeforePrice.Location = new System.Drawing.Point(387, 46);
             this.txtBeforePrice.Name = "txtBeforePrice";
             this.txtBeforePrice.Size = new System.Drawing.Size(177, 21);
@@ -120,7 +121,8 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(92, 167);
+            this.txtNote.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.txtNote.Location = new System.Drawing.Point(92, 135);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(472, 121);
@@ -128,6 +130,7 @@
             // 
             // txtCurrentPrice
             // 
+            this.txtCurrentPrice.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtCurrentPrice.Location = new System.Drawing.Point(92, 46);
             this.txtCurrentPrice.Name = "txtCurrentPrice";
             this.txtCurrentPrice.Size = new System.Drawing.Size(177, 21);
@@ -231,7 +234,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 168);
+            this.label7.Location = new System.Drawing.Point(16, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 15);
             this.label7.TabIndex = 30;
@@ -295,6 +298,7 @@
             // txtModifyDate
             // 
             this.txtModifyDate.Enabled = false;
+            this.txtModifyDate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtModifyDate.Location = new System.Drawing.Point(92, 106);
             this.txtModifyDate.Name = "txtModifyDate";
             this.txtModifyDate.Size = new System.Drawing.Size(177, 21);
@@ -312,6 +316,7 @@
             // 
             // txtEndDate
             // 
+            this.txtEndDate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtEndDate.Location = new System.Drawing.Point(387, 76);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.Size = new System.Drawing.Size(177, 21);
@@ -333,7 +338,7 @@
             // MUPMPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(630, 444);
+            this.ClientSize = new System.Drawing.Size(630, 414);
             this.Controls.Add(this.groupBox1);
             this.Name = "MUPMPop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

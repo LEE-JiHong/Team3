@@ -83,7 +83,8 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Size = new System.Drawing.Size(97, 19);
+            this.label1.Location = new System.Drawing.Point(15, 146);
+            this.label1.Size = new System.Drawing.Size(89, 22);
             this.label1.Text = "재고현황";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -222,9 +223,9 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(97, 3);
+            this.btnExcel.Location = new System.Drawing.Point(95, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(56, 26);
+            this.btnExcel.Size = new System.Drawing.Size(58, 26);
             this.btnExcel.TabIndex = 38;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -239,8 +240,8 @@
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTransfer.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.btnTransfer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTransfer.Location = new System.Drawing.Point(14, 3);
+            this.btnTransfer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnTransfer.Location = new System.Drawing.Point(12, 3);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(77, 26);
             this.btnTransfer.TabIndex = 37;

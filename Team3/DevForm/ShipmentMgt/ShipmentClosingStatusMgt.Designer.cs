@@ -41,7 +41,6 @@
             this.lblWHing = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.txtProduct = new System.Windows.Forms.TextBox();
@@ -80,8 +79,8 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(10, 153);
-            this.label1.Size = new System.Drawing.Size(89, 19);
+            this.label1.Location = new System.Drawing.Point(9, 150);
+            this.label1.Size = new System.Drawing.Size(88, 26);
             this.label1.Text = "고객주문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -89,8 +88,8 @@
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(857, 140);
-            this.panel3.Size = new System.Drawing.Size(246, 33);
+            this.panel3.Location = new System.Drawing.Point(949, 140);
+            this.panel3.Size = new System.Drawing.Size(154, 33);
             // 
             // TopMenu
             // 
@@ -232,13 +231,12 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(246, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(154, 33);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -250,31 +248,14 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(187, 3);
+            this.btnExcel.Location = new System.Drawing.Point(93, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(56, 26);
+            this.btnExcel.Size = new System.Drawing.Size(58, 26);
             this.btnExcel.TabIndex = 42;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(106, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "마감취소";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -284,10 +265,10 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(36, 3);
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.Location = new System.Drawing.Point(20, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 26);
+            this.button2.Size = new System.Drawing.Size(67, 26);
             this.button2.TabIndex = 44;
             this.button2.Text = "레포트";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -360,7 +341,6 @@
         private System.Windows.Forms.Label lblWHing;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button button2;

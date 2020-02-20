@@ -334,6 +334,7 @@
             // 
             // txtProduct
             // 
+            this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProduct.Location = new System.Drawing.Point(102, 15);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(100, 21);
@@ -341,6 +342,7 @@
             // 
             // txtLeastOrder
             // 
+            this.txtLeastOrder.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtLeastOrder.Location = new System.Drawing.Point(102, 138);
             this.txtLeastOrder.Name = "txtLeastOrder";
             this.txtLeastOrder.Size = new System.Drawing.Size(100, 21);
@@ -350,6 +352,7 @@
             // txtUdate
             // 
             this.txtUdate.Enabled = false;
+            this.txtUdate.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtUdate.Location = new System.Drawing.Point(309, 137);
             this.txtUdate.Name = "txtUdate";
             this.txtUdate.Size = new System.Drawing.Size(100, 21);
@@ -357,6 +360,7 @@
             // 
             // txtComment
             // 
+            this.txtComment.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtComment.Location = new System.Drawing.Point(102, 228);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
@@ -381,6 +385,7 @@
             // 
             // txtProductName
             // 
+            this.txtProductName.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProductName.Location = new System.Drawing.Point(309, 12);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(100, 21);
@@ -388,6 +393,7 @@
             // 
             // txtUnitAmount
             // 
+            this.txtUnitAmount.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtUnitAmount.Location = new System.Drawing.Point(511, 192);
             this.txtUnitAmount.Name = "txtUnitAmount";
             this.txtUnitAmount.Size = new System.Drawing.Size(100, 21);
@@ -452,6 +458,7 @@
             // 
             // txtLeadTime
             // 
+            this.txtLeadTime.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtLeadTime.Location = new System.Drawing.Point(102, 80);
             this.txtLeadTime.Name = "txtLeadTime";
             this.txtLeadTime.Size = new System.Drawing.Size(100, 21);
@@ -459,6 +466,7 @@
             // 
             // txtSafetyAmount
             // 
+            this.txtSafetyAmount.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtSafetyAmount.Location = new System.Drawing.Point(511, 108);
             this.txtSafetyAmount.Name = "txtSafetyAmount";
             this.txtSafetyAmount.Size = new System.Drawing.Size(100, 21);
@@ -467,6 +475,7 @@
             // 
             // txtItemCode
             // 
+            this.txtItemCode.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtItemCode.Location = new System.Drawing.Point(102, 192);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(100, 21);
@@ -484,6 +493,7 @@
             // 
             // txtProductCode
             // 
+            this.txtProductCode.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProductCode.Location = new System.Drawing.Point(309, 192);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(100, 21);
@@ -501,6 +511,7 @@
             // 
             // txtProductLsl
             // 
+            this.txtProductLsl.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProductLsl.Location = new System.Drawing.Point(102, 165);
             this.txtProductLsl.Name = "txtProductLsl";
             this.txtProductLsl.Size = new System.Drawing.Size(100, 21);
@@ -518,6 +529,7 @@
             // 
             // txtProductUsl
             // 
+            this.txtProductUsl.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txtProductUsl.Location = new System.Drawing.Point(309, 165);
             this.txtProductUsl.Name = "txtProductUsl";
             this.txtProductUsl.Size = new System.Drawing.Size(100, 21);

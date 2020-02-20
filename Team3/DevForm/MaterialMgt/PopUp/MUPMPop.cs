@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,16 +66,26 @@ namespace Team3
 
 
 
-                    bool bResult = price_service.AddPriceInfo(vo);
-                    if (bResult)
+                    try
                     {
-                        MessageBox.Show("등록성공");
-                        this.Close();
+                        bool bResult = price_service.AddPriceInfo(vo);
+                        if (bResult)
+                        {
+                            if (MessageBox.Show("등록되었습니다.", "등록완료", MessageBoxButtons.OK) == DialogResult.OK)
+                            {
+                                this.Close();
+                            }
+                        }
+
                     }
-                    else
+                    catch (Exception err)
                     {
-                        MessageBox.Show("등록실패 , 다시시도 하세요");
-                        return;
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                        if (MessageBox.Show("등록에 실패하였습니다.", "등록 실패", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                        {
+                            return;
+                        }
+
                     }
                 }
             }
@@ -100,17 +111,28 @@ namespace Team3
                     vo.price_comment = txtNote.Text;
 
 
+                    try
+                    {
 
-                    bool bResult = price_service.UpdatePriceInfo(vo);
-                    if (bResult)
-                    {
-                        MessageBox.Show("수정성공");
-                        this.Close();
+                        bool bResult = price_service.UpdatePriceInfo(vo);
+                        if (bResult)
+                        {
+
+                            if (MessageBox.Show("수정되었습니다.", "수정완료", MessageBoxButtons.OK) == DialogResult.OK)
+                            {
+                                this.Close();
+                            }
+                        }
+                    
                     }
-                    else
+                    catch (Exception err)
                     {
-                        MessageBox.Show("수정실패 , 다시시도 하세요");
-                        return;
+
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                        if (MessageBox.Show("수정에 실패하였습니다.", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                        {
+                            return;
+                        }
                     }
                 }
             }
