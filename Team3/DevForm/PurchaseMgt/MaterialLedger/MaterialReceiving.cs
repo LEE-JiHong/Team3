@@ -93,7 +93,7 @@ namespace Team3
             dgvMaterialReceiving.Columns.Clear();
 
 
-            GridViewUtil.SetDataGridView(dgvMaterialReceiving);
+            
             dgvMaterialReceiving.AutoGenerateColumns = false;
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
@@ -120,6 +120,10 @@ namespace Team3
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvMaterialReceiving, "입고일자", "order_pdate", true, 150);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvMaterialReceiving, "출발일", "order_sdate", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dgvMaterialReceiving, "주문상태", "common_name", true, 150);
+            GridViewUtil.SetDataGridView(dgvMaterialReceiving);
+
+           // dgvMaterialReceiving.Columns[7].DefaultCellStyle.BackColor = Color.AliceBlue;
+            
         }
 
         private void HeaderCheckbox_Click(object sender, EventArgs e)
@@ -270,24 +274,31 @@ namespace Team3
                 }
             }
 
-            try
+            if (MessageBox.Show("입고처리하시겠습니까?", "입고처리", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MaterialLedgerService service = new MaterialLedgerService();
-                bool result = service.AddMaterialQauntity(list);
+                try
+                {
+                    MaterialLedgerService service = new MaterialLedgerService();
+                    bool result = service.AddMaterialQauntity(list);
 
-                if (result)
-                {
-                    MessageBox.Show("성공적으로 입고처리가 완료되었습니다.");
-                    dgvMaterialReceiving.Rows.Clear();
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 입고처리가 완료되었습니다.");
+                        dgvMaterialReceiving.Rows.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("입고처리 실패하였습니다. 다시 시도하여 주십시오.");
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("입고처리 실패하였습니다. 다시 시도하여 주십시오.");
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
-            catch (Exception err)
+            else
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                return;
             }
         }
 

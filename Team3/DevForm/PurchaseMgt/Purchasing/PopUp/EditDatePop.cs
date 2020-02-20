@@ -24,6 +24,7 @@ namespace Team3
         {
             dtpAsisDate.Value = Convert.ToDateTime(vo.order_pdate);
             //dtpTobeDate.Value = DateTime.Now;
+            dtpAsisDate.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

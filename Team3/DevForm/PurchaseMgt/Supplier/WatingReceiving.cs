@@ -308,24 +308,31 @@ namespace Team3
                 }
             }
 
-            try
+            if (MessageBox.Show("입고대기처리하시겠습니까?", "입고대기처리", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                SupplierService service = new SupplierService();
-                bool result = service.UpdateOrderState(list);
+                try
+                {
+                    SupplierService service = new SupplierService();
+                    bool result = service.UpdateOrderState(list);
 
-                if (result)
-                {
-                    MessageBox.Show("성공적으로 입고대기처리가 완료되었습니다.");
-                    dgvResult.Rows.Clear();
+                    if (result)
+                    {
+                        MessageBox.Show("성공적으로 입고대기처리가 완료되었습니다.");
+                        dgvResult.Rows.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("입고대기처리 실패하였습니다. 다시 시도하여 주십시오.");
+                    }
                 }
-                else
+                catch (Exception err)
                 {
-                    MessageBox.Show("입고대기처리 실패하였습니다. 다시 시도하여 주십시오.");
+                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
-            catch (Exception err)
+            else
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                return;
             }
         }
     }
