@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,33 @@ namespace Team3
         public LoginForm()
         {
             InitializeComponent();
+
+            CheckUpdate();
+        }
+
+        private void CheckUpdate()
+        {
+            UpdateCheckInfo info = null;
+            if (!ApplicationDeployment.IsNetworkDeployed)
+            {
+                //MessageBox.Show("NOT DEPLOYED !!! USING CLICKONCE PLEASE");
+            }
+            else
+            {
+                ApplicationDeployment appDeployment = ApplicationDeployment.CurrentDeployment;
+                info = appDeployment.CheckForDetailedUpdate();
+                if (info.UpdateAvailable)
+                {
+                    bool doUpdate = true;
+                    if (doUpdate)
+                    {
+                        appDeployment.Update();
+                        MessageBox.Show("프로그램이 업그레이드되어서 재시작합니다.");
+                        this.Close();
+                        Application.Restart();
+                    }
+                }
+            }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
