@@ -149,7 +149,6 @@
             this.MinimumSize = new System.Drawing.Size(910, 575);
             this.Name = "Vertical2GridBaseForm";
             this.Load += new System.EventHandler(this.Vertical2GridBaseForm_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Vertical2GridBaseForm_KeyUp);
             this.TopMenu.ResumeLayout(false);
             this.basepanel.ResumeLayout(false);
             this.ResumeLayout(false);
