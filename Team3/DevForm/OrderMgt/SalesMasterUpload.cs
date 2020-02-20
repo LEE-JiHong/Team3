@@ -33,6 +33,11 @@ namespace Team3
         {
             dataGridView1.Columns.Clear();
 
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray; //Color.DimGray;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "planDate", "", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "순번", "", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "WORK_ORDER_ID", "", true, 130);
