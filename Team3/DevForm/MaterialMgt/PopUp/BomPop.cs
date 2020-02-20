@@ -73,7 +73,7 @@ namespace Team3
                     vo.bom_yn = cboIsUsed.SelectedValue.ToString();
                     vo.plan_yn = cboRequiredPlan.SelectedValue.ToString();
                     vo.bom_comment = txtNote.Text;
-                    vo.bom_uadmin = txtModifier.Text;
+                    //vo.bom_uadmin = txtModifier.Text;
                     vo.bom_udate = txtModifyDate.Text;
 
 
@@ -116,7 +116,7 @@ namespace Team3
                     vo.bom_yn = cboIsUsed.SelectedValue.ToString();
                     vo.plan_yn = cboRequiredPlan.SelectedValue.ToString();
                     vo.bom_comment = txtNote.Text;
-                    vo.bom_uadmin = txtModifier.Text;
+                    //vo.bom_uadmin = txtModifier.Text;
                     vo.bom_udate = txtModifyDate.Text;
 
                     bool bResult = bom_service.UpdateBOM(vo);
@@ -136,7 +136,7 @@ namespace Team3
 
         private void BomPop_Load(object sender, EventArgs e)
         {
-            txtModifier.Enabled = false;
+            
             txtModifyDate.Enabled = false;
             ComboBoxBinding();
 
@@ -149,8 +149,8 @@ namespace Team3
                 IsNullCbo(vo.plan_yn, cboRequiredPlan);
 
                 txtUseCount.Text = vo.bom_use_count.ToString();
-                txtModifier.Text = vo.bom_uadmin;
-                txtModifyDate.Text = vo.bom_udate;
+                //txtModifier.Text = vo.bom_uadmin;
+                txtModifyDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 txtNote.Text = vo.bom_comment;
                 dtpEndDate.Value = Convert.ToDateTime(vo.bom_edate);
                 dtpStartDate.Value = Convert.ToDateTime(vo.bom_sdate);

@@ -33,7 +33,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtModifier = new System.Windows.Forms.TextBox();
             this.txtEndDate = new System.Windows.Forms.TextBox();
             this.txtModifyDate = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,7 +59,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(213, 392);
+            this.panel3.Location = new System.Drawing.Point(213, 357);
             // 
             // btnCancel
             // 
@@ -83,7 +81,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtModifier);
             this.panel2.Controls.Add(this.txtEndDate);
             this.panel2.Controls.Add(this.txtModifyDate);
             this.panel2.Controls.Add(this.label13);
@@ -97,13 +94,12 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Size = new System.Drawing.Size(583, 303);
+            this.panel2.Size = new System.Drawing.Size(583, 268);
             // 
             // button1
             // 
@@ -111,7 +107,7 @@
             // 
             // linePanel
             // 
-            this.linePanel.Size = new System.Drawing.Size(630, 444);
+            this.linePanel.Size = new System.Drawing.Size(630, 409);
             // 
             // comboBox5
             // 
@@ -164,14 +160,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // txtModifier
-            // 
-            this.txtModifier.Enabled = false;
-            this.txtModifier.Location = new System.Drawing.Point(387, 105);
-            this.txtModifier.Name = "txtModifier";
-            this.txtModifier.Size = new System.Drawing.Size(177, 21);
-            this.txtModifier.TabIndex = 70;
-            // 
             // txtEndDate
             // 
             this.txtEndDate.Location = new System.Drawing.Point(387, 75);
@@ -207,7 +195,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(92, 166);
+            this.txtNote.Location = new System.Drawing.Point(92, 135);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(472, 121);
@@ -241,7 +229,7 @@
             // cboIsUsed
             // 
             this.cboIsUsed.FormattingEnabled = true;
-            this.cboIsUsed.Location = new System.Drawing.Point(92, 134);
+            this.cboIsUsed.Location = new System.Drawing.Point(387, 106);
             this.cboIsUsed.Name = "cboIsUsed";
             this.cboIsUsed.Size = new System.Drawing.Size(177, 23);
             this.cboIsUsed.TabIndex = 61;
@@ -287,22 +275,11 @@
             this.label11.TabIndex = 57;
             this.label11.Text = "종료일";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(298, 106);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 15);
-            this.label12.TabIndex = 56;
-            this.label12.Text = "수정자";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 166);
+            this.label7.Location = new System.Drawing.Point(16, 135);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 15);
             this.label7.TabIndex = 55;
@@ -313,7 +290,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(16, 135);
+            this.label6.Location = new System.Drawing.Point(298, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 54;
@@ -355,7 +332,7 @@
             // SUPMPop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(630, 444);
+            this.ClientSize = new System.Drawing.Size(630, 409);
             this.Controls.Add(this.groupBox1);
             this.Name = "SUPMPop";
             this.Load += new System.EventHandler(this.SUPMPop_Load);
@@ -380,7 +357,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtModifier;
         private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.TextBox txtModifyDate;
         private System.Windows.Forms.Label label13;
@@ -394,7 +370,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

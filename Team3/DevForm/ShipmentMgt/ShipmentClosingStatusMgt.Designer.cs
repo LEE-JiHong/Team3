@@ -304,7 +304,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1011, 70);
+            this.btnSelect.Location = new System.Drawing.Point(1022, 88);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 130;

@@ -70,11 +70,11 @@ namespace Team3
                 txtProductName.Text = vo.product_name;
                 txtProduct.Text = vo.product_codename;
                 txtLeadTime.Text = vo.product_leadtime;
-                txtUadmin.Text = vo.product_uadmin;
+                //txtUadmin.Text = ;
                 txtProductLsl.Text = vo.product_lsl;
                 txtItemCode.Text = vo.product_itemcode;
                 txtLeastOrder.Text = vo.product_lorder_count.ToString();
-                txtUdate.Text = vo.product_udate;
+                txtUdate.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 txtProductUsl.Text = vo.product_usl;
                 txtProductCode.Text = vo.product_code;
                 txtComment.Text = vo.product_comment;
@@ -199,7 +199,7 @@ namespace Team3
                     vo.product_yn = (cboIsUsed.SelectedValue == null) ? "" : cboIsUsed.SelectedValue.ToString();
                     vo.product_supply_com = (cboSupplyCompany.SelectedValue == null) ? "" : cboSupplyCompany.SelectedValue.ToString();
                     vo.product_demand_com = (cboDemandCompany.SelectedValue == null) ? "" : cboDemandCompany.SelectedValue.ToString();
-                    vo.product_uadmin = txtUadmin.Text;
+                    
                     vo.product_udate = txtUdate.Text;
                     vo.product_comment = txtComment.Text;
                     vo.product_itemcode = txtItemCode.Text;
@@ -260,7 +260,7 @@ namespace Team3
                     vo.product_yn = (cboIsUsed.SelectedValue == null) ? "" : cboIsUsed.SelectedValue.ToString();
                     vo.product_supply_com = (cboSupplyCompany.SelectedValue == null) ? "" : cboSupplyCompany.SelectedValue.ToString();
                     vo.product_demand_com = (cboDemandCompany.SelectedValue == null) ? "" : cboDemandCompany.SelectedValue.ToString();
-                    vo.product_uadmin = txtUadmin.Text;
+                    
                     vo.product_udate = txtUdate.Text;
                     vo.product_comment = txtComment.Text;
                     vo.product_itemcode = txtItemCode.Text;

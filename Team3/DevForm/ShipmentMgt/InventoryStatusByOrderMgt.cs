@@ -24,6 +24,11 @@ namespace Team3.DevForm.NewFolder1
 
         private void InventoryStatusByOrder_Load(object sender, EventArgs e)
         {
+            dtpFromDate.Value = DateTime.Now;
+            dtpToDate.Value = DateTime.Now.AddMonths(1);
+
+
+
             List<FactoryDB_VO> f_list = new List<FactoryDB_VO>();
             ResourceService resource_service = new ResourceService();
             f_list = resource_service.GetFactoryAll();
@@ -96,7 +101,7 @@ namespace Team3.DevForm.NewFolder1
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "취소수량", "so_ccount", false, 100, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고", "to_wh", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고코드", "to_wh_value", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            //GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
 
             dgvStockStatus.AutoGenerateColumns = false;
@@ -131,8 +136,6 @@ namespace Team3.DevForm.NewFolder1
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
         }
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {

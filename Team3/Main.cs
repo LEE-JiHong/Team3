@@ -14,6 +14,7 @@ using Team3.DevForm.ShipmentMgt;
 using System.Timers;
 using System.Configuration;
 using System.IO;
+using System.Deployment.Application;
 
 namespace Team3
 {
@@ -23,6 +24,16 @@ namespace Team3
         public Main()
         {
             InitializeComponent();
+
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                ApplicationDeployment appDeployment = ApplicationDeployment.CurrentDeployment;
+                this.Text += " ver " + appDeployment.CurrentVersion.ToString();
+            }
+            else
+            {
+                this.Text += " ver NOT DEPLOYED";
+            }
 
             //this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Gradient);
 
@@ -1063,7 +1074,7 @@ namespace Team3
             SettingForm frm = new SettingForm();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                
             }
         }
 
@@ -1071,8 +1082,11 @@ namespace Team3
         {
             try
             {
-                Process.Start($"{Application.StartupPath}/barcodeprint/WinReport1.exe");
-            }catch(Exception err)
+                BarcodePrinter frm = new BarcodePrinter();
+                frm.ShowDialog();
+      
+            }
+            catch(Exception err)
             {
                 Console.WriteLine(err.Message);
             }

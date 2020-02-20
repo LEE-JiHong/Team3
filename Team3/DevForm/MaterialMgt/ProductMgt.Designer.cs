@@ -47,10 +47,7 @@
             this.cboIsUsed = new System.Windows.Forms.ComboBox();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddExcel = new System.Windows.Forms.Button();
-            this.btnFormDownload = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.btnCopy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -101,8 +98,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(687, 138);
-            this.panel3.Size = new System.Drawing.Size(456, 29);
+            this.panel3.Location = new System.Drawing.Point(946, 138);
+            this.panel3.Size = new System.Drawing.Size(197, 31);
             // 
             // TopMenu
             // 
@@ -303,57 +300,20 @@
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductList.Size = new System.Drawing.Size(1131, 268);
             this.dgvProductList.TabIndex = 0;
-            this.dgvProductList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductList_CellDoubleClick);
+            
             this.dgvProductList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.SetDgvNumbering);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnAddExcel);
-            this.flowLayoutPanel1.Controls.Add(this.btnFormDownload);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
-            this.flowLayoutPanel1.Controls.Add(this.btnCopy);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(456, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(197, 31);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // btnAddExcel
-            // 
-            this.btnAddExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnAddExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddExcel.Image = global::Team3.Properties.Resources.LoadFrom_16x16;
-            this.btnAddExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExcel.Location = new System.Drawing.Point(358, 3);
-            this.btnAddExcel.Name = "btnAddExcel";
-            this.btnAddExcel.Size = new System.Drawing.Size(95, 23);
-            this.btnAddExcel.TabIndex = 34;
-            this.btnAddExcel.Text = "Excel 등록";
-            this.btnAddExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddExcel.UseVisualStyleBackColor = false;
-            // 
-            // btnFormDownload
-            // 
-            this.btnFormDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnFormDownload.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFormDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormDownload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFormDownload.Image = global::Team3.Properties.Resources.Open2_16x16;
-            this.btnFormDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormDownload.Location = new System.Drawing.Point(246, 3);
-            this.btnFormDownload.Name = "btnFormDownload";
-            this.btnFormDownload.Size = new System.Drawing.Size(106, 23);
-            this.btnFormDownload.TabIndex = 33;
-            this.btnFormDownload.Text = "양식 다운로드";
-            this.btnFormDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFormDownload.UseVisualStyleBackColor = false;
             // 
             // btnExcel
             // 
@@ -364,31 +324,14 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(184, 3);
+            this.btnExcel.Location = new System.Drawing.Point(138, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(56, 23);
+            this.btnExcel.Size = new System.Drawing.Size(56, 26);
             this.btnExcel.TabIndex = 32;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnCopy.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCopy.Image = global::Team3.Properties.Resources.Copy_16x16;
-            this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopy.Location = new System.Drawing.Point(122, 3);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(56, 23);
-            this.btnCopy.TabIndex = 31;
-            this.btnCopy.Text = "복사";
-            this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopy.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -399,9 +342,9 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(64, 3);
+            this.button1.Location = new System.Drawing.Point(80, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 23);
+            this.button1.Size = new System.Drawing.Size(52, 26);
             this.button1.TabIndex = 35;
             this.button1.Text = "수정";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -417,9 +360,9 @@
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(6, 3);
+            this.btnAdd.Location = new System.Drawing.Point(22, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(52, 23);
+            this.btnAdd.Size = new System.Drawing.Size(52, 26);
             this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "등록";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -438,17 +381,18 @@
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelect.Location = new System.Drawing.Point(1062, 81);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(65, 30);
+            this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 78;
             this.btnSelect.Text = "조회";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            
             // 
             // ProductMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1155, 536);
+            this.KeyPreview = true;
             this.Name = "ProductMgt";
             this.Tag = "품목관리";
             this.Load += new System.EventHandler(this.Materials_Load);
@@ -485,10 +429,7 @@
         private System.Windows.Forms.DataGridView dgvProductList;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.Button btnAddExcel;
-        private System.Windows.Forms.Button btnFormDownload;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
     }

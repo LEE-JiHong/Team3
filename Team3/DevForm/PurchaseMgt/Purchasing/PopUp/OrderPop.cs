@@ -61,7 +61,7 @@ namespace Team3
             chk.Width = 40;
             dgvOrdering.Columns.Add(chk);
 
-            Point headerLocation = dgvOrdering.GetCellDisplayRectangle(0, -1, true).Location;
+            //Point headerLocation = dgvOrdering.GetCellDisplayRectangle(0, -1, true).Location;
 
             //headerCheckBox1.Location = new Point(headerLocation.X + 8, headerLocation.Y + 2); //그냥 이렇게 주면 위치가 썩 이쁘지않아서 숫자 좀 더 플러스함
             //headerCheckBox1.BackColor = Color.White;

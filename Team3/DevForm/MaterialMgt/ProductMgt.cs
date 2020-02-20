@@ -83,7 +83,7 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "아이템코드", "product_itemcode", false, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "품번", "product_id", false, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "품명코드", "product_code", false, 130);
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "수정자", "product_uadmin", false, 130);
+            
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "수정일", "product_udate", false, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "비고", "product_comment", false, 130);
 
@@ -165,9 +165,6 @@ namespace Team3
                                                 select item).ToList();
             ComboUtil.ComboBinding(cboOutSector, _cboOutSector, "factory_code", "factory_name", "선택");
             #endregion
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -190,17 +187,7 @@ namespace Team3
 
         }
 
-        private void dgvProductList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-           
-        }
-
-        private void btnSelect_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnExcel_Click(object sender, EventArgs e)
         {
 

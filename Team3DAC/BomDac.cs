@@ -96,7 +96,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@bom_yn", VO.bom_yn);
                 cmd.Parameters.AddWithValue("@plan_yn", VO.plan_yn);
                 cmd.Parameters.AddWithValue("@bom_comment", VO.bom_comment);
-                cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
+                //cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
                 cmd.Parameters.AddWithValue("@bom_udate", VO.bom_udate);
 
                 cmd.Connection.Open();
@@ -125,7 +125,7 @@ namespace Team3DAC
                 cmd.Parameters.AddWithValue("@bom_yn", VO.bom_yn);
                 cmd.Parameters.AddWithValue("@plan_yn", VO.plan_yn);
                 cmd.Parameters.AddWithValue("@bom_comment", VO.bom_comment);
-                cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
+                //cmd.Parameters.AddWithValue("@bom_uadmin", VO.bom_uadmin);
                 cmd.Parameters.AddWithValue("@bom_udate", VO.bom_udate);
 
 

@@ -94,8 +94,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(1040, 154);
-            this.panel3.Size = new System.Drawing.Size(160, 29);
+            this.panel3.Location = new System.Drawing.Point(1040, 157);
+            this.panel3.Size = new System.Drawing.Size(160, 30);
             // 
             // TopMenu
             // 
@@ -278,7 +278,7 @@
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelect.Location = new System.Drawing.Point(1119, 101);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(65, 30);
+            this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 129;
             this.btnSelect.Text = "조회";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -292,7 +292,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 30);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -306,7 +306,7 @@
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcel.Location = new System.Drawing.Point(101, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(56, 23);
+            this.btnExcel.Size = new System.Drawing.Size(56, 26);
             this.btnExcel.TabIndex = 40;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -324,7 +324,7 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(20, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 41;
             this.button1.Text = "마감처리";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -345,6 +345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1212, 699);
+            this.KeyPreview = true;
             this.Name = "ShipmentClosingMgt";
             this.Tag = "매출마감";
             this.Text = "매출마감";
