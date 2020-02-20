@@ -12,10 +12,10 @@ namespace Team3
 {
     public partial class Vertical2GridBaseForm : nomalBaseForm
     {
-  
+
         public Vertical2GridBaseForm()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         public Vertical2GridBaseForm(WinState state) : base(state)
@@ -29,16 +29,7 @@ namespace Team3
             if (this.Tag != null)
                 SetBottomStatusLabel("Welcome! " + this.Tag.ToString() + " 페이지입니다.");
         }
-
-        private void Vertical2GridBaseForm_KeyUp(object sender, KeyEventArgs e)
-        {
-            Form frm = (Form)sender;
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.SelectNextControl(frm.ActiveControl, true, true, true, true);
-            }
-
-        }
     }
-    }
+}
+    
 

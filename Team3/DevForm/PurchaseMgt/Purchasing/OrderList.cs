@@ -81,8 +81,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품명", "product_name", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "납기일", "order_pdate", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주량", "order_count", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "입고량", "", true);
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출발량", "company_order_code", true);
+            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "입고량", "", true);
+            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "출발량", "company_order_code", true);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "취소량", "", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "취소가능량", "order_count", true);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "발주일", "order_ddate", true);
@@ -118,7 +118,7 @@ namespace Team3
                     OrderVO vo = new OrderVO();
                     vo.order_id = row.Cells[1].Value.ToString();
                     vo.plan_id = row.Cells[2].Value.ToString();
-                    vo.order_count = Convert.ToInt32(row.Cells[11].Value);
+                    vo.order_count = Convert.ToInt32(row.Cells[9].Value);
 
                     list.Add(vo);
                 }
@@ -159,12 +159,12 @@ namespace Team3
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //수량 입력하면 체크박스 true
-            if (dataGridView1.Rows[e.RowIndex].Cells[11].Value != null)
+            if (dataGridView1.Rows[e.RowIndex].Cells[9].Value != null)
             {
-                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value))
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value))
                 {
                     MessageBox.Show("취소수량이 발주수량보다 클 수는 없습니다. 다시 입력하여 주십시오.");
-                    dataGridView1.Rows[e.RowIndex].Cells[11].Value = null;
+                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = null;
                 }
                 else
                 {

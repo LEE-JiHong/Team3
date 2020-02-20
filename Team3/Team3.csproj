@@ -12,6 +12,29 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Temp\LSYK\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://lsyk.azurewebsites.net/publish/</InstallUrl>
+    <UpdateUrl>https://lsyk.azurewebsites.net/publish/</UpdateUrl>
+    <ProductName>LSYK-MES</ProductName>
+    <PublisherName>LSYK</PublisherName>
+    <SuiteName>LSYK MES</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,9 +58,29 @@
   <PropertyGroup>
     <ApplicationIcon>lsykicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>40DDCFD7F922108B465D95E879DA23C0411F9180</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -70,6 +113,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarcodePrinter\BarcodePrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarcodePrinter\BarcodePrinter.Designer.cs">
+      <DependentUpon>BarcodePrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodePrinter\dsOrder.cs">
+      <DependentUpon>dsOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodePrinter\dsOrder.Designer.cs">
+      <DependentUpon>dsOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodePrinter\dsOrder1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodePrinter\ReportPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarcodePrinter\ReportPreviewForm.Designer.cs">
+      <DependentUpon>ReportPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodePrinter\XtraReport3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BarcodePrinter\XtraReport3.Designer.cs">
+      <DependentUpon>XtraReport3.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\DgvBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -489,6 +561,12 @@
     <Compile Include="WorkOrder\Process_Inventory.Designer.cs">
       <DependentUpon>Process_Inventory.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BarcodePrinter\BarcodePrinter.resx">
+      <DependentUpon>BarcodePrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarcodePrinter\XtraReport3.resx">
+      <DependentUpon>XtraReport3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\DgvBaseForm.resx">
       <DependentUpon>DgvBaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -698,6 +776,17 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="BarcodePrinter\dsOrder.xsc">
+      <DependentUpon>dsOrder.xsd</DependentUpon>
+    </None>
+    <None Include="BarcodePrinter\dsOrder.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrder1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BarcodePrinter\dsOrder.xss">
+      <DependentUpon>dsOrder.xsd</DependentUpon>
+    </None>
     <None Include="DevForm\ShipmentMgt\SalesComplete.xsc">
       <DependentUpon>SalesComplete.xsd</DependentUpon>
     </None>
@@ -710,6 +799,7 @@
       <DependentUpon>SalesComplete.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -719,6 +809,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Team3_TemporaryKey.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -785,7 +878,18 @@
     <Content Include="Icon\Home\menulist.png" />
     <Content Include="Icon\Home\menulist1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
@@ -815,5 +919,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
