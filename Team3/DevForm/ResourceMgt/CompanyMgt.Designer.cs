@@ -50,12 +50,12 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -236,7 +236,7 @@
             // txtLicenseNum
             // 
             this.txtLicenseNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicenseNum.Location = new System.Drawing.Point(138, 59);
+            this.txtLicenseNum.Location = new System.Drawing.Point(138, 70);
             this.txtLicenseNum.Name = "txtLicenseNum";
             this.txtLicenseNum.Size = new System.Drawing.Size(201, 26);
             this.txtLicenseNum.TabIndex = 3;
@@ -246,7 +246,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(31, 63);
+            this.label7.Location = new System.Drawing.Point(31, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 20);
             this.label7.TabIndex = 1;
@@ -341,6 +341,24 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(370, 32);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(287, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 53;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // btnExport
             // 
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -422,29 +440,12 @@
             this.lblID.TabIndex = 5;
             this.lblID.Visible = false;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(287, 1);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
-            this.btnRefresh.TabIndex = 53;
-            this.btnRefresh.Text = "새로고침";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // businessMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(990, 554);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.KeyPreview = true;
             this.Name = "businessMgt";
             this.Tag = "업체관리";
             this.Text = "업체관리";

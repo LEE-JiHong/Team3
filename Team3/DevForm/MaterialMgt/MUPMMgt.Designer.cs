@@ -176,11 +176,11 @@
             // lblStandardDate
             // 
             this.lblStandardDate.AutoSize = true;
-            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandardDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStandardDate.Location = new System.Drawing.Point(23, 19);
+            this.lblStandardDate.Location = new System.Drawing.Point(23, 15);
             this.lblStandardDate.Name = "lblStandardDate";
-            this.lblStandardDate.Size = new System.Drawing.Size(52, 16);
+            this.lblStandardDate.Size = new System.Drawing.Size(57, 20);
             this.lblStandardDate.TabIndex = 0;
             this.lblStandardDate.Text = "기준일자";
             // 
@@ -188,11 +188,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(238, 19);
+            this.label3.Location = new System.Drawing.Point(238, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "품목";
             // 
@@ -200,31 +200,31 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(501, 20);
+            this.label4.Location = new System.Drawing.Point(501, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 16);
+            this.label4.Size = new System.Drawing.Size(33, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "업체";
             // 
             // dtpStandardDate
             // 
-            this.dtpStandardDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStandardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStandardDate.Location = new System.Drawing.Point(103, 15);
+            this.dtpStandardDate.Location = new System.Drawing.Point(103, 11);
             this.dtpStandardDate.Name = "dtpStandardDate";
-            this.dtpStandardDate.Size = new System.Drawing.Size(115, 22);
+            this.dtpStandardDate.Size = new System.Drawing.Size(115, 26);
             this.dtpStandardDate.TabIndex = 3;
             // 
             // cboCompany
             // 
             this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboCompany.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(573, 16);
+            this.cboCompany.Location = new System.Drawing.Point(573, 12);
             this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(169, 21);
+            this.cboCompany.Size = new System.Drawing.Size(169, 28);
             this.cboCompany.TabIndex = 21;
             // 
             // dgvMUPM
@@ -242,11 +242,11 @@
             // txtProduct
             // 
             this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtProduct.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtProduct.Location = new System.Drawing.Point(311, 15);
+            this.txtProduct.Location = new System.Drawing.Point(311, 11);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(206, 22);
+            this.txtProduct.Size = new System.Drawing.Size(206, 26);
             this.txtProduct.TabIndex = 28;
             this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
@@ -260,7 +260,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(856, 15);
+            this.btnSelect.Location = new System.Drawing.Point(856, 10);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 78;

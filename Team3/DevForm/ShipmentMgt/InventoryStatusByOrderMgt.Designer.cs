@@ -60,7 +60,7 @@
             this.panel2.Controls.Add(this.dgvStockStatus);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(13, 171);
-            this.panel2.Size = new System.Drawing.Size(999, 409);
+            this.panel2.Size = new System.Drawing.Size(1172, 409);
             // 
             // panel1
             // 
@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblStandardDate);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Size = new System.Drawing.Size(999, 116);
+            this.panel1.Size = new System.Drawing.Size(1172, 116);
             // 
             // label1
             // 
@@ -89,14 +89,14 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(856, 133);
+            this.panel3.Location = new System.Drawing.Point(1029, 133);
             this.panel3.Size = new System.Drawing.Size(156, 35);
             // 
             // TopMenu
             // 
             this.TopMenu.Controls.Add(this.cboToFac);
             this.TopMenu.Controls.Add(this.label4);
-            this.TopMenu.Size = new System.Drawing.Size(1024, 60);
+            this.TopMenu.Size = new System.Drawing.Size(1197, 60);
             this.TopMenu.Controls.SetChildIndex(this.label4, 0);
             this.TopMenu.Controls.SetChildIndex(this.cboToFac, 0);
             this.TopMenu.Controls.SetChildIndex(this.닫기, 0);
@@ -112,7 +112,7 @@
             // 
             // basepanel
             // 
-            this.basepanel.Size = new System.Drawing.Size(1024, 592);
+            this.basepanel.Size = new System.Drawing.Size(1197, 592);
             this.basepanel.Tag = "고객주문별재고현황";
             // 
             // imageList1
@@ -132,7 +132,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(931, 81);
+            this.btnSelect.Location = new System.Drawing.Point(1104, 81);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 85;
@@ -145,7 +145,7 @@
             // 
             this.txtProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProduct.Location = new System.Drawing.Point(745, 48);
+            this.txtProduct.Location = new System.Drawing.Point(931, 44);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(238, 26);
             this.txtProduct.TabIndex = 84;
@@ -155,7 +155,7 @@
             this.cboToFac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboToFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboToFac.FormattingEnabled = true;
-            this.cboToFac.Location = new System.Drawing.Point(604, 19);
+            this.cboToFac.Location = new System.Drawing.Point(777, 19);
             this.cboToFac.Name = "cboToFac";
             this.cboToFac.Size = new System.Drawing.Size(238, 28);
             this.cboToFac.TabIndex = 83;
@@ -176,7 +176,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(547, 24);
+            this.label4.Location = new System.Drawing.Point(720, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 81;
@@ -189,7 +189,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(685, 51);
+            this.label3.Location = new System.Drawing.Point(879, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 80;
@@ -278,7 +278,7 @@
             this.cboFromFac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFromFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFromFac.FormattingEnabled = true;
-            this.cboFromFac.Location = new System.Drawing.Point(421, 46);
+            this.cboFromFac.Location = new System.Drawing.Point(523, 46);
             this.cboFromFac.Name = "cboFromFac";
             this.cboFromFac.Size = new System.Drawing.Size(238, 28);
             this.cboFromFac.TabIndex = 89;
@@ -289,7 +289,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(345, 51);
+            this.label5.Location = new System.Drawing.Point(447, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 88;
@@ -306,7 +306,7 @@
             this.dgvStockStatus.Name = "dgvStockStatus";
             this.dgvStockStatus.RowTemplate.Height = 23;
             this.dgvStockStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStockStatus.Size = new System.Drawing.Size(999, 409);
+            this.dgvStockStatus.Size = new System.Drawing.Size(1172, 409);
             this.dgvStockStatus.TabIndex = 0;
             this.dgvStockStatus.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStockStatus_DataBindingComplete);
             // 
@@ -318,7 +318,7 @@
             // InventoryStatusByOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1024, 674);
+            this.ClientSize = new System.Drawing.Size(1197, 674);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.KeyPreview = true;
             this.Name = "InventoryStatusByOrder";

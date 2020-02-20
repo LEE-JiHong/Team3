@@ -35,13 +35,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEx = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -117,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(33, 26);
+            this.label2.Location = new System.Drawing.Point(33, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 1;
@@ -127,27 +127,29 @@
             // 
             this.txtSearchFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchFacility.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSearchFacility.Location = new System.Drawing.Point(112, 23);
+            this.txtSearchFacility.Location = new System.Drawing.Point(112, 24);
             this.txtSearchFacility.Name = "txtSearchFacility";
             this.txtSearchFacility.Size = new System.Drawing.Size(201, 26);
             this.txtSearchFacility.TabIndex = 0;
             // 
             // cboSearchFacilityGroup
             // 
+            this.cboSearchFacilityGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboSearchFacilityGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearchFacilityGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboSearchFacilityGroup.FormattingEnabled = true;
-            this.cboSearchFacilityGroup.Location = new System.Drawing.Point(403, 22);
+            this.cboSearchFacilityGroup.Location = new System.Drawing.Point(464, 23);
             this.cboSearchFacilityGroup.Name = "cboSearchFacilityGroup";
             this.cboSearchFacilityGroup.Size = new System.Drawing.Size(201, 28);
             this.cboSearchFacilityGroup.TabIndex = 1;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(352, 26);
+            this.label3.Location = new System.Drawing.Point(413, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 20);
             this.label3.TabIndex = 1;
@@ -179,6 +181,22 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(396, 32);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(311, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 46;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnEx
             // 
@@ -276,26 +294,11 @@
             this.lblID.TabIndex = 13;
             this.lblID.Visible = false;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(311, 3);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
-            this.btnRefresh.TabIndex = 46;
-            this.btnRefresh.Text = "새로고침";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // FactoryMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1119, 668);
+            this.KeyPreview = true;
             this.Name = "FactoryMgt";
             this.Tag = "공장관리";
             this.Text = "공장관리";
