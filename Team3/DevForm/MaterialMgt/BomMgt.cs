@@ -163,8 +163,9 @@ namespace Team3
             dgvBom.DataSource = null;
             dgvBom.Columns.Clear();
 
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목", "bom_codename", true, 130);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품명", "bom_name", true, 220);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목유형", "bom_type", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목", "bom_codename", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품명", "bom_parent_name", true, 220);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "단위", "bom_unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "사용여부", "bom_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -173,17 +174,15 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "종료일", "bom_edate", true, 130, DataGridViewContentAlignment.MiddleRight);
             //GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정자", "bom_uadmin", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "수정일", "bom_udate", true, 130, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "비고", "bom_comment", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "비고", "bom_comment", true, 150, DataGridViewContentAlignment.MiddleLeft);
 
-            //GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목유형", "product_type", true, 220);
 
             #region visible_false
-
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품번", "product_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "BOM레벨", "bom_level", false, 80, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "소요량", "bom_use_count", false, 80, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "BomID", "bom_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "상위품목", "bom_parent_name", false, 130);
+            GridViewUtil.AddNewColumnToDataGridView(dgvBom, "상위품목", "bom_parent_id", false, 130);
             #endregion
             dgvBom.AutoGenerateColumns = false;
             dgvBom.DataSource = newBom;
@@ -327,5 +326,7 @@ namespace Team3
 
             
         }
+
+       
     }
 }

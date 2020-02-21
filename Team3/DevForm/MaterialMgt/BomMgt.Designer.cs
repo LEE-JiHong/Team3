@@ -95,7 +95,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(3129, 99);
+            this.panel5.Location = new System.Drawing.Point(3279, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -327,6 +327,7 @@
             this.dgvBomDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBomDetail.Size = new System.Drawing.Size(367, 313);
             this.dgvBomDetail.TabIndex = 2;
+           
             this.dgvBomDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBomDetail_CellDoubleClick);
             // 
             // BomMgt
