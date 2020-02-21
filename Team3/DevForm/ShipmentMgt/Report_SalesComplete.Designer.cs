@@ -410,13 +410,13 @@
             // xrLabel5
             // 
             this.xrLabel5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(203.1287F, 248.9915F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(366.4203F, 248.9915F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(373.8715F, 23F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(63.18729F, 23.00003F);
             this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.Text = "Copyright 2019 LSYK all rights reserved.";
+            this.xrLabel5.Text = "LSYK";
             // 
             // PageFooter
             // 

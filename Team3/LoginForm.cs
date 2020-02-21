@@ -104,7 +104,7 @@ namespace Team3
                 }
                 else
                 {
-                    MessageBox.Show("아이디 또는 비밀번호가 틀렸습니다.");
+                    MessageBox.Show("아이디 또는 비밀번호가 틀렸습니다.","로그인 실패");
                     return;
                 }
             }
@@ -127,6 +127,14 @@ namespace Team3
             // ButtonBorderStyle.Solid,
 
             //borderColor, borderWidth, ButtonBorderStyle.Solid);
+        }
+
+        private void txtPwd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

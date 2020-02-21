@@ -107,17 +107,17 @@ namespace Team3.DevForm.ShipmentMgt
         {
             dgvClientOrder.Columns.Clear();
 
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "so_wo_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "so_wo_id", true, 200, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "plan_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사코드", "s_company", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사", "company_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "주문수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감수량", "s_count", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출액", "s_TotalPrice", true, 100, DataGridViewContentAlignment.MiddleRight, true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일", "s_date", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "plan_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사코드", "s_company", true, 170, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객사", "company_name", true, 210, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품목", "product_codename", true, 190, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품명", "product_name", true, 268, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "주문수량", "so_pcount", true, 125, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감수량", "s_count", true, 125, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출액", "s_TotalPrice", true, 170, DataGridViewContentAlignment.MiddleRight, true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일", "s_date", true, 170, DataGridViewContentAlignment.MiddleCenter);
 
             GridViewUtil.SetDataGridView(dgvClientOrder);
 
