@@ -136,7 +136,7 @@ namespace Team3
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "이전재고", "w_count_past", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고id", "req_factory_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고", "req_factory", true, 100, DataGridViewContentAlignment.MiddleLeft);
-                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고 재고", "nam", true, 100, DataGridViewContentAlignment.MiddleLeft);
+                    GridViewUtil.AddNewColumnToDataGridView(dataGridView2, "요청창고 재고", "nam", false, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "요청량", "req_count", true, 100, DataGridViewContentAlignment.MiddleLeft);
                     GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "사유", "reason", true, 100, DataGridViewContentAlignment.MiddleLeft);
 

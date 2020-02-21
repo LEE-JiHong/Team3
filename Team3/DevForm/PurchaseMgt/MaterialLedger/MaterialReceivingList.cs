@@ -234,5 +234,22 @@ namespace Team3
         {
             GridViewUtil.SetDgvTextBoxColor(dataGridView1, 7);
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //수량 입력하면 체크박스 true
+            if (dataGridView1.Rows[e.RowIndex].Cells[7].Value != null)
+            {
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value))
+                {
+                    MessageBox.Show("취소수량이 입고수량보다 클 수는 없습니다. 다시 입력하여 주십시오.", "입고취소", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView1.Rows[e.RowIndex].Cells[7].Value = null;
+                }
+                else
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
+                }
+            }
+        }
     }
 }

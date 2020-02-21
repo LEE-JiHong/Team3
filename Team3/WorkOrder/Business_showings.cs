@@ -28,8 +28,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "작업지시번호", "worknum", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "", "pro_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "시작일", "pro_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "시작시간", "pd_stime", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "완료시간", "pd_etime", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "시작시간", "pd_stime", false, 100, DataGridViewContentAlignment.MiddleLeft);//수정
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "완료시간", "pd_etime", false, 100, DataGridViewContentAlignment.MiddleLeft);// 수정
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "product_id", "product_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "품목코드명", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView1, "품목", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
@@ -54,8 +54,8 @@ namespace Team3
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "작업지시번호", "worknum", true, 120, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "", "pro_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "시작일", "pro_date", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "시작시간", "pd_stime", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "완료시간", "pd_etime", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "시작시간", "pd_stime", false, 100, DataGridViewContentAlignment.MiddleLeft); // 수정
+            GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "완료시간", "pd_etime", false, 100, DataGridViewContentAlignment.MiddleLeft);//수정
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "product_id", "product_id", false, 100, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "품목코드명", "product_codename", true, 120, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToTextBoxGridView(dataGridView2, "품목", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
@@ -116,10 +116,14 @@ namespace Team3
                 {
                     MessageBox.Show("등록 실패");
                 }
+                ProcessService P_service = new ProcessService();
+                  n_lst = P_service.GetWork();
+                dataGridView2.DataSource = n_lst;
             }
             catch (Exception err)
             {
-                LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                MessageBox.Show(err.Message);
+                //LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
             }
         }
 

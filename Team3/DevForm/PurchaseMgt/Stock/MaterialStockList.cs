@@ -64,7 +64,7 @@ namespace Team3
                 DataTable dt = service.GetMaterialStockList(vo);
                 SetDataGrid();
                 dataGridView1.DataSource = dt;
-                SetRowNumber();
+               // SetRowNumber();
 
                 //dataGridView1.Columns[6].DefaultCellStyle.BackColor = Color.Red;
             }
@@ -88,7 +88,7 @@ namespace Team3
             GridViewUtil.SetDataGridView(dataGridView1);
             dataGridView1.AutoGenerateColumns = false;
 
-            GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true, 100);
+            //GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "No.", "count", true, 100);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "창고코드", "factory_code", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "창고", "factory_name", true, 150);
             GridViewUtil.AddNewColumnToDataGridView(dataGridView1, "품목", "product_codename", true, 150);
@@ -125,7 +125,7 @@ namespace Team3
                 DataTable dt = service.GetMaterialStockList(vo);
                 SetDataGrid();
                 dataGridView1.DataSource = dt;
-                SetRowNumber();
+               // SetRowNumber();
 
                 //dataGridView1.Columns[6].DefaultCellStyle.BackColor = Color.Red;
             }
@@ -143,8 +143,8 @@ namespace Team3
                 return;
             }
             StockVO vo = new StockVO();
-            vo.product_codename = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            vo.factory_code = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            vo.product_codename = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            vo.factory_code = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
             warehouseHistoryPop frm = new warehouseHistoryPop(vo);
             frm.ShowDialog();
@@ -185,7 +185,7 @@ namespace Team3
                 DataTable dt = service.GetMaterialStockList(vo);
                 SetDataGrid();
                 dataGridView1.DataSource = dt;
-                SetRowNumber();
+               // SetRowNumber();
 
                 //dataGridView1.Columns[6].DefaultCellStyle.BackColor = Color.Red;
             }
