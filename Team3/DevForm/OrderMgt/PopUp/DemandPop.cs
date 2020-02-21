@@ -83,20 +83,20 @@ namespace Team3
         {
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("조회 버튼을 먼저 눌러주십시오.");
+                MessageBox.Show("조회 버튼을 먼저 눌러주십시오.", "조회", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
             OrderService service = new OrderService();
 
-            if (MessageBox.Show("수요계획을 생성하시겠습니까?", "수요계획생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("수요계획을 생성하시겠습니까?", "수요계획생성", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
                     int resultRow = service.SearchPlanIDInDemand(cbOrderGubun.Text);
                     if (resultRow > 0)
                     {
-                        MessageBox.Show("이미 생성된 수요계획이 있습니다.");
+                        MessageBox.Show("이미 생성된 수요계획이 있습니다.", "수요계획",MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else
@@ -117,12 +117,12 @@ namespace Team3
 
                         if (result)
                         {
-                            MessageBox.Show("성공적으로 수요계획을 생성하였습니다.");
+                            MessageBox.Show("성공적으로 수요계획을 생성하였습니다.", "수요계획생성", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("수요계획 생성에 실패하였습니다.");
+                            MessageBox.Show("수요계획 생성에 실패하였습니다.", "수요계획생성실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

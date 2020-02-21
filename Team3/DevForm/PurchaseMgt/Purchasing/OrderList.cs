@@ -127,7 +127,7 @@ namespace Team3
             //발주취소 버튼 (발주번호, PlanID 값)
             PurchasingService service = new PurchasingService();
 
-            if (MessageBox.Show("발주 취소하시겠습니까?", "발주취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("발주 취소하시겠습니까?", "발주취소", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -135,13 +135,13 @@ namespace Team3
 
                     if (result)
                     {
-                        MessageBox.Show("성공적으로 발주취소가 완료되었습니다.");
+                        MessageBox.Show("성공적으로 발주취소가 완료되었습니다.", "발주취소", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         SetBottomStatusLabel("성공적으로 발주취소가 완료되었습니다.");
                         btnSearch.PerformClick();
                     }
                     else
                     {
-                        MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
+                        MessageBox.Show("발주취소 실패하였습니다. 다시 시도하여 주십시오.", "발주취소", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         SetBottomStatusLabel("발주취소 실패하였습니다. 다시 시도하여 주십시오.");
                     }
                 }
@@ -163,7 +163,7 @@ namespace Team3
             {
                 if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value) < Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value))
                 {
-                    MessageBox.Show("취소수량이 발주수량보다 클 수는 없습니다. 다시 입력하여 주십시오.");
+                    MessageBox.Show("취소수량이 발주수량보다 클 수는 없습니다. 다시 입력하여 주십시오.", "발주취소", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView1.Rows[e.RowIndex].Cells[9].Value = null;
                 }
                 else

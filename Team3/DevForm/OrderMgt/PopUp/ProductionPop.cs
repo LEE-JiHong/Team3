@@ -140,7 +140,7 @@ namespace Team3
                 {
                     if (qty < demandList[idx].d_count)
                     {
-                        MessageBox.Show($"{demandList[idx].d_date} 이전에 {demandList[idx].d_count}개를 입력해야 합니다.");
+                        MessageBox.Show($"{demandList[idx].d_date} 이전에 {demandList[idx].d_count}개를 입력해야 합니다.", "생산계획", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ChooseNum.Text = totalQty.ToString();
                         return;
                     }
@@ -167,24 +167,24 @@ namespace Team3
 
             if (soQty > totalQty)
             {
-                MessageBox.Show("수량이 계획수량보다 적습니다.");
+                MessageBox.Show("수량이 계획수량보다 적습니다.", "생산계획", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ChooseNum.Text = totalQty.ToString();
                 return;
             }
 
-            if (MessageBox.Show("생산계획을 생성하시겠습니까?", "생산계힉생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("생산계획을 생성하시겠습니까?", "생산계획생성", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 OrderService service = new OrderService();
                 bool result = service.AddProductionPlan(list);
 
                 if (result)
                 {
-                    MessageBox.Show("성공적으로 생산계획을 생성하였습니다.");
+                    MessageBox.Show("성공적으로 생산계획을 생성하였습니다.", "생산계획생성", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("생산계획 생성 실패하였습니다. 다시 시도하여 주십시오.");
+                    MessageBox.Show("생산계획 생성 실패하였습니다. 다시 시도하여 주십시오.", "생산계획생성실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -208,7 +208,7 @@ namespace Team3
                 //수량 입력하면 하루생산량 체크
                 if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value) > uphCount)
                 {
-                    MessageBox.Show("일 최대 생산량을 초과하였습니다. 다시 입력하여 주십시오.");
+                    MessageBox.Show("일 최대 생산량을 초과하였습니다. 다시 입력하여 주십시오.", "생산계획", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView1.Rows[e.RowIndex].Cells[0].Value = null;
                     return;
                 }

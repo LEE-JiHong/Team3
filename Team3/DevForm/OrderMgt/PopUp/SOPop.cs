@@ -102,24 +102,33 @@ namespace Team3
 
                 OrderService service = new OrderService();
 
-                try
+
+                if (MessageBox.Show("등록하시겠습니까?", "S/O등록", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    bool result = service.AddOneSOMaster(vo);
-
-                    if (result)
+                    try
                     {
-                        DialogResult = DialogResult.OK;
+                        bool result = service.AddOneSOMaster(vo);
 
+                        if (result)
+                        {
+                            DialogResult = DialogResult.OK;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("등록에 실패하였습니다.");
+                        }
                     }
-                    else
+                    catch (Exception err)
                     {
-                        MessageBox.Show("등록에 실패하였습니다.");
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                     }
                 }
-                catch (Exception err)
+                else
                 {
-                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
+                    return;
                 }
+                
             }
             else if (edit == EditMode.Update)
             {
@@ -141,23 +150,26 @@ namespace Team3
 
                 OrderService service = new OrderService();
 
-                try
+                if (MessageBox.Show("수정하시겠습니까?", "S/O수정", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    bool result = service.UpdateOneSOMaster(vo);
+                    try
+                    {
+                        bool result = service.UpdateOneSOMaster(vo);
 
-                    if (result)
-                    {
-                        MessageBox.Show("수정이 완료되었습니다.");
-                        DialogResult = DialogResult.OK;
+                        if (result)
+                        {
+                            MessageBox.Show("수정이 완료되었습니다.");
+                            DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("수정에 실패하였습니다.");
+                        }
                     }
-                    else
+                    catch (Exception err)
                     {
-                        MessageBox.Show("수정에 실패하였습니다.");
+                        LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                     }
-                }
-                catch(Exception err)
-                {
-                    LoggingUtility.GetLoggingUtility(err.Message, Level.Error);
                 }
             }
         }
