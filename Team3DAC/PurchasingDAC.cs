@@ -206,7 +206,7 @@ namespace Team3DAC
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate, order_qcount = order_qcount - @order_qcount where order_serial = @order_serial and plan_id = @plan_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate, order_qcount = order_qcount - @order_qcount where order_serial = @order_id and plan_id = @plan_id";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
@@ -214,13 +214,15 @@ namespace Team3DAC
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
 
-                        cmd.CommandText = @"select order_count from TBL_ORDER where order_serial = @order_serial";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = @"select order_count from TBL_ORDER where order_serial = @order_id";
 
                         int order_count = Convert.ToInt32(cmd.ExecuteScalar());
 
                         if (order_count <= 0)
                         {
-                            cmd.CommandText = @"delete from TBL_ORDER where order_serial = @order_serial";
+                            cmd.CommandText = @"delete from TBL_ORDER where order_serial = @order_id";
                         }
 
                         cmd.ExecuteNonQuery();
