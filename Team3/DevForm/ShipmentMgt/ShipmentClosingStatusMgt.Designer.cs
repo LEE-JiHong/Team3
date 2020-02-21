@@ -123,7 +123,6 @@
             // 
             // dgvClientOrder
             // 
-            this.dgvClientOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvClientOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientOrder.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,7 +136,7 @@
             // 
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromDate.Location = new System.Drawing.Point(123, 40);
+            this.dtpFromDate.Location = new System.Drawing.Point(110, 40);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(104, 26);
             this.dtpFromDate.TabIndex = 124;
@@ -146,7 +145,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 46);
+            this.label2.Location = new System.Drawing.Point(217, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 20);
             this.label2.TabIndex = 123;
@@ -156,7 +155,7 @@
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(251, 40);
+            this.dtpToDate.Location = new System.Drawing.Point(238, 40);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(104, 26);
             this.dtpToDate.TabIndex = 122;
@@ -177,7 +176,7 @@
             this.cboCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(474, 38);
+            this.cboCustomer.Location = new System.Drawing.Point(485, 38);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(230, 28);
             this.cboCustomer.TabIndex = 120;
@@ -198,7 +197,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(386, 43);
+            this.label8.Location = new System.Drawing.Point(407, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 113;
@@ -223,7 +222,7 @@
             this.lblWHing.AutoSize = true;
             this.lblWHing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWHing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWHing.Location = new System.Drawing.Point(760, 43);
+            this.lblWHing.Location = new System.Drawing.Point(792, 43);
             this.lblWHing.Name = "lblWHing";
             this.lblWHing.Size = new System.Drawing.Size(33, 20);
             this.lblWHing.TabIndex = 109;
@@ -299,7 +298,7 @@
             // 
             this.txtProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProduct.Location = new System.Drawing.Point(844, 40);
+            this.txtProduct.Location = new System.Drawing.Point(855, 40);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(232, 26);
             this.txtProduct.TabIndex = 131;

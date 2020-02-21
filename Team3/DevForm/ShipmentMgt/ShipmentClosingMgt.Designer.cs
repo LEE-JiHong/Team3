@@ -96,8 +96,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(1040, 157);
-            this.panel3.Size = new System.Drawing.Size(160, 30);
+            this.panel3.Location = new System.Drawing.Point(1040, 154);
+            this.panel3.Size = new System.Drawing.Size(160, 33);
             // 
             // TopMenu
             // 
@@ -124,7 +124,6 @@
             // 
             // dgvClientOrder
             // 
-            this.dgvClientOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvClientOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientOrder.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -140,78 +139,83 @@
             // txtOrderNum
             // 
             this.txtOrderNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOrderNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrderNum.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtOrderNum.Location = new System.Drawing.Point(804, 80);
+            this.txtOrderNum.Location = new System.Drawing.Point(975, 61);
             this.txtOrderNum.Name = "txtOrderNum";
-            this.txtOrderNum.Size = new System.Drawing.Size(209, 22);
+            this.txtOrderNum.Size = new System.Drawing.Size(209, 26);
             this.txtOrderNum.TabIndex = 126;
             // 
             // txtProduct
             // 
             this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtProduct.Location = new System.Drawing.Point(468, 80);
+            this.txtProduct.Location = new System.Drawing.Point(547, 61);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(230, 22);
+            this.txtProduct.Size = new System.Drawing.Size(230, 26);
             this.txtProduct.TabIndex = 125;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(575, 32);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(654, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 16);
+            this.label2.Size = new System.Drawing.Size(18, 20);
             this.label2.TabIndex = 123;
             this.label2.Text = "~";
             // 
             // dtpToDate
             // 
             this.dtpToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpToDate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(592, 26);
+            this.dtpToDate.Location = new System.Drawing.Point(671, 20);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(108, 22);
+            this.dtpToDate.Size = new System.Drawing.Size(108, 26);
             this.dtpToDate.TabIndex = 122;
             // 
             // lblStandardDate
             // 
             this.lblStandardDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblStandardDate.AutoSize = true;
-            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandardDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStandardDate.Location = new System.Drawing.Point(371, 27);
+            this.lblStandardDate.Location = new System.Drawing.Point(450, 21);
             this.lblStandardDate.Name = "lblStandardDate";
-            this.lblStandardDate.Size = new System.Drawing.Size(41, 16);
+            this.lblStandardDate.Size = new System.Drawing.Size(45, 20);
             this.lblStandardDate.TabIndex = 121;
             this.lblStandardDate.Text = "납기일";
             // 
             // cboCustomer
             // 
             this.cboCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(804, 24);
+            this.cboCustomer.Location = new System.Drawing.Point(975, 18);
             this.cboCustomer.Name = "cboCustomer";
-            this.cboCustomer.Size = new System.Drawing.Size(209, 24);
+            this.cboCustomer.Size = new System.Drawing.Size(209, 28);
             this.cboCustomer.TabIndex = 119;
             // 
             // cboWH
             // 
+            this.cboWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboWH.FormattingEnabled = true;
-            this.cboWH.Location = new System.Drawing.Point(128, 24);
+            this.cboWH.Location = new System.Drawing.Point(128, 18);
             this.cboWH.Name = "cboWH";
-            this.cboWH.Size = new System.Drawing.Size(225, 24);
+            this.cboWH.Size = new System.Drawing.Size(225, 28);
             this.cboWH.TabIndex = 115;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(30, 27);
+            this.label6.Location = new System.Drawing.Point(30, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 16);
+            this.label6.Size = new System.Drawing.Size(33, 20);
             this.label6.TabIndex = 107;
             this.label6.Text = "창고";
             // 
@@ -219,31 +223,32 @@
             // 
             this.lblDeliveryCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDeliveryCompany.AutoSize = true;
-            this.lblDeliveryCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeliveryCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeliveryCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDeliveryCompany.Location = new System.Drawing.Point(706, 83);
+            this.lblDeliveryCompany.Location = new System.Drawing.Point(877, 64);
             this.lblDeliveryCompany.Name = "lblDeliveryCompany";
-            this.lblDeliveryCompany.Size = new System.Drawing.Size(74, 16);
+            this.lblDeliveryCompany.Size = new System.Drawing.Size(81, 20);
             this.lblDeliveryCompany.TabIndex = 106;
             this.lblDeliveryCompany.Text = "고객주문번호";
             // 
             // cboDestination
             // 
+            this.cboDestination.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDestination.FormattingEnabled = true;
-            this.cboDestination.Location = new System.Drawing.Point(128, 80);
+            this.cboDestination.Location = new System.Drawing.Point(128, 61);
             this.cboDestination.Name = "cboDestination";
-            this.cboDestination.Size = new System.Drawing.Size(225, 24);
+            this.cboDestination.Size = new System.Drawing.Size(225, 28);
             this.cboDestination.TabIndex = 116;
             // 
             // lblWH
             // 
             this.lblWH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblWH.AutoSize = true;
-            this.lblWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWH.Location = new System.Drawing.Point(371, 83);
+            this.lblWH.Location = new System.Drawing.Point(450, 64);
             this.lblWH.Name = "lblWH";
-            this.lblWH.Size = new System.Drawing.Size(30, 16);
+            this.lblWH.Size = new System.Drawing.Size(33, 20);
             this.lblWH.TabIndex = 112;
             this.lblWH.Text = "품목";
             // 
@@ -251,22 +256,22 @@
             // 
             this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompany.AutoSize = true;
-            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompany.Location = new System.Drawing.Point(706, 29);
+            this.lblCompany.Location = new System.Drawing.Point(877, 23);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(41, 16);
+            this.lblCompany.Size = new System.Drawing.Size(45, 20);
             this.lblCompany.TabIndex = 111;
             this.lblCompany.Text = "고객사";
             // 
             // lblWHing
             // 
             this.lblWHing.AutoSize = true;
-            this.lblWHing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWHing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWHing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWHing.Location = new System.Drawing.Point(28, 83);
+            this.lblWHing.Location = new System.Drawing.Point(28, 64);
             this.lblWHing.Name = "lblWHing";
-            this.lblWHing.Size = new System.Drawing.Size(41, 16);
+            this.lblWHing.Size = new System.Drawing.Size(45, 20);
             this.lblWHing.TabIndex = 109;
             this.lblWHing.Text = "도착지";
             // 
@@ -280,7 +285,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1119, 101);
+            this.btnSelect.Location = new System.Drawing.Point(1119, 102);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 129;
@@ -297,7 +302,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 33);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -305,7 +310,7 @@
             this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,7 +328,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -339,11 +344,11 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(467, 26);
+            this.dateTimePicker1.Location = new System.Drawing.Point(546, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 26);
             this.dateTimePicker1.TabIndex = 130;
             // 
             // ShipmentClosingMgt

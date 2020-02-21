@@ -46,6 +46,8 @@
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,6 +59,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWatingReceive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -95,10 +98,11 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(13, 372);
+            this.label2.Location = new System.Drawing.Point(12, 368);
             this.label2.Size = new System.Drawing.Size(125, 19);
             this.label2.Text = "자재입고처리";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -139,8 +143,17 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.panel6);
             this.basepanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.basepanel.Size = new System.Drawing.Size(1021, 584);
+            this.basepanel.Controls.SetChildIndex(this.panel1, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel3, 0);
+            this.basepanel.Controls.SetChildIndex(this.label1, 0);
+            this.basepanel.Controls.SetChildIndex(this.label2, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel4, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel5, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel6, 0);
             // 
             // imageList1
             // 
@@ -359,6 +372,28 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Location = new System.Drawing.Point(12, 362);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(178, 31);
+            this.panel6.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Image = global::Team3.Properties.Resources.list_menu;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(3, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 23);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "자재입고대기";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // WatingReceiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -383,6 +418,7 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWatingReceive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +442,7 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label3;
     }
 }

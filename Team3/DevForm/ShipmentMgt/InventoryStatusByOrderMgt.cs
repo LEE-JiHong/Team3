@@ -14,6 +14,7 @@ namespace Team3.DevForm.NewFolder1
 {
     public partial class InventoryStatusByOrder : Team3.VerticalGridBaseForm
     {
+
         List<FactoryDB_VO> _cboToFac;
         List<ShipmentVO> shipment_list;
         CheckBox headerCheckBox = new CheckBox();
@@ -58,15 +59,15 @@ namespace Team3.DevForm.NewFolder1
             chk.HeaderText = "선택";
 
             chk.Name = "chk";
-            chk.Width = 30;
+            chk.Width = 40;
             dgvStockStatus.Columns.Add(chk);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "고객주문번호", "so_wo_id", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "납기일", "so_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "잔여수량", "so_pcount", true, 100, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고", "from_wh", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고재고", "w_count_present", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "고객주문번호", "so_wo_id", true, 208, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품목", "product_codename", true, 190, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "품명", "product_name", true, 260, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "납기일", "so_edate", true, 170, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "잔여수량", "so_pcount", true, 170, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고", "from_wh", true, 170, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "From창고재고", "w_count_present", true, 170, DataGridViewContentAlignment.MiddleRight);
             #region DGV콤보박스
 
 
@@ -89,8 +90,8 @@ namespace Team3.DevForm.NewFolder1
             dgvStockStatus.Rows.Add();
             dgvStockStatus.AllowUserToAddRows = false;
             #endregion
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", false, 130);
-            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 130,DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "비고", "wh_comment", false,200);
+            GridViewUtil.AddNewColumnToTextBoxGridView(dgvStockStatus, "이동수량", "transfer_count", true, 150, DataGridViewContentAlignment.MiddleRight);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "so_id", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvStockStatus, "업로드날짜", "so_sdate", false, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -238,8 +239,7 @@ namespace Team3.DevForm.NewFolder1
 
         private void dgvStockStatus_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            GridViewUtil.SetDgvTextBoxColor(dgvStockStatus,10);
-         
+            GridViewUtil.SetDgvTextBoxColor(dgvStockStatus, 10);
         }
     }
 }

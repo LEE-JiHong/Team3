@@ -47,6 +47,8 @@
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +60,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWatingList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialReceiving)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -96,7 +99,7 @@
             // 
             this.label2.Image = global::Team3.Properties.Resources.list_menu;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(10, 2801);
+            this.label2.Location = new System.Drawing.Point(10, 2916);
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.Text = "자재입고";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,6 +143,7 @@
             // 
             // basepanel
             // 
+            this.basepanel.Controls.Add(this.panel6);
             this.basepanel.Controls.Add(this.label5);
             this.basepanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.basepanel.Size = new System.Drawing.Size(1021, 578);
@@ -151,6 +155,7 @@
             this.basepanel.Controls.SetChildIndex(this.panel4, 0);
             this.basepanel.Controls.SetChildIndex(this.panel5, 0);
             this.basepanel.Controls.SetChildIndex(this.label5, 0);
+            this.basepanel.Controls.SetChildIndex(this.panel6, 0);
             // 
             // imageList1
             // 
@@ -382,12 +387,36 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "자재입고";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label5.Visible = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Location = new System.Drawing.Point(12, 320);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(178, 31);
+            this.panel6.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::Team3.Properties.Resources.list_menu;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(3, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "자재입고";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MaterialReceiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1021, 660);
             this.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1037, 663);
             this.Name = "MaterialReceiving";
@@ -406,6 +435,7 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWatingList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialReceiving)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +460,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label4;
     }
 }

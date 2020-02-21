@@ -73,7 +73,7 @@ namespace Team3DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 
-                string sql = @"select so_id,plan_id,c.company_name,s.product_name as product_codename,p.product_name,so_pcount,p.product_id,s.company_code,s.so_ocount,
+                string sql = @"select so_id,so_wo_id,plan_id,c.company_name,s.product_name as product_codename,p.product_name,so_pcount,p.product_id,s.company_code,s.so_ocount,
 (select distinct w.w_count_present
 from TBL_WAREHOUSE w
 inner join TBL_WAREHOUSE w1 on w.plan_id = s.plan_id and w.product_id = p.product_id

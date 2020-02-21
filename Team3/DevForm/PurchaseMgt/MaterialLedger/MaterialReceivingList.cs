@@ -136,7 +136,7 @@ namespace Team3
 
             MaterialLedgerService service = new MaterialLedgerService();
 
-            if (MessageBox.Show("입고 취소하시겠습니까?", "입고취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("입고 취소하시겠습니까?", "입고취소", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -144,13 +144,13 @@ namespace Team3
 
                     if (result)
                     {
-                        MessageBox.Show("성공적으로 입고취소가 완료되었습니다.");
+                        MessageBox.Show("성공적으로 입고취소가 완료되었습니다.", "입고취소", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         SetBottomStatusLabel("성공적으로 입고취소가 완료되었습니다.");
                         btnSearch.PerformClick();
                     }
                     else
                     {
-                        MessageBox.Show("입고취소 실패하였습니다. 다시 시도하여 주십시오.");
+                        MessageBox.Show("입고취소 실패하였습니다. 다시 시도하여 주십시오.", "입고취소", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         SetBottomStatusLabel("입고취소 실패하였습니다. 다시 시도하여 주십시오.");
                     }
                 }

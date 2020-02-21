@@ -319,7 +319,7 @@ namespace Team3
                 }
             }
 
-            if (MessageBox.Show("입고대기처리하시겠습니까?", "입고대기처리", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("입고대기처리하시겠습니까?", "입고대기처리", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -328,12 +328,12 @@ namespace Team3
 
                     if (result)
                     {
-                        MessageBox.Show("성공적으로 입고대기처리가 완료되었습니다.");
+                        MessageBox.Show("성공적으로 입고대기처리가 완료되었습니다.", "입고대기처리", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvResult.Rows.Clear();
                     }
                     else
                     {
-                        MessageBox.Show("입고대기처리 실패하였습니다. 다시 시도하여 주십시오.");
+                        MessageBox.Show("입고대기처리 실패하였습니다. 다시 시도하여 주십시오.", "입고대기처리", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception err)

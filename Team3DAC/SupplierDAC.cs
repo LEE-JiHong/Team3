@@ -31,7 +31,7 @@ namespace Team3DAC
 
                 if (vo.order_id != null)
                 {
-                    sql.Append($" and order_id like '%{vo.order_id}%'");
+                    sql.Append($" and order_serial like '%{vo.order_id}%'");
                    // cmd.Parameters.AddWithValue("@order_id", vo.order_id);
                 }
 

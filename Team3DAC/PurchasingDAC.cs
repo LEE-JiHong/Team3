@@ -149,7 +149,7 @@ namespace Team3DAC
             {
                 StringBuilder sql = new StringBuilder();
 
-                sql.Append("select order_id, c.company_name, cc.common_name, p.product_codename, product_name, o.order_pdate, o.order_count, concat(LEFT(order_serial, 4),'-',SUBSTRING(order_serial, 5,2),'-',SUBSTRING(order_serial, 7,2)) as order_ddate,o.plan_id from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id inner join TBL_COMPANY c on p.product_demand_com = c.company_code inner join TBL_COMMON_CODE cc on o.order_state = cc.common_value where o.order_state = 'O_COMPLETE' and CONVERT (DATETIME, o.order_pdate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, o.order_pdate) <= CONVERT (DATETIME, @endDate)");
+                sql.Append("select order_serial, c.company_name, cc.common_name, p.product_codename, product_name, o.order_pdate, o.order_count, concat(LEFT(order_serial, 4),'-',SUBSTRING(order_serial, 5,2),'-',SUBSTRING(order_serial, 7,2)) as order_ddate,o.plan_id from TBL_ORDER o inner join TBL_PRODUCT p on o.product_id = p.product_id inner join TBL_COMPANY c on p.product_demand_com = c.company_code inner join TBL_COMMON_CODE cc on o.order_state = cc.common_value where o.order_state = 'O_COMPLETE' and CONVERT (DATETIME, o.order_pdate) >= CONVERT (DATETIME, @startDate) and CONVERT (DATETIME, o.order_pdate) <= CONVERT (DATETIME, @endDate)");
 
                 if (vo.company_name != null)
                 {
@@ -159,7 +159,7 @@ namespace Team3DAC
 
                 if (vo.order_id != null)
                 {
-                    sql.Append($" and order_id like '%{vo.order_id}%'");
+                    sql.Append($" and order_serial like '%{vo.order_id}%'");
                     // cmd.Parameters.AddWithValue("@order_id", vo.order_id);
                 }
 
@@ -206,12 +206,22 @@ namespace Team3DAC
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate where order_id = @order_id and plan_id = @plan_id";
+                        cmd.CommandText = @"update TBL_ORDER set order_count = order_count - @order_count, order_udate = @order_udate, order_qcount = order_qcount - @order_qcount where order_serial = @order_serial and plan_id = @plan_id";
 
                         cmd.Parameters.AddWithValue("@order_id", item.order_id);
                         cmd.Parameters.AddWithValue("@order_count", item.order_count);
+                        cmd.Parameters.AddWithValue("@order_qcount", item.order_count);
                         cmd.Parameters.AddWithValue("@plan_id", item.plan_id);
                         cmd.Parameters.AddWithValue("@order_udate", DateTime.Now.ToShortDateString());
+
+                        cmd.CommandText = @"select order_count from TBL_ORDER where order_serial = @order_serial";
+
+                        int order_count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (order_count <= 0)
+                        {
+                            cmd.CommandText = @"delete from TBL_ORDER where order_serial = @order_serial";
+                        }
 
                         cmd.ExecuteNonQuery();
                     }
@@ -242,7 +252,7 @@ namespace Team3DAC
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update TBL_ORDER set order_pdate = @order_pdate where order_id = @order_id and plan_id = @plan_id";
+                cmd.CommandText = "update TBL_ORDER set order_pdate = @order_pdate where order_serial = @order_id and plan_id = @plan_id";
 
                 cmd.Parameters.AddWithValue("@order_pdate", vo.order_pdate);
                 cmd.Parameters.AddWithValue("@order_id", vo.order_id);
