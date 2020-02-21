@@ -317,8 +317,28 @@ namespace Team3DAC
                     cmd.Parameters.AddWithValue("@worknum", w_lst[0].worknum);
                     cmd.Parameters.AddWithValue("@pro_id", w_lst[0].pro_id);
                     cmd.Parameters.AddWithValue("@pro_date", w_lst[0].pro_date);
-                    cmd.Parameters.AddWithValue("@pd_stime", w_lst[0].pd_stime);
-                    cmd.Parameters.AddWithValue("@pd_etime", w_lst[0].pd_etime);
+
+                    if (w_lst[0].pd_stime == null)
+                    {
+                        SqlParameter reason = new SqlParameter("@pd_stime", SqlDbType.VarChar);
+                        reason.Value = DBNull.Value;
+                        cmd.Parameters.Add(reason);
+                    }
+                    else
+                        cmd.Parameters.AddWithValue("@pd_stime", w_lst[0].pd_stime);
+
+                    //    cmd.Parameters.AddWithValue("@pd_stime", w_lst[0].pd_stime);
+
+                    if (w_lst[0].pd_stime == null)
+                    {
+                        SqlParameter reason = new SqlParameter("@pd_etime", SqlDbType.VarChar);
+                        reason.Value = DBNull.Value;
+                        cmd.Parameters.Add(reason);
+                    }
+                    else
+                        cmd.Parameters.AddWithValue("@pd_etime", w_lst[0].pd_etime);
+
+               //     cmd.Parameters.AddWithValue("@pd_etime", w_lst[0].pd_etime);
                     cmd.Parameters.AddWithValue("@product_id", w_lst[0].product_id);
                     cmd.Parameters.AddWithValue("@product_name", w_lst[0].product_name);
                     cmd.Parameters.AddWithValue("@pro_state", w_lst[0].pro_state);
