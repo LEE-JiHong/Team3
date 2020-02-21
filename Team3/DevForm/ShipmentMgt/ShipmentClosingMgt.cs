@@ -79,7 +79,7 @@ namespace Team3.DevForm.ShipmentMgt
 
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvClientOrder, "매출확정수량", "s_count", true, 150, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "매출확정금액", "s_TotalPrice", true, 150, DataGridViewContentAlignment.MiddleRight, true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일자", "s_date", true, 128, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "마감일자", "s_date", true, 128, DataGridViewContentAlignment.MiddleCenter);
 
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "품번", "product_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "so_id", "so_id", false, 100, DataGridViewContentAlignment.MiddleCenter);

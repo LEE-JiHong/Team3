@@ -65,18 +65,18 @@ namespace Team3
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "품목", "product_codename", true, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "품명", "product_name", true, 220);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "단위", "product_unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "단위수량", "product_unit_count", true, 80, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "발주방식", "product_ordertype", true, 80, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "단위수량", "product_unit_count", true, 100, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "발주방식", "product_ordertype", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "최소발주수량", "product_lorder_count", true, 130, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "안전재고수량", "product_safety_count", true, 130, DataGridViewContentAlignment.MiddleRight);
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "사용여부", "product_yn", true, 78, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "사용여부", "product_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "담당자", "product_admin", true, 100);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "입고창고", "product_in_sector", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "출고창고", "product_out", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "납품업체", "product_supply_com", true, 130, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "발주업체", "product_demand_com", true, 130, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "측정방식", "product_meastype", true, 80, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "LeadTime", "product_leadtime", true, 80, DataGridViewContentAlignment.MiddleRight);
+            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "측정방식", "product_meastype", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "LeadTime", "product_leadtime", true, 100, DataGridViewContentAlignment.MiddleRight);
             #region visible_false
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "최솟값", "product_lsl", false, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvProductList, "최댓값", "product_usl", false, 130);

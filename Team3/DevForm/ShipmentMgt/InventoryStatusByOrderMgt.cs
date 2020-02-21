@@ -110,6 +110,7 @@ namespace Team3.DevForm.NewFolder1
 
             dgvStockStatus.AutoGenerateColumns = false;
             dgvStockStatus.DataSource = shipment_list;
+            GridViewUtil.SetDataGridView(dgvStockStatus);
         }
 
         private void btnExcel_Click(object sender, EventArgs e)

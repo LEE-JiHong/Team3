@@ -15,26 +15,26 @@ namespace Team3DAC
         /// 모든 Bom 조회
         /// </summary>
         /// <returns></returns>
-        public List<BomVO> GetBomAll(string bom_id = null,string product_id=null)
+        public List<BomVO> GetBomAll(int bom_id = 0,int product_id=0)
         {
 
             using (SqlCommand cmd = new SqlCommand())
             {
                 string sql = "GetBomAll";
-                if (bom_id == null && product_id ==null)
+                if (bom_id == 0 && product_id ==0)
                 { 
-                    cmd.Parameters.AddWithValue("@bom_id", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@product_id", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@bom_id", 0);
+                    cmd.Parameters.AddWithValue("@product_id", 0);
                 }
-                else if (bom_id == null && product_id!=null)
+                else if (bom_id == 0 && product_id!=0)
                 {
-                    cmd.Parameters.AddWithValue("@bom_id", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@bom_id", 0);
                     cmd.Parameters.AddWithValue("@product_id", product_id);
                 }
                 else
                 {
                     cmd.Parameters.AddWithValue("@bom_id", Convert.ToInt32(bom_id));
-                    cmd.Parameters.AddWithValue("@product_id", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@product_id", 0);
                 }
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;

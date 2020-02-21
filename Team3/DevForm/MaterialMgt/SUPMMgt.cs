@@ -62,16 +62,16 @@ namespace Team3
             dgvSUPM.Columns.Add("Number", "No.");
             dgvSUPM.Columns[0].Width = 53;
 
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체", "company_code", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체명", "company_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "품목", "product_codename", true, 100, DataGridViewContentAlignment.MiddleLeft);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "품명", "product_name", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체", "company_code", true, 170, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체명", "company_name", true, 200, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "품목", "product_codename", true, 180, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "품명", "product_name", true, 240, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "단위", "product_unit", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "현재단가", "price_present", true, 100, DataGridViewContentAlignment.MiddleRight,true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "이전단가", "price_past", true, 100, DataGridViewContentAlignment.MiddleRight,true);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "시작일", "price_sdate", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "종료일", "price_edate", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "비고", "price_comment", true, 100, DataGridViewContentAlignment.MiddleLeft);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "현재단가", "price_present", true, 150, DataGridViewContentAlignment.MiddleRight,true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "이전단가", "price_past", true, 150, DataGridViewContentAlignment.MiddleRight,true);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "시작일", "price_sdate", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "종료일", "price_edate", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "비고", "price_comment", true, 170, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "사용유무", "price_yn", true, 100, DataGridViewContentAlignment.MiddleCenter);
             
             GridViewUtil.SetDataGridView(dgvSUPM);

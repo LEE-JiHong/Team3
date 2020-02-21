@@ -57,8 +57,8 @@
             // 
             this.panel2.Controls.Add(this.dgvClientOrder);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(12, 179);
-            this.panel2.Size = new System.Drawing.Size(1091, 398);
+            this.panel2.Location = new System.Drawing.Point(12, 156);
+            this.panel2.Size = new System.Drawing.Size(1091, 421);
             // 
             // panel1
             // 
@@ -80,7 +80,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(9, 150);
+            this.label1.Location = new System.Drawing.Point(9, 127);
             this.label1.Size = new System.Drawing.Size(88, 26);
             this.label1.Text = "고객주문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -89,7 +89,7 @@
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(949, 140);
+            this.panel3.Location = new System.Drawing.Point(949, 117);
             this.panel3.Size = new System.Drawing.Size(154, 33);
             // 
             // TopMenu
@@ -129,7 +129,7 @@
             this.dgvClientOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvClientOrder.Name = "dgvClientOrder";
             this.dgvClientOrder.RowTemplate.Height = 23;
-            this.dgvClientOrder.Size = new System.Drawing.Size(1091, 398);
+            this.dgvClientOrder.Size = new System.Drawing.Size(1091, 421);
             this.dgvClientOrder.TabIndex = 0;
             // 
             // dtpFromDate

@@ -42,7 +42,6 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.dgvBomDetail = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -96,7 +95,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.Location = new System.Drawing.Point(2979, 99);
+            this.panel5.Location = new System.Drawing.Point(3129, 99);
             this.panel5.Size = new System.Drawing.Size(28, 26);
             this.panel5.Visible = false;
             // 
@@ -104,7 +103,7 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Location = new System.Drawing.Point(890, 95);
+            this.panel4.Location = new System.Drawing.Point(890, 93);
             this.panel4.Size = new System.Drawing.Size(339, 31);
             // 
             // TopMenu
@@ -135,7 +134,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -254,7 +253,6 @@
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
-            this.flowLayoutPanel1.Controls.Add(this.btnClear);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -267,6 +265,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefresh.Location = new System.Drawing.Point(254, 3);
@@ -283,7 +282,7 @@
             this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -301,7 +300,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUpdate.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,24 +312,6 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnClear.Image = global::Team3.Properties.Resources.Editor_Edit;
-            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(6, 3);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 26);
-            this.btnClear.TabIndex = 30;
-            this.btnClear.Text = "초기화";
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvBomDetail
             // 
@@ -386,7 +367,6 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.DataGridView dgvBomDetail;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnRefresh;
     }
 }

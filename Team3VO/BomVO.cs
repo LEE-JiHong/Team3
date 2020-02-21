@@ -31,6 +31,7 @@ namespace Team3VO
         public string bom_parent_codename { get; set; }
         public string bom_typevalue { get; set; }
         public string bom_type { get; set; }
+        public string bom_parent_name { get; set; }
 
 
        
