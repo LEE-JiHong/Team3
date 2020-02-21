@@ -200,7 +200,7 @@ namespace Team3
         {
             if (dateTimePicker1.Value < DateTime.Now)
             {
-                MessageBox.Show("현재 날짜보다 작은 날짜는 선택할 수 없습니다.", "날짜 오류");
+                MessageBox.Show("현재 날짜보다 작은 날짜는 선택할 수 없습니다.", "날짜 오류", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dateTimePicker1.Value = DateTime.Now;
             }
         }

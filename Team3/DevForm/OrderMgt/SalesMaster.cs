@@ -137,7 +137,7 @@ namespace Team3
         {
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("변경할 영업마스터가 없습니다. 영업마스터를 먼저 선택하여 주십시오.");
+                MessageBox.Show("변경할 영업마스터가 없습니다. 영업마스터를 먼저 선택하여 주십시오.", "영업마스터", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 SetBottomStatusLabel("변경할 영업마스터가 없습니다. 영업마스터를 먼저 선택하여 주십시오.");
             }
             else

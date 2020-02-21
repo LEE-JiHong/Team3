@@ -66,11 +66,15 @@ namespace Team3
 
                     if (resultNum > 0)
                     {
-                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("기존 계획기준 버전이 존재합니다. 계속 진행하시겠습니까?", "계획기준버전확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             dataGridView1.Columns.Clear();
                             dataGridView1.DataSource = frm.Data;
                             SetBottomStatusLabel("엑셀 업로드가 완료되었습니다.");
+                        }
+                        else
+                        {
+                            return;
                         }
                     }
                     else
@@ -130,7 +134,7 @@ namespace Team3
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                LoggingUtility.GetLoggingUtility(ex.Message, Level.Error);
             }
         }
 
@@ -139,12 +143,12 @@ namespace Team3
         {
             if (dataGridView1.Rows.Count < 1)
             {
-                MessageBox.Show("파일 업로드는 필수입니다.");
+                MessageBox.Show("파일 업로드는 필수입니다.", "파일 업로드", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SetBottomStatusLabel("파일 업로드는 필수입니다.");
             }
             else
             {
-                if (MessageBox.Show("영업마스터를 생성하시겠습니까?", "영업마스터생성", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("영업마스터를 생성하시겠습니까?", "영업마스터생성", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -176,7 +180,7 @@ namespace Team3
                         }
                         else
                         {
-                            MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
+                            MessageBox.Show("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.", "영업마스터 생성 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             SetBottomStatusLabel("영업마스터 생성에 실패하였습니다. 다시 시도하여주십시오.");
                             return;
                         }

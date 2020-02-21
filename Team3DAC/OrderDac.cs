@@ -164,7 +164,9 @@ namespace Team3DAC
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                string sql = "select distinct plan_id from TBL_SO_MASTER where CONVERT (DATETIME, so_edate) >= CONVERT (DATETIME, GETDATE())";
+                string sql = "select distinct plan_id from TBL_SO_MASTER where CONVERT(DATETIME, so_edate) >= CONVERT(DATETIME, @to_date)";
+
+                cmd.Parameters.AddWithValue("@to_date", DateTime.Now.ToShortDateString());
 
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = sql;
