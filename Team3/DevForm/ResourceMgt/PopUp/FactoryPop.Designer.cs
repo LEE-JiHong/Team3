@@ -261,7 +261,7 @@
             // txtUadmin
             // 
             this.txtUadmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtUadmin.Location = new System.Drawing.Point(352, 57);
+            this.txtUadmin.Location = new System.Drawing.Point(107, 59);
             this.txtUadmin.Name = "txtUadmin";
             this.txtUadmin.Size = new System.Drawing.Size(150, 21);
             this.txtUadmin.TabIndex = 7;
@@ -332,6 +332,7 @@
             this.txtpr.Name = "txtpr";
             this.txtpr.Size = new System.Drawing.Size(0, 12);
             this.txtpr.TabIndex = 5;
+            this.txtpr.Visible = false;
             // 
             // FactoryPop
             // 

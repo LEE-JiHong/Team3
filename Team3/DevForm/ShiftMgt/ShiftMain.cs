@@ -241,5 +241,26 @@ namespace Team3
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (typeof(TextBox) == ctrl.GetType())
+                {
+                    ctrl.Text = "";
+                }
+            }
+
+            foreach (Control con in panel1.Controls)
+            {
+                if (con is ComboBox cb)
+                {
+                    cb.SelectedIndex = 0;
+
+                }
+            }
+        }
     }
 }
