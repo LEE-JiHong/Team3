@@ -35,6 +35,7 @@
             this.cboMachine = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -157,6 +158,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.button6);
             this.flowLayoutPanel1.Controls.Add(this.btnDel);
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
@@ -170,6 +172,23 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 31);
             this.flowLayoutPanel1.TabIndex = 16;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(503, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 53;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -178,10 +197,10 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(520, 1);
+            this.button6.Location = new System.Drawing.Point(439, 1);
             this.button6.Margin = new System.Windows.Forms.Padding(1);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(65, 28);
+            this.button6.Size = new System.Drawing.Size(62, 26);
             this.button6.TabIndex = 43;
             this.button6.Text = "엑셀";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,10 +215,10 @@
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::Team3.Properties.Resources.Trash_16x16;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(453, 1);
+            this.btnDel.Location = new System.Drawing.Point(375, 1);
             this.btnDel.Margin = new System.Windows.Forms.Padding(1);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(65, 28);
+            this.btnDel.Size = new System.Drawing.Size(62, 26);
             this.btnDel.TabIndex = 44;
             this.btnDel.Text = "삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,10 +233,10 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Team3.Properties.Resources.Edit_16x16;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(391, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(311, 1);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(60, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(62, 26);
             this.btnUpdate.TabIndex = 52;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -232,10 +251,10 @@
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.Location = new System.Drawing.Point(329, 1);
+            this.btnInsert.Location = new System.Drawing.Point(247, 1);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(1);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(60, 28);
+            this.btnInsert.Size = new System.Drawing.Size(62, 26);
             this.btnInsert.TabIndex = 39;
             this.btnInsert.Text = "등록";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,5 +319,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
