@@ -32,22 +32,15 @@
             this.dgvClientOrder = new System.Windows.Forms.DataGridView();
             this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.txtProduct = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.lblStandardDate = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
-            this.cboWH = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblDeliveryCompany = new System.Windows.Forms.Label();
-            this.cboDestination = new System.Windows.Forms.ComboBox();
             this.lblWH = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
-            this.lblWHing = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,34 +54,26 @@
             // 
             this.panel2.Controls.Add(this.dgvClientOrder);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(12, 189);
-            this.panel2.Size = new System.Drawing.Size(1188, 415);
+            this.panel2.Location = new System.Drawing.Point(12, 153);
+            this.panel2.Size = new System.Drawing.Size(1188, 451);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Controls.Add(this.txtOrderNum);
             this.panel1.Controls.Add(this.txtProduct);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dtpToDate);
-            this.panel1.Controls.Add(this.lblStandardDate);
             this.panel1.Controls.Add(this.cboCustomer);
-            this.panel1.Controls.Add(this.cboWH);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblDeliveryCompany);
-            this.panel1.Controls.Add(this.cboDestination);
             this.panel1.Controls.Add(this.lblWH);
             this.panel1.Controls.Add(this.lblCompany);
-            this.panel1.Controls.Add(this.lblWHing);
-            this.panel1.Size = new System.Drawing.Size(1187, 137);
+            this.panel1.Size = new System.Drawing.Size(1187, 86);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::Team3.Properties.Resources.list_menu;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 160);
+            this.label1.Location = new System.Drawing.Point(12, 120);
             this.label1.Size = new System.Drawing.Size(86, 23);
             this.label1.Text = "고객주문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -96,8 +81,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(1040, 154);
-            this.panel3.Size = new System.Drawing.Size(160, 33);
+            this.panel3.Location = new System.Drawing.Point(930, 114);
+            this.panel3.Size = new System.Drawing.Size(270, 33);
             // 
             // TopMenu
             // 
@@ -131,7 +116,7 @@
             this.dgvClientOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvClientOrder.Name = "dgvClientOrder";
             this.dgvClientOrder.RowTemplate.Height = 23;
-            this.dgvClientOrder.Size = new System.Drawing.Size(1188, 415);
+            this.dgvClientOrder.Size = new System.Drawing.Size(1188, 451);
             this.dgvClientOrder.TabIndex = 0;
             this.dgvClientOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientOrder_CellValueChanged);
             this.dgvClientOrder.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvClientOrder_DataBindingComplete);
@@ -141,83 +126,29 @@
             this.txtOrderNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOrderNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrderNum.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtOrderNum.Location = new System.Drawing.Point(975, 61);
+            this.txtOrderNum.Location = new System.Drawing.Point(975, 18);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.Size = new System.Drawing.Size(209, 26);
             this.txtOrderNum.TabIndex = 126;
             // 
             // txtProduct
             // 
-            this.txtProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txtProduct.Location = new System.Drawing.Point(547, 61);
+            this.txtProduct.Location = new System.Drawing.Point(121, 18);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(230, 26);
             this.txtProduct.TabIndex = 125;
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(654, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 20);
-            this.label2.TabIndex = 123;
-            this.label2.Text = "~";
-            // 
-            // dtpToDate
-            // 
-            this.dtpToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(671, 20);
-            this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(108, 26);
-            this.dtpToDate.TabIndex = 122;
-            // 
-            // lblStandardDate
-            // 
-            this.lblStandardDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblStandardDate.AutoSize = true;
-            this.lblStandardDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStandardDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStandardDate.Location = new System.Drawing.Point(450, 21);
-            this.lblStandardDate.Name = "lblStandardDate";
-            this.lblStandardDate.Size = new System.Drawing.Size(45, 20);
-            this.lblStandardDate.TabIndex = 121;
-            this.lblStandardDate.Text = "납기일";
-            // 
             // cboCustomer
             // 
-            this.cboCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(975, 18);
+            this.cboCustomer.Location = new System.Drawing.Point(548, 16);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(209, 28);
             this.cboCustomer.TabIndex = 119;
-            // 
-            // cboWH
-            // 
-            this.cboWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboWH.FormattingEnabled = true;
-            this.cboWH.Location = new System.Drawing.Point(128, 18);
-            this.cboWH.Name = "cboWH";
-            this.cboWH.Size = new System.Drawing.Size(225, 28);
-            this.cboWH.TabIndex = 115;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(30, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 20);
-            this.label6.TabIndex = 107;
-            this.label6.Text = "창고";
             // 
             // lblDeliveryCompany
             // 
@@ -225,28 +156,18 @@
             this.lblDeliveryCompany.AutoSize = true;
             this.lblDeliveryCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeliveryCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDeliveryCompany.Location = new System.Drawing.Point(877, 64);
+            this.lblDeliveryCompany.Location = new System.Drawing.Point(877, 21);
             this.lblDeliveryCompany.Name = "lblDeliveryCompany";
             this.lblDeliveryCompany.Size = new System.Drawing.Size(81, 20);
             this.lblDeliveryCompany.TabIndex = 106;
             this.lblDeliveryCompany.Text = "고객주문번호";
             // 
-            // cboDestination
-            // 
-            this.cboDestination.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDestination.FormattingEnabled = true;
-            this.cboDestination.Location = new System.Drawing.Point(128, 61);
-            this.cboDestination.Name = "cboDestination";
-            this.cboDestination.Size = new System.Drawing.Size(225, 28);
-            this.cboDestination.TabIndex = 116;
-            // 
             // lblWH
             // 
-            this.lblWH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblWH.AutoSize = true;
             this.lblWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWH.Location = new System.Drawing.Point(450, 64);
+            this.lblWH.Location = new System.Drawing.Point(24, 21);
             this.lblWH.Name = "lblWH";
             this.lblWH.Size = new System.Drawing.Size(33, 20);
             this.lblWH.TabIndex = 112;
@@ -254,26 +175,15 @@
             // 
             // lblCompany
             // 
-            this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCompany.AutoSize = true;
             this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompany.Location = new System.Drawing.Point(877, 23);
+            this.lblCompany.Location = new System.Drawing.Point(450, 21);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(45, 20);
             this.lblCompany.TabIndex = 111;
             this.lblCompany.Text = "고객사";
-            // 
-            // lblWHing
-            // 
-            this.lblWHing.AutoSize = true;
-            this.lblWHing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWHing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblWHing.Location = new System.Drawing.Point(28, 64);
-            this.lblWHing.Name = "lblWHing";
-            this.lblWHing.Size = new System.Drawing.Size(45, 20);
-            this.lblWHing.TabIndex = 109;
-            this.lblWHing.Text = "도착지";
             // 
             // btnSelect
             // 
@@ -285,7 +195,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.Black;
             this.btnSelect.Image = global::Team3.Properties.Resources.Zoom_16x16;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(1119, 102);
+            this.btnSelect.Location = new System.Drawing.Point(1119, 50);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(65, 32);
             this.btnSelect.TabIndex = 129;
@@ -296,13 +206,14 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(270, 33);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -314,7 +225,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(99, 3);
+            this.btnExcel.Location = new System.Drawing.Point(121, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(58, 26);
             this.btnExcel.TabIndex = 40;
@@ -332,7 +243,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.Location = new System.Drawing.Point(18, 3);
+            this.button1.Location = new System.Drawing.Point(40, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 41;
@@ -341,15 +252,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker1
+            // btnRefresh
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(546, 20);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 26);
-            this.dateTimePicker1.TabIndex = 130;
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(185, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 47;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ShipmentClosingMgt
             // 
@@ -378,21 +296,14 @@
         private System.Windows.Forms.DataGridView dgvClientOrder;
         private System.Windows.Forms.TextBox txtOrderNum;
         private System.Windows.Forms.TextBox txtProduct;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpToDate;
-        private System.Windows.Forms.Label lblStandardDate;
         private System.Windows.Forms.ComboBox cboCustomer;
-        private System.Windows.Forms.ComboBox cboWH;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDeliveryCompany;
-        private System.Windows.Forms.ComboBox cboDestination;
         private System.Windows.Forms.Label lblWH;
         private System.Windows.Forms.Label lblCompany;
-        private System.Windows.Forms.Label lblWHing;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

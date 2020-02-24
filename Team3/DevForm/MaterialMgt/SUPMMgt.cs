@@ -61,6 +61,7 @@ namespace Team3
             dgvSUPM.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSUPM.Columns.Add("Number", "No.");
             dgvSUPM.Columns[0].Width = 53;
+            dgvSUPM.Columns[0].Visible = false;
 
             GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체", "company_code", true, 170, DataGridViewContentAlignment.MiddleLeft);
             GridViewUtil.AddNewColumnToDataGridView(dgvSUPM, "업체명", "company_name", true, 200, DataGridViewContentAlignment.MiddleLeft);

@@ -197,5 +197,25 @@ namespace Team3.DevForm.ShipmentMgt
             }
            
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (typeof(TextBox) == ctrl.GetType())
+                {
+                    ctrl.Text = "";
+                }
+            }
+
+            foreach (Control con in panel1.Controls)
+            {
+                if (con is ComboBox cb)
+                {
+                    cb.SelectedIndex = 0;
+
+                }
+            }
+        }
     }
 }

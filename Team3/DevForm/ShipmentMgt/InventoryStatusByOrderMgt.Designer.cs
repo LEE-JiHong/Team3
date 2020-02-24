@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvStockStatus = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -89,8 +90,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Location = new System.Drawing.Point(1029, 133);
-            this.panel3.Size = new System.Drawing.Size(156, 35);
+            this.panel3.Location = new System.Drawing.Point(916, 133);
+            this.panel3.Size = new System.Drawing.Size(269, 35);
             // 
             // TopMenu
             // 
@@ -208,6 +209,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnTransfer);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -215,7 +217,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(156, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 35);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -227,7 +229,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(95, 3);
+            this.btnExcel.Location = new System.Drawing.Point(120, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(58, 26);
             this.btnExcel.TabIndex = 38;
@@ -245,7 +247,7 @@
             this.btnTransfer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTransfer.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.btnTransfer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnTransfer.Location = new System.Drawing.Point(12, 3);
+            this.btnTransfer.Location = new System.Drawing.Point(37, 3);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(77, 26);
             this.btnTransfer.TabIndex = 37;
@@ -278,7 +280,7 @@
             this.cboFromFac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFromFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFromFac.FormattingEnabled = true;
-            this.cboFromFac.Location = new System.Drawing.Point(523, 46);
+            this.cboFromFac.Location = new System.Drawing.Point(528, 46);
             this.cboFromFac.Name = "cboFromFac";
             this.cboFromFac.Size = new System.Drawing.Size(238, 28);
             this.cboFromFac.TabIndex = 89;
@@ -289,7 +291,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(447, 51);
+            this.label5.Location = new System.Drawing.Point(426, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 88;
@@ -313,6 +315,23 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(184, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 47;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // InventoryStatusByOrder
             // 
@@ -358,5 +377,6 @@
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DataGridView dgvStockStatus;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

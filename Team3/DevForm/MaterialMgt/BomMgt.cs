@@ -52,6 +52,7 @@ namespace Team3
             dgvBom.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBom.Columns.Add("Number", "No.");
             dgvBom.Columns[0].Width = 53;
+            dgvBom.Columns[0].Visible = false;
 
             #region DGV바인딩
             GridViewUtil.AddNewColumnToDataGridView(dgvBom, "품목유형", "bom_type", true, 130,DataGridViewContentAlignment.MiddleCenter);
@@ -104,6 +105,7 @@ namespace Team3
             dgvBomDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBomDetail.Columns.Add("Number", "No.");
             dgvBomDetail.Columns[0].Width = 53;
+            dgvBomDetail.Columns[0].Visible = false;
 
             #region DGV바인딩
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "상위품목", "bom_parent_codename", true, 130);
@@ -197,6 +199,7 @@ namespace Team3
             dgvBomDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBomDetail.Columns.Add("Number", "No.");
             dgvBomDetail.Columns[0].Width = 53;
+            dgvBomDetail.Columns[0].Visible = false;
 
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "상위품목", "bom_parent_name", true, 130);
             GridViewUtil.AddNewColumnToDataGridView(dgvBomDetail, "품목", "bom_codename", true, 130);

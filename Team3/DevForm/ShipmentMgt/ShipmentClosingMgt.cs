@@ -49,7 +49,15 @@ namespace Team3.DevForm.ShipmentMgt
         private void ShipmentClosingMgt_Load(object sender, EventArgs e)
         {
             SetDGV();
-            
+            SetCbo();
+
+        }
+        private void SetCbo()
+        {
+            List<CompanyVO> company_list = new List<CompanyVO>();
+            OrderService order_service = new OrderService();
+            company_list = order_service.GetCompanyAll("COOPERATIVE");
+            ComboUtil.ComboBinding(cboCustomer, company_list, "company_code", "company_name", "선택");
         }
 
         private void SetDGV()
@@ -90,7 +98,7 @@ namespace Team3.DevForm.ShipmentMgt
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "From창고", "from_wh", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "From창고재고", "w_count_present", false, 100, DataGridViewContentAlignment.MiddleRight);
             GridViewUtil.AddNewColumnToTextBoxGridView(dgvClientOrder, "비고", "wh_comment", false, 130);
-            
+
 
 
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "업로드날짜", "so_sdate", false, 100, DataGridViewContentAlignment.MiddleCenter);
@@ -103,7 +111,7 @@ namespace Team3.DevForm.ShipmentMgt
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "수정자", "uadmin", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "To창고이름", "factory_name", false, 100, DataGridViewContentAlignment.MiddleCenter);
             GridViewUtil.AddNewColumnToDataGridView(dgvClientOrder, "고객주문번호", "plan_id", false, 100, DataGridViewContentAlignment.MiddleCenter);
-            
+
             dgvClientOrder.AutoGenerateColumns = false;
             dgvClientOrder.DataSource = shipmentlist;
             GridViewUtil.SetDataGridView(dgvClientOrder);
@@ -148,8 +156,8 @@ namespace Team3.DevForm.ShipmentMgt
             try
             {
                 ShipmentService shipment_service = new ShipmentService();
-                if (MessageBox.Show($"선택하신 {list.Count}건을 마감처리 하시겠습니까?","마감 처리"
-                    ,MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show($"선택하신 {list.Count}건을 마감처리 하시겠습니까?", "마감 처리"
+                    , MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     bool bResult = shipment_service.EndProcessing(list);
                     if (bResult)        //마감처리 성공시
@@ -173,10 +181,10 @@ namespace Team3.DevForm.ShipmentMgt
             shipment_service = new ShipmentService();
             price_present = shipment_service.GetPresentPrice(Convert.ToInt32(dgvClientOrder[12, dgvClientOrder.CurrentRow.Index].Value));
 
-            GridViewUtil.SetDgvTextBoxColor(dgvClientOrder,9);
+            GridViewUtil.SetDgvTextBoxColor(dgvClientOrder, 9);
         }
 
-       
+
 
         private void dgvClientOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -199,7 +207,27 @@ namespace Team3.DevForm.ShipmentMgt
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (typeof(TextBox) == ctrl.GetType())
+                {
+                    ctrl.Text = "";
+                }
+            }
+
+            foreach (Control con in panel1.Controls)
+            {
+                if (con is ComboBox cb)
+                {
+                    cb.SelectedIndex = 0;
+
+                }
+            }
         }
     }
 }

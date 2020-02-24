@@ -44,6 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.txtProduct = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -89,8 +90,8 @@
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(949, 117);
-            this.panel3.Size = new System.Drawing.Size(154, 33);
+            this.panel3.Location = new System.Drawing.Point(799, 117);
+            this.panel3.Size = new System.Drawing.Size(304, 33);
             // 
             // TopMenu
             // 
@@ -230,13 +231,14 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
             this.flowLayoutPanel1.Controls.Add(this.btnExcel);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(154, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(304, 33);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnExcel
@@ -248,7 +250,7 @@
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExcel.Image = global::Team3.Properties.Resources.ExportToXLSX_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(93, 3);
+            this.btnExcel.Location = new System.Drawing.Point(155, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(58, 26);
             this.btnExcel.TabIndex = 42;
@@ -266,7 +268,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Image = global::Team3.Properties.Resources.Editor_Edit;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(20, 3);
+            this.button2.Location = new System.Drawing.Point(82, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 26);
             this.button2.TabIndex = 44;
@@ -302,6 +304,23 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(232, 26);
             this.txtProduct.TabIndex = 131;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Image = global::Team3.Properties.Resources.Refresh_16x16;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(219, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(82, 26);
+            this.btnRefresh.TabIndex = 47;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ShipmentClosingStatusMgt
             // 
@@ -344,5 +363,6 @@
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
